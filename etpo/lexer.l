@@ -101,31 +101,15 @@ yywrap(void)
 static void
 header(void)
 {
-	struct timeval tv;
-	struct timezone tz;
-	struct tm *tm;
-	const char *boilerplate = 
-	"# SOME DESCRIPTIVE TITLE.\n"
-	"# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER\n"
-	"# This file is distributed under the same license as the PACKAGE package.\n"
-	"# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.\n"
-	"#\n"
-	"#, fuzzy\n"
-	"msgid \"\"\n"
-	"msgstr \"\"\n"
-	"\"Project-Id-Version: PACKAGE VERSION\\n\"\n"
-	"\"Report-Msgid-Bugs-To: \\n\"\n"
-	"\"POT-Creation-Date: %04d-%02d-%02d %02d:%02d%s\\n\"\n"
-	"\"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\\n\"\n"
-	"\"Last-Translator: FULL NAME <EMAIL@ADDRESS>\\n\"\n"
-	"\"Language-Team: LANGUAGE <LL@li.org>\\n\"\n"
-	"\"MIME-Version: 1.0\\n\"\n"
-	"\"Content-Type: text/plain; charset=CHARSET\\n\"\n"
-	"\"Content-Transfer-Encoding: 8bit\\n\"\n";
-	gettimeofday(&tv, &tz);
-	tm = gmtime(&tv.tv_sec);
-	printf(boilerplate, tm->tm_year + 1900, tm->tm_mon, tm->tm_mday,
-	       tm->tm_hour, tm->tm_min, "GMT");
+	const char *boilerplate = "const char *dummy = {\n";
+	printf(boilerplate);
+}
+
+static void
+tail(void)
+{
+	const char *boilerplate = "};\n";
+	printf(boilerplate);
 }
 
 int
@@ -163,5 +147,6 @@ main(int argc, char **argv)
 		currentfile = "<stdin>";
 		yyin = stdin;
 	}
+	tail();
 	return 0;
 }

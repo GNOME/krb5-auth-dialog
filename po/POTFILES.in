@@ -1,1 +1,3 @@
 src/krb5-auth-dialog.glade
+src/krb5-auth-dialog.c
+src/dummy-strings.c

@@ -50,25 +50,7 @@ error_code: ERROR_CODE_START TOKEN COMMA QUOTE literal QUOTE {
 			} else {
 				p = currentfile;
 			}
-			printf("\n# %s:%s:%s\n", p, table, $2);
-			/* If the string doesn't contain a newline, just print
-			 * it on a single line. */
-			if (strchr($5, '\n') == NULL) {
-				printf("msgid \"%s\"\n", $5);
-			} else {
-				/* Split the string up along newline
-				 * boundaries, for readability. */
-				lines = g_strsplit($5, "\n", -1);
-				if (lines != NULL) {
-					printf("msgid \n");
-					for (i = 0; lines[i] != NULL; i++) {
-						printf("\"%s\"\n", lines[i]);
-					}
-					g_strfreev(lines);
-				}
-			}
-			/* Output the template translation. */
-			printf("msgstr \"\"\n");
+			printf("\tN_(\"%s\"),\t/* %s:%s:%s */\n", $5, p, table, $2);
 		}
 	} |
 	ERROR_CODE_START TOKEN COMMA QUOTE QUOTE {

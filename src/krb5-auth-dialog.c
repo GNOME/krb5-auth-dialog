@@ -20,7 +20,7 @@
 
 #include <gtk/gtk.h>
 #include <glade/glade.h>
-#include <libgnomeui/libgnomeui.h>
+#include <gnome.h>
 #include <stdlib.h>
 #include <time.h>
 #include <krb5.h>
@@ -59,10 +59,23 @@ whoami (const char **username)
 }
 
 static void
-setup_dialog(GladeXML *xml, GtkWidget *dialog, gchar *prompt)
+setup_dialog (GladeXML    *xml,
+	      GtkWidget   *dialog,
+	      const gchar *prompt)
 {
   GtkWidget *entry;
   GtkWidget *label;
+
+  if (prompt == NULL)
+       prompt = _("Password:");
+  /* Kerberos's prompts are a mess, and basically impossible to
+   * translate.  There's basically no way short of doing a lot of
+   * string parsing to translate them.  The most common prompt is
+   * "Password for $uid:".  We special case that one at least.  We
+   * cannot do any of the fancier strings (like challenges),
+   * though. */
+  if (strncmp (prompt, "Password for ", strlen ("Password for ")) == 0)
+       prompt = _("Password:");
 
   /* Clear the password entry field */
   entry = glade_xml_get_widget (xml, "krb5_entry");

@@ -1,3 +1,11 @@
+2004-08-18    <caillon@redhat.com>
+
+	* configure.ac: New version
+
+	* src/krb5-auth-dialog.c: Display status text for bad passwords
+	and display remaining time until expiry	
+
+
 Tue Aug 17 15:27:33 2004  Jonathan Blandford  <jrb@redhat.com>
 
 	* src/krb5-auth-dialog.c: Use gettext

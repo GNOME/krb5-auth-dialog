@@ -1,6 +1,6 @@
 AC_INIT(src/krb5-auth-dialog.c)
 
-AM_INIT_AUTOMAKE(krb5-auth-dialog, 0.1)
+AM_INIT_AUTOMAKE(krb5-auth-dialog, 0.2)
 AM_CONFIG_HEADER(config.h)
 
 AM_MAINTAINER_MODE

@@ -38,6 +38,9 @@ static GladeXML *xml = NULL;
 static krb5_context kcontext;
 static krb5_principal kprincipal;
 static char* defname = NULL;
+static gboolean invalid_password;
+static gint creds_expiry;
+
 
 static int renew_credentials ();
 
@@ -65,6 +68,9 @@ setup_dialog (GladeXML    *xml,
 {
   GtkWidget *entry;
   GtkWidget *label;
+  GtkWidget *wrong_label;
+  gchar *wrong_text;
+  gchar *wrong_markup;
 
   if (prompt == NULL)
        prompt = _("Password:");
@@ -85,10 +91,29 @@ setup_dialog (GladeXML    *xml,
   label = glade_xml_get_widget (xml, "krb5_message_label");
   gtk_label_set_text (GTK_LABEL (label), prompt);
 
-  /* Only hide, and not destroy the dialog, so we can re-use it later. */
-  g_signal_connect (dialog, "response",
-		    G_CALLBACK (gtk_widget_hide),
-		    dialog);
+  /* Add our extra message hints, if any */
+  if (invalid_password)
+    wrong_text = g_strdup (_("The password you entered is invalid"));
+  else
+    {
+      int minutes_left = (creds_expiry - time(0)) / 60;
+      if (minutes_left > 0)
+	wrong_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
+      else
+	wrong_text = g_strdup (_("Your credentials have expired"));
+    }
+
+  wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
+
+  if (wrong_label && wrong_text != NULL)
+    {
+      wrong_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", wrong_text);
+      gtk_label_set_markup (GTK_LABEL (wrong_label), wrong_markup);
+      g_free(wrong_text);
+      g_free(wrong_markup);
+    }
+  else
+    gtk_label_set_text (GTK_LABEL (wrong_label), "");
 }
 
 static krb5_error_code
@@ -136,10 +161,13 @@ krb5_gtk_prompter (krb5_context ctx,
 	default:
 	  g_assert_not_reached ();
 	}
-
       prompts[i].reply->data = (char *) password;
       prompts[i].reply->length = password_len;
     }
+
+  /* Reset this, so we know the next time we get a TRUE value, it is accurate. */
+  gtk_widget_hide (dialog);
+  invalid_password = FALSE;
 
   return errcode;
 }
@@ -154,6 +182,7 @@ credentials_expiring_real (void)
   krb5_flags flags;
   krb5_error_code code;
   int exit_status = 0;
+  int expiry;
 
   gboolean retval = FALSE;
 
@@ -190,7 +219,11 @@ credentials_expiring_real (void)
   while (!(code = krb5_cc_next_cred(kcontext, cache, &cur, &my_creds)))
     {
       if (my_creds.times.endtime - time(0) < SECONDS_BEFORE_PROMPTING)
-        retval = TRUE;
+	{
+	  retval = TRUE;
+	  creds_expiry = my_creds.times.endtime;
+	}
+
       krb5_free_cred_contents(kcontext, &my_creds);
     }
   if (code == KRB5_CC_END)
@@ -258,6 +291,7 @@ renew_credentials (void)
       if (retval == KRB5KRB_AP_ERR_BAD_INTEGRITY)
 	{
 	  /* Invalid password, try again. */
+	  invalid_password = TRUE;
 	  return renew_credentials();
 	}
       return retval;

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-17 15:26-0400\n"
+"POT-Creation-Date: 2004-08-18 17:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,8 +28,21 @@ msgstr ""
 msgid "_Renew Ticket"
 msgstr ""
 
-#: src/krb5-auth-dialog.c:70 src/krb5-auth-dialog.c:78
+#: src/krb5-auth-dialog.c:76 src/krb5-auth-dialog.c:84
 msgid "Password:"
+msgstr ""
+
+#: src/krb5-auth-dialog.c:96
+msgid "The password you entered is invalid"
+msgstr ""
+
+#: src/krb5-auth-dialog.c:101
+#, c-format
+msgid "Your credentials expire in %d minutes"
+msgstr ""
+
+#: src/krb5-auth-dialog.c:103
+msgid "Your credentials have expired"
 msgstr ""
 
 #: src/dummy-strings.c:10
@@ -665,7 +678,8 @@ msgid "while retrieving configuration parameters"
 msgstr ""
 
 #. import_err.et:imp:IMPORT_GET_PARAMS
-#: src/dummy-strings.c:132
+#. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
+#: src/dummy-strings.c:132 src/dummy-strings.c:385
 msgid "$Id$"
 msgstr ""
 
@@ -1886,11 +1900,6 @@ msgstr ""
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr ""
 
-#. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
-#: src/dummy-strings.c:385
-msgid "$Id$"
-msgstr ""
-
 #. kdb5_err.et:kdb5:KRB5_KDB_RCSID
 #. kadm_err.et:kadm:KADM_NO_VERI
 #: src/dummy-strings.c:386 src/dummy-strings.c:532
@@ -2472,8 +2481,8 @@ msgstr ""
 #. chpass_util_strings.et:ovku:CHPASS_UTIL_WHILE_READING_PASSWORD
 #: src/dummy-strings.c:512
 msgid ""
-"$Header: /cvs/krbdev/krb5/src/lib/krb4/kadm_err.et,v 1.1 2002/11/27 03:09:34 "
-"tlyu Exp $"
+"$Header: /cvs/gnome/krb5-auth-dialog/src/dummy-strings.c,v 1.1 2004/08/17 "
+"19:29:03 jrb Exp $"
 msgstr ""
 
 #. kadm_err.et:kadm:KADM_RCSID

@@ -20,6 +20,7 @@
 
 #include <gtk/gtk.h>
 #include <glade/glade.h>
+#include <libgnomeui/libgnomeui.h>
 #include <stdlib.h>
 #include <time.h>
 #include <krb5.h>
@@ -268,8 +269,16 @@ int
 main (int argc, char *argv[])
 {
   GtkWidget *dialog;
+  GnomeClient *client;
 
-  gtk_init (&argc, &argv);
+  gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
+                      argc, argv, GNOME_PARAM_NONE);
+
+  client = gnome_master_client ();
+  gnome_client_set_restart_style (client, GNOME_RESTART_ANYWAY);
+
+  g_signal_connect (G_OBJECT (client), "die",
+                    G_CALLBACK (gtk_main_quit), NULL);
 
   xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
   dialog = glade_xml_get_widget (xml, "krb5_dialog");

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2004-08-16 14:53-0400\n"
+"POT-Creation-Date: 2004-08-16 15:42-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,21 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/krb5-auth-dialog.glade.h:1
-msgid "*"
-msgstr ""
-
-#: src/krb5-auth-dialog.glade.h:2
-msgid "<span size=\"smaller\"> </span>"
-msgstr ""
-
-#: src/krb5-auth-dialog.glade.h:3
 msgid "Network Authentication"
 msgstr ""
 
-#: src/krb5-auth-dialog.glade.h:4
+#: src/krb5-auth-dialog.glade.h:2
 msgid "_Password:"
 msgstr ""
 
-#: src/krb5-auth-dialog.glade.h:5
+#: src/krb5-auth-dialog.glade.h:3
 msgid "_Renew Ticket"
 msgstr ""

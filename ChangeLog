@@ -1,3 +1,11 @@
+2004-09-07  Christopher Aillon <caillon@redhat.com>
+	* src/krb5-auth-dialog.c: Check whether we are running in a
+	kerberos environment before entering the timeout to see when
+	the tickets expire.
+
+	* src/krb5-auth-dialog.c: Use g_get_user_name and other code
+	cleanup.
+
 2004-09-02  Colin Walters  <walters@verbum.org>
 
 	* configure.in: Check for NetworkManager.
@@ -14,7 +22,7 @@
 2004-08-28  Diego Gonzalez  <diego@pemas.net>
 
 	* configure.ac: add --with-heimdal
-	* krb5-auth-dialog: modify to support heimdal if enabled
+	* krb5-auth-dialog.c: modify to support heimdal if enabled
 	* krb5-auth-dialog.glade: center the dialog
 
 2004-08-19  Kjartan Maraas  <kmaraas@gnome.org>

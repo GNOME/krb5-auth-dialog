@@ -25,10 +25,8 @@
 #include <time.h>
 #include <krb5.h>
 #include <stdio.h>
+#include <sys/wait.h>
 #include <string.h>
-#include <sys/types.h>
-#include <unistd.h>
-#include <pwd.h>
 #include "config.h"
 
 #ifdef HAVE_NETWORKMANAGER
@@ -47,23 +45,6 @@ static gint creds_expiry;
 
 
 static int renew_credentials ();
-
-static int
-whoami (const char **username)
-{
-  struct passwd *p;
-  uid_t uid;
-
-  uid = geteuid();
-  if (!(p = getpwuid(uid)))
-    {
-      return -1;
-    }
-
-  *username = p->pw_name;
-
-  return 0;
-}
 
 static void
 setup_dialog (GladeXML    *xml,
@@ -311,17 +292,17 @@ credentials_expiring_real (void)
 	  do_v4_ccache(0);
 #endif
       }
-      exit(1);
+      gtk_exit(1);
     }
 
   if ((code = krb5_cc_get_principal(kcontext, cache, &princ)))
-    exit(1);
+    gtk_exit(1);
 
   if ((code = krb5_unparse_name(kcontext, princ, &defname)))
-    exit(1);
+    gtk_exit(1);
 
   if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
-    exit(1);
+    gtk_exit(1);
 
   while (!(code = krb5_cc_next_cred(kcontext, cache, &cur, &my_creds)))
     {
@@ -341,17 +322,17 @@ credentials_expiring_real (void)
       flags = KRB5_TC_OPENCLOSE;  /* turns on OPENCLOSE mode, from klist.c */
 #endif
       if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
-        exit(1);
+        gtk_exit(1);
 #ifdef KRB5_KRB4_COMPAT
       if (name == NULL && !status_only)
         do_v4_ccache(0);
 #endif
       if (exit_status)
-	exit(exit_status);
+	gtk_exit(exit_status);
     }
   else
     {
-      exit(1);
+      gtk_exit(1);
     }
 
   return retval;
@@ -360,8 +341,8 @@ credentials_expiring_real (void)
 static gboolean
 credentials_expiring (gpointer *data)
 {
-  if (credentials_expiring_real() && am_online ())
-    renew_credentials();
+  if (credentials_expiring_real () && am_online ())
+    renew_credentials ();
 
   return TRUE;
 }
@@ -373,7 +354,6 @@ renew_credentials (void)
   krb5_get_init_creds_opt options;
   krb5_creds my_creds;
   krb5_ccache ccache;
-  const char *username;
 
   memset(&my_creds, 0, sizeof(my_creds));
   krb5_get_init_creds_opt_init(&options);
@@ -382,11 +362,7 @@ renew_credentials (void)
   if (retval)
     return retval;
 
-  retval = whoami(&username);
-  if (retval)
-    return retval;
-
-  retval = krb5_parse_name(kcontext, username, &kprincipal);
+  retval = krb5_parse_name(kcontext, g_get_user_name (), &kprincipal);
   if (retval)
     return retval;
 
@@ -421,6 +397,33 @@ renew_credentials (void)
   return 0;
 }
 
+gboolean
+using_krb5()
+{
+  const gchar *krb5ccname;
+
+  gboolean success;
+  int exit_status;
+  GError *error;
+
+  /* See if we have a credential cache specified. */
+  krb5ccname = g_getenv("KRB5CCNAME");
+  if (krb5ccname != NULL)
+    return TRUE;
+
+  /* Nope, let's see if we have any prior tickets. */
+  success = g_spawn_command_line_sync("klist -s",
+				      NULL, NULL,
+				      &exit_status,
+				      &error);
+
+  if (success == TRUE && error == NULL &&
+      WIFEXITED(exit_status) && WEXITSTATUS(exit_status) == 0)
+    return TRUE;
+
+  return FALSE;
+}
+
 int
 main (int argc, char *argv[])
 {
@@ -433,15 +436,19 @@ main (int argc, char *argv[])
   client = gnome_master_client ();
   gnome_client_set_restart_style (client, GNOME_RESTART_ANYWAY);
 
-  g_signal_connect (G_OBJECT (client), "die",
-                    G_CALLBACK (gtk_main_quit), NULL);
+  if (using_krb5 ())
+    {
+      g_signal_connect (G_OBJECT (client), "die",
+			G_CALLBACK (gtk_main_quit), NULL);
 
-  xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
-  dialog = glade_xml_get_widget (xml, "krb5_dialog");
+      xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
+      dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
-  g_timeout_add (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, NULL);
-  credentials_expiring (NULL);
-  gtk_main();
+      g_timeout_add (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, NULL);
+      credentials_expiring (NULL);
+
+      gtk_main ();
+    }
 
   return 0;
 }

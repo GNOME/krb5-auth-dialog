@@ -1,3 +1,16 @@
+2004-09-02  Colin Walters  <walters@verbum.org>
+
+	* configure.in: Check for NetworkManager.
+
+	* Makefile.am: Add NETWORKMANAGER_LIBS.
+
+	* src/krb5-auth-dialog.c (am_online): New function,
+	uses NetworkManager over D-BUS to determine
+	whether or not we're online.
+
+	* src/krb5-auth-dialog.c (credentials_expiring): Don't
+	try to renew credentials if we're not online.
+
 2004-08-28  Diego Gonzalez  <diego@pemas.net>
 
 	* configure.ac: add --with-heimdal
@@ -14,7 +27,6 @@
 
 	* src/krb5-auth-dialog.c: Display status text for bad passwords
 	and display remaining time until expiry	
-
 
 Tue Aug 17 15:27:33 2004  Jonathan Blandford  <jrb@redhat.com>
 

@@ -6,7 +6,7 @@ bin_PROGRAMS = krb5-auth-dialog
 krb5_auth_dialog_SOURCES =	\
 	krb5-auth-dialog.c
 
-krb5_auth_dialog_LDADD = @KRB5_LIBS@ @GNOME_LIBS@
+krb5_auth_dialog_LDADD = @NETWORKMANAGER_LIBS@ @KRB5_LIBS@ @GNOME_LIBS@
 
 gladedir = $(datadir)/krb5-auth-dialog
 glade_DATA =			\

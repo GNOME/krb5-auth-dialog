@@ -31,6 +31,10 @@
 #include <pwd.h>
 #include "config.h"
 
+#ifdef HAVE_NETWORKMANAGER
+#include <dbus/dbus.h>
+#endif
+
 #define CREDENTIAL_CHECK_INTERVAL 30000 /* milliseconds */
 #define SECONDS_BEFORE_PROMPTING 1800
 
@@ -172,6 +176,110 @@ krb5_gtk_prompter (krb5_context ctx,
 }
 
 static gboolean
+am_online (void)
+{
+#ifdef HAVE_NETWORKMANAGER
+  static DBusConnection *connection = NULL;
+  DBusMessage *msg, *reply;
+  DBusError dbus_error;
+  gboolean ret;
+
+  ret = TRUE;
+  dbus_error_init (&dbus_error);
+  if (connection == NULL)
+    {
+      connection = dbus_bus_get (DBUS_BUS_SYSTEM, &dbus_error);
+      if (connection == NULL)
+	{
+	  g_warning ("Couldn't connect to system bus: %s",
+		     dbus_error.message);
+	  dbus_error_free (&dbus_error);
+	  return ret;
+	}
+      dbus_connection_set_change_sigpipe (TRUE);      
+      dbus_connection_set_exit_on_disconnect (connection, FALSE);
+    }
+
+  msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
+				      "/org/freedesktop/NetworkManager",
+				      "org.freedesktop.NetworkManager",
+				      "getActiveDevice");
+
+  reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
+  dbus_message_unref (msg);
+
+  if (dbus_error_is_set (&dbus_error))
+    {
+      if (strcmp (dbus_error.name, "org.freedesktop.DBus.Error.ServiceDoesNotExist") == 0)
+	  g_warning ("NetworkManager is not running");
+      else if (strcmp (dbus_error.name, "org.freedesktop.NetworkManager.NoActiveDevice") == 0)
+	ret = FALSE;
+      else
+	g_warning ("Unknown error %s: %s", dbus_error.name, dbus_error.message);
+
+      dbus_error_free (&dbus_error);
+    }
+  else if (reply == NULL)
+    {
+      g_warning ("no reply to org.freedesktop.NetworkManager.getActiveDevice");
+    }
+  else
+    {
+      char *active_device;
+
+      if (!dbus_message_get_args (reply, &dbus_error,
+				  DBUS_TYPE_STRING, &active_device,
+				  DBUS_TYPE_INVALID))
+	{
+	  g_warning ("couldn't parse reply to org.freedesktop.NetworkManager.getActiveDevice");
+	}
+      else
+	{
+	  msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
+					      active_device,
+					      "org.freedesktop.NetworkManager.Devices",
+					      "getLinkActive");
+	  reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
+	  dbus_message_unref (msg);
+
+	  if (dbus_error_is_set (&dbus_error))
+	    {
+	      g_warning ("Error %s: %s", dbus_error.name, dbus_error.message);
+	      dbus_error_free (&dbus_error);
+	    }
+	  else if (reply == NULL)
+	    {
+	      g_warning ("no reply to getLinkActive");
+	    }
+	  else
+	    {
+	      gboolean in_the_wired;
+
+	      if (!dbus_message_get_args (reply, &dbus_error,
+					  DBUS_TYPE_BOOLEAN, &in_the_wired,
+					  DBUS_TYPE_INVALID))
+		{
+		  g_warning ("couldn't parse reply to getActiveDevice");
+		}
+	      else
+		{
+		  ret = in_the_wired;
+		}
+	    }
+	  if (reply)
+	    dbus_message_unref (reply);
+	}
+    }
+  if (reply)
+    dbus_message_unref (reply);
+
+  return ret;
+#else
+  return TRUE;
+#endif
+}
+
+static gboolean
 credentials_expiring_real (void)
 {
   krb5_ccache cache = NULL;
@@ -252,7 +360,7 @@ credentials_expiring_real (void)
 static gboolean
 credentials_expiring (gpointer *data)
 {
-  if (credentials_expiring_real())
+  if (credentials_expiring_real() && am_online ())
     renew_credentials();
 
   return TRUE;

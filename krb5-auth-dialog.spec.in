@@ -7,6 +7,8 @@ Group: User Interface/X
 URL: http://www.redhat.com/
 Source0: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+BuildRequires: krb5-devel
+BuildRequires: libgnomeui-devel
 
 %description
 This package contains a dialog that warns the user when their Kerberos

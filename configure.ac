@@ -28,6 +28,11 @@ PKG_CHECK_MODULES(GNOME,
 	libgnomeui-2.0 >= 2.4.0
 ])
 
+AC_ARG_WITH(heimdal, [ --with-heimdal ], with_heimdal="$withval", with_heimdal="no" )
+if test "x$with_heimdal" != "xno"; then
+	AC_DEFINE_UNQUOTED(HEIMDAL, "", "")
+fi
+
 AC_PATH_PROG([KRB5_CONFIG], krb5-config, none, $PATH:/usr/kerberos/bin)
 if test "x$KRB5_CONFIG" != "xnone"; then
    KRB5_LIBS="`${KRB5_CONFIG} --libs krb5`"

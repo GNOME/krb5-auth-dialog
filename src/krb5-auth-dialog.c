@@ -117,7 +117,6 @@ setup_dialog (GladeXML    *xml,
 }
 
 static krb5_error_code
-KRB5_CALLCONV
 krb5_gtk_prompter (krb5_context ctx,
 		   void *data,
 		   const char *name,
@@ -230,7 +229,9 @@ credentials_expiring_real (void)
     {
       if ((code = krb5_cc_end_seq_get(kcontext, cache, &cur)))
 	exit(1);
+#ifndef HEIMDAL
       flags = KRB5_TC_OPENCLOSE;  /* turns on OPENCLOSE mode, from klist.c */
+#endif
       if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
         exit(1);
 #ifdef KRB5_KRB4_COMPAT

@@ -1,8 +1,14 @@
+2004-08-28  Diego Gonzalez  <diego@pemas.net>
+
+	* configure.ac: add --with-heimdal
+	* krb5-auth-dialog: modify to support heimdal if enabled
+	* krb5-auth-dialog.glade: center the dialog
+
 2004-08-19  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* configure.ac: Added «nb» and «no» to ALL_LINGUAS.
 
-2004-08-18    <caillon@redhat.com>
+2004-08-18  Christopher Aillon  <caillon@redhat.com>
 
 	* configure.ac: New version
 

@@ -39,6 +39,7 @@ CFLAGS="$GNOME_CFLAGS $KRB5_CFLAGS $CFLAGS"
 
 AC_OUTPUT([
 Makefile
+krb5-auth-dialog.spec
 src/Makefile
 po/Makefile.in
 ])

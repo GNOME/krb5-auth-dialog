@@ -1,0 +1,41 @@
+Summary: Kerberos 5 authentication dialog
+Name: krb5-auth-dialog
+Version: @VERSION@
+Release: 1
+License: GPL
+Group: User Interface/X
+URL: http://www.redhat.com/
+Source0: %{name}-%{version}.tar.gz
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+
+%description
+This package contains a dialog that warns the user when their Kerberos
+tickets are about to expire and lets them renew them.
+
+%prep
+%setup -q
+
+%build
+%configure
+make
+
+%install
+rm -rf $RPM_BUILD_ROOT
+%makeinstall
+#%find_lang %name
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+
+%files
+%defattr(-,root,root,-)
+%doc
+%{_bindir}/krb5-auth-dialog
+%{_datadir}/krb5-auth-dialog/
+
+
+%changelog
+* Mon Aug 16 2004 GNOME <jrb@redhat.com> - auth-dialog
+- Initial build.
+

@@ -10,3 +10,4 @@ intltool*
 libtool*
 mkinstalldirs
 stamp*
+krb5-auth-dialog.spec

@@ -1,0 +1,6 @@
+Tue Aug 17 13:53:45 2004  Jonathan Blandford  <jrb@redhat.com>
+
+	* ChangeLog: Started changelog
+
+	* etpo/*: New subdir to help with translations of kerberos.
+

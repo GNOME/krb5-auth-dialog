@@ -15,6 +15,8 @@ AC_ISC_POSIX
 AC_HEADER_STDC
 AM_PROG_LIBTOOL
 AC_PROG_INTLTOOL
+AM_PROG_LEX
+AC_PROG_YACC
 
 ALL_LINGUAS=""
 AM_GLIB_GNU_GETTEXT
@@ -42,5 +44,6 @@ AC_OUTPUT([
 Makefile
 krb5-auth-dialog.spec
 src/Makefile
+etpo/Makefile
 po/Makefile.in
 ])

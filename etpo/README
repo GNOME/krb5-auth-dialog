@@ -1,0 +1,8 @@
+Packages which uses com_err frequently have no built-in facility for using
+localized messages.
+
+The etpo program walks a directory tree containing .et files used by
+compile_et, and produces a .pot file suitable for use with GNU gettext on
+stdout.  Translations can then be made for the package which uses com_err,
+and consumers of those messages can then use gettext to obtain localized
+forms of messages returned by the error_message() function.

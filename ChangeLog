@@ -1,3 +1,7 @@
+2004-08-19  Kjartan Maraas  <kmaraas@gnome.org>
+
+	* configure.ac: Added «nb» and «no» to ALL_LINGUAS.
+
 2004-08-18    <caillon@redhat.com>
 
 	* configure.ac: New version

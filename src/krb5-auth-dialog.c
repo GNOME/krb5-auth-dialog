@@ -1,20 +1,20 @@
 /*
- *  Copyright (C) 2004 Red Hat, Inc.
- *  Authored by Christopher Aillon <caillon@redhat.com>
+ * Copyright (C) 2004 Red Hat, Inc.
+ * Authored by Christopher Aillon <caillon@redhat.com>
  *
- *  This program is free software; you can redistribute it and/or modify
- *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 2, or (at your option)
- *  any later version.
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2, or (at your option)
+ * any later version.
  *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	See the
+ * GNU General Public License for more details.
  *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
  */
 
@@ -47,408 +47,410 @@ static gint creds_expiry;
 static int renew_credentials ();
 
 static void
-setup_dialog (GladeXML    *xml,
-	      GtkWidget   *dialog,
-	      const gchar *prompt)
+setup_dialog (GladeXML *xml,
+              GtkWidget *dialog,
+              const gchar *prompt)
 {
-  GtkWidget *entry;
-  GtkWidget *label;
-  GtkWidget *wrong_label;
-  gchar *wrong_text;
-  gchar *wrong_markup;
+	GtkWidget *entry;
+	GtkWidget *label;
+	GtkWidget *wrong_label;
+	gchar *wrong_text;
+	gchar *wrong_markup;
 
-  if (prompt == NULL)
-       prompt = _("Password:");
-  /* Kerberos's prompts are a mess, and basically impossible to
-   * translate.  There's basically no way short of doing a lot of
-   * string parsing to translate them.  The most common prompt is
-   * "Password for $uid:".  We special case that one at least.  We
-   * cannot do any of the fancier strings (like challenges),
-   * though. */
-  if (strncmp (prompt, "Password for ", strlen ("Password for ")) == 0)
-       prompt = _("Password:");
+	if (prompt == NULL)
+		prompt = _("Password:");
+	/* Kerberos's prompts are a mess, and basically impossible to
+	 * translate.  There's basically no way short of doing a lot of
+	 * string parsing to translate them.  The most common prompt is
+	 * "Password for $uid:".  We special case that one at least.  We
+	 * cannot do any of the fancier strings (like challenges),
+	 * though. */
+	if (strncmp (prompt, "Password for ", strlen ("Password for ")) == 0)
+		prompt = _("Password:");
 
-  /* Clear the password entry field */
-  entry = glade_xml_get_widget (xml, "krb5_entry");
-  gtk_entry_set_text (GTK_ENTRY (entry), "");
+	/* Clear the password entry field */
+	entry = glade_xml_get_widget (xml, "krb5_entry");
+	gtk_entry_set_text (GTK_ENTRY (entry), "");
 
-  /* Use the prompt label that krb5 provides us */
-  label = glade_xml_get_widget (xml, "krb5_message_label");
-  gtk_label_set_text (GTK_LABEL (label), prompt);
+	/* Use the prompt label that krb5 provides us */
+	label = glade_xml_get_widget (xml, "krb5_message_label");
+	gtk_label_set_text (GTK_LABEL (label), prompt);
 
-  /* Add our extra message hints, if any */
-  if (invalid_password)
-    wrong_text = g_strdup (_("The password you entered is invalid"));
-  else
-    {
-      int minutes_left = (creds_expiry - time(0)) / 60;
-      if (minutes_left > 0)
-	wrong_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
-      else
-	wrong_text = g_strdup (_("Your credentials have expired"));
-    }
+	/* Add our extra message hints, if any */
+	if (invalid_password)
+		wrong_text = g_strdup (_("The password you entered is invalid"));
+	else
+	{
+		int minutes_left = (creds_expiry - time(0)) / 60;
+		if (minutes_left > 0)
+			wrong_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
+		else
+			wrong_text = g_strdup (_("Your credentials have expired"));
+	}
 
-  wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
+	wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
 
-  if (wrong_label && wrong_text != NULL)
-    {
-      wrong_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", wrong_text);
-      gtk_label_set_markup (GTK_LABEL (wrong_label), wrong_markup);
-      g_free(wrong_text);
-      g_free(wrong_markup);
-    }
-  else
-    gtk_label_set_text (GTK_LABEL (wrong_label), "");
+	if (wrong_label && wrong_text != NULL)
+	{
+		wrong_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", wrong_text);
+		gtk_label_set_markup (GTK_LABEL (wrong_label), wrong_markup);
+		g_free(wrong_text);
+		g_free(wrong_markup);
+	}
+	else
+		gtk_label_set_text (GTK_LABEL (wrong_label), "");
 }
 
 static krb5_error_code
 krb5_gtk_prompter (krb5_context ctx,
-		   void *data,
-		   const char *name,
-		   const char *banner,
-		   int num_prompts,
-		   krb5_prompt prompts[])
+                   void *data,
+                   const char *name,
+                   const char *banner,
+                   int num_prompts,
+                   krb5_prompt prompts[])
 {
-  GtkWidget *dialog;
-  krb5_error_code errcode;
-  int i;
+	GtkWidget *dialog;
+	krb5_error_code errcode;
+	int i;
 
-  errcode = KRB5_LIBOS_CANTREADPWD;
+	errcode = KRB5_LIBOS_CANTREADPWD;
 
-  dialog = glade_xml_get_widget (xml, "krb5_dialog");
+	dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
-  for (i = 0; i < num_prompts; i++)
-    {
-      const gchar *password = NULL;
-      int password_len = 0;
-      int response;
-
-      GtkWidget *entry;
-
-      errcode = KRB5_LIBOS_CANTREADPWD;
-
-      entry = glade_xml_get_widget(xml, "krb5_entry");
-      setup_dialog(xml, dialog, (gchar *) prompts[i].prompt);
-
-      response = gtk_dialog_run (GTK_DIALOG (dialog));
-
-      switch (response)
+	for (i = 0; i < num_prompts; i++)
 	{
-	case GTK_RESPONSE_OK:
-	  password = gtk_entry_get_text (GTK_ENTRY (entry));
-	  password_len = strlen (password);
-	  errcode = 0;
-	  break;
-	case GTK_RESPONSE_CANCEL:
-	case GTK_RESPONSE_DELETE_EVENT:
-	  break;
-	default:
-	  g_assert_not_reached ();
+		const gchar *password = NULL;
+		int password_len = 0;
+		int response;
+
+		GtkWidget *entry;
+
+		errcode = KRB5_LIBOS_CANTREADPWD;
+
+		entry = glade_xml_get_widget(xml, "krb5_entry");
+		setup_dialog(xml, dialog, (gchar *) prompts[i].prompt);
+
+		response = gtk_dialog_run (GTK_DIALOG (dialog));
+		switch (response)
+		{
+			case GTK_RESPONSE_OK:
+				password = gtk_entry_get_text (GTK_ENTRY (entry));
+				password_len = strlen (password);
+				errcode = 0;
+				break;
+			case GTK_RESPONSE_CANCEL:
+			case GTK_RESPONSE_DELETE_EVENT:
+				break;
+			default:
+				g_assert_not_reached ();
+		}
+
+		prompts[i].reply->data = (char *) password;
+		prompts[i].reply->length = password_len;
 	}
-      prompts[i].reply->data = (char *) password;
-      prompts[i].reply->length = password_len;
-    }
 
-  /* Reset this, so we know the next time we get a TRUE value, it is accurate. */
-  gtk_widget_hide (dialog);
-  invalid_password = FALSE;
+	/* Reset this, so we know the next time we get a TRUE value, it is accurate. */
+	gtk_widget_hide (dialog);
+	invalid_password = FALSE;
 
-  return errcode;
+	return errcode;
 }
 
 static gboolean
 am_online (void)
 {
 #ifdef HAVE_NETWORKMANAGER
-  static DBusConnection *connection = NULL;
-  DBusMessage *msg, *reply;
-  DBusError dbus_error;
-  gboolean ret;
+	static DBusConnection *connection = NULL;
+	DBusMessage *msg, *reply;
+	DBusError dbus_error;
+	gboolean ret;
 
-  ret = TRUE;
-  dbus_error_init (&dbus_error);
-  if (connection == NULL)
-    {
-      connection = dbus_bus_get (DBUS_BUS_SYSTEM, &dbus_error);
-      if (connection == NULL)
+	ret = TRUE;
+	dbus_error_init (&dbus_error);
+	if (connection == NULL)
 	{
-	  g_warning ("Couldn't connect to system bus: %s",
-		     dbus_error.message);
-	  dbus_error_free (&dbus_error);
-	  return ret;
-	}
-      dbus_connection_set_change_sigpipe (TRUE);      
-      dbus_connection_set_exit_on_disconnect (connection, FALSE);
-    }
-
-  msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
-				      "/org/freedesktop/NetworkManager",
-				      "org.freedesktop.NetworkManager",
-				      "getActiveDevice");
-
-  reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
-  dbus_message_unref (msg);
-
-  if (dbus_error_is_set (&dbus_error))
-    {
-      if (strcmp (dbus_error.name, "org.freedesktop.DBus.Error.ServiceDoesNotExist") == 0)
-	  g_warning ("NetworkManager is not running");
-      else if (strcmp (dbus_error.name, "org.freedesktop.NetworkManager.NoActiveDevice") == 0)
-	ret = FALSE;
-      else
-	g_warning ("Unknown error %s: %s", dbus_error.name, dbus_error.message);
-
-      dbus_error_free (&dbus_error);
-    }
-  else if (reply == NULL)
-    {
-      g_warning ("no reply to org.freedesktop.NetworkManager.getActiveDevice");
-    }
-  else
-    {
-      char *active_device;
-
-      if (!dbus_message_get_args (reply, &dbus_error,
-				  DBUS_TYPE_STRING, &active_device,
-				  DBUS_TYPE_INVALID))
-	{
-	  g_warning ("couldn't parse reply to org.freedesktop.NetworkManager.getActiveDevice");
-	}
-      else
-	{
-	  msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
-					      active_device,
-					      "org.freedesktop.NetworkManager.Devices",
-					      "getLinkActive");
-	  reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
-	  dbus_message_unref (msg);
-
-	  if (dbus_error_is_set (&dbus_error))
-	    {
-	      g_warning ("Error %s: %s", dbus_error.name, dbus_error.message);
-	      dbus_error_free (&dbus_error);
-	    }
-	  else if (reply == NULL)
-	    {
-	      g_warning ("no reply to getLinkActive");
-	    }
-	  else
-	    {
-	      gboolean in_the_wired;
-
-	      if (!dbus_message_get_args (reply, &dbus_error,
-					  DBUS_TYPE_BOOLEAN, &in_the_wired,
-					  DBUS_TYPE_INVALID))
+		connection = dbus_bus_get (DBUS_BUS_SYSTEM, &dbus_error);
+		if (connection == NULL)
 		{
-		  g_warning ("couldn't parse reply to getActiveDevice");
+			g_warning ("Couldn't connect to system bus: %s",
+			           dbus_error.message);
+			dbus_error_free (&dbus_error);
+			return ret;
 		}
-	      else
-		{
-		  ret = in_the_wired;
-		}
-	    }
-	  if (reply)
-	    dbus_message_unref (reply);
+		dbus_connection_set_change_sigpipe (TRUE);
+		dbus_connection_set_exit_on_disconnect (connection, FALSE);
 	}
-    }
-  if (reply)
-    dbus_message_unref (reply);
 
-  return ret;
+	msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
+	                                    "/org/freedesktop/NetworkManager",
+	                                    "org.freedesktop.NetworkManager",
+	                                    "getActiveDevice");
+
+	reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
+	dbus_message_unref (msg);
+
+	if (dbus_error_is_set (&dbus_error))
+	{
+		if (strcmp (dbus_error.name, "org.freedesktop.DBus.Error.ServiceDoesNotExist") == 0)
+			g_warning ("NetworkManager is not running");
+		else if (strcmp (dbus_error.name, "org.freedesktop.NetworkManager.NoActiveDevice") == 0)
+			ret = FALSE;
+		else
+			g_warning ("Unknown error %s: %s", dbus_error.name, dbus_error.message);
+
+		dbus_error_free (&dbus_error);
+	}
+	else if (reply == NULL)
+	{
+		g_warning ("no reply to org.freedesktop.NetworkManager.getActiveDevice");
+	}
+	else
+	{
+		char *active_device;
+
+		if (!dbus_message_get_args (reply, &dbus_error,
+		                            DBUS_TYPE_STRING, &active_device,
+		                            DBUS_TYPE_INVALID))
+		{
+			g_warning ("couldn't parse reply to org.freedesktop.NetworkManager.getActiveDevice");
+		}
+		else
+		{
+			msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
+			                                     active_device,
+			                                    "org.freedesktop.NetworkManager.Devices",
+			                                    "getLinkActive");
+			reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
+			dbus_message_unref (msg);
+
+			if (dbus_error_is_set (&dbus_error))
+			{
+				g_warning ("Error %s: %s", dbus_error.name, dbus_error.message);
+				dbus_error_free (&dbus_error);
+			}
+			else if (reply == NULL)
+			{
+				g_warning ("no reply to getLinkActive");
+			}
+			else
+			{
+				gboolean in_the_wired;
+
+				if (!dbus_message_get_args (reply, &dbus_error,
+				                            DBUS_TYPE_BOOLEAN, &in_the_wired,
+				                            DBUS_TYPE_INVALID))
+				{
+					g_warning ("couldn't parse reply to getActiveDevice");
+				}
+				else
+				{
+					ret = in_the_wired;
+				}
+			}
+
+			if (reply)
+			     dbus_message_unref (reply);
+		 }
+	}
+
+	if (reply)
+		dbus_message_unref (reply);
+
+	return ret;
 #else
-  return TRUE;
+	return TRUE;
 #endif
 }
 
 static gboolean
 credentials_expiring_real (void)
 {
-  krb5_ccache cache = NULL;
-  krb5_cc_cursor cur;
-  krb5_creds my_creds;
-  krb5_principal princ;
-  krb5_flags flags;
-  krb5_error_code code;
-  int exit_status = 0;
-  int expiry;
+	krb5_ccache cache = NULL;
+	krb5_cc_cursor cur;
+	krb5_creds my_creds;
+	krb5_principal princ;
+	krb5_flags flags;
+	krb5_error_code code;
+	int exit_status = 0;
+	int expiry;
 
-  gboolean retval = FALSE;
+	gboolean retval = FALSE;
 
-  memset (&my_creds, 0, sizeof(my_creds));
+	memset (&my_creds, 0, sizeof(my_creds));
 
-  code = krb5_init_context (&kcontext);
-  if (code)
-    return FALSE;
+	code = krb5_init_context (&kcontext);
+	if (code)
+		return FALSE;
 
-  if ((code = krb5_cc_default(kcontext, &cache)))
-    return FALSE;
+	if ((code = krb5_cc_default(kcontext, &cache)))
+		return FALSE;
 
-  flags = 0;                /* turns off OPENCLOSE mode */
-  if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
-    {
-      if (code == KRB5_FCC_NOFILE) {
-#ifdef KRB5_KRB4_COMPAT
-        if (name == NULL)
-	  do_v4_ccache(0);
-#endif
-      }
-      gtk_exit(1);
-    }
-
-  if ((code = krb5_cc_get_principal(kcontext, cache, &princ)))
-    gtk_exit(1);
-
-  if ((code = krb5_unparse_name(kcontext, princ, &defname)))
-    gtk_exit(1);
-
-  if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
-    gtk_exit(1);
-
-  while (!(code = krb5_cc_next_cred(kcontext, cache, &cur, &my_creds)))
-    {
-      if (my_creds.times.endtime - time(0) < SECONDS_BEFORE_PROMPTING)
+	flags = 0;								/* turns off OPENCLOSE mode */
+	if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
 	{
-	  retval = TRUE;
-	  creds_expiry = my_creds.times.endtime;
+		if (code == KRB5_FCC_NOFILE)
+		{
+#ifdef KRB5_KRB4_COMPAT
+			if (name == NULL)
+				do_v4_ccache(0);
+#endif
+		}
+		gtk_exit(1);
 	}
 
-      krb5_free_cred_contents(kcontext, &my_creds);
-    }
-  if (code == KRB5_CC_END)
-    {
-      if ((code = krb5_cc_end_seq_get(kcontext, cache, &cur)))
-	exit(1);
-#ifndef HEIMDAL
-      flags = KRB5_TC_OPENCLOSE;  /* turns on OPENCLOSE mode, from klist.c */
-#endif
-      if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
-        gtk_exit(1);
-#ifdef KRB5_KRB4_COMPAT
-      if (name == NULL && !status_only)
-        do_v4_ccache(0);
-#endif
-      if (exit_status)
-	gtk_exit(exit_status);
-    }
-  else
-    {
-      gtk_exit(1);
-    }
+	if ((code = krb5_cc_get_principal(kcontext, cache, &princ)))
+		gtk_exit(1);
 
-  return retval;
+	if ((code = krb5_unparse_name(kcontext, princ, &defname)))
+		gtk_exit(1);
+
+	if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
+		gtk_exit(1);
+
+	while (!(code = krb5_cc_next_cred(kcontext, cache, &cur, &my_creds)))
+	{
+		if (my_creds.times.endtime - time(0) < SECONDS_BEFORE_PROMPTING)
+		{
+			retval = TRUE;
+			creds_expiry = my_creds.times.endtime;
+		}
+
+		krb5_free_cred_contents(kcontext, &my_creds);
+	}
+
+	if (code == KRB5_CC_END)
+	{
+		if ((code = krb5_cc_end_seq_get(kcontext, cache, &cur)))
+			exit(1);
+#ifndef HEIMDAL
+		flags = KRB5_TC_OPENCLOSE;	/* turns on OPENCLOSE mode, from klist.c */
+#endif
+		if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
+			gtk_exit(1);
+#ifdef KRB5_KRB4_COMPAT
+		if (name == NULL && !status_only)
+			do_v4_ccache(0);
+#endif
+		if (exit_status)
+		gtk_exit(exit_status);
+	}
+	else
+	{
+		gtk_exit(1);
+	}
+
+	return retval;
 }
 
 static gboolean
 credentials_expiring (gpointer *data)
 {
-  if (credentials_expiring_real () && am_online ())
-    renew_credentials ();
+	if (credentials_expiring_real () && am_online ())
+		renew_credentials ();
 
-  return TRUE;
+	return TRUE;
 }
 
 static int
 renew_credentials (void)
 {
-  krb5_error_code retval;
-  krb5_get_init_creds_opt options;
-  krb5_creds my_creds;
-  krb5_ccache ccache;
+	krb5_error_code retval;
+	krb5_get_init_creds_opt options;
+	krb5_creds my_creds;
+	krb5_ccache ccache;
 
-  memset(&my_creds, 0, sizeof(my_creds));
-  krb5_get_init_creds_opt_init(&options);
+	memset(&my_creds, 0, sizeof(my_creds));
+	krb5_get_init_creds_opt_init(&options);
 
-  retval = krb5_init_context(&kcontext);
-  if (retval)
-    return retval;
+	retval = krb5_init_context(&kcontext);
+	if (retval)
+		return retval;
 
-  retval = krb5_parse_name(kcontext, g_get_user_name (), &kprincipal);
-  if (retval)
-    return retval;
+	retval = krb5_parse_name(kcontext, g_get_user_name (), &kprincipal);
+	if (retval)
+		return retval;
 
-  retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-                                        NULL, krb5_gtk_prompter, 0,
-                                        0,
-                                        NULL,
-                                        &options);
-  if (retval)
-    {
-      if (retval == KRB5KRB_AP_ERR_BAD_INTEGRITY)
+	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
+                                              NULL, krb5_gtk_prompter, 0,
+                                              0, NULL, &options);
+	if (retval)
 	{
-	  /* Invalid password, try again. */
-	  invalid_password = TRUE;
-	  return renew_credentials();
+		if (retval == KRB5KRB_AP_ERR_BAD_INTEGRITY)
+		{
+			/* Invalid password, try again. */
+			invalid_password = TRUE;
+			return renew_credentials();
+		}
+		return retval;
 	}
-      return retval;
-    }
 
-  retval = krb5_cc_default(kcontext, &ccache);
-  if (retval)
-    return retval;
+	retval = krb5_cc_default(kcontext, &ccache);
+	if (retval)
+		return retval;
 
-  retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
-  if (retval)
-    return retval;
+	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
+	if (retval)
+		return retval;
 
-  retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
-  if (retval)
-    return retval;
+	retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
+	if (retval)
+		return retval;
 
-  return 0;
+	return 0;
 }
 
 gboolean
 using_krb5()
 {
-  const gchar *krb5ccname;
+	const gchar *krb5ccname;
 
-  gboolean success;
-  int exit_status;
-  GError *error;
+	gboolean success;
+	int exit_status;
+	GError *error;
 
-  /* See if we have a credential cache specified. */
-  krb5ccname = g_getenv("KRB5CCNAME");
-  if (krb5ccname != NULL)
-    return TRUE;
+	/* See if we have a credential cache specified. */
+	krb5ccname = g_getenv("KRB5CCNAME");
+	if (krb5ccname != NULL)
+		return TRUE;
 
-  /* Nope, let's see if we have any prior tickets. */
-  success = g_spawn_command_line_sync("klist -s",
-				      NULL, NULL,
-				      &exit_status,
-				      &error);
+	/* Nope, let's see if we have any prior tickets. */
+	success = g_spawn_command_line_sync("klist -s",
+                                            NULL, NULL,
+                                            &exit_status,
+                                            &error);
 
-  if (success == TRUE && error == NULL &&
-      WIFEXITED(exit_status) && WEXITSTATUS(exit_status) == 0)
-    return TRUE;
+	if (success == TRUE && error == NULL &&
+	    WIFEXITED(exit_status) && WEXITSTATUS(exit_status) == 0)
+		return TRUE;
 
-  return FALSE;
+	return FALSE;
 }
 
 int
 main (int argc, char *argv[])
 {
-  GtkWidget *dialog;
-  GnomeClient *client;
+	GtkWidget *dialog;
+	GnomeClient *client;
 
-  gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
-                      argc, argv, GNOME_PARAM_NONE);
+	gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
+	                    argc, argv, GNOME_PARAM_NONE);
 
-  client = gnome_master_client ();
-  gnome_client_set_restart_style (client, GNOME_RESTART_ANYWAY);
+	client = gnome_master_client ();
+	gnome_client_set_restart_style (client, GNOME_RESTART_ANYWAY);
 
-  if (using_krb5 ())
-    {
-      g_signal_connect (G_OBJECT (client), "die",
-			G_CALLBACK (gtk_main_quit), NULL);
+	if (using_krb5 ())
+	{
+		g_signal_connect (G_OBJECT (client), "die",
+		G_CALLBACK (gtk_main_quit), NULL);
 
-      xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
-      dialog = glade_xml_get_widget (xml, "krb5_dialog");
+		xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
+		dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
-      g_timeout_add (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, NULL);
-      credentials_expiring (NULL);
+		g_timeout_add (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, NULL);
+		credentials_expiring (NULL);
 
-      gtk_main ();
-    }
+		gtk_main ();
+	}
 
-  return 0;
+	return 0;
 }

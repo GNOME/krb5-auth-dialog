@@ -1,4 +1,8 @@
-2004-09-07  Christopher Aillon <caillon@redhat.com>
+2005-10-29  Christopher Aillon  <caillon@redhat.com>
+
+	* src/krb5-auth-dialog.c: Reformat using tabs instead of spaces
+
+2004-09-07  Christopher Aillon  <caillon@redhat.com>
 	* src/krb5-auth-dialog.c: Check whether we are running in a
 	kerberos environment before entering the timeout to see when
 	the tickets expire.

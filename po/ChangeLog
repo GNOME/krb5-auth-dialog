@@ -1,3 +1,7 @@
+2005-10-29  Christopher Aillon  <caillon@redhat.com>
+
+	* Makefile.in.in: this is generated, no need to live in repository
+
 2004-08-19  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* nb.po: Add this

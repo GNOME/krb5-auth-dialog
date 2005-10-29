@@ -1,5 +1,12 @@
 2005-10-29  Christopher Aillon  <caillon@redhat.com>
 
+	* configure.ac:
+	* src/Makefile.am:
+	* src/krb5-auth-dialog.c: Use libnm-glib for NetworkManager support
+	instead of the NetworkManager D-BUS API.
+
+2005-10-29  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.c: Reformat using tabs instead of spaces
 
 2004-09-07  Christopher Aillon  <caillon@redhat.com>

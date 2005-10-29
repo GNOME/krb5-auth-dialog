@@ -29,8 +29,8 @@
 #include <string.h>
 #include "config.h"
 
-#ifdef HAVE_NETWORKMANAGER
-#include <dbus/dbus.h>
+#ifdef ENABLE_NETWORK_MANAGER
+#include <libnm_glib.h>
 #endif
 
 #define CREDENTIAL_CHECK_INTERVAL 30000 /* milliseconds */
@@ -43,8 +43,8 @@ static char* defname = NULL;
 static gboolean invalid_password;
 static gint creds_expiry;
 
-
 static int renew_credentials ();
+
 
 static void
 setup_dialog (GladeXML *xml,
@@ -156,111 +156,35 @@ krb5_gtk_prompter (krb5_context ctx,
 	return errcode;
 }
 
-static gboolean
-am_online (void)
+static gboolean is_online = TRUE;
+
+#ifdef ENABLE_NETWORK_MANAGER
+static void
+network_state_cb (libnm_glib_ctx *context,
+                  gpointer data)
 {
-#ifdef HAVE_NETWORKMANAGER
-	static DBusConnection *connection = NULL;
-	DBusMessage *msg, *reply;
-	DBusError dbus_error;
-	gboolean ret;
+	gboolean *online = (gboolean*) data;
 
-	ret = TRUE;
-	dbus_error_init (&dbus_error);
-	if (connection == NULL)
+	libnm_glib_state state;
+
+	state = libnm_glib_get_network_state (context);
+
+	switch (state)
 	{
-		connection = dbus_bus_get (DBUS_BUS_SYSTEM, &dbus_error);
-		if (connection == NULL)
-		{
-			g_warning ("Couldn't connect to system bus: %s",
-			           dbus_error.message);
-			dbus_error_free (&dbus_error);
-			return ret;
-		}
-		dbus_connection_set_change_sigpipe (TRUE);
-		dbus_connection_set_exit_on_disconnect (connection, FALSE);
+		case LIBNM_NO_DBUS:
+		case LIBNM_NO_NETWORKMANAGER:
+		case LIBNM_INVALID_CONTEXT:
+			/* do nothing */
+			break;
+		case LIBNM_NO_NETWORK_CONNECTION:
+			*online = FALSE;
+			break;
+		case LIBNM_ACTIVE_NETWORK_CONNECTION:
+			*online = TRUE;
+			break;
 	}
-
-	msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
-	                                    "/org/freedesktop/NetworkManager",
-	                                    "org.freedesktop.NetworkManager",
-	                                    "getActiveDevice");
-
-	reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
-	dbus_message_unref (msg);
-
-	if (dbus_error_is_set (&dbus_error))
-	{
-		if (strcmp (dbus_error.name, "org.freedesktop.DBus.Error.ServiceDoesNotExist") == 0)
-			g_warning ("NetworkManager is not running");
-		else if (strcmp (dbus_error.name, "org.freedesktop.NetworkManager.NoActiveDevice") == 0)
-			ret = FALSE;
-		else
-			g_warning ("Unknown error %s: %s", dbus_error.name, dbus_error.message);
-
-		dbus_error_free (&dbus_error);
-	}
-	else if (reply == NULL)
-	{
-		g_warning ("no reply to org.freedesktop.NetworkManager.getActiveDevice");
-	}
-	else
-	{
-		char *active_device;
-
-		if (!dbus_message_get_args (reply, &dbus_error,
-		                            DBUS_TYPE_STRING, &active_device,
-		                            DBUS_TYPE_INVALID))
-		{
-			g_warning ("couldn't parse reply to org.freedesktop.NetworkManager.getActiveDevice");
-		}
-		else
-		{
-			msg = dbus_message_new_method_call ("org.freedesktop.NetworkManager",
-			                                     active_device,
-			                                    "org.freedesktop.NetworkManager.Devices",
-			                                    "getLinkActive");
-			reply = dbus_connection_send_with_reply_and_block (connection, msg, -1, &dbus_error);
-			dbus_message_unref (msg);
-
-			if (dbus_error_is_set (&dbus_error))
-			{
-				g_warning ("Error %s: %s", dbus_error.name, dbus_error.message);
-				dbus_error_free (&dbus_error);
-			}
-			else if (reply == NULL)
-			{
-				g_warning ("no reply to getLinkActive");
-			}
-			else
-			{
-				gboolean in_the_wired;
-
-				if (!dbus_message_get_args (reply, &dbus_error,
-				                            DBUS_TYPE_BOOLEAN, &in_the_wired,
-				                            DBUS_TYPE_INVALID))
-				{
-					g_warning ("couldn't parse reply to getActiveDevice");
-				}
-				else
-				{
-					ret = in_the_wired;
-				}
-			}
-
-			if (reply)
-			     dbus_message_unref (reply);
-		 }
-	}
-
-	if (reply)
-		dbus_message_unref (reply);
-
-	return ret;
-#else
-	return TRUE;
-#endif
 }
+#endif
 
 static gboolean
 credentials_expiring_real (void)
@@ -345,7 +269,7 @@ credentials_expiring_real (void)
 static gboolean
 credentials_expiring (gpointer *data)
 {
-	if (credentials_expiring_real () && am_online ())
+	if (credentials_expiring_real () && is_online)
 		renew_credentials ();
 
 	return TRUE;
@@ -432,6 +356,11 @@ main (int argc, char *argv[])
 	GtkWidget *dialog;
 	GnomeClient *client;
 
+#ifdef ENABLE_NETWORK_MANAGER
+	libnm_glib_ctx *nm_context;
+	guint32 nm_callback_id;	
+#endif
+
 	gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
 	                    argc, argv, GNOME_PARAM_NONE);
 
@@ -441,7 +370,24 @@ main (int argc, char *argv[])
 	if (using_krb5 ())
 	{
 		g_signal_connect (G_OBJECT (client), "die",
-		G_CALLBACK (gtk_main_quit), NULL);
+		                  G_CALLBACK (gtk_main_quit), NULL);
+
+#ifdef ENABLE_NETWORK_MANAGER
+		nm_context = libnm_glib_init ();
+		if (!nm_context)
+			g_warning ("Could not initialize libnm_glib");
+		else
+		{
+			nm_callback_id = libnm_glib_register_callback (nm_context, network_state_cb, &is_online, NULL);
+			if (nm_callback_id == 0)
+			{
+				libnm_glib_shutdown (nm_context);
+				nm_context = NULL;
+
+				g_warning ("Could not connect to NetworkManager, connection status will not be managed!\n");
+			}
+		}
+#endif /* ENABLE_NETWORK_MANAGER */
 
 		xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
 		dialog = glade_xml_get_widget (xml, "krb5_dialog");

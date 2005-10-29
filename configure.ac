@@ -41,25 +41,28 @@ if test "x$KRB5_CONFIG" != "xnone"; then
    AC_SUBST(KRB5_LIBS)
 fi
 
-AC_ARG_WITH(networkmanager, [--with-networkmanager	Use NetworkManager to detect online status], ac_networkmanager=$withval, ac_networkmanager=auto)
-if test x"$ac_networkmanager" != xno; then
-   PKG_CHECK_MODULES(NETWORKMANAGER, [ NetworkManager >= 0.2 ], have_networkmanager=yes, have_networkmanager=no)
-fi
-if test x"$ac_networkmanager" = xno; then
-   if test x"$have_networkmanager" = xyes; then
-      AC_MSG_ERROR([NetworkManager support explicitly requested but not found on system])
-   fi
-   ac_networkmanager=no
-else
-   if test x"$have_networkmanager" != xno; then
-      AC_DEFINE(HAVE_NETWORKMANAGER, 1, [Define if you have NetworkManager])
-      NETWORKMANAGER_CFLAGS="-DDBUS_API_SUBJECT_TO_CHANGE $NETWORKMANAGER_CFLAGS"
-      AC_SUBST(NETWORKMANAGER_CFLAGS)
-      AC_SUBST(NETWORKMANAGER_LIBS)
-   fi
+dnl NetworkManager
+
+AC_MSG_CHECKING([whether to enable NetworkManager support])
+AC_ARG_ENABLE([network-manager],
+	AS_HELP_STRING([--enable-network-manager],[Whether to enable automatic network status with NetworkManager]),
+	[],[enable_network_manager=autodetect])
+AC_MSG_RESULT([$enable_network_manager])
+
+if test "x$enable_network_manager" != "xno"; then
+	PKG_CHECK_MODULES([NETWORK_MANAGER],[libnm_glib >= 0.5],
+		[enable_network_manager=yes],[enable_network_manager=no])
+	AC_SUBST([NETWORK_MANAGER_CFLAGS])
+	AC_SUBST([NETWORK_MANAGER_LIBS])
 fi
 
-CFLAGS="$GNOME_CFLAGS $KRB5_CFLAGS $NETWORKMANAGER_CFLAGS $CFLAGS"
+if test "x$enable_network_manager" = "xyes"; then
+	AC_DEFINE([ENABLE_NETWORK_MANAGER],[1],[Define for NetworkManager support])
+fi
+
+AM_CONDITIONAL([ENABLE_NETWORK_MANAGER],[test "x$enable_network_manager" = "xyes"])
+
+CFLAGS="$GNOME_CFLAGS $KRB5_CFLAGS $NETWORK_MANAGER_CFLAGS $CFLAGS"
 
 AC_OUTPUT([
 Makefile

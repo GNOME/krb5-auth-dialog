@@ -1,5 +1,9 @@
 2005-10-31  Christopher Aillon  <caillon@redhat.com>
 
+	* configure.ac: Release 0.3
+
+2005-10-31  Christopher Aillon  <caillon@redhat.com>
+
 	* Makefile.am:
 	* src/Makefile.am:
 	* src/dummy-strings.c:

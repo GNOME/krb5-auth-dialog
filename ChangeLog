@@ -1,3 +1,8 @@
+2005-10-31  Christopher Aillon  <caillon@redhat.com>
+
+	* src/krb5-auth-dialog.c: The dialog shouldn't have two labels
+	reading 'Password:' so make the primary one have better text.
+
 2005-10-29  Christopher Aillon  <caillon@redhat.com>
 
 	* configure.ac:

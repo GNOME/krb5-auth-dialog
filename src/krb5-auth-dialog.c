@@ -49,24 +49,35 @@ static int renew_credentials ();
 static void
 setup_dialog (GladeXML *xml,
               GtkWidget *dialog,
-              const gchar *prompt)
+              const gchar *krb5prompt)
 {
 	GtkWidget *entry;
 	GtkWidget *label;
 	GtkWidget *wrong_label;
 	gchar *wrong_text;
 	gchar *wrong_markup;
+	gchar *prompt;
+	int pw4len;
 
-	if (prompt == NULL)
-		prompt = _("Password:");
-	/* Kerberos's prompts are a mess, and basically impossible to
-	 * translate.  There's basically no way short of doing a lot of
-	 * string parsing to translate them.  The most common prompt is
-	 * "Password for $uid:".  We special case that one at least.  We
-	 * cannot do any of the fancier strings (like challenges),
-	 * though. */
-	if (strncmp (prompt, "Password for ", strlen ("Password for ")) == 0)
-		prompt = _("Password:");
+	if (krb5prompt == NULL)
+		prompt = g_strdup (_("Please enter your Kerberos password."));
+	else
+	{
+		/* Kerberos's prompts are a mess, and basically impossible to
+		 * translate.  There's basically no way short of doing a lot of
+		 * string parsing to translate them.  The most common prompt is
+		 * "Password for $uid:".  We special case that one at least.  We
+		 * cannot do any of the fancier strings (like challenges),
+		 * though. */
+		pw4len = strlen ("Password for ");
+		if (strncmp (krb5prompt, "Password for ", pw4len) == 0)
+		{
+			gchar *uid = (gchar *) (krb5prompt + pw4len);
+			prompt = g_strdup_printf (_("Please enter the Kerberos password for '%s'"), uid);
+		}
+		else
+			prompt = g_strdup (krb5prompt);
+	}
 
 	/* Clear the password entry field */
 	entry = glade_xml_get_widget (xml, "krb5_entry");
@@ -99,6 +110,8 @@ setup_dialog (GladeXML *xml,
 	}
 	else
 		gtk_label_set_text (GTK_LABEL (wrong_label), "");
+
+	g_free (prompt);
 }
 
 static krb5_error_code

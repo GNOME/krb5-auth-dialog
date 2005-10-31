@@ -46,6 +46,31 @@ static gint creds_expiry;
 static int renew_credentials ();
 
 
+static gboolean
+krb5_auth_dialog_wrong_label_update_expiry (gpointer data)
+{
+	GtkWidget *label = GTK_WIDGET(data);
+	int minutes_left;
+	gchar *expiry_text;
+	gchar *expiry_markup;
+
+	g_return_val_if_fail (label != NULL, FALSE);
+
+	minutes_left = (creds_expiry - time(0)) / 60;
+
+	if (minutes_left > 0)
+		expiry_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
+	else
+		expiry_text = g_strdup (_("Your credentials have expired"));
+
+	expiry_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", expiry_text);
+	gtk_label_set_markup (GTK_LABEL (label), expiry_markup);
+	g_free (expiry_text);
+	g_free (expiry_markup);
+
+	return TRUE;
+}
+
 static void
 krb5_auth_dialog_setup (GtkWidget *dialog,
                         const gchar *krb5prompt)
@@ -87,20 +112,25 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 	gtk_label_set_text (GTK_LABEL (label), prompt);
 
 	/* Add our extra message hints, if any */
-	if (invalid_password)
-		wrong_text = g_strdup (_("The password you entered is invalid"));
-	else
-	{
-		int minutes_left = (creds_expiry - time(0)) / 60;
-		if (minutes_left > 0)
-			wrong_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
-		else
-			wrong_text = g_strdup (_("Your credentials have expired"));
-	}
-
 	wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
 
-	if (wrong_label && wrong_text != NULL)
+	if (wrong_label)
+	{
+		if (invalid_password)
+			wrong_text = g_strdup (_("The password you entered is invalid"));
+		else
+		{
+			int minutes_left = (creds_expiry - time(0)) / 60;
+			if (minutes_left > 0)
+			{
+				wrong_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
+			}
+			else
+				wrong_text = g_strdup (_("Your credentials have expired"));
+		}
+	}
+
+	if (wrong_text)
 	{
 		wrong_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", wrong_text);
 		gtk_label_set_markup (GTK_LABEL (wrong_label), wrong_markup);
@@ -122,6 +152,7 @@ krb5_gtk_prompter (krb5_context ctx,
                    krb5_prompt prompts[])
 {
 	GtkWidget *dialog;
+	GtkWidget *wrong_label;
 	krb5_error_code errcode;
 	int i;
 
@@ -134,6 +165,7 @@ krb5_gtk_prompter (krb5_context ctx,
 		const gchar *password = NULL;
 		int password_len = 0;
 		int response;
+		guint32 source_id = 0;
 
 		GtkWidget *entry;
 
@@ -141,6 +173,10 @@ krb5_gtk_prompter (krb5_context ctx,
 
 		entry = glade_xml_get_widget(xml, "krb5_entry");
 		krb5_auth_dialog_setup (dialog, (gchar *) prompts[i].prompt);
+
+		wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
+		source_id = g_timeout_add (5000, (GSourceFunc)krb5_auth_dialog_wrong_label_update_expiry,
+		                           wrong_label);
 
 		response = gtk_dialog_run (GTK_DIALOG (dialog));
 		switch (response)
@@ -156,6 +192,8 @@ krb5_gtk_prompter (krb5_context ctx,
 			default:
 				g_assert_not_reached ();
 		}
+
+		g_source_remove (source_id);
 
 		prompts[i].reply->data = (char *) password;
 		prompts[i].reply->length = password_len;
@@ -404,8 +442,8 @@ main (int argc, char *argv[])
 		xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
 		dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
-		g_timeout_add (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, NULL);
-		credentials_expiring (NULL);
+		if (credentials_expiring (NULL))
+			g_timeout_add (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, NULL);
 
 		gtk_main ();
 	}

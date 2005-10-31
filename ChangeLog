@@ -1,5 +1,9 @@
 2005-10-31  Christopher Aillon  <caillon@redhat.com>
 
+	* src/krb5-auth-dialog.c: Update the credentials expiry time
+
+2005-10-31  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.c: No need to pass around our GladeXML
 	since its a static global
 

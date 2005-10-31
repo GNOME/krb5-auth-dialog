@@ -1,5 +1,11 @@
 2005-10-31  Christopher Aillon  <caillon@redhat.com>
 
+	* src/krb5-auth-dialog.c: Fix test to determine whether we
+	are using krb5 using new get_tgt_from_ccache () function
+	from Nalin Dahyabhai <nalin@redhat.com>
+
+2005-10-31  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.c: Set the application name.
 	Also, say less 'kerberos' in user visible text.
 

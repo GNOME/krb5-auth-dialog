@@ -374,30 +374,66 @@ renew_credentials (void)
 }
 
 gboolean
+get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
+{
+	krb5_ccache ccache;
+	krb5_cc_cursor cursor;
+	krb5_creds mcreds;
+	krb5_principal principal, tgt_principal;
+	gboolean ret;
+
+	memset(&ccache, 0, sizeof(ccache));
+	ret = FALSE;
+	if (krb5_cc_default(context, &ccache) == 0)
+	{
+		memset(&principal, 0, sizeof(principal));
+		if (krb5_cc_get_principal(context, ccache, &principal) == 0)
+		{
+			memset(&tgt_principal, 0, sizeof(tgt_principal));
+			if (krb5_build_principal_ext(context, &tgt_principal,
+			                             principal->realm.length,
+			                             principal->realm.data,
+			                             KRB5_TGS_NAME_SIZE,
+			                             KRB5_TGS_NAME,
+			                             principal->realm.length,
+			                             principal->realm.data,
+			                             0) == 0) {
+				memset(creds, 0, sizeof(*creds));
+				memset(&mcreds, 0, sizeof(mcreds));
+				mcreds.client = principal;
+				mcreds.server = tgt_principal;
+				if (krb5_cc_retrieve_cred(context, ccache,
+				                          0,
+				                          &mcreds,
+				                          creds) == 0)
+				{
+					ret = TRUE;
+				} else {
+					memset(creds, 0, sizeof(*creds));
+				}
+				krb5_free_principal(context, tgt_principal);
+			}
+			krb5_free_principal(context, principal);
+		}
+		krb5_cc_close(context, ccache);
+	}
+	return ret;
+}
+
+gboolean
 using_krb5()
 {
-	const gchar *krb5ccname;
+	krb5_error_code err;
+	gboolean have_tgt = FALSE;
+	krb5_creds creds;
 
-	gboolean success;
-	int exit_status;
-	GError *error;
-
-	/* See if we have a credential cache specified. */
-	krb5ccname = g_getenv("KRB5CCNAME");
-	if (krb5ccname != NULL)
+	err = krb5_init_context(&kcontext);
+	if (err)
 		return TRUE;
 
-	/* Nope, let's see if we have any prior tickets. */
-	success = g_spawn_command_line_sync("klist -s",
-                                            NULL, NULL,
-                                            &exit_status,
-                                            &error);
+	have_tgt = get_tgt_from_ccache(kcontext, &creds);
 
-	if (success == TRUE && error == NULL &&
-	    WIFEXITED(exit_status) && WEXITSTATUS(exit_status) == 0)
-		return TRUE;
-
-	return FALSE;
+	return have_tgt;
 }
 
 int

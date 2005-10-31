@@ -6,7 +6,10 @@
  * error message [60-254]").  It is expected that not all these
  * messages are translated.
  */
-const char *dummy = {
+
+#include <glib/gi18n.h>
+
+const char *dummy[] = {
 	N_("Can't read ticket file"),	/* test1.et:krb:KRB_MK_AP_TKFIL */
 	N_("Can't find ticket or TGT"),	/* test1.et:krb:KRB_MK_AP_NOTKT */
 	N_("TGT expired"),	/* test1.et:krb:KRB_MK_AP_TGTEXP */
@@ -642,4 +645,5 @@ security administrator."),	/* chpass_util_strings.et:ovku:CHPASS_UTIL_PASSWORD_T
 	N_("Token is missing data"),	/* gssapi_err_generic.et:ggss:G_TOK_TRUNC */
 	N_("Token was reflected"),	/* gssapi_err_generic.et:ggss:G_REFLECT */
 	N_("Received token ID does not match expected token ID"),	/* gssapi_err_generic.et:ggss:G_WRONG_TOKID */
+	NULL
 };

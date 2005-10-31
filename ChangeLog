@@ -1,5 +1,12 @@
 2005-10-31  Christopher Aillon  <caillon@redhat.com>
 
+	* Makefile.am:
+	* src/Makefile.am:
+	* src/dummy-strings.c:
+	Make `make distcheck` happy
+
+2005-10-31  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.c: Memleak fixes
 	Also, respect the hidden field of krb5_prompt
 

@@ -97,7 +97,7 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 		if (strncmp (krb5prompt, "Password for ", pw4len) == 0)
 		{
 			gchar *uid = (gchar *) (krb5prompt + pw4len);
-			prompt = g_strdup_printf (_("Please enter the Kerberos password for '%s'"), uid);
+			prompt = g_strdup_printf (_("Please enter the password for '%s'"), uid);
 		}
 		else
 			prompt = g_strdup (krb5prompt);
@@ -421,6 +421,8 @@ main (int argc, char *argv[])
 	{
 		g_signal_connect (G_OBJECT (client), "die",
 		                  G_CALLBACK (gtk_main_quit), NULL);
+
+		g_set_application_name (_("Network Authentication"));
 
 #ifdef ENABLE_NETWORK_MANAGER
 		nm_context = libnm_glib_init ();

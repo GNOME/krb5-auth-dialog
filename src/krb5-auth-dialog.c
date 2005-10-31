@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004 Red Hat, Inc.
+ * Copyright (C) 2004,2005 Red Hat, Inc.
  * Authored by Christopher Aillon <caillon@redhat.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -73,7 +73,8 @@ krb5_auth_dialog_wrong_label_update_expiry (gpointer data)
 
 static void
 krb5_auth_dialog_setup (GtkWidget *dialog,
-                        const gchar *krb5prompt)
+                        const gchar *krb5prompt,
+                        gboolean hide_password)
 {
 	GtkWidget *entry;
 	GtkWidget *label;
@@ -106,6 +107,7 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 	/* Clear the password entry field */
 	entry = glade_xml_get_widget (xml, "krb5_entry");
 	gtk_entry_set_text (GTK_ENTRY (entry), "");
+	gtk_entry_set_visibility (GTK_ENTRY (entry), !hide_password);
 
 	/* Use the prompt label that krb5 provides us */
 	label = glade_xml_get_widget (xml, "krb5_message_label");
@@ -172,7 +174,7 @@ krb5_gtk_prompter (krb5_context ctx,
 		errcode = KRB5_LIBOS_CANTREADPWD;
 
 		entry = glade_xml_get_widget(xml, "krb5_entry");
-		krb5_auth_dialog_setup (dialog, (gchar *) prompts[i].prompt);
+		krb5_auth_dialog_setup (dialog, (gchar *) prompts[i].prompt, prompts[i].hidden);
 
 		wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
 		source_id = g_timeout_add (5000, (GSourceFunc)krb5_auth_dialog_wrong_label_update_expiry,
@@ -252,10 +254,6 @@ credentials_expiring_real (void)
 
 	memset (&my_creds, 0, sizeof(my_creds));
 
-	code = krb5_init_context (&kcontext);
-	if (code)
-		return FALSE;
-
 	if ((code = krb5_cc_default(kcontext, &cache)))
 		return FALSE;
 
@@ -306,12 +304,14 @@ credentials_expiring_real (void)
 			do_v4_ccache(0);
 #endif
 		if (exit_status)
-		gtk_exit(exit_status);
+			gtk_exit(exit_status);
 	}
 	else
 	{
 		gtk_exit(1);
 	}
+
+	krb5_cc_close(kcontext, cache);
 
 	return retval;
 }
@@ -329,16 +329,8 @@ static int
 renew_credentials (void)
 {
 	krb5_error_code retval;
-	krb5_get_init_creds_opt options;
 	krb5_creds my_creds;
 	krb5_ccache ccache;
-
-	memset(&my_creds, 0, sizeof(my_creds));
-	krb5_get_init_creds_opt_init(&options);
-
-	retval = krb5_init_context(&kcontext);
-	if (retval)
-		return retval;
 
 	retval = krb5_parse_name(kcontext, g_get_user_name (), &kprincipal);
 	if (retval)
@@ -346,7 +338,7 @@ renew_credentials (void)
 
 	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
                                               NULL, krb5_gtk_prompter, 0,
-                                              0, NULL, &options);
+                                              0, NULL, NULL);
 	if (retval)
 	{
 		if (retval == KRB5KRB_AP_ERR_BAD_INTEGRITY)
@@ -364,13 +356,18 @@ renew_credentials (void)
 
 	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
 	if (retval)
-		return retval;
+		goto out;
 
 	retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
 	if (retval)
-		return retval;
+		goto out;
 
-	return 0;
+out:
+	krb5_cc_close (kcontext, ccache);
+	if (kprincipal)
+		krb5_free_principal (kcontext, kprincipal);
+
+	return retval;
 }
 
 gboolean
@@ -432,6 +429,8 @@ using_krb5()
 		return TRUE;
 
 	have_tgt = get_tgt_from_ccache(kcontext, &creds);
+	if (have_tgt)
+		krb5_free_cred_contents (kcontext, &creds);
 
 	return have_tgt;
 }

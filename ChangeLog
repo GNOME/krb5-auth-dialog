@@ -1,5 +1,10 @@
 2005-10-31  Christopher Aillon  <caillon@redhat.com>
 
+	* src/krb5-auth-dialog.c: Memleak fixes
+	Also, respect the hidden field of krb5_prompt
+
+2005-10-31  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.c: Fix test to determine whether we
 	are using krb5 using new get_tgt_from_ccache () function
 	from Nalin Dahyabhai <nalin@redhat.com>

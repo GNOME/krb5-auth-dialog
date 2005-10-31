@@ -47,9 +47,8 @@ static int renew_credentials ();
 
 
 static void
-setup_dialog (GladeXML *xml,
-              GtkWidget *dialog,
-              const gchar *krb5prompt)
+krb5_auth_dialog_setup (GtkWidget *dialog,
+                        const gchar *krb5prompt)
 {
 	GtkWidget *entry;
 	GtkWidget *label;
@@ -141,7 +140,7 @@ krb5_gtk_prompter (krb5_context ctx,
 		errcode = KRB5_LIBOS_CANTREADPWD;
 
 		entry = glade_xml_get_widget(xml, "krb5_entry");
-		setup_dialog(xml, dialog, (gchar *) prompts[i].prompt);
+		krb5_auth_dialog_setup (dialog, (gchar *) prompts[i].prompt);
 
 		response = gtk_dialog_run (GTK_DIALOG (dialog));
 		switch (response)

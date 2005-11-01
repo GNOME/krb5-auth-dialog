@@ -1,5 +1,9 @@
 2005-11-01  Christopher Aillon  <caillon@redhat.com>
 
+	* configure.ac: Release 0.4
+
+2005-11-01  Christopher Aillon  <caillon@redhat.com>
+
 	* Makefile.am:
 	* krb5-auth-dialog.spec.in:
 	* src/krb5-auth-dialog.c

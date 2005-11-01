@@ -39,11 +39,12 @@
 static GladeXML *xml = NULL;
 static krb5_context kcontext;
 static krb5_principal kprincipal;
-static char* defname = NULL;
 static gboolean invalid_password;
+static gboolean always_run;
 static gint creds_expiry;
 
 static int renew_credentials ();
+static gboolean get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
 
 
 static gboolean
@@ -115,6 +116,7 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 
 	/* Add our extra message hints, if any */
 	wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
+	wrong_text = NULL;
 
 	if (wrong_label)
 	{
@@ -124,9 +126,7 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 		{
 			int minutes_left = (creds_expiry - time(0)) / 60;
 			if (minutes_left > 0)
-			{
 				wrong_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
-			}
 			else
 				wrong_text = g_strdup (_("Your credentials have expired"));
 		}
@@ -241,77 +241,23 @@ network_state_cb (libnm_glib_ctx *context,
 static gboolean
 credentials_expiring_real (void)
 {
-	krb5_ccache cache = NULL;
-	krb5_cc_cursor cur;
 	krb5_creds my_creds;
-	krb5_principal princ;
-	krb5_flags flags;
-	krb5_error_code code;
-	int exit_status = 0;
-	int expiry;
-
 	gboolean retval = FALSE;
 
-	memset (&my_creds, 0, sizeof(my_creds));
-
-	if ((code = krb5_cc_default(kcontext, &cache)))
-		return FALSE;
-
-	flags = 0;								/* turns off OPENCLOSE mode */
-	if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
-	{
-		if (code == KRB5_FCC_NOFILE)
-		{
-#ifdef KRB5_KRB4_COMPAT
-			if (name == NULL)
-				do_v4_ccache(0);
-#endif
-		}
-		gtk_exit(1);
+	if (!get_tgt_from_ccache (kcontext, &my_creds)) {
+		creds_expiry = 0;
+		return TRUE;
 	}
 
-	if ((code = krb5_cc_get_principal(kcontext, cache, &princ)))
-		gtk_exit(1);
-
-	if ((code = krb5_unparse_name(kcontext, princ, &defname)))
-		gtk_exit(1);
-
-	if ((code = krb5_cc_start_seq_get(kcontext, cache, &cur)))
-		gtk_exit(1);
-
-	while (!(code = krb5_cc_next_cred(kcontext, cache, &cur, &my_creds)))
-	{
-		if (my_creds.times.endtime - time(0) < SECONDS_BEFORE_PROMPTING)
-		{
-			retval = TRUE;
-			creds_expiry = my_creds.times.endtime;
-		}
-
-		krb5_free_cred_contents(kcontext, &my_creds);
+	if (krb5_principal_compare (kcontext, my_creds.client, kprincipal)) {
+		krb5_free_principal(kcontext, kprincipal);
+		krb5_copy_principal(kcontext, my_creds.client, &kprincipal);
 	}
+	creds_expiry = my_creds.times.endtime;
+	if (time(NULL) + SECONDS_BEFORE_PROMPTING > my_creds.times.endtime)
+		retval = TRUE;
 
-	if (code == KRB5_CC_END)
-	{
-		if ((code = krb5_cc_end_seq_get(kcontext, cache, &cur)))
-			exit(1);
-#ifndef HEIMDAL
-		flags = KRB5_TC_OPENCLOSE;	/* turns on OPENCLOSE mode, from klist.c */
-#endif
-		if ((code = krb5_cc_set_flags(kcontext, cache, flags)))
-			gtk_exit(1);
-#ifdef KRB5_KRB4_COMPAT
-		if (name == NULL && !status_only)
-			do_v4_ccache(0);
-#endif
-		if (exit_status)
-			gtk_exit(exit_status);
-	}
-	else
-	{
-		gtk_exit(1);
-	}
-
-	krb5_cc_close(kcontext, cache);
+	krb5_free_cred_contents(kcontext, &my_creds);
 
 	return retval;
 }
@@ -325,27 +271,74 @@ credentials_expiring (gpointer *data)
 	return TRUE;
 }
 
+static void
+set_options_using_creds(krb5_context context,
+			krb5_creds *creds,
+			krb5_get_init_creds_opt *opts)
+{
+	krb5_deltat renew_lifetime;
+	int flag;
+
+	flag = (creds->ticket_flags & TKT_FLG_FORWARDABLE) != 0;
+	krb5_get_init_creds_opt_set_forwardable(opts, flag);
+	flag = (creds->ticket_flags & TKT_FLG_PROXIABLE) != 0;
+	krb5_get_init_creds_opt_set_proxiable(opts, flag);
+	flag = (creds->ticket_flags & TKT_FLG_RENEWABLE) != 0;
+	if (flag && (creds->times.renew_till > creds->times.starttime)) {
+		renew_lifetime = creds->times.renew_till -
+				 creds->times.starttime;
+		krb5_get_init_creds_opt_set_renew_life(opts,
+						       renew_lifetime);
+	}
+	if (creds->times.endtime >
+	    creds->times.starttime + CREDENTIAL_CHECK_INTERVAL) {
+		krb5_get_init_creds_opt_set_tkt_life(opts,
+					 	     creds->times.endtime -
+						     creds->times.starttime);
+	}
+	/* This doesn't do a deep copy -- fix it later. */
+	/* krb5_get_init_creds_opt_set_address_list(opts, creds->addresses); */
+}
+
 static int
 renew_credentials (void)
 {
 	krb5_error_code retval;
 	krb5_creds my_creds;
 	krb5_ccache ccache;
+	krb5_get_init_creds_opt opts;
 
-	retval = krb5_parse_name(kcontext, g_get_user_name (), &kprincipal);
-	if (retval)
-		return retval;
+	if (kprincipal == NULL) {
+		retval = krb5_parse_name(kcontext, g_get_user_name (),
+					 &kprincipal);
+		if (retval) {
+			return retval;
+		}
+	}
+
+	krb5_get_init_creds_opt_init(&opts);
+	if (get_tgt_from_ccache (kcontext, &my_creds))
+	{
+		set_options_using_creds(kcontext, &my_creds, &opts);
+		creds_expiry = my_creds.times.endtime;
+		krb5_free_cred_contents(kcontext, &my_creds);
+	} else {
+		creds_expiry = 0;
+	}
 
 	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
                                               NULL, krb5_gtk_prompter, 0,
-                                              0, NULL, NULL);
+                                              0, NULL, &opts);
 	if (retval)
 	{
-		if (retval == KRB5KRB_AP_ERR_BAD_INTEGRITY)
-		{
-			/* Invalid password, try again. */
-			invalid_password = TRUE;
-			return renew_credentials();
+		switch (retval) {
+			case KRB5KDC_ERR_PREAUTH_FAILED:
+			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
+				/* Invalid password, try again. */
+				invalid_password = TRUE;
+				return renew_credentials();
+			default:
+				break;
 		}
 		return retval;
 	}
@@ -362,19 +355,18 @@ renew_credentials (void)
 	if (retval)
 		goto out;
 
+	creds_expiry = my_creds.times.endtime;
+
 out:
 	krb5_cc_close (kcontext, ccache);
-	if (kprincipal)
-		krb5_free_principal (kcontext, kprincipal);
 
 	return retval;
 }
 
-gboolean
+static gboolean
 get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 {
 	krb5_ccache ccache;
-	krb5_cc_cursor cursor;
 	krb5_creds mcreds;
 	krb5_principal principal, tgt_principal;
 	gboolean ret;
@@ -417,7 +409,7 @@ get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 	return ret;
 }
 
-gboolean
+static gboolean
 using_krb5()
 {
 	krb5_error_code err;
@@ -429,8 +421,10 @@ using_krb5()
 		return TRUE;
 
 	have_tgt = get_tgt_from_ccache(kcontext, &creds);
-	if (have_tgt)
+	if (have_tgt) {
+		krb5_copy_principal(kcontext, creds.client, &kprincipal);
 		krb5_free_cred_contents (kcontext, &creds);
+	}
 
 	return have_tgt;
 }
@@ -440,6 +434,14 @@ main (int argc, char *argv[])
 {
 	GtkWidget *dialog;
 	GnomeClient *client;
+	int run_auto = 0, run_always = 0;
+	struct poptOption options[] = {
+		{"auto", 'a', 0, &run_auto, 0,
+		 "Only run if an initialized ccache is found (default)", NULL},
+		{"always", 'A', 0, &run_always, 0,
+		 "Always run", NULL},
+		{NULL},
+	};
 
 #ifdef ENABLE_NETWORK_MANAGER
 	libnm_glib_ctx *nm_context;
@@ -447,12 +449,15 @@ main (int argc, char *argv[])
 #endif
 
 	gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
-	                    argc, argv, GNOME_PARAM_NONE);
+	                    argc, argv, GNOME_PARAM_POPT_TABLE, options,
+			    GNOME_PARAM_NONE);
 
 	client = gnome_master_client ();
 	gnome_client_set_restart_style (client, GNOME_RESTART_ANYWAY);
 
-	if (using_krb5 ())
+	if (run_always && !run_auto)
+		always_run++;
+	if (using_krb5 () || always_run)
 	{
 		g_signal_connect (G_OBJECT (client), "die",
 		                  G_CALLBACK (gtk_main_quit), NULL);

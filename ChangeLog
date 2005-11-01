@@ -1,3 +1,25 @@
+2005-11-01  Christopher Aillon  <caillon@redhat.com>
+
+	* Makefile.am:
+	* krb5-auth-dialog.spec.in:
+	* src/krb5-auth-dialog.c
+	Patch from Nalin Dahyabhai <nalin@redhat.com>
+	- Fix the .spec file so that it doesn't choke due to
+	translations.
+	- Include the .spec file in the dist tarball so that
+	'rpmbuild -ts' will work.
+	- Correct a compiler warning.
+	- Set forwardable/proxiable/lifetime from the current ccache,
+	if there is one.
+	- Add a "--always" flag to let us pinch-hit for 'kinit'.
+	- Add a "--auto" flag to override it.
+	- Interpret a preauthentication failure as a bad password.
+	- If we already have a ccache, use its default principal as our 
+	default, in case it differs from the local user name.  If the 
+	default principal changes out from under us, pick it up, too.
+	- Don't give a bogus lifetime if the ccache is deleted between 
+	checks.
+
 2005-10-31  Christopher Aillon  <caillon@redhat.com>
 
 	* configure.ac: Release 0.3

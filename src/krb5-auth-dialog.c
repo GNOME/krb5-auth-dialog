@@ -271,6 +271,66 @@ credentials_expiring (gpointer *data)
 	return TRUE;
 }
 
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(HAVE_DECL_TKT_FLG_FORWARDABLE)
+static int
+get_cred_forwardable(krb5_creds *creds)
+{
+	return creds->ticket_flags & TKT_FLG_FORWARDABLE;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS_B_FORWARDABLE)
+static int
+get_cred_forwardable(krb5_creds *creds)
+{
+	return creds->flags.b.forwardable;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(HAVE_DECL_KDC_OPT_FORWARDABLE)
+static int
+get_cred_forwardable(krb5_creds *creds)
+{
+	return creds->flags & KDC_OPT_FORWARDABLE;
+}
+#endif
+
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(HAVE_DECL_TKT_FLG_RENEWABLE)
+static int
+get_cred_renewable(krb5_creds *creds)
+{
+	return creds->ticket_flags & TKT_FLG_RENEWABLE;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS_B_RENEWABLE)
+static int
+get_cred_renewable(krb5_creds *creds)
+{
+	return creds->flags.b.renewable;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(HAVE_DECL_KDC_OPT_RENEWABLE)
+static int
+get_cred_renewable(krb5_creds *creds)
+{
+	return creds->flags & KDC_OPT_RENEWABLE;
+}
+#endif
+
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(HAVE_DECL_TKT_FLG_PROXIABLE)
+static int
+get_cred_proxiable(krb5_creds *creds)
+{
+	return creds->ticket_flags & TKT_FLG_PROXIABLE;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS_B_PROXIABLE)
+static int
+get_cred_proxiable(krb5_creds *creds)
+{
+	return creds->flags.b.proxiable;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(HAVE_DECL_KDC_OPT_PROXIABLE)
+static int
+get_cred_proxiable(krb5_creds *creds)
+{
+	return creds->flags & KDC_OPT_PROXIABLE;
+}
+#endif
+
 static void
 set_options_using_creds(krb5_context context,
 			krb5_creds *creds,
@@ -279,11 +339,11 @@ set_options_using_creds(krb5_context context,
 	krb5_deltat renew_lifetime;
 	int flag;
 
-	flag = (creds->ticket_flags & TKT_FLG_FORWARDABLE) != 0;
+	flag = get_cred_forwardable(creds) != 0;
 	krb5_get_init_creds_opt_set_forwardable(opts, flag);
-	flag = (creds->ticket_flags & TKT_FLG_PROXIABLE) != 0;
+	flag = get_cred_proxiable(creds) != 0;
 	krb5_get_init_creds_opt_set_proxiable(opts, flag);
-	flag = (creds->ticket_flags & TKT_FLG_RENEWABLE) != 0;
+	flag = get_cred_renewable(creds) != 0;
 	if (flag && (creds->times.renew_till > creds->times.starttime)) {
 		renew_lifetime = creds->times.renew_till -
 				 creds->times.starttime;
@@ -363,6 +423,30 @@ out:
 	return retval;
 }
 
+#if defined(HAVE_KRB5_PRINCIPAL_REALM_AS_STRING)
+static size_t
+get_principal_realm_length(krb5_principal p)
+{
+	return strlen(p->realm);
+}
+static const char *
+get_principal_realm_data(krb5_principal p)
+{
+	return p->realm;
+}
+#elif defined(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA)
+static size_t
+get_principal_realm_length(krb5_principal p)
+{
+	return p->realm.length;
+}
+static const char *
+get_principal_realm_data(krb5_principal p)
+{
+	return p->realm.data;
+}
+#endif
+
 static gboolean
 get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 {
@@ -380,12 +464,12 @@ get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 		{
 			memset(&tgt_principal, 0, sizeof(tgt_principal));
 			if (krb5_build_principal_ext(context, &tgt_principal,
-			                             principal->realm.length,
-			                             principal->realm.data,
+			                             get_principal_realm_length(principal),
+			                             get_principal_realm_data(principal),
 			                             KRB5_TGS_NAME_SIZE,
 			                             KRB5_TGS_NAME,
-			                             principal->realm.length,
-			                             principal->realm.data,
+			                             get_principal_realm_length(principal),
+			                             get_principal_realm_data(principal),
 			                             0) == 0) {
 				memset(creds, 0, sizeof(*creds));
 				memset(&mcreds, 0, sizeof(mcreds));

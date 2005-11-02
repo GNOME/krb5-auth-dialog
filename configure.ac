@@ -28,11 +28,6 @@ PKG_CHECK_MODULES(GNOME,
 	libgnomeui-2.0 >= 2.4.0
 ])
 
-AC_ARG_WITH(heimdal, [ --with-heimdal ], with_heimdal="$withval", with_heimdal="no" )
-if test "x$with_heimdal" != "xno"; then
-	AC_DEFINE_UNQUOTED(HEIMDAL, "", "")
-fi
-
 AC_PATH_PROG([KRB5_CONFIG], krb5-config, none, $PATH:/usr/kerberos/bin)
 if test "x$KRB5_CONFIG" != "xnone"; then
    KRB5_LIBS="`${KRB5_CONFIG} --libs krb5`"
@@ -40,6 +35,46 @@ if test "x$KRB5_CONFIG" != "xnone"; then
    AC_SUBST(KRB5_CFLAGS)
    AC_SUBST(KRB5_LIBS)
 fi
+
+dnl Check for API differences between Heimdal and MIT Kerberos
+savedCFLAGS="$CFLAGS"
+CFLAGS="$KRB5_CFLAGS $CFLAGS"
+AC_CHECK_MEMBERS(krb5_creds.ticket_flags,,,[#include <krb5.h>])
+AC_CHECK_MEMBERS(krb5_creds.flags.b.forwardable,,,[#include <krb5.h>])
+AC_CHECK_MEMBERS(krb5_creds.flags.b.renewable,,,[#include <krb5.h>])
+AC_CHECK_MEMBERS(krb5_creds.flags.b.proxiable,,,[#include <krb5.h>])
+AC_CHECK_MEMBERS(krb5_creds.flags,,,[#include <krb5.h>])
+AC_CHECK_DECLS([KDC_OPT_FORWARDABLE,KDC_OPT_RENEWABLE,KDC_OPT_PROXIABLE])
+AC_CHECK_DECLS([TKT_FLG_FORWARDABLE,TKT_FLG_RENEWABLE,TKT_FLG_PROXIABLE])
+AC_MSG_CHECKING(if a krb5_principal->realm is a char*)
+AC_COMPILE_IFELSE([
+$ac_includes_default
+#include <krb5.h>
+#include <string.h>
+int
+main(int argc, char **argv)
+{
+	static krb5_principal foo;
+	return strlen(foo->realm);
+}],[AC_DEFINE(HAVE_KRB5_PRINCIPAL_REALM_AS_STRING,1,[Define if the realm of a krb5_principal is a char*])
+AC_MSG_RESULT(yes)],
+AC_MSG_RESULT(no))
+
+AC_MSG_CHECKING(if a krb5_principal->realm is a krb5_data)
+AC_COMPILE_IFELSE([
+$ac_includes_default
+#include <krb5.h>
+int
+main(int argc, char **argv)
+{
+	static krb5_principal foo;
+	static krb5_data bar;
+	foo->realm = bar;
+	return 0;
+}],[AC_DEFINE(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA,1,[Define if the realm of a krb5_principal is a krb5_data])
+AC_MSG_RESULT(yes)],
+AC_MSG_RESULT(no))
+CFLAGS="$savedCFLAGS"
 
 dnl NetworkManager
 

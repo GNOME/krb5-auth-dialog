@@ -1,3 +1,10 @@
+2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
+
+	* configure.ac: test for differences between the Heimdal and MIT
+	Kerberos APIs
+	* src/krb5-auth-dialog.c: abstract out differences in how credential
+	flags and realm names are stored.
+
 2005-11-01  Christopher Aillon  <caillon@redhat.com>
 
 	* configure.ac: Release 0.4

@@ -1,5 +1,9 @@
 2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
 
+	* src/krb5-auth-dialog.1.in: add a man page.
+
+2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
+
 	* configure.ac,src/krb5-auth-dialog.c: make the minimum acceptable
 	lifetime for new credentials the minimum that would force us to take
 	action, not the amount of time we wait in between checks.  Let the

@@ -2,6 +2,7 @@ INCLUDES =				\
 	-DGLADEDIR=\""$(datadir)/krb5-auth-dialog/"\"
 
 bin_PROGRAMS = krb5-auth-dialog
+man_MANS = krb5-auth-dialog.1
 
 krb5_auth_dialog_SOURCES =	\
 	krb5-auth-dialog.c      \
@@ -14,5 +15,6 @@ glade_DATA =			\
 	krb5-auth-dialog.glade
 
 EXTRA_DIST =		\
-	$(glade_DATA)
+	$(glade_DATA)   \
+	krb5-auth-dialog.1.in
 

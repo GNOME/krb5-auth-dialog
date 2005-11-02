@@ -1,0 +1,37 @@
+.TH krb5-auth-dialog 2005/11/02 "GNOME" "System Administrator's Manual"
+
+.SH NAME
+krb5-auth-dialog \- Kerberos 5 credential checking
+
+.SH SYNOPSIS
+.B krb5-auth-dialog [--always|--auto]
+
+.SH DESCRIPTION
+The krb5-auth-dialog application will periodically check (every
+@check_interval@ seconds) if the user has Kerberos credentials, and if so, if
+they will expire soon (in less than @minimum_lifetime@ minutes).  If it
+determines that this is the case, krb5-auth-dialog will attempt to obtain fresh
+credentials, prompting the user for whatever information is necessary.
+
+.SH ARGUMENTS
+
+.IP --always
+By default, krb5-auth-dialog will exit if it finds that the user has no
+Kerberos credentials.  If this option is specified, then it will instead
+attempt to get credentials.
+
+.IP --auto
+Overrides the --always option, restoring the default behavior.
+
+.SH "SEE ALSO"
+.BR krb5.conf (5)
+
+.SH BUGS
+Probably, but let's hope not.  If you find any, please file them in the
+bug database at http://bugzilla.gnome.org/ against the
+"krb5-auth-dialog" component.
+
+.SH AUTHORS
+Christopher Aillon <caillon@redhat.com>
+.br
+Jonathan Blandford <jrb@redhat.com>

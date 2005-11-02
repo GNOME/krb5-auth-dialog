@@ -34,6 +34,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root,-)
 %doc
 %{_bindir}/krb5-auth-dialog
+%{_mandir}/man?/krb5-auth-dialog.1*
 %{_datadir}/krb5-auth-dialog/
 
 

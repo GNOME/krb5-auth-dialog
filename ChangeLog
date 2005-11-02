@@ -1,7 +1,12 @@
 2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
 
+	* etpo/lexer.l,etpo/grammar.y: silence a couple of compiler warnings
+	about implicitly-declared functions.
+
+2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
+
 	* configure.ac: test for differences between the Heimdal and MIT
-	Kerberos APIs
+	Kerberos APIs.
 	* src/krb5-auth-dialog.c: abstract out differences in how credential
 	flags and realm names are stored.
 

@@ -1,5 +1,10 @@
 2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
 
+	* configure.ac,src/krb5-auth-dialog.c: just test for the definitions
+	of the flags directly.
+
+2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
+
 	* etpo/lexer.l,etpo/grammar.y: silence a couple of compiler warnings
 	about implicitly-declared functions.
 

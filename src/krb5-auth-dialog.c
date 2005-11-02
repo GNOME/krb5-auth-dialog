@@ -271,7 +271,7 @@ credentials_expiring (gpointer *data)
 	return TRUE;
 }
 
-#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(HAVE_DECL_TKT_FLG_FORWARDABLE)
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_FORWARDABLE)
 static int
 get_cred_forwardable(krb5_creds *creds)
 {
@@ -283,7 +283,7 @@ get_cred_forwardable(krb5_creds *creds)
 {
 	return creds->flags.b.forwardable;
 }
-#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(HAVE_DECL_KDC_OPT_FORWARDABLE)
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_FORWARDABLE)
 static int
 get_cred_forwardable(krb5_creds *creds)
 {
@@ -291,7 +291,7 @@ get_cred_forwardable(krb5_creds *creds)
 }
 #endif
 
-#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(HAVE_DECL_TKT_FLG_RENEWABLE)
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_RENEWABLE)
 static int
 get_cred_renewable(krb5_creds *creds)
 {
@@ -303,7 +303,7 @@ get_cred_renewable(krb5_creds *creds)
 {
 	return creds->flags.b.renewable;
 }
-#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(HAVE_DECL_KDC_OPT_RENEWABLE)
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_RENEWABLE)
 static int
 get_cred_renewable(krb5_creds *creds)
 {
@@ -311,7 +311,7 @@ get_cred_renewable(krb5_creds *creds)
 }
 #endif
 
-#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(HAVE_DECL_TKT_FLG_PROXIABLE)
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_PROXIABLE)
 static int
 get_cred_proxiable(krb5_creds *creds)
 {
@@ -323,7 +323,7 @@ get_cred_proxiable(krb5_creds *creds)
 {
 	return creds->flags.b.proxiable;
 }
-#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(HAVE_DECL_KDC_OPT_PROXIABLE)
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_PROXIABLE)
 static int
 get_cred_proxiable(krb5_creds *creds)
 {

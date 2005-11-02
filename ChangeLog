@@ -1,5 +1,13 @@
 2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
 
+	* configure.ac,src/krb5-auth-dialog.c: make the minimum acceptable
+	lifetime for new credentials the minimum that would force us to take
+	action, not the amount of time we wait in between checks.  Let the
+	check interval be defined in seconds and the minimum lifetime be
+	specified in minutes.
+
+2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
+
 	* configure.ac,src/krb5-auth-dialog.c: just test for the definitions
 	of the flags directly.
 

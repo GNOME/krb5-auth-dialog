@@ -33,9 +33,6 @@
 #include <libnm_glib.h>
 #endif
 
-#define CREDENTIAL_CHECK_INTERVAL 30000 /* milliseconds */
-#define SECONDS_BEFORE_PROMPTING 1800
-
 static GladeXML *xml = NULL;
 static krb5_context kcontext;
 static krb5_principal kprincipal;
@@ -254,7 +251,7 @@ credentials_expiring_real (void)
 		krb5_copy_principal(kcontext, my_creds.client, &kprincipal);
 	}
 	creds_expiry = my_creds.times.endtime;
-	if (time(NULL) + SECONDS_BEFORE_PROMPTING > my_creds.times.endtime)
+	if (time(NULL) + MINUTES_BEFORE_PROMPTING * 60 > my_creds.times.endtime)
 		retval = TRUE;
 
 	krb5_free_cred_contents(kcontext, &my_creds);
@@ -351,7 +348,7 @@ set_options_using_creds(krb5_context context,
 						       renew_lifetime);
 	}
 	if (creds->times.endtime >
-	    creds->times.starttime + CREDENTIAL_CHECK_INTERVAL) {
+	    creds->times.starttime + MINUTES_BEFORE_PROMPTING * 60) {
 		krb5_get_init_creds_opt_set_tkt_life(opts,
 					 	     creds->times.endtime -
 						     creds->times.starttime);
@@ -569,7 +566,7 @@ main (int argc, char *argv[])
 		dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
 		if (credentials_expiring (NULL))
-			g_timeout_add (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, NULL);
+			g_timeout_add (CREDENTIAL_CHECK_INTERVAL * 1000, (GSourceFunc)credentials_expiring, NULL);
 
 		gtk_main ();
 	}

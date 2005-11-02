@@ -95,12 +95,26 @@ fi
 
 AM_CONDITIONAL([ENABLE_NETWORK_MANAGER],[test "x$enable_network_manager" = "xyes"])
 
+check_interval=30
+AC_DEFINE_UNQUOTED(CREDENTIAL_CHECK_INTERVAL,[$check_interval],
+		   [Define the to number of seconds to wait between checks of
+		    the Kerberos credential cache.])
+AC_SUBST(check_interval)
+
+minimum_lifetime=30
+AC_DEFINE_UNQUOTED(MINUTES_BEFORE_PROMPTING,[$minimum_lifetime],
+		   [Define the to the minimum amount of time (m) a credential
+		    will have to be valid before we'll ask the user to get
+		    fresh credentials.])
+AC_SUBST(minimum_lifetime)
+
 CFLAGS="$GNOME_CFLAGS $KRB5_CFLAGS $NETWORK_MANAGER_CFLAGS $CFLAGS"
 
 AC_OUTPUT([
 Makefile
 krb5-auth-dialog.spec
 src/Makefile
+src/krb5-auth-dialog.1
 etpo/Makefile
 po/Makefile.in
 ])

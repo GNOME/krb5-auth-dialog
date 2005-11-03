@@ -1,3 +1,7 @@
+2005-11-03  Christopher Aillon  <caillon@redhat.com>
+
+	* src/krb5-auth-dialog.c: Use ngettext () where appropriate
+
 2005-11-02  Nalin Dahyabhai <nalin@redhat.com>
 
 	* src/krb5-auth-dialog.1.in: add a man page.

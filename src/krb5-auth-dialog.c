@@ -18,6 +18,8 @@
  *
  */
 
+#include "config.h"
+
 #include <gtk/gtk.h>
 #include <glade/glade.h>
 #include <gnome.h>
@@ -27,7 +29,7 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <string.h>
-#include "config.h"
+
 
 #ifdef ENABLE_NETWORK_MANAGER
 #include <libnm_glib.h>
@@ -57,7 +59,10 @@ krb5_auth_dialog_wrong_label_update_expiry (gpointer data)
 	minutes_left = (creds_expiry - time(0)) / 60;
 
 	if (minutes_left > 0)
-		expiry_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
+		expiry_text = g_strdup_printf (ngettext("Your credentials expire in %d minute",
+		                                        "Your credentials expire in %d minutes",
+		                                        minutes_left),
+		                               minutes_left);
 	else
 		expiry_text = g_strdup (_("Your credentials have expired"));
 
@@ -123,7 +128,10 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 		{
 			int minutes_left = (creds_expiry - time(0)) / 60;
 			if (minutes_left > 0)
-				wrong_text = g_strdup_printf (_("Your credentials expire in %d minutes"), minutes_left);
+				wrong_text = g_strdup_printf (ngettext("Your credentials expire in %d minute",
+				                                       "Your credentials expire in %d minutes",
+				                                       minutes_left),
+				                              minutes_left);
 			else
 				wrong_text = g_strdup (_("Your credentials have expired"));
 		}

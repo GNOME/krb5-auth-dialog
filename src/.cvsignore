@@ -1,3 +1,4 @@
 Makefile
 Makefile.in
 krb5-auth-dialog
+krb5-auth-dialog.1

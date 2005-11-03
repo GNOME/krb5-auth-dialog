@@ -45,6 +45,26 @@ static gint creds_expiry;
 static int renew_credentials ();
 static gboolean get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
 
+static gchar* minutes_to_expiry_text (int minutes)
+{
+	gchar *expiry_text;
+	gchar *tmp;
+
+	if (minutes > 0)
+		expiry_text = g_strdup_printf (ngettext("Your credentials expire in %d minute",
+		                                        "Your credentials expire in %d minutes",
+		                                        minutes),
+		                               minutes);
+	else
+	{
+		expiry_text = g_strdup (_("Your credentials have expired"));
+		tmp = g_strdup_printf ("<span foreground=\"red\">%s</span>", expiry_text);
+		g_free (expiry_text);
+		expiry_text = tmp;
+	}
+
+	return expiry_text;
+}
 
 static gboolean
 krb5_auth_dialog_wrong_label_update_expiry (gpointer data)
@@ -58,13 +78,7 @@ krb5_auth_dialog_wrong_label_update_expiry (gpointer data)
 
 	minutes_left = (creds_expiry - time(0)) / 60;
 
-	if (minutes_left > 0)
-		expiry_text = g_strdup_printf (ngettext("Your credentials expire in %d minute",
-		                                        "Your credentials expire in %d minutes",
-		                                        minutes_left),
-		                               minutes_left);
-	else
-		expiry_text = g_strdup (_("Your credentials have expired"));
+	expiry_text = minutes_to_expiry_text (minutes_left);
 
 	expiry_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", expiry_text);
 	gtk_label_set_markup (GTK_LABEL (label), expiry_markup);
@@ -127,13 +141,8 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 		else
 		{
 			int minutes_left = (creds_expiry - time(0)) / 60;
-			if (minutes_left > 0)
-				wrong_text = g_strdup_printf (ngettext("Your credentials expire in %d minute",
-				                                       "Your credentials expire in %d minutes",
-				                                       minutes_left),
-				                              minutes_left);
-			else
-				wrong_text = g_strdup (_("Your credentials have expired"));
+
+			wrong_text = minutes_to_expiry_text (minutes_left);
 		}
 	}
 

@@ -1,5 +1,10 @@
 2005-11-03  Christopher Aillon  <caillon@redhat.com>
 
+	* src/krb5-auth-dialog.c: Consolidate how we figure out the
+	expiry text
+
+2005-11-03  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.c: Use ngettext () where appropriate
 
 2005-11-02  Nalin Dahyabhai <nalin@redhat.com>

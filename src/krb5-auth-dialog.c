@@ -574,7 +574,7 @@ main (int argc, char *argv[])
 				libnm_glib_shutdown (nm_context);
 				nm_context = NULL;
 
-				g_warning ("Could not connect to NetworkManager, connection status will not be managed!\n");
+				g_warning ("Could not connect to NetworkManager, connection status will not be managed!");
 			}
 		}
 #endif /* ENABLE_NETWORK_MANAGER */

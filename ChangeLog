@@ -1,3 +1,7 @@
+2005-11-08  Christopher Aillon  <caillon@redhat.com>
+
+	* configure.ac: Release 0.5
+
 2005-11-03  Christopher Aillon  <caillon@redhat.com>
 
 	* src/krb5-auth-dialog.c: Consolidate how we figure out the

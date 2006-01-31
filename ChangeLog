@@ -1,3 +1,8 @@
+2006-01-31  Christopher Aillon  <caillon@redhat.com>
+
+	* src/krb5-auth-dialog.glade: Don't explicitly
+	set the invisible_char to '*', get it from GTK+
+
 2005-11-08  Christopher Aillon  <caillon@redhat.com>
 
 	* configure.ac: Release 0.5

@@ -1,0 +1,9 @@
+[Desktop Entry]
+_Name=Authentication Dialog
+_Comments=Kerberos Authentication Dialog
+Exec=krb5-auth-dialog
+Encoding=UTF-8
+Exec=krb5-auth-dialog
+Terminal=false
+Type=Application
+

@@ -36,6 +36,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/krb5-auth-dialog
 %{_mandir}/man?/krb5-auth-dialog.1*
 %{_datadir}/krb5-auth-dialog/
+%{_sysconfdir}/xdg/autostart/krb5-auth-dialog.dekstop
 
 
 %changelog

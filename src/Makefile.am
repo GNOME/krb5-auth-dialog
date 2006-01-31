@@ -4,6 +4,11 @@ INCLUDES =				\
 bin_PROGRAMS = krb5-auth-dialog
 man_MANS = krb5-auth-dialog.1
 
+autostartdir = $(sysconfdir)/xdg/autostart
+autostart_in_files = krb5-auth-dialog.desktop.in
+autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
+@INTLTOOL_DESKTOP_RULE@
+
 krb5_auth_dialog_SOURCES =	\
 	krb5-auth-dialog.c      \
 	dummy-strings.c
@@ -16,5 +21,7 @@ glade_DATA =			\
 
 EXTRA_DIST =		\
 	$(glade_DATA)   \
+	$(autostart_in_files) \
 	krb5-auth-dialog.1.in
 
+DISTCLEANFILES = krb5-auth-dialog.desktop

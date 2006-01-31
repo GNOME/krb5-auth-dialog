@@ -1,5 +1,16 @@
 2006-01-31  Christopher Aillon  <caillon@redhat.com>
 
+	* src/krb5-auth-dialog.desktop.in:
+	Add desktop file for autostart
+
+	* krb5-auth-dialog.spec.in:
+	* src/Makefile.am:
+	Install desktop file to the correct location
+
+	* src/.cvsignore: Add generated file
+
+2006-01-31  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.glade: Don't explicitly
 	set the invisible_char to '*', get it from GTK+
 

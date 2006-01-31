@@ -1,5 +1,9 @@
 2006-01-31  Christopher Aillon  <caillon@redhat.com>
 
+	* configure.ac: Release 0.6
+
+2006-01-31  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.desktop.in:
 	Add desktop file for autostart
 

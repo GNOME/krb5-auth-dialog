@@ -38,9 +38,9 @@
 static GladeXML *xml = NULL;
 static krb5_context kcontext;
 static krb5_principal kprincipal;
+static krb5_timestamp creds_expiry;
 static gboolean invalid_password;
 static gboolean always_run;
-static gint creds_expiry;
 
 static int renew_credentials ();
 static gboolean get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
@@ -71,12 +71,17 @@ krb5_auth_dialog_wrong_label_update_expiry (gpointer data)
 {
 	GtkWidget *label = GTK_WIDGET(data);
 	int minutes_left;
+	krb5_timestamp now;
 	gchar *expiry_text;
 	gchar *expiry_markup;
 
 	g_return_val_if_fail (label != NULL, FALSE);
 
-	minutes_left = (creds_expiry - time(0)) / 60;
+	if (krb5_timeofday(kcontext, &now) != 0) {
+		return TRUE;
+	}
+
+	minutes_left = (creds_expiry - now) / 60;
 
 	expiry_text = minutes_to_expiry_text (minutes_left);
 
@@ -140,7 +145,14 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 			wrong_text = g_strdup (_("The password you entered is invalid"));
 		else
 		{
-			int minutes_left = (creds_expiry - time(0)) / 60;
+			krb5_timestamp now;
+			int minutes_left;
+
+			if (krb5_timeofday(kcontext, &now) == 0) {
+				minutes_left = (creds_expiry - now) / 60;
+			} else {
+				minutes_left = 0;
+			}
 
 			wrong_text = minutes_to_expiry_text (minutes_left);
 		}
@@ -160,12 +172,12 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 }
 
 static krb5_error_code
-krb5_gtk_prompter (krb5_context ctx,
-                   void *data,
-                   const char *name,
-                   const char *banner,
-                   int num_prompts,
-                   krb5_prompt prompts[])
+auth_dialog_prompter (krb5_context ctx,
+                      void *data,
+                      const char *name,
+                      const char *banner,
+                      int num_prompts,
+                      krb5_prompt prompts[])
 {
 	GtkWidget *dialog;
 	GtkWidget *wrong_label;
@@ -256,6 +268,7 @@ static gboolean
 credentials_expiring_real (void)
 {
 	krb5_creds my_creds;
+	krb5_timestamp now;
 	gboolean retval = FALSE;
 
 	if (!get_tgt_from_ccache (kcontext, &my_creds)) {
@@ -268,7 +281,8 @@ credentials_expiring_real (void)
 		krb5_copy_principal(kcontext, my_creds.client, &kprincipal);
 	}
 	creds_expiry = my_creds.times.endtime;
-	if (time(NULL) + MINUTES_BEFORE_PROMPTING * 60 > my_creds.times.endtime)
+	if ((krb5_timeofday(kcontext, &now) == 0) &&
+	    (now + MINUTES_BEFORE_PROMPTING * 60 > my_creds.times.endtime))
 		retval = TRUE;
 
 	krb5_free_cred_contents(kcontext, &my_creds);
@@ -401,7 +415,7 @@ renew_credentials (void)
 	}
 
 	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-                                              NULL, krb5_gtk_prompter, NULL,
+                                              NULL, auth_dialog_prompter, NULL,
                                               0, NULL, &opts);
 	if (retval)
 	{

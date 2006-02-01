@@ -1,4 +1,11 @@
 2006-02-01  Nalin Dahyabhai <nalin@redhat.com>
+	* src/krb5-auth-dialog.c(krb5_gtk_prompter): rename to avoid polluting
+	the krb5 namespace.
+	* src/krb5-auth-dialog.c: don't use time() to figure out what time it
+	is -- we always compare against a krb5_timestamp, so use the libkrb5
+	routines which return the current time instead.
+
+2006-02-01  Nalin Dahyabhai <nalin@redhat.com>
 	* README: correct a typo
 	* src/krb5-auth-dialog.c(renew_credentials): fix a warning where we
 	were passing an int where a pointer was expected

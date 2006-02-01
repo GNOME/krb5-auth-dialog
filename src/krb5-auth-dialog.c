@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2004,2005 Red Hat, Inc.
+ * Copyright (C) 2004,2005,2006 Red Hat, Inc.
  * Authored by Christopher Aillon <caillon@redhat.com>
  *
  * This program is free software; you can redistribute it and/or modify
@@ -401,7 +401,7 @@ renew_credentials (void)
 	}
 
 	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-                                              NULL, krb5_gtk_prompter, 0,
+                                              NULL, krb5_gtk_prompter, NULL,
                                               0, NULL, &opts);
 	if (retval)
 	{

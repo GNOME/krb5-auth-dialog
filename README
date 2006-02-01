@@ -4,7 +4,7 @@ it to be part of GNOME.
 
 A note on translations:
 
-Kerberos doesn't translate either it's prompts or its error messages.
+Kerberos doesn't translate either its prompts or its error messages.
 As the prompt is very visible, we need to translate it externally.  To
 do this, the etpo binary in etpo/ can be used to extract the public
 strings that kerberos uses.  We are checking that in for now, until

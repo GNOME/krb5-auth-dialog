@@ -39,6 +39,8 @@ static GladeXML *xml = NULL;
 static krb5_context kcontext;
 static krb5_principal kprincipal;
 static krb5_timestamp creds_expiry;
+static krb5_timestamp canceled_creds_expiry;
+static gboolean canceled;
 static gboolean invalid_password;
 static gboolean always_run;
 
@@ -185,6 +187,8 @@ auth_dialog_prompter (krb5_context ctx,
 	int i;
 
 	errcode = KRB5_LIBOS_CANTREADPWD;
+	canceled = FALSE;
+	canceled_creds_expiry = 0;
 
 	dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
@@ -215,6 +219,8 @@ auth_dialog_prompter (krb5_context ctx,
 				errcode = 0;
 				break;
 			case GTK_RESPONSE_CANCEL:
+				canceled = TRUE;
+				break;
 			case GTK_RESPONSE_DELETE_EVENT:
 				break;
 			default:
@@ -293,8 +299,19 @@ credentials_expiring_real (void)
 static gboolean
 credentials_expiring (gpointer *data)
 {
-	if (credentials_expiring_real () && is_online)
-		renew_credentials ();
+	int retval;
+	gboolean give_up;
+
+	if (credentials_expiring_real () && is_online) {
+		give_up = canceled && (creds_expiry == canceled_creds_expiry);
+		if (!give_up) {
+			do {
+				retval = renew_credentials ();
+				give_up = canceled &&
+					  (creds_expiry == canceled_creds_expiry);
+			} while ((retval != 0) && !give_up);
+		}
+	}
 
 	return TRUE;
 }
@@ -417,6 +434,9 @@ renew_credentials (void)
 	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
                                               NULL, auth_dialog_prompter, NULL,
                                               0, NULL, &opts);
+	if (canceled) {
+		canceled_creds_expiry = creds_expiry;
+	}
 	if (retval)
 	{
 		switch (retval) {
@@ -424,7 +444,7 @@ renew_credentials (void)
 			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
 				/* Invalid password, try again. */
 				invalid_password = TRUE;
-				return renew_credentials();
+				return retval;
 			default:
 				break;
 		}

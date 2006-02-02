@@ -1,4 +1,11 @@
 2006-02-01  Nalin Dahyabhai <nalin@redhat.com>
+	* src/krb5-auth-dialog.c: keep track of whether or not the user
+	explicitly canceled our last request for information.  If she did,
+	then don't ask again while the expiration time remains unchanged.
+	Change recursion inside of renew_credentials() into a loop in its
+	calling function.
+
+2006-02-01  Nalin Dahyabhai <nalin@redhat.com>
 	* src/krb5-auth-dialog.c(krb5_gtk_prompter): rename to avoid polluting
 	the krb5 namespace.
 	* src/krb5-auth-dialog.c: don't use time() to figure out what time it

@@ -44,8 +44,68 @@ static gboolean canceled;
 static gboolean invalid_password;
 static gboolean always_run;
 
-static int renew_credentials ();
+static int grab_credentials (gboolean renewable);
 static gboolean get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
+
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_FORWARDABLE)
+static int
+get_cred_forwardable(krb5_creds *creds)
+{
+	return creds->ticket_flags & TKT_FLG_FORWARDABLE;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS_B_FORWARDABLE)
+static int
+get_cred_forwardable(krb5_creds *creds)
+{
+	return creds->flags.b.forwardable;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_FORWARDABLE)
+static int
+get_cred_forwardable(krb5_creds *creds)
+{
+	return creds->flags & KDC_OPT_FORWARDABLE;
+}
+#endif
+
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_RENEWABLE)
+static int
+get_cred_renewable(krb5_creds *creds)
+{
+	return creds->ticket_flags & TKT_FLG_RENEWABLE;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS_B_RENEWABLE)
+static int
+get_cred_renewable(krb5_creds *creds)
+{
+	return creds->flags.b.renewable;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_RENEWABLE)
+static int
+get_cred_renewable(krb5_creds *creds)
+{
+	return creds->flags & KDC_OPT_RENEWABLE;
+}
+#endif
+
+#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_PROXIABLE)
+static int
+get_cred_proxiable(krb5_creds *creds)
+{
+	return creds->ticket_flags & TKT_FLG_PROXIABLE;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS_B_PROXIABLE)
+static int
+get_cred_proxiable(krb5_creds *creds)
+{
+	return creds->flags.b.proxiable;
+}
+#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_PROXIABLE)
+static int
+get_cred_proxiable(krb5_creds *creds)
+{
+	return creds->flags & KDC_OPT_PROXIABLE;
+}
+#endif
 
 static gchar* minutes_to_expiry_text (int minutes)
 {
@@ -271,11 +331,12 @@ network_state_cb (libnm_glib_ctx *context,
 #endif
 
 static gboolean
-credentials_expiring_real (void)
+credentials_expiring_real (gboolean *renewable)
 {
 	krb5_creds my_creds;
 	krb5_timestamp now;
 	gboolean retval = FALSE;
+	*renewable = FALSE;
 
 	if (!get_tgt_from_ccache (kcontext, &my_creds)) {
 		creds_expiry = 0;
@@ -291,7 +352,11 @@ credentials_expiring_real (void)
 	    (now + MINUTES_BEFORE_PROMPTING * 60 > my_creds.times.endtime))
 		retval = TRUE;
 
-	krb5_free_cred_contents(kcontext, &my_creds);
+	/* If our creds are expiring, determine whether they are renewable */
+	if (retval && get_cred_renewable(&my_creds) && my_creds.times.renew_till > now)
+		*renewable = TRUE;
+
+	krb5_free_cred_contents (kcontext, &my_creds);
 
 	return retval;
 }
@@ -301,12 +366,13 @@ credentials_expiring (gpointer *data)
 {
 	int retval;
 	gboolean give_up;
+	gboolean renewable;
 
-	if (credentials_expiring_real () && is_online) {
+	if (credentials_expiring_real (&renewable) && is_online) {
 		give_up = canceled && (creds_expiry == canceled_creds_expiry);
 		if (!give_up) {
 			do {
-				retval = renew_credentials ();
+				retval = grab_credentials (renewable);
 				give_up = canceled &&
 					  (creds_expiry == canceled_creds_expiry);
 			} while ((retval != 0) && !give_up);
@@ -315,66 +381,6 @@ credentials_expiring (gpointer *data)
 
 	return TRUE;
 }
-
-#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_FORWARDABLE)
-static int
-get_cred_forwardable(krb5_creds *creds)
-{
-	return creds->ticket_flags & TKT_FLG_FORWARDABLE;
-}
-#elif defined(HAVE_KRB5_CREDS_FLAGS_B_FORWARDABLE)
-static int
-get_cred_forwardable(krb5_creds *creds)
-{
-	return creds->flags.b.forwardable;
-}
-#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_FORWARDABLE)
-static int
-get_cred_forwardable(krb5_creds *creds)
-{
-	return creds->flags & KDC_OPT_FORWARDABLE;
-}
-#endif
-
-#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_RENEWABLE)
-static int
-get_cred_renewable(krb5_creds *creds)
-{
-	return creds->ticket_flags & TKT_FLG_RENEWABLE;
-}
-#elif defined(HAVE_KRB5_CREDS_FLAGS_B_RENEWABLE)
-static int
-get_cred_renewable(krb5_creds *creds)
-{
-	return creds->flags.b.renewable;
-}
-#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_RENEWABLE)
-static int
-get_cred_renewable(krb5_creds *creds)
-{
-	return creds->flags & KDC_OPT_RENEWABLE;
-}
-#endif
-
-#if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_PROXIABLE)
-static int
-get_cred_proxiable(krb5_creds *creds)
-{
-	return creds->ticket_flags & TKT_FLG_PROXIABLE;
-}
-#elif defined(HAVE_KRB5_CREDS_FLAGS_B_PROXIABLE)
-static int
-get_cred_proxiable(krb5_creds *creds)
-{
-	return creds->flags.b.proxiable;
-}
-#elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_PROXIABLE)
-static int
-get_cred_proxiable(krb5_creds *creds)
-{
-	return creds->flags & KDC_OPT_PROXIABLE;
-}
-#endif
 
 static void
 set_options_using_creds(krb5_context context,
@@ -406,12 +412,14 @@ set_options_using_creds(krb5_context context,
 }
 
 static int
-renew_credentials (void)
+grab_credentials (gboolean renewable)
 {
 	krb5_error_code retval;
 	krb5_creds my_creds;
 	krb5_ccache ccache;
 	krb5_get_init_creds_opt opts;
+
+	memset(&my_creds, 0, sizeof(my_creds));
 
 	if (kprincipal == NULL) {
 		retval = krb5_parse_name(kcontext, g_get_user_name (),
@@ -421,19 +429,35 @@ renew_credentials (void)
 		}
 	}
 
-	krb5_get_init_creds_opt_init(&opts);
+	retval = krb5_cc_default (kcontext, &ccache);
+	if (retval)
+		return retval;
+
+	krb5_get_init_creds_opt_init (&opts);
 	if (get_tgt_from_ccache (kcontext, &my_creds))
 	{
-		set_options_using_creds(kcontext, &my_creds, &opts);
+		set_options_using_creds (kcontext, &my_creds, &opts);
 		creds_expiry = my_creds.times.endtime;
-		krb5_free_cred_contents(kcontext, &my_creds);
+
+#ifdef HAVE_KRB5_GET_RENEWED_CREDS
+		if (renewable) {
+			retval = krb5_get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
+
+			/* If we succeeded in renewing the credentials, we store it. */
+			if (retval == 0)
+				goto store;
+
+			/* Else, try to get new credentials, so just fall through */
+		}
+#endif
+		krb5_free_cred_contents (kcontext, &my_creds);
 	} else {
 		creds_expiry = 0;
 	}
 
 	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-                                              NULL, auth_dialog_prompter, NULL,
-                                              0, NULL, &opts);
+	                                      NULL, auth_dialog_prompter, NULL,
+	       	                              0, NULL, &opts);
 	if (canceled) {
 		canceled_creds_expiry = creds_expiry;
 	}
@@ -444,17 +468,14 @@ renew_credentials (void)
 			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
 				/* Invalid password, try again. */
 				invalid_password = TRUE;
-				return retval;
+				goto out;
 			default:
 				break;
 		}
-		return retval;
+		goto out;
 	}
 
-	retval = krb5_cc_default(kcontext, &ccache);
-	if (retval)
-		return retval;
-
+store:
 	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
 	if (retval)
 		goto out;
@@ -464,8 +485,8 @@ renew_credentials (void)
 		goto out;
 
 	creds_expiry = my_creds.times.endtime;
-
 out:
+	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
 
 	return retval;

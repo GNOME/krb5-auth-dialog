@@ -1,3 +1,11 @@
+2006-03-17  Christopher Aillon  <caillon@redhat.com>
+
+	* src/krb5-auth-dialog.c: Check to see whether credentials
+	are renewable; if so, renew them automatically.  Implement this
+	for the MIT implementation only.  (Fixes #331210)
+
+	* configure.ac: Add test to see whether we have krb5_get_renewed_creds
+
 2006-02-01  Nalin Dahyabhai <nalin@redhat.com>
 	* src/krb5-auth-dialog.c: keep track of whether or not the user
 	explicitly canceled our last request for information.  If she did,

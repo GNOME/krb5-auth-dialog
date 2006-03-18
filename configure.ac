@@ -39,11 +39,14 @@ fi
 dnl Check for API differences between Heimdal and MIT Kerberos
 savedCFLAGS="$CFLAGS"
 CFLAGS="$KRB5_CFLAGS $CFLAGS"
+savedLIBS="$LIBS"
+LIBS="$KRB5_LIBS $LIBS"
 AC_CHECK_MEMBERS(krb5_creds.ticket_flags,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.forwardable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.renewable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.proxiable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags,,,[#include <krb5.h>])
+AC_CHECK_FUNCS([krb5_get_renewed_creds])
 AC_MSG_CHECKING(if a krb5_principal->realm is a char*)
 AC_COMPILE_IFELSE([
 $ac_includes_default
@@ -73,6 +76,7 @@ main(int argc, char **argv)
 AC_MSG_RESULT(yes)],
 AC_MSG_RESULT(no))
 CFLAGS="$savedCFLAGS"
+LIBS="$savedLIBS"
 
 dnl NetworkManager
 

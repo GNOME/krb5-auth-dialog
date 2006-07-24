@@ -1,3 +1,12 @@
+2006-07-24  Christopher Aillon  <caillon@redhat.com>
+
+	* src/krb5-auth-dialog.c: Don't immediately retry
+	to reach the KDC if it is unavailable. That will
+	just loop forever (until the KDC becomes available).
+	Bail out; we'll check (once!) to see whether it's
+	there the next time our g_timeout callback gets
+	invoked.
+
 2006-04-18  Kjartan Maraas  <kmaraas@gnome.org>
 
 	* configure.ac: Remove obsolete entry for no_NO

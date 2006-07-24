@@ -284,6 +284,7 @@ auth_dialog_prompter (krb5_context ctx,
 			case GTK_RESPONSE_DELETE_EVENT:
 				break;
 			default:
+				g_warning ("Unknown Response: %d", response);
 				g_assert_not_reached ();
 		}
 
@@ -375,7 +376,11 @@ credentials_expiring (gpointer *data)
 				retval = grab_credentials (renewable);
 				give_up = canceled &&
 					  (creds_expiry == canceled_creds_expiry);
-			} while ((retval != 0) && !give_up);
+			} while ((retval != 0) && 
+			         (retval != KRB5_REALM_CANT_RESOLVE) &&
+			         (retval != KRB5_KDC_UNREACH) &&
+				 invalid_password &&
+			         !give_up);
 		}
 	}
 

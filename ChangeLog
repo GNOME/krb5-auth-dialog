@@ -1,5 +1,9 @@
 2006-07-24  Christopher Aillon  <caillon@redhat.com>
 
+	* configure.ac: Release 0.7
+
+2006-07-24  Christopher Aillon  <caillon@redhat.com>
+
 	* src/krb5-auth-dialog.c: Don't immediately retry
 	to reach the KDC if it is unavailable. That will
 	just loop forever (until the KDC becomes available).

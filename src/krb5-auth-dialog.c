@@ -47,65 +47,64 @@ static gboolean always_run;
 static int grab_credentials (gboolean renewable);
 static gboolean get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
 
+/* YAY for different Kerberos implementations */
+static int
+get_cred_forwardable(krb5_creds *creds)
+{
 #if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_FORWARDABLE)
-static int
-get_cred_forwardable(krb5_creds *creds)
-{
 	return creds->ticket_flags & TKT_FLG_FORWARDABLE;
-}
 #elif defined(HAVE_KRB5_CREDS_FLAGS_B_FORWARDABLE)
-static int
-get_cred_forwardable(krb5_creds *creds)
-{
 	return creds->flags.b.forwardable;
-}
 #elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_FORWARDABLE)
-static int
-get_cred_forwardable(krb5_creds *creds)
-{
 	return creds->flags & KDC_OPT_FORWARDABLE;
-}
 #endif
+}
 
+static int
+get_cred_renewable(krb5_creds *creds)
+{
 #if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_RENEWABLE)
-static int
-get_cred_renewable(krb5_creds *creds)
-{
 	return creds->ticket_flags & TKT_FLG_RENEWABLE;
-}
 #elif defined(HAVE_KRB5_CREDS_FLAGS_B_RENEWABLE)
-static int
-get_cred_renewable(krb5_creds *creds)
-{
 	return creds->flags.b.renewable;
-}
 #elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_RENEWABLE)
-static int
-get_cred_renewable(krb5_creds *creds)
-{
 	return creds->flags & KDC_OPT_RENEWABLE;
-}
 #endif
+}
 
+static int
+get_cred_proxiable(krb5_creds *creds)
+{
 #if defined(HAVE_KRB5_CREDS_TICKET_FLAGS) && defined(TKT_FLG_PROXIABLE)
-static int
-get_cred_proxiable(krb5_creds *creds)
-{
 	return creds->ticket_flags & TKT_FLG_PROXIABLE;
-}
 #elif defined(HAVE_KRB5_CREDS_FLAGS_B_PROXIABLE)
-static int
-get_cred_proxiable(krb5_creds *creds)
-{
 	return creds->flags.b.proxiable;
-}
 #elif defined(HAVE_KRB5_CREDS_FLAGS) && defined(KDC_OPT_PROXIABLE)
-static int
-get_cred_proxiable(krb5_creds *creds)
-{
 	return creds->flags & KDC_OPT_PROXIABLE;
-}
 #endif
+}
+
+static size_t
+get_principal_realm_length(krb5_principal p)
+{
+#if defined(HAVE_KRB5_PRINCIPAL_REALM_AS_STRING)
+	return strlen(p->realm);
+#elif defined(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA)
+	return p->realm.length;
+#endif
+}
+
+static const char *
+get_principal_realm_data(krb5_principal p)
+{
+#if defined(HAVE_KRB5_PRINCIPAL_REALM_AS_STRING)
+	return p->realm;
+#elif defined(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA)
+	return p->realm.data;
+#endif
+}
+/* ***************************************************************** */
+/* ***************************************************************** */
 
 static gchar* minutes_to_expiry_text (int minutes)
 {
@@ -496,30 +495,6 @@ out:
 
 	return retval;
 }
-
-#if defined(HAVE_KRB5_PRINCIPAL_REALM_AS_STRING)
-static size_t
-get_principal_realm_length(krb5_principal p)
-{
-	return strlen(p->realm);
-}
-static const char *
-get_principal_realm_data(krb5_principal p)
-{
-	return p->realm;
-}
-#elif defined(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA)
-static size_t
-get_principal_realm_length(krb5_principal p)
-{
-	return p->realm.length;
-}
-static const char *
-get_principal_realm_data(krb5_principal p)
-{
-	return p->realm.data;
-}
-#endif
 
 static gboolean
 get_tgt_from_ccache (krb5_context context, krb5_creds *creds)

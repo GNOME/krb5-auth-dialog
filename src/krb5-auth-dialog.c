@@ -72,6 +72,20 @@ get_cred_renewable(krb5_creds *creds)
 #endif
 }
 
+static krb5_error_code
+get_renewed_creds(krb5_context context,
+                  krb5_creds *creds,
+                  krb5_principal client,
+                  krb5_ccache ccache,
+                  char *in_tkt_service)
+{
+#ifdef HAVE_KRB5_GET_RENEWED_CREDS
+	return krb5_get_renewed_creds (context, creds, client, ccache, in_tkt_service);
+#else
+	return 1; /* XXX is there something better to return? */
+#endif
+}
+
 static int
 get_cred_proxiable(krb5_creds *creds)
 {
@@ -111,13 +125,12 @@ static gchar* minutes_to_expiry_text (int minutes)
 	gchar *expiry_text;
 	gchar *tmp;
 
-	if (minutes > 0)
+	if (minutes > 0) {
 		expiry_text = g_strdup_printf (ngettext("Your credentials expire in %d minute",
 		                                        "Your credentials expire in %d minutes",
 		                                        minutes),
 		                               minutes);
-	else
-	{
+	} else {
 		expiry_text = g_strdup (_("Your credentials have expired"));
 		tmp = g_strdup_printf ("<span foreground=\"red\">%s</span>", expiry_text);
 		g_free (expiry_text);
@@ -143,7 +156,6 @@ krb5_auth_dialog_wrong_label_update_expiry (gpointer data)
 	}
 
 	minutes_left = (creds_expiry - now) / 60;
-
 	expiry_text = minutes_to_expiry_text (minutes_left);
 
 	expiry_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", expiry_text);
@@ -167,10 +179,9 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 	gchar *prompt;
 	int pw4len;
 
-	if (krb5prompt == NULL)
+	if (krb5prompt == NULL) {
 		prompt = g_strdup (_("Please enter your Kerberos password."));
-	else
-	{
+	} else {
 		/* Kerberos's prompts are a mess, and basically impossible to
 		 * translate.  There's basically no way short of doing a lot of
 		 * string parsing to translate them.  The most common prompt is
@@ -178,13 +189,12 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 		 * cannot do any of the fancier strings (like challenges),
 		 * though. */
 		pw4len = strlen ("Password for ");
-		if (strncmp (krb5prompt, "Password for ", pw4len) == 0)
-		{
+		if (strncmp (krb5prompt, "Password for ", pw4len) == 0) {
 			gchar *uid = (gchar *) (krb5prompt + pw4len);
 			prompt = g_strdup_printf (_("Please enter the password for '%s'"), uid);
-		}
-		else
+		} else {
 			prompt = g_strdup (krb5prompt);
+		}
 	}
 
 	/* Clear the password entry field */
@@ -200,12 +210,10 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 	wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
 	wrong_text = NULL;
 
-	if (wrong_label)
-	{
-		if (invalid_password)
+	if (wrong_label) {
+		if (invalid_password) {
 			wrong_text = g_strdup (_("The password you entered is invalid"));
-		else
-		{
+		} else {
 			krb5_timestamp now;
 			int minutes_left;
 
@@ -219,15 +227,14 @@ krb5_auth_dialog_setup (GtkWidget *dialog,
 		}
 	}
 
-	if (wrong_text)
-	{
+	if (wrong_text) {
 		wrong_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", wrong_text);
 		gtk_label_set_markup (GTK_LABEL (wrong_label), wrong_markup);
 		g_free(wrong_text);
 		g_free(wrong_markup);
-	}
-	else
+	} else {
 		gtk_label_set_text (GTK_LABEL (wrong_label), "");
+	}
 
 	g_free (prompt);
 }
@@ -251,8 +258,7 @@ auth_dialog_prompter (krb5_context ctx,
 
 	dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
-	for (i = 0; i < num_prompts; i++)
-	{
+	for (i = 0; i < num_prompts; i++) {
 		const gchar *password = NULL;
 		int password_len = 0;
 		int response;
@@ -353,8 +359,9 @@ credentials_expiring_real (gboolean *renewable)
 		retval = TRUE;
 
 	/* If our creds are expiring, determine whether they are renewable */
-	if (retval && get_cred_renewable(&my_creds) && my_creds.times.renew_till > now)
+	if (retval && get_cred_renewable(&my_creds) && my_creds.times.renew_till > now) {
 		*renewable = TRUE;
+	}
 
 	krb5_free_cred_contents (kcontext, &my_creds);
 
@@ -438,22 +445,19 @@ grab_credentials (gboolean renewable)
 		return retval;
 
 	krb5_get_init_creds_opt_init (&opts);
-	if (get_tgt_from_ccache (kcontext, &my_creds))
-	{
+	if (get_tgt_from_ccache (kcontext, &my_creds)) {
 		set_options_using_creds (kcontext, &my_creds, &opts);
 		creds_expiry = my_creds.times.endtime;
 
-#ifdef HAVE_KRB5_GET_RENEWED_CREDS
 		if (renewable) {
-			retval = krb5_get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
+			retval = get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
 
 			/* If we succeeded in renewing the credentials, we store it. */
-			if (retval == 0)
+			if (retval == 0) {
 				goto store;
-
+			}
 			/* Else, try to get new credentials, so just fall through */
 		}
-#endif
 		krb5_free_cred_contents (kcontext, &my_creds);
 	} else {
 		creds_expiry = 0;
@@ -465,8 +469,7 @@ grab_credentials (gboolean renewable)
 	if (canceled) {
 		canceled_creds_expiry = creds_expiry;
 	}
-	if (retval)
-	{
+	if (retval) {
 		switch (retval) {
 			case KRB5KDC_ERR_PREAUTH_FAILED:
 			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
@@ -481,12 +484,14 @@ grab_credentials (gboolean renewable)
 
 store:
 	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
-	if (retval)
+	if (retval) {
 		goto out;
+	}
 
 	retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
-	if (retval)
+	if (retval) {
 		goto out;
+	}
 
 	creds_expiry = my_creds.times.endtime;
 out:
@@ -506,11 +511,9 @@ get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 
 	memset(&ccache, 0, sizeof(ccache));
 	ret = FALSE;
-	if (krb5_cc_default(context, &ccache) == 0)
-	{
+	if (krb5_cc_default(context, &ccache) == 0) {
 		memset(&principal, 0, sizeof(principal));
-		if (krb5_cc_get_principal(context, ccache, &principal) == 0)
-		{
+		if (krb5_cc_get_principal(context, ccache, &principal) == 0) {
 			memset(&tgt_principal, 0, sizeof(tgt_principal));
 			if (krb5_build_principal_ext(context, &tgt_principal,
 			                             get_principal_realm_length(principal),
@@ -527,8 +530,7 @@ get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 				if (krb5_cc_retrieve_cred(context, ccache,
 				                          0,
 				                          &mcreds,
-				                          creds) == 0)
-				{
+				                          creds) == 0) {
 					ret = TRUE;
 				} else {
 					memset(creds, 0, sizeof(*creds));
@@ -550,8 +552,9 @@ using_krb5()
 	krb5_creds creds;
 
 	err = krb5_init_context(&kcontext);
-	if (err)
+	if (err) {
 		return TRUE;
+	}
 
 	have_tgt = get_tgt_from_ccache(kcontext, &creds);
 	if (have_tgt) {
@@ -588,10 +591,10 @@ main (int argc, char *argv[])
 	client = gnome_master_client ();
 	gnome_client_set_restart_style (client, GNOME_RESTART_ANYWAY);
 
-	if (run_always && !run_auto)
+	if (run_always && !run_auto) {
 		always_run++;
-	if (using_krb5 () || always_run)
-	{
+	}
+	if (using_krb5 () || always_run) {
 		g_signal_connect (G_OBJECT (client), "die",
 		                  G_CALLBACK (gtk_main_quit), NULL);
 
@@ -599,13 +602,11 @@ main (int argc, char *argv[])
 
 #ifdef ENABLE_NETWORK_MANAGER
 		nm_context = libnm_glib_init ();
-		if (!nm_context)
+		if (!nm_context) {
 			g_warning ("Could not initialize libnm_glib");
-		else
-		{
+		} else {
 			nm_callback_id = libnm_glib_register_callback (nm_context, network_state_cb, &is_online, NULL);
-			if (nm_callback_id == 0)
-			{
+			if (nm_callback_id == 0) {
 				libnm_glib_shutdown (nm_context);
 				nm_context = NULL;
 
@@ -617,9 +618,9 @@ main (int argc, char *argv[])
 		xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
 		dialog = glade_xml_get_widget (xml, "krb5_dialog");
 
-		if (credentials_expiring (NULL))
+		if (credentials_expiring (NULL)) {
 			g_timeout_add (CREDENTIAL_CHECK_INTERVAL * 1000, (GSourceFunc)credentials_expiring, NULL);
-
+		}
 		gtk_main ();
 	}
 

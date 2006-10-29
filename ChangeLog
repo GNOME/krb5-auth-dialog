@@ -2,6 +2,8 @@
 
 	* src/krb5-auth-dialog.c: Clean up the #ifdefs to
 	make things slightly more readable.
+	Refactor code slightly, removing an #ifdef in favor
+	of a wrapper.  Consolidate coding style.
 
 2006-07-24  Christopher Aillon  <caillon@redhat.com>
 

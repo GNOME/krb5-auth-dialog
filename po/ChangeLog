@@ -1,3 +1,8 @@
+2007-11-02  Kjartan Maraas,,23491770  <kmaraas@gnome.org>
+
+	* POTFILES.in: Add .desktop.in file.
+	* nb.po: Updated Norwegian bokmål translation.
+
 2005-10-29  Christopher Aillon  <caillon@redhat.com>
 
 	* Makefile.in.in: this is generated, no need to live in repository

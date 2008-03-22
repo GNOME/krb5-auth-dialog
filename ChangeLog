@@ -1,5 +1,12 @@
 2008-03-22  Colin Walters  <walters@verbum.org>
 
+	* src/krb5-auth-dialog.c: Grab a name on the
+	session bus to be doubly sure we don't have
+	multiple copies.  Also don't connect to the
+	session manager, since it's not needed.
+
+2008-03-22  Colin Walters  <walters@verbum.org>
+
 	* MAINTAINERS: New file.
 	* src/krb5-auth-dialog.c: Connect to session bus
 	to be sure we exit when the session dies.

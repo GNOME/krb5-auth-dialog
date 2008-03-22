@@ -29,6 +29,7 @@
 #include <stdio.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <dbus/dbus-glib.h>
 
 
 #ifdef ENABLE_NETWORK_MANAGER
@@ -570,6 +571,8 @@ main (int argc, char *argv[])
 {
 	GtkWidget *dialog;
 	GnomeClient *client;
+	DBusGConnection *session;
+	GError *error = NULL;
 	int run_auto = 0, run_always = 0;
 	struct poptOption options[] = {
 		{"auto", 'a', 0, &run_auto, 0,
@@ -590,6 +593,9 @@ main (int argc, char *argv[])
 
 	client = gnome_master_client ();
 	gnome_client_set_restart_style (client, GNOME_RESTART_ANYWAY);
+
+	/* Connect to the session bus so we get exit-on-disconnect semantics. */
+	session = dbus_g_bus_get(DBUS_BUS_SESSION, &error);
 
 	if (run_always && !run_auto) {
 		always_run++;

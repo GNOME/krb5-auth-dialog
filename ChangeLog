@@ -2,6 +2,13 @@
 
 	Bug 534515: cleanups
 
+	* src/krb5-auth-dialog.c: Cleaner use of
+	gboolean.  Patch from from Guido Günther.
+
+2008-06-09  Colin Walters  <walters@verbum.org>
+
+	Bug 534515: cleanups
+
 	* src/krb5-auth-dialog.c: Use GOption instead of
 	libgnome.  Patch from Guido Günther.
 

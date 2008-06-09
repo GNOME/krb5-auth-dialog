@@ -576,7 +576,7 @@ main (int argc, char *argv[])
 	DBusGProxy *bus_proxy;
 	guint request_name_reply;
 	unsigned int flags;
-	int run_auto = 0, run_always = 0;
+	gboolean run_auto = FALSE, run_always = FALSE;
 	const char *help_msg = "Run '" PACKAGE " --help' to see a full list of available command line options";
 	const GOptionEntry options [] = {
 		{"auto", 'a', 0, G_OPTION_ARG_NONE, &run_auto,
@@ -642,7 +642,7 @@ main (int argc, char *argv[])
 	}
 
 	if (run_always && !run_auto) {
-		always_run++;
+		always_run = TRUE;
 	}
 	if (using_krb5 () || always_run) {
 		g_set_application_name (_("Network Authentication"));

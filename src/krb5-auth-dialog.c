@@ -602,9 +602,12 @@ main (int argc, char *argv[])
 		g_error_free (error);
 		return 1;
 	}
+	textdomain (PACKAGE);
+	bind_textdomain_codeset (PACKAGE, "UTF-8");
+	bindtextdomain (PACKAGE, LOCALE_DIR);
 
 	/* Connect to the session bus so we get exit-on-disconnect semantics. */
-	session = dbus_g_bus_get(DBUS_BUS_SESSION, &error);
+	session = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
 	if (session == NULL) {
 		g_error ("couldn't connect to session bus: %s", (error) ? error->message : "(null)");
 		exit(1);

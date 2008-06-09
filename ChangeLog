@@ -1,5 +1,13 @@
 2008-06-09  Colin Walters  <walters@verbum.org>
 
+	Bug 534736: make i18n work
+
+	* src/krb5-auth-dialog.c: Set up i18n correctly.
+	* src/Makefile.am: Pass in LOCALEDIR.
+	Patch from from Guido Günther.
+
+2008-06-09  Colin Walters  <walters@verbum.org>
+
 	Bug 534620: password field focus
 
 	* src/krb5-auth-dialog.c: Be sure we focus the

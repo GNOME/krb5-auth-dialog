@@ -1,5 +1,6 @@
-INCLUDES =				\
-	-DGLADEDIR=\""$(datadir)/krb5-auth-dialog/"\"
+INCLUDES = \
+	-DGLADEDIR=\""$(gladedir)/"\" \
+	-DLOCALE_DIR=\""$(localedir)/"\"
 
 bin_PROGRAMS = krb5-auth-dialog
 man_MANS = krb5-auth-dialog.1

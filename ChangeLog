@@ -1,5 +1,13 @@
 2008-06-09  Colin Walters  <walters@verbum.org>
 
+	Bug 534867: should use g_timeout_add_seconds
+
+	* src/krb5-auth-dialog.c: Save power with
+	g_timeout_add_seconds.
+	Patch from from Guido Günther.
+
+2008-06-09  Colin Walters  <walters@verbum.org>
+
 	Bug 534736: make i18n work
 
 	* src/krb5-auth-dialog.c: Set up i18n correctly.

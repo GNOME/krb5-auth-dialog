@@ -274,8 +274,8 @@ auth_dialog_prompter (krb5_context ctx,
 		gtk_widget_grab_focus (entry);
 
 		wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
-		source_id = g_timeout_add (5000, (GSourceFunc)krb5_auth_dialog_wrong_label_update_expiry,
-		                           wrong_label);
+		source_id = g_timeout_add_seconds (5, (GSourceFunc)krb5_auth_dialog_wrong_label_update_expiry,
+		                                   wrong_label);
 
 		response = gtk_dialog_run (GTK_DIALOG (dialog));
 		switch (response)
@@ -671,7 +671,7 @@ main (int argc, char *argv[])
 		gtk_window_set_default_icon_name ("gtk-dialog-authentication");
 
 		if (credentials_expiring (NULL)) {
-			g_timeout_add (CREDENTIAL_CHECK_INTERVAL * 1000, (GSourceFunc)credentials_expiring, NULL);
+			g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL * 1000, (GSourceFunc)credentials_expiring, NULL);
 		}
 		gtk_main ();
 	}

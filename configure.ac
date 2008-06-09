@@ -25,7 +25,7 @@ PKG_CHECK_MODULES(GNOME,
 [
 	gtk+-2.0 >= 2.4.0
 	libglade-2.0 >= 2.4.0
-	libgnomeui-2.0 >= 2.4.0
+	dbus-glib-1 >= 0.60
 ])
 
 AC_PATH_PROG([KRB5_CONFIG], krb5-config, none, $PATH:/usr/kerberos/bin)

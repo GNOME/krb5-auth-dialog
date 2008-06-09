@@ -1,3 +1,11 @@
+2008-06-09  Colin Walters  <walters@verbum.org>
+
+	Bug 529220: set dialog icon
+
+	* src/krb5-auth-dialog.c: Set an icon so we
+	look nicer in the window list.  Patch from
+	Guido Günther.
+
 2008-03-22  Colin Walters  <walters@verbum.org>
 
 	* src/krb5-auth-dialog.c: Grab a name on the

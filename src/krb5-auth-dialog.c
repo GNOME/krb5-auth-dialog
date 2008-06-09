@@ -656,6 +656,7 @@ main (int argc, char *argv[])
 
 		xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
 		dialog = glade_xml_get_widget (xml, "krb5_dialog");
+		gtk_window_set_default_icon_name ("gtk-dialog-authentication");
 
 		if (credentials_expiring (NULL)) {
 			g_timeout_add (CREDENTIAL_CHECK_INTERVAL * 1000, (GSourceFunc)credentials_expiring, NULL);

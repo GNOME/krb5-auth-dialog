@@ -1,5 +1,13 @@
 2008-06-09  Colin Walters  <walters@verbum.org>
 
+	Bug 534620: password field focus
+
+	* src/krb5-auth-dialog.c: Be sure we focus the
+	password field every time.
+	Patch from from Guido Günther.
+
+2008-06-09  Colin Walters  <walters@verbum.org>
+
 	Bug 534515: cleanups
 
 	* configure.in: Look for dbus-glib and not libgnome.

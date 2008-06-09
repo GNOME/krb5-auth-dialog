@@ -271,6 +271,7 @@ auth_dialog_prompter (krb5_context ctx,
 
 		entry = glade_xml_get_widget(xml, "krb5_entry");
 		krb5_auth_dialog_setup (dialog, (gchar *) prompts[i].prompt, prompts[i].hidden);
+		gtk_widget_grab_focus (entry);
 
 		wrong_label = glade_xml_get_widget (xml, "krb5_wrong_label");
 		source_id = g_timeout_add (5000, (GSourceFunc)krb5_auth_dialog_wrong_label_update_expiry,

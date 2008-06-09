@@ -20,15 +20,15 @@
 
 #include "config.h"
 
-#include <gtk/gtk.h>
-#include <glade/glade.h>
-#include <gnome.h>
 #include <stdlib.h>
 #include <time.h>
 #include <krb5.h>
 #include <stdio.h>
 #include <sys/wait.h>
 #include <string.h>
+#include <gtk/gtk.h>
+#include <glib/gi18n.h>
+#include <glade/glade.h>
 #include <dbus/dbus-glib.h>
 
 
@@ -570,29 +570,37 @@ int
 main (int argc, char *argv[])
 {
 	GtkWidget *dialog;
-	GnomeClient *client;
+	GOptionContext *context;
+	GError *error = NULL;
 	DBusGConnection *session;
 	DBusGProxy *bus_proxy;
 	guint request_name_reply;
 	unsigned int flags;
-	GError *error = NULL;
 	int run_auto = 0, run_always = 0;
-	struct poptOption options[] = {
-		{"auto", 'a', 0, &run_auto, 0,
-		 "Only run if an initialized ccache is found (default)", NULL},
-		{"always", 'A', 0, &run_always, 0,
-		 "Always run", NULL},
-		{NULL},
+	const char *help_msg = "Run '" PACKAGE " --help' to see a full list of available command line options";
+	const GOptionEntry options [] = {
+		{"auto", 'a', 0, G_OPTION_ARG_NONE, &run_auto,
+		 	"Only run if an initialized ccache is found (default)", NULL},
+		{"always", 'A', 0, G_OPTION_ARG_NONE, &run_always,
+		 	"Always run", NULL},
+  		{ NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL }
 	};
 
 #ifdef ENABLE_NETWORK_MANAGER
 	libnm_glib_ctx *nm_context;
 	guint32 nm_callback_id;	
 #endif
-
-	gnome_program_init (PACKAGE, VERSION, LIBGNOMEUI_MODULE,
-	                    argc, argv, GNOME_PARAM_POPT_TABLE, options,
-			    GNOME_CLIENT_PARAM_SM_CONNECT, FALSE, GNOME_PARAM_NONE);
+	context = g_option_context_new ("- Kerberos 5 credential checking");
+	g_option_context_add_main_entries (context, options, NULL);
+	g_option_context_add_group (context, gtk_get_option_group (TRUE));
+	g_option_context_parse (context, &argc, &argv, &error);
+	if (error) {
+		g_print ("%s\n%s\n",
+			 error->message,
+			 help_msg);
+		g_error_free (error);
+		return 1;
+	}
 
 	/* Connect to the session bus so we get exit-on-disconnect semantics. */
 	session = dbus_g_bus_get(DBUS_BUS_SESSION, &error);

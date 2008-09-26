@@ -1,3 +1,8 @@
+2008-09-26  Guido Guenther  <agx@agx@sigxcpu.org>
+
+	* src/krb5-auth-dialog.desktop.in:
+	remove duplicte exec form desktop file and fix comment
+
 2008-06-09  Colin Walters  <walters@verbum.org>
 
 	Bug 534867: should use g_timeout_add_seconds

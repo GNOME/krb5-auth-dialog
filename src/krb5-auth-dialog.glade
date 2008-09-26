@@ -116,7 +116,6 @@
 
 		      <child>
 			<widget class="GtkLabel" id="krb5_message_label">
-			  <property name="width_request">333</property>
 			  <property name="visible">True</property>
 			  <property name="label" translatable="no"></property>
 			  <property name="use_underline">False</property>

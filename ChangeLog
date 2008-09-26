@@ -1,5 +1,11 @@
 2008-09-26  Guido Guenther  <agx@sigxcpu.org>
 
+	* src/krb5-auth-dialog.glade: remove width_request from
+	krb5_auth_message_label. Now we display the whole principal name
+	instead of cutting it off at an arbitrary position.
+
+2008-09-26  Guido Guenther  <agx@sigxcpu.org>
+
 	* src/krb5-auth-dialog.1.in: add manpage section
 
 2008-09-26  Guido Guenther  <agx@agx@sigxcpu.org>

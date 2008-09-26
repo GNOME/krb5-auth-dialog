@@ -1,4 +1,4 @@
-.TH krb5-auth-dialog 2005/11/02 "GNOME" "System Administrator's Manual"
+.TH krb5-auth-dialog 1 2005/11/02 "GNOME" "System Administrator's Manual"
 
 .SH NAME
 krb5-auth-dialog \- Kerberos 5 credential checking

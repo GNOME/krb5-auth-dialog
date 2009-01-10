@@ -49,6 +49,7 @@ typedef struct {
 	NotifyNotification* notification;/* notification messages */
 #endif /* HAVE_LIBNOTIFY */
 	char* principal;		/* the principal to request */
+	gboolean renewable;		/* credentials renewable? */
 } Krb5AuthApplet;
 
 Krb5AuthApplet* ka_create_applet();

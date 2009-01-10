@@ -1,3 +1,8 @@
+Sun Jan  4 16:18:19 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb-auth-dialog.[ch]: separate ticket renewal and interactive
+	  ticket acquisition
+
 Sun Jan  4 16:15:57 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krbt-auth-{applet,dialog}.c don't popup the dialog if we have a

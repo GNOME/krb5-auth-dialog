@@ -1,3 +1,9 @@
+Fri Jan  9 21:35:24 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	add missing files that contain translations
+	* po/POTFILES.in: add missing C files
+	* po/POTFILES.skip: don't worry about etpo/
+
 Fri Jan  9 21:30:56 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/Makefile.am (EXTRA_DIST): fix schema_in_files typo

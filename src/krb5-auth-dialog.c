@@ -29,11 +29,11 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glade/glade.h>
-#include <dbus/dbus-glib.h>
 
 #include "krb5-auth-dialog.h"
 #include "krb5-auth-applet.h"
 #include "krb5-auth-gconf.h"
+#include "krb5-auth-dbus.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
 #include <libnm_glib.h>
@@ -663,11 +663,10 @@ main (int argc, char *argv[])
 	Krb5AuthApplet *applet;
 	GOptionContext *context;
 	GError *error = NULL;
-	DBusGConnection *session;
-	DBusGProxy *bus_proxy;
-	guint request_name_reply;
-	unsigned int flags;
+
+	guint status = 0;
 	gboolean run_auto = FALSE, run_always = FALSE;
+
 	const char *help_msg = "Run '" PACKAGE " --help' to see a full list of available command line options";
 	const GOptionEntry options [] = {
 		{"auto", 'a', 0, G_OPTION_ARG_NONE, &run_auto,
@@ -696,44 +695,8 @@ main (int argc, char *argv[])
 	bind_textdomain_codeset (PACKAGE, "UTF-8");
 	bindtextdomain (PACKAGE, LOCALE_DIR);
 
-	/* Connect to the session bus so we get exit-on-disconnect semantics. */
-	session = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
-	if (session == NULL) {
-		g_error ("couldn't connect to session bus: %s", (error) ? error->message : "(null)");
-		exit(1);
-	}
-	flags = DBUS_NAME_FLAG_DO_NOT_QUEUE;
-	bus_proxy = dbus_g_proxy_new_for_name (session,
-					       "org.freedesktop.DBus",
-					       "/org/freedesktop/DBus",
-					       "org.freedesktop.DBus");
-
-	if (!dbus_g_proxy_call (bus_proxy,
-				"RequestName",
-				&error,
-				G_TYPE_STRING,
-				"org.gnome.KrbAuthDialog",
-				G_TYPE_UINT,
-				flags,
-				G_TYPE_INVALID,
-				G_TYPE_UINT,
-				&request_name_reply,
-				G_TYPE_INVALID)) {
-		g_warning ("Failed to invoke RequestName: %s",
-			   error->message);
-	}
-	g_clear_error (&error);
-	g_object_unref (bus_proxy);
-
-	if (request_name_reply == DBUS_REQUEST_NAME_REPLY_PRIMARY_OWNER
-	    || request_name_reply == DBUS_REQUEST_NAME_REPLY_ALREADY_OWNER)
-		;
-	else if (request_name_reply == DBUS_REQUEST_NAME_REPLY_EXISTS
-		 || request_name_reply == DBUS_REQUEST_NAME_REPLY_IN_QUEUE)
-		exit(0);
-	else {
-		g_assert_not_reached();
-	}
+	if (!ka_dbus_connect (&status))
+		exit(status);
 
 	if (run_always && !run_auto) {
 		always_run = TRUE;

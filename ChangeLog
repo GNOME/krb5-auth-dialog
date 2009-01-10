@@ -1,3 +1,15 @@
+Sun Jan  4 14:39:16 CET 2009 Guido Günther<agx@sigxcpu.org>
+
+	add gtksecentry/secmem from gpg pinentry
+	* Makefile.am (SUBDIRS): add gtksecentry
+	* acinclude.m4: add GNUPG_CHECK_TYPEDEF, GNUPG_CHECK_MLOCK
+	* gtksecentry/{Makefile.am,gtksecentry.c,gtksecentry.h}: new files
+	* secmem/{Makfile.am,Manifest,memory.h,secmem{-util.h,.c},util.[ch]}:
+	  new files
+	* configure.ac: checks for secmem
+	* src/Makefile.am (krb5_auth_dialog_LDADD): add libgtksecentry.a,
+	  libsecmem.a
+
 Sun Jan  4 14:28:06 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add a tray icon

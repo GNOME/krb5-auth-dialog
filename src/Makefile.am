@@ -22,6 +22,8 @@ krb5_auth_dialog_SOURCES =	\
 	dummy-strings.c
 
 krb5_auth_dialog_LDADD = \
+			../gtksecentry/libgtksecentry.a \
+			../secmem/libsecmem.a \
 			@NETWORK_MANAGER_LIBS@ \
 			@KRB5_LIBS@ \
 			@LIBNOTIFY_LIBS@ \

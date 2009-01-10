@@ -137,6 +137,26 @@ AM_CONDITIONAL(HAVE_LIBNOTIFY, [test "x$with_libnotify" = "xyes"])
 AC_SUBST(LIBNOTIFY_CFLAGS)
 AC_SUBST(LIBNOTIFY_LIBS)
 
+
+dnl secmem
+dnl Checks for library functions.
+AC_CHECK_FUNCS(seteuid stpcpy mmap)
+GNUPG_CHECK_MLOCK
+GNUPG_CHECK_TYPEDEF(byte, HAVE_BYTE_TYPEDEF)
+GNUPG_CHECK_TYPEDEF(ulong, HAVE_ULONG_TYPEDEF)
+dnl Check for libcap
+AC_ARG_WITH([libcap], AC_HELP_STRING([--without-libcap],
+            [Disable support for capabilities library]))
+if test "x$with_libcap" != "xno"; then
+  AC_PATH_PROG(SETCAP, setcap, :, "$PATH:/sbin:/usr/sbin")
+  AC_CHECK_LIB(cap, cap_set_proc, [
+    AC_DEFINE(USE_CAPABILITIES,1,[The capabilities support library is installed])
+    LIBCAP=-lcap
+  ])
+fi
+AC_SUBST(LIBCAP)
+
+
 check_interval=30
 AC_DEFINE_UNQUOTED(CREDENTIAL_CHECK_INTERVAL,[$check_interval],
 		   [Define the to number of seconds to wait between checks of
@@ -165,6 +185,8 @@ Makefile
 krb5-auth-dialog.spec
 src/Makefile
 src/krb5-auth-dialog.1
+secmem/Makefile
+gtksecentry/Makefile
 icons/Makefile
 etpo/Makefile
 po/Makefile.in

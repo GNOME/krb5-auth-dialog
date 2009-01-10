@@ -1,4 +1,4 @@
-SUBDIRS = src po etpo icons
+SUBDIRS = secmem gtksecentry src po etpo icons
 
 EXTRA_DIST =                            \
 	intltool-extract.in             \

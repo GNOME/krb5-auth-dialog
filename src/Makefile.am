@@ -10,6 +10,13 @@ autostart_in_files = krb5-auth-dialog.desktop.in
 autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
+schemadir = $(sysconfdir)/gconf/schemas
+schema_in_files = $(PACKAGE).schemas.in
+schema_DATA = $(PACKAGE).schemas
+
+%.schemas: $(srcdir)/%.schemas.in
+	sed -e "s,::PACKAGE::,$(PACKAGE)," < $< > $@
+
 krb5_auth_dialog_SOURCES =	\
 	krb5-auth-dialog.c      \
 	krb5-auth-dialog.h      \
@@ -42,7 +49,9 @@ glade_DATA =			\
 
 EXTRA_DIST =		\
 	$(glade_DATA)   \
+	$(schama_in_files) \
 	$(autostart_in_files) \
 	krb5-auth-dialog.1.in
 
+CLEANFILES = $(schema_DATA)
 DISTCLEANFILES = krb5-auth-dialog.desktop

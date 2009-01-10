@@ -1,0 +1,55 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/::PACKAGE::/show_trayicon</key>
+      <applyto>/apps/::PACKAGE::/show_trayicon</applyto>
+      <owner>::PACKAGE::</owner>
+      <type>bool</type>
+      <default>1</default>
+
+      <locale name="C">
+        <short>Show trayicon</short>
+        <long>Show a trayicon in the status area of the panel</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/::PACKAGE::/principal</key>
+      <applyto>/apps/::PACKAGE::/principal</applyto>
+      <owner>::PACKAGE::</owner>
+      <type>string</type>
+      <default></default>
+
+      <locale name="C">
+        <short>Kerberos principal</short>
+        <long>The kerberos principal to acquire the ticket for</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/::PACKAGE::/pk_userid</key>
+      <applyto>/apps/::PACKAGE::/pk_userid</applyto>
+      <owner>::PACKAGE::</owner>
+      <type>string</type>
+      <default></default>
+
+      <locale name="C">
+        <short>Pkinit identifier</short>
+        <long>The principal's public/private/certificate identifier when using pkinit</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/::PACKAGE::/prompt_minutes</key>
+      <applyto>/apps/::PACKAGE::/prompt_minutes</applyto>
+      <owner>::PACKAGE::</owner>
+      <type>int</type>
+      <default>30</default>
+
+      <locale name="C">
+        <short>Prompt minutes before expiry</short>
+        <long>Start prompting/displaying notifications that many minutes before expiry</long>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

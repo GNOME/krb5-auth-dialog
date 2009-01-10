@@ -14,6 +14,10 @@ gconftool-2 --type=bool --set /apps/krb5-auth-dialog/show_trayicon false
 You can set the time of the first password prompt via:
 gconftool-2 --type=int --set /apps/krb5-auth-dialog/prompt_minutes 30
 
+You can set the principals pkinit identifier via:
+gconftool-2 --type=string --set /apps/krb5-auth-dialog/pk_userid "FILE:/path/to/user.pem,/path/to/user.key"
+or if you're using a smartcard:
+gconftool-2 --type=string --set /apps/krb5-auth-dialog/pk_userid "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"
 
 A note on translations:
 Kerberos doesn't translate either its prompts or its error messages.

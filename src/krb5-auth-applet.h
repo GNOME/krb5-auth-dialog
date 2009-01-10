@@ -50,6 +50,7 @@ typedef struct {
 #endif /* HAVE_LIBNOTIFY */
 	char* principal;		/* the principal to request */
 	gboolean renewable;		/* credentials renewable? */
+	char* pk_userid;		/* "userid" for pkint */
 } Krb5AuthApplet;
 
 Krb5AuthApplet* ka_create_applet();
@@ -60,7 +61,7 @@ gboolean ka_show_tray_icon(Krb5AuthApplet* applet);
 
 #ifdef ENABLE_DEBUG
 #define KA_DEBUG(fmt,...) \
-    g_printf ("DEBUG: %s: " fmt "\n", __func__, __VA_ARGS__)
+    g_printf ("DEBUG: %s: " fmt "\n", __func__, ##__VA_ARGS__)
 #else
 #define KA_DEBUG(fmt,...) \
     do { } while (0)

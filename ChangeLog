@@ -1,3 +1,18 @@
+Sun Jan  4 16:28:35 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	pkinit support
+	* README: document pkinit gconf keys
+	* configure.ac: check for heimdal's pkinit support
+	* krb5-auth-applet.h (Krb5AuthApplet): add pk_userid
+	* krb5-auth-dialog.c (ka_krb5_cc_clear_mcred): new function
+	  (set_options_from_creds): call
+	  krb5_get_init_creds_opt_set_default_flags
+	  (ka_auth_pkinit): new function
+	  (grab_credentials): call ka_auth_pkinit
+	  (ka_renew_credentials); simplify
+	  (ka_get_tgt_from_ccache): likewise
+	* krb5-auth-gconf.c (ka_gconf_set_pk_userid): new function
+
 Sun Jan  4 16:21:20 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	use get_error_message() when possible

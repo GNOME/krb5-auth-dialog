@@ -54,6 +54,7 @@ savedCFLAGS="$CFLAGS"
 CFLAGS="$KRB5_CFLAGS $CFLAGS"
 savedLIBS="$LIBS"
 LIBS="$KRB5_LIBS $LIBS"
+AC_CHECK_HEADERS([hx509_err.h])
 AC_CHECK_MEMBERS(krb5_creds.ticket_flags,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.forwardable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.renewable,,,[#include <krb5.h>])
@@ -61,6 +62,8 @@ AC_CHECK_MEMBERS(krb5_creds.flags.b.proxiable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags,,,[#include <krb5.h>])
 AC_CHECK_FUNCS([krb5_get_error_message])
 AC_CHECK_FUNCS([krb5_get_renewed_creds])
+AC_CHECK_FUNCS([krb5_get_init_creds_opt_set_default_flags])
+AC_CHECK_FUNCS([krb5_cc_clear_mcred])
 AC_MSG_CHECKING(if a krb5_principal->realm is a char*)
 AC_COMPILE_IFELSE([
 $ac_includes_default
@@ -89,8 +92,26 @@ main(int argc, char **argv)
 }],[AC_DEFINE(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA,1,[Define if the realm of a krb5_principal is a krb5_data])
 AC_MSG_RESULT(yes)],
 AC_MSG_RESULT(no))
+dnl pkinit
+AC_MSG_CHECKING([whether to enable pkinit support])
+AC_ARG_ENABLE([pkinit],
+	AS_HELP_STRING([--enable-pkinit],[whether to enable preauth via pkinit support]),
+	[],[enable_pkinit=autodetect])
+AC_MSG_RESULT([$enable_pkinit])
+
+if test "x$enable_pkinit" != "xno"; then
+	AC_CHECK_FUNCS([krb5_get_init_creds_opt_set_pkinit],
+		[enable_pkinit=yes],[enable_pkinit=no])
+fi
+
+if test "x$enable_pkinit" = "xyes"; then
+	AC_DEFINE([ENABLE_PKINIT],[1],[Define for pkinit support])
+fi
+AM_CONDITIONAL([ENABLE_PKINIT],[test "x$enable_pkinit" = "xyes"])
 CFLAGS="$savedCFLAGS"
 LIBS="$savedLIBS"
+
+
 
 dnl NetworkManager
 AC_MSG_CHECKING([whether to enable NetworkManager support])

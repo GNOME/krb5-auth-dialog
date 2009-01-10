@@ -26,6 +26,7 @@
 
 #define KA_GCONF_PATH			"/apps/" PACKAGE
 #define KA_GCONF_KEY_PRINCIPAL		KA_GCONF_PATH "/principal"
+#define KA_GCONF_KEY_PK_USERID		KA_GCONF_PATH "/pk_userid"
 #define KA_GCONF_KEY_PROMPT_MINS	KA_GCONF_PATH "/prompt_minutes"
 #define KA_GCONF_KEY_SHOW_TRAYICON	KA_GCONF_PATH "/show_trayicon"
 
@@ -124,6 +125,18 @@ ka_gconf_set_principal (GConfClient* client, Krb5AuthApplet* applet)
 
 
 static gboolean
+ka_gconf_set_pk_userid (GConfClient* client, Krb5AuthApplet* applet)
+{
+	g_free (applet->pk_userid);
+	if(!ka_gconf_get_string (client, KA_GCONF_KEY_PK_USERID, &applet->pk_userid)) {
+		applet->pk_userid = NULL;
+	}
+	KA_DEBUG("Setting pk_userid to %s", applet->pk_userid ? applet->pk_userid : "<disabled>");
+	return TRUE;
+}
+
+
+static gboolean
 ka_gconf_set_prompt_mins (GConfClient* client, Krb5AuthApplet* applet)
 {
 	if(!ka_gconf_get_int (client, KA_GCONF_KEY_PROMPT_MINS, &applet->pw_prompt_secs)) {
@@ -168,6 +181,8 @@ ka_gconf_key_changed_callback (GConfClient* client,
 		ka_gconf_set_prompt_mins (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_SHOW_TRAYICON) == 0) {
 		ka_gconf_set_show_trayicon (client, applet);
+	} else if (g_strcmp0 (key, KA_GCONF_KEY_PK_USERID) == 0) {
+		ka_gconf_set_pk_userid (client, applet);
 	} else
 		g_warning("Received notification for unknown gconf key %s", key);
 	return;
@@ -195,6 +210,7 @@ ka_gconf_init (Krb5AuthApplet* applet, int argc, char* argv[])
 	ka_gconf_set_principal (client, applet);
 	ka_gconf_set_prompt_mins (client, applet);
 	ka_gconf_set_show_trayicon (client, applet);
+	ka_gconf_set_pk_userid(client, applet);
 
 	success = TRUE;
 out:

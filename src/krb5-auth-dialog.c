@@ -43,17 +43,21 @@
 #include <libnm_glib.h>
 #endif
 
+#ifdef HAVE_HX509_ERR_H
+# include <hx509_err.h>
+#endif
+
 static krb5_context kcontext;
 static krb5_principal kprincipal;
 static krb5_timestamp creds_expiry;
 static krb5_timestamp canceled_creds_expiry;
 static gboolean canceled;
-static gboolean invalid_password;
+static gboolean invalid_auth;
 static gboolean always_run;
 
 static int grab_credentials (Krb5AuthApplet* applet);
 static int ka_renew_credentials (Krb5AuthApplet* applet);
-static gboolean get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
+static gboolean ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
 
 /* YAY for different Kerberos implementations */
 static int
@@ -142,6 +146,16 @@ get_error_message(krb5_context context, krb5_error_code err)
 		return msg;
 }
 
+static void
+ka_krb5_cc_clear_mcred(krb5_creds* mcred)
+{
+#if defined HAVE_KRB5_CC_CLEAR_MCRED
+	krb5_cc_clear_mcred(mcred);
+#else
+	memset(mcred, 0, sizeof(krb5_creds));
+#endif
+}
+
 /* ***************************************************************** */
 /* ***************************************************************** */
 
@@ -153,7 +167,7 @@ credentials_expiring_real (Krb5AuthApplet* applet)
 	gboolean retval = FALSE;
 	applet->renewable = FALSE;
 
-	if (!get_tgt_from_ccache (kcontext, &my_creds)) {
+	if (!ka_get_tgt_from_ccache (kcontext, &my_creds)) {
 		creds_expiry = 0;
 		retval = TRUE;
 		goto out;
@@ -238,7 +252,7 @@ krb5_auth_dialog_do_updates (gpointer data)
 
 	/* Update creds_expiry and close the applet if we got the creds by other means (e.g. kinit) */
 	if (!credentials_expiring_real(applet)) {
-		KA_DEBUG("PW Dialog persist is %d", applet->pw_dialog_persist);
+		KA_DEBUG("PW Dialog persist: %d", applet->pw_dialog_persist);
 		if (!applet->pw_dialog_persist)
 			gtk_widget_hide(applet->pw_dialog);
 	}
@@ -292,7 +306,7 @@ krb5_auth_dialog_setup (Krb5AuthApplet *applet,
 	wrong_text = NULL;
 
 	if (applet->pw_wrong_label) {
-		if (invalid_password) {
+		if (invalid_auth) {
 			wrong_text = g_strdup (_("The password you entered is invalid"));
 		} else {
 			krb5_timestamp now;
@@ -330,7 +344,7 @@ auth_dialog_prompter (krb5_context ctx,
 	krb5_error_code errcode;
 	int i;
 
-	errcode = KRB5_LIBOS_CANTREADPWD;
+	errcode = KRB5KRB_ERR_GENERIC;
 	canceled = FALSE;
 	canceled_creds_expiry = 0;
 
@@ -338,7 +352,7 @@ auth_dialog_prompter (krb5_context ctx,
 		const gchar *password = NULL;
 		int password_len = 0;
 		int response;
-		guint32 source_id = 0;
+		guint32 source_id;
 
 		GtkWidget *entry;
 
@@ -355,7 +369,6 @@ auth_dialog_prompter (krb5_context ctx,
 			case GTK_RESPONSE_OK:
 				password = gtk_secure_entry_get_text (GTK_SECURE_ENTRY (entry));
 				password_len = strlen (password);
-				errcode = 0;
 				break;
 			case GTK_RESPONSE_CANCEL:
 				canceled = TRUE;
@@ -367,16 +380,23 @@ auth_dialog_prompter (krb5_context ctx,
 				g_warning ("Unknown Response: %d", response);
 				g_assert_not_reached ();
 		}
-
 		g_source_remove (source_id);
 
-		prompts[i].reply->data = (char *) password;
-		prompts[i].reply->length = password_len;
-	}
+		if (!password)
+			goto cleanup;
+		if (password_len+1 > prompts[i].reply->length) {
+			g_warning("Password too long %d/%d", password_len+1, prompts[i].reply->length);
+			goto cleanup;
+		}
 
+		memcpy(prompts[i].reply->data, (char *) password, password_len + 1);
+		prompts[i].reply->length = password_len;
+		errcode = 0;
+	}
+cleanup:
 	/* Reset this, so we know the next time we get a TRUE value, it is accurate. */
 	gtk_widget_hide (applet->pw_dialog);
-	invalid_password = FALSE;
+	invalid_auth = FALSE;
 
 	return errcode;
 }
@@ -418,15 +438,17 @@ credentials_expiring (gpointer *data)
 	gboolean give_up;
 	Krb5AuthApplet* applet = (Krb5AuthApplet*) data;
 
-	KA_DEBUG("Checking expiry: %d", applet->pw_prompt_secs);
+	KA_DEBUG("Checking expiry <%ds", applet->pw_prompt_secs);
 	if (credentials_expiring_real (applet) && is_online) {
+		KA_DEBUG("Expiry @ %ld", creds_expiry);
 
 		if (!ka_renew_credentials (applet)) {
-			KA_DEBUG("Credentials renewed, renewable: %d", applet->renewable);
+			KA_DEBUG("Credentials renewed");
 			goto out;
 		}
 
-		if (!applet->show_trayicon)
+		/* no popup when using a trayicon */
+		if (applet->show_trayicon)
 			goto out;
 
 		give_up = canceled && (creds_expiry == canceled_creds_expiry);
@@ -438,7 +460,7 @@ credentials_expiring (gpointer *data)
 			} while ((retval != 0) && 
 			         (retval != KRB5_REALM_CANT_RESOLVE) &&
 			         (retval != KRB5_KDC_UNREACH) &&
-				 invalid_password &&
+				 invalid_auth &&
 			         !give_up);
 		}
 	}
@@ -449,33 +471,81 @@ out:
 
 
 static void
-set_options_using_creds(const Krb5AuthApplet* applet,
-			krb5_context context,
-			krb5_creds *creds,
-			krb5_get_init_creds_opt *opts)
+set_options_from_creds(const Krb5AuthApplet* applet,
+		       krb5_context context,
+		       krb5_creds *in,
+		       krb5_get_init_creds_opt *out)
 {
 	krb5_deltat renew_lifetime;
 	int flag;
 
-	flag = get_cred_forwardable(creds) != 0;
-	krb5_get_init_creds_opt_set_forwardable(opts, flag);
-	flag = get_cred_proxiable(creds) != 0;
-	krb5_get_init_creds_opt_set_proxiable(opts, flag);
-	flag = get_cred_renewable(creds) != 0;
-	if (flag && (creds->times.renew_till > creds->times.starttime)) {
-		renew_lifetime = creds->times.renew_till -
-				 creds->times.starttime;
-		krb5_get_init_creds_opt_set_renew_life(opts,
+#ifdef HAVE_KRB5_GET_INIT_CREDS_OPT_SET_DEFAULT_FLAGS
+	krb5_get_init_creds_opt_set_default_flags(kcontext, PACKAGE,
+		krb5_principal_get_realm(kcontext, kprincipal), out);
+#endif
+
+	flag = get_cred_forwardable(in) != 0;
+	krb5_get_init_creds_opt_set_forwardable(out, flag);
+	flag = get_cred_proxiable(in) != 0;
+	krb5_get_init_creds_opt_set_proxiable(out, flag);
+	flag = get_cred_renewable(in) != 0;
+	if (flag && (in->times.renew_till > in->times.starttime)) {
+		renew_lifetime = in->times.renew_till -
+				 in->times.starttime;
+		krb5_get_init_creds_opt_set_renew_life(out,
 						       renew_lifetime);
 	}
-	if (creds->times.endtime >
-	    creds->times.starttime + applet->pw_prompt_secs) {
-		krb5_get_init_creds_opt_set_tkt_life(opts,
-					 	     creds->times.endtime -
-						     creds->times.starttime);
+	if (in->times.endtime >
+	    in->times.starttime + applet->pw_prompt_secs) {
+		krb5_get_init_creds_opt_set_tkt_life(out,
+						     in->times.endtime -
+						     in->times.starttime);
 	}
 	/* This doesn't do a deep copy -- fix it later. */
-	/* krb5_get_init_creds_opt_set_address_list(opts, creds->addresses); */
+	/* krb5_get_init_creds_opt_set_address_list(out, creds->addresses); */
+}
+
+
+static krb5_error_code
+ka_auth_pkinit(Krb5AuthApplet* applet, krb5_creds* creds)
+{
+#ifdef ENABLE_PKINIT
+	krb5_get_init_creds_opt *opts = NULL;
+	krb5_error_code retval;
+
+	KA_DEBUG("pkinit with %s", applet->pk_userid);
+
+	if (!applet->pk_userid)
+		return 0;
+
+	retval = krb5_get_init_creds_opt_alloc (kcontext, &opts);
+	if (retval)
+		goto out;
+	set_options_from_creds (applet, kcontext, creds, opts);
+
+	retval = krb5_get_init_creds_opt_set_pkinit(kcontext, opts,
+						    kprincipal,
+						    applet->pk_userid,
+						    NULL, /* x509 anchors */
+						    NULL,
+						    NULL,
+						    0,	  /* pk_use_enc_key */
+						    auth_dialog_prompter,
+						    applet, /* data */
+						    NULL);  /* passwd */
+	KA_DEBUG("pkinit returned with %d", retval);
+	if (retval)
+		goto out;
+
+	retval = krb5_get_init_creds_password(kcontext, creds, kprincipal,
+	                                      NULL, auth_dialog_prompter, applet,
+		                              0, NULL, opts);
+out:
+	krb5_get_init_creds_opt_free(kcontext, opts);
+	return retval;
+#else  /* ENABLE_PKINIT */
+	return 0;
+#endif /* ! ENABLE_PKINIT */
 }
 
 
@@ -486,7 +556,7 @@ grab_credentials (Krb5AuthApplet* applet)
 	krb5_error_code retval;
 	krb5_creds my_creds;
 	krb5_ccache ccache;
-	krb5_get_init_creds_opt opts;
+	krb5_get_init_creds_opt *opt = NULL;
 
 	memset(&my_creds, 0, sizeof(my_creds));
 
@@ -502,39 +572,52 @@ grab_credentials (Krb5AuthApplet* applet)
 	if (retval)
 		return retval;
 
-	krb5_get_init_creds_opt_init (&opts);
-	retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-	                                      NULL, auth_dialog_prompter, applet,
-	       	                              0, NULL, &opts);
-	creds_expiry = my_creds.times.endtime;
-	if (canceled) {
-		canceled_creds_expiry = creds_expiry;
+#if ENABLE_PKINIT
+	if (applet->pk_userid) { /* try pkinit */
+#else
+	if (0) {
+#endif
+		retval = ka_auth_pkinit(applet, &my_creds);
+	} else {
+		retval = krb5_get_init_creds_opt_alloc (kcontext, &opt);
+		if (retval)
+			goto out;
+		set_options_from_creds (applet, kcontext, &my_creds, opt);
+		retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
+						      NULL, auth_dialog_prompter, applet,
+						      0, NULL, opt);
 	}
+	creds_expiry = my_creds.times.endtime;
+	if (canceled)
+		canceled_creds_expiry = creds_expiry;
 	if (retval) {
 		switch (retval) {
 			case KRB5KDC_ERR_PREAUTH_FAILED:
 			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
-				/* Invalid password, try again. */
-				invalid_password = TRUE;
+#ifdef HAVE_HX509_ERR_H
+			case HX509_PKCS11_LOGIN:
+#endif
+				/* Invalid password/pin, try again. */
+				invalid_auth = TRUE;
 				goto out;
 			default:
-				g_warning("Auth failed with %d: %s", retval, get_error_message(kcontext, retval));
+				KA_DEBUG("Auth failed with %d: %s", retval,
+				         get_error_message(kcontext, retval));
 				break;
 		}
 		goto out;
 	}
-
 	retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
-	if (retval) {
+	if (retval)
 		goto out;
-	}
 
 	retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
-	if (retval) {
+	if (retval)
 		goto out;
-	}
 
 out:
+	if (opt)
+		krb5_get_init_creds_opt_free(kcontext, opt);
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
 
@@ -550,86 +633,87 @@ ka_renew_credentials (Krb5AuthApplet* applet)
 	krb5_ccache ccache;
 	krb5_get_init_creds_opt opts;
 
-	memset(&my_creds, 0, sizeof(my_creds));
-
 	if (kprincipal == NULL) {
 		retval = krb5_parse_name(kcontext, applet->principal,
 					 &kprincipal);
-		if (retval) {
+		if (retval)
 			return retval;
-		}
 	}
 
 	retval = krb5_cc_default (kcontext, &ccache);
 	if (retval)
 		return retval;
 
+	retval = ka_get_tgt_from_ccache (kcontext, &my_creds);
+	if (!retval) {
+		krb5_cc_close (kcontext, ccache);
+		return -1;
+	}
+
 	krb5_get_init_creds_opt_init (&opts);
-	if (get_tgt_from_ccache (kcontext, &my_creds)) {
-		set_options_using_creds (applet, kcontext, &my_creds, &opts);
+	set_options_from_creds (applet, kcontext, &my_creds, &opts);
 
-		if (applet->renewable) {
-			retval = get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
-
-			if (retval != 0) {
-				goto out;
-			}
-		}
-		retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
+	if (applet->renewable) {
+		retval = get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
 		if (retval)
 			goto out;
-	} else
-		retval = -1;
 
+		retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
+		if(retval) {
+			g_warning("krb5_cc_initialize: %s", get_error_message(kcontext, retval));
+			goto out;
+		}
+		retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
+		if (retval) {
+			g_warning("krb5_cc_store_cred: %s", get_error_message(kcontext, retval));
+			goto out;
+		}
+	}
 out:
 	creds_expiry = my_creds.times.endtime;
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
-
 	return retval;
 }
 
 
+/* get principal associated with the default credentials cache - if found store
+ * it in *creds, return FALSE otwerwise */
 static gboolean
-get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
+ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 {
 	krb5_ccache ccache;
-	krb5_creds mcreds;
-	krb5_principal principal, tgt_principal;
-	gboolean ret;
+	krb5_creds pattern;
+	krb5_principal principal;
+	gboolean ret = FALSE;
 
-	memset(&ccache, 0, sizeof(ccache));
-	ret = FALSE;
-	if (krb5_cc_default(context, &ccache) == 0) {
-		memset(&principal, 0, sizeof(principal));
-		if (krb5_cc_get_principal(context, ccache, &principal) == 0) {
-			memset(&tgt_principal, 0, sizeof(tgt_principal));
-			if (krb5_build_principal_ext(context, &tgt_principal,
-			                             get_principal_realm_length(principal),
-			                             get_principal_realm_data(principal),
-			                             KRB5_TGS_NAME_SIZE,
-			                             KRB5_TGS_NAME,
-			                             get_principal_realm_length(principal),
-			                             get_principal_realm_data(principal),
-			                             0) == 0) {
-				memset(creds, 0, sizeof(*creds));
-				memset(&mcreds, 0, sizeof(mcreds));
-				mcreds.client = principal;
-				mcreds.server = tgt_principal;
-				if (krb5_cc_retrieve_cred(context, ccache,
-				                          0,
-				                          &mcreds,
-				                          creds) == 0) {
-					ret = TRUE;
-				} else {
-					memset(creds, 0, sizeof(*creds));
-				}
-				krb5_free_principal(context, tgt_principal);
-			}
-			krb5_free_principal(context, principal);
-		}
-		krb5_cc_close(context, ccache);
+	ka_krb5_cc_clear_mcred(&pattern);
+
+	if (krb5_cc_default(context, &ccache))
+		return FALSE;
+
+	if (krb5_cc_get_principal(context, ccache, &principal))
+		goto out;
+
+	if (krb5_build_principal_ext(context, &pattern.server,
+				     get_principal_realm_length(principal),
+			             get_principal_realm_data(principal),
+				     KRB5_TGS_NAME_SIZE,
+				     KRB5_TGS_NAME,
+				     get_principal_realm_length(principal),
+				     get_principal_realm_data(principal), 0)) {
+		goto out_free_princ;
 	}
+
+	pattern.client = principal;
+	if (!krb5_cc_retrieve_cred(context, ccache, 0, &pattern, creds))
+		ret = TRUE;
+	krb5_free_principal(context, pattern.server);
+
+out_free_princ:
+	krb5_free_principal(context, principal);
+out:
+	krb5_cc_close(context, ccache);
 	return ret;
 }
 
@@ -641,11 +725,10 @@ using_krb5()
 	krb5_creds creds;
 
 	err = krb5_init_context(&kcontext);
-	if (err) {
-		return TRUE;
-	}
+	if (err)
+		return FALSE;
 
-	have_tgt = get_tgt_from_ccache(kcontext, &creds);
+	have_tgt = ka_get_tgt_from_ccache(kcontext, &creds);
 	if (have_tgt) {
 		krb5_copy_principal(kcontext, creds.client, &kprincipal);
 		krb5_free_cred_contents (kcontext, &creds);
@@ -696,10 +779,9 @@ ka_grab_credentials (Krb5AuthApplet* applet)
 	do {
 		retry = TRUE;
 		retval = grab_credentials (applet);
+		if (invalid_auth)
+			continue;
 		switch (retval) {
-		    case KRB5KRB_AP_ERR_BAD_INTEGRITY:
-			    retry = TRUE;
-			    break;
 		    case 0: /* success */
 		    case KRB5_LIBOS_PWDINTR:     /* canceled (heimdal) */
 		    case KRB5_LIBOS_CANTREADPWD: /* canceled (mit) */

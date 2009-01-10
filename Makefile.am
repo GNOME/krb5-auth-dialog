@@ -1,4 +1,4 @@
-SUBDIRS = src po etpo
+SUBDIRS = src po etpo icons
 
 EXTRA_DIST =                            \
 	intltool-extract.in             \

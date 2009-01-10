@@ -12,9 +12,23 @@ autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 
 krb5_auth_dialog_SOURCES =	\
 	krb5-auth-dialog.c      \
+	krb5-auth-dialog.h      \
+	krb5-auth-applet.c	\
+	krb5-auth-applet.h	\
+	krb5-auth-gconf.c	\
+	krb5-auth-gconf.h	\
+	krb5-auth-notify.c	\
+	krb5-auth-notify.h	\
 	dummy-strings.c
 
-krb5_auth_dialog_LDADD = @NETWORK_MANAGER_LIBS@ @KRB5_LIBS@ @GNOME_LIBS@
+krb5_auth_dialog_LDADD = \
+			@NETWORK_MANAGER_LIBS@ \
+			@KRB5_LIBS@ \
+			@LIBNOTIFY_LIBS@ \
+			@DBUS_LIBS@ \
+			@GCONF_LIBS@ \
+			@GLADE_LIBS@ \
+			@GTK_LIBS@
 
 gladedir = $(datadir)/krb5-auth-dialog
 glade_DATA =			\

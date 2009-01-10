@@ -2,8 +2,20 @@ krb5-auth-dialog is a simple dialog that monitors kerberos tickets, and
 pops up a dialog when they are about to expire.  Eventually, we expect
 it to be part of GNOME.
 
-A note on translations:
+Configuration:
+Configuration settings are handled via gconf.
 
+You can set the principal that is used to acquire tickets via:
+gconftool-2 --type=string --set /apps/krb5-auth-dialog/principal "principal@YOUR.REALM"
+
+You can hide the tray icon via:
+gconftool-2 --type=bool --set /apps/krb5-auth-dialog/show_trayicon false
+
+You can set the time of the first password prompt via:
+gconftool-2 --type=int --set /apps/krb5-auth-dialog/prompt_minutes 30
+
+
+A note on translations:
 Kerberos doesn't translate either its prompts or its error messages.
 As the prompt is very visible, we need to translate it externally.  To
 do this, the etpo binary in etpo/ can be used to extract the public

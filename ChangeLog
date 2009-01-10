@@ -1,3 +1,15 @@
+Sun Jan  4 14:28:06 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	add a tray icon
+	* configure.ac: check for libnotify, dbus, gconf
+	* Makefile.am, icons/krb-{no-,}valid-ticket.png: add icons
+	* src/krb5-auth-applet.[ch]: new files
+	* src/krb5-auth-gconf.[ch]: new files
+	* src/krb5-auth-notify.[ch]: new files
+	* src/Makefile.am: expand krb5_auth_dialog_SOURCES and
+	  krb5_auth_dialog_LDADD
+	* README: document gconf keys
+
 2008-09-26  Guido Guenther  <agx@sigxcpu.org>
 
 	* src/krb5-auth-dialog.glade: remove width_request from

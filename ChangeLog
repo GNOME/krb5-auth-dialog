@@ -1,3 +1,10 @@
+Sun Jan  4 16:21:20 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	use get_error_message() when possible
+	* configure.ac: check for krb5_get_error_message
+	* src/krb5-auth-dialog.c (get_error_message): new function
+	  (ka_error_dialog): check for KRB5_LIBOS_PWDINTR
+
 Sun Jan  4 16:18:19 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb-auth-dialog.[ch]: separate ticket renewal and interactive

@@ -125,6 +125,23 @@ get_principal_realm_data(krb5_principal p)
 	return p->realm.data;
 #endif
 }
+
+static const char*
+get_error_message(krb5_context context, krb5_error_code err)
+{
+	const char *msg = NULL;
+
+#if defined(HAVE_KRB5_GET_ERROR_MESSAGE)
+	msg = krb5_get_error_message(context, err);
+#else
+	msg = error_message(err);
+#endif
+	if (msg == NULL)
+		return "unknown error";
+	else
+		return msg;
+}
+
 /* ***************************************************************** */
 /* ***************************************************************** */
 
@@ -501,6 +518,7 @@ grab_credentials (Krb5AuthApplet* applet)
 				invalid_password = TRUE;
 				goto out;
 			default:
+				g_warning("Auth failed with %d: %s", retval, get_error_message(kcontext, retval));
 				break;
 		}
 		goto out;
@@ -656,7 +674,7 @@ ka_destroy_cache (GtkMenuItem  *menuitem, gpointer data)
 static void
 ka_error_dialog(int err)
 {
-	const char* msg = error_message(err);
+	const char* msg = get_error_message(kcontext, err);
 	GtkWidget *dialog = gtk_message_dialog_new (NULL,
 				GTK_DIALOG_DESTROY_WITH_PARENT,
 				GTK_MESSAGE_ERROR,
@@ -683,7 +701,8 @@ ka_grab_credentials (Krb5AuthApplet* applet)
 			    retry = TRUE;
 			    break;
 		    case 0: /* success */
-		    case KRB5_LIBOS_CANTREADPWD: /* canceled */
+		    case KRB5_LIBOS_PWDINTR:     /* canceled (heimdal) */
+		    case KRB5_LIBOS_CANTREADPWD: /* canceled (mit) */
 			    retry = FALSE;
 			    break;
 		    case KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN:

@@ -59,6 +59,7 @@ AC_CHECK_MEMBERS(krb5_creds.flags.b.forwardable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.renewable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.proxiable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags,,,[#include <krb5.h>])
+AC_CHECK_FUNCS([krb5_get_error_message])
 AC_CHECK_FUNCS([krb5_get_renewed_creds])
 AC_MSG_CHECKING(if a krb5_principal->realm is a char*)
 AC_COMPILE_IFELSE([

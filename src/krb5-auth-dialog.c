@@ -891,7 +891,6 @@ main (int argc, char *argv[])
 		applet->pw_dialog = glade_xml_get_widget (applet->pw_xml, "krb5_dialog");
 
 		g_set_application_name (_("Network Authentication"));
-		gtk_window_set_default_icon_name (applet->icons[1]);
 
 #ifdef ENABLE_NETWORK_MANAGER
 		nm_context = libnm_glib_init ();

@@ -35,7 +35,7 @@
 typedef struct {
 	GtkStatusIcon* tray_icon;	/* the tray icon */
 	GtkWidget* context_menu;	/* the tray icon's context menu */
-	const char* icons[2]; 		/* for expired and valid tickts */
+	const char* icons[3]; 		/* for invalid, expiring and valid tickts */
 	gboolean show_trayicon;		/* show the trayicon */
 
 	/* The password dialog */

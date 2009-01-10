@@ -1,3 +1,14 @@
+Sun Jan  4 16:43:32 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	add "expiring" tray icon
+	* icons/krb5-expiring-ticket.png: new icon
+	* icons/Makefile.am (smallicon_DATA): add new icon
+	* src/krb5-auth-applet.[ch] (ka_icons): new enum, new icon
+	  (ka_update_status): use ka_icons
+	  (ka_create_applet): call gtk_window_set_default_icon_name
+	* src/krb5-auth-dialog.c (main): don't call
+	  gtk_window_set_default_icon_name
+
 Sun Jan  4 16:37:35 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-applet.c (ka_update_status): don't show a tooltip

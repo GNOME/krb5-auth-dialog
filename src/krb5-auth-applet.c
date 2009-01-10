@@ -30,6 +30,12 @@
 
 #define NOTIFY_SECONDS 300
 
+enum ka_icons {
+	inv_icon = 0,
+	exp_icon,
+	val_icon,
+};
+
 /* update the tray icon's tooltip and icon */
 int
 ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
@@ -46,14 +52,15 @@ ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
 			hours = remaining / 3600;
 			minutes = (remaining % 3600) / 60;
 			expiry_text = g_strdup_printf (_("Your credentials expire in %.2d:%.2dh"), hours, minutes);
+			gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[val_icon]);
 		} else {
 			minutes = remaining / 60;
 			expiry_text = g_strdup_printf (ngettext(
 							"Your credentials expire in %d minute",
 							"Your credentials expire in %d minutes",
 							minutes), minutes);
+			gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[exp_icon]);
 		}
-		gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[1]);
 #ifdef HAVE_LIBNOTIFY
 		if (expiry_notified) {
 			ka_send_event_notification (applet, NOTIFY_URGENCY_NORMAL,
@@ -70,7 +77,7 @@ ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
 #endif
 	} else {
 		expiry_text = g_strdup (_("Your credentials have expired"));
-		gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[0]);
+		gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[inv_icon]);
 #ifdef HAVE_LIBNOTIFY
 		if (!expiry_notified) {
 			ka_send_event_notification (applet, NOTIFY_URGENCY_NORMAL,
@@ -214,7 +221,7 @@ ka_create_tray_icon (Krb5AuthApplet* applet)
 	g_signal_connect (G_OBJECT(tray_icon),
 			  "popup-menu",
 			  G_CALLBACK(ka_tray_icon_on_menu), applet);
-        gtk_status_icon_set_from_icon_name (tray_icon, applet->icons[0]);
+        gtk_status_icon_set_from_icon_name (tray_icon, applet->icons[exp_icon]);
         gtk_status_icon_set_tooltip (tray_icon, PACKAGE);
         return tray_icon;
 }
@@ -223,8 +230,9 @@ ka_create_tray_icon (Krb5AuthApplet* applet)
 int
 ka_setup_icons (Krb5AuthApplet* applet)
 {
-	applet->icons[0] = "krb-no-valid-ticket";
-	applet->icons[1] = "krb-valid-ticket";
+	applet->icons[val_icon] = "krb-valid-ticket";
+	applet->icons[exp_icon] = "krb-expiring-ticket";
+	applet->icons[inv_icon] = "krb-no-valid-ticket";
 	return TRUE;
 }
 
@@ -241,6 +249,7 @@ ka_create_applet()
 		g_error ("Failure to create tray icon");
 	if (!(applet->context_menu = ka_create_context_menu (applet)))
 		g_error ("Failure to create context menu");
+	gtk_window_set_default_icon_name (applet->icons[val_icon]);
 	ka_show_tray_icon (applet);
 
 	return applet;

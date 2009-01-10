@@ -1,3 +1,15 @@
+Sun Jan  4 16:51:33 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	move HAVE_LIBNOTIFY check into krb5-auth-notify.c and simplify
+	ka_status_update
+	* src/krb5-auth-applet.c (ka_tooltip_text): new function
+	  (ka_select_icon): new function
+	  (ka_update_status): drop urgency, use ka_tooltip_text and
+	  ka_select_icon
+	* src/krb5-auth-notify.c (ka_send_event_notification): define
+	  empty function when building without libnotify
+	* src/krb5-auth-notify.h: don't include notify.h
+
 Sun Jan  4 16:43:32 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add "expiring" tray icon

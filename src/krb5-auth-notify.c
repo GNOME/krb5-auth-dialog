@@ -18,15 +18,14 @@
  */
 
 #include "config.h"
-
-#ifdef HAVE_LIBNOTIFY
-
 #include "krb5-auth-applet.h"
 #include "krb5-auth-notify.h"
 
+#ifdef HAVE_LIBNOTIFY
+#include <libnotify/notify.h>
+
 void
 ka_send_event_notification (Krb5AuthApplet *applet,
-			    NotifyUrgency urgency,
 			    const char *summary,
 			    const char *message,
 			    const char *icon)
@@ -50,8 +49,18 @@ ka_send_event_notification (Krb5AuthApplet *applet,
         applet->notification = \
 		notify_notification_new_with_status_icon(summary, message, notify_icon, applet->tray_icon);
 
-        notify_notification_set_urgency (applet->notification, urgency);
+        notify_notification_set_urgency (applet->notification, NOTIFY_URGENCY_NORMAL);
         notify_notification_show (applet->notification, NULL);
+}
+
+#else /* HAVE_LIBNOTIFY */
+
+void
+ka_send_event_notification (Krb5AuthApplet *applet __attribute__((__unused__)),
+			    const char *summary __attribute__((__unused__)),
+			    const char *message __attribute__((__unused__)),
+			    const char *icon __attribute__((__unused__)))
+{
 }
 
 #endif /* HAVE_LIBNOTIFY */

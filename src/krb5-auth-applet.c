@@ -24,73 +24,97 @@
 
 #include "krb5-auth-applet.h"
 #include "krb5-auth-dialog.h"
-#ifdef HAVE_LIBNOTIFY
 #include "krb5-auth-notify.h"
-#endif
 
 #define NOTIFY_SECONDS 300
 
-enum ka_icons {
+enum ka_icon {
 	inv_icon = 0,
 	exp_icon,
 	val_icon,
 };
 
+
+/* determine the new tooltip text */
+static char*
+ka_tooltip_text(Krb5AuthApplet* applet, int remaining) 
+{
+	int hours, minutes;
+	gchar* tooltip_text;
+
+	if (remaining > 0) {
+		if (remaining >= 3600) {
+			hours = remaining / 3600;
+			minutes = (remaining % 3600) / 60;
+			tooltip_text = g_strdup_printf (_("Your credentials expire in %.2d:%.2dh"), hours, minutes);
+		} else {
+			minutes = remaining / 60;
+			tooltip_text = g_strdup_printf (ngettext(
+							"Your credentials expire in %d minute",
+							"Your credentials expire in %d minutes",
+							minutes), minutes);
+		}
+	} else
+		tooltip_text = g_strdup (_("Your credentials have expired"));
+	return tooltip_text;
+}
+
+
+/* determine the current icon */
+static const char*
+ka_select_icon(Krb5AuthApplet* applet, int remaining)
+{
+	enum ka_icon tray_icon = inv_icon;
+
+	if (remaining > 0) {
+		if (remaining < applet->pw_prompt_secs &&
+		    !applet->renewable)
+		    	tray_icon = exp_icon;
+		else			
+			tray_icon = val_icon;
+	}
+
+	return applet->icons[tray_icon];
+}
+
+
 /* update the tray icon's tooltip and icon */
 int
 ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
 {
-	gchar* expiry_text;
 	int now = time(0);
 	int remaining = expiry - now;
 	static int last_warn = 0;
 	static gboolean expiry_notified = FALSE;
+	const char* tray_icon = ka_select_icon (applet, remaining);
+	char* tooltip_text = ka_tooltip_text (applet, remaining);
 
 	if (remaining > 0) {
-		int hours, minutes;
-		if (remaining >= 3600) {
-			hours = remaining / 3600;
-			minutes = (remaining % 3600) / 60;
-			expiry_text = g_strdup_printf (_("Your credentials expire in %.2d:%.2dh"), hours, minutes);
-			gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[val_icon]);
-		} else {
-			minutes = remaining / 60;
-			expiry_text = g_strdup_printf (ngettext(
-							"Your credentials expire in %d minute",
-							"Your credentials expire in %d minutes",
-							minutes), minutes);
-			gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[exp_icon]);
-		}
-#ifdef HAVE_LIBNOTIFY
 		if (expiry_notified) {
-			ka_send_event_notification (applet, NOTIFY_URGENCY_NORMAL,
+			ka_send_event_notification (applet,
 						_("Network credentials valid"),
 						_("Your Kerberos credentials have been refreshed."), NULL);
 			expiry_notified = FALSE;
 		} else if (remaining < applet->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS &&
 		           !applet->renewable) {
-			ka_send_event_notification (applet, NOTIFY_URGENCY_NORMAL,
+			ka_send_event_notification (applet,
 						_("Network credentials expiring"),
-						expiry_text, NULL);
+						tooltip_text, NULL);
 			last_warn = now;
 		}
-#endif
 	} else {
-		expiry_text = g_strdup (_("Your credentials have expired"));
-		gtk_status_icon_set_from_icon_name (applet->tray_icon, applet->icons[inv_icon]);
-#ifdef HAVE_LIBNOTIFY
 		if (!expiry_notified) {
-			ka_send_event_notification (applet, NOTIFY_URGENCY_NORMAL,
+			ka_send_event_notification (applet,
 						_("Network credentials expired"),
 						_("Your Kerberos credentails have expired."), NULL);
 			expiry_notified = TRUE;
 			last_warn = 0;
 		}
-#endif
 	}
 
-	gtk_status_icon_set_tooltip (applet->tray_icon, expiry_text);
-	g_free (expiry_text);
+	gtk_status_icon_set_from_icon_name (applet->tray_icon, tray_icon);
+	gtk_status_icon_set_tooltip (applet->tray_icon, tooltip_text);
+	g_free(tooltip_text);
 	return 0;
 }
 

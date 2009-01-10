@@ -21,12 +21,8 @@
 #ifndef KRB5_AUTH_NOTIFY_H
 #define KRB5_AUTH_NOTIFY_H
 
-#include <libnotify/notify.h>
-
 void ka_send_event_notification (Krb5AuthApplet *applet,
-				 NotifyUrgency urgency,
 				 const char *summary,
 				 const char *message,
 				 const char *icon);
 #endif
-

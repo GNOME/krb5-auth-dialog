@@ -30,6 +30,10 @@
 #include <glib/gi18n.h>
 #include <glade/glade.h>
 
+#include "gtksecentry.h"
+#include "secmem-util.h"
+#include "memory.h"
+
 #include "krb5-auth-dialog.h"
 #include "krb5-auth-applet.h"
 #include "krb5-auth-gconf.h"
@@ -261,8 +265,7 @@ krb5_auth_dialog_setup (Krb5AuthApplet *applet,
 
 	/* Clear the password entry field */
 	entry = glade_xml_get_widget (applet->pw_xml, "krb5_entry");
-	gtk_entry_set_text (GTK_ENTRY (entry), "");
-	gtk_entry_set_visibility (GTK_ENTRY (entry), !hide_password);
+	gtk_secure_entry_set_text (GTK_SECURE_ENTRY (entry), "");
 
 	/* Use the prompt label that krb5 provides us */
 	label = glade_xml_get_widget (applet->pw_xml, "krb5_message_label");
@@ -324,8 +327,8 @@ auth_dialog_prompter (krb5_context ctx,
 
 		errcode = KRB5_LIBOS_CANTREADPWD;
 
-		entry = glade_xml_get_widget (applet->pw_xml, "krb5_entry");
 		krb5_auth_dialog_setup (applet, (gchar *) prompts[i].prompt, prompts[i].hidden);
+		entry = glade_xml_get_widget (applet->pw_xml, "krb5_entry");
 		gtk_widget_grab_focus (entry);
 
 		source_id = g_timeout_add_seconds (5, (GSourceFunc)krb5_auth_dialog_do_updates, applet);
@@ -333,7 +336,7 @@ auth_dialog_prompter (krb5_context ctx,
 		switch (response)
 		{
 			case GTK_RESPONSE_OK:
-				password = gtk_entry_get_text (GTK_ENTRY (entry));
+				password = gtk_secure_entry_get_text (GTK_SECURE_ENTRY (entry));
 				password_len = strlen (password);
 				errcode = 0;
 				break;
@@ -657,6 +660,38 @@ ka_grab_credentials (Krb5AuthApplet* applet)
 }
 
 
+static GtkWidget*
+ka_create_gtk_secure_entry (GladeXML *xml, gchar *func_name, gchar *name,
+				gchar *s1, gchar *s2, gint i1, gint i2,
+				gpointer user_data)
+{
+	GtkWidget* entry = NULL;
+
+	if (!strcmp(name, "krb5_entry")) {
+		entry = gtk_secure_entry_new ();
+		gtk_secure_entry_set_activates_default(GTK_SECURE_ENTRY(entry), TRUE);
+		gtk_widget_show (entry);
+	} else {
+		g_warning("Don't know anything about widget %s", name);
+	}
+	return entry;
+}
+
+
+static void
+ka_secmem_init ()
+{
+	/* Initialize secure memory.  1 is too small, so the default size
+	will be used.  */
+	secmem_init (1);
+	secmem_set_flags (SECMEM_WARN);
+	drop_privs ();
+
+	if (atexit (secmem_term))
+		g_error("Couln't register atexit handler");
+}
+
+
 int
 main (int argc, char *argv[])
 {
@@ -694,6 +729,7 @@ main (int argc, char *argv[])
 	textdomain (PACKAGE);
 	bind_textdomain_codeset (PACKAGE, "UTF-8");
 	bindtextdomain (PACKAGE, LOCALE_DIR);
+	ka_secmem_init();
 
 	if (!ka_dbus_connect (&status))
 		exit(status);
@@ -709,6 +745,7 @@ main (int argc, char *argv[])
 			return 1;
 
 		/* setup the pw dialog */
+		glade_set_custom_handler (&ka_create_gtk_secure_entry, NULL);
 		applet->pw_xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
 		applet->pw_wrong_label = glade_xml_get_widget (applet->pw_xml, "krb5_wrong_label");
 		applet->pw_dialog = glade_xml_get_widget (applet->pw_xml, "krb5_dialog");

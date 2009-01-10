@@ -34,6 +34,8 @@ krb5_auth_dialog_LDADD = \
 			@GLADE_LIBS@ \
 			@GTK_LIBS@
 
+AM_CPPFLAGS = -I $(top_srcdir)/gtksecentry/ -I $(top_srcdir)/secmem/
+
 gladedir = $(datadir)/krb5-auth-dialog
 glade_DATA =			\
 	krb5-auth-dialog.glade

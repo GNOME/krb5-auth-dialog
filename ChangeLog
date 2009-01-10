@@ -1,3 +1,15 @@
+Sun Jan  4 14:50:59 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	use GtkSecureEntry instead of GtkEntry for the password entry
+	* src/Makefile.am (AM_CPPFLAGS): add secmem/, gtksecentry/ to include
+	  path
+	* src/krb5-auth-dialog.c: use gtk_secure_entry_get_text instead of
+	  gtk_entry_get_text
+	* src/krb5-auth-dialog.glade (krb5_auth_dialog_setup): use custom widget
+	  (ka_create_gtk_secure_entry,ka_secmem_init): new functions
+	  (main): call ka_secmem_init, set custom glade handler for password
+	  entry field
+
 Sun Jan  4 14:48:14 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	move dbus handling into a separate file

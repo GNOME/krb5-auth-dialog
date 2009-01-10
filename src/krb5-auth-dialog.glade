@@ -177,7 +177,7 @@
 			  </child>
 
 			  <child>
-			    <widget class="GtkEntry" id="krb5_entry">
+			    <widget class="Custom" id="krb5_entry">
 			      <property name="visible">True</property>
 			      <property name="can_focus">True</property>
 			      <property name="editable">True</property>

@@ -1,3 +1,7 @@
+Fri Jan  9 21:30:56 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/Makefile.am (EXTRA_DIST): fix schema_in_files typo
+
 Sun Jan  4 16:58:17 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add gconf schema

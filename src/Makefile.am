@@ -49,7 +49,7 @@ glade_DATA =			\
 
 EXTRA_DIST =		\
 	$(glade_DATA)   \
-	$(schama_in_files) \
+	$(schema_in_files) \
 	$(autostart_in_files) \
 	krb5-auth-dialog.1.in
 

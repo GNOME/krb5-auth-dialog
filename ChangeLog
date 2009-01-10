@@ -1,3 +1,7 @@
+Fri Jan  9 21:38:39 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* configure.ac: add German translation
+
 Fri Jan  9 21:37:46 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	intltool-*.in not contained in this package

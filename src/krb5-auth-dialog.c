@@ -404,7 +404,7 @@ credentials_expiring (gpointer *data)
 	Krb5AuthApplet* applet = (Krb5AuthApplet*) data;
 
 	KA_DEBUG("Checking expiry: %d", applet->pw_prompt_secs);
-	if (credentials_expiring_real (applet, &renewable) && is_online) {
+	if (credentials_expiring_real (applet, &renewable) && is_online && !applet->show_trayicon) {
 		give_up = canceled && (creds_expiry == canceled_creds_expiry);
 		if (!give_up) {
 			do {

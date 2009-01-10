@@ -28,23 +28,26 @@
 #include "krb5-auth-notify.h"
 #endif
 
+#define NOTIFY_SECONDS 300
 
 /* update the tray icon's tooltip and icon */
 int
 ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
 {
 	gchar* expiry_text;
-	int interval = expiry - time (0);
+	int now = time(0);
+	int remaining = expiry - now;
+	static int last_warn = 0;
 	static gboolean expiry_notified = FALSE;
 
-	if (interval > 0) {
+	if (remaining > 0) {
 		int hours, minutes;
-		if (interval >= 3600) {
-			hours = interval / 3600;
-			minutes = (interval % 3600) / 60;
+		if (remaining >= 3600) {
+			hours = remaining / 3600;
+			minutes = (remaining % 3600) / 60;
 			expiry_text = g_strdup_printf (_("Your credentials expire in %.2d:%.2dh"), hours, minutes);
 		} else {
-			minutes = interval / 60;
+			minutes = remaining / 60;
 			expiry_text = g_strdup_printf (ngettext(
 							"Your credentials expire in %d minute",
 							"Your credentials expire in %d minutes",
@@ -57,6 +60,11 @@ ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
 						_("Network credentials valid"),
 						_("Your Kerberos credentials have been refreshed."), NULL);
 			expiry_notified = FALSE;
+		} else if (remaining < applet->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS) {
+			ka_send_event_notification (applet, NOTIFY_URGENCY_NORMAL,
+						_("Network credentials expiring"),
+						expiry_text, NULL);
+			last_warn = now;
 		}
 #endif
 	} else {
@@ -68,6 +76,7 @@ ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
 						_("Network credentials expired"),
 						_("Your Kerberos credentails have expired."), NULL);
 			expiry_notified = TRUE;
+			last_warn = 0;
 		}
 #endif
 	}

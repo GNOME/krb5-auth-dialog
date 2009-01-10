@@ -60,7 +60,8 @@ ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry)
 						_("Network credentials valid"),
 						_("Your Kerberos credentials have been refreshed."), NULL);
 			expiry_notified = FALSE;
-		} else if (remaining < applet->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS) {
+		} else if (remaining < applet->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS &&
+		           !applet->renewable) {
 			ka_send_event_notification (applet, NOTIFY_URGENCY_NORMAL,
 						_("Network credentials expiring"),
 						expiry_text, NULL);

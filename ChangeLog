@@ -1,3 +1,8 @@
+Sun Jan  4 16:37:35 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-applet.c (ka_update_status): don't show a tooltip
+	about ticket expiry if ticket is renewable
+
 Sun Jan  4 16:28:35 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	pkinit support

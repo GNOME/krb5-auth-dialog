@@ -886,7 +886,8 @@ main (int argc, char *argv[])
 
 		/* setup the pw dialog */
 		glade_set_custom_handler (&ka_create_gtk_secure_entry, NULL);
-		applet->pw_xml = glade_xml_new (GLADEDIR "krb5-auth-dialog.glade", NULL, NULL);
+		applet->pw_xml = glade_xml_new (KA_DATA_DIR G_DIR_SEPARATOR_S
+						"krb5-auth-dialog.glade", NULL, NULL);
 		applet->pw_wrong_label = glade_xml_get_widget (applet->pw_xml, "krb5_wrong_label");
 		applet->pw_dialog = glade_xml_get_widget (applet->pw_xml, "krb5_dialog");
 

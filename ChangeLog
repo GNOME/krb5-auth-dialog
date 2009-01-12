@@ -1,3 +1,14 @@
+Mon Jan 12 00:36:45 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	move icons to $(datadir)/krb5-auth-dialog to fix missing tray icon
+	when prefix != /usr
+	* icons/Makefile.am (smallicondir): move to $(pkgdatadir)
+	* src/Makefile.am: rename glade_DATA to pkgdata_DATA, GLADEDIR to
+	  KA_DATA_DIR
+	* src/krb5-auth-applet.c (ka_create_tray_icon): extend icon search
+	  path by $(KA_DATA_DIR)/icons
+	* src/krb5-auth-dialog.c (main): use $(KA_DATA_DIR)
+
 Sun Jan 11 22:59:34 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* AUTHORS, MAINTAINERS: add myself 

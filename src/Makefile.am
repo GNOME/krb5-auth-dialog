@@ -1,5 +1,5 @@
 INCLUDES = \
-	-DGLADEDIR=\""$(gladedir)/"\" \
+	-DKA_DATA_DIR=\""$(pkgdatadir)"\" \
 	-DLOCALE_DIR=\""$(localedir)/"\"
 
 bin_PROGRAMS = krb5-auth-dialog
@@ -43,12 +43,12 @@ krb5_auth_dialog_LDADD = \
 
 AM_CPPFLAGS = -I $(top_srcdir)/gtksecentry/ -I $(top_srcdir)/secmem/
 
-gladedir = $(datadir)/krb5-auth-dialog
-glade_DATA =			\
+pkgdatadir = $(datadir)/krb5-auth-dialog
+pkgdata_DATA =			\
 	krb5-auth-dialog.glade
 
 EXTRA_DIST =		\
-	$(glade_DATA)   \
+	$(pkgdata_DATA)   \
 	$(schema_in_files) \
 	$(autostart_in_files) \
 	krb5-auth-dialog.1.in

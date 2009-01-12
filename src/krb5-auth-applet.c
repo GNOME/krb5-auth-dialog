@@ -254,6 +254,9 @@ ka_create_tray_icon (Krb5AuthApplet* applet)
 int
 ka_setup_icons (Krb5AuthApplet* applet)
 {
+	/* Add application specific icons to search path */
+	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+					   KA_DATA_DIR G_DIR_SEPARATOR_S "icons");
 	applet->icons[val_icon] = "krb-valid-ticket";
 	applet->icons[exp_icon] = "krb-expiring-ticket";
 	applet->icons[inv_icon] = "krb-no-valid-ticket";

@@ -1,6 +1,6 @@
 NULL =
 
-smallicondir=${datadir}/icons/hicolor/22x22/apps
+smallicondir=${pkgdatadir}/icons/hicolor/22x22/apps
 smallicon_DATA=		\
 	krb-valid-ticket.png	\
 	krb-no-valid-ticket.png	\

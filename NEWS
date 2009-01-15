@@ -1,0 +1,11 @@
+===========
+Version 0.8
+===========
+* add a tray icon that displays the current status and remaining ticket
+  lifetime
+* support pkinit (public key client authentication) when building with heimdal
+* add notifications via libnotify about ticket acquisition and expiry
+* make most settings configurable via gconf
+* use GtkSecureEntry instead of GtkEntry to protect the password better
+* fix i18n
+* lots of other cleanups and fixes

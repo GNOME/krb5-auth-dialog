@@ -1,0 +1,3298 @@
+# Swedish translation for krb5-auth-dialog.
+# Copyright (C) 2009 Free Software Foundation, Inc.
+# This file is distributed under the same license as the krb5-auth-dialog package.
+# Daniel Nylander <po@danielnylander.se>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: krb5-auth-dialog\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-01-15 17:16+0100\n"
+"PO-Revision-Date: 2009-01-15 17:19+0100\n"
+"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../src/krb5-auth-dialog.glade.h:1
+#: ../src/krb5-auth-dialog.c:894
+#: ../src/krb5-auth-dialog.desktop.in.h:2
+msgid "Network Authentication"
+msgstr "Nätverksautentisering"
+
+#: ../src/krb5-auth-dialog.glade.h:2
+msgid "_Password:"
+msgstr "_Lösenord:"
+
+#: ../src/krb5-auth-dialog.glade.h:3
+msgid "_Renew Ticket"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.c:204
+#: ../src/krb5-auth-applet.c:53
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../src/krb5-auth-dialog.c:209
+#: ../src/krb5-auth-applet.c:58
+msgid "Your credentials have expired"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.c:280
+msgid "Please enter your Kerberos password."
+msgstr ""
+
+#: ../src/krb5-auth-dialog.c:291
+#, c-format
+msgid "Please enter the password for '%s'"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.c:310
+msgid "The password you entered is invalid"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.c:765
+#, c-format
+msgid "Couldn't acquire kerberos ticket: '%s'"
+msgstr ""
+
+#: ../src/dummy-strings.c:13
+msgid "Can't read ticket file"
+msgstr ""
+
+#. test1.et:krb:KRB_MK_AP_TKFIL
+#: ../src/dummy-strings.c:14
+msgid "Can't find ticket or TGT"
+msgstr ""
+
+#. test1.et:krb:KRB_MK_AP_NOTKT
+#: ../src/dummy-strings.c:15
+msgid "TGT expired"
+msgstr ""
+
+#. test1.et:krb:KRB_MK_AP_TGTEXP
+#: ../src/dummy-strings.c:16
+msgid "Can't decode authenticator"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_UNDEC
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
+#: ../src/dummy-strings.c:17
+#: ../src/dummy-strings.c:176
+msgid "Ticket expired"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_EXP
+#: ../src/dummy-strings.c:18
+msgid "Repeated request"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_REPEAT
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
+#: ../src/dummy-strings.c:19
+#: ../src/dummy-strings.c:179
+msgid "The ticket isn't for us"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_NOT_US
+#: ../src/dummy-strings.c:20
+msgid "Request is inconsistent"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_INCON
+#: ../src/dummy-strings.c:21
+msgid "Delta-T too big"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_TIME
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
+#: ../src/dummy-strings.c:22
+#: ../src/dummy-strings.c:182
+msgid "Incorrect net address"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_BADD
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
+#: ../src/dummy-strings.c:23
+#: ../src/dummy-strings.c:183
+msgid "Protocol version mismatch"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_VERSION
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
+#: ../src/dummy-strings.c:24
+#: ../src/dummy-strings.c:184
+msgid "Invalid message type"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_MSG_TYPE
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
+#: ../src/dummy-strings.c:25
+#: ../src/dummy-strings.c:185
+msgid "Message stream modified"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_MODIFIED
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
+#: ../src/dummy-strings.c:26
+#: ../src/dummy-strings.c:186
+msgid "Message out of order"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_ORDER
+#: ../src/dummy-strings.c:27
+msgid "Unauthorized request"
+msgstr ""
+
+#. test1.et:krb:KRB_RD_AP_UNAUTHOR
+#: ../src/dummy-strings.c:28
+msgid "Current password is null"
+msgstr ""
+
+#. test1.et:krb:KRB_GT_PW_NULL
+#: ../src/dummy-strings.c:29
+msgid "Incorrect current password"
+msgstr ""
+
+#. test1.et:krb:KRB_GT_PW_BADPW
+#: ../src/dummy-strings.c:30
+msgid "Protocol error"
+msgstr "Protokollfel"
+
+#. test1.et:krb:KRB_GT_PW_PROT
+#: ../src/dummy-strings.c:31
+msgid "Error returned by KDC"
+msgstr ""
+
+#. test1.et:krb:KRB_GT_PW_KDCERR
+#: ../src/dummy-strings.c:32
+msgid "Null ticket returned by KDC"
+msgstr ""
+
+#. test1.et:krb:KRB_GT_PW_NULLTKT
+#: ../src/dummy-strings.c:33
+msgid "Retry count exceeded"
+msgstr ""
+
+#. test1.et:krb:KRB_SKDC_RETRY
+#: ../src/dummy-strings.c:34
+msgid "Can't send request"
+msgstr "Kan inte skicka begäran"
+
+#. test1.et:krb:KRB_SKDC_CANT
+#: ../src/dummy-strings.c:35
+msgid "Subsystem aborted"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_SUBSYSTEM_ABORTED
+#: ../src/dummy-strings.c:36
+msgid "Version mismatch"
+msgstr "Versionen stämmer inte"
+
+#. ss_err.et:ss:SS_ET_VERSION_MISMATCH
+#: ../src/dummy-strings.c:37
+msgid "No current invocation"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_NULL_INV
+#: ../src/dummy-strings.c:38
+msgid "No info directory"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_NO_INFO_DIR
+#: ../src/dummy-strings.c:39
+msgid "Command not found"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_COMMAND_NOT_FOUND
+#: ../src/dummy-strings.c:40
+msgid "Command line aborted"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_LINE_ABORTED
+#: ../src/dummy-strings.c:41
+msgid "End-of-file reached"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_EOF
+#: ../src/dummy-strings.c:42
+msgid "Permission denied"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_PERMISSION_DENIED
+#: ../src/dummy-strings.c:43
+msgid "Request table not found"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_TABLE_NOT_FOUND
+#: ../src/dummy-strings.c:44
+msgid "No info available"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_NO_HELP_FILE
+#: ../src/dummy-strings.c:45
+msgid "Shell escapes are disabled"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_ESCAPE_DISABLED
+#: ../src/dummy-strings.c:46
+msgid "Sorry, this request is not yet implemented"
+msgstr ""
+
+#. ss_err.et:ss:SS_ET_UNIMPLEMENTED
+#: ../src/dummy-strings.c:47
+msgid "Profile version 0.0"
+msgstr ""
+
+#. prof_err.et:prof:PROF_VERSION
+#: ../src/dummy-strings.c:48
+msgid "Bad magic value in profile_node"
+msgstr ""
+
+#. prof_err.et:prof:PROF_MAGIC_NODE
+#: ../src/dummy-strings.c:49
+msgid "Profile section not found"
+msgstr ""
+
+#. prof_err.et:prof:PROF_NO_SECTION
+#: ../src/dummy-strings.c:50
+msgid "Profile relation not found"
+msgstr ""
+
+#. prof_err.et:prof:PROF_NO_RELATION
+#: ../src/dummy-strings.c:51
+msgid "Attempt to add a relation to node which is not a section"
+msgstr ""
+
+#. prof_err.et:prof:PROF_ADD_NOT_SECTION
+#: ../src/dummy-strings.c:52
+msgid "A profile section header has a non-zero value"
+msgstr ""
+
+#. prof_err.et:prof:PROF_SECTION_WITH_VALUE
+#: ../src/dummy-strings.c:53
+msgid "Bad linked list in profile structures"
+msgstr ""
+
+#. prof_err.et:prof:PROF_BAD_LINK_LIST
+#: ../src/dummy-strings.c:54
+msgid "Bad group level in profile strctures"
+msgstr ""
+
+#. prof_err.et:prof:PROF_BAD_GROUP_LVL
+#: ../src/dummy-strings.c:55
+msgid "Bad parent pointer in profile strctures"
+msgstr ""
+
+#. prof_err.et:prof:PROF_BAD_PARENT_PTR
+#: ../src/dummy-strings.c:56
+msgid "Bad magic value in profile iterator"
+msgstr ""
+
+#. prof_err.et:prof:PROF_MAGIC_ITERATOR
+#: ../src/dummy-strings.c:57
+msgid "Can't set value on section node"
+msgstr ""
+
+#. prof_err.et:prof:PROF_SET_SECTION_VALUE
+#: ../src/dummy-strings.c:58
+msgid "Invalid argument passed to profile library"
+msgstr ""
+
+#. prof_err.et:prof:PROF_EINVAL
+#: ../src/dummy-strings.c:59
+msgid "Attempt to modify read-only profile"
+msgstr ""
+
+#. prof_err.et:prof:PROF_READ_ONLY
+#: ../src/dummy-strings.c:60
+msgid "Profile section header not at top level"
+msgstr ""
+
+#. prof_err.et:prof:PROF_SECTION_NOTOP
+#: ../src/dummy-strings.c:61
+msgid "Syntax error in profile section header"
+msgstr ""
+
+#. prof_err.et:prof:PROF_SECTION_SYNTAX
+#: ../src/dummy-strings.c:62
+msgid "Syntax error in profile relation"
+msgstr ""
+
+#. prof_err.et:prof:PROF_RELATION_SYNTAX
+#: ../src/dummy-strings.c:63
+msgid "Extra closing brace in profile"
+msgstr ""
+
+#. prof_err.et:prof:PROF_EXTRA_CBRACE
+#: ../src/dummy-strings.c:64
+msgid "Missing open brace in profile"
+msgstr ""
+
+#. prof_err.et:prof:PROF_MISSING_OBRACE
+#: ../src/dummy-strings.c:65
+msgid "Bad magic value in profile_t"
+msgstr ""
+
+#. prof_err.et:prof:PROF_MAGIC_PROFILE
+#: ../src/dummy-strings.c:66
+msgid "Bad magic value in profile_section_t"
+msgstr ""
+
+#. prof_err.et:prof:PROF_MAGIC_SECTION
+#: ../src/dummy-strings.c:67
+msgid "Iteration through all top level section not supported"
+msgstr ""
+
+#. prof_err.et:prof:PROF_TOPSECTION_ITER_NOSUPP
+#: ../src/dummy-strings.c:68
+msgid "Invalid profile_section object"
+msgstr ""
+
+#. prof_err.et:prof:PROF_INVALID_SECTION
+#: ../src/dummy-strings.c:69
+msgid "No more sections"
+msgstr ""
+
+#. prof_err.et:prof:PROF_END_OF_SECTIONS
+#: ../src/dummy-strings.c:70
+msgid "Bad nameset passed to query routine"
+msgstr ""
+
+#. prof_err.et:prof:PROF_BAD_NAMESET
+#: ../src/dummy-strings.c:71
+msgid "No profile file open"
+msgstr ""
+
+#. prof_err.et:prof:PROF_NO_PROFILE
+#: ../src/dummy-strings.c:72
+msgid "Bad magic value in profile_file_t"
+msgstr ""
+
+#. prof_err.et:prof:PROF_MAGIC_FILE
+#: ../src/dummy-strings.c:73
+msgid "Couldn't open profile file"
+msgstr ""
+
+#. prof_err.et:prof:PROF_FAIL_OPEN
+#: ../src/dummy-strings.c:74
+msgid "Section already exists"
+msgstr ""
+
+#. prof_err.et:prof:PROF_EXISTS
+#: ../src/dummy-strings.c:75
+msgid "Invalid boolean value"
+msgstr ""
+
+#. prof_err.et:prof:PROF_BAD_BOOLEAN
+#: ../src/dummy-strings.c:76
+msgid "Invalid integer value"
+msgstr ""
+
+#. prof_err.et:prof:PROF_BAD_INTEGER
+#: ../src/dummy-strings.c:77
+msgid "Bad magic value in profile_file_data_t"
+msgstr ""
+
+#. prof_err.et:prof:PROF_MAGIC_FILE_DATA
+#: ../src/dummy-strings.c:78
+msgid "Failed to unlock or grant streams pty."
+msgstr ""
+
+#. pty_err.et:pty:PTY_GETPTY_STREAMS
+#: ../src/dummy-strings.c:79
+msgid "fstat of master pty failed"
+msgstr ""
+
+#. pty_err.et:pty:PTY_GETPTY_FSTAT
+#: ../src/dummy-strings.c:80
+msgid "All terminal ports in use"
+msgstr ""
+
+#. pty_err.et:pty:PTY_GETPTY_NOPTY
+#: ../src/dummy-strings.c:81
+msgid "buffer to hold slave pty name is too short"
+msgstr ""
+
+#. pty_err.et:pty:PTY_GETPTY_SLAVE_TOOLONG
+#: ../src/dummy-strings.c:82
+msgid "Failed to open slave side of pty"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_OPENFAIL
+#: ../src/dummy-strings.c:83
+msgid "Failed to chmod slave side of pty"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_CHMODFAIL
+#: ../src/dummy-strings.c:84
+msgid "Unable to set controlling terminal"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_NOCTTY
+#: ../src/dummy-strings.c:85
+msgid "Failed to chown slave side of pty"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_CHOWNFAIL
+#: ../src/dummy-strings.c:86
+msgid "Call to line_push failed to push streams on slave pty"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_LINE_PUSHFAIL
+#: ../src/dummy-strings.c:87
+msgid "Failed to push stream on slave side of pty"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_PUSH_FAIL
+#: ../src/dummy-strings.c:88
+msgid "Failed to revoke slave side of pty"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_REVOKEFAIL
+#: ../src/dummy-strings.c:89
+msgid "bad process type passed to pty_update_utmp"
+msgstr ""
+
+#. pty_err.et:pty:PTY_UPDATE_UTMP_PROCTYPE_INVALID
+#: ../src/dummy-strings.c:90
+msgid "Slave pty name is zero-length"
+msgstr ""
+
+#. pty_err.et:pty:PTY_OPEN_SLAVE_TOOSHORT
+#: ../src/dummy-strings.c:91
+msgid "Usage: kpasswd [principal_name]."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_USAGE
+#: ../src/dummy-strings.c:92
+#, c-format
+msgid "Kerberos principal name %s is not recognized."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_PRIN_UNKNOWN
+#: ../src/dummy-strings.c:93
+msgid "while reading principal name from credential cache."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_WHILE_LOOKING_AT_CC
+#: ../src/dummy-strings.c:94
+msgid "Old Kerberos password is incorrect. Please try again."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_OLD_PASSWORD_INCORRECT
+#: ../src/dummy-strings.c:95
+#, c-format
+msgid ""
+"Cannot establish a session with the Kerberos administrative server for\n"
+"realm %s. %s."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_CANT_OPEN_ADMIN_SERVER
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_GET_PRINC_INFO
+#: ../src/dummy-strings.c:97
+#: ../src/dummy-strings.c:488
+msgid "New passwords do not match - password not changed.\n"
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_NEW_PASSWORD_MISMATCH
+#: ../src/dummy-strings.c:98
+msgid "Kerberos password changed.\n"
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_PASSWORD_CHANGED
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_PASSWORD_IN_DICTIONARY
+#: ../src/dummy-strings.c:99
+#: ../src/dummy-strings.c:497
+msgid "Password not changed."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_PASSWORD_NOT_CHANGED
+#: ../src/dummy-strings.c:100
+#, c-format
+msgid "when parsing name %s."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_PARSE_NAME
+#: ../src/dummy-strings.c:101
+msgid "when unparsing name."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_UNPARSE_NAME
+#: ../src/dummy-strings.c:102
+msgid "Unable to identify user from password file."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_NOT_IN_PASSWD_FILE
+#: ../src/dummy-strings.c:103
+#, c-format
+msgid "Changing password for %s."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_CHANGING_PW_FOR
+#: ../src/dummy-strings.c:104
+msgid "Old password"
+msgstr "Gammalt lösenord"
+
+#. kpasswd_strings.et:kpws:KPW_STR_OLD_PASSWORD_PROMPT
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_WHILE_TRYING_TO_CHANGE
+#: ../src/dummy-strings.c:105
+#: ../src/dummy-strings.c:514
+msgid "while reading new password."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_WHILE_READING_PASSWORD
+#: ../src/dummy-strings.c:106
+msgid "You must type a password. Passwords must be at least one character long."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_NO_PASSWORD_READ
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_PASSWORD_REUSE
+#: ../src/dummy-strings.c:107
+#: ../src/dummy-strings.c:513
+msgid "while trying to change password."
+msgstr "vid försök att ändra lösenordet."
+
+#. kpasswd_strings.et:kpws:KPW_STR_WHILE_TRYING_TO_CHANGE
+#: ../src/dummy-strings.c:108
+msgid "while closing session with admin server and destroying tickets."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_WHILE_DESTROYING_ADMIN_SESSION
+#: ../src/dummy-strings.c:109
+msgid "while freeing admin principal entry"
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_WHILE_FREEING_PRINCIPAL
+#: ../src/dummy-strings.c:110
+msgid "while freeing admin policy entry"
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_WHILE_FREEING_POLICY
+#: ../src/dummy-strings.c:111
+#, c-format
+msgid "Could not get password policy information for principal %s."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_CANT_GET_POLICY_INFO
+#: ../src/dummy-strings.c:112
+#, c-format
+msgid ""
+"%s's password is controlled by the policy %s, which\n"
+"requires a minimum of %u characters from at least %u classes (the five classes\n"
+"are lowercase, uppercase, numbers, punctuation, and all other characters)."
+msgstr ""
+
+#. kpasswd_strings.et:kpws:KPW_STR_POLICY_EXPLANATION
+#: ../src/dummy-strings.c:113
+#, c-format
+msgid "Successfully imported %d record%s.\n"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_NO_ERR
+#: ../src/dummy-strings.c:114
+msgid "Input not recognized as database dump"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_BAD_FILE
+#: ../src/dummy-strings.c:115
+msgid "Bad token in dump file."
+msgstr ""
+
+#. import_err.et:imp:IMPORT_BAD_TOKEN
+#: ../src/dummy-strings.c:116
+msgid "Bad version in dump file"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_BAD_VERSION
+#: ../src/dummy-strings.c:117
+msgid "Defective record encountered: "
+msgstr ""
+
+#. import_err.et:imp:IMPORT_BAD_RECORD
+#: ../src/dummy-strings.c:118
+msgid "Truncated input file detected."
+msgstr ""
+
+#. import_err.et:imp:IMPORT_BAD_FOOTER
+#: ../src/dummy-strings.c:119
+msgid "Import of dump failed"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_FAILED
+#: ../src/dummy-strings.c:120
+#, c-format
+msgid "Mismatched record count: %d record%s indicated, %d record%s scanned.\n"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_COUNT_MESSAGE
+#: ../src/dummy-strings.c:121
+msgid "Number of records imported does not match count"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_MISMATCH_COUNT
+#: ../src/dummy-strings.c:122
+msgid ""
+"Unknown command line option.\n"
+"Usage: ovsec_adm_import [filename]"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_UNK_OPTION
+#: ../src/dummy-strings.c:123
+msgid "Warning -- continuing to import will overwrite existing databases!"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_WARN_DB
+#: ../src/dummy-strings.c:124
+msgid "Database rename Failed!!"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_RENAME_FAILED
+#: ../src/dummy-strings.c:125
+msgid "Extra data after footer is ignored."
+msgstr ""
+
+# j/n??
+#. import_err.et:imp:IMPORT_EXTRA_DATA
+#: ../src/dummy-strings.c:126
+msgid "Proceed <y|n>?"
+msgstr "Fortsätt <y|n>?"
+
+#. import_err.et:imp:IMPORT_CONFIRM
+#: ../src/dummy-strings.c:127
+msgid "while opening input file"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_OPEN_DUMP
+#: ../src/dummy-strings.c:128
+msgid "while importing databases"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_IMPORT
+#: ../src/dummy-strings.c:129
+msgid "cannot open /dev/tty!!"
+msgstr "kan inte öppna /dev/tty!!"
+
+#. import_err.et:imp:IMPORT_TTY
+#: ../src/dummy-strings.c:130
+msgid "while opening databases"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_RENAME_OPEN
+#: ../src/dummy-strings.c:131
+msgid "while acquiring permanent lock"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_RENAME_LOCK
+#: ../src/dummy-strings.c:132
+msgid "while releasing permanent lock"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_RENAME_UNLOCK
+#: ../src/dummy-strings.c:133
+msgid "while closing databases"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_RENAME_CLOSE
+#: ../src/dummy-strings.c:134
+msgid "while retrieving configuration parameters"
+msgstr ""
+
+#. import_err.et:imp:IMPORT_GET_PARAMS
+#. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
+#: ../src/dummy-strings.c:135
+#: ../src/dummy-strings.c:388
+msgid "$Id: dummy-strings.c 35 2005-10-31 21:55:46Z caillon $"
+msgstr ""
+
+#. kdc5_err.et:kdc5:KDC5_RCSID
+#: ../src/dummy-strings.c:136
+msgid "No server port found"
+msgstr "Ingen serverport hittades"
+
+#. kdc5_err.et:kdc5:KDC5_NOPORT
+#: ../src/dummy-strings.c:137
+msgid "Network not initialized"
+msgstr ""
+
+#. kdc5_err.et:kdc5:KDC5_NONET
+#: ../src/dummy-strings.c:138
+msgid "Short write while sending response"
+msgstr ""
+
+#. kdc5_err.et:kdc5:KDC5_IO_RESPONSE
+#: ../src/dummy-strings.c:139
+msgid "Cannot convert V5 keyblock"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_BADKEY
+#: ../src/dummy-strings.c:140
+msgid "Cannot convert V5 address information"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_BADADDR
+#: ../src/dummy-strings.c:141
+msgid "Cannot convert V5 principal"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_BADPRINC
+#: ../src/dummy-strings.c:142
+msgid "V5 realm name longer than V4 maximum"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_BADREALM
+#: ../src/dummy-strings.c:143
+msgid "Kerberos V4 error"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_V4ERR
+#: ../src/dummy-strings.c:144
+msgid "Encoding too large"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_ENCFULL
+#: ../src/dummy-strings.c:145
+msgid "Decoding out of data"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_DECEMPTY
+#: ../src/dummy-strings.c:146
+msgid "Service not responding"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_NOTRESP
+#: ../src/dummy-strings.c:147
+msgid "Kerberos version 4 support is disabled"
+msgstr ""
+
+#. krb524_err.et:k524:KRB524_KRB4_DISABLED
+#: ../src/dummy-strings.c:148
+msgid "No error"
+msgstr "Inga fel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NONE
+#: ../src/dummy-strings.c:149
+msgid "Client's entry in database has expired"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
+#: ../src/dummy-strings.c:150
+msgid "Server's entry in database has expired"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
+#: ../src/dummy-strings.c:151
+msgid "Requested protocol version not supported"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
+#: ../src/dummy-strings.c:152
+msgid "Client's key is encrypted in an old master key"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
+#: ../src/dummy-strings.c:153
+msgid "Server's key is encrypted in an old master key"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
+#: ../src/dummy-strings.c:154
+msgid "Client not found in Kerberos database"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
+#: ../src/dummy-strings.c:155
+msgid "Server not found in Kerberos database"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
+#: ../src/dummy-strings.c:156
+msgid "Principal has multiple entries in Kerberos database"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
+#: ../src/dummy-strings.c:157
+msgid "Client or server has a null key"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
+#: ../src/dummy-strings.c:158
+msgid "Ticket is ineligible for postdating"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
+#: ../src/dummy-strings.c:159
+msgid "Requested effective lifetime is negative or too short"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
+#: ../src/dummy-strings.c:160
+msgid "KDC policy rejects request"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
+#: ../src/dummy-strings.c:161
+msgid "KDC can't fulfill requested option"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
+#: ../src/dummy-strings.c:162
+msgid "KDC has no support for encryption type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:163
+msgid "KDC has no support for checksum type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
+#: ../src/dummy-strings.c:164
+msgid "KDC has no support for padata type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
+#: ../src/dummy-strings.c:165
+msgid "KDC has no support for transited type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
+#: ../src/dummy-strings.c:166
+msgid "Clients credentials have been revoked"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
+#: ../src/dummy-strings.c:167
+msgid "Credentials for server have been revoked"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
+#: ../src/dummy-strings.c:168
+msgid "TGT has been revoked"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
+#: ../src/dummy-strings.c:169
+msgid "Client not yet valid - try again later"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
+#: ../src/dummy-strings.c:170
+msgid "Server not yet valid - try again later"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
+#: ../src/dummy-strings.c:171
+msgid "Password has expired"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
+#: ../src/dummy-strings.c:172
+msgid "Preauthentication failed"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
+#: ../src/dummy-strings.c:173
+msgid "Additional pre-authentication required"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
+#: ../src/dummy-strings.c:174
+msgid "Requested server and ticket don't match"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
+#: ../src/dummy-strings.c:175
+msgid "Decrypt integrity check failed"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
+#: ../src/dummy-strings.c:177
+msgid "Ticket not yet valid"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
+#: ../src/dummy-strings.c:178
+msgid "Request is a replay"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
+#: ../src/dummy-strings.c:180
+msgid "Ticket/authenticator don't match"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
+#: ../src/dummy-strings.c:181
+msgid "Clock skew too great"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
+#: ../src/dummy-strings.c:187
+msgid "Illegal cross-realm ticket"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
+#: ../src/dummy-strings.c:188
+msgid "Key version is not available"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
+#: ../src/dummy-strings.c:189
+msgid "Service key not available"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
+#. krb5_err.et:krb5:KRB5_NO_LOCALNAME
+#: ../src/dummy-strings.c:190
+#: ../src/dummy-strings.c:228
+msgid "Mutual authentication failed"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
+#: ../src/dummy-strings.c:191
+msgid "Incorrect message direction"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
+#: ../src/dummy-strings.c:192
+msgid "Alternative authentication method required"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
+#: ../src/dummy-strings.c:193
+msgid "Incorrect sequence number in message"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
+#: ../src/dummy-strings.c:194
+msgid "Inappropriate type of checksum in message"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
+#: ../src/dummy-strings.c:195
+msgid "Policy rejects transited path"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
+#: ../src/dummy-strings.c:196
+msgid "Response too big for UDP, retry with TCP"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
+#: ../src/dummy-strings.c:197
+msgid "Generic error (see e-text)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
+#: ../src/dummy-strings.c:198
+msgid "Field is too long for this implementation"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
+#: ../src/dummy-strings.c:199
+msgid "Invalid flag for file lock mode"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
+#: ../src/dummy-strings.c:200
+msgid "Cannot read password"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
+#: ../src/dummy-strings.c:201
+msgid "Password mismatch"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
+#: ../src/dummy-strings.c:202
+msgid "Password read interrupted"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
+#: ../src/dummy-strings.c:203
+msgid "Illegal character in component name"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
+#: ../src/dummy-strings.c:204
+msgid "Malformed representation of principal"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
+#: ../src/dummy-strings.c:205
+msgid "Can't open/find Kerberos configuration file"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
+#: ../src/dummy-strings.c:206
+msgid "Improper format of Kerberos configuration file"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
+#: ../src/dummy-strings.c:207
+msgid "Insufficient space to return complete information"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
+#: ../src/dummy-strings.c:208
+msgid "Invalid message type specified for encoding"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_BADMSGTYPE
+#: ../src/dummy-strings.c:209
+msgid "Credential cache name malformed"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_BADNAME
+#: ../src/dummy-strings.c:210
+msgid "Unknown credential cache type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
+#: ../src/dummy-strings.c:211
+msgid "Matching credential not found"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_NOTFOUND
+#: ../src/dummy-strings.c:212
+msgid "End of credential cache reached"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_END
+#: ../src/dummy-strings.c:213
+msgid "Request did not supply a ticket"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
+#: ../src/dummy-strings.c:214
+msgid "Wrong principal in request"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
+#: ../src/dummy-strings.c:215
+msgid "Ticket has invalid flag set"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
+#: ../src/dummy-strings.c:216
+msgid "Requested principal and ticket don't match"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
+#: ../src/dummy-strings.c:217
+msgid "KDC reply did not match expectations"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
+#: ../src/dummy-strings.c:218
+msgid "Clock skew too great in KDC reply"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KDCREP_SKEW
+#: ../src/dummy-strings.c:219
+msgid "Client/server realm mismatch in initial ticket request"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
+#: ../src/dummy-strings.c:220
+msgid "Program lacks support for encryption type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:221
+msgid "Program lacks support for key type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
+#: ../src/dummy-strings.c:222
+msgid "Requested encryption type not used in message"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_WRONG_ETYPE
+#: ../src/dummy-strings.c:223
+msgid "Program lacks support for checksum type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
+#: ../src/dummy-strings.c:224
+msgid "Cannot find KDC for requested realm"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
+#: ../src/dummy-strings.c:225
+msgid "Kerberos service unknown"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
+#: ../src/dummy-strings.c:226
+msgid "Cannot contact any KDC for requested realm"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KDC_UNREACH
+#: ../src/dummy-strings.c:227
+msgid "No local name found for principal name"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
+#: ../src/dummy-strings.c:229
+msgid "Replay cache type is already registered"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
+#: ../src/dummy-strings.c:230
+msgid "No more memory to allocate (in replay cache code)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_MALLOC
+#: ../src/dummy-strings.c:231
+msgid "Replay cache type is unknown"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
+#: ../src/dummy-strings.c:232
+msgid "Generic unknown RC error"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_UNKNOWN
+#: ../src/dummy-strings.c:233
+msgid "Message is a replay"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_REPLAY
+#: ../src/dummy-strings.c:234
+msgid "Replay I/O operation failed XXX"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_IO
+#: ../src/dummy-strings.c:235
+msgid "Replay cache type does not support non-volatile storage"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_NOIO
+#: ../src/dummy-strings.c:236
+msgid "Replay cache name parse/format error"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_PARSE
+#: ../src/dummy-strings.c:237
+msgid "End-of-file on replay cache I/O"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_IO_EOF
+#: ../src/dummy-strings.c:238
+msgid "No more memory to allocate (in replay cache I/O code)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
+#: ../src/dummy-strings.c:239
+msgid "Permission denied in replay cache code"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_IO_PERM
+#: ../src/dummy-strings.c:240
+msgid "I/O error in replay cache i/o code"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_IO_IO
+#: ../src/dummy-strings.c:241
+msgid "Generic unknown RC/IO error"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
+#: ../src/dummy-strings.c:242
+msgid "Insufficient system space to store replay information"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_IO_SPACE
+#: ../src/dummy-strings.c:243
+msgid "Can't open/find realm translation file"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
+#: ../src/dummy-strings.c:244
+msgid "Improper format of realm translation file"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
+#: ../src/dummy-strings.c:245
+msgid "Can't open/find lname translation database"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
+#: ../src/dummy-strings.c:246
+msgid "No translation available for requested principal"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
+#: ../src/dummy-strings.c:247
+msgid "Improper format of translation database entry"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
+#: ../src/dummy-strings.c:248
+msgid "Cryptosystem internal error"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
+#: ../src/dummy-strings.c:249
+msgid "Key table name malformed"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_BADNAME
+#: ../src/dummy-strings.c:250
+msgid "Unknown Key table type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
+#: ../src/dummy-strings.c:251
+msgid "Key table entry not found"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_NOTFOUND
+#: ../src/dummy-strings.c:252
+msgid "End of key table reached"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_END
+#: ../src/dummy-strings.c:253
+msgid "Cannot write to specified key table"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_NOWRITE
+#: ../src/dummy-strings.c:254
+msgid "Error writing to key table"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_IOERR
+#: ../src/dummy-strings.c:255
+msgid "Cannot find ticket for requested realm"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
+#: ../src/dummy-strings.c:256
+msgid "DES key has bad parity"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
+#: ../src/dummy-strings.c:257
+msgid "DES key is a weak key"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5DES_WEAK_KEY
+#: ../src/dummy-strings.c:258
+msgid "Bad encryption type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
+#: ../src/dummy-strings.c:259
+msgid "Key size is incompatible with encryption type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
+#: ../src/dummy-strings.c:260
+msgid "Message size is incompatible with encryption type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_BAD_MSIZE
+#: ../src/dummy-strings.c:261
+msgid "Credentials cache type is already registered."
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
+#: ../src/dummy-strings.c:262
+msgid "Key table type is already registered."
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
+#: ../src/dummy-strings.c:263
+msgid "Credentials cache I/O operation failed XXX"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_IO
+#: ../src/dummy-strings.c:264
+msgid "Credentials cache permissions incorrect"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_FCC_PERM
+#: ../src/dummy-strings.c:265
+msgid "No credentials cache found"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_FCC_NOFILE
+#: ../src/dummy-strings.c:266
+msgid "Internal credentials cache error"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_FCC_INTERNAL
+#: ../src/dummy-strings.c:267
+msgid "Error writing to credentials cache"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_WRITE
+#: ../src/dummy-strings.c:268
+msgid "No more memory to allocate (in credentials cache code)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_NOMEM
+#: ../src/dummy-strings.c:269
+msgid "Bad format in credentials cache"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_FORMAT
+#: ../src/dummy-strings.c:270
+msgid "No credentials found with supported encryption types"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
+#: ../src/dummy-strings.c:271
+msgid "Invalid KDC option combination (library internal error)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_INVALID_FLAGS
+#: ../src/dummy-strings.c:272
+msgid "Request missing second ticket"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_NO_2ND_TKT
+#: ../src/dummy-strings.c:273
+msgid "No credentials supplied to library routine"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
+#: ../src/dummy-strings.c:274
+msgid "Bad sendauth version was sent"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
+#: ../src/dummy-strings.c:275
+msgid "Bad application version was sent (via sendauth)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
+#: ../src/dummy-strings.c:276
+msgid "Bad response (during sendauth exchange)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
+#: ../src/dummy-strings.c:277
+msgid "Server rejected authentication (during sendauth exchange)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
+#: ../src/dummy-strings.c:278
+msgid "Unsupported preauthentication type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
+#: ../src/dummy-strings.c:279
+msgid "Required preauthentication key not supplied"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
+#: ../src/dummy-strings.c:280
+msgid "Generic preauthentication failure"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
+#: ../src/dummy-strings.c:281
+msgid "Unsupported replay cache format version number"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
+#: ../src/dummy-strings.c:282
+msgid "Unsupported credentials cache format version number"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
+#: ../src/dummy-strings.c:283
+msgid "Unsupported key table format version number"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
+#: ../src/dummy-strings.c:284
+msgid "Program lacks support for address type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
+#: ../src/dummy-strings.c:285
+msgid "Message replay detection requires rcache parameter"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_RC_REQUIRED
+#: ../src/dummy-strings.c:286
+msgid "Hostname cannot be canonicalized"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
+#: ../src/dummy-strings.c:287
+msgid "Cannot determine realm for host"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
+#: ../src/dummy-strings.c:288
+msgid "Conversion to service principal undefined for name type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
+#: ../src/dummy-strings.c:289
+msgid "Initial Ticket response appears to be Version 4 error"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
+#: ../src/dummy-strings.c:290
+msgid "Cannot resolve network address for KDC in requested realm"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
+#: ../src/dummy-strings.c:291
+msgid "Requesting ticket can't get forwardable tickets"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
+#: ../src/dummy-strings.c:292
+msgid "Bad principal name while trying to forward credentials"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
+#: ../src/dummy-strings.c:293
+msgid "Looping detected inside krb5_get_in_tkt"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
+#: ../src/dummy-strings.c:294
+msgid "Configuration file does not specify default realm"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
+#: ../src/dummy-strings.c:295
+msgid "Bad SAM flags in obtain_sam_padata"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
+#: ../src/dummy-strings.c:296
+msgid "Invalid encryption type in SAM challenge"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
+#: ../src/dummy-strings.c:297
+msgid "Missing checksum in SAM challenge"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
+#: ../src/dummy-strings.c:298
+msgid "Bad checksum in SAM challenge"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
+#: ../src/dummy-strings.c:299
+msgid "Keytab name too long"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
+#: ../src/dummy-strings.c:300
+msgid "Key version number for principal in key table is incorrect"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
+#: ../src/dummy-strings.c:301
+msgid "This application has expired"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_APPL_EXPIRED
+#: ../src/dummy-strings.c:302
+msgid "This Krb5 library has expired"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LIB_EXPIRED
+#: ../src/dummy-strings.c:303
+msgid "New password cannot be zero length"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
+#: ../src/dummy-strings.c:304
+msgid "Password change failed"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CHPW_FAIL
+#: ../src/dummy-strings.c:305
+msgid "Bad format in keytab"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_KT_FORMAT
+#: ../src/dummy-strings.c:306
+msgid "Encryption type not permitted"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
+#: ../src/dummy-strings.c:307
+msgid "No supported encryption types (config file error?)"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:308
+msgid "Program called an obsolete, deleted function"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_OBSOLETE_FN
+#: ../src/dummy-strings.c:309
+msgid "unknown getaddrinfo failure"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_EAI_FAIL
+#: ../src/dummy-strings.c:310
+msgid "no data available for host/domain name"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_EAI_NODATA
+#: ../src/dummy-strings.c:311
+msgid "host/domain name not found"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_EAI_NONAME
+#: ../src/dummy-strings.c:312
+msgid "service name unknown"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_EAI_SERVICE
+#: ../src/dummy-strings.c:313
+msgid "Cannot determine realm for numeric host address"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
+#: ../src/dummy-strings.c:314
+msgid "Invalid key generation parameters from KDC"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
+#: ../src/dummy-strings.c:315
+msgid "service not available"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
+#: ../src/dummy-strings.c:316
+msgid "Ccache function not supported: read-only ccache type"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_READONLY
+#: ../src/dummy-strings.c:317
+msgid "Ccache function not supported: not implemented"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_CC_NOSUPP
+#: ../src/dummy-strings.c:318
+msgid "ASN.1 failed call to system time library"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
+#: ../src/dummy-strings.c:319
+msgid "ASN.1 structure is missing a required field"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_MISSING_FIELD
+#: ../src/dummy-strings.c:320
+msgid "ASN.1 unexpected field number"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
+#: ../src/dummy-strings.c:321
+msgid "ASN.1 type numbers are inconsistent"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
+#: ../src/dummy-strings.c:322
+msgid "ASN.1 value too large"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_OVERFLOW
+#: ../src/dummy-strings.c:323
+msgid "ASN.1 encoding ended unexpectedly"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_OVERRUN
+#: ../src/dummy-strings.c:324
+msgid "ASN.1 identifier doesn't match expected value"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_BAD_ID
+#: ../src/dummy-strings.c:325
+msgid "ASN.1 length doesn't match expected value"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_BAD_LENGTH
+#: ../src/dummy-strings.c:326
+msgid "ASN.1 badly-formatted encoding"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_BAD_FORMAT
+#: ../src/dummy-strings.c:327
+msgid "ASN.1 parse error"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_PARSE_ERROR
+#: ../src/dummy-strings.c:328
+msgid "ASN.1 bad return from gmtime"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_BAD_GMTIME
+#: ../src/dummy-strings.c:329
+msgid "ASN.1 non-constructed indefinite encoding"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
+#: ../src/dummy-strings.c:330
+msgid "ASN.1 missing expected EOC"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_MISSING_EOC
+#: ../src/dummy-strings.c:331
+msgid "Kerberos V5 magic number table"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_NONE
+#: ../src/dummy-strings.c:332
+msgid "Bad magic number for krb5_principal structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PRINCIPAL
+#: ../src/dummy-strings.c:333
+msgid "Bad magic number for krb5_data structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_DATA
+#: ../src/dummy-strings.c:334
+msgid "Bad magic number for krb5_keyblock structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_KEYBLOCK
+#: ../src/dummy-strings.c:335
+msgid "Bad magic number for krb5_checksum structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM
+#: ../src/dummy-strings.c:336
+msgid "Bad magic number for krb5_encrypt_block structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
+#: ../src/dummy-strings.c:337
+msgid "Bad magic number for krb5_enc_data structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ENC_DATA
+#: ../src/dummy-strings.c:338
+msgid "Bad magic number for krb5_cryptosystem_entry structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
+#: ../src/dummy-strings.c:339
+msgid "Bad magic number for krb5_cs_table_entry structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
+#: ../src/dummy-strings.c:340
+msgid "Bad magic number for krb5_checksum_entry structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
+#: ../src/dummy-strings.c:341
+msgid "Bad magic number for krb5_authdata structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_AUTHDATA
+#: ../src/dummy-strings.c:342
+msgid "Bad magic number for krb5_transited structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_TRANSITED
+#: ../src/dummy-strings.c:343
+msgid "Bad magic number for krb5_enc_tkt_part structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
+#: ../src/dummy-strings.c:344
+msgid "Bad magic number for krb5_ticket structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_TICKET
+#: ../src/dummy-strings.c:345
+msgid "Bad magic number for krb5_authenticator structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
+#: ../src/dummy-strings.c:346
+msgid "Bad magic number for krb5_tkt_authent structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
+#: ../src/dummy-strings.c:347
+msgid "Bad magic number for krb5_creds structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CREDS
+#: ../src/dummy-strings.c:348
+msgid "Bad magic number for krb5_last_req_entry structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
+#: ../src/dummy-strings.c:349
+msgid "Bad magic number for krb5_pa_data structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PA_DATA
+#: ../src/dummy-strings.c:350
+msgid "Bad magic number for krb5_kdc_req structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REQ
+#: ../src/dummy-strings.c:351
+msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
+#: ../src/dummy-strings.c:352
+msgid "Bad magic number for krb5_kdc_rep structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REP
+#: ../src/dummy-strings.c:353
+msgid "Bad magic number for krb5_error structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ERROR
+#: ../src/dummy-strings.c:354
+msgid "Bad magic number for krb5_ap_req structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_AP_REQ
+#: ../src/dummy-strings.c:355
+msgid "Bad magic number for krb5_ap_rep structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP
+#: ../src/dummy-strings.c:356
+msgid "Bad magic number for krb5_ap_rep_enc_part structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
+#: ../src/dummy-strings.c:357
+msgid "Bad magic number for krb5_response structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_RESPONSE
+#: ../src/dummy-strings.c:358
+msgid "Bad magic number for krb5_safe structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_SAFE
+#: ../src/dummy-strings.c:359
+msgid "Bad magic number for krb5_priv structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PRIV
+#: ../src/dummy-strings.c:360
+msgid "Bad magic number for krb5_priv_enc_part structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
+#: ../src/dummy-strings.c:361
+msgid "Bad magic number for krb5_cred structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CRED
+#: ../src/dummy-strings.c:362
+msgid "Bad magic number for krb5_cred_info structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CRED_INFO
+#: ../src/dummy-strings.c:363
+msgid "Bad magic number for krb5_cred_enc_part structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
+#: ../src/dummy-strings.c:364
+msgid "Bad magic number for krb5_pwd_data structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PWD_DATA
+#: ../src/dummy-strings.c:365
+msgid "Bad magic number for krb5_address structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ADDRESS
+#: ../src/dummy-strings.c:366
+msgid "Bad magic number for krb5_keytab_entry structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
+#: ../src/dummy-strings.c:367
+msgid "Bad magic number for krb5_context structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CONTEXT
+#: ../src/dummy-strings.c:368
+msgid "Bad magic number for krb5_os_context structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
+#: ../src/dummy-strings.c:369
+msgid "Bad magic number for krb5_alt_method structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ALT_METHOD
+#: ../src/dummy-strings.c:370
+msgid "Bad magic number for krb5_etype_info_entry structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
+#: ../src/dummy-strings.c:371
+msgid "Bad magic number for krb5_db_context structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
+#: ../src/dummy-strings.c:372
+msgid "Bad magic number for krb5_auth_context structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
+#: ../src/dummy-strings.c:373
+msgid "Bad magic number for krb5_keytab structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB
+#: ../src/dummy-strings.c:374
+msgid "Bad magic number for krb5_rcache structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_RCACHE
+#: ../src/dummy-strings.c:375
+msgid "Bad magic number for krb5_ccache structure"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_CCACHE
+#: ../src/dummy-strings.c:376
+msgid "Bad magic number for krb5_preauth_ops"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
+#: ../src/dummy-strings.c:377
+msgid "Bad magic number for krb5_sam_challenge"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
+#: ../src/dummy-strings.c:378
+msgid "Bad magic number for krb5_sam_challenge_2"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
+#: ../src/dummy-strings.c:379
+msgid "Bad magic number for krb5_sam_key"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_SAM_KEY
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
+#: ../src/dummy-strings.c:380
+#: ../src/dummy-strings.c:381
+msgid "Bad magic number for krb5_enc_sam_response_enc"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
+#: ../src/dummy-strings.c:382
+msgid "Bad magic number for krb5_sam_response"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
+#: ../src/dummy-strings.c:383
+msgid "Bad magic number for krb5_sam_response 2"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
+#: ../src/dummy-strings.c:384
+msgid "Bad magic number for krb5_predicted_sam_response"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
+#: ../src/dummy-strings.c:385
+msgid "Bad magic number for passwd_phrase_element"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
+#: ../src/dummy-strings.c:386
+msgid "Bad magic number for GSSAPI OID"
+msgstr ""
+
+#. kv5m_err.et:kv5m:KV5M_GSS_OID
+#: ../src/dummy-strings.c:387
+msgid "Bad magic number for GSSAPI QUEUE"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_RCSID
+#. kadm_err.et:kadm:KADM_NO_VERI
+#: ../src/dummy-strings.c:389
+#: ../src/dummy-strings.c:535
+msgid "Entry already exists in database"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_INUSE
+#. kadm_err.et:kadm:KADM_INUSE
+#: ../src/dummy-strings.c:390
+#: ../src/dummy-strings.c:536
+msgid "Database store error"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_UK_SERROR
+#. kadm_err.et:kadm:KADM_UK_SERROR
+#: ../src/dummy-strings.c:391
+#: ../src/dummy-strings.c:537
+msgid "Database read error"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_UK_RERROR
+#. kadm_err.et:kadm:KADM_UK_RERROR
+#: ../src/dummy-strings.c:392
+#: ../src/dummy-strings.c:538
+msgid "Insufficient access to perform requested operation"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_UNAUTH
+#. kadm_err.et:kadm:KADM_DATA
+#: ../src/dummy-strings.c:393
+#: ../src/dummy-strings.c:540
+msgid "No such entry in the database"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_NOENTRY
+#. kadm_err.et:kadm:KADM_LENGTH_ERROR
+#: ../src/dummy-strings.c:394
+#: ../src/dummy-strings.c:545
+msgid "Illegal use of wildcard"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_ILL_WILDCARD
+#: ../src/dummy-strings.c:395
+msgid "Database is locked or in use--try again later"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_DB_INUSE
+#: ../src/dummy-strings.c:396
+msgid "Database was modified during read"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_DB_CHANGED
+#: ../src/dummy-strings.c:397
+msgid "Database record is incomplete or corrupted"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_TRUNCATED_RECORD
+#: ../src/dummy-strings.c:398
+msgid "Attempt to lock database twice"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_RECURSIVELOCK
+#: ../src/dummy-strings.c:399
+msgid "Attempt to unlock database when not locked"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_NOTLOCKED
+#: ../src/dummy-strings.c:400
+msgid "Invalid kdb lock mode"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_BADLOCKMODE
+#: ../src/dummy-strings.c:401
+msgid "Database has not been initialized"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_DBNOTINITED
+#: ../src/dummy-strings.c:402
+msgid "Database has already been initialized"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_DBINITED
+#: ../src/dummy-strings.c:403
+msgid "Bad direction for converting keys"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_ILLDIRECTION
+#: ../src/dummy-strings.c:404
+msgid "Cannot find master key record in database"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_NOMASTERKEY
+#: ../src/dummy-strings.c:405
+msgid "Master key does not match database"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_BADMASTERKEY
+#: ../src/dummy-strings.c:406
+msgid "Key size in database is invalid"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_INVALIDKEYSIZE
+#: ../src/dummy-strings.c:407
+msgid "Cannot find/read stored master key"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_CANTREAD_STORED
+#: ../src/dummy-strings.c:408
+msgid "Stored master key is corrupted"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_BADSTORED_MKEY
+#: ../src/dummy-strings.c:409
+msgid "Insufficient access to lock database"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_CANTLOCK_DB
+#: ../src/dummy-strings.c:410
+msgid "Database format error"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_DB_CORRUPT
+#: ../src/dummy-strings.c:411
+msgid "Unsupported version in database entry"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_BAD_VERSION
+#: ../src/dummy-strings.c:412
+msgid "Unsupported salt type"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_BAD_SALTTYPE
+#: ../src/dummy-strings.c:413
+msgid "Unsupported encryption type"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_BAD_ENCTYPE
+#: ../src/dummy-strings.c:414
+msgid "Bad database creation flags"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_BAD_CREATEFLAGS
+#: ../src/dummy-strings.c:415
+msgid "No matching key in entry having a permitted enctype"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_NO_PERMITTED_KEY
+#: ../src/dummy-strings.c:416
+msgid "No matching key in entry"
+msgstr ""
+
+#. kdb5_err.et:kdb5:KRB5_KDB_NO_MATCHING_KEY
+#: ../src/dummy-strings.c:417
+msgid "No Error"
+msgstr "Inga fel"
+
+#. adb_err.et:adb:OSA_ADB_NOERR
+#. kadm_err.et:ovk:KADM5_BAD_DB
+#: ../src/dummy-strings.c:418
+#: ../src/dummy-strings.c:438
+msgid "Principal or policy already exists"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_DUP
+#: ../src/dummy-strings.c:419
+msgid "Principal or policy does not exist"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_NOENT
+#: ../src/dummy-strings.c:420
+msgid "Database not initialized"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_DBINIT
+#: ../src/dummy-strings.c:421
+msgid "Invalid policy name"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_BAD_POLICY
+#: ../src/dummy-strings.c:422
+msgid "Invalid principal name"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_BAD_PRINC
+#. kadm_err.et:ovk:KADM5_AUTH_INSUFFICIENT
+#: ../src/dummy-strings.c:423
+#: ../src/dummy-strings.c:437
+msgid "Database inconsistency detected"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_BAD_DB
+#: ../src/dummy-strings.c:424
+msgid "XDR encoding error"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_XDR_FAILURE
+#: ../src/dummy-strings.c:425
+msgid "Failure!"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_FAILURE
+#: ../src/dummy-strings.c:426
+msgid "Bad lock mode"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_BADLOCKMODE
+#: ../src/dummy-strings.c:427
+msgid "Cannot lock database"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_CANTLOCK_DB
+#: ../src/dummy-strings.c:428
+msgid "Database not locked"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_NOTLOCKED
+#: ../src/dummy-strings.c:429
+msgid "KADM5 administration database lock file missing"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_NOLOCKFILE
+#: ../src/dummy-strings.c:430
+msgid "Insufficient permission to lock file"
+msgstr ""
+
+#. adb_err.et:adb:OSA_ADB_NOEXCL_PERM
+#: ../src/dummy-strings.c:431
+msgid "Operation failed for unspecified reason"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_FAILURE
+#: ../src/dummy-strings.c:432
+msgid "Operation requires ``get'' privilege"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_AUTH_GET
+#: ../src/dummy-strings.c:433
+msgid "Operation requires ``add'' privilege"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_AUTH_ADD
+#: ../src/dummy-strings.c:434
+msgid "Operation requires ``modify'' privilege"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_AUTH_MODIFY
+#: ../src/dummy-strings.c:435
+msgid "Operation requires ``delete'' privilege"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_AUTH_DELETE
+#: ../src/dummy-strings.c:436
+msgid "Insufficient authorization for operation"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_DUP
+#: ../src/dummy-strings.c:439
+msgid "Communication failure with server"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_RPC_ERROR
+#: ../src/dummy-strings.c:440
+msgid "No administration server found for realm"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_NO_SRV
+#: ../src/dummy-strings.c:441
+msgid "Password history principal key version mismatch"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_HIST_KEY
+#: ../src/dummy-strings.c:442
+msgid "Connection to server not initialized"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_NOT_INIT
+#: ../src/dummy-strings.c:443
+msgid "Principal does not exist"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_UNK_PRINC
+#: ../src/dummy-strings.c:444
+msgid "Policy does not exist"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_UNK_POLICY
+#: ../src/dummy-strings.c:445
+msgid "Invalid field mask for operation"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_MASK
+#: ../src/dummy-strings.c:446
+msgid "Invalid number of character classes"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_CLASS
+#: ../src/dummy-strings.c:447
+msgid "Invalid password length"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_LENGTH
+#: ../src/dummy-strings.c:448
+msgid "Illegal policy name"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_POLICY
+#: ../src/dummy-strings.c:449
+msgid "Illegal principal name"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_PRINCIPAL
+#: ../src/dummy-strings.c:450
+msgid "Invalid auxillary attributes"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_AUX_ATTR
+#: ../src/dummy-strings.c:451
+msgid "Invalid password history count"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_HISTORY
+#: ../src/dummy-strings.c:452
+msgid "Password minimum life is greater than password maximum life"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_MIN_PASS_LIFE
+#: ../src/dummy-strings.c:453
+msgid "Password is too short"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_PASS_Q_TOOSHORT
+#: ../src/dummy-strings.c:454
+msgid "Password does not contain enough character classes"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_PASS_Q_CLASS
+#: ../src/dummy-strings.c:455
+msgid "Password is in the password dictionary"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_PASS_Q_DICT
+#: ../src/dummy-strings.c:456
+msgid "Cannot reuse password"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_PASS_REUSE
+#: ../src/dummy-strings.c:457
+msgid "Current password's minimum life has not expired"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_PASS_TOOSOON
+#: ../src/dummy-strings.c:458
+msgid "Policy is in use"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_POLICY_REF
+#: ../src/dummy-strings.c:459
+msgid "Connection to server already initialized"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_INIT
+#: ../src/dummy-strings.c:460
+msgid "Incorrect password"
+msgstr "Felaktigt lösenord"
+
+#. kadm_err.et:ovk:KADM5_BAD_PASSWORD
+#: ../src/dummy-strings.c:461
+msgid "Cannot change protected principal"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_PROTECT_PRINCIPAL
+#: ../src/dummy-strings.c:462
+msgid "Programmer error!  Bad Admin server handle"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_SERVER_HANDLE
+#: ../src/dummy-strings.c:463
+msgid "Programmer error!  Bad API structure version"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_STRUCT_VERSION
+#: ../src/dummy-strings.c:464
+msgid "API structure version specified by application is no longer supported (to fix, recompile application against current KADM5 API header files and libraries)"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_OLD_STRUCT_VERSION
+#: ../src/dummy-strings.c:465
+msgid "API structure version specified by application is unknown to libraries (to fix, obtain current KADM5 API header files and libraries and recompile application)"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_NEW_STRUCT_VERSION
+#: ../src/dummy-strings.c:466
+msgid "Programmer error!  Bad API version"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_API_VERSION
+#: ../src/dummy-strings.c:467
+msgid "API version specified by application is no longer supported by libraries (to fix, update application to adhere to current API version and recompile)"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_OLD_LIB_API_VERSION
+#: ../src/dummy-strings.c:468
+msgid "API version specified by application is no longer supported by server (to fix, update application to adhere to current API version and recompile)"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_OLD_SERVER_API_VERSION
+#: ../src/dummy-strings.c:469
+msgid "API version specified by application is unknown to libraries (to fix, obtain current KADM5 API header files and libraries and recompile application)"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_NEW_LIB_API_VERSION
+#: ../src/dummy-strings.c:470
+msgid "API version specified by application is unknown to server (to fix, obtain and install newest KADM5 Admin Server)"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_NEW_SERVER_API_VERSION
+#: ../src/dummy-strings.c:471
+msgid "Database error! Required KADM5 principal missing"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_SECURE_PRINC_MISSING
+#: ../src/dummy-strings.c:472
+msgid "The salt type of the specified principal does not support renaming"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_NO_RENAME_SALT
+#: ../src/dummy-strings.c:473
+msgid "Illegal configuration parameter for remote KADM5 client"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_CLIENT_PARAMS
+#: ../src/dummy-strings.c:474
+msgid "Illegal configuration parameter for local KADM5 client"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_SERVER_PARAMS
+#: ../src/dummy-strings.c:475
+msgid "Operation requires ``list'' privilege"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_AUTH_LIST
+#: ../src/dummy-strings.c:476
+msgid "Operation requires ``change-password'' privilege"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_AUTH_CHANGEPW
+#: ../src/dummy-strings.c:477
+msgid "GSS-API (or Kerberos) error"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_GSS_ERROR
+#: ../src/dummy-strings.c:478
+msgid "Programmer error!  Illegal tagged data list type"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_TL_TYPE
+#: ../src/dummy-strings.c:479
+msgid "Required parameters in kdc.conf missing"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_MISSING_CONF_PARAMS
+#: ../src/dummy-strings.c:480
+msgid "Bad krb5 admin server hostname"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_BAD_SERVER_NAME
+#: ../src/dummy-strings.c:481
+msgid "Operation requires ``set-key'' privilege"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_AUTH_SETKEY
+#: ../src/dummy-strings.c:482
+msgid "Multiple values for single or folded enctype"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_SETKEY_DUP_ENCTYPES
+#: ../src/dummy-strings.c:483
+msgid "Invalid enctype for setv4key"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_SETV4KEY_INVAL_ENCTYPE
+#: ../src/dummy-strings.c:484
+msgid "Mismatched enctypes for setkey3"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_SETKEY3_ETYPE_MISMATCH
+#: ../src/dummy-strings.c:485
+msgid "Missing parameters in krb5.conf required for kadmin client"
+msgstr ""
+
+#. kadm_err.et:ovk:KADM5_MISSING_KRB5_CONF_PARAMS
+#: ../src/dummy-strings.c:486
+msgid "while getting policy info."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_GET_POLICY_INFO
+#: ../src/dummy-strings.c:487
+msgid "while getting principal info."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_NEW_PASSWORD_MISMATCH
+#: ../src/dummy-strings.c:489
+msgid "New password"
+msgstr "Nytt lösenord"
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_NEW_PASSWORD_PROMPT
+#: ../src/dummy-strings.c:490
+msgid "New password (again)"
+msgstr "Nytt lösenord (igen)"
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_NEW_PASSWORD_AGAIN_PROMPT
+#: ../src/dummy-strings.c:491
+msgid "You must type a password. Passwords must be at least one character long.\n"
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_NO_PASSWORD_READ
+#: ../src/dummy-strings.c:492
+msgid "yet no policy set!  Contact your system security administrator."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_NO_POLICY_YET_Q_ERROR
+#: ../src/dummy-strings.c:493
+msgid "Password changed.\n"
+msgstr "Lösenordet ändrat.\n"
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_PASSWORD_CHANGED
+#: ../src/dummy-strings.c:494
+msgid ""
+"New password was found in a dictionary of possible passwords and\n"
+"therefore may be easily guessed. Please choose another password.\n"
+"See the ovpasswd man page for help in choosing a good password."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_PASSWORD_NOT_CHANGED
+#: ../src/dummy-strings.c:498
+#, c-format
+msgid ""
+"New password is too short.\n"
+"Please choose a password which is at least %d characters long."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_PASSWORD_TOO_SHORT
+#: ../src/dummy-strings.c:500
+#, c-format
+msgid ""
+"New password does not have enough character classes.\n"
+"The character classes are:\n"
+"\t- lower-case letters,\n"
+"\t- upper-case letters,\n"
+"\t- digits,\n"
+"\t- punctuation, and\n"
+"\t- all other characters (e.g., control characters).\n"
+"Please choose a password with at least %d character classes."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_TOO_FEW_CLASSES
+#: ../src/dummy-strings.c:508
+#, c-format
+msgid ""
+"Password cannot be changed because it was changed too recently.\n"
+"Please wait until %s before you change it.\n"
+"If you need to change your password before then, contact your system\n"
+"security administrator."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_PASSWORD_TOO_SOON
+#: ../src/dummy-strings.c:512
+msgid "New password was used previously. Please choose a different password."
+msgstr ""
+
+#. chpass_util_strings.et:ovku:CHPASS_UTIL_WHILE_READING_PASSWORD
+#: ../src/dummy-strings.c:515
+msgid "$Header$"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_RCSID
+#: ../src/dummy-strings.c:516
+msgid "Cannot fetch local realm"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_REALM
+#: ../src/dummy-strings.c:517
+msgid "Unable to fetch credentials"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_CRED
+#: ../src/dummy-strings.c:518
+msgid "Bad key supplied"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_BAD_KEY
+#: ../src/dummy-strings.c:519
+msgid "Can't encrypt data"
+msgstr "Kan inte kryptera data"
+
+#. kadm_err.et:kadm:KADM_NO_ENCRYPT
+#: ../src/dummy-strings.c:520
+msgid "Cannot encode/decode authentication info"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_AUTH
+#: ../src/dummy-strings.c:521
+msgid "Principal attemping change is in wrong realm"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_WRONG_REALM
+#: ../src/dummy-strings.c:522
+msgid "Packet is too large"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_ROOM
+#: ../src/dummy-strings.c:523
+msgid "Version number is incorrect"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_BAD_VER
+#: ../src/dummy-strings.c:524
+msgid "Checksum does not match"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_BAD_CHK
+#: ../src/dummy-strings.c:525
+msgid "Unsealing private data failed"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_READ
+#: ../src/dummy-strings.c:526
+msgid "Unsupported operation"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_OPCODE
+#: ../src/dummy-strings.c:527
+msgid "Could not find administrating host"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_HOST
+#: ../src/dummy-strings.c:528
+msgid "Administrating host name is unknown"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_UNK_HOST
+#: ../src/dummy-strings.c:529
+msgid "Could not find service name in services database"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_SERV
+#: ../src/dummy-strings.c:530
+msgid "Could not create socket"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_SOCK
+#: ../src/dummy-strings.c:531
+msgid "Could not connect to server"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_CONN
+#: ../src/dummy-strings.c:532
+msgid "Could not fetch local socket address"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_HERE
+#: ../src/dummy-strings.c:533
+msgid "Could not fetch master key"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_MAST
+#: ../src/dummy-strings.c:534
+msgid "Could not verify master key"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_UNAUTH
+#: ../src/dummy-strings.c:539
+msgid "Data is available for return to client"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NOENTRY
+#: ../src/dummy-strings.c:541
+msgid "Memory exhausted"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NOMEM
+#: ../src/dummy-strings.c:542
+msgid "Could not fetch system hostname"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_HOSTNAME
+#: ../src/dummy-strings.c:543
+msgid "Could not bind port"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NO_BIND
+#: ../src/dummy-strings.c:544
+msgid "Length mismatch problem"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_ILL_WILDCARD
+#: ../src/dummy-strings.c:546
+msgid "Database locked or in use"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_DB_INUSE
+#: ../src/dummy-strings.c:547
+msgid "Insecure password rejected"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_INSECURE_PW
+#: ../src/dummy-strings.c:548
+msgid "Cleartext password and DES key did not match"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_PW_MISMATCH
+#: ../src/dummy-strings.c:549
+msgid "Invalid principal for change srvtab request"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_NOT_SERV_PRINC
+#: ../src/dummy-strings.c:550
+msgid "Realm name too long"
+msgstr ""
+
+#. kadm_err.et:kadm:KADM_REALM_TOO_LONG
+#: ../src/dummy-strings.c:551
+msgid "Kerberos successful"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KSUCCESS
+#: ../src/dummy-strings.c:552
+msgid "Kerberos principal expired"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_NAME_EXP
+#: ../src/dummy-strings.c:553
+msgid "Kerberos service expired"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_SERVICE_EXP
+#: ../src/dummy-strings.c:554
+msgid "Kerberos auth expired"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_AUTH_EXP
+#: ../src/dummy-strings.c:555
+msgid "Unknown kerberos protocol version"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_PKT_VER
+#: ../src/dummy-strings.c:556
+msgid "Incorrect kerberos master key version for principal"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_P_MKEY_VER
+#: ../src/dummy-strings.c:557
+msgid "Incorrect kerberos master key version for service"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_S_MKEY_VER
+#: ../src/dummy-strings.c:558
+msgid "Bad byte order (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_BYTE_ORDER
+#: ../src/dummy-strings.c:559
+msgid "Kerberos principal unknown"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_PR_UNKNOWN
+#: ../src/dummy-strings.c:560
+msgid "Kerberos principal not unique"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_PR_N_UNIQUE
+#: ../src/dummy-strings.c:561
+msgid "Kerberos principal has null key"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_NULL_KEY
+#: ../src/dummy-strings.c:562
+msgid "Reserved error message 11 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES11
+#: ../src/dummy-strings.c:563
+msgid "Reserved error message 12 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES12
+#: ../src/dummy-strings.c:564
+msgid "Reserved error message 13 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES13
+#: ../src/dummy-strings.c:565
+msgid "Reserved error message 14 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES14
+#: ../src/dummy-strings.c:566
+msgid "Reserved error message 15 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES15
+#: ../src/dummy-strings.c:567
+msgid "Reserved error message 16 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES16
+#: ../src/dummy-strings.c:568
+msgid "Reserved error message 17 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES17
+#: ../src/dummy-strings.c:569
+msgid "Reserved error message 18 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES18
+#: ../src/dummy-strings.c:570
+msgid "Reserved error message 19 (kerberos)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES19
+#: ../src/dummy-strings.c:571
+msgid "Generic error from Kerberos KDC"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KDC_GEN_ERR
+#: ../src/dummy-strings.c:572
+msgid "Can't read Kerberos ticket file"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_GC_TKFIL
+#: ../src/dummy-strings.c:573
+msgid "Can't find Kerberos ticket or TGT"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_GC_NOTKT
+#: ../src/dummy-strings.c:574
+msgid "Reserved error message 23 (krb_get_cred)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES23
+#: ../src/dummy-strings.c:575
+msgid "Reserved error message 24 (krb_get_cred)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES24
+#: ../src/dummy-strings.c:576
+msgid "Reserved error message 25 (krb_get_cred)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES25
+#: ../src/dummy-strings.c:577
+msgid "Kerberos TGT Expired"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_MK_AP_TGTEXP
+#: ../src/dummy-strings.c:578
+msgid "Reserved error message 27 (krb_mk_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES27
+#: ../src/dummy-strings.c:579
+msgid "Reserved error message 28 (krb_mk_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES28
+#: ../src/dummy-strings.c:580
+msgid "Reserved error message 29 (krb_mk_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES29
+#: ../src/dummy-strings.c:581
+msgid "Reserved error message 30 (krb_mk_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES30
+#: ../src/dummy-strings.c:582
+msgid "Can't decode authenticator (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_UNDEC
+#: ../src/dummy-strings.c:583
+msgid "Kerberos ticket expired (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_EXP
+#: ../src/dummy-strings.c:584
+msgid "Kerberos ticket not yet valid (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_NYV
+#: ../src/dummy-strings.c:585
+msgid "Repeated request (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_REPEAT
+#: ../src/dummy-strings.c:586
+msgid "Kerberos ticket is for wrong server (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_NOT_US
+#: ../src/dummy-strings.c:587
+msgid "Kerberos request inconsistent"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_INCON
+#: ../src/dummy-strings.c:588
+msgid "Time is out of bounds (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_TIME
+#: ../src/dummy-strings.c:589
+msgid "Incorrect net address (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_BADD
+#: ../src/dummy-strings.c:590
+msgid "Kerberos protocol version mismatch (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_VERSION
+#: ../src/dummy-strings.c:591
+msgid "Invalid msg type (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_MSG_TYPE
+#: ../src/dummy-strings.c:592
+msgid "Message integrity error (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_MODIFIED
+#: ../src/dummy-strings.c:593
+msgid "Message out of order (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_ORDER
+#: ../src/dummy-strings.c:594
+msgid "Unauthorized request (krb_rd_req)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_RD_AP_UNAUTHOR
+#: ../src/dummy-strings.c:595
+msgid "Current password is null (get_pw_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_GT_PW_NULL
+#: ../src/dummy-strings.c:596
+msgid "Incorrect current password (get_pw_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_GT_PW_BADPW
+#: ../src/dummy-strings.c:597
+msgid "Protocol error (get_pw_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_GT_PW_PROT
+#: ../src/dummy-strings.c:598
+msgid "Error returned by KDC (get_pw_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_GT_PW_KDCERR
+#: ../src/dummy-strings.c:599
+msgid "Null Kerberos ticket returned by KDC (get_pw_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_GT_PW_NULLTKT
+#: ../src/dummy-strings.c:600
+msgid "Retry count exceeded (send_to_kdc)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_SKDC_RETRY
+#: ../src/dummy-strings.c:601
+msgid "Can't send request (send_to_kdc)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_SKDC_CANT
+#: ../src/dummy-strings.c:602
+msgid "Reserved error message 58 (send_to_kdc)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES58
+#: ../src/dummy-strings.c:603
+msgid "Reserved error message 59 (send_to_kdc)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES59
+#: ../src/dummy-strings.c:604
+msgid "Reserved error message 60 (send_to_kdc)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KRB_RES60
+#: ../src/dummy-strings.c:605
+msgid "Kerberos error: not all tickets returned"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_INTK_W_NOTALL
+#: ../src/dummy-strings.c:606
+msgid "Incorrect password (get_in_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_INTK_BADPW
+#: ../src/dummy-strings.c:607
+msgid "Protocol error (get_in_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_INTK_PROT
+#: ../src/dummy-strings.c:608
+msgid "Other error (get_in_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_INTK_ERR
+#: ../src/dummy-strings.c:609
+msgid "Don't have Kerberos ticket-granting ticket (get_ad_tkt)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_AD_NOTGT
+#: ../src/dummy-strings.c:610
+msgid "You have no tickets cached"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_NO_TKT_FIL
+#: ../src/dummy-strings.c:611
+msgid "Couldn't access ticket file (tf_util)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_TKT_FIL_ACC
+#: ../src/dummy-strings.c:612
+msgid "Couldn't lock ticket file (tf_util)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_TKT_FIL_LCK
+#: ../src/dummy-strings.c:613
+msgid "Bad ticket file format (tf_util)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_TKT_FIL_FMT
+#: ../src/dummy-strings.c:614
+msgid "tf_init not called before reading from ticket file (tf_util)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_TKT_FIL_INI
+#: ../src/dummy-strings.c:615
+msgid "Bad Kerberos name format (kname_parse)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KNAME_FMT
+#: ../src/dummy-strings.c:616
+msgid "Generic kerberos error (kfailure)"
+msgstr ""
+
+#. krb_err.et:krb:KRBET_KFAILURE
+#: ../src/dummy-strings.c:617
+msgid "Principal in credential cache does not match desired name"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_CCACHE_NOMATCH
+#: ../src/dummy-strings.c:618
+msgid "No principal in keytab matches desired name"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_KEYTAB_NOMATCH
+#: ../src/dummy-strings.c:619
+msgid "Credential cache has no TGT"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_TGT_MISSING
+#: ../src/dummy-strings.c:620
+msgid "Authenticator has no subkey"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_NO_SUBKEY
+#: ../src/dummy-strings.c:621
+msgid "Context is already fully established"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_CONTEXT_ESTABLISHED
+#: ../src/dummy-strings.c:622
+msgid "Unknown signature type in token"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_BAD_SIGN_TYPE
+#: ../src/dummy-strings.c:623
+msgid "Invalid field length in token"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_BAD_LENGTH
+#: ../src/dummy-strings.c:624
+msgid "Attempt to use incomplete security context"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_CTX_INCOMPLETE
+#: ../src/dummy-strings.c:625
+msgid "Bad magic number for krb5_gss_ctx_id_t"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_CONTEXT
+#: ../src/dummy-strings.c:626
+msgid "Bad magic number for krb5_gss_cred_id_t"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_CRED
+#: ../src/dummy-strings.c:627
+msgid "Bad magic number for krb5_gss_enc_desc"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_ENC_DESC
+#: ../src/dummy-strings.c:628
+msgid "Sequence number in token is corrupt"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_BAD_SEQ
+#: ../src/dummy-strings.c:629
+msgid "Credential cache is empty"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_EMPTY_CCACHE
+#: ../src/dummy-strings.c:630
+msgid "Acceptor and Initiator share no checksum types"
+msgstr ""
+
+#. gssapi_err_krb5.et:k5g:KG_NO_CTYPES
+#: ../src/dummy-strings.c:631
+msgid "No @ in SERVICE-NAME name string"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BAD_SERVICE_NAME
+#: ../src/dummy-strings.c:632
+msgid "STRING-UID-NAME contains nondigits"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BAD_STRING_UID
+#: ../src/dummy-strings.c:633
+msgid "UID does not resolve to username"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_NOUSER
+#: ../src/dummy-strings.c:634
+msgid "Validation error"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_VALIDATE_FAILED
+#: ../src/dummy-strings.c:635
+msgid "Couldn't allocate gss_buffer_t data"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BUFFER_ALLOC
+#: ../src/dummy-strings.c:636
+msgid "Message context invalid"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BAD_MSG_CTX
+#: ../src/dummy-strings.c:637
+msgid "Buffer is the wrong size"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_WRONG_SIZE
+#: ../src/dummy-strings.c:638
+msgid "Credential usage type is unknown"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BAD_USAGE
+#: ../src/dummy-strings.c:639
+msgid "Unknown quality of protection specified"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_UNKNOWN_QOP
+#: ../src/dummy-strings.c:640
+msgid "Local host name could not be determined"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_NO_HOSTNAME
+#: ../src/dummy-strings.c:641
+msgid "Hostname in SERVICE-NAME string could not be canonicalized"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BAD_HOSTNAME
+#: ../src/dummy-strings.c:642
+msgid "Mechanism is incorrect"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_WRONG_MECH
+#: ../src/dummy-strings.c:643
+msgid "Token header is malformed or corrupt"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BAD_TOK_HEADER
+#: ../src/dummy-strings.c:644
+msgid "Packet was replayed in wrong direction"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_BAD_DIRECTION
+#: ../src/dummy-strings.c:645
+msgid "Token is missing data"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_TOK_TRUNC
+#: ../src/dummy-strings.c:646
+msgid "Token was reflected"
+msgstr ""
+
+#. gssapi_err_generic.et:ggss:G_REFLECT
+#: ../src/dummy-strings.c:647
+msgid "Received token ID does not match expected token ID"
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:49
+#, c-format
+msgid "Your credentials expire in %.2d:%.2dh"
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:95
+msgid "Network credentials valid"
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:96
+msgid "Your Kerberos credentials have been refreshed."
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:101
+msgid "Network credentials expiring"
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:108
+msgid "Network credentials expired"
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:109
+msgid "Your Kerberos credentails have expired."
+msgstr ""
+
+#. kdestroy
+#: ../src/krb5-auth-applet.c:171
+msgid "Remove Credentials _Cache"
+msgstr ""
+
+#. About item
+#: ../src/krb5-auth-applet.c:180
+msgid "_About"
+msgstr "_Om"
+
+#. Quit
+#: ../src/krb5-auth-applet.c:189
+msgid "_Quit"
+msgstr "A_vsluta"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Network Authentication Dialog"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:455
+msgid "Cursor Position"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:457
+msgid "The current position of the insertion cursor in chars"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:464
+msgid "Selection Bound"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:466
+msgid "The position of the opposite end of the selection from the cursor in chars"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:473
+msgid "Maximum length"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:475
+msgid "Maximum number of characters for this entry. Zero if no maximum"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:483
+msgid "Has Frame"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:485
+msgid "FALSE removes outside bevel from entry"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:494
+msgid "Invisible character"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:496
+msgid "The character to use when masking entry contents (in \"password mode\")"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:505
+msgid "Activates default"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:507
+msgid "Whether to activate the default widget (such as the default button in a dialog) when Enter is pressed"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:512
+msgid "Width in chars"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:514
+msgid "Number of characters to leave space for in the entry"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:522
+msgid "Scroll offset"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:524
+msgid "Number of pixels of the entry scrolled off the screen to the left"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:531
+msgid "Text"
+msgstr "Text"
+
+#: ../gtksecentry/gtksecentry.c:533
+msgid "The contents of the entry"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:690
+msgid "Select on focus"
+msgstr ""
+
+#: ../gtksecentry/gtksecentry.c:692
+msgid "Whether to select the contents of an entry when it is focused"
+msgstr ""
+
+#: ../secmem/util.c:106
+#, c-format
+msgid "Warning: running q-agent setuid on this system is dangerous\n"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:1
+msgid "Kerberos principal"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:2
+msgid "Pkinit identifier"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:3
+msgid "Prompt minutes before expiry"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:4
+msgid "Show a trayicon in the status area of the panel"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:5
+msgid "Show trayicon"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:6
+msgid "Start prompting/displaying notifications that many minutes before expiry"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:7
+msgid "The kerberos principal to acquire the ticket for"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:8
+msgid "The principal's public/private/certificate identifier when using pkinit"
+msgstr ""
+

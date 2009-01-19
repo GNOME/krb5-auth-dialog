@@ -1,3 +1,9 @@
+Mon Jan 19 22:12:37 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-dialog.c: don't try pkinit if pk_userid is non-null
+	but empty
+	* src/krb5-auth-gconf.c: improve debug output for empty strings
+
 Mon Jan 12 00:46:14 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* update NEWS 

@@ -513,7 +513,7 @@ ka_auth_pkinit(Krb5AuthApplet* applet, krb5_creds* creds)
 	krb5_get_init_creds_opt *opts = NULL;
 	krb5_error_code retval;
 
-	KA_DEBUG("pkinit with %s", applet->pk_userid);
+	KA_DEBUG("pkinit with '%s'", applet->pk_userid);
 
 	if (!applet->pk_userid)
 		return 0;
@@ -573,7 +573,7 @@ grab_credentials (Krb5AuthApplet* applet)
 		return retval;
 
 #if ENABLE_PKINIT
-	if (applet->pk_userid) { /* try pkinit */
+	if (applet->pk_userid && strlen(applet->pk_userid)) { /* try pkinit */
 #else
 	if (0) {
 #endif

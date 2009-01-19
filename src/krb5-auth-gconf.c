@@ -118,7 +118,7 @@ ka_gconf_set_principal (GConfClient* client, Krb5AuthApplet* applet)
 	if(!ka_gconf_get_string (client, KA_GCONF_KEY_PRINCIPAL, &applet->principal)) {
 		applet->principal = g_strdup (g_get_user_name());
 	}
-	KA_DEBUG("Setting principal to %s", applet->principal);
+	KA_DEBUG("Setting principal to '%s'", applet->principal);
 	// FIXME: need to send set-principal signal
 	return TRUE;
 }
@@ -131,7 +131,7 @@ ka_gconf_set_pk_userid (GConfClient* client, Krb5AuthApplet* applet)
 	if(!ka_gconf_get_string (client, KA_GCONF_KEY_PK_USERID, &applet->pk_userid)) {
 		applet->pk_userid = NULL;
 	}
-	KA_DEBUG("Setting pk_userid to %s", applet->pk_userid ? applet->pk_userid : "<disabled>");
+	KA_DEBUG("Setting pk_userid to '%s'", applet->pk_userid ? applet->pk_userid : "<disabled>");
 	return TRUE;
 }
 

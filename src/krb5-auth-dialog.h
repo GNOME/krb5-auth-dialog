@@ -24,7 +24,7 @@
 #include "krb5-auth-applet.h"
 
 void ka_destroy_cache (GtkMenuItem  *menuitem, gpointer user_data);
-void ka_grab_credentials(Krb5AuthApplet* applet);
+void ka_grab_credentials(KaApplet* applet);
 
 #endif
 

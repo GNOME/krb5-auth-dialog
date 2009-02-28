@@ -1,3 +1,22 @@
+Sat Feb 28 14:27:57 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	Turn Krb5AuthApplet into a GObject named KaApplet
+	* src/krb5-auth-applet.[ch]: declare and define KaApplet,
+	  KaAppletPrivate
+	  (ka_applet_{set,get}_property): new functions to access properties
+	  (ka_applet_{dispose,finalize,{class,}_init}: new functions
+	  (ka_applet_get_show_trayicon, ka_applet_set_tgt_renewable,
+	   ka_applet_get_tgt_renewable, ka_applet_get_pw_prompt_secs,
+	   ka_applet_run_pw_dialog, ka_applet_get_pwdialog_xml,
+	   ka_applet_hide_pw_dialog, ka_applet_get_pw_label,
+	   ka_applet_set_pw_dialog_persist): new functions
+	* src/krb5-auth-dialog.c: use the above instead of accessing KaApplet
+	  private data
+	* src/krb5-auth-gconf.c: likewise
+	* src/krb5-auth-dbus.c: update copyright
+	* src/krb5-auth-notify.[ch] (ka_send_event_notification): moved from
+	  to src/krb5-auth-applet.c
+
 Sat Feb 28 14:18:35 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add .gitignore files

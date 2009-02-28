@@ -22,6 +22,7 @@
 #define KRB5_AUTH_APPLET_H
 
 #include <glib.h>
+#include <glib-object.h>
 #include <glib/gprintf.h>
 #include <gtk/gtk.h>
 #include <glade/glade.h>
@@ -32,32 +33,46 @@
 
 #include "config.h"
 
-typedef struct {
-	GtkStatusIcon* tray_icon;	/* the tray icon */
-	GtkWidget* context_menu;	/* the tray icon's context menu */
-	const char* icons[3]; 		/* for invalid, expiring and valid tickts */
-	gboolean show_trayicon;		/* show the trayicon */
+G_BEGIN_DECLS
 
-	/* The password dialog */
-	GtkWidget* pw_dialog;		/* the password dialog itself */
-	GladeXML*  pw_xml;		/* the dialog's glade xml */
-	GtkWidget* pw_wrong_label;	/* the wrong password/timeout label */
-	int	   pw_prompt_secs;	/* when to start prompting for a password */
-	gboolean   pw_dialog_persist;	/* don't hide the dialog when creds are still valid */
+#define KA_TYPE_APPLET            (ka_applet_get_type ())
+#define KA_APPLET(obj)            \
+    (G_TYPE_CHECK_INSTANCE_CAST ((obj), KA_TYPE_APPLET, KaApplet))
+#define KA_APPLET_CLASS(klass)    \
+    (G_TYPE_CHECK_CLASS_CAST ((klass), KA_TYPE_APPLET, KaAppletClass))
+#define KA_IS_APPLET(obj)         \
+    (G_TYPE_CHECK_INSTANCE_TYPE ((obj), KA_TYPE_APPLET))
+#define KA_IS_APPLET_CLASS(klass) \
+    (G_TYPE_CHECK_CLASS_TYPE ((klass), KA_TYPE_APPLET))
+#define KA_APPLET_GET_CLASS(obj)  \
+    (G_TYPE_INSTANCE_GET_CLASS ((obj), KA_TYPE_APPLET, KaAppletClass))
 
-#ifdef HAVE_LIBNOTIFY
-	NotifyNotification* notification;/* notification messages */
-#endif /* HAVE_LIBNOTIFY */
-	char* principal;		/* the principal to request */
-	gboolean renewable;		/* credentials renewable? */
-	char* pk_userid;		/* "userid" for pkint */
-} Krb5AuthApplet;
+typedef struct _KaApplet        KaApplet;
+typedef struct _KaAppletClass   KaAppletClass;
+typedef struct _KaAppletPrivate KaAppletPrivate;
 
-Krb5AuthApplet* ka_create_applet();
+GType ka_applet_get_type (void);
+KaApplet* ka_applet_new(void) G_GNUC_MALLOC;
+
+/* public functions */
+gboolean ka_applet_get_show_trayicon(const KaApplet* applet);
+void ka_applet_set_tgt_renewable(KaApplet* applet, gboolean renewable);
+gboolean ka_applet_get_tgt_renewable(const KaApplet* applet);
+guint ka_applet_get_pw_prompt_secs(const KaApplet* applet);
+
+/* password dialog */
+gint ka_applet_run_pw_dialog(const KaApplet* applet);
+GladeXML* ka_applet_get_pwdialog_xml(const KaApplet* applet);
+void ka_applet_hide_pw_dialog(KaApplet* applet, gboolean force);
+GtkWidget* ka_applet_get_pw_label(const KaApplet* applet);
+void ka_applet_set_pw_dialog_persist(KaApplet* applet, gboolean persist);
+
+G_END_DECLS
+
+/* create the applet */
+KaApplet* ka_applet_create();
 /* update tooltip and icon */
-int ka_update_status(Krb5AuthApplet* applet, krb5_timestamp expiry);
-/* show or hide the tray icon */
-gboolean ka_show_tray_icon(Krb5AuthApplet* applet);
+int ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry);
 
 #ifdef ENABLE_DEBUG
 #define KA_DEBUG(fmt,...) \

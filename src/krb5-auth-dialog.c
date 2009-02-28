@@ -2,6 +2,8 @@
  * Copyright (C) 2004,2005,2006 Red Hat, Inc.
  * Authored by Christopher Aillon <caillon@redhat.com>
  *
+ * Copyright (C) 2008,2009 Guido Guenther <agx@sigxcup.org>
+ *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2, or (at your option)
@@ -55,8 +57,8 @@ static gboolean canceled;
 static gboolean invalid_auth;
 static gboolean always_run;
 
-static int grab_credentials (Krb5AuthApplet* applet);
-static int ka_renew_credentials (Krb5AuthApplet* applet);
+static int grab_credentials (KaApplet* applet);
+static int ka_renew_credentials (KaApplet* applet);
 static gboolean ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
 
 /* YAY for different Kerberos implementations */
@@ -160,13 +162,13 @@ ka_krb5_cc_clear_mcred(krb5_creds* mcred)
 /* ***************************************************************** */
 
 static gboolean
-credentials_expiring_real (Krb5AuthApplet* applet)
+credentials_expiring_real (KaApplet* applet)
 {
 	krb5_creds my_creds;
 	krb5_timestamp now;
 	gboolean retval = FALSE;
-	applet->renewable = FALSE;
 
+	ka_applet_set_tgt_renewable(applet, FALSE);
 	if (!ka_get_tgt_from_ccache (kcontext, &my_creds)) {
 		creds_expiry = 0;
 		retval = TRUE;
@@ -179,18 +181,18 @@ credentials_expiring_real (Krb5AuthApplet* applet)
 	}
 	creds_expiry = my_creds.times.endtime;
 	if ((krb5_timeofday(kcontext, &now) == 0) &&
-	    (now + applet->pw_prompt_secs > my_creds.times.endtime))
+	    (now + ka_applet_get_pw_prompt_secs(applet) > my_creds.times.endtime))
 		retval = TRUE;
 
 	/* If our creds are expiring, determine whether they are renewable */
 	if (retval && get_cred_renewable(&my_creds) && my_creds.times.renew_till > now) {
-		applet->renewable = TRUE;
+		ka_applet_set_tgt_renewable(applet, TRUE);
 	}
 
 	krb5_free_cred_contents (kcontext, &my_creds);
 
 out:
-	ka_update_status(applet, creds_expiry);
+	ka_applet_update_status(applet, creds_expiry);
 	return retval;
 }
 
@@ -246,25 +248,21 @@ krb5_auth_dialog_wrong_label_update_expiry (GtkWidget* label)
 static gboolean
 krb5_auth_dialog_do_updates (gpointer data)
 {
-	Krb5AuthApplet* applet = (Krb5AuthApplet*)data;
+	KaApplet* applet = KA_APPLET(data);
 
 	g_return_val_if_fail (applet != NULL, FALSE);
-
 	/* Update creds_expiry and close the applet if we got the creds by other means (e.g. kinit) */
-	if (!credentials_expiring_real(applet)) {
-		KA_DEBUG("PW Dialog persist: %d", applet->pw_dialog_persist);
-		if (!applet->pw_dialog_persist)
-			gtk_widget_hide(applet->pw_dialog);
-	}
+	if (!credentials_expiring_real(applet))
+		ka_applet_hide_pw_dialog(applet, FALSE);
 
 	/* Update the expiry information in the dialog */
-	krb5_auth_dialog_wrong_label_update_expiry (applet->pw_wrong_label);
+	krb5_auth_dialog_wrong_label_update_expiry (ka_applet_get_pw_label(applet));
 	return TRUE;
 }
 
 
 static void
-krb5_auth_dialog_setup (Krb5AuthApplet *applet,
+krb5_auth_dialog_setup (KaApplet *applet,
                         const gchar *krb5prompt,
                         gboolean hide_password)
 {
@@ -274,7 +272,6 @@ krb5_auth_dialog_setup (Krb5AuthApplet *applet,
 	gchar *wrong_markup;
 	gchar *prompt;
 	int pw4len;
-
 
 	if (krb5prompt == NULL) {
 		prompt = g_strdup (_("Please enter your Kerberos password."));
@@ -295,17 +292,19 @@ krb5_auth_dialog_setup (Krb5AuthApplet *applet,
 	}
 
 	/* Clear the password entry field */
-	entry = glade_xml_get_widget (applet->pw_xml, "krb5_entry");
+	entry = glade_xml_get_widget (ka_applet_get_pwdialog_xml(applet),
+                                      "krb5_entry");
 	gtk_secure_entry_set_text (GTK_SECURE_ENTRY (entry), "");
 
 	/* Use the prompt label that krb5 provides us */
-	label = glade_xml_get_widget (applet->pw_xml, "krb5_message_label");
+	label = glade_xml_get_widget (ka_applet_get_pwdialog_xml(applet),
+                                      "krb5_message_label");
 	gtk_label_set_text (GTK_LABEL (label), prompt);
 
 	/* Add our extra message hints, if any */
 	wrong_text = NULL;
 
-	if (applet->pw_wrong_label) {
+	if (ka_applet_get_pw_label(applet)) {
 		if (invalid_auth) {
 			wrong_text = g_strdup (_("The password you entered is invalid"));
 		} else {
@@ -322,11 +321,11 @@ krb5_auth_dialog_setup (Krb5AuthApplet *applet,
 
 	if (wrong_text) {
 		wrong_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", wrong_text);
-		gtk_label_set_markup (GTK_LABEL (applet->pw_wrong_label), wrong_markup);
+		gtk_label_set_markup (GTK_LABEL (ka_applet_get_pw_label(applet)), wrong_markup);
 		g_free(wrong_text);
 		g_free(wrong_markup);
 	} else {
-		gtk_label_set_text (GTK_LABEL (applet->pw_wrong_label), "");
+		gtk_label_set_text (GTK_LABEL (ka_applet_get_pw_label(applet)), "");
 	}
 	g_free (prompt);
 }
@@ -340,7 +339,7 @@ auth_dialog_prompter (krb5_context ctx,
                       int num_prompts,
                       krb5_prompt prompts[])
 {
-	Krb5AuthApplet* applet = (Krb5AuthApplet*)data;
+	KaApplet* applet = KA_APPLET(data);
 	krb5_error_code errcode;
 	int i;
 
@@ -359,11 +358,11 @@ auth_dialog_prompter (krb5_context ctx,
 		errcode = KRB5_LIBOS_CANTREADPWD;
 
 		krb5_auth_dialog_setup (applet, (gchar *) prompts[i].prompt, prompts[i].hidden);
-		entry = glade_xml_get_widget (applet->pw_xml, "krb5_entry");
+		entry = glade_xml_get_widget (ka_applet_get_pwdialog_xml(applet), "krb5_entry");
 		gtk_widget_grab_focus (entry);
 
 		source_id = g_timeout_add_seconds (5, (GSourceFunc)krb5_auth_dialog_do_updates, applet);
-		response = gtk_dialog_run (GTK_DIALOG (applet->pw_dialog));
+		response = ka_applet_run_pw_dialog (applet);
 		switch (response)
 		{
 			case GTK_RESPONSE_OK:
@@ -394,8 +393,8 @@ auth_dialog_prompter (krb5_context ctx,
 		errcode = 0;
 	}
 cleanup:
+	ka_applet_hide_pw_dialog (applet, TRUE);
 	/* Reset this, so we know the next time we get a TRUE value, it is accurate. */
-	gtk_widget_hide (applet->pw_dialog);
 	invalid_auth = FALSE;
 
 	return errcode;
@@ -436,9 +435,9 @@ credentials_expiring (gpointer *data)
 {
 	int retval;
 	gboolean give_up;
-	Krb5AuthApplet* applet = (Krb5AuthApplet*) data;
+	KaApplet* applet = KA_APPLET(data);
 
-	KA_DEBUG("Checking expiry <%ds", applet->pw_prompt_secs);
+	KA_DEBUG("Checking expiry <%ds", ka_applet_get_pw_prompt_secs(applet));
 	if (credentials_expiring_real (applet) && is_online) {
 		KA_DEBUG("Expiry @ %ld", creds_expiry);
 
@@ -448,7 +447,7 @@ credentials_expiring (gpointer *data)
 		}
 
 		/* no popup when using a trayicon */
-		if (applet->show_trayicon)
+		if (ka_applet_get_show_trayicon(applet))
 			goto out;
 
 		give_up = canceled && (creds_expiry == canceled_creds_expiry);
@@ -465,13 +464,13 @@ credentials_expiring (gpointer *data)
 		}
 	}
 out:
-	ka_update_status(applet, creds_expiry);
+	ka_applet_update_status(applet, creds_expiry);
 	return TRUE;
 }
 
 
 static void
-set_options_from_creds(const Krb5AuthApplet* applet,
+set_options_from_creds(const KaApplet* applet,
 		       krb5_context context,
 		       krb5_creds *in,
 		       krb5_get_init_creds_opt *out)
@@ -496,7 +495,7 @@ set_options_from_creds(const Krb5AuthApplet* applet,
 						       renew_lifetime);
 	}
 	if (in->times.endtime >
-	    in->times.starttime + applet->pw_prompt_secs) {
+	    in->times.starttime + ka_applet_get_pw_prompt_secs(applet)) {
 		krb5_get_init_creds_opt_set_tkt_life(out,
 						     in->times.endtime -
 						     in->times.starttime);
@@ -507,16 +506,13 @@ set_options_from_creds(const Krb5AuthApplet* applet,
 
 
 static krb5_error_code
-ka_auth_pkinit(Krb5AuthApplet* applet, krb5_creds* creds)
+ka_auth_pkinit(KaApplet* applet, krb5_creds* creds, const char* pk_userid)
 {
 #ifdef ENABLE_PKINIT
 	krb5_get_init_creds_opt *opts = NULL;
 	krb5_error_code retval;
 
-	KA_DEBUG("pkinit with '%s'", applet->pk_userid);
-
-	if (!applet->pk_userid)
-		return 0;
+	KA_DEBUG("pkinit with '%s'", pk_userid);
 
 	retval = krb5_get_init_creds_opt_alloc (kcontext, &opts);
 	if (retval)
@@ -525,7 +521,7 @@ ka_auth_pkinit(Krb5AuthApplet* applet, krb5_creds* creds)
 
 	retval = krb5_get_init_creds_opt_set_pkinit(kcontext, opts,
 						    kprincipal,
-						    applet->pk_userid,
+						    pk_userid,
 						    NULL, /* x509 anchors */
 						    NULL,
 						    NULL,
@@ -549,35 +545,54 @@ out:
 }
 
 
+krb5_error_code
+ka_parse_name(KaApplet* applet, krb5_context kcontext, krb5_principal* kprinc)
+{
+	krb5_error_code ret;
+	gchar *principal = NULL;
+
+	g_object_get(applet, "principal", &principal,
+			     NULL);
+
+	ret = krb5_parse_name(kcontext, principal,
+			      kprinc);
+
+	g_free(principal);
+	return ret;
+}
+
+
 /* grab credentials interactively */
 static int
-grab_credentials (Krb5AuthApplet* applet)
+grab_credentials (KaApplet* applet)
 {
 	krb5_error_code retval;
 	krb5_creds my_creds;
 	krb5_ccache ccache;
 	krb5_get_init_creds_opt *opt = NULL;
+	gchar *pk_userid = NULL;
+
+	g_object_get(applet, "pk-userid", &pk_userid,
+			     NULL);
 
 	memset(&my_creds, 0, sizeof(my_creds));
 
 	if (kprincipal == NULL) {
-		retval = krb5_parse_name(kcontext, applet->principal,
-					 &kprincipal);
-		if (retval) {
-			return retval;
-		}
+		retval = ka_parse_name(applet, kcontext, &kprincipal);
+		if (retval)
+			goto out2;
 	}
 
 	retval = krb5_cc_default (kcontext, &ccache);
 	if (retval)
-		return retval;
+		goto out2;
 
 #if ENABLE_PKINIT
-	if (applet->pk_userid && strlen(applet->pk_userid)) { /* try pkinit */
+	if (pk_userid && strlen(pk_userid)) { /* try pkinit */
 #else
 	if (0) {
 #endif
-		retval = ka_auth_pkinit(applet, &my_creds);
+		retval = ka_auth_pkinit(applet, &my_creds, pk_userid);
 	} else {
 		retval = krb5_get_init_creds_opt_alloc (kcontext, &opt);
 		if (retval)
@@ -620,13 +635,15 @@ out:
 		krb5_get_init_creds_opt_free(kcontext, opt);
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
+out2:
+	g_free(pk_userid);
 
 	return retval;
 }
 
 /* try to renew the credentials noninteractively */
 static int
-ka_renew_credentials (Krb5AuthApplet* applet)
+ka_renew_credentials (KaApplet* applet)
 {
 	krb5_error_code retval;
 	krb5_creds my_creds;
@@ -634,8 +651,7 @@ ka_renew_credentials (Krb5AuthApplet* applet)
 	krb5_get_init_creds_opt opts;
 
 	if (kprincipal == NULL) {
-		retval = krb5_parse_name(kcontext, applet->principal,
-					 &kprincipal);
+		retval = ka_parse_name(applet, kcontext, &kprincipal);
 		if (retval)
 			return retval;
 	}
@@ -653,7 +669,7 @@ ka_renew_credentials (Krb5AuthApplet* applet)
 	krb5_get_init_creds_opt_init (&opts);
 	set_options_from_creds (applet, kcontext, &my_creds, &opts);
 
-	if (applet->renewable) {
+	if (ka_applet_get_tgt_renewable(applet)) {
 		retval = get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
 		if (retval)
 			goto out;
@@ -741,7 +757,7 @@ using_krb5()
 void
 ka_destroy_cache (GtkMenuItem  *menuitem, gpointer data)
 {
-	Krb5AuthApplet* applet = (Krb5AuthApplet*) data;
+	KaApplet *applet = KA_APPLET(data);
 	krb5_ccache  ccache;
 	const char* cache;
 	krb5_error_code ret;
@@ -770,12 +786,12 @@ ka_error_dialog(int err)
 
 /* this is done on leftclick, update the tooltip immediately */
 void
-ka_grab_credentials (Krb5AuthApplet* applet)
+ka_grab_credentials (KaApplet* applet)
 {
 	int retval;
 	gboolean retry;
 
-	applet->pw_dialog_persist = TRUE;
+	ka_applet_set_pw_dialog_persist(applet, TRUE);
 	do {
 		retry = TRUE;
 		retval = grab_credentials (applet);
@@ -795,7 +811,7 @@ ka_grab_credentials (Krb5AuthApplet* applet)
 		}
 	} while(retry);
 
-	applet->pw_dialog_persist = FALSE;
+	ka_applet_set_pw_dialog_persist(applet, FALSE);
 	credentials_expiring_real(applet);
 }
 
@@ -835,7 +851,7 @@ ka_secmem_init ()
 int
 main (int argc, char *argv[])
 {
-	Krb5AuthApplet *applet;
+	KaApplet *applet;
 	GOptionContext *context;
 	GError *error = NULL;
 
@@ -878,20 +894,14 @@ main (int argc, char *argv[])
 		always_run = TRUE;
 	}
 	if (using_krb5 () || always_run) {
-		applet = ka_create_applet ();
+		g_set_application_name (_("Network Authentication"));
+		glade_set_custom_handler (&ka_create_gtk_secure_entry, NULL);
+
+		applet = ka_applet_create ();
 		if (!applet)
 			return 1;
 		if (!ka_gconf_init (applet, argc, argv))
 			return 1;
-
-		/* setup the pw dialog */
-		glade_set_custom_handler (&ka_create_gtk_secure_entry, NULL);
-		applet->pw_xml = glade_xml_new (KA_DATA_DIR G_DIR_SEPARATOR_S
-						"krb5-auth-dialog.glade", NULL, NULL);
-		applet->pw_wrong_label = glade_xml_get_widget (applet->pw_xml, "krb5_wrong_label");
-		applet->pw_dialog = glade_xml_get_widget (applet->pw_xml, "krb5_dialog");
-
-		g_set_application_name (_("Network Authentication"));
 
 #ifdef ENABLE_NETWORK_MANAGER
 		nm_context = libnm_glib_init ();

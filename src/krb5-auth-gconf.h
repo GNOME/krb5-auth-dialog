@@ -23,6 +23,6 @@
 
 #include "krb5-auth-applet.h"
 
-gboolean ka_gconf_init (Krb5AuthApplet* applet, int argc, char* argv[]);
+gboolean ka_gconf_init (KaApplet* applet, int argc, char* argv[]);
 
 #endif

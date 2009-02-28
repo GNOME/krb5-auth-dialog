@@ -1,3 +1,11 @@
+Sat Feb 28 14:18:35 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	add .gitignore files
+	* .gitignore: new file
+	* etpo/.gitignore: likewise
+	* po/.gitignore: likewise
+	* src/.gitignore: likewise
+
 Mon Jan 19 22:12:37 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-dialog.c: don't try pkinit if pk_userid is non-null

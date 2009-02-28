@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<node name="/org/gnome/KrbAuthDialog">
+  <interface name="org.gnome.KrbAuthDialog">
+    <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="KaApplet"/>
+    <method name="acquireTgt">
+      <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="ka_dbus_acquire_tgt"/>
+      <annotation name="org.freedesktop.DBus.GLib.Async" value="true"/>
+      <arg type="s" name="principal" direction="in" />
+      <arg type="b" name="success" direction="out"/>
+    </method>
+  </interface>
+</node>
+

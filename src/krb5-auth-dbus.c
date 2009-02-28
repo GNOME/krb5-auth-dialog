@@ -23,13 +23,38 @@
 #include <dbus/dbus-glib.h>
 #include "krb5-auth-applet.h"
 #include "krb5-auth-dbus.h"
+#include "krb5-auth-applet-dbus-glue.h"
+
+static DBusGConnection *session;
+
+gboolean
+ka_dbus_acquire_tgt (KaApplet *applet,
+		     const gchar *principal, DBusGMethodInvocation *context)
+{
+       gboolean success;
+
+       KA_DEBUG("Getting TGT for '%s'", principal);
+       success = ka_check_credentials(applet, principal);
+       dbus_g_method_return(context, success);
+       return TRUE;
+}
+
+
+gboolean
+ka_dbus_service(KaApplet* applet)
+{
+	dbus_g_connection_register_g_object (session,
+				       "/org/gnome/KrbAuthDialog",
+				       G_OBJECT(applet));
+	return TRUE;
+}
+
 
 gboolean
 ka_dbus_connect(unsigned int* status)
 {
 	guint request_name_reply;
 	unsigned int flags;
-	DBusGConnection *session;
 	DBusGProxy *bus_proxy;
 	GError* error = NULL;
 
@@ -45,6 +70,9 @@ ka_dbus_connect(unsigned int* status)
 					       "org.freedesktop.DBus",
 					       "/org/freedesktop/DBus",
 					       "org.freedesktop.DBus");
+
+	dbus_g_object_type_install_info(KA_TYPE_APPLET,
+					&dbus_glib_krb5_auth_dialog_object_info);
 
 	if (!dbus_g_proxy_call (bus_proxy,
 				"RequestName",

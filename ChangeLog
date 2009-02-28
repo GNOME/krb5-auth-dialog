@@ -1,3 +1,13 @@
+Sat Feb 28 16:41:54 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	add DBus interface to acquire TGT
+	* src/krb5-auth-dbus.[ch] (ka_dbus_acquire_tgt, ka_dbus_service): new
+	  functions
+	* src/Makefile.am: generate krb5-auth-applet-dbus-glue.h via
+	  dbus-binding-tool
+	* src/krb5-auth-applet-dbus.xml: new file
+	* README: example dbus call
+
 Sat Feb 28 16:35:45 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-applet.[ch] (ka_check_credentials): new function to

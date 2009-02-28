@@ -977,6 +977,7 @@ main (int argc, char *argv[])
 		if (credentials_expiring ((gpointer)applet)) {
 			g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, applet);
 		}
+		ka_dbus_service(applet);
 		gtk_main ();
 	}
 

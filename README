@@ -26,5 +26,14 @@ do this, the etpo binary in etpo/ can be used to extract the public
 strings that kerberos uses.  We are checking that in for now, until
 kerberos gets translated.
 
+Requesting a TGT via DBus:
+You can request a ticket granting ticket via DBus:
 
+ dbus-send --print-reply --type=method_call \
+              --dest=org.gnome.KrbAuthDialog \
+               /org/gnome/KrbAuthDialog \
+               org.gnome.KrbAuthDialog.acquireTgt \
+               string:'principal'
 
+If the sent principal doesn't match the one currently in the ticket cache the
+request fails. To request a TGT for the "default" principal use string:''.

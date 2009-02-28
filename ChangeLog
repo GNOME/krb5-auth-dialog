@@ -1,3 +1,9 @@
+Sat Feb 28 16:35:45 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-applet.[ch] (ka_check_credentials): new function to
+	  check if a principal matches our default
+	  (ka_grab_credentials): return TRUE on success
+
 Sat Feb 28 14:27:57 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	Turn Krb5AuthApplet into a GObject named KaApplet

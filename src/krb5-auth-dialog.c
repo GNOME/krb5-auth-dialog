@@ -430,6 +430,7 @@ network_state_cb (libnm_glib_ctx *context,
 }
 #endif
 
+/* credentials expiring timer */
 static gboolean
 credentials_expiring (gpointer *data)
 {
@@ -784,12 +785,64 @@ ka_error_dialog(int err)
 }
 
 
-/* this is done on leftclick, update the tooltip immediately */
-void
+/*
+ * check if we have valid credentials for the requested principal - if not, grab them
+ * principal: requested principal - if empty use default
+ */
+gboolean
+ka_check_credentials (KaApplet *applet, const char* newprincipal)
+{
+	gboolean renewable;
+	gboolean success = FALSE;
+	int retval;
+	char* principal;
+
+	g_object_get(applet, "principal", &principal,
+			     NULL);
+
+	if (strlen(newprincipal)) {
+		krb5_principal knewprinc;
+
+		/* no ticket cache: is requested princ the one from our config? */
+		if (!kprincipal && g_strcmp0(principal, newprincipal)) {
+			KA_DEBUG("Requested principal %s not %s", principal, newprincipal);
+			goto out;
+		}
+
+		/* ticket cache: check if the requested principal is the one we have */
+		retval = krb5_parse_name(kcontext, newprincipal, &knewprinc);
+		if (retval) {
+			g_warning ("Cannot parse principal '%s'", newprincipal);
+			goto out;
+		}
+		if (kprincipal && !krb5_principal_compare (kcontext, kprincipal, knewprinc)) {
+			KA_DEBUG("Current Principal '%s' not '%s'", principal, newprincipal);
+		        krb5_free_principal(kcontext, knewprinc);
+			goto out;
+		}
+		krb5_free_principal(kcontext, knewprinc);
+	}
+
+	if (credentials_expiring_real (applet)) {
+		if (!is_online)
+			success = FALSE;
+		else
+			success = ka_grab_credentials (applet);
+	} else
+		success = TRUE;
+out:
+	g_free (principal);
+	return success;
+}
+
+
+/* initiate grabbing of credentials (e.g. on leftclick of tray icon) */
+gboolean
 ka_grab_credentials (KaApplet* applet)
 {
 	int retval;
 	gboolean retry;
+	int success = FALSE;
 
 	ka_applet_set_pw_dialog_persist(applet, TRUE);
 	do {
@@ -799,6 +852,7 @@ ka_grab_credentials (KaApplet* applet)
 			continue;
 		switch (retval) {
 		    case 0: /* success */
+			    success = TRUE;
 		    case KRB5_LIBOS_PWDINTR:     /* canceled (heimdal) */
 		    case KRB5_LIBOS_CANTREADPWD: /* canceled (mit) */
 			    retry = FALSE;
@@ -813,6 +867,8 @@ ka_grab_credentials (KaApplet* applet)
 
 	ka_applet_set_pw_dialog_persist(applet, FALSE);
 	credentials_expiring_real(applet);
+
+	return success;
 }
 
 

@@ -46,6 +46,7 @@ struct _KaPwDialogPrivate
 	GtkWidget* krb_label;		/* krb5 passwort prompt label */
 	GtkWidget* pw_entry;		/* password entry field */
 	gboolean   persist;		/* don't hide the dialog when creds are still valid */
+	gboolean   grabbed;		/* keyboard grabbed? */
 };
 
 
@@ -71,10 +72,67 @@ ka_pwdialog_new(void)
 }
 
 
+static gboolean
+grab_keyboard (GtkWidget *win, GdkEvent *event, gpointer data)
+{
+	KaPwDialog* pwdialog = KA_PWDIALOG(data);
+
+	GdkGrabStatus status;
+	if (!pwdialog->priv->grabbed) {
+		status = gdk_keyboard_grab (win->window, FALSE, gdk_event_get_time (event));
+		if (status == GDK_GRAB_SUCCESS)
+			pwdialog->priv->grabbed = TRUE;
+		else
+			g_message ("could not grab keyboard: %d", (int)status);
+	}
+	return FALSE;
+}
+
+
+static gboolean
+ungrab_keyboard (GtkWidget *win, GdkEvent *event, gpointer data)
+{
+	KaPwDialog* pwdialog = KA_PWDIALOG(data);
+
+	if (pwdialog->priv->grabbed)
+		gdk_keyboard_ungrab (gdk_event_get_time (event));
+	pwdialog->priv->grabbed = FALSE;
+	return FALSE;
+}
+
+
+static gboolean
+window_state_changed (GtkWidget *win, GdkEventWindowState *event, gpointer data)
+{
+	GdkWindowState state = gdk_window_get_state (win->window);
+
+	if (state & GDK_WINDOW_STATE_WITHDRAWN ||
+	    state & GDK_WINDOW_STATE_ICONIFIED ||
+	    state & GDK_WINDOW_STATE_FULLSCREEN ||
+	    state & GDK_WINDOW_STATE_MAXIMIZED)
+		ungrab_keyboard (win, (GdkEvent*)event, data);
+	else
+		grab_keyboard (win, (GdkEvent*)event, data);
+
+	return FALSE;
+}
+
+
 gint
 ka_pwdialog_run(KaPwDialog* pwdialog)
 {
 	GtkWidget* dialog = pwdialog->priv->dialog;
+
+	/* make sure we pop up on top */
+	gtk_window_set_keep_above (GTK_WINDOW (dialog), TRUE);
+
+	/*
+	 * grab the keyboard so that people don't accidentally type their
+	 * passwords in other windows.
+	 */
+	g_signal_connect (dialog, "map-event", G_CALLBACK (grab_keyboard), pwdialog);
+	g_signal_connect (dialog, "unmap-event", G_CALLBACK (ungrab_keyboard), pwdialog);
+	g_signal_connect (dialog, "window-state-event", G_CALLBACK (window_state_changed), pwdialog);
 
 	gtk_widget_grab_focus (pwdialog->priv->pw_entry);
 	gtk_widget_show(dialog);

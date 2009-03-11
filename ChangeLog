@@ -1,3 +1,14 @@
+Mi Mär 11 17:10:11 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	push the dialog into the foreground and grab the keyboard so we make
+	sure the user gets to see the dialog in all cases (e.g. when an app is
+	requesting the TGT via dbus). Grab the keyboard so the user doesn't
+	type the password somewhere else. Code mostly taken from gnome
+	keyrings's gkr-ask-tool.c.
+	* src/krb5-auth-pwdialog.c (grab_keyboard, ungrab_keyboard,
+	  window_state_changed): new functions
+	  (ka_pwdialog_run): use these
+
 Mi Mär 11 17:04:03 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add a pwdialog gobject - remove lots of duplicate code and splits most

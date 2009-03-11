@@ -1,3 +1,10 @@
+Mi Mär 11 17:19:02 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	add more compiler warnings
+	* acinclude.m4: add KA_COMPILE_WARNINGS
+	* compiler-flags.m4: add gl_COMPILER_FLAGS to test compiler options
+	* configure.ac: call KA_COMPILE_WARNINGS and add WARN_CFLAGS to CFLAGS
+
 Mi Mär 11 17:10:11 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	push the dialog into the foreground and grab the keyboard so we make

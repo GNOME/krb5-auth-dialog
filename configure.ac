@@ -1,6 +1,7 @@
-AC_INIT(src/krb5-auth-dialog.c)
-
-AM_INIT_AUTOMAKE(krb5-auth-dialog, 0.8)
+AC_INIT([krb5-auth-dialog], [0.8])
+AC_CONFIG_SRCDIR(src/krb5-auth-dialog.c)
+dnl Make automake keep quiet about wildcards & other GNUmake-isms
+AM_INIT_AUTOMAKE([-Wno-portability])
 AM_CONFIG_HEADER(config.h)
 
 AM_MAINTAINER_MODE
@@ -17,6 +18,8 @@ AM_PROG_LIBTOOL
 AC_PROG_INTLTOOL
 AM_PROG_LEX
 AC_PROG_YACC
+
+KA_COMPILE_WARNINGS([maximum])
 
 ALL_LINGUAS="nb de"
 AM_GLIB_GNU_GETTEXT
@@ -200,6 +203,7 @@ CFLAGS="\
 	$KRB5_CFLAGS \
 	$NETWORK_MANAGER_CFLAGS \
 	$LIBNOTIFY_CFLAGS \
+	$WARN_CFLAGS \
 	$CFLAGS"
 
 AC_OUTPUT([
@@ -238,6 +242,8 @@ fi
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Miscellaneous])
 AC_MSG_NOTICE([])
+AC_MSG_NOTICE([          Warnings: $WARN_CFLAGS])
+AC_MSG_NOTICE([            Debug : $enable_debug])
 AC_MSG_NOTICE([  Minimum Lifetime: $minimum_lifetime minutes])
 AC_MSG_NOTICE([    Check Interval: $check_interval seconds])
 AC_MSG_NOTICE([])

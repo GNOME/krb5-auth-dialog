@@ -115,3 +115,91 @@ define([GNUPG_CHECK_MLOCK],
          fi
     fi
   ])
+
+dnl
+dnl taken from libvirt which was
+dnl taken from gnome-common/macros2/gnome-compiler-flags.m4
+dnl
+dnl We've added:
+dnl   -Wextra -Wshadow -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Winline -Wredundant-decls
+dnl We've removed
+dnl   CFLAGS="$realsave_CFLAGS"
+dnl   to avoid clobbering user-specified CFLAGS
+dnl
+AC_DEFUN([KA_COMPILE_WARNINGS],[
+    dnl ******************************
+    dnl More compiler warnings
+    dnl ******************************
+
+    AC_ARG_ENABLE(compile-warnings,
+                  AC_HELP_STRING([--enable-compile-warnings=@<:@no/minimum/yes/maximum/error@:>@],
+                                 [Turn on compiler warnings]),,
+                  [enable_compile_warnings="m4_default([$1],[maximum])"])
+
+    warnCFLAGS=
+
+    common_flags="-Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fasynchronous-unwind-tables"
+
+    case "$enable_compile_warnings" in
+    no)
+        try_compiler_flags=""
+	;;
+    minimum)
+	try_compiler_flags="-Wall -Wformat -Wformat-security $common_flags"
+	;;
+    yes)
+	try_compiler_flags="-Wall -Wformat -Wformat-security -Wmissing-prototypes $common_flags"
+	;;
+    maximum|error)
+	try_compiler_flags="-Wall -Wformat -Wformat-security -Wmissing-prototypes -Wnested-externs -Wpointer-arith"
+	try_compiler_flags="$try_compiler_flags -Wextra -Wshadow -Wcast-align -Wwrite-strings -Waggregate-return"
+	try_compiler_flags="$try_compiler_flags -Wstrict-prototypes -Winline -Wredundant-decls -Wno-sign-compare"
+	try_compiler_flags="$try_compiler_flags $common_flags"
+	if test "$enable_compile_warnings" = "error" ; then
+	    try_compiler_flags="$try_compiler_flags -Werror"
+	fi
+	;;
+    *)
+	AC_MSG_ERROR(Unknown argument '$enable_compile_warnings' to --enable-compile-warnings)
+	;;
+    esac
+
+    COMPILER_FLAGS=
+    for option in $try_compiler_flags; do
+        gl_COMPILER_FLAGS($option)
+    done
+    unset option
+    unset try_compiler_flags
+
+    AC_ARG_ENABLE(iso-c,
+                  AC_HELP_STRING([--enable-iso-c],
+                                 [Try to warn if code is not ISO C ]),,
+                  [enable_iso_c=no])
+
+    AC_MSG_CHECKING(what language compliance flags to pass to the C compiler)
+    complCFLAGS=
+    if test "x$enable_iso_c" != "xno"; then
+	if test "x$GCC" = "xyes"; then
+	case " $CFLAGS " in
+	    *[\ \	]-ansi[\ \	]*) ;;
+	    *) complCFLAGS="$complCFLAGS -ansi" ;;
+	esac
+	case " $CFLAGS " in
+	    *[\ \	]-pedantic[\ \	]*) ;;
+	    *) complCFLAGS="$complCFLAGS -pedantic" ;;
+	esac
+	fi
+    fi
+    AC_MSG_RESULT($complCFLAGS)
+
+    WARN_CFLAGS="$COMPILER_FLAGS $complCFLAGS"
+    AC_SUBST(WARN_CFLAGS)
+
+    dnl Needed to keep compile quiet on python 2.4
+    COMPILER_FLAGS=
+    gl_COMPILER_FLAGS(-Wno-redundant-decls)
+    WARN_PYTHON_CFLAGS=$COMPILER_FLAGS
+    AC_SUBST(WARN_PYTHON_CFLAGS)
+])
+
+m4_include([m4/compiler-flags.m4])

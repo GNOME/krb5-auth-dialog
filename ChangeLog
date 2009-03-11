@@ -1,3 +1,15 @@
+Mi Mär 11 17:04:03 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	add a pwdialog gobject - remove lots of duplicate code and splits most
+	of the password dialog handling into its own file
+	* src/krb5-auth-applet.[ch]: move dialog handling from
+	here...
+	* src/krb5-auth-dialog.[ch]: ..and here...
+	* src/krb5-auth-pwdialog.[ch]: ... to here - new files.
+	* src/krb5-auth-dialog.glade: rename krb5_wrong_label to
+	krb5_status_label
+	* po/POTFILES.in, src/Makefile.am: add src/krb5-auth-pwdialog.c
+
 Sat Feb 28 16:41:54 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add DBus interface to acquire TGT

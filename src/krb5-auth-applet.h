@@ -32,6 +32,7 @@
 #include <krb5.h>
 
 #include "config.h"
+#include "krb5-auth-pwdialog.h"
 
 G_BEGIN_DECLS
 
@@ -52,27 +53,20 @@ typedef struct _KaAppletClass   KaAppletClass;
 typedef struct _KaAppletPrivate KaAppletPrivate;
 
 GType ka_applet_get_type (void);
-KaApplet* ka_applet_new(void) G_GNUC_MALLOC;
 
 /* public functions */
 gboolean ka_applet_get_show_trayicon(const KaApplet* applet);
 void ka_applet_set_tgt_renewable(KaApplet* applet, gboolean renewable);
 gboolean ka_applet_get_tgt_renewable(const KaApplet* applet);
 guint ka_applet_get_pw_prompt_secs(const KaApplet* applet);
-
-/* password dialog */
-gint ka_applet_run_pw_dialog(const KaApplet* applet);
-GladeXML* ka_applet_get_pwdialog_xml(const KaApplet* applet);
-void ka_applet_hide_pw_dialog(KaApplet* applet, gboolean force);
-GtkWidget* ka_applet_get_pw_label(const KaApplet* applet);
-void ka_applet_set_pw_dialog_persist(KaApplet* applet, gboolean persist);
-
-G_END_DECLS
+KaPwDialog* ka_applet_get_pwdialog(const KaApplet* applet);
 
 /* create the applet */
-KaApplet* ka_applet_create();
+KaApplet* ka_applet_create(GladeXML* xml);
 /* update tooltip and icon */
 int ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry);
+
+G_END_DECLS
 
 #ifdef ENABLE_DEBUG
 #define KA_DEBUG(fmt,...) \

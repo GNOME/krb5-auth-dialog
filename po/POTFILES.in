@@ -1,5 +1,6 @@
 src/krb5-auth-dialog.glade
 src/krb5-auth-dialog.c
+src/krb5-auth-pwdialog.c
 src/dummy-strings.c
 src/krb5-auth-applet.c
 src/krb5-auth-dialog.desktop.in

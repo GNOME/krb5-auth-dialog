@@ -202,7 +202,7 @@
 		      </child>
 
 		      <child>
-			<widget class="GtkLabel" id="krb5_wrong_label">
+			<widget class="GtkLabel" id="krb5_status_label">
 			  <property name="visible">True</property>
 			  <property name="label" translatable="no">&lt;span size=&quot;smaller&quot;&gt; &lt;/span&gt;</property>
 			  <property name="use_underline">False</property>

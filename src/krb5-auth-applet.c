@@ -64,12 +64,8 @@ struct _KaAppletPrivate
 	const char* icons[3]; 		/* for invalid, expiring and valid tickts */
 	gboolean show_trayicon;		/* show the trayicon */
 
-	/* The password dialog */
-	GtkWidget* pw_dialog;		/* the password dialog itself */
-	GladeXML*  pw_xml;		/* the dialog's glade xml */
-	GtkWidget* pw_label;		/* the wrong password/timeout label */
+	KaPwDialog* pwdialog;		/* the password dialog */
 	int	   pw_prompt_secs;	/* when to start prompting for a password */
-	gboolean   pw_dialog_persist;	/* don't hide the dialog when creds are still valid */
 
 #ifdef HAVE_LIBNOTIFY
 	NotifyNotification* notification;/* notification messages */
@@ -160,9 +156,9 @@ ka_applet_dispose(GObject* object)
 		g_object_unref(applet->priv->tray_icon);
 		applet->priv->tray_icon = NULL;
 	}
-	if (applet->priv->pw_xml) {
-		g_object_unref(applet->priv->pw_xml);
-		applet->priv->pw_xml = NULL;
+	if (applet->priv->pwdialog) {
+		g_object_unref(applet->priv->pwdialog);
+		applet->priv->pwdialog = NULL;
 	}
 
 	if (parent_class->dispose != NULL)
@@ -243,7 +239,8 @@ ka_applet_class_init(KaAppletClass *klass)
 }
 
 
-KaApplet *ka_applet_new(void)
+static KaApplet*
+ka_applet_new(void)
 {
 	return g_object_new (KA_TYPE_APPLET, NULL);
 }
@@ -497,7 +494,6 @@ ka_applet_create_tray_icon (KaApplet* applet)
 	return TRUE;
 }
 
-
 static int
 ka_applet_setup_icons (KaApplet* applet)
 {
@@ -508,27 +504,6 @@ ka_applet_setup_icons (KaApplet* applet)
 	applet->priv->icons[exp_icon] = "krb-expiring-ticket";
 	applet->priv->icons[inv_icon] = "krb-no-valid-ticket";
 	return TRUE;
-}
-
-
-static gboolean
-ka_applet_glade_init(KaApplet *applet)
-{
-	KaAppletPrivate *priv = applet->priv;
-
-	priv->pw_xml = glade_xml_new (KA_DATA_DIR G_DIR_SEPARATOR_S
-				      PACKAGE ".glade", NULL, NULL);
-	priv->pw_label = glade_xml_get_widget (priv->pw_xml, "krb5_wrong_label");
-	priv->pw_dialog = glade_xml_get_widget (priv->pw_xml, "krb5_dialog");
-
-	return TRUE;
-}
-
-
-GladeXML*
-ka_applet_get_pwdialog_xml(const KaApplet* applet)
-{
-	return applet->priv->pw_xml;
 }
 
 guint
@@ -555,38 +530,17 @@ ka_applet_get_tgt_renewable(const KaApplet* applet)
 	return applet->priv->renewable;
 }
 
-gint ka_applet_run_pw_dialog(const KaApplet* applet)
+KaPwDialog*
+ka_applet_get_pwdialog(const KaApplet* applet)
 {
-	return gtk_dialog_run (GTK_DIALOG (applet->priv->pw_dialog));
-}
-
-void
-ka_applet_hide_pw_dialog(KaApplet* applet, gboolean force)
-{
-	KA_DEBUG("PW Dialog persist: %d", applet->priv->pw_dialog_persist);
-	if (!applet->priv->pw_dialog_persist || force)
-		gtk_widget_hide(applet->priv->pw_dialog);
-}
-
-void
-ka_applet_set_pw_dialog_persist(KaApplet* applet, gboolean persist)
-{
-	applet->priv->pw_dialog_persist = persist;
-}
-
-GtkWidget*
-ka_applet_get_pw_label(const KaApplet* applet)
-{
-	return applet->priv->pw_label;
+	return applet->priv->pwdialog;
 }
 
 /* create the tray icon applet */
 KaApplet*
-ka_applet_create()
+ka_applet_create(GladeXML* xml)
 {
 	KaApplet* applet = ka_applet_new();
-
-	ka_applet_glade_init(applet);
 
 	if (!(ka_applet_setup_icons (applet)))
 		g_error ("Failure to setup icons");
@@ -597,6 +551,9 @@ ka_applet_create()
 	gtk_window_set_default_icon_name (applet->priv->icons[val_icon]);
 	g_signal_connect (applet, "notify::show-trayicon",
 	                  G_CALLBACK (ka_applet_cb_show_trayicon), NULL);
+
+	applet->priv->pwdialog = ka_pwdialog_create(xml);
+	g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 
 	return applet;
 }

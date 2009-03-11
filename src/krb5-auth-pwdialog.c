@@ -1,0 +1,186 @@
+/* Krb5 Auth Applet -- Acquire and release kerberos tickets
+ *
+ * (C) 2009 Guido Guenther <agx@sigxcpu.org>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+ *
+ */
+
+#include "config.h"
+
+#include <glib/gi18n.h>
+
+#include "krb5-auth-applet.h"
+#include "krb5-auth-dialog.h"
+#include "krb5-auth-pwdialog.h"
+
+struct _KaPwDialog {
+  GObject parent;
+
+  KaPwDialogPrivate *priv;
+};
+
+struct _KaPwDialogClass {
+  GObjectClass parent;
+};
+
+G_DEFINE_TYPE(KaPwDialog, ka_pwdialog, G_TYPE_OBJECT);
+
+struct _KaPwDialogPrivate
+{
+	/* The password dialog */
+	GtkWidget* dialog;		/* the password dialog itself */
+	GtkWidget* status_label;	/* the wrong password/timeout label */
+	GtkWidget* krb_label;		/* krb5 passwort prompt label */
+	GtkWidget* pw_entry;		/* password entry field */
+	gboolean   persist;		/* don't hide the dialog when creds are still valid */
+};
+
+
+static void
+ka_pwdialog_init(KaPwDialog *pwdialog)
+{
+	pwdialog->priv = G_TYPE_INSTANCE_GET_PRIVATE(pwdialog,
+						   KA_TYPE_PWDIALOG,
+						   KaPwDialogPrivate);
+}
+
+static void
+ka_pwdialog_class_init(KaPwDialogClass *klass)
+{
+	g_type_class_add_private(klass, sizeof(KaPwDialogPrivate));
+
+}
+
+static KaPwDialog*
+ka_pwdialog_new(void)
+{
+	return g_object_new (KA_TYPE_PWDIALOG, NULL);
+}
+
+
+gint
+ka_pwdialog_run(KaPwDialog* pwdialog)
+{
+	GtkWidget* dialog = pwdialog->priv->dialog;
+
+	gtk_widget_grab_focus (pwdialog->priv->pw_entry);
+	gtk_widget_show(dialog);
+	return gtk_dialog_run (GTK_DIALOG(dialog));
+}
+
+void
+ka_pwdialog_set_persist (KaPwDialog* pwdialog, gboolean persist)
+{
+	pwdialog->priv->persist = persist;
+}
+
+void
+ka_pwdialog_hide (const KaPwDialog* pwdialog, gboolean force)
+{
+	KA_DEBUG("PW Dialog persist: %d", pwdialog->priv->persist);
+	if (!pwdialog->priv->persist || force)
+		gtk_widget_hide(pwdialog->priv->dialog);
+}
+
+const gchar*
+ka_pwdialog_get_password(KaPwDialog *pwdialog)
+{
+	return gtk_secure_entry_get_text (GTK_SECURE_ENTRY (pwdialog->priv->pw_entry));
+}
+
+gboolean
+ka_pwdialog_status_update (KaPwDialog* pwdialog)
+{
+	gchar *expiry_text;
+	gchar *expiry_markup;
+	int minutes_left = ka_tgt_valid_seconds() / 60;
+
+	g_return_val_if_fail (pwdialog != NULL, FALSE);
+	if (minutes_left > 0) {
+		expiry_text = g_strdup_printf (ngettext("Your credentials expire in %d minute",
+		                                        "Your credentials expire in %d minutes",
+		                                        minutes_left), minutes_left);
+	} else {
+		expiry_text = g_strdup_printf ("<span foreground=\"red\">%s</span>",
+				               _("Your credentials have expired"));
+	}
+	expiry_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>", expiry_text);
+	gtk_label_set_markup (GTK_LABEL(pwdialog->priv->status_label), expiry_markup);
+	g_free (expiry_text);
+	g_free (expiry_markup);
+
+	return TRUE;
+}
+
+void
+ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
+                   gboolean hide_password, gboolean invalid_auth)
+{
+	KaPwDialogPrivate *priv = pwdialog->priv;
+	gchar *wrong_markup = NULL;
+	gchar *prompt;
+	int pw4len;
+
+	if (krb5prompt == NULL) {
+		prompt = g_strdup (_("Please enter your Kerberos password."));
+	} else {
+		/* Kerberos's prompts are a mess, and basically impossible to
+		 * translate.  There's basically no way short of doing a lot of
+		 * string parsing to translate them.  The most common prompt is
+		 * "Password for $uid:".  We special case that one at least.  We
+		 * cannot do any of the fancier strings (like challenges),
+		 * though. */
+		pw4len = strlen ("Password for ");
+		if (strncmp (krb5prompt, "Password for ", pw4len) == 0) {
+			gchar *uid = (gchar *) (krb5prompt + pw4len);
+			prompt = g_strdup_printf (_("Please enter the password for '%s'"), uid);
+		} else {
+			prompt = g_strdup (krb5prompt);
+		}
+	}
+
+	/* Clear the password entry field */
+	gtk_secure_entry_set_text (GTK_SECURE_ENTRY (priv->pw_entry), "");
+
+	/* Use the prompt label that krb5 provides us */
+	gtk_label_set_text (GTK_LABEL (priv->krb_label), prompt);
+
+	/* Add our extra message hints */
+	if (invalid_auth) {
+		wrong_markup = g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>",
+		                                _("The password you entered is invalid"));
+		gtk_label_set_markup (GTK_LABEL (priv->status_label), wrong_markup);
+	} else
+		ka_pwdialog_status_update (pwdialog);
+
+	g_free(wrong_markup);
+	g_free (prompt);
+}
+
+KaPwDialog*
+ka_pwdialog_create(GladeXML* xml)
+{
+	KaPwDialog *pwdialog = ka_pwdialog_new();
+	KaPwDialogPrivate *priv = pwdialog->priv;
+
+	priv->dialog = glade_xml_get_widget (xml, "krb5_dialog");
+	priv->status_label = glade_xml_get_widget (xml, "krb5_status_label");
+	priv->pw_entry = glade_xml_get_widget (xml, "krb5_entry");
+	priv->krb_label = glade_xml_get_widget (xml, "krb5_message_label");
+
+	return pwdialog;
+}
+

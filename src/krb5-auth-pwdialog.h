@@ -53,7 +53,7 @@ GType ka_pwdialog_get_type (void);
 KaPwDialog* ka_pwdialog_create(GladeXML *xml);
 /* setup everything for the next prompting */
 void ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
-                        gboolean hide_password, gboolean invalid_auth);
+                        gboolean invalid_auth);
 gint ka_pwdialog_run(KaPwDialog *applet);
 void ka_pwdialog_hide(const KaPwDialog *applet, gboolean force);
 void ka_pwdialog_set_persist(KaPwDialog *applet, gboolean persist);

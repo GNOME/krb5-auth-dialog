@@ -166,7 +166,7 @@ ka_gconf_set_show_trayicon (GConfClient* client, KaApplet* applet)
 
 static void
 ka_gconf_key_changed_callback (GConfClient* client,
-                               guint cnxn_id,
+                               guint cnxn_id G_GNUC_UNUSED,
                                GConfEntry* entry,
                                gpointer user_data)
 {
@@ -193,7 +193,9 @@ ka_gconf_key_changed_callback (GConfClient* client,
 
 
 gboolean
-ka_gconf_init (KaApplet* applet, int argc, char* argv[])
+ka_gconf_init (KaApplet* applet,
+               int argc G_GNUC_UNUSED,
+               char* argv[] G_GNUC_UNUSED)
 {
 	GError *error = NULL;
 	GConfClient* client;

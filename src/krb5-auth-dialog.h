@@ -26,6 +26,6 @@
 void ka_destroy_cache (GtkMenuItem  *menuitem, gpointer user_data);
 gboolean ka_grab_credentials(KaApplet* applet);
 gboolean ka_check_credentials (KaApplet *applet, const char* principal);
-int ka_tgt_valid_seconds();
+int ka_tgt_valid_seconds(void);
 #endif
 

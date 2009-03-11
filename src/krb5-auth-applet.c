@@ -248,7 +248,7 @@ ka_applet_new(void)
 
 /* determine the new tooltip text */
 static char*
-ka_applet_tooltip_text(KaApplet* applet, int remaining)
+ka_applet_tooltip_text(int remaining)
 {
 	int hours, minutes;
 	gchar* tooltip_text;
@@ -289,11 +289,11 @@ ka_applet_select_icon(KaApplet* applet, int remaining)
 }
 
 
-void
-ka_send_event_notification (KaApplet *applet __attribute__((__unused__)),
-			    const char *summary __attribute__((__unused__)),
-			    const char *message __attribute__((__unused__)),
-			    const char *icon __attribute__((__unused__)))
+static void
+ka_send_event_notification (KaApplet *applet G_GNUC_UNUSED,
+			    const char *summary G_GNUC_UNUSED,
+			    const char *message G_GNUC_UNUSED,
+			    const char *icon G_GNUC_UNUSED)
 {
 #ifdef HAVE_LIBNOTIFY
         const char *notify_icon;
@@ -330,7 +330,7 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 	static int last_warn = 0;
 	static gboolean expiry_notified = FALSE;
 	const char* tray_icon = ka_applet_select_icon (applet, remaining);
-	char* tooltip_text = ka_applet_tooltip_text (applet, remaining);
+	char* tooltip_text = ka_applet_tooltip_text (remaining);
 
 	if (remaining > 0) {
 		if (expiry_notified) {
@@ -375,7 +375,7 @@ ka_applet_menu_add_separator_item (GtkWidget* menu)
 
 /* Free all resources and quit */
 static void
-ka_applet_cb_quit (GtkMenuItem* menuitem, gpointer user_data)
+ka_applet_cb_quit (GtkMenuItem* menuitem G_GNUC_UNUSED, gpointer user_data)
 {
 	KaApplet* applet = KA_APPLET(user_data);
 
@@ -385,16 +385,19 @@ ka_applet_cb_quit (GtkMenuItem* menuitem, gpointer user_data)
 
 
 static void
-ka_applet_cb_about_dialog (GtkMenuItem* menuitem, gpointer user_data)
+ka_applet_cb_about_dialog (GtkMenuItem* menuitem G_GNUC_UNUSED,
+			   gpointer user_data G_GNUC_UNUSED)
 {
-	gchar* authors[] = {  "Christopher Aillon <caillon@redhat.com>",
-			      "Colin Walters <walters@verbum.org>",
-			      "Guido Günther <agx@sigxpcu.org>",
-			      NULL };
+	const gchar* authors[] = {  "Christopher Aillon <caillon@redhat.com>",
+			            "Colin Walters <walters@verbum.org>",
+			            "Guido Günther <agx@sigxpcu.org>",
+			            NULL };
 	gtk_show_about_dialog (NULL,
-			      "authors", authors,
-			      "version", VERSION,
-			      "copyright", "Copyright (C) 2004,2005,2006 Red Hat, Inc.,\n2008,2009 Guido Günther",
+			       "authors", authors,
+			       "version", VERSION,
+			       "copyright",
+	                       "Copyright (C) 2004,2005,2006 Red Hat, Inc.,\n"
+	                       "2008,2009 Guido Günther",
 			       NULL);
 }
 
@@ -442,8 +445,10 @@ ka_applet_create_context_menu (KaApplet* applet)
 
 
 static void
-ka_tray_icon_on_menu (GtkStatusIcon* status_icon, guint button,
-		       guint activate_time, gpointer user_data)
+ka_tray_icon_on_menu (GtkStatusIcon* status_icon G_GNUC_UNUSED,
+                      guint button,
+                      guint activate_time,
+                      gpointer user_data)
 {
 	KaApplet *applet = KA_APPLET(user_data);
 
@@ -455,7 +460,8 @@ ka_tray_icon_on_menu (GtkStatusIcon* status_icon, guint button,
 
 
 static gboolean
-ka_tray_icon_on_click (GtkStatusIcon* status_icon, gpointer data)
+ka_tray_icon_on_click (GtkStatusIcon* status_icon G_GNUC_UNUSED,
+                       gpointer data)
 {
 	KaApplet *applet = KA_APPLET(data);
 
@@ -466,7 +472,9 @@ ka_tray_icon_on_click (GtkStatusIcon* status_icon, gpointer data)
 
 
 static gboolean
-ka_applet_cb_show_trayicon (KaApplet* applet, GParamSpec* property, gpointer data)
+ka_applet_cb_show_trayicon (KaApplet* applet,
+                            GParamSpec* property G_GNUC_UNUSED,
+                            gpointer data G_GNUC_UNUSED)
 {
 	g_return_val_if_fail (applet != NULL, FALSE);
 	g_return_val_if_fail (applet->priv->tray_icon != NULL, FALSE);

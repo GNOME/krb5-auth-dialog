@@ -1,3 +1,10 @@
+Mi Mär 11 17:21:07 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	silence compiler warnings
+	* src/krb5-auth-{applet,dialog,gconf,pwdialog}.[ch]: mark unused
+	  parameters as G_GNUC_UNUSED or drop them, add missing void to
+	  prototypes
+
 Mi Mär 11 17:19:02 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add more compiler warnings

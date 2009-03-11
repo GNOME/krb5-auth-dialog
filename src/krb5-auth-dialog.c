@@ -231,10 +231,10 @@ krb5_auth_dialog_do_updates (gpointer data)
 
 
 static krb5_error_code
-auth_dialog_prompter (krb5_context ctx,
+auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
                       void *data,
-                      const char *name,
-                      const char *banner,
+                      const char *name G_GNUC_UNUSED,
+                      const char *banner G_GNUC_UNUSED,
                       int num_prompts,
                       krb5_prompt prompts[])
 {
@@ -256,7 +256,7 @@ auth_dialog_prompter (krb5_context ctx,
 		errcode = KRB5_LIBOS_CANTREADPWD;
 
 		source_id = g_timeout_add_seconds (5, (GSourceFunc)krb5_auth_dialog_do_updates, applet);
-		ka_pwdialog_setup (pwdialog, (gchar *) prompts[i].prompt, prompts[i].hidden, invalid_auth);
+		ka_pwdialog_setup (pwdialog, (gchar *) prompts[i].prompt, invalid_auth);
 		response = ka_pwdialog_run (pwdialog);
 		switch (response)
 		{
@@ -367,7 +367,7 @@ out:
 
 static void
 set_options_from_creds(const KaApplet* applet,
-		       krb5_context context,
+		       krb5_context context G_GNUC_UNUSED,
 		       krb5_creds *in,
 		       krb5_get_init_creds_opt *out)
 {
@@ -441,8 +441,8 @@ out:
 }
 
 
-krb5_error_code
-ka_parse_name(KaApplet* applet, krb5_context kcontext, krb5_principal* kprinc)
+static krb5_error_code
+ka_parse_name(KaApplet* applet, krb5_context krbcontext, krb5_principal* kprinc)
 {
 	krb5_error_code ret;
 	gchar *principal = NULL;
@@ -450,7 +450,7 @@ ka_parse_name(KaApplet* applet, krb5_context kcontext, krb5_principal* kprinc)
 	g_object_get(applet, "principal", &principal,
 			     NULL);
 
-	ret = krb5_parse_name(kcontext, principal,
+	ret = krb5_parse_name(krbcontext, principal,
 			      kprinc);
 
 	g_free(principal);
@@ -628,7 +628,7 @@ out:
 }
 
 static gboolean
-using_krb5()
+using_krb5(void)
 {
 	krb5_error_code err;
 	gboolean have_tgt = FALSE;
@@ -649,7 +649,8 @@ using_krb5()
 
 
 void
-ka_destroy_cache (GtkMenuItem  *menuitem, gpointer data)
+ka_destroy_cache (GtkMenuItem  *menuitem G_GNUC_UNUSED,
+		  gpointer data)
 {
 	KaApplet *applet = KA_APPLET(data);
 	krb5_ccache  ccache;
@@ -766,7 +767,7 @@ ka_grab_credentials (KaApplet* applet)
 
 
 static void
-ka_secmem_init ()
+ka_secmem_init (void)
 {
 	/* Initialize secure memory.  1 is too small, so the default size
 	will be used.  */
@@ -780,7 +781,7 @@ ka_secmem_init ()
 
 
 static gboolean
-ka_nm_init()
+ka_nm_init(void)
 {
 #ifdef ENABLE_NETWORK_MANAGER
 	libnm_glib_ctx *nm_context;
@@ -804,9 +805,14 @@ ka_nm_init()
 
 
 static GtkWidget*
-ka_create_gtk_secure_entry (GladeXML *xml, gchar *func_name, gchar *name,
-			    gchar *s1, gchar *s2, gint i1, gint i2,
-			    gpointer user_data)
+ka_create_gtk_secure_entry (GladeXML *xml G_GNUC_UNUSED,
+			    gchar *func_name G_GNUC_UNUSED,
+			    gchar *name,
+			    gchar *s1 G_GNUC_UNUSED,
+			    gchar *s2 G_GNUC_UNUSED,
+			    gint i1 G_GNUC_UNUSED,
+			    gint i2 G_GNUC_UNUSED,
+			    gpointer user_data G_GNUC_UNUSED)
 {
 	GtkWidget* entry = NULL;
 

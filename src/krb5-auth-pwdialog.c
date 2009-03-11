@@ -90,7 +90,9 @@ grab_keyboard (GtkWidget *win, GdkEvent *event, gpointer data)
 
 
 static gboolean
-ungrab_keyboard (GtkWidget *win, GdkEvent *event, gpointer data)
+ungrab_keyboard (GtkWidget *win G_GNUC_UNUSED,
+                 GdkEvent *event,
+                 gpointer data)
 {
 	KaPwDialog* pwdialog = KA_PWDIALOG(data);
 
@@ -185,7 +187,7 @@ ka_pwdialog_status_update (KaPwDialog* pwdialog)
 
 void
 ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
-                   gboolean hide_password, gboolean invalid_auth)
+                   gboolean invalid_auth)
 {
 	KaPwDialogPrivate *priv = pwdialog->priv;
 	gchar *wrong_markup = NULL;

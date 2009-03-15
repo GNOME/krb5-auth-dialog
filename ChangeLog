@@ -1,3 +1,7 @@
+Do Apr 23 11:19:46 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* Update NEWS 
+
 Thu Apr 23 11:17:28 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	Always reparse the principal name in grab_credentials. When

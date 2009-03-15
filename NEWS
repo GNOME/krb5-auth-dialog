@@ -1,4 +1,19 @@
 ===========
+Version 0.9
+===========
+* add DBus service so applications can make krb5-auth-dialog check if the user
+  has a valid Kerberos ticket and if not let krb5-auth-dialog get one
+  (prompting for the password if necessary).
+* grab the keyboard when the dialog is open, avoids typing the password
+  accidentally into other apps
+* watch the credentials cache via a file monitor. Speeds up notifications when
+  the ticket cache gets modified by other applications
+* add a preferences capplet
+* make ticket flags like renewable, forwardable, proxiable configurable
+* make pkinit anchors configurable
+* bug fixes and cleanups
+
+===========
 Version 0.8
 ===========
 * add a tray icon that displays the current status and remaining ticket

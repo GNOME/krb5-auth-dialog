@@ -1,3 +1,11 @@
+Di Mär 24 00:04:50 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	monitor ccache via GFileMontor
+	* src/krb5-auth-dialog.c (monitor_ccache, ka_ccache_filename,
+	  ccache_changed_cb): new functions
+	  (main): monitor ccache via monitor_ccache
+	* configure.ac: look for gio-unix
+
 Di Mär 24 00:01:28 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-dialog.c (auth_dialog_prompter): handle

@@ -212,6 +212,19 @@ ka_tgt_valid_seconds()
 	return (creds_expiry - now);
 }
 
+/* return credential cache filename, strip "FILE:" prefix if necessary */
+static const char*
+ka_ccache_filename (void)
+{
+	const gchar *ccache_name;
+
+	ccache_name = krb5_cc_default_name (kcontext);
+	if (g_str_has_prefix (ccache_name, "FILE:"))
+		return &(ccache_name[5]);
+	else
+		return ccache_name;
+}
+
 
 /* Check for things we have to do while the password dialog is open */
 static gboolean
@@ -475,6 +488,66 @@ ka_parse_name(KaApplet* applet, krb5_context krbcontext, krb5_principal* kprinc)
 }
 
 
+static void
+ccache_changed_cb (GFileMonitor *monitor G_GNUC_UNUSED,
+                   GFile *file,
+                   GFile *other_file G_GNUC_UNUSED,
+                   GFileMonitorEvent event_type,
+                   gpointer data)
+{
+	KaApplet *applet = KA_APPLET(data);
+	gchar *ccache_name = g_file_get_path(file);
+
+	switch (event_type) {
+		case G_FILE_MONITOR_EVENT_DELETED:
+		case G_FILE_MONITOR_EVENT_CREATED:
+		case G_FILE_MONITOR_EVENT_CHANGED:
+			KA_DEBUG ("%s changed", ccache_name);
+			credentials_expiring ((gpointer)applet);
+			break;
+		default:
+			KA_DEBUG ("%s unhandled event: %d", ccache_name, event_type);
+	}
+	g_free (ccache_name);
+}
+
+
+static gboolean
+monitor_ccache(KaApplet* applet)
+{
+	const gchar *ccache_name;
+	GFile *ccache;
+	GFileMonitor *monitor;
+	GError *err = NULL;
+	gboolean ret = FALSE;
+
+	ccache_name = ka_ccache_filename ();
+	g_return_val_if_fail (ccache_name != NULL, FALSE);
+
+	ccache = g_file_new_for_path (ccache_name);
+	monitor = g_file_monitor_file (ccache, G_FILE_MONITOR_NONE, NULL, &err);
+	g_assert ((!monitor && err) || (monitor && !err));
+	if (!monitor) {
+		/* cache disappeared? */
+		if (err->code == G_FILE_ERROR_NOENT)
+			credentials_expiring ((gpointer)applet);
+		else
+			g_warning ("Failed to monitor %s: %s", ccache_name, err->message);
+		goto out;
+	} else {
+		/* g_file_monitor_set_rate_limit(monitor, 10*1000); */
+		g_signal_connect (monitor, "changed", G_CALLBACK (ccache_changed_cb), applet);
+		KA_DEBUG ("Monitoring %s", ccache_name);
+		ret = TRUE;
+	}
+out:
+	g_object_unref (ccache);
+	if (err)
+		g_error_free (err);
+	return ret;
+}
+
+
 /* grab credentials interactively */
 static int
 grab_credentials (KaApplet* applet)
@@ -537,13 +610,11 @@ grab_credentials (KaApplet* applet)
 	retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
 	if (retval)
 		goto out;
-
 out:
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
 out2:
 	g_free(pk_userid);
-
 	return retval;
 }
 
@@ -891,6 +962,7 @@ main (int argc, char *argv[])
 
 		if (credentials_expiring ((gpointer)applet)) {
 			g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, applet);
+			monitor_ccache (applet);
 		}
 		ka_dbus_service(applet);
 		gtk_main ();

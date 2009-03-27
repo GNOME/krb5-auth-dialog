@@ -21,14 +21,9 @@
 #ifndef KRB5_AUTH_APPLET_H
 #define KRB5_AUTH_APPLET_H
 
-#include <glib.h>
 #include <glib-object.h>
 #include <glib/gprintf.h>
-#include <gtk/gtk.h>
 #include <glade/glade.h>
-#ifdef HAVE_LIBNOTIFY
-#include <libnotify/notify.h>
-#endif /* HAVE_LIBNOTIFY */
 #include <krb5.h>
 
 #include "config.h"

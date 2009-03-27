@@ -1,3 +1,9 @@
+Mo Mär 23 23:55:20 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-pwdialog.h: remove unused headers
+	* src/krb5-auth-applet.h: likewise
+	* src/krb5-auth-dialog.c (is_online): move static variable to the top
+
 Mi Mär 11 17:21:07 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	silence compiler warnings

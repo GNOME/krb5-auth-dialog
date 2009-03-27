@@ -23,7 +23,6 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <gtk/gtk.h>
 #include <glade/glade.h>
 
 #include "config.h"

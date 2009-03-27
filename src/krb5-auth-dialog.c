@@ -57,6 +57,7 @@ static krb5_timestamp canceled_creds_expiry;
 static gboolean canceled;
 static gboolean invalid_auth;
 static gboolean always_run;
+static gboolean is_online = TRUE;
 
 static int grab_credentials (KaApplet* applet);
 static int ka_renew_credentials (KaApplet* applet);
@@ -295,7 +296,6 @@ cleanup:
 	return errcode;
 }
 
-static gboolean is_online = TRUE;
 
 #ifdef ENABLE_NETWORK_MANAGER
 static void

@@ -1,3 +1,12 @@
+Di Mär 24 00:01:28 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-dialog.c (auth_dialog_prompter): handle
+	GTK_RESPONSE_DELETE_EVENT like GTK_RESPONSE_CANCEL so pressing ESC or
+	closing the dialog has the same effect than pressing cancel.
+	* (ka_grab_credentials): look at "cancled" instead of looking at the
+	kerberos error codes - more robust since heimdal and mit have different
+	responses, let alone pkinit.
+
 Mo Mär 23 23:57:36 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	split password auth into a separate function

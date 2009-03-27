@@ -265,11 +265,11 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
 				password = ka_pwdialog_get_password(pwdialog);
 				password_len = strlen (password);
 				break;
+			case GTK_RESPONSE_DELETE_EVENT:
 			case GTK_RESPONSE_CANCEL:
 				canceled = TRUE;
 				break;
 			case GTK_RESPONSE_NONE:
-			case GTK_RESPONSE_DELETE_EVENT:
 				break;
 			default:
 				g_warning ("Unknown Response: %d", response);
@@ -752,24 +752,19 @@ ka_grab_credentials (KaApplet* applet)
 
 	ka_pwdialog_set_persist(pwdialog, TRUE);
 	do {
-		retry = TRUE;
 		retval = grab_credentials (applet);
 		if (invalid_auth)
 			continue;
-		switch (retval) {
-		    case 0: /* success */
-			    success = TRUE;
-		    case KRB5_LIBOS_PWDINTR:     /* canceled (heimdal) */
-		    case KRB5_LIBOS_CANTREADPWD: /* canceled (mit) */
-			    retry = FALSE;
-			    break;
-		    case KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN:
-		    default:
-			    ka_error_dialog(retval);
-			    retry = FALSE;
-			    break;
+		if (canceled)
+			break;
+		if (retval) {
+			ka_error_dialog(retval);
+			break;
+		} else {
+			success = TRUE;
+			break;
 		}
-	} while(retry);
+	} while(TRUE);
 
 	ka_pwdialog_set_persist(pwdialog, FALSE);
 	credentials_expiring_real(applet);

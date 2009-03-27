@@ -401,10 +401,10 @@ set_options_from_creds(const KaApplet* applet,
 }
 
 
+#ifdef ENABLE_PKINIT
 static krb5_error_code
 ka_auth_pkinit(KaApplet* applet, krb5_creds* creds, const char* pk_userid)
 {
-#ifdef ENABLE_PKINIT
 	krb5_get_init_creds_opt *opts = NULL;
 	krb5_error_code retval;
 
@@ -433,13 +433,30 @@ ka_auth_pkinit(KaApplet* applet, krb5_creds* creds, const char* pk_userid)
 	                                      NULL, auth_dialog_prompter, applet,
 		                              0, NULL, opts);
 out:
-	krb5_get_init_creds_opt_free(kcontext, opts);
+	if (opts)
+		krb5_get_init_creds_opt_free(kcontext, opts);
 	return retval;
-#else  /* ENABLE_PKINIT */
-	return 0;
-#endif /* ! ENABLE_PKINIT */
 }
+#endif /* ! ENABLE_PKINIT */
 
+static krb5_error_code
+ka_auth_password(KaApplet* applet, krb5_creds* creds)
+{
+	krb5_error_code retval;
+	krb5_get_init_creds_opt *opts = NULL;
+
+	retval = krb5_get_init_creds_opt_alloc (kcontext, &opts);
+	if (retval)
+		goto out;
+	set_options_from_creds (applet, kcontext, creds, opts);
+	retval = krb5_get_init_creds_password(kcontext, creds, kprincipal,
+					      NULL, auth_dialog_prompter, applet,
+					      0, NULL, opts);
+out:
+	if (opts)
+		krb5_get_init_creds_opt_free(kcontext, opts);
+	return retval;
+}
 
 static krb5_error_code
 ka_parse_name(KaApplet* applet, krb5_context krbcontext, krb5_principal* kprinc)
@@ -462,11 +479,11 @@ ka_parse_name(KaApplet* applet, krb5_context krbcontext, krb5_principal* kprinc)
 static int
 grab_credentials (KaApplet* applet)
 {
-	krb5_error_code retval;
+	krb5_error_code retval = KRB5_KDC_UNREACH;
 	krb5_creds my_creds;
 	krb5_ccache ccache;
-	krb5_get_init_creds_opt *opt = NULL;
 	gchar *pk_userid = NULL;
+	gboolean pw_auth = TRUE;
 
 	memset(&my_creds, 0, sizeof(my_creds));
 
@@ -481,21 +498,18 @@ grab_credentials (KaApplet* applet)
 		goto out2;
 
 	g_object_get(applet, "pk-userid", &pk_userid, NULL);
-#if ENABLE_PKINIT
-	if (pk_userid && strlen(pk_userid)) { /* try pkinit */
-#else
-	if (0) {
-#endif
+#ifdef ENABLE_PKINIT
+	/* pk_userid set: try pkinit */
+	if (pk_userid && strlen(pk_userid)) {
 		retval = ka_auth_pkinit(applet, &my_creds, pk_userid);
-	} else {
-		retval = krb5_get_init_creds_opt_alloc (kcontext, &opt);
-		if (retval)
-			goto out;
-		set_options_from_creds (applet, kcontext, &my_creds, opt);
-		retval = krb5_get_init_creds_password(kcontext, &my_creds, kprincipal,
-						      NULL, auth_dialog_prompter, applet,
-						      0, NULL, opt);
+		/* other error than: "no token found" - no need to try password auth: */
+		if (retval != HX509_PKCS11_NO_TOKEN && retval != HX509_PKCS11_NO_SLOT)
+			pw_auth = FALSE;
 	}
+#endif /* ENABLE_PKINIT */
+	if (pw_auth)
+		retval = ka_auth_password(applet, &my_creds);
+
 	creds_expiry = my_creds.times.endtime;
 	if (canceled)
 		canceled_creds_expiry = creds_expiry;
@@ -508,7 +522,7 @@ grab_credentials (KaApplet* applet)
 #endif
 				/* Invalid password/pin, try again. */
 				invalid_auth = TRUE;
-				goto out;
+				break;
 			default:
 				KA_DEBUG("Auth failed with %d: %s", retval,
 				         get_error_message(kcontext, retval));
@@ -525,8 +539,6 @@ grab_credentials (KaApplet* applet)
 		goto out;
 
 out:
-	if (opt)
-		krb5_get_init_creds_opt_free(kcontext, opt);
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
 out2:

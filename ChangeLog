@@ -1,3 +1,10 @@
+Mo Mär 23 23:57:36 CET 2009 Guido Günther <agx@sigxcpu.org>
+
+	split password auth into a separate function
+	* src/krb5-auth-dialog.c (ka_auth_password): new function
+	  (grab_credentials): fall back to password auth if no token is
+	  present and pkinit is enabled
+
 Mo Mär 23 23:55:20 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-pwdialog.h: remove unused headers

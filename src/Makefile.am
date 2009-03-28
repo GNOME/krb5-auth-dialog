@@ -12,10 +12,17 @@ autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 
 schemadir = $(sysconfdir)/gconf/schemas
 schema_in_files = $(PACKAGE).schemas.in
-schema_DATA = $(PACKAGE).schemas
+schema_DATA = $(schema_in_files:.schemas.in=.schemas)
 
 %.schemas: $(srcdir)/%.schemas.in
 	sed -e "s,::PACKAGE::,$(PACKAGE)," < $< > $@
+
+servicedir       = $(datadir)/dbus-1/services
+service_in_files = org.gnome.KrbAuthDialog.service.in
+service_DATA     = $(service_in_files:.service.in=.service)
+
+$(service_DATA): $(service_in_files) Makefile
+	sed -e "s|\@BINDIR\@|$(bindir)|" $< > $@
 
 krb5_auth_dialog_SOURCES =	\
 	krb5-auth-dialog.c      \
@@ -60,9 +67,10 @@ EXTRA_DIST =		\
 	$(pkgdata_DATA)   \
 	$(schema_in_files) \
 	$(autostart_in_files) \
+	$(service_in_files) \
 	krb5-auth-dialog.1.in
 
-CLEANFILES = $(schema_DATA)
+CLEANFILES = $(schema_DATA) $(service_DATA)
 DISTCLEANFILES = \
 	krb5-auth-dialog.desktop 	\
 	krb5-auth-applet-dbus-glue.h

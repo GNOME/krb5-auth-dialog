@@ -1,0 +1,42 @@
+NULL =
+
+INCLUDES = \
+	-I $(top_srcdir)/src/ \
+	-DKA_DATA_DIR=\""$(pkgdatadir)"\" \
+	-DLOCALE_DIR=\""$(localedir)/"\" \
+	$(NULL)
+
+bin_PROGRAMS = krb5-auth-dialog-preferences
+
+schemadir = $(sysconfdir)/gconf/schemas
+
+krb5_auth_dialog_preferences_SOURCES = \
+	krb5-auth-dialog-preferences.c \
+	../src/krb5-auth-gconf-tools.c \
+	../src/krb5-auth-gconf-tools.h \
+	$(NULL)
+
+krb5_auth_dialog_preferences_LDADD = \
+			@GCONF_LIBS@ \
+			@GLADE_LIBS@ \
+			@GTK_LIBS@ \
+			$(NULL)
+
+desktopdir       = $(datadir)/applications
+desktop_in_files = krb5-auth-dialog-preferences.desktop.in
+desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
+
+@INTLTOOL_DESKTOP_RULE@
+
+pkgdatadir = $(datadir)/krb5-auth-dialog
+pkgdata_DATA =			\
+	krb5-auth-dialog-preferences.glade
+
+CLEANFILES = \
+	$(desktop_DATA) \
+        $(NULL)
+
+EXTRA_DIST = \
+	$(desktop_in_files) \
+	$(pkgdata_DATA) \
+	$(NULL)

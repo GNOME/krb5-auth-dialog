@@ -1,0 +1,12 @@
+[Desktop Entry]
+_Name=Network Authentication
+_Comment=Set your Kerberos network authenticaion preferences
+Exec=krb5-auth-dialog-preferences
+Icon=gtk-dialog-authentication
+Terminal=false
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Settings;X-GNOME-NetworkSettings;
+OnlyShowIn=GNOME;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=krb5-auth-dialog

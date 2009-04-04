@@ -1,3 +1,14 @@
+Sa Apr  4 11:06:45 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	add preferences capplet
+	* preferences/{krb5-auth-dialog-preferences.{c,glade,desktop.in},
+	  preferences/Makefile.am: new files
+	* po/POTFILES.in: add the above
+	* Makefile.am, configure.ac: process preferences/
+	* src/krb5-auth-applet.c (ka_applet_cb_preferences): callback to open
+	  preferences
+	  (ka_applet_create_context_menu): add preferences context menu entry
+
 Sa Apr  4 10:57:23 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	allow to set ticket proxiable, renewable and forwardable ticket flags

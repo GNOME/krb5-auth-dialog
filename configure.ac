@@ -218,6 +218,7 @@ gtksecentry/Makefile
 icons/Makefile
 etpo/Makefile
 po/Makefile.in
+preferences/Makefile
 ])
 
 AC_MSG_NOTICE([])

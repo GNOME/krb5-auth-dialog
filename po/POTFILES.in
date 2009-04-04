@@ -4,6 +4,9 @@ src/krb5-auth-pwdialog.c
 src/dummy-strings.c
 src/krb5-auth-applet.c
 src/krb5-auth-dialog.desktop.in
+src/krb5-auth-dialog.schemas.in
 gtksecentry/gtksecentry.c
 secmem/util.c
-src/krb5-auth-dialog.schemas.in
+preferences/krb5-auth-dialog-preferences.c
+preferences/krb5-auth-dialog-preferences.desktop.in
+preferences/krb5-auth-dialog-preferences.glade

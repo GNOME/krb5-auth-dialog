@@ -432,6 +432,13 @@ ka_applet_menu_add_separator_item (GtkWidget* menu)
 	gtk_widget_show (menu_item);
 }
 
+static void
+ka_applet_cb_preferences (GtkWidget* menuitem G_GNUC_UNUSED,
+                          gpointer user_data G_GNUC_UNUSED)
+{
+	g_spawn_command_line_async ("krb5-auth-dialog-preferences", NULL);
+}
+
 
 /* Free all resources and quit */
 static void
@@ -480,6 +487,14 @@ ka_applet_create_context_menu (KaApplet* applet)
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	ka_applet_menu_add_separator_item (menu);
+
+	/* Preferences */
+	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Preferences"));
+	g_signal_connect (G_OBJECT (menu_item), "activate", G_CALLBACK (ka_applet_cb_preferences), applet);
+	image = gtk_image_new_from_stock (GTK_STOCK_PREFERENCES, GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
+
 
 	/* About item */
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_About"));

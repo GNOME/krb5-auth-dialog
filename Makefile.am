@@ -1,4 +1,4 @@
-SUBDIRS = secmem gtksecentry src po etpo icons
+SUBDIRS = secmem gtksecentry src po etpo icons preferences
 
 EXTRA_DIST =                            \
 	krb5-auth-dialog.spec

@@ -135,6 +135,8 @@ gtk_secure_entry_get_type(void)
     G_GNUC_CONST;
 GtkWidget *
 gtk_secure_entry_new(void);
+GtkWidget *
+gtk_secure_entry_new_with_max_length(gint max);
 void
 gtk_secure_entry_set_invisible_char(GtkSecureEntry * entry, gunichar ch);
 gunichar
@@ -169,6 +171,12 @@ gtk_secure_entry_get_text(GtkSecureEntry * entry);
 
 PangoLayout *
 gtk_secure_entry_get_layout(GtkSecureEntry * entry);
+gint
+gtk_secure_entry_layout_index_to_text_index(GtkSecureEntry * entry,
+					    gint layout_index);
+gint
+gtk_secure_entry_text_index_to_layout_index(GtkSecureEntry * entry,
+					    gint text_index);
 void
 gtk_secure_entry_get_layout_offsets(GtkSecureEntry * entry,
 				    gint * x, gint * y);

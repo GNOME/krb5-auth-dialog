@@ -1,3 +1,26 @@
+Sa Apr  4 11:15:39 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	GtkSecureEntry warning fixes:
+	* gtksecentry/gtksecentry.c (gtk_secure_entry_state_changed: drop
+	  duplicate declaration
+	  (g_malloc): use G_SIZE_FORMAT for gsize type
+	  (g_malloc0): likewise
+	  (gtk_secure_entry_get_type): add missing initializer
+	  (gtk_secure_entry_delete_cb): drop, unused static function
+	  (gtk_secure_entry_toggle_overwrite): likewise
+	  (activate_cb): likewise
+	  (unichar_chosen_func): likewise
+	  (gtk_secure_entry_append_text: drop, deprecated in GtkEntry since
+	  2.0 and missing declaration in gtksecentry.h
+	  (gtk_secure_entry_prepend_text): likewise
+	  (gtk_entry_set_position): likewise
+	  (gtk_entry_select_region): likewise
+	  declare unused parameters as G_GNUC_UNUSED
+	* gtksecentry/gtksecentry.h (gtk_secure_entry_new_with_max_length):
+	  add missing declaration
+	  (gtk_secure_entry_layout_index_to_text_index): likewise
+	  (gtk_secure_entry_text_index_to_layout_index): likewise
+
 Sa Apr  4 11:06:45 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	add preferences capplet

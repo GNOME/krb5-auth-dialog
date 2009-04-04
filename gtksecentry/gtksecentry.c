@@ -224,8 +224,6 @@ static gint gtk_secure_entry_move_logically(GtkSecureEntry * entry,
 					    gint start, gint count);
 static gboolean gtk_secure_entry_mnemonic_activate(GtkWidget * widget,
 						   gboolean group_cycling);
-static void gtk_secure_entry_state_changed(GtkWidget * widget,
-					   GtkStateType previous_state);
 static void gtk_secure_entry_check_cursor_blink(GtkSecureEntry * entry);
 static void gtk_secure_entry_pend_cursor_blink(GtkSecureEntry * entry);
 static void get_text_area_size(GtkSecureEntry * entry,
@@ -282,7 +280,7 @@ g_malloc(gsize size)
     else
 	p = (gpointer) malloc(size);
     if (!p)
-	g_error("could not allocate %ld bytes", size);
+	g_error("could not allocate %"G_GSIZE_FORMAT" bytes", size);
 
     return p;
 }
@@ -302,7 +300,7 @@ g_malloc0(gsize size)
     } else
 	p = (gpointer) calloc(size, 1);
     if (!p)
-	g_error("could not allocate %ld bytes", size);
+	g_error("could not allocate %"G_GSIZE_FORMAT" bytes", size);
 
     return p;
 }
@@ -364,6 +362,7 @@ gtk_secure_entry_get_type(void)
 	    sizeof(GtkSecureEntry),
 	    0,			/* n_preallocs */
 	    (GInstanceInitFunc) gtk_secure_entry_init,
+	    NULL,
 	};
 
 	static const GInterfaceInfo editable_info = {
@@ -1326,7 +1325,8 @@ gtk_secure_entry_key_release(GtkWidget * widget, GdkEventKey * event)
 }
 
 static gint
-gtk_secure_entry_focus_in(GtkWidget * widget, GdkEventFocus * event)
+gtk_secure_entry_focus_in(GtkWidget * widget,
+			  GdkEventFocus * event G_GNUC_UNUSED)
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
 
@@ -1346,7 +1346,8 @@ gtk_secure_entry_focus_in(GtkWidget * widget, GdkEventFocus * event)
 }
 
 static gint
-gtk_secure_entry_focus_out(GtkWidget * widget, GdkEventFocus * event)
+gtk_secure_entry_focus_out(GtkWidget * widget,
+			   GdkEventFocus * event G_GNUC_UNUSED)
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
 
@@ -1395,7 +1396,7 @@ gtk_secure_entry_direction_changed(GtkWidget * widget,
 
 static void
 gtk_secure_entry_state_changed(GtkWidget * widget,
-			       GtkStateType previous_state)
+			       GtkStateType previous_state G_GNUC_UNUSED)
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
 
@@ -1418,7 +1419,8 @@ gtk_secure_entry_state_changed(GtkWidget * widget,
 }
 
 static void
-gtk_secure_entry_screen_changed(GtkWidget * widget, GdkScreen * old_screen)
+gtk_secure_entry_screen_changed(GtkWidget * widget,
+				GdkScreen * old_screen G_GNUC_UNUSED)
 {
     gtk_secure_entry_recompute(GTK_SECURE_ENTRY(widget));
 }
@@ -1549,7 +1551,8 @@ gtk_secure_entry_style_set(GtkWidget * widget, GtkStyle * previous_style)
 /* GtkCellEditable method implementations
  */
 static void
-gtk_cell_editable_secure_entry_activated(GtkSecureEntry * entry, gpointer data)
+gtk_cell_editable_secure_entry_activated(GtkSecureEntry * entry,
+					 gpointer data G_GNUC_UNUSED)
 {
     gtk_cell_editable_editing_done(GTK_CELL_EDITABLE(entry));
     gtk_cell_editable_remove_widget(GTK_CELL_EDITABLE(entry));
@@ -1557,7 +1560,8 @@ gtk_cell_editable_secure_entry_activated(GtkSecureEntry * entry, gpointer data)
 
 static gboolean
 gtk_cell_editable_key_press_event(GtkSecureEntry * entry,
-				  GdkEventKey * key_event, gpointer data)
+				  GdkEventKey * key_event,
+				  gpointer data G_GNUC_UNUSED)
 {
     if (key_event->keyval == GDK_Escape) {
 	entry->editing_canceled = TRUE;
@@ -1580,7 +1584,7 @@ gtk_cell_editable_key_press_event(GtkSecureEntry * entry,
 
 static void
 gtk_secure_entry_start_editing(GtkCellEditable * cell_editable,
-			       GdkEvent * event)
+			       GdkEvent * event G_GNUC_UNUSED)
 {
     GTK_SECURE_ENTRY(cell_editable)->is_cell_renderer = TRUE;
 
@@ -1882,22 +1886,6 @@ gtk_secure_entry_delete_from_cursor(GtkSecureEntry * entry,
 }
 
 static void
-gtk_secure_entry_delete_cb(GtkSecureEntry * entry)
-{
-    GtkEditable *editable = GTK_EDITABLE(entry);
-    gint start, end;
-
-    if (gtk_editable_get_selection_bounds(editable, &start, &end))
-      gtk_editable_delete_text(editable, start, end);
-}
-
-static void
-gtk_secure_entry_toggle_overwrite(GtkSecureEntry * entry)
-{
-    entry->overwrite_mode = !entry->overwrite_mode;
-}
-
-static void
 gtk_secure_entry_real_activate(GtkSecureEntry * entry)
 {
     GtkWindow *window;
@@ -1922,7 +1910,7 @@ gtk_secure_entry_real_activate(GtkSecureEntry * entry)
 }
 
 static void
-gtk_secure_entry_keymap_direction_changed(GdkKeymap * keymap,
+gtk_secure_entry_keymap_direction_changed(GdkKeymap * keymap G_GNUC_UNUSED,
 					  GtkSecureEntry * entry)
 {
     gtk_secure_entry_recompute(entry);
@@ -1932,14 +1920,14 @@ gtk_secure_entry_keymap_direction_changed(GdkKeymap * keymap,
  */
 
 static void
-gtk_secure_entry_commit_cb(GtkIMContext * context,
+gtk_secure_entry_commit_cb(GtkIMContext * context G_GNUC_UNUSED,
 			   const gchar * str, GtkSecureEntry * entry)
 {
     gtk_secure_entry_enter_text(entry, str);
 }
 
 static void
-gtk_secure_entry_preedit_changed_cb(GtkIMContext * context,
+gtk_secure_entry_preedit_changed_cb(GtkIMContext * context G_GNUC_UNUSED,
 				    GtkSecureEntry * entry)
 {
     gchar *preedit_string;
@@ -1971,7 +1959,7 @@ gtk_secure_entry_retrieve_surrounding_cb(GtkIMContext * context,
 }
 
 static gboolean
-gtk_secure_entry_delete_surrounding_cb(GtkIMContext * slave,
+gtk_secure_entry_delete_surrounding_cb(GtkIMContext * slave G_GNUC_UNUSED,
 				       gint offset,
 				       gint n_chars,
 				       GtkSecureEntry * entry)
@@ -2736,38 +2724,6 @@ gtk_secure_entry_set_text(GtkSecureEntry * entry, const gchar * text)
 			     &tmp_pos);
 }
 
-void
-gtk_secure_entry_append_text(GtkSecureEntry * entry, const gchar * text)
-{
-    gint tmp_pos;
-
-    g_return_if_fail(GTK_IS_SECURE_ENTRY(entry));
-    g_return_if_fail(text != NULL);
-
-    tmp_pos = entry->text_length;
-    gtk_editable_insert_text(GTK_EDITABLE(entry), text, -1, &tmp_pos);
-}
-
-void
-gtk_secure_entry_prepend_text(GtkSecureEntry * entry, const gchar * text)
-{
-    gint tmp_pos;
-
-    g_return_if_fail(GTK_IS_SECURE_ENTRY(entry));
-    g_return_if_fail(text != NULL);
-
-    tmp_pos = 0;
-    gtk_editable_insert_text(GTK_EDITABLE(entry), text, -1, &tmp_pos);
-}
-
-void
-gtk_secure_entry_set_position(GtkSecureEntry * entry, gint position)
-{
-    g_return_if_fail(GTK_IS_SECURE_ENTRY(entry));
-
-    gtk_editable_set_position(GTK_EDITABLE(entry), position);
-}
-
 /**
  * gtk_secure_entry_set_invisible_char:
  * @entry: a #GtkSecureEntry
@@ -2831,13 +2787,6 @@ gtk_secure_entry_get_text(GtkSecureEntry * entry)
     g_return_val_if_fail(GTK_IS_SECURE_ENTRY(entry), NULL);
 
     return entry->text;
-}
-
-void
-gtk_secure_entry_select_region(GtkSecureEntry * entry,
-			       gint start, gint end)
-{
-    gtk_editable_select_region(GTK_EDITABLE(entry), start, end);
 }
 
 /**
@@ -3153,33 +3102,12 @@ gtk_secure_entry_get_layout_offsets(GtkSecureEntry * entry,
 	*y += text_area_y;
 }
 
-
-/* Quick hack of a popup menu
- */
-static void
-activate_cb(GtkWidget * menuitem, GtkSecureEntry * entry)
-{
-    const gchar *signal =
-	g_object_get_data(G_OBJECT(menuitem), "gtk-signal");
-    g_signal_emit_by_name(entry, signal);
-}
-
-
 static gboolean
 gtk_secure_entry_mnemonic_activate(GtkWidget * widget,
-				   gboolean group_cycling)
+				   gboolean group_cycling G_GNUC_UNUSED)
 {
     gtk_widget_grab_focus(widget);
     return TRUE;
-}
-
-
-static void
-unichar_chosen_func(const char *text, gpointer data)
-{
-    GtkSecureEntry *entry = GTK_SECURE_ENTRY(data);
-
-    gtk_secure_entry_enter_text(entry, text);
 }
 
 /* We display the cursor when
@@ -3343,10 +3271,10 @@ keyval_is_cursor_move(guint keyval)
 /* VOID:ENUM,INT,BOOLEAN (gtkmarshalers.list:64) */
 static void
 _gtk_marshal_VOID__ENUM_INT_BOOLEAN(GClosure * closure,
-                                    GValue * return_value,
+                                    GValue * return_value G_GNUC_UNUSED,
                                     guint n_param_values,
                                     const GValue * param_values,
-                                    gpointer invocation_hint,
+                                    gpointer invocation_hint G_GNUC_UNUSED,
                                     gpointer marshal_data)
 {
     typedef void (*GMarshalFunc_VOID__ENUM_INT_BOOLEAN) (gpointer data1,
@@ -3379,10 +3307,10 @@ _gtk_marshal_VOID__ENUM_INT_BOOLEAN(GClosure * closure,
 
 static void
 _gtk_marshal_VOID__ENUM_INT(GClosure * closure,
-                            GValue * return_value,
+                            GValue * return_value G_GNUC_UNUSED,
                             guint n_param_values,
                             const GValue * param_values,
-                            gpointer invocation_hint,
+                            gpointer invocation_hint G_GNUC_UNUSED,
                             gpointer marshal_data)
 {
     typedef void (*GMarshalFunc_VOID__ENUM_INT) (gpointer data1,

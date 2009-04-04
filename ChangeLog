@@ -1,3 +1,12 @@
+Sa Apr  4 10:52:53 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	split out gconf tool functions
+	* src/krb5-auth-gconf-tools.h: new file
+	* src/krb5-auth-gconf-tools.c: new file
+	* src/krb5-auth-gconf.c (ka_gconf_get*): move to
+	  src/krb5-auth-gconf-tools.c
+	  (KA_GCONF_*): move to src/krb5-auth-gconf-tools.h
+
 Sa Mär 28 14:17:49 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add dbus service file

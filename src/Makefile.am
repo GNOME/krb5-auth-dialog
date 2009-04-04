@@ -33,6 +33,8 @@ krb5_auth_dialog_SOURCES =	\
 	krb5-auth-pwdialog.h    \
 	krb5-auth-gconf.c	\
 	krb5-auth-gconf.h	\
+	krb5-auth-gconf-tools.c	\
+	krb5-auth-gconf-tools.h	\
 	krb5-auth-dbus.c	\
 	krb5-auth-dbus.h	\
 	dummy-strings.c

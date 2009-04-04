@@ -30,6 +30,9 @@
 #define KA_GCONF_KEY_PK_USERID		KA_GCONF_PATH "/pk_userid"
 #define KA_GCONF_KEY_PROMPT_MINS	KA_GCONF_PATH "/prompt_minutes"
 #define KA_GCONF_KEY_SHOW_TRAYICON	KA_GCONF_PATH "/show_trayicon"
+#define KA_GCONF_KEY_FORWARDABLE	KA_GCONF_PATH "/forwardable"
+#define KA_GCONF_KEY_RENEWABLE		KA_GCONF_PATH "/renewable"
+#define KA_GCONF_KEY_PROXIABLE		KA_GCONF_PATH "/proxiable"
 
 gboolean ka_gconf_get_string (GConfClient* client, const char* key, char** value);
 gboolean ka_gconf_get_int (GConfClient* client, const char* key, int* value);

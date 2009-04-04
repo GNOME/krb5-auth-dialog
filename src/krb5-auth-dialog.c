@@ -378,9 +378,40 @@ out:
 }
 
 
+/*
+ * set ticket options by looking at krb5.conf and gconf
+ */
+static void
+ka_set_ticket_options(KaApplet* applet,
+		      krb5_get_init_creds_opt *out)
+{
+	gboolean flag;
+
+#ifdef HAVE_KRB5_GET_INIT_CREDS_OPT_SET_DEFAULT_FLAGS
+	krb5_get_init_creds_opt_set_default_flags(kcontext, PACKAGE,
+		krb5_principal_get_realm(kcontext, kprincipal), out);
+#endif
+	g_object_get(applet, "tgt-forwardable", &flag, NULL);
+	if (flag)
+		krb5_get_init_creds_opt_set_forwardable(out, flag);
+	g_object_get(applet, "tgt-proxiable", &flag, NULL);
+	if (flag)
+		krb5_get_init_creds_opt_set_proxiable(out, flag);
+	g_object_get(applet, "tgt-renewable", &flag, NULL);
+	if (flag) {
+		krb5_deltat r = 3600*24*30; /* 1 month */
+		krb5_get_init_creds_opt_set_renew_life (out, r);
+	}
+}
+
+
+/*
+ * set ticket options
+ * by looking at krb5.conf, the passed in creds and gconf
+ */
 static void
 set_options_from_creds(const KaApplet* applet,
-		       krb5_context context G_GNUC_UNUSED,
+		       krb5_context context,
 		       krb5_creds *in,
 		       krb5_get_init_creds_opt *out)
 {
@@ -388,8 +419,8 @@ set_options_from_creds(const KaApplet* applet,
 	int flag;
 
 #ifdef HAVE_KRB5_GET_INIT_CREDS_OPT_SET_DEFAULT_FLAGS
-	krb5_get_init_creds_opt_set_default_flags(kcontext, PACKAGE,
-		krb5_principal_get_realm(kcontext, kprincipal), out);
+	krb5_get_init_creds_opt_set_default_flags(context, PACKAGE,
+		krb5_principal_get_realm(context, kprincipal), out);
 #endif
 
 	flag = get_cred_forwardable(in) != 0;
@@ -426,7 +457,7 @@ ka_auth_pkinit(KaApplet* applet, krb5_creds* creds, const char* pk_userid)
 	retval = krb5_get_init_creds_opt_alloc (kcontext, &opts);
 	if (retval)
 		goto out;
-	set_options_from_creds (applet, kcontext, creds, opts);
+	ka_set_ticket_options (applet, opts);
 
 	retval = krb5_get_init_creds_opt_set_pkinit(kcontext, opts,
 						    kprincipal,
@@ -461,7 +492,7 @@ ka_auth_password(KaApplet* applet, krb5_creds* creds)
 	retval = krb5_get_init_creds_opt_alloc (kcontext, &opts);
 	if (retval)
 		goto out;
-	set_options_from_creds (applet, kcontext, creds, opts);
+	ka_set_ticket_options (applet, opts);
 	retval = krb5_get_init_creds_password(kcontext, creds, kprincipal,
 					      NULL, auth_dialog_prompter, applet,
 					      0, NULL, opts);
@@ -477,9 +508,7 @@ ka_parse_name(KaApplet* applet, krb5_context krbcontext, krb5_principal* kprinc)
 	krb5_error_code ret;
 	gchar *principal = NULL;
 
-	g_object_get(applet, "principal", &principal,
-			     NULL);
-
+	g_object_get(applet, "principal", &principal, NULL);
 	ret = krb5_parse_name(krbcontext, principal,
 			      kprinc);
 
@@ -773,8 +802,7 @@ ka_check_credentials (KaApplet *applet, const char* newprincipal)
 	int retval;
 	char* principal;
 
-	g_object_get(applet, "principal", &principal,
-			     NULL);
+	g_object_get(applet, "principal", &principal, NULL);
 
 	if (strlen(newprincipal)) {
 		krb5_principal knewprinc;
@@ -817,7 +845,6 @@ gboolean
 ka_grab_credentials (KaApplet* applet)
 {
 	int retval;
-	gboolean retry;
 	int success = FALSE;
 	KaPwDialog *pwdialog = ka_applet_get_pwdialog(applet);
 

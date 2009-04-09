@@ -178,6 +178,7 @@ credentials_expiring_real (KaApplet* applet)
 		goto out;
 	}
 
+	/* copy principal from cache if any */
 	if (krb5_principal_compare (kcontext, my_creds.client, kprincipal)) {
 		krb5_free_principal(kcontext, kprincipal);
 		krb5_copy_principal(kcontext, my_creds.client, &kprincipal);
@@ -529,9 +530,11 @@ ka_parse_name(KaApplet* applet, krb5_context krbcontext, krb5_principal* kprinc)
 	krb5_error_code ret;
 	gchar *principal = NULL;
 
+	if (*kprinc != NULL)
+		krb5_free_principal(krbcontext, *kprinc);
+
 	g_object_get(applet, "principal", &principal, NULL);
-	ret = krb5_parse_name(krbcontext, principal,
-			      kprinc);
+	ret = krb5_parse_name(krbcontext, principal, kprinc);
 
 	g_free(principal);
 	return ret;
@@ -611,11 +614,9 @@ grab_credentials (KaApplet* applet)
 
 	memset(&my_creds, 0, sizeof(my_creds));
 
-	if (kprincipal == NULL) {
-		retval = ka_parse_name(applet, kcontext, &kprincipal);
-		if (retval)
-			goto out2;
-	}
+	retval = ka_parse_name(applet, kcontext, &kprincipal);
+	if (retval)
+		goto out2;
 
 	retval = krb5_cc_default (kcontext, &ccache);
 	if (retval)
@@ -780,7 +781,6 @@ using_krb5(void)
 		krb5_copy_principal(kcontext, creds.client, &kprincipal);
 		krb5_free_cred_contents (kcontext, &creds);
 	}
-
 	return have_tgt;
 }
 

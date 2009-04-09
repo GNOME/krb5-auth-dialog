@@ -1,3 +1,12 @@
+Thu Apr 23 11:17:28 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	Always reparse the principal name in grab_credentials. When
+	acquireing credentials interacively we want to be sure we use the
+	current principal name from gconf.
+	* src/krb5-auth-dialog.c (ka_parse_name): Always parse principal
+	  property.
+	  (grab_credentials): Call ka_parse_name unconditionally.
+
 Thu Apr 23 11:14:37 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	drop "Password:" label from dialog. It's in the kerberos prompt and

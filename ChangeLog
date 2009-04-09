@@ -1,4 +1,8 @@
-Sa Apr  4 11:15:39 CEST 2009 Guido Günther <agx@sigxcpu.org>
+Fri Apr 17 13:19:18 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* AUTHORS: add Colin
+
+Sat Apr  4 11:15:39 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	GtkSecureEntry warning fixes:
 	* gtksecentry/gtksecentry.c (gtk_secure_entry_state_changed: drop
@@ -21,7 +25,7 @@ Sa Apr  4 11:15:39 CEST 2009 Guido Günther <agx@sigxcpu.org>
 	  (gtk_secure_entry_layout_index_to_text_index): likewise
 	  (gtk_secure_entry_text_index_to_layout_index): likewise
 
-Sa Apr  4 11:06:45 CEST 2009 Guido Günther <agx@sigxcpu.org>
+Sat Apr  4 11:06:45 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	add preferences capplet
 	* preferences/{krb5-auth-dialog-preferences.{c,glade,desktop.in},
@@ -32,7 +36,7 @@ Sa Apr  4 11:06:45 CEST 2009 Guido Günther <agx@sigxcpu.org>
 	  preferences
 	  (ka_applet_create_context_menu): add preferences context menu entry
 
-Sa Apr  4 10:57:23 CEST 2009 Guido Günther <agx@sigxcpu.org>
+Sat Apr  4 10:57:23 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	allow to set ticket proxiable, renewable and forwardable ticket flags
 	via gconf
@@ -47,7 +51,7 @@ Sa Apr  4 10:57:23 CEST 2009 Guido Günther <agx@sigxcpu.org>
 	  boolean gconf keys
 	* src/krb5-auth-dialog.schemas.in: add new gconf keys to schema
 
-Sa Apr  4 10:52:53 CEST 2009 Guido Günther <agx@sigxcpu.org>
+Sat Apr  4 10:52:53 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	split out gconf tool functions
 	* src/krb5-auth-gconf-tools.h: new file
@@ -56,13 +60,13 @@ Sa Apr  4 10:52:53 CEST 2009 Guido Günther <agx@sigxcpu.org>
 	  src/krb5-auth-gconf-tools.c
 	  (KA_GCONF_*): move to src/krb5-auth-gconf-tools.h
 
-Sa Mär 28 14:17:49 CET 2009 Guido Günther <agx@sigxcpu.org>
+Sat Mär 28 14:17:49 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add dbus service file
 	* src/org.gnome.KrbAuthDialog.service.in: new file
 	* src/Makefile.am (service_DATA): process annd install service file
 
-Di Mär 24 00:04:50 CET 2009 Guido Günther <agx@sigxcpu.org>
+Tue Mär 24 00:04:50 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	monitor ccache via GFileMontor
 	* src/krb5-auth-dialog.c (monitor_ccache, ka_ccache_filename,
@@ -70,7 +74,7 @@ Di Mär 24 00:04:50 CET 2009 Guido Günther <agx@sigxcpu.org>
 	  (main): monitor ccache via monitor_ccache
 	* configure.ac: look for gio-unix
 
-Di Mär 24 00:01:28 CET 2009 Guido Günther <agx@sigxcpu.org>
+Tue Mär 24 00:01:28 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-dialog.c (auth_dialog_prompter): handle
 	GTK_RESPONSE_DELETE_EVENT like GTK_RESPONSE_CANCEL so pressing ESC or
@@ -79,34 +83,34 @@ Di Mär 24 00:01:28 CET 2009 Guido Günther <agx@sigxcpu.org>
 	kerberos error codes - more robust since heimdal and mit have different
 	responses, let alone pkinit.
 
-Mo Mär 23 23:57:36 CET 2009 Guido Günther <agx@sigxcpu.org>
+Mon Mär 23 23:57:36 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	split password auth into a separate function
 	* src/krb5-auth-dialog.c (ka_auth_password): new function
 	  (grab_credentials): fall back to password auth if no token is
 	  present and pkinit is enabled
 
-Mo Mär 23 23:55:20 CET 2009 Guido Günther <agx@sigxcpu.org>
+Mon Mär 23 23:55:20 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-pwdialog.h: remove unused headers
 	* src/krb5-auth-applet.h: likewise
 	* src/krb5-auth-dialog.c (is_online): move static variable to the top
 
-Mi Mär 11 17:21:07 CET 2009 Guido Günther <agx@sigxcpu.org>
+Wed Mär 11 17:21:07 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	silence compiler warnings
 	* src/krb5-auth-{applet,dialog,gconf,pwdialog}.[ch]: mark unused
 	  parameters as G_GNUC_UNUSED or drop them, add missing void to
 	  prototypes
 
-Mi Mär 11 17:19:02 CET 2009 Guido Günther <agx@sigxcpu.org>
+Mon Mär 11 17:19:02 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add more compiler warnings
 	* acinclude.m4: add KA_COMPILE_WARNINGS
 	* compiler-flags.m4: add gl_COMPILER_FLAGS to test compiler options
 	* configure.ac: call KA_COMPILE_WARNINGS and add WARN_CFLAGS to CFLAGS
 
-Mi Mär 11 17:10:11 CET 2009 Guido Günther <agx@sigxcpu.org>
+Wed Mär 11 17:10:11 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	push the dialog into the foreground and grab the keyboard so we make
 	sure the user gets to see the dialog in all cases (e.g. when an app is
@@ -117,7 +121,7 @@ Mi Mär 11 17:10:11 CET 2009 Guido Günther <agx@sigxcpu.org>
 	  window_state_changed): new functions
 	  (ka_pwdialog_run): use these
 
-Mi Mär 11 17:04:03 CET 2009 Guido Günther <agx@sigxcpu.org>
+Wed Mär 11 17:04:03 CET 2009 Guido Günther <agx@sigxcpu.org>
 
 	add a pwdialog gobject - remove lots of duplicate code and splits most
 	of the password dialog handling into its own file

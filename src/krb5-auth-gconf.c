@@ -54,6 +54,20 @@ ka_gconf_set_pk_userid (GConfClient* client, KaApplet* applet)
 
 
 static gboolean
+ka_gconf_set_pk_anchors (GConfClient* client, KaApplet* applet)
+{
+	gchar*  pk_anchors = NULL;
+
+	if(!ka_gconf_get_string (client, KA_GCONF_KEY_PK_ANCHORS, &pk_anchors)) {
+		pk_anchors = g_strdup ("");
+	}
+	g_object_set(applet, "pk_anchors", pk_anchors, NULL);
+	g_free (pk_anchors);
+	return TRUE;
+}
+
+
+static gboolean
 ka_gconf_set_prompt_mins (GConfClient* client, KaApplet* applet)
 {
 	gint prompt_mins = 0;
@@ -140,6 +154,8 @@ ka_gconf_key_changed_callback (GConfClient* client,
 		ka_gconf_set_show_trayicon (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_PK_USERID) == 0) {
 		ka_gconf_set_pk_userid (client, applet);
+	} else if (g_strcmp0 (key, KA_GCONF_KEY_PK_ANCHORS) == 0) {
+		ka_gconf_set_pk_anchors(client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_FORWARDABLE) == 0) {
 		ka_gconf_set_tgt_forwardable (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_RENEWABLE) == 0) {
@@ -176,6 +192,7 @@ ka_gconf_init (KaApplet* applet,
 	ka_gconf_set_prompt_mins (client, applet);
 	ka_gconf_set_show_trayicon (client, applet);
 	ka_gconf_set_pk_userid(client, applet);
+	ka_gconf_set_pk_anchors(client, applet);
 	ka_gconf_set_tgt_forwardable(client, applet);
 	ka_gconf_set_tgt_renewable(client, applet);
 	ka_gconf_set_tgt_proxiable(client, applet);

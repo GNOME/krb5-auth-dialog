@@ -28,6 +28,7 @@
 #define KA_GCONF_PATH			"/apps/" PACKAGE
 #define KA_GCONF_KEY_PRINCIPAL		KA_GCONF_PATH "/principal"
 #define KA_GCONF_KEY_PK_USERID		KA_GCONF_PATH "/pk_userid"
+#define KA_GCONF_KEY_PK_ANCHORS		KA_GCONF_PATH "/pk_anchors"
 #define KA_GCONF_KEY_PROMPT_MINS	KA_GCONF_PATH "/prompt_minutes"
 #define KA_GCONF_KEY_SHOW_TRAYICON	KA_GCONF_PATH "/show_trayicon"
 #define KA_GCONF_KEY_FORWARDABLE	KA_GCONF_PATH "/forwardable"

@@ -1,3 +1,30 @@
+Fri Apr 17 13:20:09 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	make pkinit anchors configurable and pass pkinit options to
+	krb5_get_init_creds_opt_set_pa (MIT pkinit), if available.
+	* configure.ac: check for krb5_get_init_creds_opt_set_pa
+	* preferences/krb5-auth-dialog-preferences.c
+	  (ka_preferences_pkanchors_notify,
+	   ka_preferences_dialog_pkanchors_changed,
+	   ka_preferences_dialog_setup_pkanchors_entry): new functions
+	  (ka_preferences_dialog_init: call
+	   ka_preferences_dialog_setup_pkanchors_entry to handle pk_anchors
+	* preferences/krb5-auth-dialog-preferences.glade: add pkanchors_entry
+	  GtkEntry
+	* src/krb5-auth-applet.c (ka_applet-{set,get}_property,
+	  ka_applet_class_init): handle pk-anchors property
+	* src/krb5-auth-dialog.c (ka_set_ticket_options): pass pkinit userid
+	   and anchors to krb5_get_init_creds_opt_set_pa if available.
+	  (ka_auth_pkinit): rename to ka_auth_heimdal_pkinit
+	  (ka_auth_heimdal_pkinit): pass pk_anchors
+	  (grab_credentials): fetch pk_anchors from pk-anchors property and
+	   pass it to ka_auth_{password,heimdal_pkinit}
+	* src/krb5-auth-gconf.c (ka_gconf_set_pk_anchors): new function
+	  (ka_gconf_key_changed_callback): handle pk_anchors
+	  (ka_gconf_init); likewise
+	* src/krb5-auth-gconf-tools.h: add pk_anchors
+	* src/krb5-auth-dialog.schemas.in: add pk_anchors
+
 Fri Apr 17 13:19:18 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* AUTHORS: add Colin

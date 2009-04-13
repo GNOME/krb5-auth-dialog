@@ -34,8 +34,21 @@
       <default></default>
 
       <locale name="C">
-        <short>Pkinit identifier</short>
-        <long>The principal's public/private/certificate identifier when using pkinit</long>
+        <short>PKINIT identifier</short>
+        <long>The principal's public/private/certificate identifier when using PKINIT</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/::PACKAGE::/pk_anchors</key>
+      <applyto>/apps/::PACKAGE::/pk_anchors</applyto>
+      <owner>::PACKAGE::</owner>
+      <type>string</type>
+      <default></default>
+
+      <locale name="C">
+        <short>PKINIT trust anchors</short>
+        <long>PKINIT CA certificates</long>
       </locale>
     </schema>
 

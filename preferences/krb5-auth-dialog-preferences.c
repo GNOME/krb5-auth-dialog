@@ -36,7 +36,7 @@
 
 #include "krb5-auth-gconf-tools.h"
 
-#define N_LISTENERS 7
+#define N_LISTENERS 8
 
 typedef struct {
   GladeXML    *xml;
@@ -45,6 +45,7 @@ typedef struct {
   GtkWidget *dialog;
   GtkWidget *principal_entry;
   GtkWidget *pkuserid_entry;
+  GtkWidget *pkanchors_entry;
   GtkWidget *forwardable_toggle;
   GtkWidget *proxiable_toggle;
   GtkWidget *renewable_toggle;
@@ -192,6 +193,76 @@ ka_preferences_dialog_setup_pkuserid_entry (KaPreferencesDialog *dialog)
   dialog->listeners [dialog->n_listeners] = gconf_client_notify_add (dialog->client,
                           KA_GCONF_KEY_PK_USERID,
                           (GConfClientNotifyFunc) ka_preferences_pkuserid_notify,
+                          dialog, NULL, NULL);
+  dialog->n_listeners++;
+}
+
+
+static void
+ka_preferences_pkanchors_notify (GConfClient *client G_GNUC_UNUSED,
+                           guint cnx_id G_GNUC_UNUSED,
+                           GConfEntry *entry,
+                           KaPreferencesDialog *dialog)
+{
+  const char *pkanchors;
+
+  if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
+      return;
+
+  pkanchors = gconf_value_get_string (entry->value);
+
+  if (!pkanchors || !strlen(pkanchors))
+      gtk_entry_set_text (GTK_ENTRY (dialog->pkanchors_entry), "");
+  else {
+      const char *old_pkanchors;
+
+      old_pkanchors = gtk_entry_get_text (GTK_ENTRY (dialog->pkanchors_entry));
+      if (!old_pkanchors || (old_pkanchors && strcmp (old_pkanchors, pkanchors)))
+          gtk_entry_set_text (GTK_ENTRY (dialog->pkanchors_entry), pkanchors);
+  }
+}
+
+
+static void
+ka_preferences_dialog_pkanchors_changed (GtkEntry *entry,
+                                   KaPreferencesDialog *dialog)
+{
+  const char *pkanchors;
+
+  pkanchors = gtk_entry_get_text (entry);
+
+  if (!pkanchors || !strlen(pkanchors))
+      gconf_client_unset (dialog->client, KA_GCONF_KEY_PK_ANCHORS, NULL);
+  else
+      gconf_client_set_string (dialog->client, KA_GCONF_KEY_PK_ANCHORS, pkanchors, NULL);
+}
+
+
+static void
+ka_preferences_dialog_setup_pkanchors_entry (KaPreferencesDialog *dialog)
+{
+  char     *pkanchors = NULL;
+
+  dialog->pkanchors_entry = glade_xml_get_widget (dialog->xml, "pkanchors_entry");
+  g_assert (dialog->pkanchors_entry != NULL);
+
+  if (!ka_gconf_get_string (dialog->client, KA_GCONF_KEY_PK_ANCHORS, &pkanchors))
+      g_warning ("Getting pkanchors failed");
+
+  if (pkanchors && strlen(pkanchors))
+      gtk_entry_set_text (GTK_ENTRY (dialog->pkanchors_entry), pkanchors);
+  if (pkanchors)
+      g_free (pkanchors);
+
+  g_signal_connect (dialog->pkanchors_entry, "changed",
+      G_CALLBACK (ka_preferences_dialog_pkanchors_changed), dialog);
+  if (!gconf_client_key_is_writable (dialog->client, KA_GCONF_KEY_PK_ANCHORS, NULL)) {
+      gtk_widget_set_sensitive (dialog->pkanchors_entry, FALSE);
+  }
+
+  dialog->listeners [dialog->n_listeners] = gconf_client_notify_add (dialog->client,
+                          KA_GCONF_KEY_PK_ANCHORS,
+                          (GConfClientNotifyFunc) ka_preferences_pkanchors_notify,
                           dialog, NULL, NULL);
   dialog->n_listeners++;
 }
@@ -552,6 +623,7 @@ ka_preferences_dialog_init(KaPreferencesDialog* dialog)
 
   ka_preferences_dialog_setup_principal_entry (dialog);
   ka_preferences_dialog_setup_pkuserid_entry (dialog);
+  ka_preferences_dialog_setup_pkanchors_entry(dialog);
   ka_preferences_dialog_setup_forwardable_toggle (dialog);
   ka_preferences_dialog_setup_proxiable_toggle (dialog);
   ka_preferences_dialog_setup_renewable_toggle (dialog);

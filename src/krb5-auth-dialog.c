@@ -382,14 +382,14 @@ out:
  * set ticket options by looking at krb5.conf and gconf
  */
 static void
-ka_set_ticket_options(KaApplet* applet,
-		      krb5_get_init_creds_opt *out)
+ka_set_ticket_options(KaApplet* applet, krb5_context context,
+		      krb5_get_init_creds_opt *out,
+		      const char* pk_userid, const char* pk_anchors)
 {
 	gboolean flag;
-
 #ifdef HAVE_KRB5_GET_INIT_CREDS_OPT_SET_DEFAULT_FLAGS
-	krb5_get_init_creds_opt_set_default_flags(kcontext, PACKAGE,
-		krb5_principal_get_realm(kcontext, kprincipal), out);
+	krb5_get_init_creds_opt_set_default_flags(context, PACKAGE,
+		krb5_principal_get_realm(context, kprincipal), out);
 #endif
 	g_object_get(applet, "tgt-forwardable", &flag, NULL);
 	if (flag)
@@ -402,6 +402,20 @@ ka_set_ticket_options(KaApplet* applet,
 		krb5_deltat r = 3600*24*30; /* 1 month */
 		krb5_get_init_creds_opt_set_renew_life (out, r);
 	}
+
+#if ENABLE_PKINIT && HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PA
+	/* pkinit optins for MIT Kerberos */
+	if (pk_userid && strlen(pk_userid)) {
+		KA_DEBUG("pkinit with '%s'", pk_userid);
+		krb5_get_init_creds_opt_set_pa(context, out,
+			"X509_user_identity", pk_userid);
+		if (pk_anchors && strlen(pk_anchors)) {
+			KA_DEBUG("pkinit anchors '%s'", pk_anchors);
+			krb5_get_init_creds_opt_set_pa(context, out,
+				"X509_anchors", pk_anchors);
+		}
+	}
+#endif /* HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PA */
 }
 
 
@@ -445,24 +459,29 @@ set_options_from_creds(const KaApplet* applet,
 }
 
 
-#ifdef ENABLE_PKINIT
+#if ENABLE_PKINIT && HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PKINIT
 static krb5_error_code
-ka_auth_pkinit(KaApplet* applet, krb5_creds* creds, const char* pk_userid)
+ka_auth_heimdal_pkinit(KaApplet* applet, krb5_creds* creds,
+                       const char* pk_userid, const char* pk_anchors)
 {
 	krb5_get_init_creds_opt *opts = NULL;
 	krb5_error_code retval;
+	const char* pkinit_anchors = NULL;
 
 	KA_DEBUG("pkinit with '%s'", pk_userid);
+	if (pk_anchors && strlen (pk_anchors)) {
+		pkinit_anchors = pk_anchors;
+		KA_DEBUG("pkinit anchors '%s'", pkinit_anchors);
+	}
 
-	retval = krb5_get_init_creds_opt_alloc (kcontext, &opts);
-	if (retval)
+	if ((retval = krb5_get_init_creds_opt_alloc (kcontext, &opts)))
 		goto out;
-	ka_set_ticket_options (applet, opts);
 
+	ka_set_ticket_options (applet, kcontext, opts, NULL, NULL);
 	retval = krb5_get_init_creds_opt_set_pkinit(kcontext, opts,
 						    kprincipal,
 						    pk_userid,
-						    NULL, /* x509 anchors */
+						    pkinit_anchors,
 						    NULL,
 						    NULL,
 						    0,	  /* pk_use_enc_key */
@@ -484,15 +503,17 @@ out:
 #endif /* ! ENABLE_PKINIT */
 
 static krb5_error_code
-ka_auth_password(KaApplet* applet, krb5_creds* creds)
+ka_auth_password(KaApplet* applet, krb5_creds* creds,
+                 const char* pk_userid, const char* pk_anchors)
 {
 	krb5_error_code retval;
 	krb5_get_init_creds_opt *opts = NULL;
 
-	retval = krb5_get_init_creds_opt_alloc (kcontext, &opts);
-	if (retval)
+	if ((retval = krb5_get_init_creds_opt_alloc (kcontext, &opts)))
 		goto out;
-	ka_set_ticket_options (applet, opts);
+	ka_set_ticket_options (applet, kcontext, opts,
+	                       pk_userid, pk_anchors);
+
 	retval = krb5_get_init_creds_password(kcontext, creds, kprincipal,
 					      NULL, auth_dialog_prompter, applet,
 					      0, NULL, opts);
@@ -585,6 +606,7 @@ grab_credentials (KaApplet* applet)
 	krb5_creds my_creds;
 	krb5_ccache ccache;
 	gchar *pk_userid = NULL;
+	gchar *pk_anchors = NULL;
 	gboolean pw_auth = TRUE;
 
 	memset(&my_creds, 0, sizeof(my_creds));
@@ -599,18 +621,22 @@ grab_credentials (KaApplet* applet)
 	if (retval)
 		goto out2;
 
-	g_object_get(applet, "pk-userid", &pk_userid, NULL);
-#ifdef ENABLE_PKINIT
+	g_object_get(applet, "pk-userid", &pk_userid,
+	                     "pk-anchors", &pk_anchors,
+	                     NULL);
+#if ENABLE_PKINIT && HAVE_HX509_ERR_H && HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PKINIT
 	/* pk_userid set: try pkinit */
 	if (pk_userid && strlen(pk_userid)) {
-		retval = ka_auth_pkinit(applet, &my_creds, pk_userid);
+		retval = ka_auth_heimdal_pkinit(applet, &my_creds,
+		                                pk_userid, pk_anchors);
 		/* other error than: "no token found" - no need to try password auth: */
 		if (retval != HX509_PKCS11_NO_TOKEN && retval != HX509_PKCS11_NO_SLOT)
 			pw_auth = FALSE;
 	}
 #endif /* ENABLE_PKINIT */
 	if (pw_auth)
-		retval = ka_auth_password(applet, &my_creds);
+		retval = ka_auth_password(applet, &my_creds,
+		                          pk_userid, pk_anchors);
 
 	creds_expiry = my_creds.times.endtime;
 	if (canceled)
@@ -621,8 +647,7 @@ grab_credentials (KaApplet* applet)
 			case KRB5KRB_AP_ERR_BAD_INTEGRITY:
 #ifdef HAVE_HX509_ERR_H
 			case HX509_PKCS11_LOGIN:
-#endif
-				/* Invalid password/pin, try again. */
+#endif 				/* Invalid password/pin, try again. */
 				invalid_auth = TRUE;
 				break;
 			default:

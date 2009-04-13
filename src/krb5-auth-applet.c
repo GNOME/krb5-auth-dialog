@@ -41,6 +41,7 @@ enum
   KA_PROP_0 = 0,
   KA_PROP_PRINCIPAL,
   KA_PROP_PK_USERID,
+  KA_PROP_PK_ANCHORS,
   KA_PROP_TRAYICON,
   KA_PROP_PW_PROMPT_MINS,
   KA_PROP_TGT_FORWARDABLE,
@@ -76,6 +77,7 @@ struct _KaAppletPrivate
 	char* principal;		/* the principal to request */
 	gboolean renewable;		/* credentials renewable? */
 	char* pk_userid;		/* "userid" for pkint */
+	char* pk_anchors;		/* trust anchors for pkint */
 	gboolean tgt_forwardable;	/* request a forwardable ticket */
 	gboolean tgt_renewable;		/* request a renewable ticket */
 	gboolean tgt_proxiable;		/* request a proxiable ticket */
@@ -100,6 +102,12 @@ ka_applet_set_property (GObject      *object,
 	g_free (self->priv->pk_userid);
 	self->priv->pk_userid = g_value_dup_string (value);
 	KA_DEBUG ("%s: %s", pspec->name, self->priv->pk_userid);
+	break;
+
+     case KA_PROP_PK_ANCHORS:
+	g_free (self->priv->pk_anchors);
+	self->priv->pk_anchors = g_value_dup_string (value);
+	KA_DEBUG ("%s: %s", pspec->name, self->priv->pk_anchors);
 	break;
 
     case KA_PROP_TRAYICON:
@@ -150,6 +158,10 @@ ka_applet_get_property (GObject    *object,
 
     case KA_PROP_PK_USERID:
 	g_value_set_string (value, self->priv->pk_userid);
+	break;
+
+    case KA_PROP_PK_ANCHORS:
+	g_value_set_string (value, self->priv->pk_anchors);
 	break;
 
     case KA_PROP_TRAYICON:
@@ -207,6 +219,7 @@ ka_applet_finalize(GObject *object)
 
 	g_free (applet->priv->principal);
 	g_free (applet->priv->pk_userid);
+	g_free (applet->priv->pk_anchors);
 	/* no need to free applet->priv */
 
 	if (parent_class->finalize != NULL)
@@ -250,6 +263,15 @@ ka_applet_class_init(KaAppletClass *klass)
 				     G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
 	g_object_class_install_property (object_class,
                                          KA_PROP_PK_USERID,
+                                         pspec);
+
+	pspec = g_param_spec_string ("pk-anchors",
+				     "PKinit trust anchors",
+				     "Get/Set Pkinit trust anchors",
+				     "",
+				     G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
+	g_object_class_install_property (object_class,
+                                         KA_PROP_PK_ANCHORS,
                                          pspec);
 
 	pspec = g_param_spec_boolean("show-trayicon",

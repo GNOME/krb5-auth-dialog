@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Mon Apr 13 18:26:03 2009 -->
+<!--Generated with glade3 3.4.5 on Tue Apr 14 22:22:46 2009 -->
 <glade-interface>
   <widget class="GtkDialog" id="krb5_auth_dialog_prefs">
     <property name="border_width">5</property>
@@ -87,6 +87,7 @@
                                   <widget class="GtkEntry" id="principal_entry">
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
+                                    <property name="activates_default">True</property>
                                   </widget>
                                   <packing>
                                     <property name="position">1</property>
@@ -128,6 +129,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="tooltip" translatable="yes">The principal's public/private/certificate identifier. Leave empty if not using PKINIT.</property>
+                                    <property name="activates_default">True</property>
                                   </widget>
                                   <packing>
                                     <property name="position">1</property>
@@ -169,6 +171,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="tooltip" translatable="yes">Path to CA certificates used as trust anchors for PKINIT</property>
+                                    <property name="activates_default">True</property>
                                   </widget>
                                   <packing>
                                     <property name="position">1</property>
@@ -433,6 +436,7 @@
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
                                 <property name="tooltip" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires. </property>
+                                <property name="activates_default">True</property>
                                 <property name="adjustment">0 0 100 1 10 10</property>
                               </widget>
                               <packing>
@@ -593,6 +597,8 @@
               <widget class="GtkButton" id="button1">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
+                <property name="can_default">True</property>
+                <property name="has_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="label" translatable="yes">gtk-close</property>
                 <property name="use_stock">True</property>

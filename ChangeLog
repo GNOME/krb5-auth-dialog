@@ -1,3 +1,8 @@
+Fri Apr 17 13:36:00 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* preferences/krb5-auth-dialog-preferences.glade: mark GtkEntrys
+	  activates_default and close button as has_default.
+
 Fri Apr 17 13:20:09 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	make pkinit anchors configurable and pass pkinit options to

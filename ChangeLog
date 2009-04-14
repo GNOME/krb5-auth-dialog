@@ -1,3 +1,10 @@
+Thu Apr 23 11:14:37 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	drop "Password:" label from dialog. It's in the kerberos prompt and
+	confusing if prompted for a PIN.
+	* src/krb5-auth-dialog.glade: drop password label 
+	* src/krb5-auth-dialog.c (ka_pwdialog_setup): colon terminate prompts
+
 Sat Apr 18 00:19:02 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-gconf.c (ka_gconf_set_principal): handle length zero

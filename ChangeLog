@@ -1,3 +1,8 @@
+Sat Apr 18 00:19:02 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-gconf.c (ka_gconf_set_principal): handle length zero
+	  KA_GCONF_KEY_PRINCIPAL
+
 Fri Apr 17 13:36:00 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* preferences/krb5-auth-dialog-preferences.glade: mark GtkEntrys

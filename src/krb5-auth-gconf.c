@@ -20,6 +20,7 @@
 #include "config.h"
 
 #include <gconf/gconf-client.h>
+#include <string.h>
 
 #include "krb5-auth-applet.h"
 #include "krb5-auth-gconf-tools.h"
@@ -30,7 +31,9 @@ ka_gconf_set_principal (GConfClient* client, KaApplet* applet)
 {
 	gchar* principal = NULL;
 
-	if(!ka_gconf_get_string (client, KA_GCONF_KEY_PRINCIPAL, &principal)) {
+	if(!ka_gconf_get_string (client, KA_GCONF_KEY_PRINCIPAL, &principal)
+	   || !strlen(principal)) {
+		g_free (principal);
 		principal = g_strdup (g_get_user_name());
 	}
 	g_object_set(applet, "principal", principal, NULL);

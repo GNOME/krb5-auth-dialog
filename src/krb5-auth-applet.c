@@ -371,13 +371,26 @@ ka_applet_select_icon(KaApplet* applet, int remaining)
 }
 
 
-static void
-ka_send_event_notification (KaApplet *applet G_GNUC_UNUSED,
-			    const char *summary G_GNUC_UNUSED,
-			    const char *message G_GNUC_UNUSED,
-			    const char *icon G_GNUC_UNUSED)
-{
 #ifdef HAVE_LIBNOTIFY
+static gboolean
+show_notification (KaApplet *applet)
+{
+	/* wait for the panel to be settled before showing a bubble */
+	if (gtk_status_icon_is_embedded (applet->priv->tray_icon)) {
+		notify_notification_show (applet->priv->notification, NULL);
+	} else {
+		g_timeout_add_seconds (5, (GSourceFunc)show_notification, applet);
+	}
+	return FALSE;
+}
+
+
+static void
+ka_send_event_notification (KaApplet *applet,
+			    const char *summary,
+			    const char *message,
+			    const char *icon)
+{
         const char *notify_icon;
 
 	g_return_if_fail (applet != NULL);
@@ -398,9 +411,17 @@ ka_send_event_notification (KaApplet *applet G_GNUC_UNUSED,
 		notify_notification_new_with_status_icon(summary, message, notify_icon, applet->priv->tray_icon);
 
 	notify_notification_set_urgency (applet->priv->notification, NOTIFY_URGENCY_NORMAL);
-	notify_notification_show (applet->priv->notification, NULL);
-#endif /* HAVE_LIBNOTIFY */
+	show_notification (applet);
 }
+#else
+static void
+ka_send_event_notification (KaApplet *applet G_GNUC_UNUSED,
+			    const char *summary G_GNUC_UNUSED,
+			    const char *message G_GNUC_UNUSED,
+			    const char *icon G_GNUC_UNUSED)
+{
+}
+#endif /* ! HAVE_LIBNOTIFY */
 
 
 /* update the tray icon's tooltip and icon */

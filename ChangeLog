@@ -1,3 +1,9 @@
+Fri Apr 24 10:48:30 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-pwdialog.c: query current invisiable char from
+	GtkEntry and set it for GtkSecureEntry too. Patch by Matthias Clasen.
+	(BZ: #538339)
+
 Fri Apr 24 10:46:20 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* gtksecentry/gtksecentry.c: don't install "gtk-entry-select-on-focus"

@@ -191,6 +191,7 @@ ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
 {
 	KaPwDialogPrivate *priv = pwdialog->priv;
 	gchar *wrong_markup = NULL;
+	GtkWidget *e;
 	gchar *prompt;
 	int pw4len;
 
@@ -211,6 +212,11 @@ ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
 			prompt = g_strdup (krb5prompt);
 		}
 	}
+
+	e = gtk_entry_new ();
+	gtk_secure_entry_set_invisible_char (GTK_SECURE_ENTRY (priv->pw_entry),
+	                                     gtk_entry_get_invisible_char (GTK_ENTRY (e)));
+	gtk_widget_destroy (e);
 
 	/* Clear the password entry field */
 	gtk_secure_entry_set_text (GTK_SECURE_ENTRY (priv->pw_entry), "");

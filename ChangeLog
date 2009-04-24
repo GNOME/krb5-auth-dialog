@@ -1,3 +1,10 @@
+Fri Apr 24 10:46:20 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* gtksecentry/gtksecentry.c: don't install "gtk-entry-select-on-focus"
+	settings property since it clashes with the one from GtkEntry. Allows
+	to have GtkEntry and GtkSecureEntry in the same process.
+	(https://bugs.g10code.com/gnupg/issue1029).
+
 Fri Apr 24 09:39:16 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* AUTHORS: add Matthias Clasen

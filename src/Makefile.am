@@ -70,6 +70,7 @@ EXTRA_DIST =		\
 	$(schema_in_files) \
 	$(autostart_in_files) \
 	$(service_in_files) \
+	$(srcdir)/krb5-auth-applet-dbus.xml \
 	krb5-auth-dialog.1.in
 
 CLEANFILES = $(schema_DATA) $(service_DATA)

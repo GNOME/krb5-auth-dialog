@@ -1,3 +1,8 @@
+Thu Apr 30 18:03:10 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/Makefile.am: add krb5-auth-applet-dbus.xml to EXTRA_DIST
+	(BZ: #580789)
+
 Fri Apr 24 10:48:30 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-pwdialog.c: query current invisiable char from

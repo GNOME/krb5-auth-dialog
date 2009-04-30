@@ -1,3 +1,7 @@
+Thu Apr 30 18:07:32 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* configure.ac: release 0.9.1 
+
 Thu Apr 30 18:03:10 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/Makefile.am: add krb5-auth-applet-dbus.xml to EXTRA_DIST

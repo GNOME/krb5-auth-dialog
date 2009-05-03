@@ -1,3 +1,7 @@
+Sun May  3 16:42:16 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* .gitignore: ignore more generated files 
+
 Sun May  3 16:38:42 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	Remove cvs ignore files

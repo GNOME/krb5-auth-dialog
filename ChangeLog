@@ -1,3 +1,11 @@
+Sun May  3 16:38:42 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	Remove cvs ignore files
+	* .cvsignore: remove 
+	* etpo/.cvsignore: likewise
+	* po/.cvsignore: likewise
+	* src/.cvsignore: likewise
+
 Sun May  3 16:36:31 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* configure.ac: add sv to ALL_LINGUAS 

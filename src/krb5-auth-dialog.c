@@ -31,6 +31,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <glade/glade.h>
+#include <gio/gio.h>
 
 #include "gtksecentry.h"
 #include "secmem-util.h"

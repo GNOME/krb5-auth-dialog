@@ -1,3 +1,10 @@
+Sun May  3 17:33:22 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	fix build with GLib < 2.18
+	* configure.ac: check for gio
+	* src/Makefile.am: add GIO to LDADD
+	* src/krb5-auth-dialog.c: add missing gio.h include
+
 Sun May  3 17:31:36 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-dialog-preferences.c (ka_preferences_dialog_response):

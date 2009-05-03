@@ -48,6 +48,7 @@ krb5_auth_dialog_LDADD = \
 			@DBUS_LIBS@ \
 			@GCONF_LIBS@ \
 			@GLADE_LIBS@ \
+			@GIO_LIBS@ \
 			@GTK_LIBS@
 
 BUILT_SOURCES = \

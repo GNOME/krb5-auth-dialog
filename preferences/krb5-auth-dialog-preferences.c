@@ -568,9 +568,13 @@ ka_preferences_dialog_response (GtkWidget *widget,
       return;
   }
 
+#if GTK_CHECK_VERSION(2, 14, 0)
   gtk_show_uri (gtk_window_get_screen (GTK_WINDOW (dialog->dialog)),
                 "ghelp:krb5-auth-dialog#preferences",
                 gtk_get_current_event_time (), &error);
+#else
+   g_warning("gtk_show_uri unavailable");
+#endif
 
   if (error) {
       GtkWidget *message_dialog;

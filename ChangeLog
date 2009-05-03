@@ -1,3 +1,8 @@
+Sun May  3 17:31:36 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-dialog-preferences.c (ka_preferences_dialog_response):
+	  Fix compilation with GTK+ < 2.14.
+
 Sun May  3 16:43:22 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* Makefile.am: ship MAINTAINERS

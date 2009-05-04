@@ -23,7 +23,6 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <glade/glade.h>
 
 #include "config.h"
 #include "gtksecentry.h"
@@ -49,7 +48,7 @@ typedef struct _KaPwDialogPrivate KaPwDialogPrivate;
 GType ka_pwdialog_get_type (void);
 
 /* public functions */
-KaPwDialog* ka_pwdialog_create(GladeXML *xml);
+KaPwDialog* ka_pwdialog_create(GtkBuilder *xml);
 /* setup everything for the next prompting */
 void ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
                         gboolean invalid_auth);

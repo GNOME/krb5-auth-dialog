@@ -1,3 +1,17 @@
+Thu May  7 10:39:32 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	Switch from Libglade to GtkBuilder
+	* src/krb5-auth-dialog.xml: new file
+	* preferences/krb5-auth-dialog-preferences.xml: likewise
+	* src/krb5-auth-dialog.glade: remove
+	* preferences/krb5-auth-dialog-preferences.glade: likewise
+	* src/krb5-auth-{applet,pwdialog}.[ch]: use GtkBuilder instead of
+	  glade
+	* configure.ac: drop libglade check
+	* po/POTFILES.in: look for krb5-auth-dialog{,-preferences}.xml instead
+	  of .glade
+	* {src,preferences,etpo}/Makefile.am: drop libglade
+
 Sun May  3 17:33:22 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	fix build with GLib < 2.18

@@ -47,7 +47,6 @@ krb5_auth_dialog_LDADD = \
 			@LIBNOTIFY_LIBS@ \
 			@DBUS_LIBS@ \
 			@GCONF_LIBS@ \
-			@GLADE_LIBS@ \
 			@GIO_LIBS@ \
 			@GTK_LIBS@
 
@@ -64,7 +63,7 @@ AM_CPPFLAGS = -I $(top_srcdir)/gtksecentry/ -I $(top_srcdir)/secmem/
 
 pkgdatadir = $(datadir)/krb5-auth-dialog
 pkgdata_DATA =			\
-	krb5-auth-dialog.glade
+	krb5-auth-dialog.xml
 
 EXTRA_DIST =		\
 	$(pkgdata_DATA)   \

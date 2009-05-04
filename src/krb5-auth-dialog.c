@@ -30,7 +30,6 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <glade/glade.h>
 #include <gio/gio.h>
 
 #include "gtksecentry.h"
@@ -935,36 +934,13 @@ ka_nm_init(void)
 }
 
 
-static GtkWidget*
-ka_create_gtk_secure_entry (GladeXML *xml G_GNUC_UNUSED,
-			    gchar *func_name G_GNUC_UNUSED,
-			    gchar *name,
-			    gchar *s1 G_GNUC_UNUSED,
-			    gchar *s2 G_GNUC_UNUSED,
-			    gint i1 G_GNUC_UNUSED,
-			    gint i2 G_GNUC_UNUSED,
-			    gpointer user_data G_GNUC_UNUSED)
-{
-	GtkWidget* entry = NULL;
-
-	if (!strcmp(name, "krb5_entry")) {
-		entry = gtk_secure_entry_new ();
-		gtk_secure_entry_set_activates_default(GTK_SECURE_ENTRY(entry), TRUE);
-		gtk_widget_show (entry);
-	} else {
-		g_warning("Don't know anything about widget %s", name);
-	}
-	return entry;
-}
-
-
 int
 main (int argc, char *argv[])
 {
 	KaApplet *applet;
 	GOptionContext *context;
 	GError *error = NULL;
-	GladeXML *xml;
+	GtkBuilder *xml;
 
 	guint status = 0;
 	gboolean run_auto = FALSE, run_always = FALSE;
@@ -1003,9 +979,9 @@ main (int argc, char *argv[])
 	if (using_krb5 () || always_run) {
 		g_set_application_name (_("Network Authentication"));
 
-		glade_set_custom_handler (&ka_create_gtk_secure_entry, NULL);
-		xml = glade_xml_new (KA_DATA_DIR G_DIR_SEPARATOR_S
-				     PACKAGE ".glade", NULL, NULL);
+		xml = gtk_builder_new();
+		g_assert(gtk_builder_add_from_file(xml, KA_DATA_DIR G_DIR_SEPARATOR_S
+				                   PACKAGE ".xml", NULL));
 		applet = ka_applet_create (xml);
 		if (!applet)
 			return 1;

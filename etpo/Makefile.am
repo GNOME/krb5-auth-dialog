@@ -4,7 +4,6 @@ lexer.c: grammar.h
 AM_YFLAGS=-d
 AM_CFLAGS=\
 	@GTK_CFLAGS@ 		 \
-	@GLADE_CFLAGS@		 \
 	@DBUS_CFLAGS@		 \
 	@GCONF_CFLAGS@		 \
 	@KRB5_CFLAGS@		 \
@@ -17,7 +16,6 @@ AM_LDFLAGS=\
 	@LIBNOTIFY_LIBS@ \
 	@DBUS_LIBS@ \
 	@GCONF_LIBS@ \
-	@GLADE_LIBS@ \
 	@GTK_LIBS@
 
 DISTCLEANFILES=lexer.c

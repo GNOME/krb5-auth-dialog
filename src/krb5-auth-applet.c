@@ -664,7 +664,7 @@ ka_applet_get_pwdialog(const KaApplet* applet)
 
 /* create the tray icon applet */
 KaApplet*
-ka_applet_create(GladeXML* xml)
+ka_applet_create(GtkBuilder *xml)
 {
 	KaApplet* applet = ka_applet_new();
 

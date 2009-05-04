@@ -1,138 +1,155 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--*- mode: xml -*-->
-<glade-interface>
-  <widget class="GtkDialog" id="krb5_dialog">
+<?xml version="1.0"?>
+<interface>
+  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-naming-policy toplevel-contextual -->
+  <object class="GtkDialog" id="krb5_dialog">
     <property name="border_width">6</property>
     <property name="title" translatable="yes">Network Authentication</property>
     <property name="resizable">False</property>
-    <property name="window_position">GTK_WIN_POS_CENTER</property>
-    <property name="type_hint">GDK_WINDOW_TYPE_HINT_NORMAL</property>
+    <property name="window_position">center</property>
+    <property name="type_hint">normal</property>
     <property name="has_separator">False</property>
     <child internal-child="vbox">
-      <widget class="GtkVBox" id="dialog-vbox2">
+      <object class="GtkVBox" id="dialog-vbox2">
         <property name="visible">True</property>
         <child>
-          <widget class="GtkHBox" id="hbox1">
+          <object class="GtkHBox" id="hbox1">
             <property name="visible">True</property>
             <property name="border_width">6</property>
             <property name="spacing">12</property>
             <child>
-              <widget class="GtkImage" id="image1">
+              <object class="GtkImage" id="image1">
                 <property name="visible">True</property>
                 <property name="yalign">0</property>
                 <property name="stock">gtk-dialog-authentication</property>
-                <property name="icon_size">6</property>
-              </widget>
+                <property name="icon-size">6</property>
+              </object>
               <packing>
                 <property name="expand">False</property>
+                <property name="position">0</property>
               </packing>
             </child>
             <child>
-              <widget class="GtkAlignment" id="alignment4">
+              <object class="GtkAlignment" id="alignment4">
                 <property name="visible">True</property>
                 <property name="bottom_padding">10</property>
                 <child>
-                  <widget class="GtkVBox" id="vbox2">
+                  <object class="GtkVBox" id="vbox2">
                     <property name="visible">True</property>
                     <property name="spacing">12</property>
                     <child>
-                      <widget class="GtkVBox" id="vbox1">
+                      <object class="GtkVBox" id="vbox1">
                         <property name="visible">True</property>
                         <child>
-                          <widget class="GtkLabel" id="krb5_message_label">
+                          <object class="GtkLabel" id="krb5_message_label">
                             <property name="visible">True</property>
                             <property name="xalign">0</property>
                             <property name="use_markup">True</property>
-                          </widget>
+                          </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">False</property>
+                            <property name="position">0</property>
                           </packing>
                         </child>
-                      </widget>
+                      </object>
+                      <packing>
+                        <property name="position">0</property>
+                      </packing>
                     </child>
                     <child>
-                      <widget class="GtkVBox" id="vbox3">
+                      <object class="GtkVBox" id="vbox3">
                         <property name="visible">True</property>
                         <property name="spacing">3</property>
                         <child>
-                          <widget class="GtkHBox" id="hbox5">
+                          <object class="GtkHBox" id="entry_hbox">
                             <property name="visible">True</property>
                             <property name="spacing">3</property>
                             <child>
-                              <widget class="Custom" id="krb5_entry">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                              </widget>
+                              <placeholder/>
                             </child>
-                          </widget>
+                          </object>
+                          <packing>
+                            <property name="position">0</property>
+                          </packing>
                         </child>
                         <child>
-                          <widget class="GtkLabel" id="krb5_status_label">
+                          <object class="GtkLabel" id="krb5_status_label">
                             <property name="visible">True</property>
                             <property name="xalign">1</property>
                             <property name="label">&lt;span size="smaller"&gt; &lt;/span&gt;</property>
                             <property name="use_markup">True</property>
-                          </widget>
+                          </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">False</property>
                             <property name="position">1</property>
                           </packing>
                         </child>
-                      </widget>
+                      </object>
                       <packing>
                         <property name="position">1</property>
                       </packing>
                     </child>
-                  </widget>
+                  </object>
                 </child>
-              </widget>
+              </object>
               <packing>
                 <property name="position">1</property>
               </packing>
             </child>
-          </widget>
+          </object>
           <packing>
             <property name="position">1</property>
           </packing>
         </child>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area2">
+          <object class="GtkHButtonBox" id="dialog-action_area2">
             <property name="visible">True</property>
-            <property name="layout_style">GTK_BUTTONBOX_END</property>
+            <property name="layout_style">end</property>
             <child>
-              <widget class="GtkButton" id="cancelbutton1">
+              <object class="GtkButton" id="cancelbutton1">
+                <property name="label">gtk-cancel</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
-                <property name="label">gtk-cancel</property>
+                <property name="receives_default">False</property>
                 <property name="use_stock">True</property>
-                <property name="response_id">-6</property>
-              </widget>
+              </object>
+              <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
+                <property name="position">0</property>
+              </packing>
             </child>
             <child>
-              <widget class="GtkButton" id="krb5_renew_button">
+              <object class="GtkButton" id="krb5_renew_button">
+                <property name="label" translatable="yes">_Renew Ticket</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="has_default">True</property>
-                <property name="label" translatable="yes">_Renew Ticket</property>
+                <property name="receives_default">False</property>
                 <property name="use_underline">True</property>
-                <property name="response_id">-5</property>
-              </widget>
+              </object>
               <packing>
+                <property name="expand">False</property>
+                <property name="fill">False</property>
                 <property name="position">1</property>
               </packing>
             </child>
-          </widget>
+          </object>
           <packing>
             <property name="expand">False</property>
-            <property name="pack_type">GTK_PACK_END</property>
+            <property name="pack_type">end</property>
+            <property name="position">0</property>
           </packing>
         </child>
-      </widget>
+      </object>
     </child>
-  </widget>
-</glade-interface>
+    <action-widgets>
+      <action-widget response="-6">cancelbutton1</action-widget>
+      <action-widget response="-5">krb5_renew_button</action-widget>
+    </action-widgets>
+  </object>
+</interface>

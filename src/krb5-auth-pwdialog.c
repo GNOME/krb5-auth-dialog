@@ -237,15 +237,21 @@ ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
 }
 
 KaPwDialog*
-ka_pwdialog_create(GladeXML* xml)
+ka_pwdialog_create(GtkBuilder* xml)
 {
 	KaPwDialog *pwdialog = ka_pwdialog_new();
 	KaPwDialogPrivate *priv = pwdialog->priv;
+	GtkWidget *entry_hbox = NULL;
 
-	priv->dialog = glade_xml_get_widget (xml, "krb5_dialog");
-	priv->status_label = glade_xml_get_widget (xml, "krb5_status_label");
-	priv->pw_entry = glade_xml_get_widget (xml, "krb5_entry");
-	priv->krb_label = glade_xml_get_widget (xml, "krb5_message_label");
+	priv->dialog = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_dialog"));
+	priv->status_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_status_label"));
+	priv->krb_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_message_label"));
+	priv->pw_entry = GTK_WIDGET (gtk_secure_entry_new ());
+
+	entry_hbox = GTK_WIDGET (gtk_builder_get_object (xml, "entry_hbox"));
+	gtk_container_add (GTK_CONTAINER (entry_hbox), priv->pw_entry);
+	gtk_secure_entry_set_activates_default (GTK_SECURE_ENTRY (priv->pw_entry), TRUE);
+	gtk_widget_show (priv->pw_entry);
 
 	return pwdialog;
 }

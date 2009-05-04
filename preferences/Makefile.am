@@ -18,7 +18,6 @@ krb5_auth_dialog_preferences_SOURCES = \
 
 krb5_auth_dialog_preferences_LDADD = \
 			@GCONF_LIBS@ \
-			@GLADE_LIBS@ \
 			@GTK_LIBS@ \
 			$(NULL)
 
@@ -30,7 +29,7 @@ desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)
 
 pkgdatadir = $(datadir)/krb5-auth-dialog
 pkgdata_DATA =			\
-	krb5-auth-dialog-preferences.glade
+	krb5-auth-dialog-preferences.xml
 
 CLEANFILES = \
 	$(desktop_DATA) \

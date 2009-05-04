@@ -32,14 +32,13 @@
 
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
-#include <glade/glade.h>
 
 #include "krb5-auth-gconf-tools.h"
 
 #define N_LISTENERS 8
 
 typedef struct {
-  GladeXML    *xml;
+  GtkBuilder  *xml;
   GConfClient *client;
 
   GtkWidget *dialog;
@@ -102,7 +101,7 @@ ka_preferences_dialog_setup_principal_entry (KaPreferencesDialog *dialog)
 {
   char     *principal = NULL;
 
-  dialog->principal_entry = glade_xml_get_widget (dialog->xml, "principal_entry");
+  dialog->principal_entry = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "principal_entry"));
   g_assert (dialog->principal_entry != NULL);
 
   if (!ka_gconf_get_string (dialog->client, KA_GCONF_KEY_PRINCIPAL, &principal))
@@ -173,7 +172,7 @@ ka_preferences_dialog_setup_pkuserid_entry (KaPreferencesDialog *dialog)
 {
   char     *pkuserid = NULL;
 
-  dialog->pkuserid_entry = glade_xml_get_widget (dialog->xml, "pkuserid_entry");
+  dialog->pkuserid_entry = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "pkuserid_entry"));
   g_assert (dialog->pkuserid_entry != NULL);
 
   if (!ka_gconf_get_string (dialog->client, KA_GCONF_KEY_PK_USERID, &pkuserid))
@@ -243,7 +242,7 @@ ka_preferences_dialog_setup_pkanchors_entry (KaPreferencesDialog *dialog)
 {
   char     *pkanchors = NULL;
 
-  dialog->pkanchors_entry = glade_xml_get_widget (dialog->xml, "pkanchors_entry");
+  dialog->pkanchors_entry = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "pkanchors_entry"));
   g_assert (dialog->pkanchors_entry != NULL);
 
   if (!ka_gconf_get_string (dialog->client, KA_GCONF_KEY_PK_ANCHORS, &pkanchors))
@@ -303,7 +302,7 @@ ka_preferences_dialog_setup_forwardable_toggle (KaPreferencesDialog *dialog)
 {
   gboolean forwardable;
 
-  dialog->forwardable_toggle = glade_xml_get_widget (dialog->xml, "forwardable_toggle");
+  dialog->forwardable_toggle = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "forwardable_toggle"));
   g_assert (dialog->forwardable_toggle != NULL);
 
   forwardable = gconf_client_get_bool (dialog->client, KA_GCONF_KEY_FORWARDABLE, NULL);
@@ -361,7 +360,7 @@ ka_preferences_dialog_setup_proxiable_toggle (KaPreferencesDialog *dialog)
 {
   gboolean proxiable;
 
-  dialog->proxiable_toggle = glade_xml_get_widget (dialog->xml, "proxiable_toggle");
+  dialog->proxiable_toggle = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "proxiable_toggle"));
   g_assert (dialog->proxiable_toggle != NULL);
 
   proxiable = gconf_client_get_bool (dialog->client, KA_GCONF_KEY_PROXIABLE, NULL);
@@ -419,7 +418,7 @@ ka_preferences_dialog_setup_renewable_toggle (KaPreferencesDialog *dialog)
 {
   gboolean renewable;
 
-  dialog->renewable_toggle = glade_xml_get_widget (dialog->xml, "renewable_toggle");
+  dialog->renewable_toggle = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "renewable_toggle"));
   g_assert (dialog->renewable_toggle != NULL);
 
   renewable = gconf_client_get_bool (dialog->client, KA_GCONF_KEY_RENEWABLE, NULL);
@@ -475,7 +474,7 @@ ka_preferences_dialog_setup_trayicon_toggle (KaPreferencesDialog *dialog)
 {
   gboolean trayicon;
 
-  dialog->trayicon_toggle = glade_xml_get_widget (dialog->xml, "trayicon_toggle");
+  dialog->trayicon_toggle = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "trayicon_toggle"));
   g_assert (dialog->trayicon_toggle != NULL);
 
   trayicon = gconf_client_get_bool (dialog->client, KA_GCONF_KEY_SHOW_TRAYICON, NULL);
@@ -532,7 +531,7 @@ ka_preferences_dialog_setup_prompt_mins_entry (KaPreferencesDialog *dialog)
 {
   gint prompt_mins;
 
-  dialog->prompt_mins_entry = glade_xml_get_widget (dialog->xml, "prompt_mins_entry");
+  dialog->prompt_mins_entry = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "prompt_mins_entry"));
   g_assert (dialog->prompt_mins_entry != NULL);
 
   prompt_mins = gconf_client_get_int (dialog->client, KA_GCONF_KEY_PROMPT_MINS, NULL);
@@ -611,10 +610,12 @@ ka_preferences_dialog_destroyed (GtkWidget *widget G_GNUC_UNUSED,
 static gboolean
 ka_preferences_dialog_init(KaPreferencesDialog* dialog)
 {
-  dialog->xml = glade_xml_new (KA_DATA_DIR G_DIR_SEPARATOR_S
-                                   PACKAGE "-preferences.glade", NULL, NULL);
+  dialog->xml = gtk_builder_new ();
 
-  dialog->dialog = glade_xml_get_widget (dialog->xml, "krb5_auth_dialog_prefs");
+  g_assert(gtk_builder_add_from_file(dialog->xml, KA_DATA_DIR G_DIR_SEPARATOR_S
+                                     PACKAGE "-preferences.xml", NULL));
+
+  dialog->dialog = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "krb5_auth_dialog_prefs"));
   g_assert (dialog->dialog);
 
   g_signal_connect (dialog->dialog, "response",

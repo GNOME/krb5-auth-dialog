@@ -1,3 +1,10 @@
+Sun May 10 21:36:48 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-gconf-tools.c: fix -Wformat-security warnings
+	* src/krb5-auth-gconf.c: likewise
+	* etopo/lexer.l: likewise
+	BZ: #581902 - patch by Christian Persch
+
 Thu May  7 10:39:32 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	Switch from Libglade to GtkBuilder

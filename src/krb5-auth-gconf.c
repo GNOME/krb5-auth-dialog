@@ -203,7 +203,7 @@ ka_gconf_init (KaApplet* applet,
 	success = TRUE;
 out:
 	if(error) {
-		g_print (error->message);
+		g_print ("%s", error->message);
 		g_error_free (error);
 	}
 	return success;

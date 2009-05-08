@@ -103,14 +103,14 @@ static void
 header(void)
 {
 	const char *boilerplate = "const char *dummy = {\n";
-	printf(boilerplate);
+	printf("%s", boilerplate);
 }
 
 static void
 tail(void)
 {
 	const char *boilerplate = "};\n";
-	printf(boilerplate);
+	printf("%s", boilerplate);
 }
 
 int

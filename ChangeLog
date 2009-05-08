@@ -1,3 +1,11 @@
+Sun May 10 21:49:14 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	Use po/LINGUAS instead of putting the list in configure.ac
+	* configure.ac: remove ALL_LINGUAS and require intltool >= 0.35
+	* po/LINGUAS: new file
+	* autogen.sh: require intltool >= 0.35
+	BZ: #581907 - patch by Christian Persch
+
 Sun May 10 21:36:48 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-gconf-tools.c: fix -Wformat-security warnings

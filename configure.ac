@@ -14,13 +14,14 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 
 AM_GLIB_GNU_GETTEXT
 
-
 AC_PROG_CC
 AC_ISC_POSIX
 AC_HEADER_STDC
 AM_PROG_LIBTOOL
 AM_PROG_LEX
 AC_PROG_YACC
+
+AM_PROG_CC_C_O
 
 KA_COMPILE_WARNINGS([maximum])
 
@@ -198,16 +199,6 @@ AC_DEFINE_UNQUOTED(MINUTES_BEFORE_PROMPTING,[$minimum_lifetime],
 		    will have to be valid before we'll ask the user to get
 		    fresh credentials.])
 AC_SUBST(minimum_lifetime)
-
-CFLAGS="\
-	$GTK_CFLAGS \
-	$DBUS_CFLAGS \
-	$GCONF_CFLAGS \
-	$KRB5_CFLAGS \
-	$NETWORK_MANAGER_CFLAGS \
-	$LIBNOTIFY_CFLAGS \
-	$WARN_CFLAGS \
-	$CFLAGS"
 
 AC_OUTPUT([
 Makefile

@@ -1,3 +1,10 @@
+Sun May 10 22:10:11 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	make checking for deprecated symbols easy
+	* src/Makefile.am: add $(DISABLE_DEPRECATED)
+	* preferences/Makefile.am: likewise
+	* configure.ac: add GNOME_MAINTAINER_MODE_DEFINES commented out
+
 Sun May 10 21:49:14 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	Use po/LINGUAS instead of putting the list in configure.ac

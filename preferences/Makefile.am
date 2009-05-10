@@ -21,6 +21,10 @@ krb5_auth_dialog_preferences_LDADD = \
 			@GTK_LIBS@ \
 			$(NULL)
 
+AM_CPPFLAGS = \
+	$(DISABLE_DEPRECATED) \
+	$(NULL)
+
 desktopdir       = $(datadir)/applications
 desktop_in_files = krb5-auth-dialog-preferences.desktop.in
 desktop_DATA     = $(desktop_in_files:.desktop.in=.desktop)

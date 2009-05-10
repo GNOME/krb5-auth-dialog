@@ -1,3 +1,5 @@
+NULL =
+
 INCLUDES = \
 	-DKA_DATA_DIR=\""$(pkgdatadir)"\" \
 	-DLOCALE_DIR=\""$(localedir)/"\"
@@ -59,7 +61,11 @@ krb5-auth-applet-dbus-glue.h: $(srcdir)/krb5-auth-applet-dbus.xml
 		--prefix=krb5_auth_dialog \
 		$< > $@
 
-AM_CPPFLAGS = -I $(top_srcdir)/gtksecentry/ -I $(top_srcdir)/secmem/
+AM_CPPFLAGS = \
+	-I $(top_srcdir)/gtksecentry/ \
+	-I $(top_srcdir)/secmem/ \
+	$(DISABLE_DEPRECATED) \
+	$(NULL)
 
 pkgdatadir = $(datadir)/krb5-auth-dialog
 pkgdata_DATA =			\

@@ -1,3 +1,15 @@
+Tue May 12 00:31:56 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	merge schema translations and use gconftool to install the schema
+	* configure.ac: Check for gcontool and add AM_GCONF_SOURCE_2.
+	* po/POTFILES.in: Add src/krb5-auth-dialog.schemas.in.
+	* preferences/Makefile.am: Remove schemadir.
+	* src/Makefile.am: Add INTLTOOL_SCHEMAS_RULE and add
+	  install-data-local target to install via gconftool.
+	* src/krb5-auth-dialog.schemas.in: Don't use ::PACKAGE:: since .in is
+	  transformed by intltool now.
+	BZ: #581906 - patch by Christian Persch
+
 Mon May 11 00:46:24 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	cleanup CFLAGS handling, terminate all lists with $(NULL)

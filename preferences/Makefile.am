@@ -2,8 +2,6 @@ NULL =
 
 bin_PROGRAMS = krb5-auth-dialog-preferences
 
-schemadir = $(sysconfdir)/gconf/schemas
-
 krb5_auth_dialog_preferences_SOURCES = \
 	krb5-auth-dialog-preferences.c \
 	$(top_srcdir)/src/krb5-auth-gconf-tools.c \

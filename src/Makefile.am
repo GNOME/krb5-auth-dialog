@@ -8,12 +8,10 @@ autostart_in_files = krb5-auth-dialog.desktop.in
 autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
-schemadir = $(sysconfdir)/gconf/schemas
-schema_in_files = $(PACKAGE).schemas.in
+schemadir = $(GCONF_SCHEMA_FILE_DIR)
+schema_in_files = krb5-auth-dialog.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)
-
-%.schemas: $(srcdir)/%.schemas.in
-	sed -e "s,::PACKAGE::,$(PACKAGE)," < $< > $@
+@INTLTOOL_SCHEMAS_RULE@
 
 servicedir       = $(datadir)/dbus-1/services
 service_in_files = org.gnome.KrbAuthDialog.service.in
@@ -105,4 +103,13 @@ DISTCLEANFILES = \
 	krb5-auth-dialog.desktop \
 	krb5-auth-applet-dbus-glue.h \
 	$(NULL)
+
+install-data-local: $(schema_DATA)
+if GCONF_SCHEMAS_INSTALL
+	if test -z "$(DESTDIR)" ; then \
+	for p in $^ ; do \
+		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $$p 2>&1 > /dev/null; \
+	done \
+	fi
+endif
 

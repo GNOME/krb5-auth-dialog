@@ -41,6 +41,13 @@ PKG_CHECK_MODULES(GCONF, gconf-2.0 >= $GCONF_REQUIRED)
 PKG_CHECK_MODULES(GIO_UNIX, gio-unix-2.0 >= $GIO_UNIX_REQUIRED)
 PKG_CHECK_MODULES(GIO, gio-2.0 >= $GIO_REQUIRED)
 
+AM_GCONF_SOURCE_2
+
+AC_PATH_PROG([GCONFTOOL], [gconftool-2], [no])
+if test "$GCONFTOOL" = "no"; then
+  AC_MSG_ERROR([gconftool-2 not found])
+fi
+
 dnl --enable-debug=(yes|no)
 AC_ARG_ENABLE(debug,
               AC_HELP_STRING([--enable-debug=no/yes],

@@ -1,3 +1,4 @@
+src/krb5-auth-dialog.schemas.in
 src/krb5-auth-dialog.xml
 src/krb5-auth-dialog.c
 src/krb5-auth-pwdialog.c

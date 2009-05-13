@@ -1,3 +1,8 @@
+Wed May 13 22:10:45 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-dialog.c (ka_error_dialog): translate Kerberos error
+	  messages.
+
 Wed May 13 20:46:03 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* etpo/lexer.c: update regex for newer com_err

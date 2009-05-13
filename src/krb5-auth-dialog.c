@@ -810,7 +810,7 @@ ka_error_dialog(int err)
 				GTK_DIALOG_DESTROY_WITH_PARENT,
 				GTK_MESSAGE_ERROR,
 				GTK_BUTTONS_CLOSE,
-				_("Couldn't acquire kerberos ticket: '%s'"), msg);
+				_("Couldn't acquire kerberos ticket: '%s'"), _(msg));
 	gtk_dialog_run (GTK_DIALOG (dialog));
 	gtk_widget_destroy (dialog);
 }

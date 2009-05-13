@@ -1,3 +1,7 @@
+Wed May 13 20:46:03 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* etpo/lexer.c: update regex for newer com_err
+
 Tue May 12 00:31:56 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	merge schema translations and use gconftool to install the schema

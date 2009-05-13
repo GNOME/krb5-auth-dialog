@@ -53,6 +53,8 @@ error_code|ec		{ yylval.sval = g_strdup(yytext);
 <QUOTED>\n		{ yylval.sval = g_strdup(yytext);
 			  return LITERAL; };
 <*>^#.*$		{ };
+<*>^(error_table_base|index)[ \t]+[0-9]+$ { };
+<*>^(prefix|id|error_table_manager)[ \t]+.*$ { };
 %%
 
 /* Complete list of filenames, an iterator for that list, and the contents of

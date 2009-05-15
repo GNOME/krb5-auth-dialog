@@ -1,3 +1,10 @@
+Fri May 15 19:06:09 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	Reduce number of translations by filtering the error messages
+	extracted from Kerberos com_err .et files.
+	* etpo/Makefile.am: add rule for generating dummy-stings.c
+	* src/dummy-strings.c: regenerate
+
 Fri May 15 19:04:11 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/potfiles.in: mark GtKBuilder ui files as glade

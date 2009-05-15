@@ -1,3 +1,10 @@
+Fri May 15 19:10:57 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* po/krb5-auth-dialog.pot: update translatable strings
+	* po/de.po: likewise
+	* po/nb.po: likewise
+	* po/sv.po: likewise
+
 Fri May 15 19:08:22 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* etpo/lexer.l: better match the output to the handcrafted version we

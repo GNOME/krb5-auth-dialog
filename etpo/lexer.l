@@ -104,14 +104,14 @@ yywrap(void)
 static void
 header(void)
 {
-	const char *boilerplate = "const char *dummy = {\n";
+	const char *boilerplate = "#include <glib/gi18n.h>\n\nconst char *dummy[] = {\n";
 	printf("%s", boilerplate);
 }
 
 static void
 tail(void)
 {
-	const char *boilerplate = "};\n";
+	const char *boilerplate = "\tNULL\n};\n";
 	printf("%s", boilerplate);
 }
 

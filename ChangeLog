@@ -1,3 +1,8 @@
+Fri May 15 19:08:22 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* etpo/lexer.l: better match the output to the handcrafted version we
+	  shipped before.
+
 Fri May 15 19:06:09 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	Reduce number of translations by filtering the error messages

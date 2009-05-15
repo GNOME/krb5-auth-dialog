@@ -1,5 +1,5 @@
 src/krb5-auth-dialog.schemas.in
-src/krb5-auth-dialog.xml
+[type: gettext/glade]src/krb5-auth-dialog.xml
 src/krb5-auth-dialog.c
 src/krb5-auth-pwdialog.c
 src/dummy-strings.c
@@ -10,4 +10,4 @@ gtksecentry/gtksecentry.c
 secmem/util.c
 preferences/krb5-auth-dialog-preferences.c
 preferences/krb5-auth-dialog-preferences.desktop.in
-preferences/krb5-auth-dialog-preferences.xml
+[type: gettext/glade]preferences/krb5-auth-dialog-preferences.xml

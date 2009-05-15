@@ -1,3 +1,8 @@
+Fri May 15 19:04:11 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/potfiles.in: mark GtKBuilder ui files as glade
+	  so they get picked up by intltool
+
 Wed May 13 22:10:45 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-dialog.c (ka_error_dialog): translate Kerberos error

@@ -86,7 +86,7 @@ ka_gconf_set_prompt_mins (GConfClient* client, KaApplet* applet)
 static gboolean
 ka_gconf_set_show_trayicon (GConfClient* client, KaApplet* applet)
 {
-	gboolean show_trayicon = FALSE;
+	gboolean show_trayicon = TRUE;
 
 	if(!ka_gconf_get_bool(client, KA_GCONF_KEY_SHOW_TRAYICON, &show_trayicon)) {
 		show_trayicon = TRUE;
@@ -102,7 +102,7 @@ ka_gconf_set_tgt_forwardable (GConfClient* client, KaApplet* applet)
 	gboolean forwardable = FALSE;
 
 	if(!ka_gconf_get_bool(client, KA_GCONF_KEY_FORWARDABLE, &forwardable)) {
-		forwardable = TRUE;
+		forwardable = FALSE;
 	}
 	g_object_set(applet, "tgt-forwardable", forwardable, NULL);
 	return TRUE;
@@ -115,7 +115,7 @@ ka_gconf_set_tgt_renewable (GConfClient* client, KaApplet* applet)
 	gboolean renewable = FALSE;
 
 	if(!ka_gconf_get_bool(client, KA_GCONF_KEY_RENEWABLE, &renewable)) {
-		renewable = TRUE;
+		renewable = FALSE;
 	}
 	g_object_set(applet, "tgt-renewable", renewable, NULL);
 	return TRUE;
@@ -128,7 +128,7 @@ ka_gconf_set_tgt_proxiable (GConfClient* client, KaApplet* applet)
 	gboolean proxiable = FALSE;
 
 	if(!ka_gconf_get_bool(client, KA_GCONF_KEY_PROXIABLE, &proxiable)) {
-		proxiable = TRUE;
+		proxiable = FALSE;
 	}
 	g_object_set(applet, "tgt-proxiable", proxiable, NULL);
 	return TRUE;
@@ -165,20 +165,21 @@ ka_gconf_key_changed_callback (GConfClient* client,
 		ka_gconf_set_tgt_renewable (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_PROXIABLE) == 0) {
 		ka_gconf_set_tgt_proxiable (client, applet);
+	} else if (g_strcmp0 (key, KA_GCONF_KEY_NOTIFY_VALID)
+		    || g_strcmp0 (key,KA_GCONF_KEY_NOTIFY_EXPIRING)
+		    || g_strcmp0 (key,KA_GCONF_KEY_NOTIFY_EXPIRED)) {
+		/* nothing to do */
 	} else
 		g_warning("Received notification for unknown gconf key %s", key);
 	return;
 }
 
 
-gboolean
-ka_gconf_init (KaApplet* applet,
-               int argc G_GNUC_UNUSED,
-               char* argv[] G_GNUC_UNUSED)
+GConfClient*
+ka_gconf_init (KaApplet* applet)
 {
 	GError *error = NULL;
-	GConfClient* client;
-	gboolean success = FALSE;
+	GConfClient *client;
 
 	client = gconf_client_get_default ();
 	gconf_client_add_dir (client, KA_GCONF_PATH, GCONF_CLIENT_PRELOAD_ONELEVEL, &error);
@@ -199,12 +200,11 @@ ka_gconf_init (KaApplet* applet,
 	ka_gconf_set_tgt_forwardable(client, applet);
 	ka_gconf_set_tgt_renewable(client, applet);
 	ka_gconf_set_tgt_proxiable(client, applet);
-
-	success = TRUE;
 out:
 	if(error) {
+		client = NULL;
 		g_print ("%s", error->message);
 		g_error_free (error);
 	}
-	return success;
+	return client;
 }

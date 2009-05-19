@@ -24,6 +24,8 @@
 
 #include "krb5-auth-applet.h"
 #include "krb5-auth-dialog.h"
+#include "krb5-auth-gconf-tools.h"
+#include "krb5-auth-gconf.h"
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
 #endif
@@ -73,6 +75,7 @@ struct _KaAppletPrivate
 
 #ifdef HAVE_LIBNOTIFY
 	NotifyNotification* notification;/* notification messages */
+	const char* notify_gconf_key;	/* disable notification gconf key */
 #endif /* HAVE_LIBNOTIFY */
 	char* principal;		/* the principal to request */
 	gboolean renewable;		/* credentials renewable? */
@@ -81,6 +84,8 @@ struct _KaAppletPrivate
 	gboolean tgt_forwardable;	/* request a forwardable ticket */
 	gboolean tgt_renewable;		/* request a renewable ticket */
 	gboolean tgt_proxiable;		/* request a proxiable ticket */
+
+	GConfClient *gconf;		/* gconf client */
 };
 
 static void
@@ -373,15 +378,33 @@ ka_applet_select_icon(KaApplet* applet, int remaining)
 
 #ifdef HAVE_LIBNOTIFY
 static gboolean
-show_notification (KaApplet *applet)
+ka_show_notification (KaApplet *applet)
 {
 	/* wait for the panel to be settled before showing a bubble */
 	if (gtk_status_icon_is_embedded (applet->priv->tray_icon)) {
 		notify_notification_show (applet->priv->notification, NULL);
 	} else {
-		g_timeout_add_seconds (5, (GSourceFunc)show_notification, applet);
+		g_timeout_add_seconds (5, (GSourceFunc)ka_show_notification, applet);
 	}
 	return FALSE;
+}
+
+
+static void
+ka_notify_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
+	             gchar *action, gpointer user_data)
+{
+	KaApplet *self = KA_APPLET (user_data);
+
+	if (strcmp (action, "dont-show-again") == 0) {
+		KA_DEBUG ("turning of notification %s", self->priv->notify_gconf_key);
+		ka_gconf_set_bool (self->priv->gconf,
+				   self->priv->notify_gconf_key,
+				   FALSE);
+		self->priv->notify_gconf_key = NULL;
+	} else {
+		g_warning("unkonwn action for callback");
+	}
 }
 
 
@@ -389,7 +412,8 @@ static void
 ka_send_event_notification (KaApplet *applet,
 			    const char *summary,
 			    const char *message,
-			    const char *icon)
+			    const char *icon,
+			    const char *action)
 {
         const char *notify_icon;
 
@@ -408,17 +432,26 @@ ka_send_event_notification (KaApplet *applet,
 	notify_icon = icon ? icon : "gtk-dialog-authentication";
 
 	applet->priv->notification = \
-		notify_notification_new_with_status_icon(summary, message, notify_icon, applet->priv->tray_icon);
+		notify_notification_new_with_status_icon(summary,
+							 message,
+							 notify_icon,
+							 applet->priv->tray_icon);
 
 	notify_notification_set_urgency (applet->priv->notification, NOTIFY_URGENCY_NORMAL);
-	show_notification (applet);
+	notify_notification_add_action (applet->priv->notification,
+					action,
+					_("Don't show me this again"),
+					(NotifyActionCallback) ka_notify_action_cb,
+					applet, NULL);
+	ka_show_notification (applet);
 }
 #else
 static void
 ka_send_event_notification (KaApplet *applet G_GNUC_UNUSED,
 			    const char *summary G_GNUC_UNUSED,
 			    const char *message G_GNUC_UNUSED,
-			    const char *icon G_GNUC_UNUSED)
+			    const char *icon G_GNUC_UNUSED,
+			    const char *action G_GNUC_UNUSED)
 {
 }
 #endif /* ! HAVE_LIBNOTIFY */
@@ -432,27 +465,49 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 	int remaining = expiry - now;
 	static int last_warn = 0;
 	static gboolean expiry_notified = FALSE;
+	gboolean notify = TRUE;
 	const char* tray_icon = ka_applet_select_icon (applet, remaining);
 	char* tooltip_text = ka_applet_tooltip_text (remaining);
 
 	if (remaining > 0) {
 		if (expiry_notified) {
-			ka_send_event_notification (applet,
+			ka_gconf_get_bool(applet->priv->gconf,
+					  KA_GCONF_KEY_NOTIFY_VALID,
+					  &notify);
+			if (notify) {
+				applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_VALID;
+				ka_send_event_notification (applet,
 						_("Network credentials valid"),
-						_("Your Kerberos credentials have been refreshed."), NULL);
+						_("You've refreshed your Kerberos credentials."),
+						NULL, "dont-show-again");
+			}
 			expiry_notified = FALSE;
 		} else if (remaining < applet->priv->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS &&
 			   !applet->priv->renewable) {
-			ka_send_event_notification (applet,
+			ka_gconf_get_bool(applet->priv->gconf,
+					  KA_GCONF_KEY_NOTIFY_EXPIRING,
+					  &notify);
+			if (notify) {
+				applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_EXPIRING;
+				ka_send_event_notification (applet,
 						_("Network credentials expiring"),
-						tooltip_text, NULL);
+						tooltip_text,
+						NULL, "dont-show-again");
+			}
 			last_warn = now;
 		}
 	} else {
 		if (!expiry_notified) {
-			ka_send_event_notification (applet,
+			ka_gconf_get_bool(applet->priv->gconf,
+					  KA_GCONF_KEY_NOTIFY_EXPIRED,
+					  &notify);
+			if (notify) {
+				applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_EXPIRED;
+				ka_send_event_notification (applet,
 						_("Network credentials expired"),
-						_("Your Kerberos credentails have expired."), NULL);
+						_("Your Kerberos credentails have expired."),
+						NULL, "dont-show-again");
+			}
 			expiry_notified = TRUE;
 			last_warn = 0;
 		}
@@ -680,6 +735,9 @@ ka_applet_create(GtkBuilder *xml)
 
 	applet->priv->pwdialog = ka_pwdialog_create(xml);
 	g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
+
+	applet->priv->gconf = ka_gconf_init (applet);
+	g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
 
 	return applet;
 }

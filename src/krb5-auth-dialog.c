@@ -39,7 +39,6 @@
 #include "krb5-auth-dialog.h"
 #include "krb5-auth-applet.h"
 #include "krb5-auth-pwdialog.h"
-#include "krb5-auth-gconf.h"
 #include "krb5-auth-dbus.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
@@ -984,8 +983,6 @@ main (int argc, char *argv[])
 				                   PACKAGE ".xml", NULL));
 		applet = ka_applet_create (xml);
 		if (!applet)
-			return 1;
-		if (!ka_gconf_init (applet, argc, argv))
 			return 1;
 		ka_nm_init();
 

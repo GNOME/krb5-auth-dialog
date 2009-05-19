@@ -21,8 +21,9 @@
 #ifndef KRB5_AUTH_GCONF_H
 #define KRB5_AUTH_GCONF_H
 
+#include <gconf/gconf-client.h>
 #include "krb5-auth-applet.h"
 
-gboolean ka_gconf_init (KaApplet* applet, int argc, char* argv[]);
+GConfClient* ka_gconf_init (KaApplet* applet);
 
 #endif

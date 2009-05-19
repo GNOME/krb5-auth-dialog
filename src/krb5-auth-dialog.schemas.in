@@ -103,5 +103,44 @@
         <long>Requested tickets should be proxiable</long>
       </locale>
     </schema>
+
+    <schema>
+      <key>/schemas/apps/krb5-auth-dialog/notify/valid</key>
+      <applyto>/apps/krb5-auth-dialog/notify/valid</applyto>
+      <owner>krb5-auth-dialog</owner>
+      <type>bool</type>
+      <default>1</default>
+
+      <locale name="C">
+        <short>valid ticket notification</short>
+        <long>Notify user when ticket becomes valid</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/krb5-auth-dialog/notify/expiring</key>
+      <applyto>/apps/krb5-auth-dialog/notify/expiring</applyto>
+      <owner>krb5-auth-dialog</owner>
+      <type>bool</type>
+      <default>1</default>
+
+      <locale name="C">
+        <short>ticket expiring notification</short>
+        <long>Notify user when ticket is about to expire</long>
+      </locale>
+    </schema>
+
+    <schema>
+      <key>/schemas/apps/krb5-auth-dialog/notify/expired</key>
+      <applyto>/apps/krb5-auth-dialog/notify/expired</applyto>
+      <owner>krb5-auth-dialog</owner>
+      <type>bool</type>
+      <default>1</default>
+
+      <locale name="C">
+        <short>ticket expired notification</short>
+        <long>Notify user when ticket has expired</long>
+      </locale>
+    </schema>
   </schemalist>
 </gconfschemafile>

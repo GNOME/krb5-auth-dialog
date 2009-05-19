@@ -34,9 +34,13 @@
 #define KA_GCONF_KEY_FORWARDABLE	KA_GCONF_PATH "/forwardable"
 #define KA_GCONF_KEY_RENEWABLE		KA_GCONF_PATH "/renewable"
 #define KA_GCONF_KEY_PROXIABLE		KA_GCONF_PATH "/proxiable"
+#define KA_GCONF_KEY_NOTIFY_VALID	KA_GCONF_PATH "/notify/valid"
+#define KA_GCONF_KEY_NOTIFY_EXPIRED	KA_GCONF_PATH "/notify/expired"
+#define KA_GCONF_KEY_NOTIFY_EXPIRING	KA_GCONF_PATH "/notify/expiring"
 
 gboolean ka_gconf_get_string (GConfClient* client, const char* key, char** value);
 gboolean ka_gconf_get_int (GConfClient* client, const char* key, int* value);
 gboolean ka_gconf_get_bool (GConfClient* client, const char* key, gboolean* value);
+gboolean ka_gconf_set_bool (GConfClient* client, const char* key, gboolean value);
 
 #endif

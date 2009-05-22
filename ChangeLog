@@ -1,3 +1,7 @@
+Mon May 25 19:11:58 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-applet.c: update about dialog 
+
 Mon May 25 18:32:49 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* configure.ac: release 0.10

@@ -1,0 +1,370 @@
+<?xml version="1.0"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
+    "http://www.oasis-open.org/docbook/xml/4.4/docbookx.dtd" [
+  <!ENTITY legal SYSTEM "legal.xml">
+  <!ENTITY GFDL  SYSTEM "fdl-appendix.xml">
+  <!ENTITY appversion "0.10">
+  <!ENTITY manrevision "0.1">
+  <!ENTITY date "May 2009">
+  <!ENTITY app "Kerberos Network Authentication Dialog">
+  <!ENTITY application "<application>&app;</application>">
+]>
+<!--
+      (Do not remove this comment block.)
+  Template Maintained by the GNOME Documentation Project:
+	  http://developer.gnome.org/projects/gdp
+  Template version: 2.0 beta
+  Template last modified Feb 12, 2002
+-->
+
+
+<!--
+      (Do not remove this comment block.)
+  Version: 0.0.1
+  Last modified: May 22, 2009
+  Maintainers:
+               Guido Günther  <agx@sigxcpu.org>
+  Translators:
+               (translators put your name and email here)
+-->
+
+
+
+<!-- =============Document Header ============================= -->
+<article id="index" lang="en">
+ <!-- please do not change the id; for translations, change lang to -->
+ <!-- appropriate code -->
+
+ <articleinfo>
+  <title>&application; Manual</title>
+  <abstract role="description">
+   <para>
+    &app; is a small helper that monitors and refreshes your Kerberos ticket.
+   </para>
+  </abstract>
+  <copyright>
+   <year>2009</year>
+   <holder>Guido Günther</holder>
+  </copyright>
+
+  <!-- translators: uncomment this:
+
+  <copyright>
+  <year>2000</year>
+  <holder>ME-THE-TRANSLATOR (Latin translation)</holder>
+ </copyright>
+
+  -->
+  <!-- An address can be added to the publisher information.  If a role is
+  not specified, the publisher/author is the same for all versions of the
+  document.  -->
+  <publisher role="maintainer">
+   <publishername>Guido Günther</publishername>
+  </publisher>
+
+  &legal;
+
+  <authorgroup>
+   <author>
+    <firstname>Jonathan</firstname>
+    <surname>Blandford</surname>
+    <email>rjb@redhat.com</email>
+   </author>
+   <author role="maintainer">
+    <firstname>Guido</firstname>
+    <surname>Günther</surname>
+    <email>agx@sigxcpu.org</email>
+   </author>
+   <!-- This is appropriate place for other contributors: translators,
+   maintainers,  etc. Commented out by default.
+   <othercredit role="translator">
+   <firstname>Latin</firstname>
+   <surname>Translator 1</surname>
+   <affiliation>
+   <orgname>Latin Translation Team</orgname>
+   <address> <email>translator@gnome.org</email> </address>
+  </affiliation>
+   <contrib>Latin translation</contrib>
+  </othercredit>
+   -->
+  </authorgroup>
+
+  <!-- The revision numbering system for GNOME manuals is as follows: -->
+  <!-- * the revision number consists of two components -->
+  <!-- * the first component of the revision number reflects the release version of the GNOME desktop. -->
+  <!-- * the second component of the revision number is a decimal unit that is incremented with each revision of the manual. -->
+  <!-- For example, if the GNOME desktop release is V2.x, the first version of the manual that -->
+  <!-- is written in that desktop timeframe is V2.0, the second version of the manual is V2.1, etc. -->
+  <!-- When the desktop release version changes to V3.x, the revision number of the manual changes -->
+  <!-- to V3.0, and so on. -->
+
+  <revhistory>
+   <revision>
+    <revnumber>2.0</revnumber>
+    <date>&date;</date>
+    <revdescription>
+     <para role="author">Guido Günther
+      <email>agx@sigxcpu.org</email>
+     </para>
+    </revdescription>
+   </revision>
+  </revhistory>
+  <releaseinfo>This manual describes how to use the Kerberos Network Authentication Dialog
+   to manage your Kerberos tickets.
+  </releaseinfo>
+  <legalnotice>
+   <title>Feedback</title>
+   <para>To report a bug or make a suggestion regarding this package or
+    this manual, use
+    <ulink url="http://bugzilla.gnome.org"
+     type="http">GNOME's Bugzilla</ulink>.
+   </para>
+   <!-- Translators may also add here feedback address for translations -->
+  </legalnotice>
+ </articleinfo>
+
+ <!-- ============= Document Body ============================= -->
+ <!-- ============= Introduction ============================== -->
+ <section id="intro">
+  <title>Introduction</title>
+  <indexterm>
+    <primary>&application;</primary>
+    <secondary>Manual</secondary>
+    <tertiary>krb5-auth-dialog</tertiary>
+  </indexterm>
+
+   <para>
+    &app; is an applet for the <systemitem>GNOME desktop</systemitem> that monitors
+    and refreshes your Kerberos ticket. It pops up reminders when the ticket
+    is about to expire.
+   </para>
+   <para>
+    Once you have acquired a Kerberos ticket - be it via GDM or via the applet itself - the applet will handle the ticket's renewal until it expires. It can also be used to destroy (remove) the credential cache, to acquire a ticket with different options or to switch to another principal.</para>
+ </section>
+
+<section id="using">
+  <title>Usage</title>
+  <para>
+    <application>&app;</application> is usually started in GNOME startup, but
+    you can manually start <application>&app;</application> by doing:
+  </para>
+  <variablelist>
+    <varlistentry>
+      <term>Command line</term>
+      <listitem>
+	<para>
+	  Type <command>krb5-auth-dialog --always</command>,
+          then press <keycap>Return</keycap>:
+        </para>
+      </listitem>
+    </varlistentry>
+  </variablelist>
+  <para>
+    The tray icon will indicate one of tree states:
+  </para>
+
+  <section id="trayicon-valid">
+    <title>Valid Kerberos ticket</title>
+    <para>You have a valid Kerberos ticket that can be used to authenticate to network services.</para>
+    <figure>
+      <title>Valid Kerberos ticket</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/trayicon-valid.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+ </section>
+
+  <section id="trayicon-expiring">
+    <title>Kerberos ticket expiring</title>
+    <para>The Kerberos ticket is about to expire but it can still be used to authenticate to network services.</para>
+    <figure>
+      <title>Kerberos ticket expiring</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/trayicon-expiring.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+ </section>
+  <section id="trayicon-expired">
+    <title>Kerberos ticket expired</title>
+    <para>Your Kerberos became invalid (e.g. expired). It can no longer be used to authenticate to network services. This is not a problem if the application that requires Kerberos knows how to request a new ticket via &application;. In case it doesn't you can just left click on the applet an reenter your password.
+</para>
+    <figure>
+      <title>Kerberos ticket expired</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/trayicon-expired.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+ </section>
+</section>
+
+<section id="notify">
+  <title>Notification Messages</title>
+  <para>
+    When &app; has started, the following notifications may be displayed.
+  </para>
+
+ <section id="notify-valid">
+    <title>Kerberos credentials valid</title>
+    <para>You just acquired a valid Kerberos ticket that can be used to authenticate to network services.</para>
+    <figure>
+      <title>Notification when Kerberos credentials become valid</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/ka-valid.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+ </section>
+
+ <section id="notify-expiring">
+    <title>Kerberos credentials expiring</title>
+    <para>Your Kerberos credentials are about to expire. You can left click on the tray applet to refresh them.</para>
+    <figure>
+      <title>Notification when Kerberos credentials expiring</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/ka-expiring.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+ </section>
+
+ <section id="notify-expired">
+    <title>Kerberos credentials expired</title>
+    <para>Your Kerberos credentials just expired. They can no longer be used to authenticate to network services.</para>
+    <figure>
+      <title>Notification when Kerberos credentials expired</title>
+      <screenshot>
+        <mediaobject>
+          <imageobject>
+            <imagedata fileref="figures/ka-expired.png" format="PNG"/>
+          </imageobject>
+        </mediaobject>
+      </screenshot>
+    </figure>
+ </section>
+</section>
+
+<section id="preferences">
+  <title>Preferences</title>
+  <para>
+    You can set preferences by selecting "Preferences" from the applets context menu or by selecting "Network Authentication" in the <application>Control Center</application>.
+    <table frame="topbot" id="tbl-principal-prefs">
+      <title>Kerberos Principal Preferences</title>
+      <tgroup cols="2" colsep="1" rowsep="1"> <colspec colwidth="19.21*"/> <colspec colwidth="46.79*"/>
+        <thead>
+          <row>
+            <entry colsep="0" rowsep="1">
+              <para>Dialog Element</para>
+            </entry>
+            <entry colsep="0" rowsep="1">
+              <para>Description</para>
+            </entry>
+          </row>
+        </thead>
+        <tbody>
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>Kerberos Principal</guilabel>
+              </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>The Kerberos principal to use. Leave blanc to use you current username. If you change this setting you have to destroy the credential cache before these setting takes effect.</para>
+            </entry>
+          </row>
+
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>PKINIT Userid</guilabel>
+              </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>The principals public/private/certificate identifier. Leave empty if not using PKINIT. To enable using a security token add the path to the pkcs11 Library here, e.g. "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"</para>
+            </entry>
+          </row>
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>PKINIT anchors</guilabel>
+              </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>Path to CA certificates used as trust anchors for pkinit. You only need to set this if it hasn't been set up globally in <filename>/etc/krb5.conf</filename></para>
+            </entry>
+          </row>
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>forwardable</guilabel>
+              </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>Whether the requested Kerberos ticket should be forwardable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password.</para>
+            </entry>
+          </row>
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>renewable</guilabel>
+              </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>Whether the requested Kerberos ticket should be renewable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password.</para>
+            </entry>
+          </row>
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>proxiable</guilabel>
+	      </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>Whether the requested Kerberos ticket should be proxiable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password.</para>
+            </entry>
+          </row>
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>Warn .. minutes before expiry</guilabel>
+              </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>Notifications that your credentials are about to expire will be sent that many minutes before expiry.</para>
+            </entry>
+          </row>
+          <row>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>
+                <guilabel>Show tray icon</guilabel>
+              </para>
+            </entry>
+            <entry colsep="0" rowsep="0" valign="top">
+              <para>Whether to show the tray icon. Disabling the tray icon will also disable notifications, the password dialog will be brought up instead.</para>
+            </entry>
+          </row>
+	</tbody>
+      </tgroup>
+    </table>
+  </para>
+</section>
+
+</article>
+

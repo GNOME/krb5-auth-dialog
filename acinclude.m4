@@ -203,3 +203,5 @@ AC_DEFUN([KA_COMPILE_WARNINGS],[
 ])
 
 m4_include([m4/compiler-flags.m4])
+m4_include([m4/gnome-doc-utils.m4])
+

@@ -1,3 +1,23 @@
+Mon Jun  1 19:56:35 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	add user manual
+	* configure.ac: call GNOME_DOC_INIT
+	* Makefile.am: process help/
+	* acinclude.m4: include m4/gnome-doc-utils.m4
+	* .gitignore: ignore gnome-doc-utils.make
+	* help/C/figures/ka-expired.png: new file
+	* help/C/figures/ka-expiring.png: likewise
+	* help/C/figures/ka-valid.png: likewise
+	* help/C/figures/trayicon-expired.png: likewise
+	* help/C/figures/trayicon-expiring.png: likewise
+	* help/C/figures/trayicon-valid.png: likewise
+	* help/C/krb5-auth-dialog.xml: likewise
+	* help/C/legal.xml: likewise
+	* help/Makefile.am: likewise
+	* help/krb5-auth-dialog.omf.in: likewise
+	* m4/gnome-doc-utils.m4: likewise
+	* help/.gitignore: likewise
+
 Mon May 25 19:11:58 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-applet.c: update about dialog 

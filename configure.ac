@@ -24,6 +24,7 @@ AC_PROG_YACC
 AM_PROG_CC_C_O
 
 KA_COMPILE_WARNINGS([maximum])
+GNOME_DOC_INIT
 
 GTK_REQUIRED="2.16.0"
 DBUS_REQUIRED="0.60"
@@ -218,6 +219,7 @@ icons/Makefile
 etpo/Makefile
 po/Makefile.in
 preferences/Makefile
+help/Makefile
 ])
 
 AC_MSG_NOTICE([])

@@ -40,7 +40,7 @@ krb5_auth_dialog_CPPFLAGS = \
 	-I$(top_srcdir)/gtksecentry \
 	-I$(top_srcdir)/secmem \
 	-DKA_DATA_DIR=\""$(pkgdatadir)"\" \
-	-DLOCALE_DIR=\""$(localedir)/"\"
+	-DLOCALE_DIR=\""$(localedir)/"\" \
 	$(AM_CPPFLAGS) \
 	$(NULL)
 

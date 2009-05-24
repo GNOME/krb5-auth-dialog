@@ -6,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-05-20 15:29+0000\n"
-"PO-Revision-Date: 2009-05-20 19:52+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
+"auth-dialog&component=general\n"
+"POT-Creation-Date: 2009-05-22 16:10+0000\n"
+"PO-Revision-Date: 2009-05-24 15:58+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,11 +24,11 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:2
 msgid "Kerberos principal"
-msgstr ""
+msgstr "Principal de Kerberos"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "Notify user when ticket becomes valid"
-msgstr ""
+msgstr "Notificar al usuario cuando un tique se convierta en válido"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:4
 msgid "Notify user when ticket has expired"
@@ -39,11 +40,11 @@ msgstr "Notificar al usuario cuando un tique va a caducar"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
 msgid "PKINIT CA certificates"
-msgstr ""
+msgstr "Certificados PKINT CA"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:7
 msgid "PKINIT identifier"
-msgstr ""
+msgstr "Identificador PKINT"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:8
 msgid "PKINIT trust anchors"
@@ -51,7 +52,7 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:9
 msgid "Prompt minutes before expiry"
-msgstr ""
+msgstr "Mostrar minutos antes de caducar"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:10
 msgid "Proxiable ticket"
@@ -63,7 +64,7 @@ msgstr "Tique renovable"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:12
 msgid "Requested tickets should be forwardable"
-msgstr ""
+msgstr "Los tiques solicitados deberán ser reenviables"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:13
 msgid "Requested tickets should be proxiable"
@@ -71,18 +72,19 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:14
 msgid "Requested tickets should be renewable"
-msgstr ""
+msgstr "Los tiques solicitados deberán ser renovables"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:15
 msgid "Show a trayicon in the status area of the panel"
-msgstr ""
+msgstr "Mostrar un icono en la bandeja del sistema en el área del panel"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:16
 msgid "Show trayicon"
 msgstr "Mostrar icono en la bandeja"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:17
-msgid "Start prompting/displaying notifications that many minutes before expiry"
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:18
@@ -124,25 +126,25 @@ msgstr "No se pudo obtener el tique de Kerberos: «%s»"
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Sus credenciales caducan en %d minuto"
+msgstr[1] "Sus credenciales caducan en %d minutos"
 
 #: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:356
 msgid "Your credentials have expired"
-msgstr ""
+msgstr "Sus credenciales han caducado"
 
 #: ../src/krb5-auth-pwdialog.c:199
 msgid "Please enter your Kerberos password:"
-msgstr ""
+msgstr "Introduzca su contraseña de Kerberos:"
 
 #: ../src/krb5-auth-pwdialog.c:210
 #, c-format
 msgid "Please enter the password for '%s':"
-msgstr ""
+msgstr "Introduzca la contraseña para «%s»:"
 
 #: ../src/krb5-auth-pwdialog.c:230
 msgid "The password you entered is invalid"
-msgstr ""
+msgstr "La contraseña que ha introducido no es válida"
 
 #: ../src/dummy-strings.c:5
 msgid "ASN.1 failed call to system time library"
@@ -216,37 +218,37 @@ msgstr "Sin errores"
 #. krb5_err.et:krb5:KRB5KDC_ERR_NONE
 #: ../src/dummy-strings.c:19
 msgid "Client's entry in database has expired"
-msgstr ""
+msgstr "Ha caducado la entrada del cliente en la base de datos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
 #: ../src/dummy-strings.c:20
 msgid "Server's entry in database has expired"
-msgstr ""
+msgstr "Ha caducado la entrada del servidor en la base de datos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
 #: ../src/dummy-strings.c:21
 msgid "Requested protocol version not supported"
-msgstr ""
+msgstr "La versión del protocolo solicitado no está soportada"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
 #: ../src/dummy-strings.c:22
 msgid "Client's key is encrypted in an old master key"
-msgstr ""
+msgstr "La clave del cliente está cifrada en una clave maestra antigua"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:23
 msgid "Server's key is encrypted in an old master key"
-msgstr ""
+msgstr "La clave del servidor está cifrada en una clave maestra antigua"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:24
 msgid "Client not found in Kerberos database"
-msgstr ""
+msgstr "No se encontró el cliente en la base de datos de Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:25
 msgid "Server not found in Kerberos database"
-msgstr ""
+msgstr "No se encontró el servidor en la base de datos de Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:26
@@ -1511,8 +1513,10 @@ msgid "Selection Bound"
 msgstr "Límite de selección"
 
 #: ../gtksecentry/gtksecentry.c:465
-msgid "The position of the opposite end of the selection from the cursor in chars"
-msgstr "La posición en caracteres del extremo opuesto de la selección desde el cursor"
+msgid ""
+"The position of the opposite end of the selection from the cursor in chars"
+msgstr ""
+"La posición en caracteres del extremo opuesto de la selección desde el cursor"
 
 #: ../gtksecentry/gtksecentry.c:472
 msgid "Maximum length"
@@ -1566,7 +1570,9 @@ msgstr "Desplazamiento del scroll"
 
 #: ../gtksecentry/gtksecentry.c:523
 msgid "Number of pixels of the entry scrolled off the screen to the left"
-msgstr "Número de píxeles de la entrada desplazados fuera de la pantalla hacia la izquierda"
+msgstr ""
+"Número de píxeles de la entrada desplazados fuera de la pantalla hacia la "
+"izquierda"
 
 #: ../gtksecentry/gtksecentry.c:530
 msgid "Text"
@@ -1705,4 +1711,3 @@ msgstr ""
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:27
 msgid "renewable"
 msgstr "renovable"
-

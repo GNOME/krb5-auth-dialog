@@ -1,3 +1,8 @@
+Mon May 25 18:32:49 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* configure.ac: release 0.10
+	* NEWS: likewise
+
 Fri May 22 18:07:31 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/Makefile.am: add missing line continuation

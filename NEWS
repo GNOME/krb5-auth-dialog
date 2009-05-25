@@ -1,3 +1,14 @@
+============
+Version 0.10
+============
+* allow to turn off notifications easily
+* use GtkBuilder instead of Libglade
+* reduce number of translatable strings
+* various i18n fixes (thanks to Christian Persch)
+* i18n updates:
+	* es: Jorge Gonzalez
+	* pa: A S Alam
+
 ===========
 Version 0.9
 ===========

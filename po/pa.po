@@ -7,12 +7,12 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
 "cgi?product=krb5-auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-05-24 13:58+0000\n"
-"PO-Revision-Date: 2009-05-25 22:07+0530\n"
+"POT-Creation-Date: 2009-05-25 17:12+0000\n"
+"PO-Revision-Date: 2009-05-26 06:20+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 0.3\n"
@@ -23,7 +23,7 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:2
 msgid "Kerberos principal"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਸਿਧਾਂਤ"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "Notify user when ticket becomes valid"
@@ -39,7 +39,7 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
 msgid "PKINIT CA certificates"
-msgstr ""
+msgstr "PKINIT CA ਸਰਟੀਫਿਕੇਟ"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:7
 msgid "PKINIT identifier"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:16
 msgid "Show trayicon"
-msgstr "ਟਰੇ ਆਈਕਾਨ ਵੇਖੋ"
+msgstr "ਟਰੇ ਆਈਕਾਨ ਵੇਖੋ  "
 
 #: ../src/krb5-auth-dialog.schemas.in.h:17
 msgid ""
@@ -104,17 +104,17 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:22
 msgid "valid ticket notification"
-msgstr ""
+msgstr "ਢੁੱਕਵੀਂ ਟਿਕਟ ਨੋਟੀਫਿਕੇਸ਼ਨ"
 
 #: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.c:979
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
 msgid "Network Authentication"
-msgstr "ਨੈੱਟਵਰਕ ਪਰਮਾਣਕਿਤਾ"
+msgstr "ਨੈੱਟਵਰਕ ਪਰਮਾਣਕਿਤਾ "
 
 #: ../src/krb5-auth-dialog.xml.h:2
 msgid "_Renew Ticket"
-msgstr "ਟਿਕਟ ਨਵੀਨੀਕਰਨ(_R)"
+msgstr "ਟਿਕਟ ਨਵੀਨੀਕਰਨ (_R)"
 
 #: ../src/krb5-auth-dialog.c:812
 #, c-format
@@ -139,7 +139,7 @@ msgstr "ਆਪਣਾ ਕਰਬਰੋਸ ਪਾਸਵਰਡ ਦਿਓ ਜੀ:"
 #: ../src/krb5-auth-pwdialog.c:210
 #, c-format
 msgid "Please enter the password for '%s':"
-msgstr "'%s' ਲਈ ਪਾਸਵਰਡ ਦਿਓ ਜੀ:"
+msgstr "'%s' ਲਈ ਆਪਣਾ ਪਾਸਵਰਡ ਦਿਓ ਜੀ:"
 
 #: ../src/krb5-auth-pwdialog.c:230
 msgid "The password you entered is invalid"
@@ -212,7 +212,7 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: ../src/dummy-strings.c:18
 msgid "No error"
-msgstr "ਕੋਈ ਗਲਤੀ ਨਹੀਂ"
+msgstr "  "
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NONE
 #: ../src/dummy-strings.c:19
@@ -327,7 +327,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
 #: ../src/dummy-strings.c:41
 msgid "Password has expired"
-msgstr "ਪਾਸਵਰਡ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
+msgstr "ਪਾਸਵਰਡ ਦੀ ਮਿਆਦ ਪੁੱਗੀ।"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
 #: ../src/dummy-strings.c:42
@@ -357,12 +357,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
 #: ../src/dummy-strings.c:47
 msgid "Ticket expired"
-msgstr "ਟਿਕਟ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
+msgstr "   "
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
 #: ../src/dummy-strings.c:48
 msgid "Ticket not yet valid"
-msgstr "ਟਿਕਟ ਹਾਲੇ ਢੁੱਕਵੀਂ ਨਹੀਂ"
+msgstr ""
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
 #: ../src/dummy-strings.c:49
@@ -422,7 +422,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
 #: ../src/dummy-strings.c:60
 msgid "Service key not available"
-msgstr "ਸਰਵਿਸ ਕੁੰਜੀ ਹਾਲੇ ਉਪਲੱਬਧ ਨਹੀਂ"
+msgstr "    "
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
@@ -478,12 +478,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
 #: ../src/dummy-strings.c:71
 msgid "KDC not trusted"
-msgstr "KDC ਟਰਸੱਟਡ ਨਹੀਂ"
+msgstr "KDC  "
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
 #: ../src/dummy-strings.c:72
 msgid "Invalid signature"
-msgstr "ਗਲਤ ਦਸਤਖਤ"
+msgstr " "
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
 #: ../src/dummy-strings.c:73
@@ -568,12 +568,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
 #: ../src/dummy-strings.c:89
 msgid "Cannot read password"
-msgstr "ਪਾਸਵਰਡ ਪੜ੍ਹਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ"
+msgstr "    "
 
 #. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
 #: ../src/dummy-strings.c:90
 msgid "Password mismatch"
-msgstr "ਪਾਸਵਰਡ ਮਿਲਦਾ ਨਹੀਂ"
+msgstr "  "
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
 #: ../src/dummy-strings.c:91
@@ -693,7 +693,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: ../src/dummy-strings.c:114
 msgid "Kerberos service unknown"
-msgstr "ਕਰਬਰੋਸ ਸਰਵਿਸ ਅਣਜਾਣ"
+msgstr "  "
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:115
@@ -1068,7 +1068,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: ../src/dummy-strings.c:190
 msgid "This application has expired"
-msgstr "ਇਹ ਐਪਲੀਕੇਸ਼ਨ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
+msgstr "    "
 
 #. krb5_err.et:krb5:KRB5_APPL_EXPIRED
 #: ../src/dummy-strings.c:191
@@ -1083,7 +1083,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
 #: ../src/dummy-strings.c:193
 msgid "Password change failed"
-msgstr "ਪਾਸਵਰਡ ਬਦਲਣ ਲਈ ਫੇਲ੍ਹ"
+msgstr "   "
 
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: ../src/dummy-strings.c:194
@@ -1123,7 +1123,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: ../src/dummy-strings.c:201
 msgid "service name unknown"
-msgstr "ਸਰਵਿਸ ਨਾਂ ਅਣਜਾਣ"
+msgstr "  "
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: ../src/dummy-strings.c:202
@@ -1138,7 +1138,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: ../src/dummy-strings.c:204
 msgid "service not available"
-msgstr "ਸਰਵਿਸ ਉਪਲੱਬਧ ਨਹੀਂ"
+msgstr "  "
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: ../src/dummy-strings.c:205
@@ -1453,7 +1453,7 @@ msgstr ""
 
 #: ../src/krb5-auth-applet.c:443
 msgid "Don't show me this again"
-msgstr "ਮੈਨੂੰ ਇਹ ਮੁੜ ਨਾ ਵੇਖਾਓ"
+msgstr "    "
 
 #: ../src/krb5-auth-applet.c:480
 msgid "Network credentials valid"
@@ -1475,25 +1475,32 @@ msgstr ""
 msgid "Your Kerberos credentails have expired."
 msgstr ""
 
+#: ../src/krb5-auth-applet.c:569
+#, c-format
+msgid ""
+"There was an error displaying %s:\n"
+"%s"
+msgstr ""
+
 #. kdestroy
-#: ../src/krb5-auth-applet.c:581
+#: ../src/krb5-auth-applet.c:619
 msgid "Remove Credentials _Cache"
 msgstr ""
 
 #. Preferences
-#: ../src/krb5-auth-applet.c:590
+#: ../src/krb5-auth-applet.c:628
 msgid "_Preferences"
-msgstr "ਮੇਰੀ ਪਸੰਦ(_P)"
+msgstr " (_P)"
 
 #. About item
-#: ../src/krb5-auth-applet.c:598
+#: ../src/krb5-auth-applet.c:636
 msgid "_About"
-msgstr "ਇਸ ਬਾਰੇ(_A)"
+msgstr " (_A)"
 
 #. Quit
-#: ../src/krb5-auth-applet.c:607
+#: ../src/krb5-auth-applet.c:645
 msgid "_Quit"
-msgstr "ਬਾਹਰ(_Q)"
+msgstr "(_Q)"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Network Authentication Dialog"
@@ -1501,7 +1508,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:454
 msgid "Cursor Position"
-msgstr "ਕਰਸਰ ਸਥਿਤੀ"
+msgstr " "
 
 #: ../gtksecentry/gtksecentry.c:456
 msgid "The current position of the insertion cursor in chars"
@@ -1568,7 +1575,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:530
 msgid "Text"
-msgstr "ਟੈਕਸਟ"
+msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:532
 msgid "The contents of the entry"
@@ -1596,23 +1603,23 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:2
 msgid "<b>Appearance</b>"
-msgstr "<b>ਦਿੱਖ</b>"
+msgstr "<b></b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:3
 msgid "<b>Kerberos User</b>"
-msgstr "<b>ਕਰਬਰੋਸ ਯੂਜ਼ਰ</b>"
+msgstr "<b> </b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:4
 msgid "<b>Notifications</b>"
-msgstr "<b>ਨੋਟੀਫਿਕੇਸ਼ਨ</b>"
+msgstr "<b></b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:5
 msgid "<b>Ticket Options</b>"
-msgstr "<b>ਟਿਕਟ ਚੋਣਾਂ</b>"
+msgstr "<b> </b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:6
 msgid "Applet"
-msgstr "ਐਪਲਿਟ"
+msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:7
 msgid "If checked, display the tray icon in the status bar."
@@ -1632,7 +1639,7 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:11
 msgid "Kerberos"
-msgstr "ਕਰਬਰੋਸ"
+msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:12
 msgid "Kerberos Authentication Configuration"
@@ -1666,7 +1673,7 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:19
 msgid "Show tray icon"
-msgstr "ਟਰੇ ਆਈਕਾਨ ਵੇਖੋ"
+msgstr "  "
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:20
 msgid ""
@@ -1676,7 +1683,7 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:21
 msgid "Warn"
-msgstr "ਚੇਤਾਵਨੀ"
+msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:22
 msgid "forwardable"

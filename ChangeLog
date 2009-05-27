@@ -1,3 +1,8 @@
+Fri Jun 12 22:36:35 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-applet: use _("translator-credits") in about dialog
+	* AUTHORS: add Christian Persch
+
 Fri Jun 12 11:51:20 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* preferences/krb5-auth-dialog-preferences.desktop.in: use

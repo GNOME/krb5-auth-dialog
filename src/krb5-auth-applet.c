@@ -594,10 +594,13 @@ static void
 ka_applet_cb_about_dialog (GtkMenuItem* menuitem G_GNUC_UNUSED,
 			   gpointer user_data G_GNUC_UNUSED)
 {
-	const gchar* authors[] = {  "Christopher Aillon <caillon@redhat.com>",
-				    "Colin Walters <walters@verbum.org>",
-				    "Guido Günther <agx@sigxpcu.org>",
-				    NULL };
+	const gchar* authors[] = {
+				"Christopher Aillon <caillon@redhat.com>",
+				"Jonathan Blandford <jrb@redhat.com>",
+				"Colin Walters <walters@verbum.org>",
+				"Guido Günther <agx@sigxpcu.org>",
+				NULL };
+
 	gtk_about_dialog_set_url_hook (ka_about_dialog_url_hook, NULL, NULL);
 	gtk_show_about_dialog (NULL,
 			       "authors", authors,
@@ -609,10 +612,7 @@ ka_applet_cb_about_dialog (GtkMenuItem* menuitem G_GNUC_UNUSED,
 			       "website-label", PACKAGE " website",
 			       "website", "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",
 			       "license", "GNU General Public License Version 2",
-			       "translator-credits",
-			       "Jorge González <jorgegonz@svn.gnome.org>\n"
-			       "Kjartan Maraas <kmaraas@gnome.org>\n"
-			       "Daniel Nylander <po@danielnylander.se>\n",
+			       "translator-credits", _("translator-credits"),
 			       NULL);
 }
 

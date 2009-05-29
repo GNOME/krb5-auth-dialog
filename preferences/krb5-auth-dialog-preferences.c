@@ -34,6 +34,7 @@
 #include <glib/gi18n.h>
 
 #include "krb5-auth-gconf-tools.h"
+#include "krb5-auth-tools.h"
 
 #define N_LISTENERS 8
 
@@ -560,40 +561,13 @@ ka_preferences_dialog_response (GtkWidget *widget,
                           int response,
                           KaPreferencesDialog *dialog)
 {
-  GError *error = NULL;
-
   if (response != GTK_RESPONSE_HELP) {
       gtk_widget_destroy (widget);
       return;
   }
 
-#if GTK_CHECK_VERSION(2, 14, 0)
-  gtk_show_uri (gtk_window_get_screen (GTK_WINDOW (dialog->dialog)),
-                "ghelp:krb5-auth-dialog#preferences",
-                gtk_get_current_event_time (), &error);
-#else
-   g_warning("gtk_show_uri unavailable");
-#endif
-
-  if (error) {
-      GtkWidget *message_dialog;
-
-
-      message_dialog = gtk_message_dialog_new (GTK_WINDOW (dialog->dialog),
-                                         GTK_DIALOG_DESTROY_WITH_PARENT,
-                                         GTK_MESSAGE_ERROR,
-                                         GTK_BUTTONS_CLOSE,
-                                         _("There was an error displaying help:\n%s"),
-                                         error->message);
-      gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
-
-      g_signal_connect (message_dialog, "response",
-                  G_CALLBACK (gtk_widget_destroy),
-                  NULL);
-
-      gtk_widget_show (message_dialog);
-      g_error_free (error);
-  }
+  ka_show_help (gtk_window_get_screen (GTK_WINDOW (dialog->dialog)),
+                "#preferences", GTK_WINDOW(dialog->dialog));
 }
 
 

@@ -1,3 +1,20 @@
+Mon Jun  1 20:05:17 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	enable help in applet and prefs dialog
+	* src/krb5-auth-tools.c: new file
+	* src/krb5-auth-tools.h: likewise
+	* po/POTFILES.in: add src/krb5-auth-tools.h, remove duplicate
+	  src/krb5-auth-dialog.schemas.in
+	* preferences/Makefile.am (krb5_auth_dialog_sources): add
+	  krb5-auth-tools.[ch]
+	* src/Makefile.am (krb5_auth_dialog_preferences_SOURCES): add
+	  $(top_srcdir)/krb5-auth-tools.[ch]
+	* preferences/krb5-auth-dialog-preferences.c
+	  (ka_preferences_dialog_response): call ka_show_help
+	* preferences/krb5-auth-dialog-preferences.xml: show help button
+	* src/krb5-auth-applet.c (ka_applet_cb_show_help): new function
+	  (ka_applet_create_context_menu): add help menu entry
+
 Mon Jun  1 19:56:35 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	add user manual

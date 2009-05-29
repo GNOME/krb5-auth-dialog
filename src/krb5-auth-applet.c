@@ -26,6 +26,7 @@
 #include "krb5-auth-dialog.h"
 #include "krb5-auth-gconf-tools.h"
 #include "krb5-auth-gconf.h"
+#include "krb5-auth-tools.h"
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
 #endif
@@ -551,13 +552,13 @@ ka_applet_cb_quit (GtkMenuItem* menuitem G_GNUC_UNUSED, gpointer user_data)
 
 static void
 ka_about_dialog_url_hook (GtkAboutDialog *about,
-			  const gchar *link,
+			  const gchar *alink,
 			  gpointer data G_GNUC_UNUSED)
 {
 	GError *error = NULL;
 
 	gtk_show_uri(gtk_window_get_screen (GTK_WINDOW (about)),
-		     link, gtk_get_current_event_time(), &error);
+		     alink, gtk_get_current_event_time(), &error);
 
 	if (error) {
 		GtkWidget *message_dialog;
@@ -567,7 +568,7 @@ ka_about_dialog_url_hook (GtkAboutDialog *about,
 					GTK_MESSAGE_ERROR,
 					GTK_BUTTONS_CLOSE,
 					_("There was an error displaying %s:\n%s"),
-					link, error->message);
+					alink, error->message);
 		gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
 
 		g_signal_connect (message_dialog, "response",
@@ -605,6 +606,16 @@ ka_applet_cb_about_dialog (GtkMenuItem* menuitem G_GNUC_UNUSED,
 }
 
 
+static void
+ka_applet_cb_show_help (GtkMenuItem* menuitem G_GNUC_UNUSED,
+			gpointer user_data)
+{
+	KaApplet *applet = KA_APPLET(user_data);
+
+	ka_show_help (gtk_status_icon_get_screen(applet->priv->tray_icon), NULL, NULL);
+}
+
+
 /* The tray icon's context menu */
 static gboolean
 ka_applet_create_context_menu (KaApplet* applet)
@@ -631,6 +642,12 @@ ka_applet_create_context_menu (KaApplet* applet)
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
+	/* About item */
+	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Help"));
+	g_signal_connect (G_OBJECT (menu_item), "activate", G_CALLBACK (ka_applet_cb_show_help), applet);
+	image = gtk_image_new_from_stock (GTK_STOCK_HELP, GTK_ICON_SIZE_MENU);
+	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	/* About item */
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_About"));

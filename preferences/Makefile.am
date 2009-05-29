@@ -6,6 +6,8 @@ krb5_auth_dialog_preferences_SOURCES = \
 	krb5-auth-dialog-preferences.c \
 	$(top_srcdir)/src/krb5-auth-gconf-tools.c \
 	$(top_srcdir)/src/krb5-auth-gconf-tools.h \
+	$(top_srcdir)/src/krb5-auth-tools.c \
+	$(top_srcdir)/src/krb5-auth-tools.h \
 	$(NULL)
 
 krb5_auth_dialog_preferences_CPPFLAGS = \

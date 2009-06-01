@@ -1,3 +1,8 @@
+Mon Jun  1 23:12:42 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* src/krb5-auth-dialog (ka_error_dialog): set application name
+	  in error dialog
+
 Mon Jun  1 20:05:17 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	enable help in applet and prefs dialog

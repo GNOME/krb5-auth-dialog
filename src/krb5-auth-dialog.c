@@ -40,6 +40,7 @@
 #include "krb5-auth-applet.h"
 #include "krb5-auth-pwdialog.h"
 #include "krb5-auth-dbus.h"
+#include "krb5-auth-tools.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
 #include <libnm_glib.h>
@@ -48,6 +49,8 @@
 #ifdef HAVE_HX509_ERR_H
 # include <hx509_err.h>
 #endif
+
+#define KA_NAME _("Network Authentication")
 
 static krb5_context kcontext;
 static krb5_principal kprincipal;
@@ -804,12 +807,15 @@ ka_destroy_cache (GtkMenuItem  *menuitem G_GNUC_UNUSED,
 static void
 ka_error_dialog(int err)
 {
-	const char* msg = get_error_message(kcontext, err);
+	const char *msg = get_error_message(kcontext, err);
 	GtkWidget *dialog = gtk_message_dialog_new (NULL,
 				GTK_DIALOG_DESTROY_WITH_PARENT,
 				GTK_MESSAGE_ERROR,
 				GTK_BUTTONS_CLOSE,
-				_("Couldn't acquire kerberos ticket: '%s'"), _(msg));
+				"%s", KA_NAME);
+	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+				  _("Couldn't acquire kerberos ticket: '%s'"),
+				  _(msg));
 	gtk_dialog_run (GTK_DIALOG (dialog));
 	gtk_widget_destroy (dialog);
 }
@@ -976,7 +982,7 @@ main (int argc, char *argv[])
 		always_run = TRUE;
 	}
 	if (using_krb5 () || always_run) {
-		g_set_application_name (_("Network Authentication"));
+		g_set_application_name (KA_NAME);
 
 		xml = gtk_builder_new();
 		g_assert(gtk_builder_add_from_file(xml, KA_DATA_DIR G_DIR_SEPARATOR_S

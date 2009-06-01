@@ -31,5 +31,7 @@ gboolean ka_dbus_service(KaApplet* applet);
 gboolean ka_dbus_acquire_tgt (KaApplet *applet,
 			      const gchar *principal,
 			      DBusGMethodInvocation *context);
+gboolean ka_dbus_destroy_ccache(KaApplet* applet,
+			        DBusGMethodInvocation *context);
 
 #endif /* KRB5_AUTH_DBUS_H */

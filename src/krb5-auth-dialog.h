@@ -23,7 +23,7 @@
 
 #include "krb5-auth-applet.h"
 
-void ka_destroy_cache (GtkMenuItem  *menuitem, gpointer user_data);
+gboolean ka_destroy_ccache (KaApplet* applet);
 gboolean ka_grab_credentials(KaApplet* applet);
 gboolean ka_check_credentials (KaApplet *applet, const char* principal);
 int ka_tgt_valid_seconds(void);

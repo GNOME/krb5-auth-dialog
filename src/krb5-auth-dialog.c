@@ -787,11 +787,9 @@ using_krb5(void)
 }
 
 
-void
-ka_destroy_cache (GtkMenuItem  *menuitem G_GNUC_UNUSED,
-		  gpointer data)
+gboolean
+ka_destroy_ccache (KaApplet *applet)
 {
-	KaApplet *applet = KA_APPLET(data);
 	krb5_ccache  ccache;
 	const char* cache;
 	krb5_error_code ret;
@@ -801,6 +799,11 @@ ka_destroy_cache (GtkMenuItem  *menuitem G_GNUC_UNUSED,
 	ret = krb5_cc_destroy (kcontext, ccache);
 
 	credentials_expiring_real(applet);
+
+	if (ret)
+		return FALSE;
+	else
+		return TRUE;
 }
 
 

@@ -32,12 +32,24 @@ gboolean
 ka_dbus_acquire_tgt (KaApplet *applet,
 		     const gchar *principal, DBusGMethodInvocation *context)
 {
-       gboolean success;
+	 gboolean success;
 
-       KA_DEBUG("Getting TGT for '%s'", principal);
-       success = ka_check_credentials(applet, principal);
-       dbus_g_method_return(context, success);
-       return TRUE;
+	 KA_DEBUG("Getting TGT for '%s'", principal);
+	 success = ka_check_credentials(applet, principal);
+	 dbus_g_method_return(context, success);
+	 return TRUE;
+}
+
+
+gboolean
+ka_dbus_destroy_ccache(KaApplet* applet, DBusGMethodInvocation *context)
+{
+	gboolean success;
+
+	KA_DEBUG("Destroying ticket cache");
+	success = ka_destroy_ccache (applet);
+	dbus_g_method_return(context, success);
+	return TRUE;
 }
 
 

@@ -1,3 +1,15 @@
+Fri Jun 12 18:30:03 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	add DBus API to destroy ccache
+	* src/krb5-auth-applet-dbus.xml: add method
+	* src/krb5-auth-dialog.h: rename ka_dbus_destroy_cache to
+	  ka_dbus_destroy_ccache, change return value
+	* src/krb5-auth-dialog.c: likewise
+	* src/krb5-auth-dbus.h (ka_dbus_destroy_ccache): new protoype
+	* src/krb5-auth-dbus.c (ka_dbus_destroy_ccache): new function
+	* src/krb5-auth-applet.c (ka_applet_cb_destroy_ccache): use it
+	  (ka_applet_create_context_menu): use it
+
 Fri Jun 12 22:36:35 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-applet: use _("translator-credits") in about dialog

@@ -9,6 +9,11 @@
       <arg type="s" name="principal" direction="in" />
       <arg type="b" name="success" direction="out"/>
     </method>
+    <method name="destroyCCache">
+      <annotation name="org.freedesktop.DBus.GLib.CSymbol" value="ka_dbus_destroy_ccache"/>
+      <annotation name="org.freedesktop.DBus.GLib.Async" value="true"/>
+      <arg type="b" name="success" direction="out"/>
+    </method>
   </interface>
 </node>
 

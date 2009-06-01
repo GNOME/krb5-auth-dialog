@@ -627,6 +627,15 @@ ka_applet_cb_show_help (GtkMenuItem* menuitem G_GNUC_UNUSED,
 }
 
 
+static void
+ka_applet_cb_destroy_ccache(GtkMenuItem* menuitem G_GNUC_UNUSED,
+			    gpointer user_data)
+{
+	KaApplet *applet = KA_APPLET(user_data);
+	ka_destroy_ccache(applet);
+}
+
+
 /* The tray icon's context menu */
 static gboolean
 ka_applet_create_context_menu (KaApplet* applet)
@@ -639,7 +648,8 @@ ka_applet_create_context_menu (KaApplet* applet)
 
 	/* kdestroy */
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("Remove Credentials _Cache"));
-	g_signal_connect (G_OBJECT (menu_item), "activate", G_CALLBACK (ka_destroy_cache), applet);
+	g_signal_connect (G_OBJECT (menu_item), "activate",
+			  G_CALLBACK (ka_applet_cb_destroy_ccache), applet);
 	image = gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
@@ -648,21 +658,24 @@ ka_applet_create_context_menu (KaApplet* applet)
 
 	/* Preferences */
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Preferences"));
-	g_signal_connect (G_OBJECT (menu_item), "activate", G_CALLBACK (ka_applet_cb_preferences), applet);
+	g_signal_connect (G_OBJECT (menu_item), "activate",
+			  G_CALLBACK (ka_applet_cb_preferences), applet);
 	image = gtk_image_new_from_stock (GTK_STOCK_PREFERENCES, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	/* About item */
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Help"));
-	g_signal_connect (G_OBJECT (menu_item), "activate", G_CALLBACK (ka_applet_cb_show_help), applet);
+	g_signal_connect (G_OBJECT (menu_item), "activate",
+			  G_CALLBACK (ka_applet_cb_show_help), applet);
 	image = gtk_image_new_from_stock (GTK_STOCK_HELP, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	/* About item */
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_About"));
-	g_signal_connect (G_OBJECT (menu_item), "activate", G_CALLBACK (ka_applet_cb_about_dialog), applet);
+	g_signal_connect (G_OBJECT (menu_item), "activate",
+			  G_CALLBACK (ka_applet_cb_about_dialog), applet);
 	image = gtk_image_new_from_stock (GTK_STOCK_ABOUT, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
@@ -671,7 +684,8 @@ ka_applet_create_context_menu (KaApplet* applet)
 
 	/* Quit */
 	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Quit"));
-	g_signal_connect (G_OBJECT (menu_item), "activate", G_CALLBACK (ka_applet_cb_quit), applet);
+	g_signal_connect (G_OBJECT (menu_item), "activate",
+			  G_CALLBACK (ka_applet_cb_quit), applet);
 	image = gtk_image_new_from_stock (GTK_STOCK_QUIT, GTK_ICON_SIZE_MENU);
 	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);

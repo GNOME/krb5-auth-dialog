@@ -535,7 +535,9 @@ static void
 ka_applet_cb_preferences (GtkWidget* menuitem G_GNUC_UNUSED,
                           gpointer user_data G_GNUC_UNUSED)
 {
-	g_spawn_command_line_async ("krb5-auth-dialog-preferences", NULL);
+	g_spawn_command_line_async (BIN_DIR
+				    G_DIR_SEPARATOR_S
+				    "krb5-auth-dialog-preferences", NULL);
 }
 
 

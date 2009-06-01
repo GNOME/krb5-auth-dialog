@@ -1,3 +1,9 @@
+Tue Jun  2 00:01:16 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	launch prefs with full path
+	* src/Makefile.am: define BIN_DIR
+	* src/krb5-auth-applet.c (ka_applet_cb_preferences): use it
+
 Mon Jun  1 23:12:42 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* src/krb5-auth-dialog (ka_error_dialog): set application name

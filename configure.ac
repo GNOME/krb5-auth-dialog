@@ -216,6 +216,9 @@ src/krb5-auth-dialog.1
 secmem/Makefile
 gtksecentry/Makefile
 icons/Makefile
+icons/22x22/Makefile
+icons/48x48/Makefile
+icons/scalable/Makefile
 etpo/Makefile
 po/Makefile.in
 preferences/Makefile

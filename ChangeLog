@@ -1,3 +1,14 @@
+Fri Jun 12 11:45:30 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	add scalable and 48x48 icons and move them from pkgdatadir to datadir.
+	Makes using different icon themes easier.
+	* configure.ac (AC_OUTPUT): add icon dirs
+	* src/Makefile.am (rb5_auth_dialog_CPPFLAGS): define DATADIR
+	* icons/*.png: move 22x22 icons from ...here
+	* icons/22x22: ..to here
+	* icons/scalable: new icons
+	* icons/48x48: likewise
+
 Tue Jun  2 00:01:16 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	launch prefs with full path

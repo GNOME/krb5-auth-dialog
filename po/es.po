@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-06-02 21:03+0000\n"
-"PO-Revision-Date: 2009-06-04 14:28+0200\n"
+"POT-Creation-Date: 2009-06-04 16:29+0000\n"
+"PO-Revision-Date: 2009-06-07 14:10+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -59,52 +59,52 @@ msgstr "La contraseña que ha introducido no es válida"
 
 #: ../src/dummy-strings.c:5
 msgid "ASN.1 failed call to system time library"
-msgstr ""
+msgstr "ASN.1 falló al llamar a la biblioteca de la hora del sistema"
 
 #. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
 #: ../src/dummy-strings.c:6
 msgid "ASN.1 structure is missing a required field"
-msgstr ""
+msgstr "ASN.1 falta un campo requerido en la estructura"
 
 #. asn1_err.et:asn1:ASN1_MISSING_FIELD
 #: ../src/dummy-strings.c:7
 msgid "ASN.1 unexpected field number"
-msgstr ""
+msgstr "ASN.1 número de campo inesperado"
 
 #. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
 #: ../src/dummy-strings.c:8
 msgid "ASN.1 type numbers are inconsistent"
-msgstr ""
+msgstr "ASN.1 los tipos de números son inconsistentes"
 
 #. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
 #: ../src/dummy-strings.c:9
 msgid "ASN.1 value too large"
-msgstr ""
+msgstr "ASN.1 el valor es demasiado grande"
 
 #. asn1_err.et:asn1:ASN1_OVERFLOW
 #: ../src/dummy-strings.c:10
 msgid "ASN.1 encoding ended unexpectedly"
-msgstr ""
+msgstr "ASN.1 la codificación finalizó inesperadamente"
 
 #. asn1_err.et:asn1:ASN1_OVERRUN
 #: ../src/dummy-strings.c:11
 msgid "ASN.1 identifier doesn't match expected value"
-msgstr ""
+msgstr "ASN.1 el identificador no coincide con el valor esperado"
 
 #. asn1_err.et:asn1:ASN1_BAD_ID
 #: ../src/dummy-strings.c:12
 msgid "ASN.1 length doesn't match expected value"
-msgstr ""
+msgstr "ASN.1 la longitud no coincide con el valor esperado"
 
 #. asn1_err.et:asn1:ASN1_BAD_LENGTH
 #: ../src/dummy-strings.c:13
 msgid "ASN.1 badly-formatted encoding"
-msgstr ""
+msgstr "ASN.1 codificación mal formateada"
 
 #. asn1_err.et:asn1:ASN1_BAD_FORMAT
 #: ../src/dummy-strings.c:14
 msgid "ASN.1 parse error"
-msgstr ""
+msgstr "ASN.1 error de análisis"
 
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:15

@@ -1,3 +1,18 @@
+Fri Jun 12 11:51:20 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* preferences/krb5-auth-dialog-preferences.desktop.in: use
+	  krb-valid-ticket icon instead of abusing gtk-dialog-authentication
+	* preferences/krb5-auth-dialog-preferences.xml: likewise
+	* src/krb5-auth-dialog.xml: likewise
+	* src/krb5-auth-applet.c (ka_send_event_notificatyion): likewise
+	  (ka_applet_update_status): use icons in notifications
+	  (ka_applet_create): load uixml after calling
+	  gtk_icon_theme_append_search_path
+	  (ka_applet_setup_icons): use DATA_DIR instead of PKG_DATA_DIR
+	  (ka_applet_cb_about_dialog): add "logo-icon-name"
+	* src/krb5-auth-dialog.c: uixml parsing moved to ka_applet_create...
+	* src/krb5-auth-applet.h: ...so drop unused parameter
+
 Fri Jun 12 11:45:30 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	add scalable and 48x48 icons and move them from pkgdatadir to datadir.

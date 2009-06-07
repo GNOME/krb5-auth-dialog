@@ -2,7 +2,7 @@
 _Name=Network Authentication
 _Comment=Set your Kerberos network authenticaion preferences
 Exec=krb5-auth-dialog-preferences
-Icon=gtk-dialog-authentication
+Icon=krb-valid-ticket
 Terminal=false
 Type=Application
 StartupNotify=true

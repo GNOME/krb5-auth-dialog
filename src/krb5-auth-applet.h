@@ -56,7 +56,7 @@ guint ka_applet_get_pw_prompt_secs(const KaApplet* applet);
 KaPwDialog* ka_applet_get_pwdialog(const KaApplet* applet);
 
 /* create the applet */
-KaApplet* ka_applet_create(GtkBuilder* xml);
+KaApplet* ka_applet_create(void);
 /* update tooltip and icon */
 int ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry);
 

@@ -66,6 +66,7 @@ G_DEFINE_TYPE(KaApplet, ka_applet, G_TYPE_OBJECT);
 
 struct _KaAppletPrivate
 {
+	GtkBuilder *uixml;
 	GtkStatusIcon* tray_icon;	/* the tray icon */
 	GtkWidget* context_menu;	/* the tray icon's context menu */
 	const char* icons[3]; 		/* for invalid, expiring and valid tickts */
@@ -210,6 +211,10 @@ ka_applet_dispose(GObject* object)
 	if (applet->priv->pwdialog) {
 		g_object_unref(applet->priv->pwdialog);
 		applet->priv->pwdialog = NULL;
+	}
+	if (applet->priv->uixml) {
+		g_object_unref(applet->priv->uixml);
+		applet->priv->uixml = NULL;
 	}
 
 	if (parent_class->dispose != NULL)
@@ -430,7 +435,7 @@ ka_send_event_notification (KaApplet *applet,
 		g_object_unref (applet->priv->notification);
 	}
 
-	notify_icon = icon ? icon : "gtk-dialog-authentication";
+	notify_icon = icon ? icon : "krb-valid-ticket";
 
 	applet->priv->notification = \
 		notify_notification_new_with_status_icon(summary,
@@ -480,7 +485,8 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 				ka_send_event_notification (applet,
 						_("Network credentials valid"),
 						_("You've refreshed your Kerberos credentials."),
-						NULL, "dont-show-again");
+						"krb-valid-ticket",
+						"dont-show-again");
 			}
 			expiry_notified = FALSE;
 		} else if (remaining < applet->priv->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS &&
@@ -493,7 +499,8 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 				ka_send_event_notification (applet,
 						_("Network credentials expiring"),
 						tooltip_text,
-						NULL, "dont-show-again");
+						"krb-expiring-ticket",
+						"dont-show-again");
 			}
 			last_warn = now;
 		}
@@ -507,7 +514,8 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 				ka_send_event_notification (applet,
 						_("Network credentials expired"),
 						_("Your Kerberos credentails have expired."),
-						NULL, "dont-show-again");
+						"krb-no-valid-ticket",
+						"dont-show-again");
 			}
 			expiry_notified = TRUE;
 			last_warn = 0;
@@ -594,6 +602,7 @@ ka_applet_cb_about_dialog (GtkMenuItem* menuitem G_GNUC_UNUSED,
 	gtk_show_about_dialog (NULL,
 			       "authors", authors,
 			       "version", VERSION,
+			       "logo-icon-name", "krb-valid-ticket",
 			       "copyright",
 			       "Copyright (C) 2004,2005,2006 Red Hat, Inc.,\n"
 			       "2008,2009 Guido Günther",
@@ -737,7 +746,7 @@ ka_applet_setup_icons (KaApplet* applet)
 {
 	/* Add application specific icons to search path */
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-					   KA_DATA_DIR G_DIR_SEPARATOR_S "icons");
+					   DATA_DIR G_DIR_SEPARATOR_S "icons");
 	applet->priv->icons[val_icon] = "krb-valid-ticket";
 	applet->priv->icons[exp_icon] = "krb-expiring-ticket";
 	applet->priv->icons[inv_icon] = "krb-no-valid-ticket";
@@ -776,7 +785,7 @@ ka_applet_get_pwdialog(const KaApplet* applet)
 
 /* create the tray icon applet */
 KaApplet*
-ka_applet_create(GtkBuilder *xml)
+ka_applet_create()
 {
 	KaApplet* applet = ka_applet_new();
 
@@ -790,7 +799,11 @@ ka_applet_create(GtkBuilder *xml)
 	g_signal_connect (applet, "notify::show-trayicon",
 	                  G_CALLBACK (ka_applet_cb_show_trayicon), NULL);
 
-	applet->priv->pwdialog = ka_pwdialog_create(xml);
+	applet->priv->uixml = gtk_builder_new();
+	g_assert(gtk_builder_add_from_file(applet->priv->uixml,
+					   KA_DATA_DIR G_DIR_SEPARATOR_S
+				           PACKAGE ".xml", NULL));
+	applet->priv->pwdialog = ka_pwdialog_create(applet->priv->uixml);
 	g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 
 	applet->priv->gconf = ka_gconf_init (applet);

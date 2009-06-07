@@ -945,7 +945,6 @@ main (int argc, char *argv[])
 	KaApplet *applet;
 	GOptionContext *context;
 	GError *error = NULL;
-	GtkBuilder *xml;
 
 	guint status = 0;
 	gboolean run_auto = FALSE, run_always = FALSE;
@@ -984,10 +983,7 @@ main (int argc, char *argv[])
 	if (using_krb5 () || always_run) {
 		g_set_application_name (KA_NAME);
 
-		xml = gtk_builder_new();
-		g_assert(gtk_builder_add_from_file(xml, KA_DATA_DIR G_DIR_SEPARATOR_S
-				                   PACKAGE ".xml", NULL));
-		applet = ka_applet_create (xml);
+		applet = ka_applet_create ();
 		if (!applet)
 			return 1;
 		ka_nm_init();
@@ -998,7 +994,6 @@ main (int argc, char *argv[])
 		}
 		ka_dbus_service(applet);
 		gtk_main ();
-		g_object_unref(xml);
 	}
 	return 0;
 }

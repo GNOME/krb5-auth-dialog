@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
 "cgi?product=krb5-auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-05-25 17:12+0000\n"
-"PO-Revision-Date: 2009-05-26 06:20+0530\n"
+"POT-Creation-Date: 2009-06-02 21:03+0000\n"
+"PO-Revision-Date: 2009-06-08 07:00+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
 "MIME-Version: 1.0\n"
@@ -17,118 +17,29 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:1
-msgid "Forwardable ticket"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:2
-msgid "Kerberos principal"
-msgstr "ਕਰਬਰੋਸ ਸਿਧਾਂਤ"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:3
-msgid "Notify user when ticket becomes valid"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:4
-msgid "Notify user when ticket has expired"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:5
-msgid "Notify user when ticket is about to expire"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:6
-msgid "PKINIT CA certificates"
-msgstr "PKINIT CA ਸਰਟੀਫਿਕੇਟ"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:7
-msgid "PKINIT identifier"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:8
-msgid "PKINIT trust anchors"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:9
-msgid "Prompt minutes before expiry"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:10
-msgid "Proxiable ticket"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:11
-msgid "Renewable ticket"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:12
-msgid "Requested tickets should be forwardable"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:13
-msgid "Requested tickets should be proxiable"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:14
-msgid "Requested tickets should be renewable"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:15
-msgid "Show a trayicon in the status area of the panel"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:16
-msgid "Show trayicon"
-msgstr "ਟਰੇ ਆਈਕਾਨ ਵੇਖੋ  "
-
-#: ../src/krb5-auth-dialog.schemas.in.h:17
-msgid ""
-"Start prompting/displaying notifications that many minutes before expiry"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:18
-msgid "The kerberos principal to acquire the ticket for"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:19
-msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:20
-msgid "ticket expired notification"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:21
-msgid "ticket expiring notification"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:22
-msgid "valid ticket notification"
-msgstr "ਢੁੱਕਵੀਂ ਟਿਕਟ ਨੋਟੀਫਿਕੇਸ਼ਨ"
-
-#: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.c:979
+#: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.c:53
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
 msgid "Network Authentication"
-msgstr "ਨੈੱਟਵਰਕ ਪਰਮਾਣਕਿਤਾ "
+msgstr "ਨੈੱਟਵਰਕ ਪਰਮਾਣਕਿਤਾ"
 
 #: ../src/krb5-auth-dialog.xml.h:2
 msgid "_Renew Ticket"
-msgstr "ਟਿਕਟ ਨਵੀਨੀਕਰਨ (_R)"
+msgstr "ਟਿਕਟ ਨਵੀਨੀਕਰਨ(_R)"
 
-#: ../src/krb5-auth-dialog.c:812
+#: ../src/krb5-auth-dialog.c:817
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਟਿਕਟ ਲਈ ਨਹੀਂ ਜਾ ਸਕੀ: '%s'"
 
-#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:351
+#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:352
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:356
+#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:357
 msgid "Your credentials have expired"
 msgstr ""
 
@@ -143,36 +54,36 @@ msgstr "'%s' ਲਈ ਆਪਣਾ ਪਾਸਵਰਡ ਦਿਓ ਜੀ:"
 
 #: ../src/krb5-auth-pwdialog.c:230
 msgid "The password you entered is invalid"
-msgstr ""
+msgstr "ਤੁਹਾਡੇ ਵਲੋਂ ਦਿੱਤਾ ਪਾਸਵਰਡ ਅਢੁੱਕਵਾਂ ਹੈ"
 
 #: ../src/dummy-strings.c:5
 msgid "ASN.1 failed call to system time library"
-msgstr ""
+msgstr "ASN.1 ਸਿਸਟਮ ਟਾਈਮ ਲਾਇਬਰੇਰੀ ਨੂੰ ਕਾਲ ਲਈ ਫੇਲ੍ਹ"
 
 #. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
 #: ../src/dummy-strings.c:6
 msgid "ASN.1 structure is missing a required field"
-msgstr ""
+msgstr "ASN.1 ਲੋੜੀਦੇ ਖੇਤਰ ਲਈ ਸਟੱਕਚਰ ਗੁੰਮ ਹੈ"
 
 #. asn1_err.et:asn1:ASN1_MISSING_FIELD
 #: ../src/dummy-strings.c:7
 msgid "ASN.1 unexpected field number"
-msgstr ""
+msgstr "ASN.1 ਅਣਲੋੜੀਦਾ ਖੇਤਰ ਨੰਬਰ"
 
 #. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
 #: ../src/dummy-strings.c:8
 msgid "ASN.1 type numbers are inconsistent"
-msgstr ""
+msgstr "ASN.1 ਟਾਈਪ ਨੰਬਰ ਇਕਸਾਰ ਨਹੀਂ ਹਨ"
 
 #. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
 #: ../src/dummy-strings.c:9
 msgid "ASN.1 value too large"
-msgstr ""
+msgstr "ASN.1 ਮੁੱਲ ਬਹੁਤ ਵੱਡਾ ਹੈ"
 
 #. asn1_err.et:asn1:ASN1_OVERFLOW
 #: ../src/dummy-strings.c:10
 msgid "ASN.1 encoding ended unexpectedly"
-msgstr ""
+msgstr "ASN.1 ਇੰਕੋਡਿੰਗ ਅਚਾਨਕ ਖਤਮ ਹੋਈ"
 
 #. asn1_err.et:asn1:ASN1_OVERRUN
 #: ../src/dummy-strings.c:11
@@ -182,22 +93,22 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_BAD_ID
 #: ../src/dummy-strings.c:12
 msgid "ASN.1 length doesn't match expected value"
-msgstr ""
+msgstr "ASN.1 ਲੰਬਾਈ ਉਮੀਦ ਮੁੱਲ ਨਾਲ ਮਿਲਦੀ ਨਹੀਂ"
 
 #. asn1_err.et:asn1:ASN1_BAD_LENGTH
 #: ../src/dummy-strings.c:13
 msgid "ASN.1 badly-formatted encoding"
-msgstr ""
+msgstr "ASN.1 ਖ਼ਰਾਬ ਫਾਰਮੈਟ ਇੰਕੋਡਿੰਗ"
 
 #. asn1_err.et:asn1:ASN1_BAD_FORMAT
 #: ../src/dummy-strings.c:14
 msgid "ASN.1 parse error"
-msgstr ""
+msgstr "ASN.1 ਪਾਰਸ ਗਲਤੀ"
 
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:15
 msgid "ASN.1 bad return from gmtime"
-msgstr ""
+msgstr "ASN.1 gmtime ਤੋਂ ਖਰਾਬ ਜਵਾਬ"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: ../src/dummy-strings.c:16
@@ -207,7 +118,7 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
 #: ../src/dummy-strings.c:17
 msgid "ASN.1 missing expected EOC"
-msgstr ""
+msgstr "ASN.1 ਲੋੜੀਦੀ EOC ਗੁੰਮ"
 
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: ../src/dummy-strings.c:18
@@ -217,52 +128,52 @@ msgstr "  "
 #. krb5_err.et:krb5:KRB5KDC_ERR_NONE
 #: ../src/dummy-strings.c:19
 msgid "Client's entry in database has expired"
-msgstr ""
+msgstr "ਡਾਟਾਬੇਸ ਵਿੱਚ ਕਲਾਇਟ ਦੀ ਐਂਟਰੀ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
 #: ../src/dummy-strings.c:20
 msgid "Server's entry in database has expired"
-msgstr ""
+msgstr "ਡਾਟਾਬੇਸ ਵਿੱਚ ਸਰਵਰ ਦੀ ਐਂਟਰੀ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
 #: ../src/dummy-strings.c:21
 msgid "Requested protocol version not supported"
-msgstr ""
+msgstr "ਮੰਗਿਆ ਪਰੋਟੋਕਾਲ ਵਰਜਨ ਸਹਾਇਕ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
 #: ../src/dummy-strings.c:22
 msgid "Client's key is encrypted in an old master key"
-msgstr ""
+msgstr "ਕਲਾਇਟ ਦੀ ਕੁੰਜੀ ਪੁਰਾਣੀ ਮਾਸਟਰ ਕੁੰਜੀ ਨਾਲ ਇਕ੍ਰਿਪਟਡ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:23
 msgid "Server's key is encrypted in an old master key"
-msgstr ""
+msgstr "ਸਰਵਰ ਦੀ ਕੁੰਜੀ ਪੁਰਾਣੀ ਮਾਸਟਰ ਕੁੰਜੀ ਨਾਲ ਇੰਕ੍ਰਿਪਟਡ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:24
 msgid "Client not found in Kerberos database"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਡਾਟਾਬੇਸ ਵਿੱਚ ਕਲਾਇਟ ਨਹੀਂ ਲੱਭਿਆ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:25
 msgid "Server not found in Kerberos database"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਡਾਟਾਬੇਸ ਵਿੱਚ ਸਰਵਰ ਨਹੀਂ ਲੱਭਿਆ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:26
 msgid "Principal has multiple entries in Kerberos database"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਡਾਟਾਬੇਸ ਵਿੱਚ ਪ੍ਰਿੰਸੀਪਲ ਲਈ ਕਈ ਐਂਟਰੀਆਂ ਹਨ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
 #: ../src/dummy-strings.c:27
 msgid "Client or server has a null key"
-msgstr ""
+msgstr "ਕਲਾਇਟ ਜਾਂ ਸਰਵਰ ਲਈ ਇੱਕ ਨਲ ਮੁੱਲ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
 #: ../src/dummy-strings.c:28
 msgid "Ticket is ineligible for postdating"
-msgstr ""
+msgstr "ਟਿਕਟ ਮਿਤੀ-ਲੰਘਣ ਤੋਂ ਬਾਅਦ ਆਯੋਗ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
 #: ../src/dummy-strings.c:29
@@ -272,7 +183,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
 #: ../src/dummy-strings.c:30
 msgid "KDC policy rejects request"
-msgstr ""
+msgstr "KDC ਪਾਲਸੀ ਨੇ ਮੰਗ ਰੱਦ ਕੀਤੀ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
 #: ../src/dummy-strings.c:31
@@ -282,17 +193,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
 #: ../src/dummy-strings.c:32
 msgid "KDC has no support for encryption type"
-msgstr ""
+msgstr "KDC ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:33
 msgid "KDC has no support for checksum type"
-msgstr ""
+msgstr "KDC ਚੈਕਸਮ ਟਾਈਪ ਲਈ ਸਹਾਇਕ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:34
 msgid "KDC has no support for padata type"
-msgstr ""
+msgstr "KDC padata ਟਾਈਪ ਲਈ ਸਹਾਇਕ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
 #: ../src/dummy-strings.c:35
@@ -312,17 +223,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
 #: ../src/dummy-strings.c:38
 msgid "TGT has been revoked"
-msgstr ""
+msgstr "TGT ਨੂੰ ਮਨਸੂਖ ਕੀਤਾ ਜਾ ਚੁੱਕਿਆ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
 #: ../src/dummy-strings.c:39
 msgid "Client not yet valid - try again later"
-msgstr ""
+msgstr "ਕਲਾਇਟ ਹਾਲੇ ਢੁੱਕਵਾਂ ਨਹੀਂ - ਬਾਅਦ ਵਿੱਚ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੀ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
 #: ../src/dummy-strings.c:40
 msgid "Server not yet valid - try again later"
-msgstr ""
+msgstr "ਸਰਵਰ ਹਾਲੇ ਢੁੱਕਵਾਂ ਨਹੀਂ - ਬਾਅਦ ਵਿੱਚ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੀ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
 #: ../src/dummy-strings.c:41
@@ -332,123 +243,123 @@ msgstr "ਪਾਸਵਰਡ ਦੀ ਮਿਆਦ ਪੁੱਗੀ।"
 #. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
 #: ../src/dummy-strings.c:42
 msgid "Preauthentication failed"
-msgstr ""
+msgstr "ਪਹਿਲਾਂ-ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ ਹੋਈ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
 #: ../src/dummy-strings.c:43
 msgid "Additional pre-authentication required"
-msgstr ""
+msgstr "ਹੋਰ ਪਹਿਲਾਂ-ਪਰਮਾਣਕਿਤਾ ਲੋੜੀਦੀ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
 #: ../src/dummy-strings.c:44
 msgid "Requested server and ticket don't match"
-msgstr ""
+msgstr "ਮੰਗਿਆ ਸਰਵਰ ਅਤੇ ਟਿਕਟ ਰਲਦੇ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: ../src/dummy-strings.c:45
 msgid "A service is not available that is required to process the request"
-msgstr ""
+msgstr "ਸਰਵਿਸ, ਜੋ ਕਿ ਪਰੋਸੈਸ ਮੰਗ ਵਲੋਂ ਮੰਗੀ ਗਈ ਹੈ, ਉਪਲੱਬਧ ਨਹੀਂ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
 #: ../src/dummy-strings.c:46
 msgid "Decrypt integrity check failed"
-msgstr ""
+msgstr "ਡਿ-ਇੰਕ੍ਰਿਪਟ ਐਂਟੀਗਰੇਟੀ ਚੈੱਕ ਫੇਲ੍ਹ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
 #: ../src/dummy-strings.c:47
 msgid "Ticket expired"
-msgstr "   "
+msgstr "ਟਿਕਟ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
 #: ../src/dummy-strings.c:48
 msgid "Ticket not yet valid"
-msgstr ""
+msgstr "ਟਿਕਟ ਹਾਲੇ ਢੁੱਕਵੀਂ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
 #: ../src/dummy-strings.c:49
 msgid "Request is a replay"
-msgstr ""
+msgstr "ਮੰਗ ਇੱਕ ਜਵਾਬ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
 #: ../src/dummy-strings.c:50
 msgid "The ticket isn't for us"
-msgstr ""
+msgstr "ਟਿਕਟ ਸਾਡੇ ਲਈ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
 #: ../src/dummy-strings.c:51
 msgid "Ticket/authenticator don't match"
-msgstr ""
+msgstr "ਟਿਕਟ/ਪਰਮਾਣਿਤਕਰਤਾ ਮਿਲਦੇ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: ../src/dummy-strings.c:52
 msgid "Clock skew too great"
-msgstr ""
+msgstr "ਘੜੀ ਅੰਤਰ ਬਹੁਤ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
 #: ../src/dummy-strings.c:53
 msgid "Incorrect net address"
-msgstr ""
+msgstr "ਗਲਤ ਨੈੱਟ ਐਡਰੈੱਸ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
 #: ../src/dummy-strings.c:54
 msgid "Protocol version mismatch"
-msgstr ""
+msgstr "ਪਰੋਟੋਕਾਲ ਵਰਜਨ ਰਲ਼ਦਾ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
 #: ../src/dummy-strings.c:55
 msgid "Invalid message type"
-msgstr ""
+msgstr "ਅਢੁੱਕਵਾਂ ਸੁਨੇਹਾ ਟਾਈਪ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
 #: ../src/dummy-strings.c:56
 msgid "Message stream modified"
-msgstr ""
+msgstr "ਸੁਨੇਹਾ ਸਟਰੀਮ ਸੋਧੀ ਗਈ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
 #: ../src/dummy-strings.c:57
 msgid "Message out of order"
-msgstr ""
+msgstr "ਸੁਨੇਹਾ ਖਰਾਬ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
 #: ../src/dummy-strings.c:58
 msgid "Illegal cross-realm ticket"
-msgstr ""
+msgstr "ਗ਼ੈਰ-ਕਾਨੂੰਨੀ ਕਰਾਸ-ਰਲੇਮ ਟਿਕਟ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
 #: ../src/dummy-strings.c:59
 msgid "Key version is not available"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਵਰਜਨ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
 #: ../src/dummy-strings.c:60
 msgid "Service key not available"
-msgstr "    "
+msgstr "ਸਰਵਿਸ ਕੁੰਜੀ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
 #: ../src/dummy-strings.c:61 ../src/dummy-strings.c:117
 msgid "Mutual authentication failed"
-msgstr ""
+msgstr "ਆਪਸੀ ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ ਹੋਈ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
 #: ../src/dummy-strings.c:62
 msgid "Incorrect message direction"
-msgstr ""
+msgstr "ਗਲਤ ਸੁਨੇਹਾ ਦਿਸ਼ਾ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
 #: ../src/dummy-strings.c:63
 msgid "Alternative authentication method required"
-msgstr ""
+msgstr "ਬਦਲਵਾਂ ਪਰਮਾਣਕਿਤਾ ਢੰਗ ਲੋੜੀਦਾ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
 #: ../src/dummy-strings.c:64
 msgid "Incorrect sequence number in message"
-msgstr ""
+msgstr "ਸੁਨੇਹੇ ਵਿੱਚ ਨੰਬਰ ਦਾ ਗਲਤ ਕ੍ਰਮ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
 #: ../src/dummy-strings.c:65
 msgid "Inappropriate type of checksum in message"
-msgstr ""
+msgstr "ਸੁਨੇਹੇ ਵਿੱਚ ਚੈਕਸਮ ਦੀ ਅਢੁੱਕਵੀਂ ਟਾਈਪ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
 #: ../src/dummy-strings.c:66
@@ -458,107 +369,107 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:67
 msgid "Response too big for UDP, retry with TCP"
-msgstr ""
+msgstr "UDP ਲਈ ਜਵਾਬ ਬਹੁਤ ਵੱਡਾ, TCP ਨਾਲ ਕੋਸ਼ਿਸ਼ ਕਰੋ ਜੀ"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
 #: ../src/dummy-strings.c:68
 msgid "Generic error (see e-text)"
-msgstr ""
+msgstr "ਆਮ ਗਲਤੀ (e-text ਵੇਖੋ)"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
 #: ../src/dummy-strings.c:69
 msgid "Field is too long for this implementation"
-msgstr ""
+msgstr "ਇਸ ਬਣਾਉਣ ਲਈ ਖੇਤਰ ਬਹੁਤ ਵੱਡਾ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
 #: ../src/dummy-strings.c:70
 msgid "Client not trusted"
-msgstr ""
+msgstr "ਕਲਾਇਟ ਟਰੱਸਟਡ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
 #: ../src/dummy-strings.c:71
 msgid "KDC not trusted"
-msgstr "KDC  "
+msgstr "KDC ਟਰੱਸਟਡ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
 #: ../src/dummy-strings.c:72
 msgid "Invalid signature"
-msgstr " "
+msgstr "ਗਲਤ ਦਸਤਖਤ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
 #: ../src/dummy-strings.c:73
 msgid "Key parameters not accepted"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਪੈਰਾਮੀਟਰ ਮਨਜ਼ੂਰ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
 #: ../src/dummy-strings.c:74
 msgid "Certificate mismatch"
-msgstr ""
+msgstr "ਸਰਟੀਫਿਕੇਟ ਮਿਲਦਾ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
 #: ../src/dummy-strings.c:75
 msgid "Can't verify certificate"
-msgstr ""
+msgstr "ਸਰਟੀਫਿਕੇਟ ਜਾਂਚਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
 #: ../src/dummy-strings.c:76
 msgid "Invalid certificate"
-msgstr ""
+msgstr "ਅਢੁੱਕਵਾਂ ਸਰਟੀਫਿਕੇਟ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
 #: ../src/dummy-strings.c:77
 msgid "Revoked certificate"
-msgstr ""
+msgstr "ਮਨਸੂਖ ਕੀਤਾ ਸਰਟੀਫਿਕੇਟ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
 #: ../src/dummy-strings.c:78
 msgid "Revocation status unknown"
-msgstr ""
+msgstr "ਮਨਸੂਖ ਹਾਲਤ ਅਣਜਾਣ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
 #: ../src/dummy-strings.c:79
 msgid "Revocation status unavailable"
-msgstr ""
+msgstr "ਮਨਸੂਖ ਹਾਲਤ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
 #: ../src/dummy-strings.c:80
 msgid "Client name mismatch"
-msgstr ""
+msgstr "ਕਲਾਇਟ ਨਾਂ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
 #: ../src/dummy-strings.c:81
 msgid "KDC name mismatch"
-msgstr ""
+msgstr "KDC ਨਾਂ ਮੇਲ ਨਹੀਂ ਖਾਂਦਾ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
 #: ../src/dummy-strings.c:82
 msgid "Inconsistent key purpose"
-msgstr ""
+msgstr "ਨਾ-ਇਕਸਾਰ ਕੁੰਜੀ ਮਕਸਦ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
 #: ../src/dummy-strings.c:83
 msgid "Digest in certificate not accepted"
-msgstr ""
+msgstr "ਸਰਟੀਫਿਕੇਟ ਵਿੱਚ ਅੰਕ ਮਨਜ਼ੂਰ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: ../src/dummy-strings.c:84
 msgid "Checksum must be included"
-msgstr ""
+msgstr "ਚੈਕਸਮ ਸ਼ਾਮਲ ਕਰਨਾ ਲਾਜ਼ਮੀ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: ../src/dummy-strings.c:85
 msgid "Digest in signed-data not accepted"
-msgstr ""
+msgstr "ਸਾਈਨ-ਡਾਟੇ ਵਿੱਚ ਅੰਕ ਮਨਜ਼ੂਰ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: ../src/dummy-strings.c:86
 msgid "Public key encryption not supported"
-msgstr ""
+msgstr "ਪਬਲਿਕ ਕੁੰਜੀ ਇੰਕ੍ਰਿਪਸ਼ਨ ਸਹਿਯੋਗੀ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
 #: ../src/dummy-strings.c:87
 msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
-msgstr ""
+msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
 
 #. krb5_err.et:krb5:KRB5_ERR_RCSID
 #: ../src/dummy-strings.c:88
@@ -568,37 +479,37 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
 #: ../src/dummy-strings.c:89
 msgid "Cannot read password"
-msgstr "    "
+msgstr "ਪਾਸਵਰਡ ਪੜ੍ਹਿਆਂ ਨਹੀਂ ਜਾ ਸਕਦਾ"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
 #: ../src/dummy-strings.c:90
 msgid "Password mismatch"
-msgstr "  "
+msgstr "ਪਾਸਵਰਡ ਮਿਲਦਾ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
 #: ../src/dummy-strings.c:91
 msgid "Password read interrupted"
-msgstr ""
+msgstr "ਪਾਸਵਰਡ ਪੜ੍ਹਨ 'ਚ ਦਖਲ"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
 #: ../src/dummy-strings.c:92
 msgid "Illegal character in component name"
-msgstr ""
+msgstr "ਭਾਗ ਨਾਂ ਵਿੱਚ ਗਲਤ ਅੱਖਰ"
 
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
 #: ../src/dummy-strings.c:93
 msgid "Malformed representation of principal"
-msgstr ""
+msgstr "ਪ੍ਰਿੰਸੀਪਲ ਦਾ ਨਿਕਾਰਾ ਵਿਖਾਵਾ"
 
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
 #: ../src/dummy-strings.c:94
 msgid "Can't open/find Kerberos configuration file"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਸੰਰਚਨਾ ਫਾਇਲ ਖੋਲ੍ਹੀ/ਪੜ੍ਹੀ ਨਹੀਂ ਜਾ ਸਕਦੀ"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
 #: ../src/dummy-strings.c:95
 msgid "Improper format of Kerberos configuration file"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਸੰਰਚਨਾ ਫਾਇਲ ਦਾ ਗਲਤ ਫਾਰਮੈਟ"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
 #: ../src/dummy-strings.c:96
@@ -608,7 +519,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
 #: ../src/dummy-strings.c:97
 msgid "Invalid message type specified for encoding"
-msgstr ""
+msgstr "ਇੰਕੋਡਿੰਗ ਵਿੱਚ ਅਢੁੱਕਵਾਂ ਸੁਨੇਹਾ ਟਾਈਪ ਦਿੱਤੀ"
 
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
 #: ../src/dummy-strings.c:98
@@ -633,27 +544,27 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CC_END
 #: ../src/dummy-strings.c:102
 msgid "Request did not supply a ticket"
-msgstr ""
+msgstr "ਮੰਗ ਨੇ ਇੱਕ ਟਿਕਟ ਨਹੀਂ ਦਿੱਤੀ"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
 #: ../src/dummy-strings.c:103
 msgid "Wrong principal in request"
-msgstr ""
+msgstr "ਮੰਗ ਵਿੱਚ ਗਲਤ ਪ੍ਰਿੰਸੀਪਲ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
 #: ../src/dummy-strings.c:104
 msgid "Ticket has invalid flag set"
-msgstr ""
+msgstr "ਟਿਕਟ ਲਈ ਢੁੱਕਵੇਂ ਫਲੈਗ ਸੈੱਟ"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: ../src/dummy-strings.c:105
 msgid "Requested principal and ticket don't match"
-msgstr ""
+msgstr "ਮੰਗਿਆ ਪ੍ਰਿੰਸੀਪਲ ਅਤੇ ਟਿਕਟ ਮਿਲਦੇ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: ../src/dummy-strings.c:106
 msgid "KDC reply did not match expectations"
-msgstr ""
+msgstr "KDE ਜਵਾਬ ਉਮੀਦ ਨਾਲ ਮਿਲਦਾ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
 #: ../src/dummy-strings.c:107
@@ -668,22 +579,22 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: ../src/dummy-strings.c:109
 msgid "Program lacks support for encryption type"
-msgstr ""
+msgstr "ਪਰੋਗਰਾਮ ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ ਲਈ ਸਹਿਯੋਗ ਨਹੀਂ ਰੱਖਦਾ"
 
 #. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:110
 msgid "Program lacks support for key type"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਟਾਈਪ ਲਈ ਪਰੋਗਰਾਮ ਸਹਿਯੋਗ ਨਹੀਂ ਰੱਖਦਾ"
 
 #. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
 #: ../src/dummy-strings.c:111
 msgid "Requested encryption type not used in message"
-msgstr ""
+msgstr "ਸੁਨੇਹੇ ਵਿੱਚ ਮੰਗੀ ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ ਨਹੀਂ ਵਰਤੀ"
 
 #. krb5_err.et:krb5:KRB5_WRONG_ETYPE
 #: ../src/dummy-strings.c:112
 msgid "Program lacks support for checksum type"
-msgstr ""
+msgstr "ਪਰੋਗਰਾਮ ਵਿੱਚ ਚੈਕਸਮ ਟਾਈਪ ਲਈ ਸਹਿਯੋਗ ਦੀ ਕਮੀ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:113
@@ -703,7 +614,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:116
 msgid "No local name found for principal name"
-msgstr ""
+msgstr "ਪ੍ਰਿੰਸੀਪਲ ਨਾਂ ਲਈ ਕੋਈ ਲੋਕਲ ਨਾਂ ਨਹੀਂ ਲੱਭਿਆ"
 
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: ../src/dummy-strings.c:118
@@ -718,17 +629,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
 #: ../src/dummy-strings.c:120
 msgid "Replay cache type is unknown"
-msgstr ""
+msgstr "ਜਵਾਬ ਕੈਸ ਟਾਈਪ ਅਣਜਾਣ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
 #: ../src/dummy-strings.c:121
 msgid "Generic unknown RC error"
-msgstr ""
+msgstr "ਆਮ ਅਣਜਾਣ RC ਗਲਤੀ"
 
 #. krb5_err.et:krb5:KRB5_RC_UNKNOWN
 #: ../src/dummy-strings.c:122
 msgid "Message is a replay"
-msgstr ""
+msgstr "ਸੁਨੇਹਾ ਜਵਾਬ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: ../src/dummy-strings.c:123
@@ -743,7 +654,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_NOIO
 #: ../src/dummy-strings.c:125
 msgid "Replay cache name parse/format error"
-msgstr ""
+msgstr "ਜਵਾਬ ਕੈਸ ਨਾਂ ਪਾਰਸ/ਫਾਰਮੈਟ ਗਲਤੀ"
 
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: ../src/dummy-strings.c:126
@@ -753,7 +664,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: ../src/dummy-strings.c:127
 msgid "No more memory to allocate (in replay cache I/O code)"
-msgstr ""
+msgstr "ਜਾਰੀ ਕਰਨ ਲਈ ਹੋਰ ਮੈਮੋਰੀ ਨਹੀਂ (ਜਵਾਬ ਕੈਸ I/O ਕੋਡ ਵਿੱਚ)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: ../src/dummy-strings.c:128
@@ -768,7 +679,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: ../src/dummy-strings.c:130
 msgid "Generic unknown RC/IO error"
-msgstr ""
+msgstr "ਆਮ ਅਣਜਾਣ RC/IO ਗਲਤੀ"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
 #: ../src/dummy-strings.c:131
@@ -793,32 +704,32 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
 #: ../src/dummy-strings.c:135
 msgid "No translation available for requested principal"
-msgstr ""
+msgstr "ਲੋੜੀਦੇ ਪ੍ਰਿੰਸੀਪਲ ਲਈ ਕੋਈ ਟਰਾਂਸਲੇਸ਼ਨ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
 #: ../src/dummy-strings.c:136
 msgid "Improper format of translation database entry"
-msgstr ""
+msgstr "ਟਰਾਂਸਲੇਸ਼ਨ ਡਾਟਾਬੇਸ ਐਂਟਰੀ ਦਾ ਅਢੁੱਕਵਾਂ ਫਾਰਮੈਟ"
 
 #. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
 #: ../src/dummy-strings.c:137
 msgid "Cryptosystem internal error"
-msgstr ""
+msgstr "ਕ੍ਰਿਪਟੋਸਿਸਟਮ ਅੰਦਰੂਨੀ ਗਲਤੀ"
 
 #. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
 #: ../src/dummy-strings.c:138
 msgid "Key table name malformed"
-msgstr ""
+msgstr "ਕੀ ਟੇਬਲ ਨਾਂ ਨਿਕਾਰਾ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5_KT_BADNAME
 #: ../src/dummy-strings.c:139
 msgid "Unknown Key table type"
-msgstr ""
+msgstr "ਅਣਜਾਣ ਕੁੰਜੀ ਟੇਬਲ ਟਾਈਪ"
 
 #. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:140
 msgid "Key table entry not found"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਟੇਬਲ ਐਂਟਰੀ ਨਹੀਂ ਲੱਭੀ"
 
 #. krb5_err.et:krb5:KRB5_KT_NOTFOUND
 #: ../src/dummy-strings.c:141
@@ -833,7 +744,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KT_NOWRITE
 #: ../src/dummy-strings.c:143
 msgid "Error writing to key table"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਟੇਬਲ ਲਿਖਣ ਲਈ ਗਲਤੀ"
 
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: ../src/dummy-strings.c:144
@@ -848,22 +759,22 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
 #: ../src/dummy-strings.c:146
 msgid "DES key is a weak key"
-msgstr ""
+msgstr "DES ਕੁੰਜੀ ਕਮਜ਼ੋਰ ਕੁੰਜੀ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5DES_WEAK_KEY
 #: ../src/dummy-strings.c:147
 msgid "Bad encryption type"
-msgstr ""
+msgstr "ਗਲਤ ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ"
 
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
 #: ../src/dummy-strings.c:148
 msgid "Key size is incompatible with encryption type"
-msgstr ""
+msgstr "ਕੁੰਜੀ ਸਾਈਜ਼ ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ ਨਾਲ ਅਨੁਕੂਲ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
 #: ../src/dummy-strings.c:149
 msgid "Message size is incompatible with encryption type"
-msgstr ""
+msgstr "ਸੁਨੇਹਾ ਸਾਈਜ਼ ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ ਨਾਲ ਢੁੱਕਵਾਂ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
 #: ../src/dummy-strings.c:150
@@ -873,7 +784,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
 #: ../src/dummy-strings.c:151
 msgid "Key table type is already registered."
-msgstr ""
+msgstr "ਕੀ ਟੇਬਲ ਟਾਈਪ ਪਹਿਲਾਂ ਹੀ ਰਜਿਸਟਰ ਹੈ।"
 
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
 #: ../src/dummy-strings.c:152
@@ -923,7 +834,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
 #: ../src/dummy-strings.c:161
 msgid "Request missing second ticket"
-msgstr ""
+msgstr "ਗੁੰਮ ਦੂਜੀ ਟਿਕਟ ਮੰਗੀ"
 
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
 #: ../src/dummy-strings.c:162
@@ -933,17 +844,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
 #: ../src/dummy-strings.c:163
 msgid "Bad sendauth version was sent"
-msgstr ""
+msgstr "ਖ਼ਰਾਬ sendauth ਵਰਜਨ ਭੇਜਿਆ"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
 #: ../src/dummy-strings.c:164
 msgid "Bad application version was sent (via sendauth)"
-msgstr ""
+msgstr "ਖ਼ਰਾਬ ਐਪਲੀਕੇਸ਼ਨ ਵਰਜਨ ਭੇਜਿਆ (sendauth ਰਾਹੀਂ)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
 #: ../src/dummy-strings.c:165
 msgid "Bad response (during sendauth exchange)"
-msgstr ""
+msgstr "ਖ਼ਰਾਬ ਜਵਾਬ (sendauth ਬਦਲਾਅ ਰਾਹੀਂ)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
 #: ../src/dummy-strings.c:166
@@ -953,7 +864,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
 #: ../src/dummy-strings.c:167
 msgid "Unsupported preauthentication type"
-msgstr ""
+msgstr "ਗ਼ੈਰ-ਸਹਾਇਕ ਪਹਿਲਾਂ-ਪਰਮਾਣਕਿਤਾ ਟਾਈਪ"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
 #: ../src/dummy-strings.c:168
@@ -963,7 +874,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
 #: ../src/dummy-strings.c:169
 msgid "Generic preauthentication failure"
-msgstr ""
+msgstr "ਆਮ ਪਹਿਲਾਂ-ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
 #: ../src/dummy-strings.c:170
@@ -978,12 +889,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
 #: ../src/dummy-strings.c:172
 msgid "Unsupported key table format version number"
-msgstr ""
+msgstr "ਗ਼ੈਰ-ਸਹਾਇਕ ਕੁੰਜੀ ਟੇਬਲ ਫਾਰਮੈਟ ਵਰਜਨ ਨੰਬਰ"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: ../src/dummy-strings.c:173
 msgid "Program lacks support for address type"
-msgstr ""
+msgstr "ਪਰੋਗਰਾਮ ਵਿੱਚ ਐਡਰੈੱਸ ਟਾਈਪ ਦੇ ਸਹਿਯੋਗ ਲਈ ਕਮੀ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
 #: ../src/dummy-strings.c:174
@@ -1028,7 +939,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: ../src/dummy-strings.c:182
 msgid "Looping detected inside krb5_get_in_tkt"
-msgstr ""
+msgstr "krb5_get_in_tkt ਵਿੱਚ ਲੂਪ ਮਿਲਿਆ"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: ../src/dummy-strings.c:183
@@ -1043,22 +954,22 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
 #: ../src/dummy-strings.c:185
 msgid "Invalid encryption type in SAM challenge"
-msgstr ""
+msgstr "SAM ਚੈਲੰਜ ਲਈ ਅਢੁੱਕਵੀਂ ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
 #: ../src/dummy-strings.c:186
 msgid "Missing checksum in SAM challenge"
-msgstr ""
+msgstr "SAM ਚੈਲੰਜ ਲਈ ਗੁੰਮ ਚੈਕਸਮ"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
 #: ../src/dummy-strings.c:187
 msgid "Bad checksum in SAM challenge"
-msgstr ""
+msgstr "SAM ਚੈਲੰਜ ਲਈ ਗਲਤ ਚੈਕਸਮ"
 
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
 #: ../src/dummy-strings.c:188
 msgid "Keytab name too long"
-msgstr ""
+msgstr "ਕੀ-ਟੈਬ ਨਾਂ ਬਹੁਤ ਲੰਮਾ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
 #: ../src/dummy-strings.c:189
@@ -1073,27 +984,27 @@ msgstr "    "
 #. krb5_err.et:krb5:KRB5_APPL_EXPIRED
 #: ../src/dummy-strings.c:191
 msgid "This Krb5 library has expired"
-msgstr ""
+msgstr "ਇਹ Krb5 ਲਾਇਬਰੇਰੀ ਦੀ ਮਿਆਦ ਪੁੱਗੀ"
 
 #. krb5_err.et:krb5:KRB5_LIB_EXPIRED
 #: ../src/dummy-strings.c:192
 msgid "New password cannot be zero length"
-msgstr ""
+msgstr "ਨਵੇਂ ਪਾਸਵਰਡ ਦੀ ਲੰਬਾਈ ਸਿਫ਼ਰ ਨਹੀਂ ਹੋ ਸਕਦੀ"
 
 #. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
 #: ../src/dummy-strings.c:193
 msgid "Password change failed"
-msgstr "   "
+msgstr "ਪਾਸਵਰਡ ਬਦਲਣ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: ../src/dummy-strings.c:194
 msgid "Bad format in keytab"
-msgstr ""
+msgstr "ਕੀਟੈਬ ਵਿੱਚ ਖ਼ਰਾਬ ਫਾਰਮੈਟ"
 
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
 #: ../src/dummy-strings.c:195
 msgid "Encryption type not permitted"
-msgstr ""
+msgstr "ਇੰਕ੍ਰਿਪਸ਼ਨ ਟਾਈਪ ਮਨਜ਼ੂਰ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
 #: ../src/dummy-strings.c:196
@@ -1113,17 +1024,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: ../src/dummy-strings.c:199
 msgid "no data available for host/domain name"
-msgstr ""
+msgstr "ਹੋਸਟ/ਡੋਮੇਨ ਨਾਂ ਲਈ ਕੋਈ ਡਾਟਾ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
 #: ../src/dummy-strings.c:200
 msgid "host/domain name not found"
-msgstr ""
+msgstr "ਹੋਸਟ/ਡੋਮੇਨ ਨਾਂ ਨਹੀਂ ਲੱਭਿਆ"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: ../src/dummy-strings.c:201
 msgid "service name unknown"
-msgstr "  "
+msgstr "ਸਰਵਿਸ ਨਾਂ ਅਣਜਾਣ"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: ../src/dummy-strings.c:202
@@ -1138,7 +1049,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: ../src/dummy-strings.c:204
 msgid "service not available"
-msgstr "  "
+msgstr "ਸਰਵਿਸ ਉਪਲੱਬਧ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: ../src/dummy-strings.c:205
@@ -1158,357 +1069,462 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
 #: ../src/dummy-strings.c:208
 msgid "Supplied data not handled by this plugin"
-msgstr ""
+msgstr "ਦਿੱਤਾ ਗਿਆ ਡਾਟਾ ਇਸ ਪਲੱਗਇਨ ਵਲੋਂ ਹੈਂਡਲ ਨਹੀਂ ਕੀਤਾ ਗਿਆ"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: ../src/dummy-strings.c:209
 msgid "Plugin does not support the operaton"
-msgstr ""
+msgstr "ਪਲੱਗਇਨ ਓਪਰੇਸ਼ਨ ਲਈ ਸਹਾਇਕ ਨਹੀਂ"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
 #: ../src/dummy-strings.c:210
 msgid "Kerberos V5 magic number table"
-msgstr ""
+msgstr "Kerberos V5 ਮੈਜਿਕ ਨੰਬਰ ਟੇਬਲ"
 
 #. kv5m_err.et:kv5m:KV5M_NONE
 #: ../src/dummy-strings.c:211
 msgid "Bad magic number for krb5_principal structure"
-msgstr ""
+msgstr "krb5_principal ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PRINCIPAL
 #: ../src/dummy-strings.c:212
 msgid "Bad magic number for krb5_data structure"
-msgstr ""
+msgstr "krb5_data ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_DATA
 #: ../src/dummy-strings.c:213
 msgid "Bad magic number for krb5_keyblock structure"
-msgstr ""
+msgstr "krb5_keyblock ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_KEYBLOCK
 #: ../src/dummy-strings.c:214
 msgid "Bad magic number for krb5_checksum structure"
-msgstr ""
+msgstr "krb5_checksum ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM
 #: ../src/dummy-strings.c:215
 msgid "Bad magic number for krb5_encrypt_block structure"
-msgstr ""
+msgstr "krb5_encrypt_block ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
 #: ../src/dummy-strings.c:216
 msgid "Bad magic number for krb5_enc_data structure"
-msgstr ""
+msgstr "krb5_enc_data ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_DATA
 #: ../src/dummy-strings.c:217
 msgid "Bad magic number for krb5_cryptosystem_entry structure"
-msgstr ""
+msgstr "krb5_cryptosystem_entry ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
 #: ../src/dummy-strings.c:218
 msgid "Bad magic number for krb5_cs_table_entry structure"
-msgstr ""
+msgstr "krb5_cs_table_entry ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
 #: ../src/dummy-strings.c:219
 msgid "Bad magic number for krb5_checksum_entry structure"
-msgstr ""
+msgstr "krb5_checksum_entry ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
 #: ../src/dummy-strings.c:220
 msgid "Bad magic number for krb5_authdata structure"
-msgstr ""
+msgstr "krb5_authdata ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA
 #: ../src/dummy-strings.c:221
 msgid "Bad magic number for krb5_transited structure"
-msgstr ""
+msgstr "krb5_transited ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_TRANSITED
 #: ../src/dummy-strings.c:222
 msgid "Bad magic number for krb5_enc_tkt_part structure"
-msgstr ""
+msgstr "krb5_enc_tkt_part ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
 #: ../src/dummy-strings.c:223
 msgid "Bad magic number for krb5_ticket structure"
-msgstr ""
+msgstr "krb5_ticket ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_TICKET
 #: ../src/dummy-strings.c:224
 msgid "Bad magic number for krb5_authenticator structure"
-msgstr ""
+msgstr "krb5_authenticator ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
 #: ../src/dummy-strings.c:225
 msgid "Bad magic number for krb5_tkt_authent structure"
-msgstr ""
+msgstr "krb5_tkt_authent ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
 #: ../src/dummy-strings.c:226
 msgid "Bad magic number for krb5_creds structure"
-msgstr ""
+msgstr "krb5_creds ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CREDS
 #: ../src/dummy-strings.c:227
 msgid "Bad magic number for krb5_last_req_entry structure"
-msgstr ""
+msgstr "krb5_last_req_entry ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
 #: ../src/dummy-strings.c:228
 msgid "Bad magic number for krb5_pa_data structure"
-msgstr ""
+msgstr "krb5_pa_data ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PA_DATA
 #: ../src/dummy-strings.c:229
 msgid "Bad magic number for krb5_kdc_req structure"
-msgstr ""
+msgstr "krb5_kdc_req ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REQ
 #: ../src/dummy-strings.c:230
 msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
-msgstr ""
+msgstr "krb5_enc_kdc_rep_part ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
 #: ../src/dummy-strings.c:231
 msgid "Bad magic number for krb5_kdc_rep structure"
-msgstr ""
+msgstr "krb5_kdc_rep ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REP
 #: ../src/dummy-strings.c:232
 msgid "Bad magic number for krb5_error structure"
-msgstr ""
+msgstr "krb5_error ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ERROR
 #: ../src/dummy-strings.c:233
 msgid "Bad magic number for krb5_ap_req structure"
-msgstr ""
+msgstr "krb5_ap_req ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REQ
 #: ../src/dummy-strings.c:234
 msgid "Bad magic number for krb5_ap_rep structure"
-msgstr ""
+msgstr "krb5_ap_rep ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP
 #: ../src/dummy-strings.c:235
 msgid "Bad magic number for krb5_ap_rep_enc_part structure"
-msgstr ""
+msgstr "krb5_ap_rep_enc_part ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
 #: ../src/dummy-strings.c:236
 msgid "Bad magic number for krb5_response structure"
-msgstr ""
+msgstr "krb5_response ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_RESPONSE
 #: ../src/dummy-strings.c:237
 msgid "Bad magic number for krb5_safe structure"
-msgstr ""
+msgstr "krb5_safe ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_SAFE
 #: ../src/dummy-strings.c:238
 msgid "Bad magic number for krb5_priv structure"
-msgstr ""
+msgstr "krb5_priv ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV
 #: ../src/dummy-strings.c:239
 msgid "Bad magic number for krb5_priv_enc_part structure"
-msgstr ""
+msgstr "krb5_priv_enc_part ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
 #: ../src/dummy-strings.c:240
 msgid "Bad magic number for krb5_cred structure"
-msgstr ""
+msgstr "krb5_cred ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CRED
 #: ../src/dummy-strings.c:241
 msgid "Bad magic number for krb5_cred_info structure"
-msgstr ""
+msgstr "krb5_cred_info ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_INFO
 #: ../src/dummy-strings.c:242
 msgid "Bad magic number for krb5_cred_enc_part structure"
-msgstr ""
+msgstr "krb5_cred_enc_part ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
 #: ../src/dummy-strings.c:243
 msgid "Bad magic number for krb5_pwd_data structure"
-msgstr ""
+msgstr "krb5_pwd_data ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PWD_DATA
 #: ../src/dummy-strings.c:244
 msgid "Bad magic number for krb5_address structure"
-msgstr ""
+msgstr "krb5_address ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ADDRESS
 #: ../src/dummy-strings.c:245
 msgid "Bad magic number for krb5_keytab_entry structure"
-msgstr ""
+msgstr "krb5_keytab_entry ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
 #: ../src/dummy-strings.c:246
 msgid "Bad magic number for krb5_context structure"
-msgstr ""
+msgstr "krb5_context ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CONTEXT
 #: ../src/dummy-strings.c:247
 msgid "Bad magic number for krb5_os_context structure"
-msgstr ""
+msgstr "krb5_os_context ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
 #: ../src/dummy-strings.c:248
 msgid "Bad magic number for krb5_alt_method structure"
-msgstr ""
+msgstr "krb5_alt_method ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ALT_METHOD
 #: ../src/dummy-strings.c:249
 msgid "Bad magic number for krb5_etype_info_entry structure"
-msgstr ""
+msgstr "krb5_etype_info_entry ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
 #: ../src/dummy-strings.c:250
 msgid "Bad magic number for krb5_db_context structure"
-msgstr ""
+msgstr "krb5_db_context ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
 #: ../src/dummy-strings.c:251
 msgid "Bad magic number for krb5_auth_context structure"
-msgstr ""
+msgstr "krb5_auth_context ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
 #: ../src/dummy-strings.c:252
 msgid "Bad magic number for krb5_keytab structure"
-msgstr ""
+msgstr "krb5_keytab ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB
 #: ../src/dummy-strings.c:253
 msgid "Bad magic number for krb5_rcache structure"
-msgstr ""
+msgstr "krb5_rcache ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_RCACHE
 #: ../src/dummy-strings.c:254
 msgid "Bad magic number for krb5_ccache structure"
-msgstr ""
+msgstr "krb5_ccache ਸਟੱਕਚਰ ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_CCACHE
 #: ../src/dummy-strings.c:255
 msgid "Bad magic number for krb5_preauth_ops"
-msgstr ""
+msgstr "krb5_preauth_ops ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
 #: ../src/dummy-strings.c:256
 msgid "Bad magic number for krb5_sam_challenge"
-msgstr ""
+msgstr "krb5_sam_challenge ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
 #: ../src/dummy-strings.c:257
 msgid "Bad magic number for krb5_sam_challenge_2"
-msgstr ""
+msgstr "krb5_sam_challenge_2 ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
 #: ../src/dummy-strings.c:258
 msgid "Bad magic number for krb5_sam_key"
-msgstr ""
+msgstr "krb5_sam_key ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_KEY
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
 #: ../src/dummy-strings.c:259 ../src/dummy-strings.c:260
 msgid "Bad magic number for krb5_enc_sam_response_enc"
-msgstr ""
+msgstr "krb5_enc_sam_response_enc ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
 #: ../src/dummy-strings.c:261
 msgid "Bad magic number for krb5_sam_response"
-msgstr ""
+msgstr "krb5_sam_response ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
 #: ../src/dummy-strings.c:262
 msgid "Bad magic number for krb5_sam_response 2"
-msgstr ""
+msgstr "krb5_sam_response 2 ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
 #: ../src/dummy-strings.c:263
 msgid "Bad magic number for krb5_predicted_sam_response"
-msgstr ""
+msgstr "krb5_predicted_sam_response ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
 #: ../src/dummy-strings.c:264
 msgid "Bad magic number for passwd_phrase_element"
-msgstr ""
+msgstr "passwd_phrase_element ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
 #: ../src/dummy-strings.c:265
 msgid "Bad magic number for GSSAPI OID"
-msgstr ""
+msgstr "GSSAPI OID ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
 #. kv5m_err.et:kv5m:KV5M_GSS_OID
 #: ../src/dummy-strings.c:266
 msgid "Bad magic number for GSSAPI QUEUE"
-msgstr ""
+msgstr "GSSAPI QUEUE ਲਈ ਗਲਤ ਮੈਜ਼ਿਕ ਨੰਬਰ"
 
-#: ../src/krb5-auth-applet.c:347
+#: ../src/krb5-auth-applet.c:348
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:443
+#: ../src/krb5-auth-applet.c:444
 msgid "Don't show me this again"
 msgstr "    "
 
-#: ../src/krb5-auth-applet.c:480
+#: ../src/krb5-auth-applet.c:481
 msgid "Network credentials valid"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:481
+#: ../src/krb5-auth-applet.c:482
 msgid "You've refreshed your Kerberos credentials."
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:493
+#: ../src/krb5-auth-applet.c:494
 msgid "Network credentials expiring"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:507
+#: ../src/krb5-auth-applet.c:508
 msgid "Network credentials expired"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:508
+#: ../src/krb5-auth-applet.c:509
 msgid "Your Kerberos credentails have expired."
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:569
+#: ../src/krb5-auth-applet.c:572
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
 "%s"
 msgstr ""
+"%s ਵੇਖਾਉਣ ਦੌਰਾਨ ਗਲਤੀ ਸੀ:\n"
+"%s"
 
 #. kdestroy
-#: ../src/krb5-auth-applet.c:619
+#: ../src/krb5-auth-applet.c:632
 msgid "Remove Credentials _Cache"
 msgstr ""
 
 #. Preferences
-#: ../src/krb5-auth-applet.c:628
+#: ../src/krb5-auth-applet.c:641
 msgid "_Preferences"
 msgstr " (_P)"
 
 #. About item
-#: ../src/krb5-auth-applet.c:636
+#: ../src/krb5-auth-applet.c:648
+msgid "_Help"
+msgstr "ਮੱਦਦ(_H)"
+
+#. About item
+#: ../src/krb5-auth-applet.c:655
 msgid "_About"
-msgstr " (_A)"
+msgstr "ਇਸ ਬਾਰੇ(_A)"
 
 #. Quit
-#: ../src/krb5-auth-applet.c:645
+#: ../src/krb5-auth-applet.c:664
 msgid "_Quit"
-msgstr "(_Q)"
+msgstr "ਬਾਹਰ(_Q)"
+
+#: ../src/krb5-auth-tools.c:45
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"ਮੱਦਦ ਵੇਖਾਉਣ ਦੌਰਾਨ ਗਲਤੀ ਸੀ:\n"
+"%s"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Network Authentication Dialog"
+msgstr "ਕਰਬਰੋਸ ਨੈੱਟਵਰਕ ਪਰਮਾਣਕਿਤਾ ਡਾਈਲਾਗ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:1
+msgid "Forwardable ticket"
+msgstr "ਅੱਗੇ-ਭੇਜਣਯੋਗ ਟਿਕਟ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:2
+msgid "Kerberos principal"
+msgstr "ਕਰਬਰੋਸ ਸਿਧਾਂਤ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:3
+msgid "Notify user when ticket becomes valid"
+msgstr "ਜਦੋਂ ਟਿਕਟ ਢੁੱਕਵੀਂ ਹੋਵੇ ਤਾਂ ਯੂਜ਼ਰ ਨੂੰ ਸੂਚਨਾ ਦਿਓ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:4
+msgid "Notify user when ticket has expired"
+msgstr "ਜਦੋਂ ਟਿਕਟ ਦੀ ਮਿਆਦ ਪੁੱਗੇ ਤਾਂ ਯੂਜ਼ਰ ਨੂੰ ਸੂਚਨਾ ਦਿਓ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:5
+msgid "Notify user when ticket is about to expire"
+msgstr "ਜਦੋਂ ਟਿਕਟ ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਵਾਲੀ ਹੋਵੇ ਤਾਂ ਯੂਜ਼ਰ ਨੂੰ ਸੂਚਨਾ ਦਿਓ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:6
+msgid "PKINIT CA certificates"
+msgstr "PKINIT CA ਸਰਟੀਫਿਕੇਟ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:7
+msgid "PKINIT identifier"
+msgstr "PKINIT ਪਛਾਣਕਰਤਾ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:8
+msgid "PKINIT trust anchors"
+msgstr "PKINIT ਟਰੱਸਟ ਐਂਕਰ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:9
+msgid "Prompt minutes before expiry"
+msgstr "ਮਿਆਦ ਤੋਂ ਪਹਿਲਾਂ ਦੱਸਣ ਲਈ ਮਿੰਟ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:10
+msgid "Proxiable ticket"
+msgstr "ਪਰਾਕਸੀਯੋਗ ਟਿਕਟ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:11
+msgid "Renewable ticket"
+msgstr "ਨਵਆਉਯੋਗ ਟਿਕਟ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:12
+msgid "Requested tickets should be forwardable"
+msgstr "ਮੰਗੀਆਂ ਟਿਕਟਾਂ ਅੱਗੇ ਭੇਜਣਯੋਗ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:13
+msgid "Requested tickets should be proxiable"
+msgstr "ਮੰਗੀਆਂ ਟਿਕਟਾਂ ਪਰਕਾਸੀਯੋਗ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:14
+msgid "Requested tickets should be renewable"
+msgstr "ਮੰਗੀਆਂ ਟਿਕਟਾਂ ਨਵਆਉਣਯੋਗ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:15
+msgid "Show a trayicon in the status area of the panel"
+msgstr "ਪੈਨਲ ਦੇ ਹਾਲਤ ਏਰੀਏ ਵਿੱਚ ਟਰੇ-ਆਈਕਾਨ ਵੇਖੋ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:16
+msgid "Show trayicon"
+msgstr "ਟਰੇ ਆਈਕਾਨ ਵੇਖੋ  "
+
+#: ../src/krb5-auth-dialog.schemas.in.h:17
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
 msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:18
+msgid "The kerberos principal to acquire the ticket for"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:19
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:20
+msgid "ticket expired notification"
+msgstr "ਟਿਕਟ ਦੀ ਮਿਆਦ ਪੁੱਗੀ ਨੋਟੀਫਿਕੇਸ਼ਨ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:21
+msgid "ticket expiring notification"
+msgstr "ਟਿਕਟ ਦੀ ਮਿਆਦ ਪੁੱਗਣ ਲਈ ਨੋਟੀਫਿਕੇਸ਼ਨ"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:22
+msgid "valid ticket notification"
+msgstr "ਢੁੱਕਵੀਂ ਟਿਕਟ ਨੋਟੀਫਿਕੇਸ਼ਨ"
 
 #: ../gtksecentry/gtksecentry.c:454
 msgid "Cursor Position"
-msgstr " "
+msgstr "ਕਰਸਰ ਸਥਿਤੀ"
 
 #: ../gtksecentry/gtksecentry.c:456
 msgid "The current position of the insertion cursor in chars"
@@ -1516,7 +1532,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:463
 msgid "Selection Bound"
-msgstr ""
+msgstr "ਚੋਣ ਸੀਮਾ"
 
 #: ../gtksecentry/gtksecentry.c:465
 msgid ""
@@ -1525,7 +1541,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:472
 msgid "Maximum length"
-msgstr ""
+msgstr "ਵੱਧੋ-ਵੱਧ ਲੰਬਾਈ"
 
 #: ../gtksecentry/gtksecentry.c:474
 msgid "Maximum number of characters for this entry. Zero if no maximum"
@@ -1533,7 +1549,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:482
 msgid "Has Frame"
-msgstr ""
+msgstr "ਫਰੇਮ ਹੈ"
 
 #: ../gtksecentry/gtksecentry.c:484
 msgid "FALSE removes outside bevel from entry"
@@ -1541,7 +1557,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:493
 msgid "Invisible character"
-msgstr ""
+msgstr "ਅਦਿੱਖ ਅੱਖਰ"
 
 #: ../gtksecentry/gtksecentry.c:495
 msgid "The character to use when masking entry contents (in \"password mode\")"
@@ -1549,7 +1565,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:504
 msgid "Activates default"
-msgstr ""
+msgstr "ਡਿਫਾਲਟ ਐਕਟੀਵੇਟ ਕਰੋ"
 
 #: ../gtksecentry/gtksecentry.c:506
 msgid ""
@@ -1559,7 +1575,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:511
 msgid "Width in chars"
-msgstr ""
+msgstr "ਅੱਖਰਾਂ ਵਿੱਚ ਚੌੜਾਈ"
 
 #: ../gtksecentry/gtksecentry.c:513
 msgid "Number of characters to leave space for in the entry"
@@ -1567,7 +1583,7 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:521
 msgid "Scroll offset"
-msgstr ""
+msgstr "ਸਕਰੋਲ ਆਫਸੈੱਟ"
 
 #: ../gtksecentry/gtksecentry.c:523
 msgid "Number of pixels of the entry scrolled off the screen to the left"
@@ -1575,22 +1591,15 @@ msgstr ""
 
 #: ../gtksecentry/gtksecentry.c:530
 msgid "Text"
-msgstr ""
+msgstr "ਟੈਕਸਟ"
 
 #: ../gtksecentry/gtksecentry.c:532
 msgid "The contents of the entry"
-msgstr ""
+msgstr "ਐਂਟਰੀ ਦੀ ਸਮੱਗਰੀ"
 
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.c:586
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-"%s"
 msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
@@ -1599,27 +1608,27 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:1
 msgid "    "
-msgstr ""
+msgstr "    "
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:2
 msgid "<b>Appearance</b>"
-msgstr "<b></b>"
+msgstr "<b>ਦਿੱਖ</b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:3
 msgid "<b>Kerberos User</b>"
-msgstr "<b> </b>"
+msgstr "<b>ਕਰਬਰੋਸ ਯੂਜ਼ਰ</b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:4
 msgid "<b>Notifications</b>"
-msgstr "<b></b>"
+msgstr "<b>ਨੋਟੀਫਿਕੇਸ਼ਨ</b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:5
 msgid "<b>Ticket Options</b>"
-msgstr "<b> </b>"
+msgstr "<b>ਟਿਕਟ ਚੋਣਾਂ</b>"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:6
 msgid "Applet"
-msgstr ""
+msgstr "ਐਪਲਿਟ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:7
 msgid "If checked, display the tray icon in the status bar."
@@ -1639,23 +1648,23 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:11
 msgid "Kerberos"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:12
 msgid "Kerberos Authentication Configuration"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਪਰਮਾਣਕਿਤਾ ਸੰਰਚਨਾ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:13
 msgid "Kerberos principal:"
-msgstr ""
+msgstr "ਕਰਬਰੋਸ ਪ੍ਰਿੰਸੀਪਲ:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:14
 msgid "PKINIT userid:\t"
-msgstr ""
+msgstr "PKINIT userid:\t"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:15
 msgid "PKINT anchors:"
-msgstr ""
+msgstr "PKINT ਐਂਕਰ:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:16
 msgid "Path to CA certificates used as trust anchors for PKINIT"
@@ -1663,7 +1672,7 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:17
 msgid "Requested Kerberos tickets should be:"
-msgstr ""
+msgstr "ਮੰਗੀਆਂ ਕਰਬੋਰਸ ਟਿਕਟਾਂ ਹੋਣੀਆਂ ਚਾਹੀਦੀਆਂ ਹਨ:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:18
 msgid ""
@@ -1673,7 +1682,7 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:19
 msgid "Show tray icon"
-msgstr "  "
+msgstr "ਟਰੇ ਆਈਕਾਨ ਵੇਖੋ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:20
 msgid ""
@@ -1683,11 +1692,11 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:21
 msgid "Warn"
-msgstr ""
+msgstr "ਚੇਤਾਵਨੀ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:22
 msgid "forwardable"
-msgstr ""
+msgstr "ਅੱਗੇਭੇਜਣਯੋਗ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:23
 msgid "gtk-close"
@@ -1699,13 +1708,14 @@ msgstr "gtk-help"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:25
 msgid "minutes before expiry"
-msgstr ""
+msgstr "ਮਿਆਦ ਤੋਂ ਪਹਿਲਾਂ ਮਿੰਟ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:26
 msgid "proxiable"
-msgstr ""
+msgstr "ਪਰਕਾਸੀਯੋਗ"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:27
 msgid "renewable"
-msgstr ""
+msgstr "ਨਵਆਉਣਯੋਗ"
+
 

@@ -23,9 +23,8 @@ msgid "Network Authentication"
 msgstr "Netzwerkanmeldung"
 
 #: ../src/krb5-auth-dialog.xml.h:2
-#, fuzzy
 msgid "_Renew Ticket"
-msgstr "Erneuerbares Ticket"
+msgstr "Ticket _Erneuern"
 
 #: ../src/krb5-auth-dialog.c:820
 #, c-format
@@ -1364,16 +1363,15 @@ msgstr "Anmeldeinformationen laufen in %.2d:%.2dh ab."
 
 #: ../src/krb5-auth-applet.c:449
 msgid "Don't show me this again"
-msgstr ""
+msgstr "Dies nicht mehr anzeigen"
 
 #: ../src/krb5-auth-applet.c:486
 msgid "Network credentials valid"
 msgstr "Anmeldeinformationen gültig."
 
 #: ../src/krb5-auth-applet.c:487
-#, fuzzy
 msgid "You've refreshed your Kerberos credentials."
-msgstr "Ihre Kerberos Anmeldeinformationen sind abgelaufen."
+msgstr "Sie haben Ihre Kerberos Anmeldeinformationen erneuert."
 
 #: ../src/krb5-auth-applet.c:500
 msgid "Network credentials expiring"
@@ -1396,7 +1394,7 @@ msgstr ""
 
 #: ../src/krb5-auth-applet.c:615
 msgid "translator-credits"
-msgstr ""
+msgstr "Guido Günther <agx@sigxcpu.org>"
 
 #. kdestroy
 #: ../src/krb5-auth-applet.c:650
@@ -1406,12 +1404,12 @@ msgstr "_Anmeldeinformationen löschen"
 #. Preferences
 #: ../src/krb5-auth-applet.c:660
 msgid "_Preferences"
-msgstr ""
+msgstr "_Einstellungen"
 
 #. About item
 #: ../src/krb5-auth-applet.c:668
 msgid "_Help"
-msgstr ""
+msgstr "_Hilfe"
 
 #. About item
 #: ../src/krb5-auth-applet.c:676
@@ -1432,27 +1430,27 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Network Authentication Dialog"
-msgstr ""
+msgstr "Kerberos Netzwerkanmeldungsdialog"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:1
 msgid "Forwardable ticket"
-msgstr ""
+msgstr "Weiterleitbares Ticket"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:2
 msgid "Kerberos principal"
-msgstr ""
+msgstr "Kerberos Principal"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "Notify user when ticket becomes valid"
-msgstr ""
+msgstr "Nutzer benachrichtigen, wenn Ticket gültig wird"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:4
 msgid "Notify user when ticket has expired"
-msgstr ""
+msgstr "Nutzer benachrichtigen, wenn Ticket abgelaufen ist"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:5
 msgid "Notify user when ticket is about to expire"
-msgstr ""
+msgstr "Nutzer benachrichtigen, wenn Ticket im Begriff ist abzulaufen"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
 msgid "PKINIT CA certificates"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog 0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-15 18:57+0200\n"
+"POT-Creation-Date: 2009-06-12 22:46+0200\n"
 "PO-Revision-Date: 2007-11-02 13:30+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
@@ -16,24 +16,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/krb5-auth-dialog.c:813
-#, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.c:980 ../src/krb5-auth-dialog.desktop.in.h:2
+#: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.c:53
+#: ../src/krb5-auth-dialog.desktop.in.h:2
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
 msgid "Network Authentication"
 msgstr "Nettverksautentisering"
 
-#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:346
+#: ../src/krb5-auth-dialog.xml.h:2
+#, fuzzy
+msgid "_Renew Ticket"
+msgstr "Fo_rny billett"
+
+#: ../src/krb5-auth-dialog.c:820
+#, c-format
+msgid "Couldn't acquire kerberos ticket: '%s'"
+msgstr ""
+
+#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:357
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Påloggingsinformasjonen utløper om %d minutt"
 msgstr[1] "Påloggingsinformasjonen utløper om %d minutter"
 
-#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:351
+#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:362
 msgid "Your credentials have expired"
 msgstr "Påloggingsinformasjonen har gått ut"
 
@@ -1354,54 +1360,81 @@ msgstr ""
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:342
+#: ../src/krb5-auth-applet.c:353
 #, fuzzy, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Påloggingsinformasjonen utløper om %d minutt"
 
-#: ../src/krb5-auth-applet.c:441
+#: ../src/krb5-auth-applet.c:449
+msgid "Don't show me this again"
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:486
 #, fuzzy
 msgid "Network credentials valid"
 msgstr "Påloggingsinformasjonen har gått ut"
 
-#: ../src/krb5-auth-applet.c:442
+#: ../src/krb5-auth-applet.c:487
 #, fuzzy
-msgid "Your Kerberos credentials have been refreshed."
+msgid "You've refreshed your Kerberos credentials."
 msgstr "Påloggingsinformasjonen har gått ut"
 
-#: ../src/krb5-auth-applet.c:447
+#: ../src/krb5-auth-applet.c:500
 #, fuzzy
 msgid "Network credentials expiring"
 msgstr "Påloggingsinformasjonen har gått ut"
 
-#: ../src/krb5-auth-applet.c:454
+#: ../src/krb5-auth-applet.c:515
 #, fuzzy
 msgid "Network credentials expired"
 msgstr "Påloggingsinformasjonen har gått ut"
 
-#: ../src/krb5-auth-applet.c:455
+#: ../src/krb5-auth-applet.c:516
 #, fuzzy
 msgid "Your Kerberos credentails have expired."
 msgstr "Påloggingsinformasjonen har gått ut"
 
+#: ../src/krb5-auth-applet.c:580
+#, c-format
+msgid ""
+"There was an error displaying %s:\n"
+"%s"
+msgstr ""
+
+#: ../src/krb5-auth-applet.c:615
+msgid "translator-credits"
+msgstr ""
+
 #. kdestroy
-#: ../src/krb5-auth-applet.c:526
+#: ../src/krb5-auth-applet.c:650
 msgid "Remove Credentials _Cache"
 msgstr ""
 
 #. Preferences
-#: ../src/krb5-auth-applet.c:535
+#: ../src/krb5-auth-applet.c:660
 msgid "_Preferences"
 msgstr ""
 
 #. About item
-#: ../src/krb5-auth-applet.c:543
+#: ../src/krb5-auth-applet.c:668
+msgid "_Help"
+msgstr ""
+
+#. About item
+#: ../src/krb5-auth-applet.c:676
 msgid "_About"
 msgstr ""
 
 #. Quit
-#: ../src/krb5-auth-applet.c:552
+#: ../src/krb5-auth-applet.c:686
 msgid "_Quit"
+msgstr ""
+
+#: ../src/krb5-auth-tools.c:45
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.desktop.in.h:1
@@ -1417,62 +1450,87 @@ msgid "Kerberos principal"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:3
-msgid "PKINIT CA certificates"
+msgid "Notify user when ticket becomes valid"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:4
-msgid "PKINIT identifier"
+msgid "Notify user when ticket has expired"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:5
-msgid "PKINIT trust anchors"
+msgid "Notify user when ticket is about to expire"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
-msgid "Prompt minutes before expiry"
+msgid "PKINIT CA certificates"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:7
-msgid "Proxiable ticket"
+msgid "PKINIT identifier"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:8
+msgid "PKINIT trust anchors"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:9
+msgid "Prompt minutes before expiry"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:10
+msgid "Proxiable ticket"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:11
 #, fuzzy
 msgid "Renewable ticket"
 msgstr "Fo_rny billett"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:9
+#: ../src/krb5-auth-dialog.schemas.in.h:12
 msgid "Requested tickets should be forwardable"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:10
+#: ../src/krb5-auth-dialog.schemas.in.h:13
 msgid "Requested tickets should be proxiable"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:11
+#: ../src/krb5-auth-dialog.schemas.in.h:14
 msgid "Requested tickets should be renewable"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:12
+#: ../src/krb5-auth-dialog.schemas.in.h:15
 msgid "Show a trayicon in the status area of the panel"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:13
+#: ../src/krb5-auth-dialog.schemas.in.h:16
 msgid "Show trayicon"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:14
+#: ../src/krb5-auth-dialog.schemas.in.h:17
 msgid ""
 "Start prompting/displaying notifications that many minutes before expiry"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:15
+#: ../src/krb5-auth-dialog.schemas.in.h:18
 msgid "The kerberos principal to acquire the ticket for"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:16
+#: ../src/krb5-auth-dialog.schemas.in.h:19
 msgid "The principal's public/private/certificate identifier when using PKINIT"
 msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:20
+msgid "ticket expired notification"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:21
+msgid "ticket expiring notification"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.schemas.in.h:22
+#, fuzzy
+msgid "valid ticket notification"
+msgstr "Ugyldig meldingstype"
 
 #: ../gtksecentry/gtksecentry.c:454
 msgid "Cursor Position"
@@ -1552,13 +1610,6 @@ msgstr ""
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.c:586
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-"%s"
 msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
@@ -1679,6 +1730,10 @@ msgstr ""
 #, fuzzy
 msgid "renewable"
 msgstr "Fo_rny billett"
+
+#, fuzzy
+#~ msgid "Your Kerberos credentials have been refreshed."
+#~ msgstr "Påloggingsinformasjonen har gått ut"
 
 #~ msgid "_Password:"
 #~ msgstr "_Passord:"

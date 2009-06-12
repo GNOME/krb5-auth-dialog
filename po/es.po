@@ -6,9 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
-"auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-06-04 16:29+0000\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-12 22:46+0200\n"
 "PO-Revision-Date: 2009-06-07 14:10+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
@@ -28,19 +27,19 @@ msgstr "Autenticación de red"
 msgid "_Renew Ticket"
 msgstr "_Renovar tique"
 
-#: ../src/krb5-auth-dialog.c:817
+#: ../src/krb5-auth-dialog.c:820
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "No se pudo obtener el tique de Kerberos: «%s»"
 
-#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:352
+#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:357
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Sus credenciales caducan en %d minuto"
 msgstr[1] "Sus credenciales caducan en %d minutos"
 
-#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:357
+#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:362
 msgid "Your credentials have expired"
 msgstr "Sus credenciales han caducado"
 
@@ -1358,36 +1357,36 @@ msgstr ""
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:348
+#: ../src/krb5-auth-applet.c:353
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Sus credenciales caducan en %.2d:%.2dh"
 
-#: ../src/krb5-auth-applet.c:444
+#: ../src/krb5-auth-applet.c:449
 msgid "Don't show me this again"
 msgstr "No mostrar este mensaje de nuevo"
 
-#: ../src/krb5-auth-applet.c:481
+#: ../src/krb5-auth-applet.c:486
 msgid "Network credentials valid"
 msgstr "Credenciales de red válidas"
 
-#: ../src/krb5-auth-applet.c:482
+#: ../src/krb5-auth-applet.c:487
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Ha actualizado sus credenciales Kerberos."
 
-#: ../src/krb5-auth-applet.c:494
+#: ../src/krb5-auth-applet.c:500
 msgid "Network credentials expiring"
 msgstr "Las credenciales de red van a caducar"
 
-#: ../src/krb5-auth-applet.c:508
+#: ../src/krb5-auth-applet.c:515
 msgid "Network credentials expired"
 msgstr "Las credenciales de red han caducado"
 
-#: ../src/krb5-auth-applet.c:509
+#: ../src/krb5-auth-applet.c:516
 msgid "Your Kerberos credentails have expired."
 msgstr "Sus credenciales Kerberos han caducado."
 
-#: ../src/krb5-auth-applet.c:572
+#: ../src/krb5-auth-applet.c:580
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1396,28 +1395,32 @@ msgstr ""
 "Hubo un error al mostrar %s:\n"
 "%s"
 
+#: ../src/krb5-auth-applet.c:615
+msgid "translator-credits"
+msgstr ""
+
 #. kdestroy
-#: ../src/krb5-auth-applet.c:632
+#: ../src/krb5-auth-applet.c:650
 msgid "Remove Credentials _Cache"
 msgstr "Quitar la _caché de credenciales"
 
 #. Preferences
-#: ../src/krb5-auth-applet.c:641
+#: ../src/krb5-auth-applet.c:660
 msgid "_Preferences"
 msgstr "Prefere_ncias"
 
 #. About item
-#: ../src/krb5-auth-applet.c:648
+#: ../src/krb5-auth-applet.c:668
 msgid "_Help"
 msgstr ""
 
 #. About item
-#: ../src/krb5-auth-applet.c:655
+#: ../src/krb5-auth-applet.c:676
 msgid "_About"
 msgstr "Acerca _de"
 
 #. Quit
-#: ../src/krb5-auth-applet.c:664
+#: ../src/krb5-auth-applet.c:686
 msgid "_Quit"
 msgstr "_Salir"
 

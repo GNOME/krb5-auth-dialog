@@ -1,3 +1,8 @@
+Fri Jun 13 18:33:23 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* configure.ac: release 0.11
+	* NEWS: likewise
+
 Sat Jun 13 18:25:40 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	* preferences/krb5-auth-dialog-preferences.xml: fix typo

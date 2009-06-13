@@ -1,4 +1,21 @@
 ============
+Version 0.11
+============
+* add a user manual
+* add svg and 48x48 icons, use them in notifications
+* add DBus API to destroy ticket cache (can be used by e.g. on laptop suspend,
+  screensaver, ...)
+* cleanups and bug fixes
+* i18n updates:
+	* de: Guido Günther
+	* es: Jorge Gonzalez
+	* fr: Claude Paroz
+	* sv: Daniel Nylander
+	* pa: A S Alam
+* manual i18n:
+	* de: Mario Blättermann
+
+============
 Version 0.10
 ============
 * allow to turn off notifications easily

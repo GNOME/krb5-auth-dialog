@@ -658,37 +658,29 @@ ka_applet_create_context_menu (KaApplet* applet)
 	ka_applet_menu_add_separator_item (menu);
 
 	/* Preferences */
-	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Preferences"));
+	menu_item = gtk_image_menu_item_new_from_stock(GTK_STOCK_PREFERENCES, NULL);
 	g_signal_connect (G_OBJECT (menu_item), "activate",
 			  G_CALLBACK (ka_applet_cb_preferences), applet);
-	image = gtk_image_new_from_stock (GTK_STOCK_PREFERENCES, GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	/* About item */
-	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Help"));
+	menu_item = gtk_image_menu_item_new_from_stock(GTK_STOCK_HELP, NULL);
 	g_signal_connect (G_OBJECT (menu_item), "activate",
 			  G_CALLBACK (ka_applet_cb_show_help), applet);
-	image = gtk_image_new_from_stock (GTK_STOCK_HELP, GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	/* About item */
-	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_About"));
+	menu_item = gtk_image_menu_item_new_from_stock(GTK_STOCK_ABOUT, NULL);
 	g_signal_connect (G_OBJECT (menu_item), "activate",
 			  G_CALLBACK (ka_applet_cb_about_dialog), applet);
-	image = gtk_image_new_from_stock (GTK_STOCK_ABOUT, GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	ka_applet_menu_add_separator_item (menu);
 
 	/* Quit */
-	menu_item = gtk_image_menu_item_new_with_mnemonic (_("_Quit"));
+	menu_item = gtk_image_menu_item_new_from_stock(GTK_STOCK_QUIT, NULL);
 	g_signal_connect (G_OBJECT (menu_item), "activate",
 			  G_CALLBACK (ka_applet_cb_quit), applet);
-	image = gtk_image_new_from_stock (GTK_STOCK_QUIT, GTK_ICON_SIZE_MENU);
-	gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	gtk_widget_show_all (menu);

@@ -1,3 +1,9 @@
+Sat Jun 13 17:14:34 CEST 2009 Guido Günther <agx@sigxcpu.org>
+
+	* po/krb5-auth-dialog.pot: remove 
+	* po/.gitignore: ignore generated krb5-auth-dialog.pot
+	BZ: #585635
+
 Fri Jun 12 18:30:03 CEST 2009 Guido Günther <agx@sigxcpu.org>
 
 	add DBus API to destroy ccache

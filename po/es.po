@@ -6,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-12 22:46+0200\n"
-"PO-Revision-Date: 2009-06-07 14:10+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
+"auth-dialog&component=general\n"
+"POT-Creation-Date: 2009-06-13 10:44+0000\n"
+"PO-Revision-Date: 2009-06-13 13:26+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -32,14 +33,14 @@ msgstr "_Renovar tique"
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "No se pudo obtener el tique de Kerberos: «%s»"
 
-#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:357
+#: ../src/krb5-auth-pwdialog.c:173 ../src/krb5-auth-applet.c:358
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Sus credenciales caducan en %d minuto"
 msgstr[1] "Sus credenciales caducan en %d minutos"
 
-#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:362
+#: ../src/krb5-auth-pwdialog.c:178 ../src/krb5-auth-applet.c:363
 msgid "Your credentials have expired"
 msgstr "Sus credenciales han caducado"
 
@@ -1357,36 +1358,37 @@ msgstr ""
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:353
+#. Translators: First number is hours, second number is minutes
+#: ../src/krb5-auth-applet.c:354
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Sus credenciales caducan en %.2d:%.2dh"
 
-#: ../src/krb5-auth-applet.c:449
+#: ../src/krb5-auth-applet.c:450
 msgid "Don't show me this again"
 msgstr "No mostrar este mensaje de nuevo"
 
-#: ../src/krb5-auth-applet.c:486
+#: ../src/krb5-auth-applet.c:487
 msgid "Network credentials valid"
 msgstr "Credenciales de red válidas"
 
-#: ../src/krb5-auth-applet.c:487
+#: ../src/krb5-auth-applet.c:488
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Ha actualizado sus credenciales Kerberos."
 
-#: ../src/krb5-auth-applet.c:500
+#: ../src/krb5-auth-applet.c:501
 msgid "Network credentials expiring"
 msgstr "Las credenciales de red van a caducar"
 
-#: ../src/krb5-auth-applet.c:515
+#: ../src/krb5-auth-applet.c:516
 msgid "Network credentials expired"
 msgstr "Las credenciales de red han caducado"
 
-#: ../src/krb5-auth-applet.c:516
+#: ../src/krb5-auth-applet.c:517
 msgid "Your Kerberos credentails have expired."
 msgstr "Sus credenciales Kerberos han caducado."
 
-#: ../src/krb5-auth-applet.c:580
+#: ../src/krb5-auth-applet.c:581
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1395,32 +1397,32 @@ msgstr ""
 "Hubo un error al mostrar %s:\n"
 "%s"
 
-#: ../src/krb5-auth-applet.c:615
+#: ../src/krb5-auth-applet.c:616
 msgid "translator-credits"
 msgstr ""
 
 #. kdestroy
-#: ../src/krb5-auth-applet.c:650
+#: ../src/krb5-auth-applet.c:651
 msgid "Remove Credentials _Cache"
 msgstr "Quitar la _caché de credenciales"
 
 #. Preferences
-#: ../src/krb5-auth-applet.c:660
+#: ../src/krb5-auth-applet.c:661
 msgid "_Preferences"
 msgstr "Prefere_ncias"
 
 #. About item
-#: ../src/krb5-auth-applet.c:668
+#: ../src/krb5-auth-applet.c:669
 msgid "_Help"
 msgstr ""
 
 #. About item
-#: ../src/krb5-auth-applet.c:676
+#: ../src/krb5-auth-applet.c:677
 msgid "_About"
 msgstr "Acerca _de"
 
 #. Quit
-#: ../src/krb5-auth-applet.c:686
+#: ../src/krb5-auth-applet.c:687
 msgid "_Quit"
 msgstr "_Salir"
 
@@ -1611,120 +1613,123 @@ msgstr "El contenido de la entrada"
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
-msgstr ""
+msgstr "Advertencia: ejecutar q-agent setuid en este sistema es peligroso\n"
 
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
-msgid "Set your Kerberos network authenticaion preferences"
+#| msgid "Set your Kerberos network authenticaion preferences"
+msgid "Set your Kerberos network authentication preferences"
 msgstr "Establezca sus preferencias de autenticación de red en Kerberos"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:1
-msgid "    "
-msgstr "    "
+#| msgid "<b>Appearance</b>"
+msgid "Appearance"
+msgstr "Apariencia"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:2
-msgid "<b>Appearance</b>"
-msgstr "<b>Apariencia</b>"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:3
-msgid "<b>Kerberos User</b>"
-msgstr "<b>Usuario de Kerberos</b>"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
-msgid "<b>Notifications</b>"
-msgstr "<b>Notificaciones</b>"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
-msgid "<b>Ticket Options</b>"
-msgstr "<b>Opciones del tique</b>"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
 msgid "Applet"
 msgstr "Miniaplicación"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
-msgid "If checked, display the tray icon in the status bar."
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:3
+msgid "If checked, display the tray icon in the status bar"
 msgstr ""
+"Si está seleccionado muestra el icono de la bandeja en la barra de estado"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
 msgid "If checked, request forwardable tickets"
-msgstr ""
+msgstr "Si está seleccionado pide tiques reenviables"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
 msgid "If checked, request proxiable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
 msgid "If checked, request renewable tickets"
-msgstr ""
+msgstr "Si está seleccionado pide tiques renovables"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
 msgid "Kerberos Authentication Configuration"
 msgstr "Configuración de autenticación de Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
+#| msgid "<b>Kerberos User</b>"
+msgid "Kerberos User"
+msgstr "Usuario de Kerberos"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
 msgid "Kerberos principal:"
 msgstr "Principal de Kerberos:"
 
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
+#| msgid "<b>Notifications</b>"
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
+msgid "PKINIT userid:"
+msgstr "ID de usuario de PKINIT:"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
+msgid "PKINT anchors:"
+msgstr "Anclas de PKINIT:"
+
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:14
-msgid "PKINIT userid:\t"
-msgstr ""
+msgid "Path to CA certificates used as trust anchors for PKINIT"
+msgstr "Ruta a los certificados CD usados como anclas de confianza para PKINIT"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:15
-msgid "PKINT anchors:"
-msgstr ""
+msgid "Requested Kerberos tickets should be:"
+msgstr "Los tiques solicitados a Kerberos deben ser:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:16
-msgid "Path to CA certificates used as trust anchors for PKINIT"
+msgid ""
+"Send notification about ticket expiry that many minutes before it finally "
+"expires"
 msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:17
-msgid "Requested Kerberos tickets should be:"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:18
-msgid ""
-"Send notification about ticket expiry that many minutes before it finally "
-"expires. "
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
 msgid "Show tray icon"
 msgstr "Mostrar icono de la bandeja"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:20
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:18
 msgid ""
 "The principal's public/private/certificate identifier. Leave empty if not "
 "using PKINIT."
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:21
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
+#| msgid "<b>Ticket Options</b>"
+msgid "Ticket Options"
+msgstr "Opciones del tique"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:20
 msgid "Warn"
-msgstr ""
+msgstr "Advertir"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:21
+msgid "forwardable"
+msgstr "reenvibale"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:22
-msgid "forwardable"
-msgstr ""
+msgid "minutes before expiry"
+msgstr "minutos antes de que caduque"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:23
-msgid "gtk-close"
-msgstr "gtk-close"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
-msgid "gtk-help"
-msgstr "gtk-help"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:25
-msgid "minutes before expiry"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:26
 msgid "proxiable"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:27
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
 msgid "renewable"
 msgstr "renovable"
+
+#~ msgid "    "
+#~ msgstr "    "
+
+#~ msgid "gtk-close"
+#~ msgstr "gtk-close"
+
+#~ msgid "gtk-help"
+#~ msgstr "gtk-help"

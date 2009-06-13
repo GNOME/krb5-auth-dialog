@@ -350,6 +350,7 @@ ka_applet_tooltip_text(int remaining)
 		if (remaining >= 3600) {
 			hours = remaining / 3600;
 			minutes = (remaining % 3600) / 60;
+			/* Translators: First number is hours, second number is minutes */
 			tooltip_text = g_strdup_printf (_("Your credentials expire in %.2d:%.2dh"), hours, minutes);
 		} else {
 			minutes = remaining / 60;

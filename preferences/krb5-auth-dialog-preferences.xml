@@ -30,8 +30,10 @@
                       <object class="GtkLabel" id="label4">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Kerberos User&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">Kerberos User</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -79,7 +81,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label8">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">    </property>
+                                    <property name="label">    </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -106,7 +108,7 @@
                               <object class="GtkLabel" id="label7">
                                 <property name="visible">True</property>
                                 <property name="xalign">0</property>
-                                <property name="label" translatable="yes">PKINIT userid:	</property>
+                                <property name="label" translatable="yes">PKINIT userid:</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -121,7 +123,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label9">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">    </property>
+                                    <property name="label">    </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -164,7 +166,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label20">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">    </property>
+                                    <property name="label">    </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -212,8 +214,10 @@
                       <object class="GtkLabel" id="label5">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Ticket Options&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">Ticket Options</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -258,7 +262,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label11">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">    </property>
+                                    <property name="label">    </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -292,7 +296,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label12">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">    </property>
+                                    <property name="label">    </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -326,7 +330,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label19">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">    </property>
+                                    <property name="label">    </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -394,8 +398,10 @@
                       <object class="GtkLabel" id="label17">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Notifications&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">Notifications</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -427,7 +433,7 @@
                             <child>
                               <object class="GtkLabel" id="label14">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">    </property>
+                                <property name="label">    </property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -438,7 +444,7 @@
                             <child>
                               <object class="GtkLabel" id="label15">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">Warn</property>
+                                <property name="label" comments="Used in combination: 'Warn x minutes before expiry'" translatable="yes">Warn</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -450,7 +456,7 @@
                               <object class="GtkSpinButton" id="prompt_mins_entry">
                                 <property name="visible">True</property>
                                 <property name="can_focus">True</property>
-                                <property name="tooltip_text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires. </property>
+                                <property name="tooltip_text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
                                 <property name="activates_default">True</property>
                                 <property name="adjustment">adjustment1</property>
                               </object>
@@ -463,7 +469,7 @@
                             <child>
                               <object class="GtkLabel" id="label16">
                                 <property name="visible">True</property>
-                                <property name="label" translatable="yes">minutes before expiry</property>
+                                <property name="label" comments="Used in combination: 'Warn x minutes before expiry'" translatable="yes">minutes before expiry</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>
@@ -497,8 +503,10 @@
                       <object class="GtkLabel" id="label18">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">&lt;b&gt;Appearance&lt;/b&gt;</property>
-                        <property name="use_markup">True</property>
+                        <property name="label" translatable="yes">Appearance</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                        </attributes>
                       </object>
                       <packing>
                         <property name="expand">False</property>
@@ -534,7 +542,7 @@
                                 <child>
                                   <object class="GtkLabel" id="label13">
                                     <property name="visible">True</property>
-                                    <property name="label" translatable="yes">    </property>
+                                    <property name="label">    </property>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -548,7 +556,7 @@
                                     <property name="visible">True</property>
                                     <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="tooltip_text" translatable="yes">If checked, display the tray icon in the status bar.</property>
+                                    <property name="tooltip_text" translatable="yes">If checked, display the tray icon in the status bar</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
                                   <packing>
@@ -607,7 +615,7 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="button2">
-                <property name="label" translatable="yes">gtk-help</property>
+                <property name="label">gtk-help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
@@ -621,7 +629,7 @@
             </child>
             <child>
               <object class="GtkButton" id="button1">
-                <property name="label" translatable="yes">gtk-close</property>
+                <property name="label">gtk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>

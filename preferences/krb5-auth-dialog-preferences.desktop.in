@@ -1,6 +1,6 @@
 [Desktop Entry]
 _Name=Network Authentication
-_Comment=Set your Kerberos network authenticaion preferences
+_Comment=Set your Kerberos network authentication preferences
 Exec=krb5-auth-dialog-preferences
 Icon=krb-valid-ticket
 Terminal=false

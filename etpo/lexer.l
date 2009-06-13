@@ -104,7 +104,11 @@ yywrap(void)
 static void
 header(void)
 {
-	const char *boilerplate = "#include <glib/gi18n.h>\n\nconst char *dummy[] = {\n";
+	const char *boilerplate = "#include <glib/gi18n.h>\n\nconst char *dummy[] = {\n"
+		"\t/* Translators: files from dummy-strings.c are *all* possible errors\n"
+		"\t   returned from Kerberos (since Kerberos itself doesn't handle i18n). If in\n"
+		"\t   doubt please translate strings from files starting with krb5-auth\n"
+		"\t   first since these are the ones the user will see in any case. */\n";
 	printf("%s", boilerplate);
 }
 

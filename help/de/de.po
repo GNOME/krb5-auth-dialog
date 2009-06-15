@@ -223,8 +223,8 @@ msgid ""
 "This manual describes how to use the Kerberos Network Authentication Dialog "
 "to manage your Kerberos tickets."
 msgstr ""
-"Dieses Handbuch beschreibt, wie Sie den <application>Kerberos "
-"Netzwerkanmeldungsdialog</application> dazu verwenden können, Ihre Kerberos-"
+"Dieses Handbuch beschreibt, wie Sie den Kerberos "
+"Netzwerkanmeldungsdialog dazu verwenden können, Ihre Kerberos-"
 "Tickets zu verwalten."
 
 #: C/krb5-auth-dialog.xml:116(title)

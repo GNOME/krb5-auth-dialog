@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-06-13 16:26+0000\n"
-"PO-Revision-Date: 2009-06-14 12:31+0200\n"
+"POT-Creation-Date: 2009-06-15 09:12+0000\n"
+"PO-Revision-Date: 2009-06-21 17:40+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -113,7 +113,7 @@ msgstr "ASN.1 error de análisis"
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:20
 msgid "ASN.1 bad return from gmtime"
-msgstr ""
+msgstr "ASN.1 gmtime devolvió una respuesta errónea"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: ../src/dummy-strings.c:21
@@ -123,7 +123,7 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
 #: ../src/dummy-strings.c:22
 msgid "ASN.1 missing expected EOC"
-msgstr ""
+msgstr "ASN.1 falta el EOC esperado"
 
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: ../src/dummy-strings.c:23
@@ -178,57 +178,57 @@ msgstr "El cliente o el servidor tienen una clave vacía"
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
 #: ../src/dummy-strings.c:33
 msgid "Ticket is ineligible for postdating"
-msgstr ""
+msgstr "El tique es ininteligible para postdata"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
 #: ../src/dummy-strings.c:34
 msgid "Requested effective lifetime is negative or too short"
-msgstr ""
+msgstr "El tiempo de vida solicitado es negativo o demasiado corto"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
 #: ../src/dummy-strings.c:35
 msgid "KDC policy rejects request"
-msgstr ""
+msgstr "La política de KDR rechaza la petición"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
 #: ../src/dummy-strings.c:36
 msgid "KDC can't fulfill requested option"
-msgstr ""
+msgstr "KDC no puede cumplir con la opción solicitada"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
 #: ../src/dummy-strings.c:37
 msgid "KDC has no support for encryption type"
-msgstr ""
+msgstr "KDC no tiene soporte para el tipo de cifrado"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:38
 msgid "KDC has no support for checksum type"
-msgstr ""
+msgstr "KDC no tiene soporte para el tipo de suma de verificación"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:39
 msgid "KDC has no support for padata type"
-msgstr ""
+msgstr "KDC no tiene soporte para el tipo de «padata»"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
 #: ../src/dummy-strings.c:40
 msgid "KDC has no support for transited type"
-msgstr ""
+msgstr "KDC no tiene soporte para el tipo de tránsito"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
 #: ../src/dummy-strings.c:41
 msgid "Clients credentials have been revoked"
-msgstr ""
+msgstr "Se han revocado las credenciales de los clientes"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
 #: ../src/dummy-strings.c:42
 msgid "Credentials for server have been revoked"
-msgstr ""
+msgstr "Se han revocado las credenciales para el servidor"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
 #: ../src/dummy-strings.c:43
 msgid "TGT has been revoked"
-msgstr ""
+msgstr "El TGT se ha revocado"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
 #: ../src/dummy-strings.c:44
@@ -268,7 +268,7 @@ msgstr "Un servicio necesario para procesar la solicitud no está disponible"
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
 #: ../src/dummy-strings.c:51
 msgid "Decrypt integrity check failed"
-msgstr ""
+msgstr "Falló la comprobación de la integridad del descifrado"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
 #: ../src/dummy-strings.c:52
@@ -283,7 +283,7 @@ msgstr "El tique aún no es válido"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
 #: ../src/dummy-strings.c:54
 msgid "Request is a replay"
-msgstr ""
+msgstr "La petición es una repetición"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
 #: ../src/dummy-strings.c:55
@@ -293,32 +293,32 @@ msgstr "El tique no es para nosotros"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
 #: ../src/dummy-strings.c:56
 msgid "Ticket/authenticator don't match"
-msgstr ""
+msgstr "El tique/autenticador no coinciden"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: ../src/dummy-strings.c:57
 msgid "Clock skew too great"
-msgstr ""
+msgstr "La desviación del reloj es demasiado grande"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
 #: ../src/dummy-strings.c:58
 msgid "Incorrect net address"
-msgstr ""
+msgstr "Dirección de red incorrecta"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
 #: ../src/dummy-strings.c:59
 msgid "Protocol version mismatch"
-msgstr ""
+msgstr "La versión de los protocolos no coincide"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
 #: ../src/dummy-strings.c:60
 msgid "Invalid message type"
-msgstr ""
+msgstr "Tipo de mensaje no válido"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
 #: ../src/dummy-strings.c:61
 msgid "Message stream modified"
-msgstr ""
+msgstr "Flujo del mensaje modificado"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
 #: ../src/dummy-strings.c:62
@@ -338,18 +338,18 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
 #: ../src/dummy-strings.c:65
 msgid "Service key not available"
-msgstr ""
+msgstr "La clave del servidor no está disponible"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
 #: ../src/dummy-strings.c:66 ../src/dummy-strings.c:122
 msgid "Mutual authentication failed"
-msgstr ""
+msgstr "Falló la autenticación mutua"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
 #: ../src/dummy-strings.c:67
 msgid "Incorrect message direction"
-msgstr ""
+msgstr "Dirección del mensaje incorrecta"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
 #: ../src/dummy-strings.c:68
@@ -359,32 +359,32 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
 #: ../src/dummy-strings.c:69
 msgid "Incorrect sequence number in message"
-msgstr ""
+msgstr "La secuencia de números en el mensaje es incorrecta"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
 #: ../src/dummy-strings.c:70
 msgid "Inappropriate type of checksum in message"
-msgstr ""
+msgstr "El tipo de suma de verificación del mensaje es inapropiado"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
 #: ../src/dummy-strings.c:71
 msgid "Policy rejects transited path"
-msgstr ""
+msgstr "La política rechaza la ruta transitada"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:72
 msgid "Response too big for UDP, retry with TCP"
-msgstr ""
+msgstr "La respuesta es demasiado grande para UDM, inténtelo con TCP"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
 #: ../src/dummy-strings.c:73
 msgid "Generic error (see e-text)"
-msgstr ""
+msgstr "Error genérico (vea e-text)"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
 #: ../src/dummy-strings.c:74
 msgid "Field is too long for this implementation"
-msgstr ""
+msgstr "El campo es demasiado grande para esta implementación"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
 #: ../src/dummy-strings.c:75
@@ -1650,7 +1650,6 @@ msgid "Notifications"
 msgstr "Notificaciones"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:12
-#| msgid "PKINT anchors:"
 msgid "PKINIT anchors:"
 msgstr "Anclas de PKINIT:"
 

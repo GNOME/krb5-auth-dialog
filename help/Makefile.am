@@ -15,5 +15,5 @@ DOC_FIGURES = \
 	figures/trayicon-expiring.png \
 	$(NULL)
 
-DOC_LINGUAS = de sv \
+DOC_LINGUAS = de es sv \
 	$(NULL)

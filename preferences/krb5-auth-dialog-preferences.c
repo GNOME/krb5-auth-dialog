@@ -36,6 +36,9 @@
 #include "krb5-auth-gconf-tools.h"
 #include "krb5-auth-tools.h"
 
+#define PKINIT_SMARTCARD "PKCS11:" SC_PKCS11
+#define PKINIT_FILE "FILE:"
+
 #define N_LISTENERS 8
 
 typedef struct {
@@ -45,7 +48,10 @@ typedef struct {
   GtkWidget *dialog;
   GtkWidget *principal_entry;
   GtkWidget *pkuserid_entry;
+  GtkWidget *pkuserid_button;
+  GtkWidget *smartcard_toggle;
   GtkWidget *pkanchors_entry;
+  GtkWidget *pkanchors_button;
   GtkWidget *forwardable_toggle;
   GtkWidget *proxiable_toggle;
   GtkWidget *renewable_toggle;
@@ -185,7 +191,7 @@ ka_preferences_dialog_setup_pkuserid_entry (KaPreferencesDialog *dialog)
       g_free (pkuserid);
 
   g_signal_connect (dialog->pkuserid_entry, "changed",
-      G_CALLBACK (ka_preferences_dialog_pkuserid_changed), dialog);
+                    G_CALLBACK (ka_preferences_dialog_pkuserid_changed), dialog);
   if (!gconf_client_key_is_writable (dialog->client, KA_GCONF_KEY_PK_USERID, NULL)) {
       gtk_widget_set_sensitive (dialog->pkuserid_entry, FALSE);
   }
@@ -241,7 +247,7 @@ ka_preferences_dialog_pkanchors_changed (GtkEntry *entry,
 static void
 ka_preferences_dialog_setup_pkanchors_entry (KaPreferencesDialog *dialog)
 {
-  char     *pkanchors = NULL;
+  char *pkanchors = NULL;
 
   dialog->pkanchors_entry = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "pkanchors_entry"));
   g_assert (dialog->pkanchors_entry != NULL);
@@ -269,8 +275,153 @@ ka_preferences_dialog_setup_pkanchors_entry (KaPreferencesDialog *dialog)
 
 
 static void
+ka_preferences_toggle_pkuserid_entry (gboolean state, KaPreferencesDialog *dialog)
+{
+  gtk_widget_set_sensitive (dialog->pkuserid_entry, state);
+  gtk_widget_set_sensitive (dialog->pkuserid_button, state);
+}
+
+
+static void
+ka_preferences_dialog_smartcard_toggled (GtkToggleButton *toggle,
+                                         KaPreferencesDialog *dialog)
+{
+  gboolean smartcard = gtk_toggle_button_get_active (toggle);
+  static gchar *old_path = NULL;
+
+  if (smartcard) {
+      const char *path;
+
+      path = gtk_entry_get_text (GTK_ENTRY(dialog->pkuserid_entry));
+      if (g_strcmp0 (path, PKINIT_SMARTCARD)) {
+          g_free (old_path);
+          old_path = g_strdup (path);
+      }
+      ka_preferences_toggle_pkuserid_entry (FALSE, dialog);
+      gconf_client_set_string (dialog->client, KA_GCONF_KEY_PK_USERID, PKINIT_SMARTCARD, NULL);
+  } else {
+      ka_preferences_toggle_pkuserid_entry (TRUE, dialog);
+      if (old_path)
+          gconf_client_set_string (dialog->client, KA_GCONF_KEY_PK_USERID, old_path, NULL);
+      else
+          gconf_client_unset (dialog->client, KA_GCONF_KEY_PK_USERID, NULL);
+  }
+}
+
+
+static void
+ka_preferences_dialog_setup_smartcard_toggle(KaPreferencesDialog *dialog)
+{
+  char *pkuserid = NULL;
+
+  dialog->smartcard_toggle = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "smartcard_toggle"));
+  g_assert (dialog->smartcard_toggle != NULL);
+
+  if (!ka_gconf_get_string (dialog->client, KA_GCONF_KEY_PK_USERID, &pkuserid))
+      g_warning ("Getting pkanchors failed");
+
+  g_signal_connect (dialog->smartcard_toggle, "toggled",
+              G_CALLBACK (ka_preferences_dialog_smartcard_toggled), dialog);
+
+  if (!g_strcmp0 (pkuserid, PKINIT_SMARTCARD))
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->smartcard_toggle), TRUE);
+  else
+      gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (dialog->smartcard_toggle), FALSE);
+
+  if (pkuserid)
+      g_free (pkuserid);
+}
+
+
+static void
+ka_preferences_dialog_browse_certs (KaPreferencesDialog *dialog, GtkEntry *entry)
+{
+  GtkWidget *filechooser;
+  GtkFileFilter *cert_filter, *all_filter;
+  gchar *filename = NULL;
+  const gchar *current;
+  gint ret;
+
+  filechooser = gtk_file_chooser_dialog_new(_("Choose Certificate"),
+                                            GTK_WINDOW(dialog->dialog),
+                                            GTK_FILE_CHOOSER_ACTION_OPEN,
+                                            GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                                            GTK_STOCK_OPEN, GTK_RESPONSE_ACCEPT,
+                                            NULL);
+
+  current = gtk_entry_get_text (entry);
+  if (current && g_str_has_prefix (current, PKINIT_FILE) &&
+      strlen(current) > strlen (PKINIT_FILE)) {
+      gtk_file_chooser_select_filename (GTK_FILE_CHOOSER(filechooser),
+                                        (const gchar*)&current[strlen(PKINIT_FILE)]);
+  }
+
+  cert_filter = g_object_ref_sink (gtk_file_filter_new ());
+  gtk_file_filter_add_mime_type (cert_filter, "application/x-x509-ca-cert");
+  gtk_file_filter_set_name (cert_filter, _("X509 Certificates"));
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (filechooser), cert_filter);
+  all_filter = g_object_ref_sink (gtk_file_filter_new ());
+  gtk_file_filter_add_pattern (all_filter, "*");
+  gtk_file_filter_set_name (all_filter, _("all files"));
+  gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (filechooser), all_filter);
+
+  ret = gtk_dialog_run (GTK_DIALOG(filechooser));
+  if (ret == GTK_RESPONSE_ACCEPT)
+     filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER(filechooser));
+  gtk_widget_destroy (GTK_WIDGET(filechooser));
+
+  if (filename) {
+      gchar *cert = g_strconcat( PKINIT_FILE, filename, NULL);
+      gtk_entry_set_text (entry, cert);
+      g_free (filename);
+      g_free (cert);
+  }
+  g_object_unref (cert_filter);
+  g_object_unref (all_filter);
+}
+
+static void
+ka_preferences_dialog_browse_pkuserids (GtkButton *button G_GNUC_UNUSED,
+                                       KaPreferencesDialog *dialog)
+{
+  ka_preferences_dialog_browse_certs (dialog,
+                                      GTK_ENTRY(dialog->pkuserid_entry));
+}
+
+static void
+ka_preferences_dialog_browse_pkanchors(GtkButton *button G_GNUC_UNUSED,
+                                       KaPreferencesDialog *dialog)
+{
+  ka_preferences_dialog_browse_certs (dialog,
+                                      GTK_ENTRY(dialog->pkanchors_entry));
+}
+
+static void
+ka_preferences_dialog_setup_pkuserid_button (KaPreferencesDialog *dialog)
+{
+  dialog->pkuserid_button = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "pkuserid_button"));
+  g_assert (dialog->pkuserid_button != NULL);
+
+  g_signal_connect (dialog->pkuserid_button, "clicked",
+                    G_CALLBACK (ka_preferences_dialog_browse_pkuserids), dialog);
+
+}
+
+static void
+ka_preferences_dialog_setup_pkanchors_button (KaPreferencesDialog *dialog)
+{
+  dialog->pkanchors_button = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "pkanchors_button"));
+  g_assert (dialog->pkanchors_button != NULL);
+
+  g_signal_connect (dialog->pkanchors_button, "clicked",
+                    G_CALLBACK (ka_preferences_dialog_browse_pkanchors), dialog);
+
+}
+
+
+static void
 ka_preferences_dialog_forwardable_toggled (GtkToggleButton *toggle,
-                                     KaPreferencesDialog *dialog)
+                                           KaPreferencesDialog *dialog)
 {
   gboolean forwardable;
 
@@ -602,7 +753,10 @@ ka_preferences_dialog_init(KaPreferencesDialog* dialog)
 
   ka_preferences_dialog_setup_principal_entry (dialog);
   ka_preferences_dialog_setup_pkuserid_entry (dialog);
+  ka_preferences_dialog_setup_pkuserid_button (dialog);
+  ka_preferences_dialog_setup_smartcard_toggle (dialog);
   ka_preferences_dialog_setup_pkanchors_entry(dialog);
+  ka_preferences_dialog_setup_pkanchors_button (dialog);
   ka_preferences_dialog_setup_forwardable_toggle (dialog);
   ka_preferences_dialog_setup_proxiable_toggle (dialog);
   ka_preferences_dialog_setup_renewable_toggle (dialog);

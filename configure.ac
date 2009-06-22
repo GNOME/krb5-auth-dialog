@@ -57,6 +57,16 @@ if test x"$enable_debug" = x"yes"; then
    AC_DEFINE(ENABLE_DEBUG, 1, [whether debugging is enabled])
 fi
 
+dnl check for location of opensc-pkcs11 helper used for pkinit
+AC_ARG_WITH([pkcs11],
+        [AS_HELP_STRING([--with-pkcs11],
+          [set path of PKCS11 smartcard helper @<:@default=/usr/lib/opensc/opensc-pkcs11.so@:>@])],
+        [],
+        [with_pkcs11=/usr/lib/opensc/opensc-pkcs11.so])
+SC_PKCS11="$with_pkcs11"
+AC_SUBST(SC_PKCS11)
+AC_DEFINE_UNQUOTED([SC_PKCS11],["$SC_PKCS11"],[PKCS11 smartcard helper])
+
 
 AC_PATH_PROG([KRB5_CONFIG], krb5-config, none, $PATH:/usr/kerberos/bin)
 if test "x$KRB5_CONFIG" != "xnone"; then

@@ -19,6 +19,7 @@ krb5_auth_dialog_preferences_CPPFLAGS = \
 krb5_auth_dialog_preferences_CFLAGS = \
 	$(GTK_CFLAGS) \
 	$(GCONF_CFLAGS) \
+	$(WARN_CFLAGS) \
 	$(AM_CFLAGS)
 
 

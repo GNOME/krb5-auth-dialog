@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-06-15 09:12+0000\n"
-"PO-Revision-Date: 2009-06-21 17:40+0200\n"
+"POT-Creation-Date: 2009-06-21 15:41+0000\n"
+"PO-Revision-Date: 2009-06-28 16:20+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -969,7 +969,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
 #: ../src/dummy-strings.c:192
 msgid "Bad checksum in SAM challenge"
-msgstr ""
+msgstr "Suma de verificación errónea en el desafío SAM"
 
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
 #: ../src/dummy-strings.c:193
@@ -984,22 +984,22 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: ../src/dummy-strings.c:195
 msgid "This application has expired"
-msgstr ""
+msgstr "Esta aplicación ha caducado"
 
 #. krb5_err.et:krb5:KRB5_APPL_EXPIRED
 #: ../src/dummy-strings.c:196
 msgid "This Krb5 library has expired"
-msgstr ""
+msgstr "Esta biblioteca Krb5 ha caducado"
 
 #. krb5_err.et:krb5:KRB5_LIB_EXPIRED
 #: ../src/dummy-strings.c:197
 msgid "New password cannot be zero length"
-msgstr ""
+msgstr "La nueva contraseña no puede tener longitud cero"
 
 #. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
 #: ../src/dummy-strings.c:198
 msgid "Password change failed"
-msgstr ""
+msgstr "Falló el cambio de contraseña"
 
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: ../src/dummy-strings.c:199
@@ -1009,7 +1009,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
 #: ../src/dummy-strings.c:200
 msgid "Encryption type not permitted"
-msgstr ""
+msgstr "Tipo de cifrado no permitido"
 
 #. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
 #: ../src/dummy-strings.c:201
@@ -1029,17 +1029,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: ../src/dummy-strings.c:204
 msgid "no data available for host/domain name"
-msgstr ""
+msgstr "no hay datos disponibles para el nombre del equipo/dominio"
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
 #: ../src/dummy-strings.c:205
 msgid "host/domain name not found"
-msgstr ""
+msgstr "no se encontró el equipo/dominio"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: ../src/dummy-strings.c:206
 msgid "service name unknown"
-msgstr ""
+msgstr "nombre de servicio desconocido"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: ../src/dummy-strings.c:207
@@ -1054,7 +1054,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: ../src/dummy-strings.c:209
 msgid "service not available"
-msgstr ""
+msgstr "servicio no disponible"
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: ../src/dummy-strings.c:210
@@ -1074,7 +1074,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
 #: ../src/dummy-strings.c:213
 msgid "Supplied data not handled by this plugin"
-msgstr ""
+msgstr "Este complemento no puede gestionar los datos proporcionados"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: ../src/dummy-strings.c:214
@@ -1089,273 +1089,273 @@ msgstr "Tabla de números mágica de Kerberos V5"
 #. kv5m_err.et:kv5m:KV5M_NONE
 #: ../src/dummy-strings.c:216
 msgid "Bad magic number for krb5_principal structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_principal"
 
 #. kv5m_err.et:kv5m:KV5M_PRINCIPAL
 #: ../src/dummy-strings.c:217
 msgid "Bad magic number for krb5_data structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_data"
 
 #. kv5m_err.et:kv5m:KV5M_DATA
 #: ../src/dummy-strings.c:218
 msgid "Bad magic number for krb5_keyblock structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_keyblock"
 
 #. kv5m_err.et:kv5m:KV5M_KEYBLOCK
 #: ../src/dummy-strings.c:219
 msgid "Bad magic number for krb5_checksum structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_checksum"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM
 #: ../src/dummy-strings.c:220
 msgid "Bad magic number for krb5_encrypt_block structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_encrypt_block"
 
 #. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
 #: ../src/dummy-strings.c:221
 msgid "Bad magic number for krb5_enc_data structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_enc_data"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_DATA
 #: ../src/dummy-strings.c:222
 msgid "Bad magic number for krb5_cryptosystem_entry structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_cryptosystem_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
 #: ../src/dummy-strings.c:223
 msgid "Bad magic number for krb5_cs_table_entry structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_cs_table_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
 #: ../src/dummy-strings.c:224
 msgid "Bad magic number for krb5_checksum_entry structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_checksum_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
 #: ../src/dummy-strings.c:225
 msgid "Bad magic number for krb5_authdata structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_authdata"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA
 #: ../src/dummy-strings.c:226
 msgid "Bad magic number for krb5_transited structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_transited"
 
 #. kv5m_err.et:kv5m:KV5M_TRANSITED
 #: ../src/dummy-strings.c:227
 msgid "Bad magic number for krb5_enc_tkt_part structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_enc_tkt_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
 #: ../src/dummy-strings.c:228
 msgid "Bad magic number for krb5_ticket structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_ticket"
 
 #. kv5m_err.et:kv5m:KV5M_TICKET
 #: ../src/dummy-strings.c:229
 msgid "Bad magic number for krb5_authenticator structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_authenticator"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
 #: ../src/dummy-strings.c:230
 msgid "Bad magic number for krb5_tkt_authent structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_tkt_authent"
 
 #. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
 #: ../src/dummy-strings.c:231
 msgid "Bad magic number for krb5_creds structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_creds"
 
 #. kv5m_err.et:kv5m:KV5M_CREDS
 #: ../src/dummy-strings.c:232
 msgid "Bad magic number for krb5_last_req_entry structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_last_req_entry"
 
 #. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
 #: ../src/dummy-strings.c:233
 msgid "Bad magic number for krb5_pa_data structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_pa_data"
 
 #. kv5m_err.et:kv5m:KV5M_PA_DATA
 #: ../src/dummy-strings.c:234
 msgid "Bad magic number for krb5_kdc_req structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_kdc_req"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REQ
 #: ../src/dummy-strings.c:235
 msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_enc_kdc_rep_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
 #: ../src/dummy-strings.c:236
 msgid "Bad magic number for krb5_kdc_rep structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_kdc_rep"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REP
 #: ../src/dummy-strings.c:237
 msgid "Bad magic number for krb5_error structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_error"
 
 #. kv5m_err.et:kv5m:KV5M_ERROR
 #: ../src/dummy-strings.c:238
 msgid "Bad magic number for krb5_ap_req structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_ap_req"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REQ
 #: ../src/dummy-strings.c:239
 msgid "Bad magic number for krb5_ap_rep structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_ap_rep"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP
 #: ../src/dummy-strings.c:240
 msgid "Bad magic number for krb5_ap_rep_enc_part structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_ap_rep_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
 #: ../src/dummy-strings.c:241
 msgid "Bad magic number for krb5_response structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_response"
 
 #. kv5m_err.et:kv5m:KV5M_RESPONSE
 #: ../src/dummy-strings.c:242
 msgid "Bad magic number for krb5_safe structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_safe"
 
 #. kv5m_err.et:kv5m:KV5M_SAFE
 #: ../src/dummy-strings.c:243
 msgid "Bad magic number for krb5_priv structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_priv"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV
 #: ../src/dummy-strings.c:244
 msgid "Bad magic number for krb5_priv_enc_part structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_priv_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
 #: ../src/dummy-strings.c:245
 msgid "Bad magic number for krb5_cred structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_cred"
 
 #. kv5m_err.et:kv5m:KV5M_CRED
 #: ../src/dummy-strings.c:246
 msgid "Bad magic number for krb5_cred_info structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_cred_info"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_INFO
 #: ../src/dummy-strings.c:247
 msgid "Bad magic number for krb5_cred_enc_part structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_cred_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
 #: ../src/dummy-strings.c:248
 msgid "Bad magic number for krb5_pwd_data structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_pwd_data"
 
 #. kv5m_err.et:kv5m:KV5M_PWD_DATA
 #: ../src/dummy-strings.c:249
 msgid "Bad magic number for krb5_address structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_address"
 
 #. kv5m_err.et:kv5m:KV5M_ADDRESS
 #: ../src/dummy-strings.c:250
 msgid "Bad magic number for krb5_keytab_entry structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_keytab_entry"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
 #: ../src/dummy-strings.c:251
 msgid "Bad magic number for krb5_context structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_context"
 
 #. kv5m_err.et:kv5m:KV5M_CONTEXT
 #: ../src/dummy-strings.c:252
 msgid "Bad magic number for krb5_os_context structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_os_context"
 
 #. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
 #: ../src/dummy-strings.c:253
 msgid "Bad magic number for krb5_alt_method structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_atl_method"
 
 #. kv5m_err.et:kv5m:KV5M_ALT_METHOD
 #: ../src/dummy-strings.c:254
 msgid "Bad magic number for krb5_etype_info_entry structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_etype_info_entry"
 
 #. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
 #: ../src/dummy-strings.c:255
 msgid "Bad magic number for krb5_db_context structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_db_context"
 
 #. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
 #: ../src/dummy-strings.c:256
 msgid "Bad magic number for krb5_auth_context structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_auth_context"
 
 #. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
 #: ../src/dummy-strings.c:257
 msgid "Bad magic number for krb5_keytab structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_keytab"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB
 #: ../src/dummy-strings.c:258
 msgid "Bad magic number for krb5_rcache structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_rcache"
 
 #. kv5m_err.et:kv5m:KV5M_RCACHE
 #: ../src/dummy-strings.c:259
 msgid "Bad magic number for krb5_ccache structure"
-msgstr ""
+msgstr "Número mágico erróneo para la estructura krb5_ccache"
 
 #. kv5m_err.et:kv5m:KV5M_CCACHE
 #: ../src/dummy-strings.c:260
 msgid "Bad magic number for krb5_preauth_ops"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_preauth_ops"
 
 #. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
 #: ../src/dummy-strings.c:261
 msgid "Bad magic number for krb5_sam_challenge"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_sam_challenge"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
 #: ../src/dummy-strings.c:262
 msgid "Bad magic number for krb5_sam_challenge_2"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_sam_challenge_2"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
 #: ../src/dummy-strings.c:263
 msgid "Bad magic number for krb5_sam_key"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_sam_key"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_KEY
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
 #: ../src/dummy-strings.c:264 ../src/dummy-strings.c:265
 msgid "Bad magic number for krb5_enc_sam_response_enc"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_enc_sam_response_enc"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
 #: ../src/dummy-strings.c:266
 msgid "Bad magic number for krb5_sam_response"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_sam_response"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
 #: ../src/dummy-strings.c:267
 msgid "Bad magic number for krb5_sam_response 2"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_sam_response 2"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
 #: ../src/dummy-strings.c:268
 msgid "Bad magic number for krb5_predicted_sam_response"
-msgstr ""
+msgstr "Número mágico erróneo para krb5_predicted_sam_response"
 
 #. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
 #: ../src/dummy-strings.c:269
 msgid "Bad magic number for passwd_phrase_element"
-msgstr ""
+msgstr "Número mágico erróneo para passwd_phrase_element"
 
 #. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
 #: ../src/dummy-strings.c:270
 msgid "Bad magic number for GSSAPI OID"
-msgstr ""
+msgstr "Número mágico erróneo para GSSAPI OID"
 
 #. kv5m_err.et:kv5m:KV5M_GSS_OID
 #: ../src/dummy-strings.c:271
@@ -1378,7 +1378,7 @@ msgstr "Credenciales de red válidas"
 
 #: ../src/krb5-auth-applet.c:488
 msgid "You've refreshed your Kerberos credentials."
-msgstr "Ha actualizado sus credenciales Kerberos."
+msgstr "Ha actualizado sus credenciales de Kerberos."
 
 #: ../src/krb5-auth-applet.c:501
 msgid "Network credentials expiring"
@@ -1390,7 +1390,7 @@ msgstr "Las credenciales de red han caducado"
 
 #: ../src/krb5-auth-applet.c:517
 msgid "Your Kerberos credentails have expired."
-msgstr "Sus credenciales Kerberos han caducado."
+msgstr "Sus credenciales Kerberos han caducado"
 
 #: ../src/krb5-auth-applet.c:581
 #, c-format

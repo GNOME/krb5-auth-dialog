@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.help.master\n"
-"POT-Creation-Date: 2009-06-17 06:08+0000\n"
-"PO-Revision-Date: 2009-06-21 12:01+0200\n"
+"POT-Creation-Date: 2009-06-21 15:41+0000\n"
+"PO-Revision-Date: 2009-06-28 15:56+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -248,6 +248,9 @@ msgid ""
 "use <ulink url=\"http://bugzilla.gnome.org\" type=\"http\">GNOME's Bugzilla</"
 "ulink>."
 msgstr ""
+"Para informar de un fallo, o hacer alguna sugerencia concerniente a este "
+"paquete o este manual use el <ulink url=\"http://bugzilla.gnome.org\" type="
+"\"http\">Bugzilla de GNOME</ulink>."
 
 #: C/krb5-auth-dialog.xml:129(title)
 msgid "Introduction"
@@ -271,6 +274,10 @@ msgid ""
 "<systemitem>GNOME desktop</systemitem> that monitors and refreshes your "
 "Kerberos ticket. It pops up reminders when the ticket is about to expire."
 msgstr ""
+"El Diálogo de autenticación de red de Kerberos es una miniaplicación para el "
+"<systemitem>Escritorio GNOME</systemitem> que monitoriza y actualiza sus "
+"tiques de Kerberos. Muestra recordatorios cuando un tique está a punto de "
+"caducar."
 
 #: C/krb5-auth-dialog.xml:141(para)
 msgid ""
@@ -279,6 +286,11 @@ msgid ""
 "can also be used to destroy (remove) the credential cache, to acquire a "
 "ticket with different options or to switch to another principal."
 msgstr ""
+"Una vez que haya adquirido un tique de Kerberos (a través de GDM o de la "
+"miniaplicación en si) la miniaplicación gestionará la renovación del tique "
+"hasta que caduque. También se puede usar para destruir (quitar) la caché de "
+"credenciales, adquirir un tique con diferentes opciones o cambiar a otro "
+"principal."
 
 #: C/krb5-auth-dialog.xml:146(title)
 msgid "Usage"
@@ -313,27 +325,31 @@ msgstr "El icono de la bandeja indicará uno de estos tres estados:"
 
 #: C/krb5-auth-dialog.xml:167(title) C/krb5-auth-dialog.xml:170(title)
 msgid "Valid Kerberos ticket"
-msgstr ""
+msgstr "Tique de Kerberos válido"
 
 #: C/krb5-auth-dialog.xml:168(para)
 msgid ""
 "You have a valid Kerberos ticket that can be used to authenticate to network "
 "services."
 msgstr ""
+"Tiene un tique Kerberos válido que se puede usar para autenticarse en "
+"servicios de red."
 
 #: C/krb5-auth-dialog.xml:182(title) C/krb5-auth-dialog.xml:185(title)
 msgid "Kerberos ticket expiring"
-msgstr ""
+msgstr "Tique de Kerberos a punto de caducar"
 
 #: C/krb5-auth-dialog.xml:183(para)
 msgid ""
 "The Kerberos ticket is about to expire but it can still be used to "
 "authenticate to network services."
 msgstr ""
+"El tique de Kerberos está a punto de caducar pero aún se puede usar para "
+"autenticarse en servicios de red."
 
 #: C/krb5-auth-dialog.xml:196(title) C/krb5-auth-dialog.xml:200(title)
 msgid "Kerberos ticket expired"
-msgstr ""
+msgstr "Tique de Kerberos caducado"
 
 #: C/krb5-auth-dialog.xml:197(para)
 msgid ""
@@ -343,6 +359,12 @@ msgid ""
 "<application>Kerberos Network Authentication Dialog</application>. In case "
 "it doesn't you can just left click on the applet an reenter your password."
 msgstr ""
+"Su Kerberos ya no es válido (ej. ha caducado). Ya no se puede usar para "
+"autenticarse en servicios de red. Esto no es un problema si la aplicación "
+"que requiere Kerberos sabe pedir un tique nuevo a través del "
+"<application>Diálogo de autenticación de red de Kerberos</application>. En "
+"caso de que no sepa, puede pulsar con el botón izquierdo del ratón sobre la "
+"aplicación e introducir de nuevo su contraseña."
 
 #: C/krb5-auth-dialog.xml:213(title)
 msgid "Notification Messages"
@@ -353,44 +375,53 @@ msgid ""
 "When Kerberos Network Authentication Dialog has started, the following "
 "notifications may be displayed."
 msgstr ""
+"Se pueden mostrar las siguientes notificaciones cuando se ha iniciado el "
+"Diálogo de autenticación de red de Kerberos."
 
 #: C/krb5-auth-dialog.xml:219(title)
 msgid "Kerberos credentials valid"
-msgstr ""
+msgstr "Credenciales de Kerberos válidas"
 
 #: C/krb5-auth-dialog.xml:220(para)
 msgid ""
 "You just acquired a valid Kerberos ticket that can be used to authenticate "
 "to network services."
 msgstr ""
+"Acaba de adquirir un tique de Kerberos válido que puede usar para "
+"autenticarse en servicios de red."
 
 #: C/krb5-auth-dialog.xml:222(title)
 msgid "Notification when Kerberos credentials become valid"
-msgstr ""
+msgstr "Notificación cuando las credenciales Kerberos se hacen válidas"
 
 #: C/krb5-auth-dialog.xml:234(title)
 msgid "Kerberos credentials expiring"
-msgstr ""
+msgstr "Credenciales de Kerberos a punto de caducar"
 
 #: C/krb5-auth-dialog.xml:235(para)
 msgid ""
 "Your Kerberos credentials are about to expire. You can left click on the "
 "tray applet to refresh them."
 msgstr ""
+"Sus credenciales de Kerberos están a punto de caducar. Puede pulsar con el "
+"botón izquierdo del ratón en la miniaplicación de la bandeja del sistema "
+"para actualizarlas."
 
 #: C/krb5-auth-dialog.xml:237(title)
 msgid "Notification when Kerberos credentials expiring"
-msgstr ""
+msgstr "Notificación cuando las credenciales de Kerberos van a caducar"
 
 #: C/krb5-auth-dialog.xml:249(title)
 msgid "Kerberos credentials expired"
-msgstr ""
+msgstr "Credenciales de Kerberos caducadas"
 
 #: C/krb5-auth-dialog.xml:250(para)
 msgid ""
 "Your Kerberos credentials just expired. They can no longer be used to "
 "authenticate to network services."
 msgstr ""
+"Sus credenciales de Kerberos acaban de caducar. Ya no se pueden usar para "
+"autenticarse en servicios de red."
 
 #: C/krb5-auth-dialog.xml:252(title)
 msgid "Notification when Kerberos credentials expired"
@@ -422,6 +453,9 @@ msgid ""
 "you change this setting you have to destroy the credential cache before "
 "these setting takes effect."
 msgstr ""
+"El principal de Kerberos que usar. Déjelo vacío para usar su nombre de "
+"usuario actual. Si cambia este ajuste tendrá que destruir la caché de "
+"credenciales antes de que este ajuste tenga efecto."
 
 #: C/krb5-auth-dialog.xml:296(guilabel)
 msgid "PKINIT Userid"
@@ -433,10 +467,13 @@ msgid ""
 "using PKINIT. To enable using a security token add the path to the pkcs11 "
 "Library here, e.g. \"PKCS11:/usr/lib/opensc/opensc-pkcs11.so\""
 msgstr ""
+"El identificador público/privado/certificado del principal. Déjelo vacío si "
+"no está usando PKINIT. Para activarlo usando un token de seguridad añada la "
+"ruta a la biblioteca pkcs11, ej: «PKCS11:/usr/lib/opensc/opensc-pkcs11.so»"
 
 #: C/krb5-auth-dialog.xml:306(guilabel)
 msgid "PKINIT anchors"
-msgstr ""
+msgstr "Anclas PKINIT"
 
 #: C/krb5-auth-dialog.xml:310(para)
 msgid ""
@@ -444,6 +481,9 @@ msgid ""
 "set this if it hasn't been set up globally in <filename>/etc/krb5.conf</"
 "filename>"
 msgstr ""
+"Ruta a los certificados CA usados como anclas de confianza para PKINIT. Sólo "
+"debe establecerlo si no se ha establecido globalmente en <filename>/etc/krb5."
+"conf</filename>."
 
 #: C/krb5-auth-dialog.xml:316(guilabel)
 msgid "forwardable"
@@ -455,6 +495,10 @@ msgid ""
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
+"Indica si el tique de Kerberos solicitado debe ser reenviable. Indica si el "
+"tique de Kerberos solicitado debe renovarse. Cambiar este ajuste requiere "
+"que se vuelva a autenticar pulsando con el botón izquierdo del ratón en el "
+"icono de la bandeja del sistema e introduzca su contraseña."
 
 #: C/krb5-auth-dialog.xml:326(guilabel)
 msgid "renewable"
@@ -466,6 +510,9 @@ msgid ""
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
+"Indica si el tique de Kerberos solicitado debe renovarse. Cambiar este "
+"ajuste requiere que se vuelva a autenticar pulsando con el botón izquierdo "
+"del ratón en el icono de la bandeja del sistema e introduzca su contraseña."
 
 #: C/krb5-auth-dialog.xml:336(guilabel)
 msgid "proxiable"
@@ -480,13 +527,15 @@ msgstr ""
 
 #: C/krb5-auth-dialog.xml:346(guilabel)
 msgid "Warn .. minutes before expiry"
-msgstr ""
+msgstr "Advertir ... minutos antes de que caduque"
 
 #: C/krb5-auth-dialog.xml:350(para)
 msgid ""
 "Notifications that your credentials are about to expire will be sent that "
 "many minutes before expiry."
 msgstr ""
+"Se enviarán notificaciones acerca de sus credenciales a punto de caducar "
+"esos minutos antes de que caduquen."
 
 #: C/krb5-auth-dialog.xml:356(guilabel)
 msgid "Show tray icon"
@@ -497,6 +546,9 @@ msgid ""
 "Whether to show the tray icon. Disabling the tray icon will also disable "
 "notifications, the password dialog will be brought up instead."
 msgstr ""
+"Indica si se debe mostrar el icono de la bandeja del sistema. Desactivar el "
+"icono de la bandeja del sistema también desactivará las notificaciones, en "
+"su lugar se mostrará el diálogo de contraseña."
 
 #: C/krb5-auth-dialog.xml:266(para)
 msgid ""
@@ -507,6 +559,12 @@ msgid ""
 "\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/><placeholder-"
 "2/><placeholder-3/></tgroup></table>"
 msgstr ""
+"Puede establecer sus preferencias seleccionando «Preferencias» del menú "
+"contextual de la miniaplicación o seleccionando «Autenticación de red» en el "
+"<application>Centro de control</application>. <table frame=\"topbot\" id="
+"\"tbl-principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" "
+"rowsep=\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/"
+"><placeholder-2/><placeholder-3/></tgroup></table>"
 
 #. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
 #: C/krb5-auth-dialog.xml:0(None)

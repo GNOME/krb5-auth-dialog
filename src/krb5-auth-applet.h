@@ -28,6 +28,8 @@
 #include "config.h"
 #include "krb5-auth-pwdialog.h"
 
+#define KA_NAME _("Network Authentication")
+
 G_BEGIN_DECLS
 
 #define KA_TYPE_APPLET            (ka_applet_get_type ())

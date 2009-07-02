@@ -47,6 +47,7 @@ struct _KaPwDialogPrivate
 	GtkWidget* pw_entry;		/* password entry field */
 	gboolean   persist;		/* don't hide the dialog when creds are still valid */
 	gboolean   grabbed;		/* keyboard grabbed? */
+	GtkWidget* error_dialog;	/* error dialog */
 };
 
 
@@ -121,9 +122,16 @@ window_state_changed (GtkWidget *win, GdkEventWindowState *event, gpointer data)
 
 
 gint
-ka_pwdialog_run(KaPwDialog* pwdialog)
+ka_pwdialog_run(KaPwDialog* self)
 {
-	GtkWidget* dialog = pwdialog->priv->dialog;
+	GtkWidget *dialog = self->priv->dialog;
+
+	/* cleanup old error dialog, if present (e.g. user didn't acknowledge
+	 * the error but clicked the tray icon again) */
+	if (self->priv->error_dialog) {
+		gtk_widget_destroy (self->priv->error_dialog);
+		self->priv->error_dialog = NULL;
+	}
 
 	/* make sure we pop up on top */
 	gtk_window_set_keep_above (GTK_WINDOW (dialog), TRUE);
@@ -132,14 +140,35 @@ ka_pwdialog_run(KaPwDialog* pwdialog)
 	 * grab the keyboard so that people don't accidentally type their
 	 * passwords in other windows.
 	 */
-	g_signal_connect (dialog, "map-event", G_CALLBACK (grab_keyboard), pwdialog);
-	g_signal_connect (dialog, "unmap-event", G_CALLBACK (ungrab_keyboard), pwdialog);
-	g_signal_connect (dialog, "window-state-event", G_CALLBACK (window_state_changed), pwdialog);
+	g_signal_connect (dialog, "map-event", G_CALLBACK (grab_keyboard), self);
+	g_signal_connect (dialog, "unmap-event", G_CALLBACK (ungrab_keyboard), self);
+	g_signal_connect (dialog, "window-state-event", G_CALLBACK (window_state_changed), self);
 
-	gtk_widget_grab_focus (pwdialog->priv->pw_entry);
+	gtk_widget_grab_focus (self->priv->pw_entry);
 	gtk_widget_show(dialog);
 	return gtk_dialog_run (GTK_DIALOG(dialog));
 }
+
+
+void
+ka_pwdialog_error(KaPwDialog* self, const char *msg)
+{
+	GtkWidget *dialog;
+
+	dialog = gtk_message_dialog_new (
+				GTK_WINDOW(self->priv->dialog),
+				GTK_DIALOG_DESTROY_WITH_PARENT,
+				GTK_MESSAGE_ERROR,
+				GTK_BUTTONS_CLOSE,
+				"%s", KA_NAME);
+	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+				  _("Couldn't acquire kerberos ticket: '%s'"),
+				  _(msg));
+	self->priv->error_dialog = dialog;
+	gtk_dialog_run (GTK_DIALOG(dialog));
+	gtk_widget_destroy(dialog);
+}
+
 
 void
 ka_pwdialog_set_persist (KaPwDialog* pwdialog, gboolean persist)
@@ -247,6 +276,7 @@ ka_pwdialog_create(GtkBuilder* xml)
 	priv->status_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_status_label"));
 	priv->krb_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_message_label"));
 	priv->pw_entry = GTK_WIDGET (gtk_secure_entry_new ());
+	priv->error_dialog = NULL;
 
 	entry_hbox = GTK_WIDGET (gtk_builder_get_object (xml, "entry_hbox"));
 	gtk_container_add (GTK_CONTAINER (entry_hbox), priv->pw_entry);

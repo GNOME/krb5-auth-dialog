@@ -50,8 +50,6 @@
 # include <hx509_err.h>
 #endif
 
-#define KA_NAME _("Network Authentication")
-
 static krb5_context kcontext;
 static krb5_principal kprincipal;
 static krb5_timestamp creds_expiry;
@@ -137,7 +135,7 @@ get_principal_realm_data(krb5_principal p)
 }
 
 static const char*
-get_error_message(krb5_context context, krb5_error_code err)
+ka_get_error_message(krb5_context context, krb5_error_code err)
 {
 	const char *msg = NULL;
 
@@ -368,7 +366,7 @@ credentials_expiring (gpointer *data)
 				retval = grab_credentials (applet);
 				give_up = canceled &&
 					  (creds_expiry == canceled_creds_expiry);
-			} while ((retval != 0) && 
+			} while ((retval != 0) &&
 			         (retval != KRB5_REALM_CANT_RESOLVE) &&
 			         (retval != KRB5_KDC_UNREACH) &&
 				 invalid_auth &&
@@ -655,7 +653,7 @@ grab_credentials (KaApplet* applet)
 				break;
 			default:
 				KA_DEBUG("Auth failed with %d: %s", retval,
-				         get_error_message(kcontext, retval));
+				         ka_get_error_message(kcontext, retval));
 				break;
 		}
 		goto out;
@@ -710,12 +708,12 @@ ka_renew_credentials (KaApplet* applet)
 
 		retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
 		if(retval) {
-			g_warning("krb5_cc_initialize: %s", get_error_message(kcontext, retval));
+			g_warning("krb5_cc_initialize: %s", ka_get_error_message(kcontext, retval));
 			goto out;
 		}
 		retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
 		if (retval) {
-			g_warning("krb5_cc_store_cred: %s", get_error_message(kcontext, retval));
+			g_warning("krb5_cc_store_cred: %s", ka_get_error_message(kcontext, retval));
 			goto out;
 		}
 	}
@@ -807,23 +805,6 @@ ka_destroy_ccache (KaApplet *applet)
 }
 
 
-static void
-ka_error_dialog(int err)
-{
-	const char *msg = get_error_message(kcontext, err);
-	GtkWidget *dialog = gtk_message_dialog_new (NULL,
-				GTK_DIALOG_DESTROY_WITH_PARENT,
-				GTK_MESSAGE_ERROR,
-				GTK_BUTTONS_CLOSE,
-				"%s", KA_NAME);
-	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
-				  _("Couldn't acquire kerberos ticket: '%s'"),
-				  _(msg));
-	gtk_dialog_run (GTK_DIALOG (dialog));
-	gtk_widget_destroy (dialog);
-}
-
-
 /*
  * check if we have valid credentials for the requested principal - if not, grab them
  * principal: requested principal - if empty use default
@@ -889,7 +870,9 @@ ka_grab_credentials (KaApplet* applet)
 		if (canceled)
 			break;
 		if (retval) {
-			ka_error_dialog(retval);
+			ka_pwdialog_error(pwdialog,
+					  ka_get_error_message(kcontext,
+                                                               retval));
 			break;
 		} else {
 			success = TRUE;

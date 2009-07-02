@@ -52,9 +52,10 @@ KaPwDialog* ka_pwdialog_create(GtkBuilder *xml);
 /* setup everything for the next prompting */
 void ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
                         gboolean invalid_auth);
-gint ka_pwdialog_run(KaPwDialog *applet);
-void ka_pwdialog_hide(const KaPwDialog *applet, gboolean force);
-void ka_pwdialog_set_persist(KaPwDialog *applet, gboolean persist);
+gint ka_pwdialog_run(KaPwDialog *pwdialog);
+void ka_pwdialog_hide(const KaPwDialog *pwdialog, gboolean force);
+void ka_pwdialog_set_persist(KaPwDialog *pwdialog, gboolean persist);
+void ka_pwdialog_error (KaPwDialog *pwdialog, const char *msg);
 /* update the expiry information in the status entry */
 gboolean ka_pwdialog_status_update (KaPwDialog *pwdialog);
 const gchar* ka_pwdialog_get_password(KaPwDialog *dialog);

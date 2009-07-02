@@ -613,6 +613,7 @@ ka_applet_cb_about_dialog (GtkMenuItem* menuitem G_GNUC_UNUSED,
 			       "website-label", PACKAGE " website",
 			       "website", "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",
 			       "license", "GNU General Public License Version 2",
+			       /* Translators: add the translators of your language here */
 			       "translator-credits", _("translator-credits"),
 			       NULL);
 }

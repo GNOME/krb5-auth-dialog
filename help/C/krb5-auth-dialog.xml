@@ -286,7 +286,7 @@
               </para>
             </entry>
             <entry colsep="0" rowsep="0" valign="top">
-              <para>The Kerberos principal to use. Leave blanc to use you current username. If you change this setting you have to destroy the credential cache before these setting takes effect.</para>
+              <para>The Kerberos principal to use. Leave blank to use you current username. If you change this setting you have to destroy the credential cache before these setting takes effect.</para>
             </entry>
           </row>
 

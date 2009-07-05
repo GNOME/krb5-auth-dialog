@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-06-21 15:41+0000\n"
-"PO-Revision-Date: 2009-06-28 16:20+0200\n"
+"POT-Creation-Date: 2009-07-02 11:52+0000\n"
+"PO-Revision-Date: 2009-07-05 11:30+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -954,17 +954,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
 #: ../src/dummy-strings.c:189
 msgid "Bad SAM flags in obtain_sam_padata"
-msgstr ""
+msgstr "Opciones SAM erróneas en obtain_sam_padata"
 
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
 #: ../src/dummy-strings.c:190
 msgid "Invalid encryption type in SAM challenge"
-msgstr ""
+msgstr "Tipo de cifrado no válido en el desafío SAM"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
 #: ../src/dummy-strings.c:191
 msgid "Missing checksum in SAM challenge"
-msgstr ""
+msgstr "Falta la suma de verificación en el desafío SAM"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
 #: ../src/dummy-strings.c:192
@@ -980,6 +980,8 @@ msgstr ""
 #: ../src/dummy-strings.c:194
 msgid "Key version number for principal in key table is incorrect"
 msgstr ""
+"El número de versión de la clave para el principal, en la tabla de claves, "
+"es incorrecto"
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: ../src/dummy-strings.c:195
@@ -1015,16 +1017,17 @@ msgstr "Tipo de cifrado no permitido"
 #: ../src/dummy-strings.c:201
 msgid "No supported encryption types (config file error?)"
 msgstr ""
+"Tipos de cifrado no soportados (¿error en el archivo de configuración?)"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:202
 msgid "Program called an obsolete, deleted function"
-msgstr ""
+msgstr "El programa llamó a una función obsoleta y borrada"
 
 #. krb5_err.et:krb5:KRB5_OBSOLETE_FN
 #: ../src/dummy-strings.c:203
 msgid "unknown getaddrinfo failure"
-msgstr ""
+msgstr "fallo de getaddrinfo desconocido"
 
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: ../src/dummy-strings.c:204
@@ -1049,7 +1052,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
 #: ../src/dummy-strings.c:208
 msgid "Invalid key generation parameters from KDC"
-msgstr ""
+msgstr "Parámetros de generación de clave no válidos desde KDC"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: ../src/dummy-strings.c:209
@@ -1059,12 +1062,12 @@ msgstr "servicio no disponible"
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: ../src/dummy-strings.c:210
 msgid "Ccache function not supported: read-only ccache type"
-msgstr ""
+msgstr "La función ccaché no está soportada: tipo de ccache de sólo lectura"
 
 #. krb5_err.et:krb5:KRB5_CC_READONLY
 #: ../src/dummy-strings.c:211
 msgid "Ccache function not supported: not implemented"
-msgstr ""
+msgstr "La función ccaché no está soportada: no está implementada"
 
 #. krb5_err.et:krb5:KRB5_CC_NOSUPP
 #: ../src/dummy-strings.c:212
@@ -1401,12 +1404,13 @@ msgstr ""
 "Hubo un error al mostrar %s:\n"
 "%s"
 
-#: ../src/krb5-auth-applet.c:616
+#. Translators: add the translators of your language here
+#: ../src/krb5-auth-applet.c:617
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2009"
 
 #. kdestroy
-#: ../src/krb5-auth-applet.c:651
+#: ../src/krb5-auth-applet.c:652
 msgid "Remove Credentials _Cache"
 msgstr "Quitar la _caché de credenciales"
 
@@ -1513,92 +1517,24 @@ msgstr "notificación de caducidad de tique"
 msgid "valid ticket notification"
 msgstr "tique de notificación válido"
 
-#: ../gtksecentry/gtksecentry.c:454
-msgid "Cursor Position"
-msgstr "Posición del cursor"
-
-#: ../gtksecentry/gtksecentry.c:456
-msgid "The current position of the insertion cursor in chars"
-msgstr "La posición actual del cursor de inserción en caracteres"
-
-#: ../gtksecentry/gtksecentry.c:463
-msgid "Selection Bound"
-msgstr "Límite de selección"
-
-#: ../gtksecentry/gtksecentry.c:465
-msgid ""
-"The position of the opposite end of the selection from the cursor in chars"
-msgstr ""
-"La posición en caracteres del extremo opuesto de la selección desde el cursor"
-
-#: ../gtksecentry/gtksecentry.c:472
-msgid "Maximum length"
-msgstr "Longitud máxima"
-
-#: ../gtksecentry/gtksecentry.c:474
-msgid "Maximum number of characters for this entry. Zero if no maximum"
-msgstr "Número máximo de caracteres para esta entrada. Cero si no hay máximo."
-
-#: ../gtksecentry/gtksecentry.c:482
-msgid "Has Frame"
-msgstr "Tiene marco"
-
-#: ../gtksecentry/gtksecentry.c:484
-msgid "FALSE removes outside bevel from entry"
-msgstr "FALSE quita el bisel exterior de la entrada"
-
-#: ../gtksecentry/gtksecentry.c:493
-msgid "Invisible character"
-msgstr "Carácter invisible"
-
-#: ../gtksecentry/gtksecentry.c:495
-msgid "The character to use when masking entry contents (in \"password mode\")"
-msgstr ""
-"El carácter que se usará cuando se enmascaren los contenidos de la entrada "
-"(en «modo contraseña»)"
-
-#: ../gtksecentry/gtksecentry.c:504
-msgid "Activates default"
-msgstr "Activar predeterminado"
-
-#: ../gtksecentry/gtksecentry.c:506
-msgid ""
-"Whether to activate the default widget (such as the default button in a "
-"dialog) when Enter is pressed"
-msgstr ""
-"Indica si se debe activar el widget predeterminado (como el botón "
-"predeterminado en un diálogo) cuando se pulse INTRO"
-
-#: ../gtksecentry/gtksecentry.c:511
-msgid "Width in chars"
-msgstr "Anchura en caracteres"
-
-#: ../gtksecentry/gtksecentry.c:513
-msgid "Number of characters to leave space for in the entry"
-msgstr "Número de caracteres para dejar de espacio en la entrada"
-
-#: ../gtksecentry/gtksecentry.c:521
-msgid "Scroll offset"
-msgstr "Desplazamiento del scroll"
-
-#: ../gtksecentry/gtksecentry.c:523
-msgid "Number of pixels of the entry scrolled off the screen to the left"
-msgstr ""
-"Número de píxeles de la entrada desplazados fuera de la pantalla hacia la "
-"izquierda"
-
-#: ../gtksecentry/gtksecentry.c:530
-msgid "Text"
-msgstr "Texto"
-
-#: ../gtksecentry/gtksecentry.c:532
-msgid "The contents of the entry"
-msgstr "El contenido de la entrada"
-
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Advertencia: ejecutar q-agent setuid en este sistema es peligroso\n"
+
+#: ../preferences/krb5-auth-dialog-preferences.c:345
+#| msgid "PKINIT CA certificates"
+msgid "Choose Certificate"
+msgstr "Elija un certificado"
+
+#: ../preferences/krb5-auth-dialog-preferences.c:361
+#| msgid "PKINIT CA certificates"
+msgid "X509 Certificates"
+msgstr "Certificados X509"
+
+#: ../preferences/krb5-auth-dialog-preferences.c:365
+msgid "all files"
+msgstr "todos los archivos"
 
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
 msgid "Set your Kerberos network authentication preferences"
@@ -1613,53 +1549,55 @@ msgid "Applet"
 msgstr "Miniaplicación"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:3
+msgid "Certificate and private key used for authentication"
+msgstr "Certificado y clave privada usados para la autenticación"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
 msgid "If checked, display the tray icon in the status bar"
 msgstr ""
 "Si está seleccionado muestra el icono de la bandeja en la barra de estado"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
 msgid "If checked, request forwardable tickets"
 msgstr "Si está seleccionado pide tiques reenviables"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
 msgid "If checked, request proxiable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
 msgid "If checked, request renewable tickets"
 msgstr "Si está seleccionado pide tiques renovables"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+"Si está seleccionado usa un «token» (tarjeta inteligente) para autenticar."
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
 msgid "Kerberos Authentication Configuration"
 msgstr "Configuración de autenticación de Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
 msgid "Kerberos User"
 msgstr "Usuario de Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
 msgid "Kerberos principal:"
 msgstr "Principal de Kerberos:"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
-msgid "PKINIT anchors:"
-msgstr "Anclas de PKINIT:"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
-msgid "PKINIT userid:"
-msgstr "ID de usuario de PKINIT:"
-
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:14
-msgid "Path to CA certificates used as trust anchors for PKINIT"
-msgstr "Ruta a los certificados CD usados como anclas de confianza para PKINIT"
+#| msgid "PKINIT userid:"
+msgid "PKINIT:"
+msgstr "PKINIT:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:15
 msgid "Requested Kerberos tickets should be:"
@@ -1678,36 +1616,128 @@ msgid "Show tray icon"
 msgstr "Mostrar icono de la bandeja"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:18
-msgid ""
-"The principal's public/private/certificate identifier. Leave empty if not "
-"using PKINIT."
-msgstr ""
-"El identificador público/privado/certificado del principal. Déjelo vacío si "
-"no se está usando PKINIT."
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
 msgid "Ticket Options"
 msgstr "Opciones del tique"
 
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
+msgid "Use Smartcard"
+msgstr "Usar tarjeta inteligente"
+
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:20
+msgid "Userid:"
+msgstr "ID de usuario:"
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:22
 msgid "Warn"
 msgstr "Advertir"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:21
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:23
+#| msgid "PKINIT trust anchors"
+msgid "X509 trust anchors:"
+msgstr "Anclas de confianza de X509:"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
+msgid "_Browse..."
+msgstr "_Examinar…"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:25
 msgid "forwardable"
 msgstr "reenvibale"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:22
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:27
 msgid "minutes before expiry"
 msgstr "minutos antes de que caduque"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:23
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:28
 msgid "proxiable"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:29
 msgid "renewable"
 msgstr "renovable"
+
+#~ msgid "Cursor Position"
+#~ msgstr "Posición del cursor"
+
+#~ msgid "The current position of the insertion cursor in chars"
+#~ msgstr "La posición actual del cursor de inserción en caracteres"
+
+#~ msgid "Selection Bound"
+#~ msgstr "Límite de selección"
+
+#~ msgid ""
+#~ "The position of the opposite end of the selection from the cursor in chars"
+#~ msgstr ""
+#~ "La posición en caracteres del extremo opuesto de la selección desde el "
+#~ "cursor"
+
+#~ msgid "Maximum length"
+#~ msgstr "Longitud máxima"
+
+#~ msgid "Maximum number of characters for this entry. Zero if no maximum"
+#~ msgstr ""
+#~ "Número máximo de caracteres para esta entrada. Cero si no hay máximo."
+
+#~ msgid "Has Frame"
+#~ msgstr "Tiene marco"
+
+#~ msgid "FALSE removes outside bevel from entry"
+#~ msgstr "FALSE quita el bisel exterior de la entrada"
+
+#~ msgid "Invisible character"
+#~ msgstr "Carácter invisible"
+
+#~ msgid ""
+#~ "The character to use when masking entry contents (in \"password mode\")"
+#~ msgstr ""
+#~ "El carácter que se usará cuando se enmascaren los contenidos de la "
+#~ "entrada (en «modo contraseña»)"
+
+#~ msgid "Activates default"
+#~ msgstr "Activar predeterminado"
+
+#~ msgid ""
+#~ "Whether to activate the default widget (such as the default button in a "
+#~ "dialog) when Enter is pressed"
+#~ msgstr ""
+#~ "Indica si se debe activar el widget predeterminado (como el botón "
+#~ "predeterminado en un diálogo) cuando se pulse INTRO"
+
+#~ msgid "Width in chars"
+#~ msgstr "Anchura en caracteres"
+
+#~ msgid "Number of characters to leave space for in the entry"
+#~ msgstr "Número de caracteres para dejar de espacio en la entrada"
+
+#~ msgid "Scroll offset"
+#~ msgstr "Desplazamiento del scroll"
+
+#~ msgid "Number of pixels of the entry scrolled off the screen to the left"
+#~ msgstr ""
+#~ "Número de píxeles de la entrada desplazados fuera de la pantalla hacia la "
+#~ "izquierda"
+
+#~ msgid "Text"
+#~ msgstr "Texto"
+
+#~ msgid "The contents of the entry"
+#~ msgstr "El contenido de la entrada"
+
+#~ msgid "PKINIT anchors:"
+#~ msgstr "Anclas de PKINIT:"
+
+#~ msgid "Path to CA certificates used as trust anchors for PKINIT"
+#~ msgstr ""
+#~ "Ruta a los certificados CD usados como anclas de confianza para PKINIT"
+
+#~ msgid ""
+#~ "The principal's public/private/certificate identifier. Leave empty if not "
+#~ "using PKINIT."
+#~ msgstr ""
+#~ "El identificador público/privado/certificado del principal. Déjelo vacío "
+#~ "si no se está usando PKINIT."
 
 #~ msgid "_Preferences"
 #~ msgstr "Prefere_ncias"

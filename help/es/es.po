@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.help.master\n"
-"POT-Creation-Date: 2009-06-21 15:41+0000\n"
-"PO-Revision-Date: 2009-06-28 15:56+0200\n"
+"POT-Creation-Date: 2009-07-02 11:33+0000\n"
+"PO-Revision-Date: 2009-07-09 21:06+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -448,8 +448,12 @@ msgid "Kerberos Principal"
 msgstr "Principal de Kerberos"
 
 #: C/krb5-auth-dialog.xml:289(para)
+#| msgid ""
+#| "The Kerberos principal to use. Leave blanc to use you current username. "
+#| "If you change this setting you have to destroy the credential cache "
+#| "before these setting takes effect."
 msgid ""
-"The Kerberos principal to use. Leave blanc to use you current username. If "
+"The Kerberos principal to use. Leave blank to use you current username. If "
 "you change this setting you have to destroy the credential cache before "
 "these setting takes effect."
 msgstr ""
@@ -516,7 +520,7 @@ msgstr ""
 
 #: C/krb5-auth-dialog.xml:336(guilabel)
 msgid "proxiable"
-msgstr ""
+msgstr "vía proxy"
 
 #: C/krb5-auth-dialog.xml:340(para)
 msgid ""
@@ -524,6 +528,10 @@ msgid ""
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
+"Indica si el tique de Kerberos solicitado de debería pasar a través de un "
+"proxy. Para cambiar este ajuste necesita volver a autenticarse pulsando con "
+"el botón izquierdo del ratón en el icono de la bandeja e introducir su "
+"contraseña."
 
 #: C/krb5-auth-dialog.xml:346(guilabel)
 msgid "Warn .. minutes before expiry"

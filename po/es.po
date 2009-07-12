@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-07-09 19:19+0000\n"
-"PO-Revision-Date: 2009-07-12 12:56+0200\n"
+"POT-Creation-Date: 2009-07-12 11:02+0000\n"
+"PO-Revision-Date: 2009-07-12 21:58+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -508,27 +508,27 @@ msgstr "Representación del principal malformada"
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
 #: ../src/dummy-strings.c:99
 msgid "Can't open/find Kerberos configuration file"
-msgstr ""
+msgstr "No se puede abrir o encontrar el archivo de configuración de Kerberos"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
 #: ../src/dummy-strings.c:100
 msgid "Improper format of Kerberos configuration file"
-msgstr ""
+msgstr "Formato incorrecto del archivo de configuración de Kerberos"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
 #: ../src/dummy-strings.c:101
 msgid "Insufficient space to return complete information"
-msgstr ""
+msgstr "No hay suficiente espacio para devolver la información completamente"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
 #: ../src/dummy-strings.c:102
 msgid "Invalid message type specified for encoding"
-msgstr ""
+msgstr "El tipo de mensaje especificado para la codificación no es válido"
 
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
 #: ../src/dummy-strings.c:103
 msgid "Credential cache name malformed"
-msgstr ""
+msgstr "El nombre de la caché de credenciales estaba malformado"
 
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
 #: ../src/dummy-strings.c:104
@@ -939,6 +939,7 @@ msgstr ""
 #: ../src/dummy-strings.c:186
 msgid "Bad principal name while trying to forward credentials"
 msgstr ""
+"El nombre del principal era erróneo al intentar reenviar las credenciales"
 
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: ../src/dummy-strings.c:187
@@ -1464,7 +1465,7 @@ msgstr "Mostrar minutos antes de caducar"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:10
 msgid "Proxiable ticket"
-msgstr ""
+msgstr "Tique vía proxy"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:11
 msgid "Renewable ticket"
@@ -1476,7 +1477,7 @@ msgstr "Los tiques solicitados deberán ser reenviables"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:13
 msgid "Requested tickets should be proxiable"
-msgstr ""
+msgstr "Los tiques solicitados deberán ser vía proxy"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:14
 msgid "Requested tickets should be renewable"
@@ -1560,7 +1561,7 @@ msgstr "Si está seleccionado pide tiques reenviables"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:6
 msgid "If checked, request proxiable tickets"
-msgstr ""
+msgstr "Si está seleccionado pide tiques vía proxy"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:7
 msgid "If checked, request renewable tickets"
@@ -1647,7 +1648,7 @@ msgstr "minutos antes de que caduque"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:28
 msgid "proxiable"
-msgstr ""
+msgstr "vía proxy"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:29
 msgid "renewable"

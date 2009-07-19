@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-07-12 11:02+0000\n"
-"PO-Revision-Date: 2009-07-12 21:58+0200\n"
+"POT-Creation-Date: 2009-07-12 20:00+0000\n"
+"PO-Revision-Date: 2009-07-19 13:12+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -533,7 +533,7 @@ msgstr "El nombre de la caché de credenciales estaba malformado"
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
 #: ../src/dummy-strings.c:104
 msgid "Unknown credential cache type"
-msgstr ""
+msgstr "Tipo de caché de credenciales desconocido"
 
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:105
@@ -543,32 +543,32 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
 #: ../src/dummy-strings.c:106
 msgid "End of credential cache reached"
-msgstr ""
+msgstr "Se llegó al final de la caché de credenciales"
 
 #. krb5_err.et:krb5:KRB5_CC_END
 #: ../src/dummy-strings.c:107
 msgid "Request did not supply a ticket"
-msgstr ""
+msgstr "La petición no proporcionó un tique"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
 #: ../src/dummy-strings.c:108
 msgid "Wrong principal in request"
-msgstr ""
+msgstr "Principal erróneo en la petición"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
 #: ../src/dummy-strings.c:109
 msgid "Ticket has invalid flag set"
-msgstr ""
+msgstr "El tique tiene una opción establecida no válida"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: ../src/dummy-strings.c:110
 msgid "Requested principal and ticket don't match"
-msgstr ""
+msgstr "El principal solicitado y el tique no coinciden"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: ../src/dummy-strings.c:111
 msgid "KDC reply did not match expectations"
-msgstr ""
+msgstr "La respuesta del KDC no coincidió con las expectativas"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
 #: ../src/dummy-strings.c:112
@@ -638,12 +638,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
 #: ../src/dummy-strings.c:126
 msgid "Generic unknown RC error"
-msgstr ""
+msgstr "Error genérico desconocido de RC"
 
 #. krb5_err.et:krb5:KRB5_RC_UNKNOWN
 #: ../src/dummy-strings.c:127
 msgid "Message is a replay"
-msgstr ""
+msgstr "El mensaje es una respuesta"
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: ../src/dummy-strings.c:128
@@ -728,7 +728,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KT_BADNAME
 #: ../src/dummy-strings.c:144
 msgid "Unknown Key table type"
-msgstr ""
+msgstr "Tipo de tabla de claves desconocida"
 
 #. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:145

@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-07-12 20:00+0000\n"
-"PO-Revision-Date: 2009-07-19 13:12+0200\n"
+"POT-Creation-Date: 2009-07-19 11:15+0000\n"
+"PO-Revision-Date: 2009-07-19 21:08+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -538,7 +538,7 @@ msgstr "Tipo de caché de credenciales desconocido"
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:105
 msgid "Matching credential not found"
-msgstr ""
+msgstr "No se encontró la coincidencia con las credenciales"
 
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
 #: ../src/dummy-strings.c:106
@@ -583,22 +583,22 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: ../src/dummy-strings.c:114
 msgid "Program lacks support for encryption type"
-msgstr ""
+msgstr "El programa carece de soporte para el tipo de cifrado"
 
 #. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:115
 msgid "Program lacks support for key type"
-msgstr ""
+msgstr "El programa carece de soporte para el tipo de clave"
 
 #. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
 #: ../src/dummy-strings.c:116
 msgid "Requested encryption type not used in message"
-msgstr ""
+msgstr "El tipo de cifrado solicitado no se usó en el mensaje"
 
 #. krb5_err.et:krb5:KRB5_WRONG_ETYPE
 #: ../src/dummy-strings.c:117
 msgid "Program lacks support for checksum type"
-msgstr ""
+msgstr "El programa carece de soporte para el tipo de suma"
 
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:118
@@ -608,7 +608,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: ../src/dummy-strings.c:119
 msgid "Kerberos service unknown"
-msgstr ""
+msgstr "Servicio de Kerberos desconocido"
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
@@ -618,7 +618,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
 msgid "No local name found for principal name"
-msgstr ""
+msgstr "No se encontró un nombre local para el nombre del principal"
 
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: ../src/dummy-strings.c:123
@@ -683,12 +683,14 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: ../src/dummy-strings.c:135
 msgid "Generic unknown RC/IO error"
-msgstr ""
+msgstr "Error genérico desconocido de RC/IO"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
 #: ../src/dummy-strings.c:136
 msgid "Insufficient system space to store replay information"
 msgstr ""
+"Espacio en el sistema insuficiente para almacenar la información de la "
+"respuesta"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
 #: ../src/dummy-strings.c:137
@@ -748,7 +750,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KT_NOWRITE
 #: ../src/dummy-strings.c:148
 msgid "Error writing to key table"
-msgstr ""
+msgstr "Error al escribir en la tabla de claves"
 
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: ../src/dummy-strings.c:149

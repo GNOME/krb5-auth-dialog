@@ -1,0 +1,1745 @@
+# translation of krb5-auth-dialog.po.master.gl.po to Galician
+# Mancomún - Centro de Referencia e Servizos de Software Libre <g11n@mancomun.org>, 2009.
+# Antón Méixome <meixome@mancomun.org>, 2009.
+# Galician translation of krb5-auth-dialog.
+# Copyright (C) 2009 krb5-auth-dialog's COPYRIGHT HOLDER
+# This file is distributed under the same license as the krb5-auth-dialog package.
+msgid ""
+msgstr ""
+"Project-Id-Version: krb5-auth-dialog.po.master.gl\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-07-21 19:08+0200\n"
+"PO-Revision-Date: 2009-06-25 15:14+0200\n"
+"Last-Translator: Antón Méixome <meixome@mancomun.org>\n"
+"Language-Team: Galician <gnome@mancomun.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.desktop.in.h:2
+#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
+msgid "Network Authentication"
+msgstr "Autenticación de rede"
+
+#: ../src/krb5-auth-dialog.xml.h:2
+msgid "_Renew Ticket"
+msgstr "_Anovar tícket"
+
+#: ../src/krb5-auth-pwdialog.c:165
+#, c-format
+msgid "Couldn't acquire kerberos ticket: '%s'"
+msgstr "No se puido obter o tícket de Kerberos: '%s'"
+
+#: ../src/krb5-auth-pwdialog.c:202 ../src/krb5-auth-applet.c:358
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "As súas credenciais caducan dentro de %d minuto"
+msgstr[1] "As súas credenciais caducan dentro de %d minutos"
+
+#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:363
+msgid "Your credentials have expired"
+msgstr "As súas credenciais caducaron"
+
+#: ../src/krb5-auth-pwdialog.c:228
+msgid "Please enter your Kerberos password:"
+msgstr "Introduza o seu contrasinal de Kerberos:"
+
+#: ../src/krb5-auth-pwdialog.c:239
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Introduza o contrasinal para '%s':"
+
+#: ../src/krb5-auth-pwdialog.c:259
+msgid "The password you entered is invalid"
+msgstr "O contrasinal que introduciu non é válido"
+
+#. Translators: files from dummy-strings.c are *all* possible errors
+#. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
+#. doubt please translate strings from files starting with krb5-auth
+#. first since these are the ones the user will see in any case.
+#: ../src/dummy-strings.c:10
+msgid "ASN.1 failed call to system time library"
+msgstr "ASN.1 fallou ao chamar a biblioteca de hora do sistema"
+
+#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
+#: ../src/dummy-strings.c:11
+msgid "ASN.1 structure is missing a required field"
+msgstr "ASN.1 falta un campo requirido na estrutura"
+
+#. asn1_err.et:asn1:ASN1_MISSING_FIELD
+#: ../src/dummy-strings.c:12
+msgid "ASN.1 unexpected field number"
+msgstr "ASN.1 número de campo inesperado"
+
+#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
+#: ../src/dummy-strings.c:13
+msgid "ASN.1 type numbers are inconsistent"
+msgstr "ASN.1 os tipos de números son inconsistentes"
+
+#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
+#: ../src/dummy-strings.c:14
+msgid "ASN.1 value too large"
+msgstr "ASN.1 o valor é demasiado grande"
+
+#. asn1_err.et:asn1:ASN1_OVERFLOW
+#: ../src/dummy-strings.c:15
+msgid "ASN.1 encoding ended unexpectedly"
+msgstr "ASN.1 a codificación finalizou inesperadamente"
+
+#. asn1_err.et:asn1:ASN1_OVERRUN
+#: ../src/dummy-strings.c:16
+msgid "ASN.1 identifier doesn't match expected value"
+msgstr "ASN.1 o identificador non coincide co valor esperado"
+
+#. asn1_err.et:asn1:ASN1_BAD_ID
+#: ../src/dummy-strings.c:17
+msgid "ASN.1 length doesn't match expected value"
+msgstr "ASN.1 a lonxitude non coincide co valor esperado"
+
+#. asn1_err.et:asn1:ASN1_BAD_LENGTH
+#: ../src/dummy-strings.c:18
+msgid "ASN.1 badly-formatted encoding"
+msgstr "ASN.1 codificación mal formatada"
+
+#. asn1_err.et:asn1:ASN1_BAD_FORMAT
+#: ../src/dummy-strings.c:19
+msgid "ASN.1 parse error"
+msgstr "ASN.1 erro de análise"
+
+#. asn1_err.et:asn1:ASN1_PARSE_ERROR
+#: ../src/dummy-strings.c:20
+msgid "ASN.1 bad return from gmtime"
+msgstr "ASN.1 gmtime devolveu unha resposta incorrecta"
+
+#. asn1_err.et:asn1:ASN1_BAD_GMTIME
+#: ../src/dummy-strings.c:21
+msgid "ASN.1 non-constructed indefinite encoding"
+msgstr "ASN.1 codificación indefinida non construída"
+
+#. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
+#: ../src/dummy-strings.c:22
+msgid "ASN.1 missing expected EOC"
+msgstr "ASN.1 falta o EOC esperado"
+
+#. asn1_err.et:asn1:ASN1_MISSING_EOC
+#: ../src/dummy-strings.c:23
+msgid "No error"
+msgstr "Ningún erro"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NONE
+#: ../src/dummy-strings.c:24
+msgid "Client's entry in database has expired"
+msgstr "Caducou a entrada do cliente na base de datos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
+#: ../src/dummy-strings.c:25
+msgid "Server's entry in database has expired"
+msgstr "Caducou a entrada do servidor na base de datos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
+#: ../src/dummy-strings.c:26
+msgid "Requested protocol version not supported"
+msgstr "A versión do protocolo solicitado non é compatíbel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
+#: ../src/dummy-strings.c:27
+msgid "Client's key is encrypted in an old master key"
+msgstr "A chave do cliente está cifrada nunha chave mestra antiga"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
+#: ../src/dummy-strings.c:28
+msgid "Server's key is encrypted in an old master key"
+msgstr "A chave do servidor está cifrada nunha chave mestra antiga"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
+#: ../src/dummy-strings.c:29
+msgid "Client not found in Kerberos database"
+msgstr "Non se encontrou o cliente na base de datos de Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
+#: ../src/dummy-strings.c:30
+msgid "Server not found in Kerberos database"
+msgstr "Non se encontrou o servidor na base de datos de Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
+#: ../src/dummy-strings.c:31
+msgid "Principal has multiple entries in Kerberos database"
+msgstr "O principal ten múltiplas entradas na base de datos de Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
+#: ../src/dummy-strings.c:32
+msgid "Client or server has a null key"
+msgstr "O cliente ou o servidor teñen unha chave baleira"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
+#: ../src/dummy-strings.c:33
+msgid "Ticket is ineligible for postdating"
+msgstr "O tícket é inintelixíbel para postdatación"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
+#: ../src/dummy-strings.c:34
+msgid "Requested effective lifetime is negative or too short"
+msgstr "O tempo efectivo de duración é negativo ou demasiado curto"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
+#: ../src/dummy-strings.c:35
+msgid "KDC policy rejects request"
+msgstr "A política de KDC rexeita a solicitude"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
+#: ../src/dummy-strings.c:36
+msgid "KDC can't fulfill requested option"
+msgstr "KDC non pode cubrir totalmente a opción solicitada"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
+#: ../src/dummy-strings.c:37
+msgid "KDC has no support for encryption type"
+msgstr "KDC non admite o tipo de cifrado"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:38
+msgid "KDC has no support for checksum type"
+msgstr "KDC non admite o tipo de tipo de suma de verificación"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
+#: ../src/dummy-strings.c:39
+msgid "KDC has no support for padata type"
+msgstr "KDC non é compatíbel co tipo padata"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
+#: ../src/dummy-strings.c:40
+msgid "KDC has no support for transited type"
+msgstr "KDC non é compatíbel co tipo de tránsito"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
+#: ../src/dummy-strings.c:41
+msgid "Clients credentials have been revoked"
+msgstr "Revogáronse as credenciais dos clientes"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
+#: ../src/dummy-strings.c:42
+msgid "Credentials for server have been revoked"
+msgstr "Revogáronse as credenciais para o servidor"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
+#: ../src/dummy-strings.c:43
+msgid "TGT has been revoked"
+msgstr "O TGT foi revogado"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
+#: ../src/dummy-strings.c:44
+msgid "Client not yet valid - try again later"
+msgstr "O cliente aínda non é válido; inténteo outra vez máis adiante"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
+#: ../src/dummy-strings.c:45
+msgid "Server not yet valid - try again later"
+msgstr "O servidor aínda non é válido; inténteo outra vez máis adiante"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
+#: ../src/dummy-strings.c:46
+msgid "Password has expired"
+msgstr "O contrasinal caducou"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
+#: ../src/dummy-strings.c:47
+msgid "Preauthentication failed"
+msgstr "Fallou a preautenticación"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
+#: ../src/dummy-strings.c:48
+msgid "Additional pre-authentication required"
+msgstr "Necesítase preautenticación adicional"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
+#: ../src/dummy-strings.c:49
+msgid "Requested server and ticket don't match"
+msgstr "O servidor e o tícket solicitados non coinciden"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
+#: ../src/dummy-strings.c:50
+msgid "A service is not available that is required to process the request"
+msgstr "Un servizo necesario para procesar a solicitude non está dispoñíbel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
+#: ../src/dummy-strings.c:51
+msgid "Decrypt integrity check failed"
+msgstr "Fallou a comprobación da integridade do descifrado"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
+#: ../src/dummy-strings.c:52
+msgid "Ticket expired"
+msgstr "Caducou o tícket"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
+#: ../src/dummy-strings.c:53
+msgid "Ticket not yet valid"
+msgstr "O tícket aínda non é válido"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
+#: ../src/dummy-strings.c:54
+msgid "Request is a replay"
+msgstr "A petición é unha repetición"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
+#: ../src/dummy-strings.c:55
+msgid "The ticket isn't for us"
+msgstr "O tícket non é para nós"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
+#: ../src/dummy-strings.c:56
+msgid "Ticket/authenticator don't match"
+msgstr "O tícket/autenticador non coincide"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
+#: ../src/dummy-strings.c:57
+msgid "Clock skew too great"
+msgstr "A desviación do reloxo é demasiado grande"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
+#: ../src/dummy-strings.c:58
+msgid "Incorrect net address"
+msgstr "Enderezo de rede incorrecto"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
+#: ../src/dummy-strings.c:59
+msgid "Protocol version mismatch"
+msgstr "A versión dos protocolos non coincide"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
+#: ../src/dummy-strings.c:60
+msgid "Invalid message type"
+msgstr "O tipo da mensaxe non é válido"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
+#: ../src/dummy-strings.c:61
+msgid "Message stream modified"
+msgstr "Fluxo da mensaxe modificado"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
+#: ../src/dummy-strings.c:62
+msgid "Message out of order"
+msgstr "Mensaxe fóra do intervalo"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
+#: ../src/dummy-strings.c:63
+msgid "Illegal cross-realm ticket"
+msgstr "Tícket ilegal para interdominios"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
+#: ../src/dummy-strings.c:64
+msgid "Key version is not available"
+msgstr "A versión da chave non está dispoñíbel"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
+#: ../src/dummy-strings.c:65
+msgid "Service key not available"
+msgstr "A chave do servidor non está dispoñíbel"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
+#. krb5_err.et:krb5:KRB5_NO_LOCALNAME
+#: ../src/dummy-strings.c:66 ../src/dummy-strings.c:122
+msgid "Mutual authentication failed"
+msgstr "Fallou a autenticación mutua"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
+#: ../src/dummy-strings.c:67
+msgid "Incorrect message direction"
+msgstr "A dirección da mensaxe é incorrecta"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
+#: ../src/dummy-strings.c:68
+msgid "Alternative authentication method required"
+msgstr "Requírese un método de autenticación alternativo"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
+#: ../src/dummy-strings.c:69
+msgid "Incorrect sequence number in message"
+msgstr "A secuencia de números na mensaxe é incorrecta"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
+#: ../src/dummy-strings.c:70
+msgid "Inappropriate type of checksum in message"
+msgstr "O tipo de suma de verificación da mensaxe é inapropiado"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
+#: ../src/dummy-strings.c:71
+msgid "Policy rejects transited path"
+msgstr "A política rexeita a ruta transitada"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
+#: ../src/dummy-strings.c:72
+msgid "Response too big for UDP, retry with TCP"
+msgstr "A resposta é demasiado grande para UDM, inténteo con TCP"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
+#: ../src/dummy-strings.c:73
+msgid "Generic error (see e-text)"
+msgstr "Erro xenérico (vexa e-text)"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
+#: ../src/dummy-strings.c:74
+msgid "Field is too long for this implementation"
+msgstr "O campo é demasiado grande para esta utilización"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
+#: ../src/dummy-strings.c:75
+msgid "Client not trusted"
+msgstr "O cliente non é fiábel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
+#: ../src/dummy-strings.c:76
+msgid "KDC not trusted"
+msgstr "KDC non fiábel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
+#: ../src/dummy-strings.c:77
+msgid "Invalid signature"
+msgstr "A sinatura non é válida"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
+#: ../src/dummy-strings.c:78
+msgid "Key parameters not accepted"
+msgstr "Os parámetros da chave non foron aceptados"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
+#: ../src/dummy-strings.c:79
+msgid "Certificate mismatch"
+msgstr "O certificado non coincide"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
+#: ../src/dummy-strings.c:80
+msgid "Can't verify certificate"
+msgstr "Non se pode verificar o certificado"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
+#: ../src/dummy-strings.c:81
+msgid "Invalid certificate"
+msgstr "O certificado non é válido"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
+#: ../src/dummy-strings.c:82
+msgid "Revoked certificate"
+msgstr "Certificado revogado"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
+#: ../src/dummy-strings.c:83
+msgid "Revocation status unknown"
+msgstr "O status de revogación é descoñecido"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
+#: ../src/dummy-strings.c:84
+msgid "Revocation status unavailable"
+msgstr "O status de revogación non está dispoñíbel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
+#: ../src/dummy-strings.c:85
+msgid "Client name mismatch"
+msgstr "O nome do cliente non coincide"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
+#: ../src/dummy-strings.c:86
+msgid "KDC name mismatch"
+msgstr "O nome de KDC non coincide"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
+#: ../src/dummy-strings.c:87
+msgid "Inconsistent key purpose"
+msgstr "Proposta de chave inconsistente"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
+#: ../src/dummy-strings.c:88
+msgid "Digest in certificate not accepted"
+msgstr "O resumo do certificado non foi aceptado"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
+#: ../src/dummy-strings.c:89
+msgid "Checksum must be included"
+msgstr "A suma de verificación debe ser incluída"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
+#: ../src/dummy-strings.c:90
+msgid "Digest in signed-data not accepted"
+msgstr "O resumo na data asinada non foi aceptado"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
+#: ../src/dummy-strings.c:91
+msgid "Public key encryption not supported"
+msgstr "O cifrado da chave pública non é compatíbel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
+#: ../src/dummy-strings.c:92
+msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
+msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
+
+#. krb5_err.et:krb5:KRB5_ERR_RCSID
+#: ../src/dummy-strings.c:93
+msgid "Invalid flag for file lock mode"
+msgstr "A bandeira non é válida para o modo de bloqueo de ficheiro"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
+#: ../src/dummy-strings.c:94
+msgid "Cannot read password"
+msgstr "Non se pode ler o contrasinal"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
+#: ../src/dummy-strings.c:95
+msgid "Password mismatch"
+msgstr "O contrasinal non coincide"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
+#: ../src/dummy-strings.c:96
+msgid "Password read interrupted"
+msgstr "Interrompeuse a lectura do contrasinal"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
+#: ../src/dummy-strings.c:97
+msgid "Illegal character in component name"
+msgstr "Carácter irregular no nome do compoñente"
+
+#. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
+#: ../src/dummy-strings.c:98
+msgid "Malformed representation of principal"
+msgstr "A representación do principal está malformada"
+
+#. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
+#: ../src/dummy-strings.c:99
+msgid "Can't open/find Kerberos configuration file"
+msgstr "Non se pode abrir/encontrar o ficheiro de configuración de Kerberos"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
+#: ../src/dummy-strings.c:100
+msgid "Improper format of Kerberos configuration file"
+msgstr "O formato do ficheiro de configuración de Kerberos non é apropiado"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
+#: ../src/dummy-strings.c:101
+msgid "Insufficient space to return complete information"
+msgstr "O espazo é insuficiente para recoller información completa "
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
+#: ../src/dummy-strings.c:102
+msgid "Invalid message type specified for encoding"
+msgstr "O tipo de mensaxe especificada non é válido para a codificación "
+
+#. krb5_err.et:krb5:KRB5_BADMSGTYPE
+#: ../src/dummy-strings.c:103
+msgid "Credential cache name malformed"
+msgstr "O nome da caché de credenciais está malformado"
+
+#. krb5_err.et:krb5:KRB5_CC_BADNAME
+#: ../src/dummy-strings.c:104
+msgid "Unknown credential cache type"
+msgstr "O tipo de caché de credencial é descoñecido"
+
+#. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
+#: ../src/dummy-strings.c:105
+msgid "Matching credential not found"
+msgstr "Non se encontra unha credencial que coincida"
+
+#. krb5_err.et:krb5:KRB5_CC_NOTFOUND
+#: ../src/dummy-strings.c:106
+msgid "End of credential cache reached"
+msgstr "Atinxiuse o fin da caché da credencial"
+
+#. krb5_err.et:krb5:KRB5_CC_END
+#: ../src/dummy-strings.c:107
+msgid "Request did not supply a ticket"
+msgstr "A consulta non forneceu un tícket"
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
+#: ../src/dummy-strings.c:108
+msgid "Wrong principal in request"
+msgstr "Fallo principal na solicitude"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
+#: ../src/dummy-strings.c:109
+msgid "Ticket has invalid flag set"
+msgstr "A definición da bandeira do tícket non é válida"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
+#: ../src/dummy-strings.c:110
+msgid "Requested principal and ticket don't match"
+msgstr "A solicitude principal e o tícket non coinciden"
+
+#. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
+#: ../src/dummy-strings.c:111
+msgid "KDC reply did not match expectations"
+msgstr "A resposta KDC non coincidiu co esperado"
+
+#. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
+#: ../src/dummy-strings.c:112
+msgid "Clock skew too great in KDC reply"
+msgstr "A desviación do reloxo é demasiado grande na resposta de KDC"
+
+#. krb5_err.et:krb5:KRB5_KDCREP_SKEW
+#: ../src/dummy-strings.c:113
+msgid "Client/server realm mismatch in initial ticket request"
+msgstr ""
+"Non coinciden o dominio do cliente/servidor no tícket da solicitude inicial"
+
+#. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
+#: ../src/dummy-strings.c:114
+msgid "Program lacks support for encryption type"
+msgstr "O programa carece de compatibilidade para tipo de cifrado"
+
+#. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:115
+msgid "Program lacks support for key type"
+msgstr "O programa carece de compatibilidade para o tipo de chave"
+
+#. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
+#: ../src/dummy-strings.c:116
+msgid "Requested encryption type not used in message"
+msgstr "O tipo de cifrado solicitado non se encontra na mensaxe"
+
+#. krb5_err.et:krb5:KRB5_WRONG_ETYPE
+#: ../src/dummy-strings.c:117
+msgid "Program lacks support for checksum type"
+msgstr ""
+"O programa carece de compatibilidade para o tipo de suma de verificación"
+
+#. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
+#: ../src/dummy-strings.c:118
+msgid "Cannot find KDC for requested realm"
+msgstr "Non se pode encontrar KDC para o dominio solicitado"
+
+#. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
+#: ../src/dummy-strings.c:119
+msgid "Kerberos service unknown"
+msgstr "Servizo de Kerberos descoñecido "
+
+#. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
+#: ../src/dummy-strings.c:120
+msgid "Cannot contact any KDC for requested realm"
+msgstr "Non se pode contactar con ningún KDC para o dominio solicitado"
+
+#. krb5_err.et:krb5:KRB5_KDC_UNREACH
+#: ../src/dummy-strings.c:121
+msgid "No local name found for principal name"
+msgstr "Non se encontra o nome local para o nome principal"
+
+#. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
+#: ../src/dummy-strings.c:123
+msgid "Replay cache type is already registered"
+msgstr "O tipo de caché de repetición xa está rexistrado"
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
+#: ../src/dummy-strings.c:124
+msgid "No more memory to allocate (in replay cache code)"
+msgstr "Non hai máis memoria para asignar (no código da caché de repetición)"
+
+#. krb5_err.et:krb5:KRB5_RC_MALLOC
+#: ../src/dummy-strings.c:125
+msgid "Replay cache type is unknown"
+msgstr "O tipo de caché de repetición é descoñecido"
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
+#: ../src/dummy-strings.c:126
+msgid "Generic unknown RC error"
+msgstr "Erro xenérico descoñecido de RC"
+
+#. krb5_err.et:krb5:KRB5_RC_UNKNOWN
+#: ../src/dummy-strings.c:127
+msgid "Message is a replay"
+msgstr "A mensaxe é unha repetición"
+
+#. krb5_err.et:krb5:KRB5_RC_REPLAY
+#: ../src/dummy-strings.c:128
+msgid "Replay I/O operation failed XXX"
+msgstr "A operación de repetición I/O XXX fallou "
+
+#. krb5_err.et:krb5:KRB5_RC_IO
+#: ../src/dummy-strings.c:129
+msgid "Replay cache type does not support non-volatile storage"
+msgstr ""
+"O tipo de caché de repeticion non é compatíbel con almacenamento non volátil"
+
+#. krb5_err.et:krb5:KRB5_RC_NOIO
+#: ../src/dummy-strings.c:130
+msgid "Replay cache name parse/format error"
+msgstr "Erro de procesado/formato no nome da caché de repetición"
+
+#. krb5_err.et:krb5:KRB5_RC_PARSE
+#: ../src/dummy-strings.c:131
+msgid "End-of-file on replay cache I/O"
+msgstr "Fin de ficheiro na caché de repetición I/O"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_EOF
+#: ../src/dummy-strings.c:132
+msgid "No more memory to allocate (in replay cache I/O code)"
+msgstr ""
+"Non hai máis memoria para asignar (no código I/O da caché de repetición)"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
+#: ../src/dummy-strings.c:133
+msgid "Permission denied in replay cache code"
+msgstr "Permiso denegado no código da caché de repetición"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_PERM
+#: ../src/dummy-strings.c:134
+msgid "I/O error in replay cache i/o code"
+msgstr "Erro I/O no código i/o da caché de repetición "
+
+#. krb5_err.et:krb5:KRB5_RC_IO_IO
+#: ../src/dummy-strings.c:135
+msgid "Generic unknown RC/IO error"
+msgstr "Erro xenérico RC/IO descoñecido"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
+#: ../src/dummy-strings.c:136
+msgid "Insufficient system space to store replay information"
+msgstr "Espazo insuficiente no sistema para gardar información de repetición"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_SPACE
+#: ../src/dummy-strings.c:137
+msgid "Can't open/find realm translation file"
+msgstr "Non se pode abrir/encontrar o ficheiro de tradución de dominio"
+
+#. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
+#: ../src/dummy-strings.c:138
+msgid "Improper format of realm translation file"
+msgstr "Formato inapropiado do ficheiro de tradución de dominio"
+
+#. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
+#: ../src/dummy-strings.c:139
+msgid "Can't open/find lname translation database"
+msgstr "Non se pode abrir/encontrar a base de datos de tradución de nomes"
+
+#. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
+#: ../src/dummy-strings.c:140
+msgid "No translation available for requested principal"
+msgstr "Non hai tradución dispoñíbel para a principal seleccionada"
+
+#. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
+#: ../src/dummy-strings.c:141
+msgid "Improper format of translation database entry"
+msgstr "Formato inapropiado da entrada da base de datos de tradución"
+
+#. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
+#: ../src/dummy-strings.c:142
+msgid "Cryptosystem internal error"
+msgstr "Erro interno do sistema de cifrado"
+
+#. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
+#: ../src/dummy-strings.c:143
+msgid "Key table name malformed"
+msgstr "O nome da táboa de chaves está malformado"
+
+#. krb5_err.et:krb5:KRB5_KT_BADNAME
+#: ../src/dummy-strings.c:144
+msgid "Unknown Key table type"
+msgstr "O tipo da táboa de chaves é descoñecido"
+
+#. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
+#: ../src/dummy-strings.c:145
+msgid "Key table entry not found"
+msgstr "Non se encontra a entrada da táboa de chaves"
+
+#. krb5_err.et:krb5:KRB5_KT_NOTFOUND
+#: ../src/dummy-strings.c:146
+msgid "End of key table reached"
+msgstr "Atinxiuse o fin da táboa de chaves"
+
+#. krb5_err.et:krb5:KRB5_KT_END
+#: ../src/dummy-strings.c:147
+msgid "Cannot write to specified key table"
+msgstr "Non se pode escribir na táboa de chaves especificada"
+
+#. krb5_err.et:krb5:KRB5_KT_NOWRITE
+#: ../src/dummy-strings.c:148
+msgid "Error writing to key table"
+msgstr "Produciuse un erro ao escribir na táboa de chaves"
+
+#. krb5_err.et:krb5:KRB5_KT_IOERR
+#: ../src/dummy-strings.c:149
+msgid "Cannot find ticket for requested realm"
+msgstr "Non se pode atopar tícket para o dominio solicitado"
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
+#: ../src/dummy-strings.c:150
+msgid "DES key has bad parity"
+msgstr "A chave DES ten unha mala paridade "
+
+#. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
+#: ../src/dummy-strings.c:151
+msgid "DES key is a weak key"
+msgstr "A chave DES é unha chave feble"
+
+#. krb5_err.et:krb5:KRB5DES_WEAK_KEY
+#: ../src/dummy-strings.c:152
+msgid "Bad encryption type"
+msgstr "Tipo de cifrado incorrecto"
+
+#. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
+#: ../src/dummy-strings.c:153
+msgid "Key size is incompatible with encryption type"
+msgstr "O tamaño da chave é incompatíbel co tipo de cifrado"
+
+#. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
+#: ../src/dummy-strings.c:154
+msgid "Message size is incompatible with encryption type"
+msgstr "O tamaño da mensaxe é incompatíbel co tipo de cifrado"
+
+#. krb5_err.et:krb5:KRB5_BAD_MSIZE
+#: ../src/dummy-strings.c:155
+msgid "Credentials cache type is already registered."
+msgstr "O tipo de caché de credenciais xa está rexistrado."
+
+#. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
+#: ../src/dummy-strings.c:156
+msgid "Key table type is already registered."
+msgstr "O tipo de táboa de chaves xa está rexistrado."
+
+#. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
+#: ../src/dummy-strings.c:157
+msgid "Credentials cache I/O operation failed XXX"
+msgstr "Fallou a operación XXX de credenciais de caché I/O"
+
+#. krb5_err.et:krb5:KRB5_CC_IO
+#: ../src/dummy-strings.c:158
+msgid "Credentials cache permissions incorrect"
+msgstr "Os permisos da caché de credenciais está incorrecta"
+
+#. krb5_err.et:krb5:KRB5_FCC_PERM
+#: ../src/dummy-strings.c:159
+msgid "No credentials cache found"
+msgstr "Non se encontra a caché de credenciais"
+
+#. krb5_err.et:krb5:KRB5_FCC_NOFILE
+#: ../src/dummy-strings.c:160
+msgid "Internal credentials cache error"
+msgstr "Erro interno da caché de credenciais"
+
+#. krb5_err.et:krb5:KRB5_FCC_INTERNAL
+#: ../src/dummy-strings.c:161
+msgid "Error writing to credentials cache"
+msgstr "Erro ao escribir na caché de credenciais"
+
+#. krb5_err.et:krb5:KRB5_CC_WRITE
+#: ../src/dummy-strings.c:162
+msgid "No more memory to allocate (in credentials cache code)"
+msgstr "Non hai máis memoria para asignar (no código da caché de credenciais)"
+
+#. krb5_err.et:krb5:KRB5_CC_NOMEM
+#: ../src/dummy-strings.c:163
+msgid "Bad format in credentials cache"
+msgstr "Mal formato na caché de credenciais"
+
+#. krb5_err.et:krb5:KRB5_CC_FORMAT
+#: ../src/dummy-strings.c:164
+msgid "No credentials found with supported encryption types"
+msgstr "Non se encontran credenciais con tipos de cifrado compatíbeis"
+
+#. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
+#: ../src/dummy-strings.c:165
+msgid "Invalid KDC option combination (library internal error)"
+msgstr "A opción de combinación KDC non é válida (erro interno da biblioteca)"
+
+#. krb5_err.et:krb5:KRB5_INVALID_FLAGS
+#: ../src/dummy-strings.c:166
+msgid "Request missing second ticket"
+msgstr "Solicita o segundo tícket perdido"
+
+#. krb5_err.et:krb5:KRB5_NO_2ND_TKT
+#: ../src/dummy-strings.c:167
+msgid "No credentials supplied to library routine"
+msgstr "Non se forneceron credenciais para a rutina de biblioteca"
+
+#. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
+#: ../src/dummy-strings.c:168
+msgid "Bad sendauth version was sent"
+msgstr "Enviouse unha versión mala de sendauth"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
+#: ../src/dummy-strings.c:169
+msgid "Bad application version was sent (via sendauth)"
+msgstr "Enviouse unha mala versión do aplicativo (vía sendauth)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
+#: ../src/dummy-strings.c:170
+msgid "Bad response (during sendauth exchange)"
+msgstr "Mala resposta (durante o intercambio sendauth)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
+#: ../src/dummy-strings.c:171
+msgid "Server rejected authentication (during sendauth exchange)"
+msgstr "O servidor rexeitou a autenticación (durante o intercambio sendauth)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
+#: ../src/dummy-strings.c:172
+msgid "Unsupported preauthentication type"
+msgstr "Tipo de preautenticación non compatíbel"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
+#: ../src/dummy-strings.c:173
+msgid "Required preauthentication key not supplied"
+msgstr "Non se forneceu a chave requirida de preautenticación"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
+#: ../src/dummy-strings.c:174
+msgid "Generic preauthentication failure"
+msgstr "Fallo xenérico de preautenticación"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
+#: ../src/dummy-strings.c:175
+msgid "Unsupported replay cache format version number"
+msgstr "O número da versión do formato da caché de repetición non é compatíbel"
+
+#. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
+#: ../src/dummy-strings.c:176
+msgid "Unsupported credentials cache format version number"
+msgstr ""
+"O número de versión do formato da caché de credenciais non é compatíbel"
+
+#. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
+#: ../src/dummy-strings.c:177
+msgid "Unsupported key table format version number"
+msgstr "O número da versión do formato da táboa de chaves non é compatíbel"
+
+#. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
+#: ../src/dummy-strings.c:178
+msgid "Program lacks support for address type"
+msgstr "O programa carece de compatibilidade para o tipo de enderezo"
+
+#. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
+#: ../src/dummy-strings.c:179
+msgid "Message replay detection requires rcache parameter"
+msgstr "A detección da mensaxe de resposta require un parámetro rcache"
+
+#. krb5_err.et:krb5:KRB5_RC_REQUIRED
+#: ../src/dummy-strings.c:180
+msgid "Hostname cannot be canonicalized"
+msgstr "O nome do host non pode ser canonizado"
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
+#: ../src/dummy-strings.c:181
+msgid "Cannot determine realm for host"
+msgstr "Non se pode determinar o dominio do host"
+
+#. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
+#: ../src/dummy-strings.c:182
+msgid "Conversion to service principal undefined for name type"
+msgstr "A conversión ao servizo principal non está definida polo tipo de nome"
+
+#. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
+#: ../src/dummy-strings.c:183
+msgid "Initial Ticket response appears to be Version 4 error"
+msgstr "A resposta ao Tícket inicial semella ser un erro de Versión 4"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
+#: ../src/dummy-strings.c:184
+msgid "Cannot resolve network address for KDC in requested realm"
+msgstr "Non se pode resolver o enderezo de rede para KDC no dominio solicitado"
+
+#. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
+#: ../src/dummy-strings.c:185
+msgid "Requesting ticket can't get forwardable tickets"
+msgstr "A solicitude de tícket non pode obter tíckets reenviábeis"
+
+#. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
+#: ../src/dummy-strings.c:186
+msgid "Bad principal name while trying to forward credentials"
+msgstr "Aparece un mal nome principal mentres se intenta reenviar credenciais"
+
+#. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
+#: ../src/dummy-strings.c:187
+msgid "Looping detected inside krb5_get_in_tkt"
+msgstr "Bucle detectado en  krb5_get_in_tkt"
+
+#. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
+#: ../src/dummy-strings.c:188
+msgid "Configuration file does not specify default realm"
+msgstr "O ficheiro de configuración non especifica o dominio predeterminado"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
+#: ../src/dummy-strings.c:189
+msgid "Bad SAM flags in obtain_sam_padata"
+msgstr "Aparecen malas bandeiras SAM en obtain_sam_padata"
+
+#. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
+#: ../src/dummy-strings.c:190
+msgid "Invalid encryption type in SAM challenge"
+msgstr "Tipo de cifrado incorrecto no desafío SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
+#: ../src/dummy-strings.c:191
+msgid "Missing checksum in SAM challenge"
+msgstr "Non se encontra a suma de verificación no desafío SAM "
+
+#. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
+#: ../src/dummy-strings.c:192
+msgid "Bad checksum in SAM challenge"
+msgstr "Mala suma de verificación no desafío SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
+#: ../src/dummy-strings.c:193
+msgid "Keytab name too long"
+msgstr "Nome demasiado longo na táboa de chaves"
+
+#. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
+#: ../src/dummy-strings.c:194
+msgid "Key version number for principal in key table is incorrect"
+msgstr ""
+"O número da versión da chave para principal na táboa de chaves é incorrecta"
+
+#. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
+#: ../src/dummy-strings.c:195
+msgid "This application has expired"
+msgstr "Este aplicativo caducou"
+
+#. krb5_err.et:krb5:KRB5_APPL_EXPIRED
+#: ../src/dummy-strings.c:196
+msgid "This Krb5 library has expired"
+msgstr "Esta biblioteca Krb5 caducou"
+
+#. krb5_err.et:krb5:KRB5_LIB_EXPIRED
+#: ../src/dummy-strings.c:197
+msgid "New password cannot be zero length"
+msgstr "O novo contrasinal non pode ter tamaño cero"
+
+#. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
+#: ../src/dummy-strings.c:198
+msgid "Password change failed"
+msgstr "Fallou o cambio de chave"
+
+#. krb5_err.et:krb5:KRB5_CHPW_FAIL
+#: ../src/dummy-strings.c:199
+msgid "Bad format in keytab"
+msgstr "Mal formato na táboa de chaves"
+
+#. krb5_err.et:krb5:KRB5_KT_FORMAT
+#: ../src/dummy-strings.c:200
+msgid "Encryption type not permitted"
+msgstr "O tipo de cifrado non está permitido"
+
+#. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
+#: ../src/dummy-strings.c:201
+msgid "No supported encryption types (config file error?)"
+msgstr ""
+"Non hai tipos de cifrado compatíbeis (erro no ficheiro de configuración?)"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:202
+msgid "Program called an obsolete, deleted function"
+msgstr "O progrma chamou por unha función obsoleta, borrada"
+
+#. krb5_err.et:krb5:KRB5_OBSOLETE_FN
+#: ../src/dummy-strings.c:203
+msgid "unknown getaddrinfo failure"
+msgstr "fallo descoñecido getaddrinfo"
+
+#. krb5_err.et:krb5:KRB5_EAI_FAIL
+#: ../src/dummy-strings.c:204
+msgid "no data available for host/domain name"
+msgstr "non hai datos dispoñíbeis para o nome do host/dominio"
+
+#. krb5_err.et:krb5:KRB5_EAI_NODATA
+#: ../src/dummy-strings.c:205
+msgid "host/domain name not found"
+msgstr "o nome do host/dominio non se encontra"
+
+#. krb5_err.et:krb5:KRB5_EAI_NONAME
+#: ../src/dummy-strings.c:206
+msgid "service name unknown"
+msgstr "o nome do servizo é descoñecido"
+
+#. krb5_err.et:krb5:KRB5_EAI_SERVICE
+#: ../src/dummy-strings.c:207
+msgid "Cannot determine realm for numeric host address"
+msgstr "Non se pode determinar o dominio para o enderezo de host numérico"
+
+#. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
+#: ../src/dummy-strings.c:208
+msgid "Invalid key generation parameters from KDC"
+msgstr "Os parámetros de xeración de chave de KDC non son válidos "
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
+#: ../src/dummy-strings.c:209
+msgid "service not available"
+msgstr "o servizo non está dispoñíbel"
+
+#. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
+#: ../src/dummy-strings.c:210
+msgid "Ccache function not supported: read-only ccache type"
+msgstr "A función Ccaché non é compatíbel: tipo de ccaché de só lectura"
+
+#. krb5_err.et:krb5:KRB5_CC_READONLY
+#: ../src/dummy-strings.c:211
+msgid "Ccache function not supported: not implemented"
+msgstr "A función de ccaché non se admite: non implementada"
+
+#. krb5_err.et:krb5:KRB5_CC_NOSUPP
+#: ../src/dummy-strings.c:212
+msgid "Invalid format of Kerberos lifetime or clock skew string"
+msgstr ""
+"O formato da cadea de duración ou desviación temporal de Kerberos non é "
+"válido"
+
+#. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
+#: ../src/dummy-strings.c:213
+msgid "Supplied data not handled by this plugin"
+msgstr "Os datos fornecidos non foron manipulados por este complemento"
+
+#. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
+#: ../src/dummy-strings.c:214
+msgid "Plugin does not support the operaton"
+msgstr "O complemento non é compatíbel coa operación"
+
+#. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
+#: ../src/dummy-strings.c:215
+msgid "Kerberos V5 magic number table"
+msgstr "Táboa de números máxica de Kerberos V5"
+
+#. kv5m_err.et:kv5m:KV5M_NONE
+#: ../src/dummy-strings.c:216
+msgid "Bad magic number for krb5_principal structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_principal"
+
+#. kv5m_err.et:kv5m:KV5M_PRINCIPAL
+#: ../src/dummy-strings.c:217
+msgid "Bad magic number for krb5_data structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_data"
+
+#. kv5m_err.et:kv5m:KV5M_DATA
+#: ../src/dummy-strings.c:218
+msgid "Bad magic number for krb5_keyblock structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_keyblock"
+
+#. kv5m_err.et:kv5m:KV5M_KEYBLOCK
+#: ../src/dummy-strings.c:219
+msgid "Bad magic number for krb5_checksum structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_checksum"
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM
+#: ../src/dummy-strings.c:220
+msgid "Bad magic number for krb5_encrypt_block structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_encrypt_block"
+
+#. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
+#: ../src/dummy-strings.c:221
+msgid "Bad magic number for krb5_enc_data structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_enc_data"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_DATA
+#: ../src/dummy-strings.c:222
+msgid "Bad magic number for krb5_cryptosystem_entry structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_cryptosystem_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
+#: ../src/dummy-strings.c:223
+msgid "Bad magic number for krb5_cs_table_entry structure"
+msgstr ""
+"Número máxico incorrecto para a estrutura krb5_cs_table_entry structure"
+
+#. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
+#: ../src/dummy-strings.c:224
+msgid "Bad magic number for krb5_checksum_entry structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_checksum_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
+#: ../src/dummy-strings.c:225
+msgid "Bad magic number for krb5_authdata structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_authdata"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHDATA
+#: ../src/dummy-strings.c:226
+msgid "Bad magic number for krb5_transited structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_transited"
+
+#. kv5m_err.et:kv5m:KV5M_TRANSITED
+#: ../src/dummy-strings.c:227
+msgid "Bad magic number for krb5_enc_tkt_part structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_enc_tkt_part"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
+#: ../src/dummy-strings.c:228
+msgid "Bad magic number for krb5_ticket structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_ticket"
+
+#. kv5m_err.et:kv5m:KV5M_TICKET
+#: ../src/dummy-strings.c:229
+msgid "Bad magic number for krb5_authenticator structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_authenticator"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
+#: ../src/dummy-strings.c:230
+msgid "Bad magic number for krb5_tkt_authent structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_tkt_authent"
+
+#. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
+#: ../src/dummy-strings.c:231
+msgid "Bad magic number for krb5_creds structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_creds"
+
+#. kv5m_err.et:kv5m:KV5M_CREDS
+#: ../src/dummy-strings.c:232
+msgid "Bad magic number for krb5_last_req_entry structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_last_req_entry"
+
+#. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
+#: ../src/dummy-strings.c:233
+msgid "Bad magic number for krb5_pa_data structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_pa_data"
+
+#. kv5m_err.et:kv5m:KV5M_PA_DATA
+#: ../src/dummy-strings.c:234
+msgid "Bad magic number for krb5_kdc_req structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_kdc_req"
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REQ
+#: ../src/dummy-strings.c:235
+msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_enc_kdc_rep_part"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
+#: ../src/dummy-strings.c:236
+msgid "Bad magic number for krb5_kdc_rep structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_kdc_rep"
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REP
+#: ../src/dummy-strings.c:237
+msgid "Bad magic number for krb5_error structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_error"
+
+#. kv5m_err.et:kv5m:KV5M_ERROR
+#: ../src/dummy-strings.c:238
+msgid "Bad magic number for krb5_ap_req structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_ap_req"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REQ
+#: ../src/dummy-strings.c:239
+msgid "Bad magic number for krb5_ap_rep structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_ap_rep"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP
+#: ../src/dummy-strings.c:240
+msgid "Bad magic number for krb5_ap_rep_enc_part structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_ap_rep_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
+#: ../src/dummy-strings.c:241
+msgid "Bad magic number for krb5_response structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_response"
+
+#. kv5m_err.et:kv5m:KV5M_RESPONSE
+#: ../src/dummy-strings.c:242
+msgid "Bad magic number for krb5_safe structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_safe "
+
+#. kv5m_err.et:kv5m:KV5M_SAFE
+#: ../src/dummy-strings.c:243
+msgid "Bad magic number for krb5_priv structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_priv"
+
+#. kv5m_err.et:kv5m:KV5M_PRIV
+#: ../src/dummy-strings.c:244
+msgid "Bad magic number for krb5_priv_enc_part structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_priv_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
+#: ../src/dummy-strings.c:245
+msgid "Bad magic number for krb5_cred structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_cred "
+
+#. kv5m_err.et:kv5m:KV5M_CRED
+#: ../src/dummy-strings.c:246
+msgid "Bad magic number for krb5_cred_info structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_cred_info"
+
+#. kv5m_err.et:kv5m:KV5M_CRED_INFO
+#: ../src/dummy-strings.c:247
+msgid "Bad magic number for krb5_cred_enc_part structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_cred_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
+#: ../src/dummy-strings.c:248
+msgid "Bad magic number for krb5_pwd_data structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_pwd_data"
+
+#. kv5m_err.et:kv5m:KV5M_PWD_DATA
+#: ../src/dummy-strings.c:249
+msgid "Bad magic number for krb5_address structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_address"
+
+#. kv5m_err.et:kv5m:KV5M_ADDRESS
+#: ../src/dummy-strings.c:250
+msgid "Bad magic number for krb5_keytab_entry structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_keytab_entry"
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
+#: ../src/dummy-strings.c:251
+msgid "Bad magic number for krb5_context structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_context"
+
+#. kv5m_err.et:kv5m:KV5M_CONTEXT
+#: ../src/dummy-strings.c:252
+msgid "Bad magic number for krb5_os_context structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_os_context"
+
+#. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
+#: ../src/dummy-strings.c:253
+msgid "Bad magic number for krb5_alt_method structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_alt_method"
+
+#. kv5m_err.et:kv5m:KV5M_ALT_METHOD
+#: ../src/dummy-strings.c:254
+msgid "Bad magic number for krb5_etype_info_entry structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_etype_info_entry"
+
+#. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
+#: ../src/dummy-strings.c:255
+msgid "Bad magic number for krb5_db_context structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_db_context"
+
+#. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
+#: ../src/dummy-strings.c:256
+msgid "Bad magic number for krb5_auth_context structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_auth_context"
+
+#. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
+#: ../src/dummy-strings.c:257
+msgid "Bad magic number for krb5_keytab structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_keytab"
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB
+#: ../src/dummy-strings.c:258
+msgid "Bad magic number for krb5_rcache structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_rcache"
+
+#. kv5m_err.et:kv5m:KV5M_RCACHE
+#: ../src/dummy-strings.c:259
+msgid "Bad magic number for krb5_ccache structure"
+msgstr "Número máxico incorrecto para a estrutura krb5_ccache"
+
+#. kv5m_err.et:kv5m:KV5M_CCACHE
+#: ../src/dummy-strings.c:260
+msgid "Bad magic number for krb5_preauth_ops"
+msgstr "Número máxico incorrecto para a estrutura krb5_preauth_ops"
+
+#. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
+#: ../src/dummy-strings.c:261
+msgid "Bad magic number for krb5_sam_challenge"
+msgstr "Número máxico incorrecto para a estrutura krb5_sam_challenge"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
+#: ../src/dummy-strings.c:262
+msgid "Bad magic number for krb5_sam_challenge_2"
+msgstr "Número máxico incorrecto para a estrutura krb5_sam_challenge_2"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
+#: ../src/dummy-strings.c:263
+msgid "Bad magic number for krb5_sam_key"
+msgstr "Número máxico incorrecto para a estrutura krb5_sam_key"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_KEY
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
+#: ../src/dummy-strings.c:264 ../src/dummy-strings.c:265
+msgid "Bad magic number for krb5_enc_sam_response_enc"
+msgstr "Número máxico incorrecto para a estrutura krb5_enc_sam_response_enc"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
+#: ../src/dummy-strings.c:266
+msgid "Bad magic number for krb5_sam_response"
+msgstr "Número máxico incorrecto para a estrutura krb5_sam_response"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
+#: ../src/dummy-strings.c:267
+msgid "Bad magic number for krb5_sam_response 2"
+msgstr "Número máxico incorrecto para a estrutura krb5_sam_response 2"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
+#: ../src/dummy-strings.c:268
+msgid "Bad magic number for krb5_predicted_sam_response"
+msgstr "Número máxico incorrecto para a estrutura krb5_predicted_sam_response"
+
+#. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
+#: ../src/dummy-strings.c:269
+msgid "Bad magic number for passwd_phrase_element"
+msgstr "Número máxico incorrecto para a estrutura passwd_phrase_element"
+
+#. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
+#: ../src/dummy-strings.c:270
+msgid "Bad magic number for GSSAPI OID"
+msgstr "Número máxico incorrecto para a estrutura GSSAPI OID"
+
+#. kv5m_err.et:kv5m:KV5M_GSS_OID
+#: ../src/dummy-strings.c:271
+msgid "Bad magic number for GSSAPI QUEUE"
+msgstr "Número máxico incorrecto para GSSAPI QUEUE"
+
+#. Translators: First number is hours, second number is minutes
+#: ../src/krb5-auth-applet.c:354
+#, c-format
+msgid "Your credentials expire in %.2d:%.2dh"
+msgstr "As súas credenciais caducan en %.2d:%.2dh"
+
+#: ../src/krb5-auth-applet.c:450
+msgid "Don't show me this again"
+msgstr "Non mostrar esta mensaxe de novo"
+
+#: ../src/krb5-auth-applet.c:487
+msgid "Network credentials valid"
+msgstr "As credenciais de rede son válidas"
+
+#: ../src/krb5-auth-applet.c:488
+msgid "You've refreshed your Kerberos credentials."
+msgstr "Actualizou as súas credenciais Kerberos."
+
+#: ../src/krb5-auth-applet.c:501
+msgid "Network credentials expiring"
+msgstr "As credenciais de rede van caducar"
+
+#: ../src/krb5-auth-applet.c:516
+msgid "Network credentials expired"
+msgstr "As credenciais de rede caducaron"
+
+#: ../src/krb5-auth-applet.c:517
+msgid "Your Kerberos credentails have expired."
+msgstr "As súas credenciais Kerberos caducaron."
+
+#: ../src/krb5-auth-applet.c:581
+#, c-format
+msgid ""
+"There was an error displaying %s:\n"
+"%s"
+msgstr ""
+"Houbo un erro ao mostrar %s:\n"
+"%s"
+
+#. Translators: add the translators of your language here
+#: ../src/krb5-auth-applet.c:617
+msgid "translator-credits"
+msgstr ""
+"Antón Méixome <meixome@mancomun.org> para Mancomún. Centro de Referencia de "
+"Software Libre "
+
+#. kdestroy
+#: ../src/krb5-auth-applet.c:652
+msgid "Remove Credentials _Cache"
+msgstr "Quitar a _caché de credenciais"
+
+#: ../src/krb5-auth-tools.c:45
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Ocorreu un erro ao mostrar a axuda:\n"
+"%s"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Network Authentication Dialog"
+msgstr "Diálogo de autenticación de rede de Kerberos"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:1
+msgid "Forwardable ticket"
+msgstr "Tícket reenviábel"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:2
+msgid "Kerberos principal"
+msgstr "Principal de Kerberos"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:3
+msgid "Notify user when ticket becomes valid"
+msgstr "Notificarlle ao usuario cando un tícket se convirta en válido"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:4
+msgid "Notify user when ticket has expired"
+msgstr "Notificarlle ao usuario cando un tícket caducou"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:5
+msgid "Notify user when ticket is about to expire"
+msgstr "Notificarlle ao usuario cando un tícket vai caducar"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:6
+msgid "PKINIT CA certificates"
+msgstr "Certificados PKINIT CA"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:7
+msgid "PKINIT identifier"
+msgstr "Identificador PKINT"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:8
+msgid "PKINIT trust anchors"
+msgstr "Áncoras de confianza de PKINIT"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:9
+msgid "Prompt minutes before expiry"
+msgstr "Mostrar minutos antes de caducar"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:10
+msgid "Proxiable ticket"
+msgstr "Tícket utilizábel vía proxy"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:11
+msgid "Renewable ticket"
+msgstr "Tícket anovábel"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:12
+msgid "Requested tickets should be forwardable"
+msgstr "Os tíckets solicitados deberán ser reenviábeis"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:13
+msgid "Requested tickets should be proxiable"
+msgstr "Os tíckets solicitados deberían ser utilizábeis vía proxy"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:14
+msgid "Requested tickets should be renewable"
+msgstr "Os tíckets solicitados deberían ser anovábeis"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:15
+msgid "Show a trayicon in the status area of the panel"
+msgstr "Mostrar unha icona na bandexa do sistema na área do panel"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:16
+msgid "Show trayicon"
+msgstr "Mostrar a icona na bandexa"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:17
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr "Deixar de mostrar notificacións eses minutos antes de que caduque"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:18
+msgid "The kerberos principal to acquire the ticket for"
+msgstr "O principal de Kerberos para o que adquirir o tícket"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:19
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr ""
+"O identificador público/privado/certificado do principal ao usar PKINIT"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:20
+msgid "ticket expired notification"
+msgstr "notificación de tícket caducado"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:21
+msgid "ticket expiring notification"
+msgstr "notificación de caducidade de tícket"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:22
+msgid "valid ticket notification"
+msgstr "tícket de notificación válido"
+
+#: ../secmem/util.c:106
+#, c-format
+msgid "Warning: running q-agent setuid on this system is dangerous\n"
+msgstr "Advertencia: executar q-agent setuid neste sistema é perigoso\n"
+
+#: ../preferences/krb5-auth-dialog-preferences.c:345
+#, fuzzy
+msgid "Choose Certificate"
+msgstr "Certificado revogado"
+
+#: ../preferences/krb5-auth-dialog-preferences.c:361
+#, fuzzy
+msgid "X509 Certificates"
+msgstr "Certificados PKINIT CA"
+
+#: ../preferences/krb5-auth-dialog-preferences.c:365
+msgid "all files"
+msgstr ""
+
+#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
+msgid "Set your Kerberos network authentication preferences"
+msgstr "Estabeleza as súas preferencias de autenticación de rede en Kerberos"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:1
+msgid "Appearance"
+msgstr "Aparencia"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:2
+msgid "Applet"
+msgstr "Miniaplicativo"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:3
+msgid "Certificate and private key used for authentication"
+msgstr ""
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
+msgid "If checked, display the tray icon in the status bar"
+msgstr "Se está seleccionado mostra a icona da bandexa na barra de estado"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
+msgid "If checked, request forwardable tickets"
+msgstr "Se está seleccionado, pide tíckets reenviábeis"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
+msgid "If checked, request proxiable tickets"
+msgstr "Se está seleccionado, solicita tíckets utilizábeis vía proxy"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
+msgid "If checked, request renewable tickets"
+msgstr "Se está seleccionado pide tíckets anovábeis"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
+msgid "Kerberos"
+msgstr "Kerberos"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
+msgid "Kerberos Authentication Configuration"
+msgstr "Configuración de autenticación de Kerberos"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
+msgid "Kerberos User"
+msgstr "Usuario de Kerberos"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
+msgid "Kerberos principal:"
+msgstr "Principal de Kerberos:"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
+msgid "Notifications"
+msgstr "Notificacións"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:14
+#, fuzzy
+msgid "PKINIT:"
+msgstr "ID de usuario de PKINIT:"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:15
+msgid "Requested Kerberos tickets should be:"
+msgstr "Os tíckets solicitados a Kerberos deberían ser:"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:16
+msgid ""
+"Send notification about ticket expiry that many minutes before it finally "
+"expires"
+msgstr ""
+"Enviar notificación sobre a caducidade do tícket neses minutos antes de que "
+"caduque"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:17
+msgid "Show tray icon"
+msgstr "Mostrar a icona da bandexa"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:18
+msgid "Ticket Options"
+msgstr "Opcións do tícket"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
+msgid "Use Smartcard"
+msgstr ""
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:20
+msgid "Userid:"
+msgstr ""
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:22
+msgid "Warn"
+msgstr "Advertir"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:23
+#, fuzzy
+msgid "X509 trust anchors:"
+msgstr "Áncoras de confianza de PKINIT"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
+msgid "_Browse..."
+msgstr ""
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:25
+msgid "forwardable"
+msgstr "reenviábel"
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:27
+msgid "minutes before expiry"
+msgstr "minutos antes de que caduque"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:28
+msgid "proxiable"
+msgstr "utilizábel vía proxy"
+
+#: ../preferences/krb5-auth-dialog-preferences.xml.h:29
+msgid "renewable"
+msgstr "anovábel"
+
+#~ msgid "Cursor Position"
+#~ msgstr "Posición do cursor"
+
+#~ msgid "The current position of the insertion cursor in chars"
+#~ msgstr "A posición actual do cursor de inserción en caracteres"
+
+#~ msgid "Selection Bound"
+#~ msgstr "Selección vinculada"
+
+#~ msgid ""
+#~ "The position of the opposite end of the selection from the cursor in chars"
+#~ msgstr ""
+#~ "A posición en caracteres do extremo oposto da selección desde o cursor"
+
+#~ msgid "Maximum length"
+#~ msgstr "Lonxitude máxima"
+
+#~ msgid "Maximum number of characters for this entry. Zero if no maximum"
+#~ msgstr ""
+#~ "Número máximo de caracteres nesta entrada. É cero se non hai un máximo"
+
+#~ msgid "Has Frame"
+#~ msgstr "Ten marco"
+
+#~ msgid "FALSE removes outside bevel from entry"
+#~ msgstr "FALSE elimina o bisel exterior da entrada"
+
+#~ msgid "Invisible character"
+#~ msgstr "Carácter invisíbel"
+
+#~ msgid ""
+#~ "The character to use when masking entry contents (in \"password mode\")"
+#~ msgstr ""
+#~ "O carácter que usar cando se oculten os contidos da entrada (no \"modo de "
+#~ "contrasinal\")"
+
+#~ msgid "Activates default"
+#~ msgstr "Activa o predeterminado"
+
+#~ msgid ""
+#~ "Whether to activate the default widget (such as the default button in a "
+#~ "dialog) when Enter is pressed"
+#~ msgstr ""
+#~ "Indica se se debe activar o widget predeterminado (como o botón "
+#~ "predeterminado nunha caixa de diálogo) cando se prema a tecla Intro"
+
+#~ msgid "Width in chars"
+#~ msgstr "Largura en caracteres"
+
+#~ msgid "Number of characters to leave space for in the entry"
+#~ msgstr "Número de caracteres para os que deixar espazo na entrada"
+
+#~ msgid "Scroll offset"
+#~ msgstr "Compensación do desprazamento"
+
+#~ msgid "Number of pixels of the entry scrolled off the screen to the left"
+#~ msgstr ""
+#~ "Número de píxeles da entrada desprazados fóra da pantalla e cara á "
+#~ "esquerda"
+
+#~ msgid "Text"
+#~ msgstr "Texto"
+
+#~ msgid "The contents of the entry"
+#~ msgstr "Os contidos da entrada"
+
+#~ msgid "PKINIT anchors:"
+#~ msgstr "Áncoras de PKINIT:"
+
+#~ msgid "Path to CA certificates used as trust anchors for PKINIT"
+#~ msgstr ""
+#~ "Ruta aos certificados CA usados como áncoras de confianza para PKINIT"
+
+#~ msgid ""
+#~ "The principal's public/private/certificate identifier. Leave empty if not "
+#~ "using PKINIT."
+#~ msgstr ""
+#~ "O identificador público/privado/certificado do principal. Déixese baleiro "
+#~ "se non se está usando PKINIT."

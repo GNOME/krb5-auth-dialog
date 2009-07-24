@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-07-19 19:09+0000\n"
-"PO-Revision-Date: 2009-07-21 20:01+0200\n"
+"POT-Creation-Date: 2009-07-21 18:02+0000\n"
+"PO-Revision-Date: 2009-07-23 09:35+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -298,7 +298,7 @@ msgstr "El tique/autenticador no coinciden"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: ../src/dummy-strings.c:57
 msgid "Clock skew too great"
-msgstr "La desviación del reloj es demasiado grande"
+msgstr "El sesgo de reloj es demasiado grande"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
 #: ../src/dummy-strings.c:58
@@ -328,7 +328,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
 #: ../src/dummy-strings.c:63
 msgid "Illegal cross-realm ticket"
-msgstr ""
+msgstr "Tique con dominio cruzado ilegal"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
 #: ../src/dummy-strings.c:64
@@ -574,12 +574,14 @@ msgstr "La respuesta del KDC no coincidió con las expectativas"
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
 #: ../src/dummy-strings.c:112
 msgid "Clock skew too great in KDC reply"
-msgstr ""
+msgstr "El sesgo de reloj en la respuesta del KDC es demasiado grande"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: ../src/dummy-strings.c:113
 msgid "Client/server realm mismatch in initial ticket request"
 msgstr ""
+"El dominio del cliente o servidor no coinciden en la solicitud inicial de "
+"tique"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: ../src/dummy-strings.c:114
@@ -604,7 +606,7 @@ msgstr "El programa carece de soporte para el tipo de suma"
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:118
 msgid "Cannot find KDC for requested realm"
-msgstr ""
+msgstr "No se puede encontrar el KDC para el dominio solicitado"
 
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: ../src/dummy-strings.c:119
@@ -614,7 +616,7 @@ msgstr "Servicio de Kerberos desconocido"
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
-msgstr ""
+msgstr "No se puede contactar con ningún KDC para el dominio solicitado"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
@@ -624,17 +626,18 @@ msgstr "No se encontró un nombre local para el nombre del principal"
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: ../src/dummy-strings.c:123
 msgid "Replay cache type is already registered"
-msgstr ""
+msgstr "El tipo de caché de respuesta ya está registrado"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
 #: ../src/dummy-strings.c:124
 msgid "No more memory to allocate (in replay cache code)"
 msgstr ""
+"No hay más memoria para reservar (en el código de la caché de respuesta)"
 
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
 #: ../src/dummy-strings.c:125
 msgid "Replay cache type is unknown"
-msgstr ""
+msgstr "El tipo de caché de respuesta se desconoce"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
 #: ../src/dummy-strings.c:126
@@ -649,12 +652,12 @@ msgstr "El mensaje es una respuesta"
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: ../src/dummy-strings.c:128
 msgid "Replay I/O operation failed XXX"
-msgstr ""
+msgstr "Falló la operación de E/S de respuesta (XXX)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO
 #: ../src/dummy-strings.c:129
 msgid "Replay cache type does not support non-volatile storage"
-msgstr ""
+msgstr "El tipo de caché de respuesta no soporta almacenamiento no volátil"
 
 #. krb5_err.et:krb5:KRB5_RC_NOIO
 #: ../src/dummy-strings.c:130
@@ -756,37 +759,37 @@ msgstr "Error al escribir en la tabla de claves"
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: ../src/dummy-strings.c:149
 msgid "Cannot find ticket for requested realm"
-msgstr ""
+msgstr "No se puede encontrar un tique para el dominio solicitado"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: ../src/dummy-strings.c:150
 msgid "DES key has bad parity"
-msgstr ""
+msgstr "La clave DES tiene una paridad errónea"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
 #: ../src/dummy-strings.c:151
 msgid "DES key is a weak key"
-msgstr ""
+msgstr "La clave DES es una clave débil"
 
 #. krb5_err.et:krb5:KRB5DES_WEAK_KEY
 #: ../src/dummy-strings.c:152
 msgid "Bad encryption type"
-msgstr ""
+msgstr "Tipo de cifrado erróneo"
 
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
 #: ../src/dummy-strings.c:153
 msgid "Key size is incompatible with encryption type"
-msgstr ""
+msgstr "El tamaño de la clave es incompatible con el tipo de cifrado"
 
 #. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
 #: ../src/dummy-strings.c:154
 msgid "Message size is incompatible with encryption type"
-msgstr ""
+msgstr "El tamaño del mensaje es incompatible con el tipo de cifrado"
 
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
 #: ../src/dummy-strings.c:155
 msgid "Credentials cache type is already registered."
-msgstr ""
+msgstr "La caché de credenciales ya está registrada."
 
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
 #: ../src/dummy-strings.c:156
@@ -801,22 +804,22 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CC_IO
 #: ../src/dummy-strings.c:158
 msgid "Credentials cache permissions incorrect"
-msgstr ""
+msgstr "Los permisos de la caché de credenciales son incorrectos"
 
 #. krb5_err.et:krb5:KRB5_FCC_PERM
 #: ../src/dummy-strings.c:159
 msgid "No credentials cache found"
-msgstr ""
+msgstr "No se encontró una caché de credenciales"
 
 #. krb5_err.et:krb5:KRB5_FCC_NOFILE
 #: ../src/dummy-strings.c:160
 msgid "Internal credentials cache error"
-msgstr ""
+msgstr "Error interno de la caché de credenciales"
 
 #. krb5_err.et:krb5:KRB5_FCC_INTERNAL
 #: ../src/dummy-strings.c:161
 msgid "Error writing to credentials cache"
-msgstr ""
+msgstr "Error al escribir en la caché de credenciales"
 
 #. krb5_err.et:krb5:KRB5_CC_WRITE
 #: ../src/dummy-strings.c:162
@@ -851,37 +854,38 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
 #: ../src/dummy-strings.c:168
 msgid "Bad sendauth version was sent"
-msgstr ""
+msgstr "Se envió una versión errónea de sendauth"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
 #: ../src/dummy-strings.c:169
 msgid "Bad application version was sent (via sendauth)"
-msgstr ""
+msgstr "Se envió una versión errónea de la aplicación (a través de «sendauth»)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
 #: ../src/dummy-strings.c:170
 msgid "Bad response (during sendauth exchange)"
-msgstr ""
+msgstr "Respuesta errónea (durante el intercambio «sendauth»)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
 #: ../src/dummy-strings.c:171
 msgid "Server rejected authentication (during sendauth exchange)"
 msgstr ""
+"El servidor rechazó la autenticación (durante el intercambio «sendauth»)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
 #: ../src/dummy-strings.c:172
 msgid "Unsupported preauthentication type"
-msgstr ""
+msgstr "No se soporta el tipo de preautenticación"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
 #: ../src/dummy-strings.c:173
 msgid "Required preauthentication key not supplied"
-msgstr ""
+msgstr "No se proporcionó la clave de preautenticación requerida"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
 #: ../src/dummy-strings.c:174
 msgid "Generic preauthentication failure"
-msgstr ""
+msgstr "Falló general de preautenticación"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
 #: ../src/dummy-strings.c:175
@@ -901,42 +905,45 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: ../src/dummy-strings.c:178
 msgid "Program lacks support for address type"
-msgstr ""
+msgstr "El programa no tiene soporte para el tipo de dirección"
 
 #. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
 #: ../src/dummy-strings.c:179
 msgid "Message replay detection requires rcache parameter"
-msgstr ""
+msgstr "La detección de la respuesta del mensaje requiere el parámetro rcache"
 
 #. krb5_err.et:krb5:KRB5_RC_REQUIRED
 #: ../src/dummy-strings.c:180
 msgid "Hostname cannot be canonicalized"
-msgstr ""
+msgstr "El nombre del equipo no se puede canonicalizar"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
 #: ../src/dummy-strings.c:181
 msgid "Cannot determine realm for host"
-msgstr ""
+msgstr "No se puede determinar el dominio para el equipo"
 
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
 #: ../src/dummy-strings.c:182
 msgid "Conversion to service principal undefined for name type"
 msgstr ""
+"La conversión del servicio del principal no está definida para el tipo de "
+"nombre"
 
 #. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
 #: ../src/dummy-strings.c:183
 msgid "Initial Ticket response appears to be Version 4 error"
-msgstr ""
+msgstr "La respuesta inicial de tique parece ser un error de la versión 4"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
 #: ../src/dummy-strings.c:184
 msgid "Cannot resolve network address for KDC in requested realm"
 msgstr ""
+"No se puede resolver la dirección de red para el KDC en el dominio solicitado"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: ../src/dummy-strings.c:185
 msgid "Requesting ticket can't get forwardable tickets"
-msgstr ""
+msgstr "La petición de tique no puede obtener tiques reenviables"
 
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
 #: ../src/dummy-strings.c:186
@@ -947,12 +954,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: ../src/dummy-strings.c:187
 msgid "Looping detected inside krb5_get_in_tkt"
-msgstr ""
+msgstr "Bucle detectado dentro de krb5_get_in_tkt"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: ../src/dummy-strings.c:188
 msgid "Configuration file does not specify default realm"
-msgstr ""
+msgstr "El archivo de configuración no especifica el dominio predeterminado"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
 #: ../src/dummy-strings.c:189
@@ -1051,6 +1058,7 @@ msgstr "nombre de servicio desconocido"
 #: ../src/dummy-strings.c:207
 msgid "Cannot determine realm for numeric host address"
 msgstr ""
+"No se puede determinar el dominio para la dirección numérica del equipo"
 
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
 #: ../src/dummy-strings.c:208
@@ -1076,6 +1084,8 @@ msgstr "La función ccaché no está soportada: no está implementada"
 #: ../src/dummy-strings.c:212
 msgid "Invalid format of Kerberos lifetime or clock skew string"
 msgstr ""
+"Formato no válido en la cadena de tiempo de vida o del sesgo de reloj de "
+"Kerberos"
 
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
 #: ../src/dummy-strings.c:213

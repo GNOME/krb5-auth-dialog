@@ -63,6 +63,10 @@ static int grab_credentials (KaApplet* applet);
 static int ka_renew_credentials (KaApplet* applet);
 static gboolean ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
 
+#ifdef ENABLE_NETWORK_MANAGER
+libnm_glib_ctx *nm_context;
+#endif
+
 /* YAY for different Kerberos implementations */
 static int
 get_cred_forwardable(krb5_creds *creds)
@@ -901,11 +905,22 @@ ka_secmem_init (void)
 }
 
 
+static void
+ka_nm_shutdown(void)
+{
+#ifdef ENABLE_NETWORK_MANAGER
+	if (nm_context) {
+		libnm_glib_shutdown (nm_context);
+		nm_context = NULL;
+	}
+#endif
+}
+
+
 static gboolean
 ka_nm_init(void)
 {
 #ifdef ENABLE_NETWORK_MANAGER
-	libnm_glib_ctx *nm_context;
 	guint32 nm_callback_id;
 
 	nm_context = libnm_glib_init ();
@@ -914,8 +929,7 @@ ka_nm_init(void)
 	} else {
 		nm_callback_id = libnm_glib_register_callback (nm_context, network_state_cb, &is_online, NULL);
 		if (nm_callback_id == 0) {
-			libnm_glib_shutdown (nm_context);
-			nm_context = NULL;
+			ka_nm_shutdown ();
 
 			g_warning ("Could not connect to NetworkManager, connection status will not be managed!");
 		}
@@ -948,6 +962,7 @@ main (int argc, char *argv[])
 	g_option_context_add_main_entries (context, options, NULL);
 	g_option_context_add_group (context, gtk_get_option_group (TRUE));
 	g_option_context_parse (context, &argc, &argv, &error);
+
 	if (error) {
 		g_print ("%s\n%s\n",
 			 error->message,
@@ -955,6 +970,8 @@ main (int argc, char *argv[])
 		g_error_free (error);
 		return 1;
 	}
+	g_option_context_free (context);
+
 	textdomain (PACKAGE);
 	bind_textdomain_codeset (PACKAGE, "UTF-8");
 	bindtextdomain (PACKAGE, LOCALE_DIR);
@@ -981,5 +998,6 @@ main (int argc, char *argv[])
 		ka_dbus_service(applet);
 		gtk_main ();
 	}
+	ka_nm_shutdown();
 	return 0;
 }

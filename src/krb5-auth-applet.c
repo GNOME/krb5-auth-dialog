@@ -389,7 +389,16 @@ ka_show_notification (KaApplet *applet)
 {
 	/* wait for the panel to be settled before showing a bubble */
 	if (gtk_status_icon_is_embedded (applet->priv->tray_icon)) {
-		notify_notification_show (applet->priv->notification, NULL);
+		GError *error = NULL;
+		gboolean ret;
+
+		ret = notify_notification_show (applet->priv->notification, &error);
+		if (!ret) {
+			g_assert (error);
+			g_assert (error->message);
+			g_warning ("Failed to show notification: %s", error->message);
+			g_clear_error (&error);
+		}
 	} else {
 		g_timeout_add_seconds (5, (GSourceFunc)ka_show_notification, applet);
 	}

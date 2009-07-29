@@ -69,13 +69,14 @@ ka_dbus_connect(unsigned int* status)
 	guint request_name_reply;
 	unsigned int flags;
 	DBusGProxy *bus_proxy;
-	GError* error = NULL;
+	GError *error = NULL;
 
 	/* Connect to the session bus so we get exit-on-disconnect semantics. */
 	session = dbus_g_bus_get(DBUS_BUS_SESSION, &error);
 	if (session == NULL) {
 		g_error ("couldn't connect to session bus: %s", (error) ? error->message : "(null)");
 		*status = 1;
+		g_clear_error (&error);
 		return FALSE;
 	}
 	flags = DBUS_NAME_FLAG_DO_NOT_QUEUE;

@@ -825,6 +825,9 @@ main (int argc, char *argv[])
   bind_textdomain_codeset (PACKAGE, "UTF-8");
   bindtextdomain (PACKAGE, LOCALE_DIR);
 
+  gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+                                     DATA_DIR G_DIR_SEPARATOR_S "icons");
+
   ka_preferences_dialog_init(&dialog);
   gtk_main ();
   ka_preferences_dialog_finalize(&dialog);

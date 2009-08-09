@@ -13,6 +13,7 @@ krb5_auth_dialog_preferences_SOURCES = \
 krb5_auth_dialog_preferences_CPPFLAGS = \
 	-I$(top_srcdir)/src \
 	-DKA_DATA_DIR=\""$(pkgdatadir)"\" \
+	-DDATA_DIR=\""$(datadir)"\" \
 	-DLOCALE_DIR=\""$(localedir)/"\"
 	$(AM_CPPFLAGS)
 

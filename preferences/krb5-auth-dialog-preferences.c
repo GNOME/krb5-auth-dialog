@@ -735,10 +735,18 @@ ka_preferences_dialog_destroyed (GtkWidget *widget G_GNUC_UNUSED,
 static gboolean
 ka_preferences_dialog_init(KaPreferencesDialog* dialog)
 {
+  GError *error = NULL;
+  gboolean ret;
+
   dialog->xml = gtk_builder_new ();
 
-  g_assert(gtk_builder_add_from_file(dialog->xml, KA_DATA_DIR G_DIR_SEPARATOR_S
-                                     PACKAGE "-preferences.xml", NULL));
+  ret = gtk_builder_add_from_file(dialog->xml, KA_DATA_DIR G_DIR_SEPARATOR_S
+                                  PACKAGE "-preferences.xml", &error);
+  if (!ret) {
+      g_assert (error);
+      g_assert (error->message);
+      g_error ("Failed to load UI XML: %s", error->message);
+  }
 
   dialog->dialog = GTK_WIDGET(gtk_builder_get_object (dialog->xml, "krb5_auth_dialog_prefs"));
   g_assert (dialog->dialog);

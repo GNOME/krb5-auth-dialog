@@ -10,3 +10,4 @@ Categories=GNOME;GTK;Settings;X-GNOME-NetworkSettings;
 OnlyShowIn=GNOME;
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=krb5-auth-dialog
+X-GNOME-Bugzilla-Component=general

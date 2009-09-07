@@ -805,6 +805,8 @@ KaApplet*
 ka_applet_create()
 {
 	KaApplet* applet = ka_applet_new();
+	GError *error = NULL;
+	gboolean ret;
 
 	if (!(ka_applet_setup_icons (applet)))
 		g_error ("Failure to setup icons");
@@ -817,9 +819,14 @@ ka_applet_create()
 	                  G_CALLBACK (ka_applet_cb_show_trayicon), NULL);
 
 	applet->priv->uixml = gtk_builder_new();
-	g_assert(gtk_builder_add_from_file(applet->priv->uixml,
-					   KA_DATA_DIR G_DIR_SEPARATOR_S
-				           PACKAGE ".xml", NULL));
+	ret = gtk_builder_add_from_file(applet->priv->uixml,
+					KA_DATA_DIR G_DIR_SEPARATOR_S
+				        PACKAGE ".xml", &error);
+	if (!ret) {
+		g_assert (error);
+		g_assert (error->message);
+		g_error ("Failed to load UI XML: %s", error->message);
+	}
 	applet->priv->pwdialog = ka_pwdialog_create(applet->priv->uixml);
 	g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 

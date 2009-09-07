@@ -553,9 +553,29 @@ static void
 ka_applet_cb_preferences (GtkWidget* menuitem G_GNUC_UNUSED,
                           gpointer user_data G_GNUC_UNUSED)
 {
+	GError *error = NULL;
+
 	g_spawn_command_line_async (BIN_DIR
 				    G_DIR_SEPARATOR_S
-				    "krb5-auth-dialog-preferences", NULL);
+				    "krb5-auth-dialog-preferences",
+				    &error);
+	if (error) {
+		GtkWidget *message_dialog;
+
+		message_dialog = gtk_message_dialog_new (NULL,
+					GTK_DIALOG_DESTROY_WITH_PARENT,
+					GTK_MESSAGE_ERROR,
+					GTK_BUTTONS_CLOSE,
+					_("There was an error launching the preferences dialog: %s"),
+					error->message);
+		gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
+
+		g_signal_connect (message_dialog, "response",
+				  G_CALLBACK (gtk_widget_destroy),
+				  NULL);
+		gtk_widget_show (message_dialog);
+		g_error_free (error);
+	  }
 }
 
 

@@ -138,20 +138,26 @@ get_principal_realm_data(krb5_principal p)
 #endif
 }
 
-static const char*
+/*
+ * Returns a descriptive error message or kerberos related error
+ * pointer must be freed using g_free()
+ */
+static char*
 ka_get_error_message(krb5_context context, krb5_error_code err)
 {
-	const char *msg = NULL;
-
+	char *msg = NULL;
 #if defined(HAVE_KRB5_GET_ERROR_MESSAGE)
-	msg = krb5_get_error_message(context, err);
+	char *krberr;
+
+	krberr = krb5_get_error_message(context, err);
+	msg = g_strdup(krberr);
+	krb5_free_error_string(context, krberr);
 #else
-	msg = error_message(err);
+	msg = g_strdup(error_message(err));
 #endif
 	if (msg == NULL)
-		return "unknown error";
-	else
-		return msg;
+		msg = g_strdup(_("unknown error"));
+	return msg;
 }
 
 static void
@@ -614,6 +620,7 @@ grab_credentials (KaApplet* applet)
 	krb5_ccache ccache;
 	gchar *pk_userid = NULL;
 	gchar *pk_anchors = NULL;
+	gchar *errmsg = NULL;
 	gboolean pw_auth = TRUE;
 
 	memset(&my_creds, 0, sizeof(my_creds));
@@ -656,8 +663,10 @@ grab_credentials (KaApplet* applet)
 				invalid_auth = TRUE;
 				break;
 			default:
+				errmsg = ka_get_error_message(kcontext, retval);
 				KA_DEBUG("Auth failed with %d: %s", retval,
-				         ka_get_error_message(kcontext, retval));
+					 errmsg);
+				g_free(errmsg);
 				break;
 		}
 		goto out;
@@ -685,6 +694,7 @@ ka_renew_credentials (KaApplet* applet)
 	krb5_creds my_creds;
 	krb5_ccache ccache;
 	krb5_get_init_creds_opt opts;
+	gchar *errmsg = NULL;
 
 	if (kprincipal == NULL) {
 		retval = ka_parse_name(applet, kcontext, &kprincipal);
@@ -706,18 +716,21 @@ ka_renew_credentials (KaApplet* applet)
 	set_options_from_creds (applet, kcontext, &my_creds, &opts);
 
 	if (ka_applet_get_tgt_renewable(applet)) {
+
 		retval = get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
 		if (retval)
 			goto out;
 
 		retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
 		if(retval) {
-			g_warning("krb5_cc_initialize: %s", ka_get_error_message(kcontext, retval));
+			errmsg = ka_get_error_message(kcontext, retval);
+			g_warning("krb5_cc_initialize: %s", errmsg);
 			goto out;
 		}
 		retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
 		if (retval) {
-			g_warning("krb5_cc_store_cred: %s", ka_get_error_message(kcontext, retval));
+			errmsg = ka_get_error_message(kcontext, retval);
+			g_warning("krb5_cc_store_cred: %s", errmsg);
 			goto out;
 		}
 	}
@@ -725,6 +738,7 @@ out:
 	creds_expiry = my_creds.times.endtime;
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
+	g_free(errmsg);
 	return retval;
 }
 
@@ -874,9 +888,11 @@ ka_grab_credentials (KaApplet* applet)
 		if (canceled)
 			break;
 		if (retval) {
-			ka_pwdialog_error(pwdialog,
-					  ka_get_error_message(kcontext,
-                                                               retval));
+			gchar *errmsg;
+
+			errmsg = ka_get_error_message(kcontext, retval);
+			ka_pwdialog_error(pwdialog, errmsg);
+			g_free (errmsg);
 			break;
 		} else {
 			success = TRUE;

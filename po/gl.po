@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.po.master.gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-21 19:08+0200\n"
-"PO-Revision-Date: 2009-06-25 15:14+0200\n"
-"Last-Translator: Antón Méixome <meixome@mancomun.org>\n"
+"POT-Creation-Date: 2009-09-15 23:17+0200\n"
+"PO-Revision-Date: 2009-09-07 14:52+0100\n"
+"Last-Translator: Fran Diéguez <fran.dieguez@glug.es>\n"
 "Language-Team: Galician <gnome@mancomun.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -24,22 +24,36 @@ msgid "Network Authentication"
 msgstr "Autenticación de rede"
 
 #: ../src/krb5-auth-dialog.xml.h:2
+#, fuzzy
+msgid "Service Tickets"
+msgstr "_Anovar tícket"
+
+#: ../src/krb5-auth-dialog.xml.h:3
 msgid "_Renew Ticket"
 msgstr "_Anovar tícket"
+
+#: ../src/krb5-auth-dialog.c:160
+#, fuzzy
+msgid "unknown error"
+msgstr "Erro xenérico descoñecido de RC"
+
+#: ../src/krb5-auth-dialog.c:311
+msgid "Expired"
+msgstr ""
 
 #: ../src/krb5-auth-pwdialog.c:165
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "No se puido obter o tícket de Kerberos: '%s'"
 
-#: ../src/krb5-auth-pwdialog.c:202 ../src/krb5-auth-applet.c:358
+#: ../src/krb5-auth-pwdialog.c:202 ../src/krb5-auth-applet.c:359
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "As súas credenciais caducan dentro de %d minuto"
 msgstr[1] "As súas credenciais caducan dentro de %d minutos"
 
-#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:363
+#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:364
 msgid "Your credentials have expired"
 msgstr "As súas credenciais caducaron"
 
@@ -1372,36 +1386,43 @@ msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Número máxico incorrecto para GSSAPI QUEUE"
 
 #. Translators: First number is hours, second number is minutes
-#: ../src/krb5-auth-applet.c:354
+#: ../src/krb5-auth-applet.c:355
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "As súas credenciais caducan en %.2d:%.2dh"
 
-#: ../src/krb5-auth-applet.c:450
+#: ../src/krb5-auth-applet.c:460
 msgid "Don't show me this again"
 msgstr "Non mostrar esta mensaxe de novo"
 
-#: ../src/krb5-auth-applet.c:487
+#: ../src/krb5-auth-applet.c:497
 msgid "Network credentials valid"
 msgstr "As credenciais de rede son válidas"
 
-#: ../src/krb5-auth-applet.c:488
+#: ../src/krb5-auth-applet.c:498
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Actualizou as súas credenciais Kerberos."
 
-#: ../src/krb5-auth-applet.c:501
+#: ../src/krb5-auth-applet.c:511
 msgid "Network credentials expiring"
 msgstr "As credenciais de rede van caducar"
 
-#: ../src/krb5-auth-applet.c:516
+#: ../src/krb5-auth-applet.c:526
 msgid "Network credentials expired"
 msgstr "As credenciais de rede caducaron"
 
-#: ../src/krb5-auth-applet.c:517
+#: ../src/krb5-auth-applet.c:527
 msgid "Your Kerberos credentails have expired."
 msgstr "As súas credenciais Kerberos caducaron."
 
-#: ../src/krb5-auth-applet.c:581
+#: ../src/krb5-auth-applet.c:570
+#, fuzzy, c-format
+msgid "There was an error launching the preferences dialog: %s"
+msgstr ""
+"Ocorreu un erro ao mostrar a axuda:\n"
+"%s"
+
+#: ../src/krb5-auth-applet.c:611
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1411,14 +1432,14 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/krb5-auth-applet.c:617
+#: ../src/krb5-auth-applet.c:647
 msgid "translator-credits"
 msgstr ""
 "Antón Méixome <meixome@mancomun.org> para Mancomún. Centro de Referencia de "
 "Software Libre "
 
 #. kdestroy
-#: ../src/krb5-auth-applet.c:652
+#: ../src/krb5-auth-applet.c:689
 msgid "Remove Credentials _Cache"
 msgstr "Quitar a _caché de credenciais"
 
@@ -1531,18 +1552,16 @@ msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Advertencia: executar q-agent setuid neste sistema é perigoso\n"
 
 #: ../preferences/krb5-auth-dialog-preferences.c:345
-#, fuzzy
 msgid "Choose Certificate"
-msgstr "Certificado revogado"
+msgstr "Seleccione o certificado"
 
 #: ../preferences/krb5-auth-dialog-preferences.c:361
-#, fuzzy
 msgid "X509 Certificates"
-msgstr "Certificados PKINIT CA"
+msgstr "Certificados X509"
 
 #: ../preferences/krb5-auth-dialog-preferences.c:365
 msgid "all files"
-msgstr ""
+msgstr "todos os ficheiros"
 
 #: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
 msgid "Set your Kerberos network authentication preferences"
@@ -1558,7 +1577,7 @@ msgstr "Miniaplicativo"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:3
 msgid "Certificate and private key used for authentication"
-msgstr ""
+msgstr "Certificado e chave privada empregada para a autenticación"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:4
 msgid "If checked, display the tray icon in the status bar"
@@ -1579,6 +1598,7 @@ msgstr "Se está seleccionado pide tíckets anovábeis"
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:8
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
+"Se está activado emprega un token de seguranza (Smartcard) para autenticar."
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:9
 msgid "Kerberos"
@@ -1601,9 +1621,8 @@ msgid "Notifications"
 msgstr "Notificacións"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:14
-#, fuzzy
 msgid "PKINIT:"
-msgstr "ID de usuario de PKINIT:"
+msgstr "PKINIT:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:15
 msgid "Requested Kerberos tickets should be:"
@@ -1627,11 +1646,11 @@ msgstr "Opcións do tícket"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:19
 msgid "Use Smartcard"
-msgstr ""
+msgstr "Empregar Smartcard"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:20
 msgid "Userid:"
-msgstr ""
+msgstr "Id de usuario:"
 
 #. Used in combination: 'Warn x minutes before expiry'
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:22
@@ -1639,13 +1658,12 @@ msgid "Warn"
 msgstr "Advertir"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:23
-#, fuzzy
 msgid "X509 trust anchors:"
-msgstr "Áncoras de confianza de PKINIT"
+msgstr "Áncoras de confianza de X509"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:24
 msgid "_Browse..."
-msgstr ""
+msgstr "_Explorar..."
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:25
 msgid "forwardable"

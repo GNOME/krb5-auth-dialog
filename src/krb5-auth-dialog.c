@@ -41,6 +41,7 @@
 #include "krb5-auth-pwdialog.h"
 #include "krb5-auth-dbus.h"
 #include "krb5-auth-tools.h"
+#include "krb5-auth-tickets.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
 #include <libnm_glib.h>
@@ -160,6 +161,7 @@ ka_get_error_message(krb5_context context, krb5_error_code err)
 	return msg;
 }
 
+
 static void
 ka_krb5_cc_clear_mcred(krb5_creds* mcred)
 {
@@ -173,6 +175,17 @@ ka_krb5_cc_clear_mcred(krb5_creds* mcred)
 
 /* ***************************************************************** */
 /* ***************************************************************** */
+
+/* log a kerberos error messge */
+static void
+ka_log_error_message(const char* prefix, krb5_context context, krb5_error_code err)
+{
+	char *errmsg = ka_get_error_message(context, err);
+
+	g_warning("%s: %s", prefix, errmsg);
+	g_free (errmsg);
+}
+
 
 static gboolean
 credentials_expiring_real (KaApplet* applet)
@@ -234,6 +247,95 @@ ka_ccache_filename (void)
 		return &(ccache_name[5]);
 	else
 		return ccache_name;
+}
+
+
+static void
+ka_format_time (time_t t, gchar *ts, size_t len)
+{
+	g_strlcpy(ts, ctime(&t)+ 4, len);
+	ts[15] = 0;
+}
+
+
+/* fill in service tickets data */
+gboolean
+ka_get_service_tickets (GtkListStore *tickets)
+{
+	krb5_cc_cursor cursor;
+	krb5_creds creds;
+	krb5_error_code ret;
+	GtkTreeIter iter;
+	krb5_ccache ccache;
+	char *name;
+	krb5_timestamp sec;
+	gchar start_time[128], end_time[128], end_time_markup[256];
+	gboolean retval = FALSE;
+
+	gtk_list_store_clear(tickets);
+
+	krb5_timeofday (kcontext, &sec);
+	ret = krb5_cc_default (kcontext, &ccache);
+	g_return_val_if_fail (!ret, FALSE);
+
+	ret = krb5_cc_start_seq_get (kcontext, ccache, &cursor);
+	if (ret) {
+		ka_log_error_message("krb5_cc_start_seq_get", kcontext, ret);
+
+		/* if the file doesn't exist, it's not an error if we can't
+		 * parse it */
+		if (!g_file_test(ka_ccache_filename (),
+				 G_FILE_TEST_EXISTS))
+			retval = TRUE;
+		goto out;
+	}
+
+	while ((ret = krb5_cc_next_cred (kcontext,
+					 ccache,
+					 &cursor,
+					 &creds)) == 0) {
+		if (creds.times.starttime)
+			ka_format_time(creds.times.starttime, start_time,
+				       sizeof(start_time));
+		else
+			ka_format_time(creds.times.authtime, start_time,
+				       sizeof(start_time));
+
+		ka_format_time(creds.times.endtime, end_time,
+			       sizeof(end_time));
+		if (creds.times.endtime > sec)
+			strcpy(end_time_markup, end_time);
+		else
+			g_snprintf(end_time_markup, sizeof(end_time_markup),
+				  "%s <span foreground=\"red\" style=\"italic\">(%s)</span>",
+				  end_time, _("Expired"));
+
+		ret = krb5_unparse_name (kcontext, creds.server, &name);
+		if (!ret) {
+			gtk_list_store_append(tickets, &iter);
+			gtk_list_store_set(tickets, &iter,
+					   PRINCIPAL_COLUMN, name,
+					   START_TIME_COLUMN, start_time,
+					   END_TIME_COLUMN, end_time_markup,
+					   -1);
+			free(name);
+		} else
+			ka_log_error_message("krb5_unparse_name", kcontext, ret);
+		krb5_free_cred_contents (kcontext, &creds);
+	}
+	if(ret != KRB5_CC_END)
+		ka_log_error_message("krb5_cc_get_next", kcontext, ret);
+
+	ret = krb5_cc_end_seq_get (kcontext, ccache, &cursor);
+	if (ret)
+		ka_log_error_message("krb5_cc_end_seq_get", kcontext, ret);
+
+	retval = TRUE;
+out:
+	ret = krb5_cc_close (kcontext, ccache);
+	g_return_val_if_fail (!ret, FALSE);
+
+	return retval;
 }
 
 
@@ -576,7 +678,7 @@ ccache_changed_cb (GFileMonitor *monitor G_GNUC_UNUSED,
 
 
 static gboolean
-monitor_ccache(KaApplet* applet)
+monitor_ccache(KaApplet *applet)
 {
 	const gchar *ccache_name;
 	GFile *ccache;
@@ -694,7 +796,6 @@ ka_renew_credentials (KaApplet* applet)
 	krb5_creds my_creds;
 	krb5_ccache ccache;
 	krb5_get_init_creds_opt opts;
-	gchar *errmsg = NULL;
 
 	if (kprincipal == NULL) {
 		retval = ka_parse_name(applet, kcontext, &kprincipal);
@@ -723,14 +824,12 @@ ka_renew_credentials (KaApplet* applet)
 
 		retval = krb5_cc_initialize(kcontext, ccache, kprincipal);
 		if(retval) {
-			errmsg = ka_get_error_message(kcontext, retval);
-			g_warning("krb5_cc_initialize: %s", errmsg);
+			ka_log_error_message("krb5_cc_initialize", kcontext, retval);
 			goto out;
 		}
 		retval = krb5_cc_store_cred(kcontext, ccache, &my_creds);
 		if (retval) {
-			errmsg = ka_get_error_message(kcontext, retval);
-			g_warning("krb5_cc_store_cred: %s", errmsg);
+			ka_log_error_message("krb5_cc_store_cred", kcontext, retval);
 			goto out;
 		}
 	}
@@ -738,7 +837,6 @@ out:
 	creds_expiry = my_creds.times.endtime;
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
-	g_free(errmsg);
 	return retval;
 }
 

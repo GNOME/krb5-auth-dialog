@@ -27,6 +27,7 @@
 #include "krb5-auth-gconf-tools.h"
 #include "krb5-auth-gconf.h"
 #include "krb5-auth-tools.h"
+#include "krb5-auth-tickets.h"
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
 #endif
@@ -72,7 +73,7 @@ struct _KaAppletPrivate
 	const char* icons[3]; 		/* for invalid, expiring and valid tickts */
 	gboolean show_trayicon;		/* show the trayicon */
 
-	KaPwDialog* pwdialog;		/* the password dialog */
+	KaPwDialog *pwdialog;		/* the password dialog */
 	int	   pw_prompt_secs;	/* when to start prompting for a password */
 
 #ifdef HAVE_LIBNOTIFY
@@ -666,6 +667,13 @@ ka_applet_cb_destroy_ccache(GtkMenuItem* menuitem G_GNUC_UNUSED,
 	ka_destroy_ccache(applet);
 }
 
+static void
+ka_applet_cb_show_tickets(GtkMenuItem* menuitem G_GNUC_UNUSED,
+			  gpointer user_data G_GNUC_UNUSED)
+{
+	ka_tickets_dialog_run();
+}
+
 
 /* The tray icon's context menu */
 static gboolean
@@ -686,6 +694,12 @@ ka_applet_create_context_menu (KaApplet* applet)
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	ka_applet_menu_add_separator_item (menu);
+
+	/* Ticket dialog */
+	menu_item = gtk_image_menu_item_new_with_mnemonic("_List Tickets");
+	g_signal_connect (G_OBJECT (menu_item), "activate",
+			  G_CALLBACK (ka_applet_cb_show_tickets), applet);
+	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
 	/* Preferences */
 	menu_item = gtk_image_menu_item_new_from_stock(GTK_STOCK_PREFERENCES, NULL);
@@ -852,6 +866,8 @@ ka_applet_create()
 
 	applet->priv->gconf = ka_gconf_init (applet);
 	g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
+
+	ka_tickets_dialog_create(applet->priv->uixml);
 
 	return applet;
 }

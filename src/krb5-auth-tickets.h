@@ -1,6 +1,6 @@
 /* Krb5 Auth Applet -- Acquire and release kerberos tickets
  *
- * (C) 2008 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2009 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,15 +18,19 @@
  *
  */
 
-#ifndef KRB5_AUTH_DIALOG
-#define KRB5_AUTH_DIALOG
+#ifndef KRB5_AUTH_TICKETS_H
+#define KRB5_AUTH_TICKETS_H
 
-#include "krb5-auth-applet.h"
+enum ticket_columns {
+	PRINCIPAL_COLUMN,
+	START_TIME_COLUMN,
+	END_TIME_COLUMN,
+	N_COLUMNS
+};
 
-gboolean ka_destroy_ccache (KaApplet* applet);
-gboolean ka_grab_credentials(KaApplet* applet);
-gboolean ka_check_credentials (KaApplet *applet, const char* principal);
-gboolean ka_get_service_tickets(GtkListStore *tickets);
-int ka_tgt_valid_seconds(void);
+
+GtkWidget* ka_tickets_dialog_create(GtkBuilder *xml);
+void ka_tickets_dialog_run(void);
+
+
 #endif
-

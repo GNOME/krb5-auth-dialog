@@ -608,7 +608,7 @@ ka_applet_cb_about_dialog (GtkMenuItem* menuitem G_GNUC_UNUSED,
 				"Christopher Aillon <caillon@redhat.com>",
 				"Jonathan Blandford <jrb@redhat.com>",
 				"Colin Walters <walters@verbum.org>",
-				"Guido Günther <agx@sigxpcu.org>",
+				"Guido Günther <agx@sigxcpu.org>",
 				NULL };
 
 	gtk_about_dialog_set_url_hook (ka_about_dialog_url_hook, NULL, NULL);

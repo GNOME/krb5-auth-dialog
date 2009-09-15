@@ -236,17 +236,20 @@ ka_tgt_valid_seconds()
 	return (creds_expiry - now);
 }
 
+
 /* return credential cache filename, strip "FILE:" prefix if necessary */
 static const char*
 ka_ccache_filename (void)
 {
-	const gchar *ccache_name;
+	const gchar *name;
 
-	ccache_name = krb5_cc_default_name (kcontext);
-	if (g_str_has_prefix (ccache_name, "FILE:"))
-		return &(ccache_name[5]);
-	else
-		return ccache_name;
+	name = krb5_cc_default_name (kcontext);
+	if (g_str_has_prefix (name, "FILE:"))
+		return strchr(name,':')+1;
+	else {
+		g_warning ("Unsupported cache type for %s", name);
+		return NULL;
+	}
 }
 
 

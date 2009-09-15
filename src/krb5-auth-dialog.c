@@ -522,7 +522,8 @@ out:
 static void
 ka_set_ticket_options(KaApplet* applet, krb5_context context,
 		      krb5_get_init_creds_opt *out,
-		      const char* pk_userid, const char* pk_anchors)
+		      const char* pk_userid G_GNUC_UNUSED,
+		      const char* pk_anchors G_GNUC_UNUSED)
 {
 	gboolean flag;
 #ifdef HAVE_KRB5_GET_INIT_CREDS_OPT_SET_DEFAULT_FLAGS

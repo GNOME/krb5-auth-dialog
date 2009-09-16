@@ -87,7 +87,10 @@ AC_CHECK_MEMBERS(krb5_creds.flags.b.forwardable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.renewable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags.b.proxiable,,,[#include <krb5.h>])
 AC_CHECK_MEMBERS(krb5_creds.flags,,,[#include <krb5.h>])
-AC_CHECK_FUNCS([krb5_get_error_message krb5_get_renewed_creds \
+AC_CHECK_FUNCS([krb5_get_error_message \
+                krb5_free_error_message \
+                krb5_free_error_string \
+                krb5_get_renewed_creds \
                 krb5_get_init_creds_opt_set_default_flags \
                 krb5_cc_clear_mcred])
 AC_CHECK_FUNCS([krb5_get_init_creds_opt_set_pkinit],

@@ -139,22 +139,34 @@ get_principal_realm_data(krb5_principal p)
 #endif
 }
 
+static void
+ka_krb5_free_error_message(krb5_context context, const char* msg)
+{
+#if defined(HAVE_KRB5_FREE_ERROR_MESSAGE)
+	krb5_free_error_message(context, msg);
+#elif defined(HAVE_KRB5_FREE_ERROR_STRING)
+	krb5_free_error_string(context, (char *) msg);
+#else
+#	error No way to free error string.
+#endif
+}
+
 /*
  * Returns a descriptive error message or kerberos related error
- * pointer must be freed using g_free()
+ * returned pointer must be freed using g_free().
  */
 static char*
 ka_get_error_message(krb5_context context, krb5_error_code err)
 {
 	char *msg = NULL;
 #if defined(HAVE_KRB5_GET_ERROR_MESSAGE)
-	char *krberr;
+	const char *krberr;
 
 	krberr = krb5_get_error_message(context, err);
 	msg = g_strdup(krberr);
-	krb5_free_error_string(context, krberr);
+	ka_krb5_free_error_message(context, krberr);
 #else
-	msg = g_strdup(error_message(err));
+#	error No detailed error message information
 #endif
 	if (msg == NULL)
 		msg = g_strdup(_("unknown error"));

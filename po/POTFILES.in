@@ -4,6 +4,7 @@ src/krb5-auth-pwdialog.c
 src/dummy-strings.c
 src/krb5-auth-applet.c
 src/krb5-auth-tools.c
+src/krb5-auth-tickets.c
 src/krb5-auth-dialog.desktop.in
 src/krb5-auth-dialog.schemas.in
 gtksecentry/gtksecentry.c

@@ -94,7 +94,7 @@ void
 ka_tickets_dialog_run()
 {
 	if (ka_get_service_tickets(tickets)) {
-		gtk_widget_show(tickets_dialog);
+		gtk_window_present(GTK_WINDOW(tickets_dialog));
 		gtk_dialog_run(GTK_DIALOG(tickets_dialog));
 		gtk_widget_hide(tickets_dialog);
 	} else {

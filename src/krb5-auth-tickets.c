@@ -32,36 +32,59 @@ static GtkWidget    *tickets_dialog;
 GtkWidget*
 ka_tickets_dialog_create(GtkBuilder *xml)
 {
-	GtkCellRenderer *renderer;
+	GtkCellRenderer *text_renderer, *toggle_renderer;
 	GtkTreeViewColumn *column;
 	GtkTreeView *tickets_view;
 
 	tickets = gtk_list_store_new (N_COLUMNS,
 				      G_TYPE_STRING,
 				      G_TYPE_STRING,
-				      G_TYPE_STRING);
+				      G_TYPE_STRING,
+				      G_TYPE_BOOLEAN,
+				      G_TYPE_BOOLEAN,
+				      G_TYPE_BOOLEAN);
 
 	tickets_dialog = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_tickets_dialog"));
 	tickets_view = GTK_TREE_VIEW (gtk_builder_get_object (xml, "krb5_tickets_treeview"));
 	gtk_tree_view_set_model(GTK_TREE_VIEW(tickets_view), GTK_TREE_MODEL(tickets));
 
-	renderer = gtk_cell_renderer_text_new ();
-	column = gtk_tree_view_column_new_with_attributes("Principal",
-							  renderer,
+	text_renderer = gtk_cell_renderer_text_new();
+	toggle_renderer = gtk_cell_renderer_toggle_new();
+
+	column = gtk_tree_view_column_new_with_attributes(_("Principal"),
+							  text_renderer,
 							  "text",
 							  PRINCIPAL_COLUMN,
 							  NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	column = gtk_tree_view_column_new_with_attributes("Start Time",
-							  renderer,
+	column = gtk_tree_view_column_new_with_attributes(_("Start Time"),
+							  text_renderer,
 							  "text",
 							  START_TIME_COLUMN,
 							  NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	column = gtk_tree_view_column_new_with_attributes("End Time",
-							  renderer,
+	column = gtk_tree_view_column_new_with_attributes(_("End Time"),
+							  text_renderer,
 							  "markup",
 							  END_TIME_COLUMN,
+							  NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+	column = gtk_tree_view_column_new_with_attributes(_("Fwd"),
+							  toggle_renderer,
+							  "active",
+							  FORWARDABLE_COLUMN,
+							  NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+	column = gtk_tree_view_column_new_with_attributes(_("Proxy"),
+							  toggle_renderer,
+							  "active",
+							  PROXIABLE_COLUMN,
+							  NULL);
+	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+	column = gtk_tree_view_column_new_with_attributes(_("Renew"),
+							  toggle_renderer,
+							  "active",
+							  RENEWABLE_COLUMN,
 							  NULL);
 	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
 	return tickets_dialog;

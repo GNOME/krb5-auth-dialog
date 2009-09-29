@@ -309,6 +309,8 @@ ka_get_service_tickets (GtkListStore *tickets)
 					 ccache,
 					 &cursor,
 					 &creds)) == 0) {
+		gboolean renewable, proxiable, forwardable;
+
 		if (creds.times.starttime)
 			ka_format_time(creds.times.starttime, start_time,
 				       sizeof(start_time));
@@ -325,6 +327,10 @@ ka_get_service_tickets (GtkListStore *tickets)
 				  "%s <span foreground=\"red\" style=\"italic\">(%s)</span>",
 				  end_time, _("Expired"));
 
+		forwardable = get_cred_forwardable(&creds);
+		renewable = get_cred_renewable(&creds);
+		proxiable = get_cred_proxiable(&creds);
+
 		ret = krb5_unparse_name (kcontext, creds.server, &name);
 		if (!ret) {
 			gtk_list_store_append(tickets, &iter);
@@ -332,6 +338,9 @@ ka_get_service_tickets (GtkListStore *tickets)
 					   PRINCIPAL_COLUMN, name,
 					   START_TIME_COLUMN, start_time,
 					   END_TIME_COLUMN, end_time_markup,
+					   FORWARDABLE_COLUMN, forwardable,
+					   RENEWABLE_COLUMN, renewable,
+					   PROXIABLE_COLUMN, proxiable,
 					   -1);
 			free(name);
 		} else

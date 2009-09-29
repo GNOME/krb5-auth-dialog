@@ -1,6 +1,7 @@
 NULL =
 
 bin_PROGRAMS = krb5-auth-dialog-preferences
+man_MANS = krb5-auth-dialog-preferences.1
 
 krb5_auth_dialog_preferences_SOURCES = \
 	krb5-auth-dialog-preferences.c \
@@ -50,4 +51,5 @@ CLEANFILES = \
 EXTRA_DIST = \
 	$(desktop_in_files) \
 	$(pkgdata_DATA) \
+	krb5-auth-dialog-preferences.1.in \
 	$(NULL)

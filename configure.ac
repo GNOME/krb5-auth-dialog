@@ -235,6 +235,7 @@ icons/scalable/Makefile
 etpo/Makefile
 po/Makefile.in
 preferences/Makefile
+preferences/krb5-auth-dialog-preferences.1
 help/Makefile
 ])
 

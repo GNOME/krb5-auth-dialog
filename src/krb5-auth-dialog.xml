@@ -155,6 +155,7 @@
   <object class="GtkDialog" id="krb5_tickets_dialog">
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Service Tickets</property>
+    <property name="resizable">False</property>
     <property name="type_hint">normal</property>
     <property name="has_separator">False</property>
     <child internal-child="vbox">

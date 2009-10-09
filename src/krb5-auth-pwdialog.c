@@ -60,6 +60,19 @@ ka_pwdialog_init(KaPwDialog *pwdialog)
 }
 
 static void
+ka_pwdialog_finalize(GObject *object)
+{
+	KaPwDialog* pwdialog = KA_PWDIALOG (object);
+	GObjectClass *parent_class = G_OBJECT_CLASS (ka_pwdialog_parent_class);
+
+	gtk_widget_destroy (pwdialog->priv->error_dialog);
+	pwdialog->priv->error_dialog = NULL;
+
+	if (parent_class->finalize != NULL)
+		parent_class->finalize (object);
+}
+
+static void
 ka_pwdialog_class_init(KaPwDialogClass *klass)
 {
 	g_type_class_add_private(klass, sizeof(KaPwDialogPrivate));
@@ -128,10 +141,8 @@ ka_pwdialog_run(KaPwDialog* self)
 
 	/* cleanup old error dialog, if present (e.g. user didn't acknowledge
 	 * the error but clicked the tray icon again) */
-	if (self->priv->error_dialog) {
-		gtk_widget_destroy (self->priv->error_dialog);
-		self->priv->error_dialog = NULL;
-	}
+	if (self->priv->error_dialog)
+		gtk_widget_hide (self->priv->error_dialog);
 
 	/* make sure we pop up on top */
 	gtk_window_set_keep_above (GTK_WINDOW (dialog), TRUE);
@@ -153,20 +164,14 @@ ka_pwdialog_run(KaPwDialog* self)
 void
 ka_pwdialog_error(KaPwDialog* self, const char *msg)
 {
-	GtkWidget *dialog;
+	GtkWidget *dialog = self->priv->error_dialog;
 
-	dialog = gtk_message_dialog_new (
-				GTK_WINDOW(self->priv->dialog),
-				GTK_DIALOG_DESTROY_WITH_PARENT,
-				GTK_MESSAGE_ERROR,
-				GTK_BUTTONS_CLOSE,
-				"%s", KA_NAME);
 	gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
 				  _("Couldn't acquire kerberos ticket: '%s'"),
 				  _(msg));
-	self->priv->error_dialog = dialog;
+	gtk_widget_show (GTK_WIDGET(dialog));
 	gtk_dialog_run (GTK_DIALOG(dialog));
-	gtk_widget_destroy(dialog);
+	gtk_widget_hide(dialog);
 }
 
 
@@ -265,6 +270,20 @@ ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
 	g_free (prompt);
 }
 
+
+static GtkWidget*
+ka_error_dialog_new(void)
+{
+	GtkWidget *dialog = gtk_message_dialog_new (
+				NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+				GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
+				_("%s Error"), KA_NAME);
+	gtk_window_set_title(GTK_WINDOW(dialog), _(KA_NAME));
+	gtk_window_set_skip_taskbar_hint(GTK_WINDOW(dialog), FALSE);
+	return dialog;
+}
+
+
 KaPwDialog*
 ka_pwdialog_create(GtkBuilder* xml)
 {
@@ -276,7 +295,7 @@ ka_pwdialog_create(GtkBuilder* xml)
 	priv->status_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_status_label"));
 	priv->krb_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_message_label"));
 	priv->pw_entry = GTK_WIDGET (gtk_secure_entry_new ());
-	priv->error_dialog = NULL;
+	priv->error_dialog = ka_error_dialog_new();
 
 	entry_hbox = GTK_WIDGET (gtk_builder_get_object (xml, "entry_hbox"));
 	gtk_container_add (GTK_CONTAINER (entry_hbox), priv->pw_entry);

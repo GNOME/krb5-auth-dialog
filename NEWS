@@ -1,4 +1,14 @@
 ============
+Version 0.14
+============
+* add ticket flags to "list tickets" dialog
+* add manpage for krb5-auth-dialog-preferences
+* bug fixes
+* ui i18n updates:
+	- Claude Paroz (fr)
+	- Mario Blättermann (de)
+
+============
 Version 0.13
 ============
 * add "list tickets" dialog

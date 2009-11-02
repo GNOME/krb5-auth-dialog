@@ -9,13 +9,13 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-09-15 17:56+0000\n"
-"PO-Revision-Date: 2009-09-20 15:31+0200\n"
+"POT-Creation-Date: 2009-10-12 15:10+0000\n"
+"PO-Revision-Date: 2009-11-02 12:24+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
@@ -25,7 +25,6 @@ msgid "Network Authentication"
 msgstr "Autenticación de red"
 
 #: ../src/krb5-auth-dialog.xml.h:2
-#| msgid "_Renew Ticket"
 msgid "Service Tickets"
 msgstr "Tiques de servicio"
 
@@ -33,43 +32,48 @@ msgstr "Tiques de servicio"
 msgid "_Renew Ticket"
 msgstr "_Renovar tique"
 
-#: ../src/krb5-auth-dialog.c:160
-#| msgid "Generic unknown RC error"
+#: ../src/krb5-auth-dialog.c:172
 msgid "unknown error"
 msgstr "error desconocido"
 
-#: ../src/krb5-auth-dialog.c:311
+#: ../src/krb5-auth-dialog.c:328
 msgid "Expired"
 msgstr "Caducado"
 
-#: ../src/krb5-auth-pwdialog.c:165
+#: ../src/krb5-auth-pwdialog.c:170
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "No se pudo obtener el tique de Kerberos: «%s»"
 
-#: ../src/krb5-auth-pwdialog.c:202 ../src/krb5-auth-applet.c:359
+#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:359
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Sus credenciales caducan en %d minuto"
 msgstr[1] "Sus credenciales caducan en %d minutos"
 
-#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:364
+#: ../src/krb5-auth-pwdialog.c:212 ../src/krb5-auth-applet.c:364
 msgid "Your credentials have expired"
 msgstr "Sus credenciales han caducado"
 
-#: ../src/krb5-auth-pwdialog.c:228
+#: ../src/krb5-auth-pwdialog.c:233
 msgid "Please enter your Kerberos password:"
 msgstr "Introduzca su contraseña de Kerberos:"
 
-#: ../src/krb5-auth-pwdialog.c:239
+#: ../src/krb5-auth-pwdialog.c:244
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Introduzca la contraseña para «%s»:"
 
-#: ../src/krb5-auth-pwdialog.c:259
+#: ../src/krb5-auth-pwdialog.c:264
 msgid "The password you entered is invalid"
 msgstr "La contraseña que ha introducido no es válida"
+
+#: ../src/krb5-auth-pwdialog.c:280
+#, c-format
+#| msgid "No error"
+msgid "%s Error"
+msgstr "Error %s"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -337,7 +341,7 @@ msgstr "Flujo del mensaje modificado"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
 #: ../src/dummy-strings.c:62
 msgid "Message out of order"
-msgstr ""
+msgstr "Mensaje fuera de servicio"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
 #: ../src/dummy-strings.c:63
@@ -698,7 +702,7 @@ msgstr "Permiso denegado en el código de la caché de respuesta"
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
 #: ../src/dummy-strings.c:134
 msgid "I/O error in replay cache i/o code"
-msgstr ""
+msgstr "Error de E/S en el código de E/S de la caché de respuesta"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: ../src/dummy-strings.c:135
@@ -1426,9 +1430,6 @@ msgstr "Sus credenciales Kerberos han caducado"
 
 #: ../src/krb5-auth-applet.c:570
 #, c-format
-#| msgid ""
-#| "There was an error displaying help:\n"
-#| "%s"
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "Hubo un error al lanzar el diálogo de preferencias: %s"
 
@@ -1461,6 +1462,34 @@ msgid ""
 msgstr ""
 "Hubo un error al mostrar la ayuda:\n"
 "%s"
+
+#: ../src/krb5-auth-tickets.c:54
+msgid "Principal"
+msgstr ""
+
+#: ../src/krb5-auth-tickets.c:60
+msgid "Start Time"
+msgstr ""
+
+#: ../src/krb5-auth-tickets.c:66
+msgid "End Time"
+msgstr ""
+
+#: ../src/krb5-auth-tickets.c:72
+msgid "Fwd"
+msgstr ""
+
+#: ../src/krb5-auth-tickets.c:78
+msgid "Proxy"
+msgstr ""
+
+#: ../src/krb5-auth-tickets.c:84
+msgid "Renew"
+msgstr ""
+
+#: ../src/krb5-auth-tickets.c:107
+msgid "Error displaying service ticket information"
+msgstr ""
 
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Network Authentication Dialog"

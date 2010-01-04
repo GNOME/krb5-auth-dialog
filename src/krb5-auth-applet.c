@@ -78,8 +78,8 @@ struct _KaAppletPrivate
 
 #ifdef HAVE_LIBNOTIFY
 	NotifyNotification* notification;/* notification messages */
-	const char* notify_gconf_key;	/* disable notification gconf key */
 #endif /* HAVE_LIBNOTIFY */
+	const char* notify_gconf_key;	/* disable notification gconf key */
 	char* principal;		/* the principal to request */
 	gboolean renewable;		/* credentials renewable? */
 	char* pk_userid;		/* "userid" for pkint */

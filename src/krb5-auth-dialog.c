@@ -258,10 +258,11 @@ ka_ccache_filename (void)
 	name = krb5_cc_default_name (kcontext);
 	if (g_str_has_prefix (name, "FILE:"))
 		return strchr(name,':')+1;
-	else {
-		g_warning ("Unsupported cache type for %s", name);
-		return NULL;
-	}
+	else if (g_str_has_prefix (name, "SCC:"))
+		g_warning ("Cannot monitor sqlite based cache '%s'", name);
+	else
+		g_warning ("Unsupported cache type for '%s'", name);
+	return NULL;
 }
 
 

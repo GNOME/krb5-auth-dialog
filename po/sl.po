@@ -1,13 +1,15 @@
+# Slovenian translation for krb5-auth-dialog.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
+#
 # Andrej Žnidaršič <andrej.znidarsic@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: damned-lies\n"
+"Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-20 18:09+0000\n"
-"PO-Revision-Date: 2010-02-04 09:39+0100\n"
+"PO-Revision-Date: 2010-02-18 11:05+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +26,7 @@ msgstr "Prenosljiva vstopnica"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:2
 msgid "Kerberos principal"
-msgstr ""
+msgstr "Kerberos ravnatelj"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "Notify user when ticket becomes valid"
@@ -88,11 +90,11 @@ msgstr "Začetek prikazovanja obvestil toliko minut pred potekom"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:18
 msgid "The kerberos principal to acquire the ticket for"
-msgstr ""
+msgstr "Kerberos ravnatelj za izdajo vstopnice"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:19
 msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr ""
+msgstr "Ravnateljevo javno/zasebno/potrdilno določilo ob uporabi PKINIT"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:20
 msgid "ticket expired notification"
@@ -202,7 +204,7 @@ msgstr "ASN.1 napaka razčlenjevanja"
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:15
 msgid "ASN.1 bad return from gmtime"
-msgstr ""
+msgstr "ASN.1 slab odziv preko gmtime"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: ../src/dummy-strings.c:16
@@ -257,7 +259,7 @@ msgstr "Strežnika ni mogoče najti v podatkovni zbirki Kerberos"
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:26
 msgid "Principal has multiple entries in Kerberos database"
-msgstr ""
+msgstr "Ravnatelj ima več vnosov v podatkovni zbirki Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
 #: ../src/dummy-strings.c:27
@@ -499,7 +501,7 @@ msgstr "Parametri ključa niso sprejeti"
 #. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
 #: ../src/dummy-strings.c:74
 msgid "Certificate mismatch"
-msgstr "Neujemanje potrdila"
+msgstr "Neskladnost potrdila"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
 #: ../src/dummy-strings.c:75
@@ -574,12 +576,12 @@ msgstr "Neveljavna zastava za način zaklepa datoteke"
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
 #: ../src/dummy-strings.c:89
 msgid "Cannot read password"
-msgstr "Gesla ni mogoče brati"
+msgstr "Gesla ni mogoče prebrati"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
 #: ../src/dummy-strings.c:90
 msgid "Password mismatch"
-msgstr "Neujemanje gesla"
+msgstr "Neskladnost gesla"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
 #: ../src/dummy-strings.c:91
@@ -594,7 +596,7 @@ msgstr "Neveljaven znak v imenu komponente"
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
 #: ../src/dummy-strings.c:93
 msgid "Malformed representation of principal"
-msgstr "Slabo oblikovana predstavitev ravnatelja"
+msgstr "Slabo oblikovani podatki ravnatelja"
 
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
 #: ../src/dummy-strings.c:94
@@ -654,7 +656,7 @@ msgstr "Vstopnica ima nastavljeno neveljavno zastavico"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: ../src/dummy-strings.c:105
 msgid "Requested principal and ticket don't match"
-msgstr ""
+msgstr "Zahtevani ravnatelj in vstopnica nista skladna"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: ../src/dummy-strings.c:106
@@ -709,7 +711,7 @@ msgstr "Ni mogoče vzpostaviti stika s KDC za zahtevano področje"
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:116
 msgid "No local name found for principal name"
-msgstr ""
+msgstr "Ni krajevnega imena za ravnatelja"
 
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: ../src/dummy-strings.c:118
@@ -759,7 +761,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: ../src/dummy-strings.c:127
 msgid "No more memory to allocate (in replay cache I/O code)"
-msgstr ""
+msgstr "Ni več pomnilnika za dodelitev (v predpomnilniku odgovora V/I kode)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: ../src/dummy-strings.c:128
@@ -1473,7 +1475,7 @@ msgstr "Osvežili ste svoja poverila Kerberos"
 
 #: ../src/krb5-auth-applet.c:493
 msgid "Network credentials expiring"
-msgstr "Omrežna varovala se iztekajo"
+msgstr "Omrežna varovala bodo potekla"
 
 #: ../src/krb5-auth-applet.c:507
 msgid "Network credentials expired"
@@ -1561,7 +1563,7 @@ msgstr "Širina v znakih"
 
 #: ../gtksecentry/gtksecentry.c:513
 msgid "Number of characters to leave space for in the entry"
-msgstr "Število znakov za katere naj bo v vnosu puščen prostor"
+msgstr "Število znakov za katere naj bo v vnosu izpuščen prostor"
 
 #: ../gtksecentry/gtksecentry.c:521
 msgid "Scroll offset"
@@ -1647,7 +1649,7 @@ msgstr "Nastavitev overitve Kerberos"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:13
 msgid "Kerberos principal:"
-msgstr ""
+msgstr "Kerberos ravnatelj:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:14
 msgid "PKINIT userid:\t"
@@ -1676,7 +1678,7 @@ msgstr "Pokaži ikono sistemske vrstice"
 # ne vem kako naj stavek obrnem...
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:20
 msgid "The principal's public/private/certificate identifier. Leave empty if not using PKINIT."
-msgstr ""
+msgstr "Ravnateljevo javno/zasebno/potrdilno določilo. V kolikor PKINIT ni v uporabi, mora biti možnost izpuščena."
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:21
 msgid "Warn"

@@ -2,15 +2,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Jorge González <jorgegonz@svn.gnome.org>, 2009.
 # Daniel Mustieles <daniel.mustieles@gmail.com>, 2009.
+# Jorge González <jorgegonz@svn.gnome.org>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-10-12 15:10+0000\n"
-"PO-Revision-Date: 2009-11-02 12:24+0100\n"
+"POT-Creation-Date: 2009-11-02 11:26+0000\n"
+"PO-Revision-Date: 2010-02-20 09:48+0100\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -71,7 +71,6 @@ msgstr "La contraseña que ha introducido no es válida"
 
 #: ../src/krb5-auth-pwdialog.c:280
 #, c-format
-#| msgid "No error"
 msgid "%s Error"
 msgstr "Error %s"
 
@@ -719,37 +718,37 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
 #: ../src/dummy-strings.c:137
 msgid "Can't open/find realm translation file"
-msgstr ""
+msgstr "No se puede abrir/encontrar el archivo de traducción del dominio"
 
 #. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
 #: ../src/dummy-strings.c:138
 msgid "Improper format of realm translation file"
-msgstr ""
+msgstr "Formato del archivo de traducción del dominio impropio"
 
 #. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
 #: ../src/dummy-strings.c:139
 msgid "Can't open/find lname translation database"
-msgstr ""
+msgstr "No se puede abrir/encontrar la base de datos de traducción lname"
 
 #. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
 #: ../src/dummy-strings.c:140
 msgid "No translation available for requested principal"
-msgstr ""
+msgstr "No existe una traducción disponible para el principal solicitado"
 
 #. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
 #: ../src/dummy-strings.c:141
 msgid "Improper format of translation database entry"
-msgstr ""
+msgstr "La entrada de la base de datos de traducción tiene un formato impropio"
 
 #. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
 #: ../src/dummy-strings.c:142
 msgid "Cryptosystem internal error"
-msgstr ""
+msgstr "Error interno del criptosistema"
 
 #. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
 #: ../src/dummy-strings.c:143
 msgid "Key table name malformed"
-msgstr ""
+msgstr "El nombre de la tabla de claves estaba malformado"
 
 #. krb5_err.et:krb5:KRB5_KT_BADNAME
 #: ../src/dummy-strings.c:144
@@ -759,17 +758,17 @@ msgstr "Tipo de tabla de claves desconocida"
 #. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:145
 msgid "Key table entry not found"
-msgstr ""
+msgstr "No se encontró la entrada de la tabla de claves"
 
 #. krb5_err.et:krb5:KRB5_KT_NOTFOUND
 #: ../src/dummy-strings.c:146
 msgid "End of key table reached"
-msgstr ""
+msgstr "Se alcanzó el final de la tabla de claves"
 
 #. krb5_err.et:krb5:KRB5_KT_END
 #: ../src/dummy-strings.c:147
 msgid "Cannot write to specified key table"
-msgstr ""
+msgstr "No se puede escribir en la tabla de claves especificada"
 
 #. krb5_err.et:krb5:KRB5_KT_NOWRITE
 #: ../src/dummy-strings.c:148

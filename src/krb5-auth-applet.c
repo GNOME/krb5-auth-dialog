@@ -534,7 +534,7 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 	}
 
 	gtk_status_icon_set_from_icon_name (applet->priv->tray_icon, tray_icon);
-	gtk_status_icon_set_tooltip (applet->priv->tray_icon, tooltip_text);
+	gtk_status_icon_set_tooltip_text (applet->priv->tray_icon, tooltip_text);
 	g_free(tooltip_text);
 	return 0;
 }
@@ -787,7 +787,7 @@ ka_applet_create_tray_icon (KaApplet* applet)
 			  "popup-menu",
 			  G_CALLBACK(ka_tray_icon_on_menu), applet);
 	gtk_status_icon_set_from_icon_name (tray_icon, applet->priv->icons[exp_icon]);
-	gtk_status_icon_set_tooltip (tray_icon, PACKAGE);
+	gtk_status_icon_set_tooltip_text (tray_icon, PACKAGE);
 	gtk_status_icon_set_title (tray_icon, KA_NAME);
         applet->priv->tray_icon = tray_icon;
 	return TRUE;

@@ -788,6 +788,7 @@ ka_applet_create_tray_icon (KaApplet* applet)
 			  G_CALLBACK(ka_tray_icon_on_menu), applet);
 	gtk_status_icon_set_from_icon_name (tray_icon, applet->priv->icons[exp_icon]);
 	gtk_status_icon_set_tooltip (tray_icon, PACKAGE);
+	gtk_status_icon_set_title (tray_icon, KA_NAME);
         applet->priv->tray_icon = tray_icon;
 	return TRUE;
 }

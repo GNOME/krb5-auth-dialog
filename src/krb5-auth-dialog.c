@@ -2,7 +2,7 @@
  * Copyright (C) 2004,2005,2006 Red Hat, Inc.
  * Authored by Christopher Aillon <caillon@redhat.com>
  *
- * Copyright (C) 2008,2009 Guido Guenther <agx@sigxcpu.org>
+ * Copyright (C) 2008,2009,2010 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -229,7 +229,6 @@ credentials_expiring_real (KaApplet* applet)
 	}
 
 	krb5_free_cred_contents (kcontext, &my_creds);
-
 out:
 	ka_applet_update_status(applet, creds_expiry);
 	return retval;
@@ -679,6 +678,32 @@ ka_parse_name(KaApplet* applet, krb5_context krbcontext, krb5_principal* kprinc)
 }
 
 
+/*
+ * return current principal in text form
+ *
+ * caller needs to free the returned result using g_free();
+ */
+char*
+ka_unparse_name ()
+{
+	char *princ, *gprinc = NULL;
+	krb5_error_code err;
+
+	if (!kprincipal)
+		goto out;
+
+	if ((err = krb5_unparse_name (kcontext, kprincipal, &princ))) {
+		ka_log_error_message(__func__, kcontext, err);
+		goto out;
+	}
+
+	gprinc = g_strdup (princ);
+	free (princ);
+out:
+	return gprinc;
+}
+
+
 static void
 ccache_changed_cb (GFileMonitor *monitor G_GNUC_UNUSED,
                    GFile *file,
@@ -858,6 +883,8 @@ ka_renew_credentials (KaApplet* applet)
 			ka_log_error_message("krb5_cc_store_cred", kcontext, retval);
 			goto out;
 		}
+		ka_applet_signal_emit (applet, KA_SIGNAL_RENEWED_TGT,
+				       my_creds.times.endtime);
 	}
 out:
 	creds_expiry = my_creds.times.endtime;
@@ -1123,6 +1150,7 @@ main (int argc, char *argv[])
 	if (run_always && !run_auto) {
 		always_run = TRUE;
 	}
+
 	if (using_krb5 () || always_run) {
 		g_set_application_name (KA_NAME);
 

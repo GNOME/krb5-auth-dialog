@@ -27,6 +27,7 @@ gboolean ka_destroy_ccache (KaApplet* applet);
 gboolean ka_grab_credentials(KaApplet* applet);
 gboolean ka_check_credentials (KaApplet *applet, const char* principal);
 gboolean ka_get_service_tickets(GtkListStore *tickets);
+char* ka_unparse_name(void);
 int ka_tgt_valid_seconds(void);
 #endif
 

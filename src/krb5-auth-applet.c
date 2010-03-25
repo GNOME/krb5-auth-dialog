@@ -1,6 +1,6 @@
 /* Krb5 Auth Applet -- Acquire and release kerberos tickets
  *
- * (C) 2008,2009 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2008,2009,2010 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -61,6 +61,8 @@ struct _KaApplet {
 
 struct _KaAppletClass {
   GObjectClass parent;
+
+  guint signals [KA_SIGNAL_COUNT];
 };
 
 G_DEFINE_TYPE(KaApplet, ka_applet, G_TYPE_OBJECT);
@@ -251,6 +253,11 @@ ka_applet_class_init(KaAppletClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 	GParamSpec *pspec;
+	const gchar *signalNames [ KA_SIGNAL_COUNT ] = {
+				"krb-tgt-acquired",
+				"krb-tgt-renewed",
+				"krb-tgt-expired"};
+	int i;
 
 	object_class->dispose = ka_applet_dispose;
 	object_class->finalize = ka_applet_finalize;
@@ -330,6 +337,23 @@ ka_applet_class_init(KaAppletClass *klass)
 	g_object_class_install_property (object_class,
                                          KA_PROP_TGT_RENEWABLE,
                                          pspec);
+
+	for (i = 0; i < KA_SIGNAL_COUNT ; i++) {
+		guint signalId;
+		signalId =
+			g_signal_new ( signalNames [i],
+			G_OBJECT_CLASS_TYPE ( klass ),
+			G_SIGNAL_RUN_LAST,
+			0,
+			NULL,
+			NULL,
+			g_cclosure_marshal_VOID__STRING,
+			G_TYPE_NONE,
+			2, /* number of parameters */
+			G_TYPE_STRING,
+			G_TYPE_UINT);
+		klass->signals [i] = signalId ;
+	}
 }
 
 
@@ -474,7 +498,10 @@ ka_send_event_notification (KaApplet *applet G_GNUC_UNUSED,
 #endif /* ! HAVE_LIBNOTIFY */
 
 
-/* update the tray icon's tooltip and icon */
+/*
+ * update the tray icon's tooltip and icon
+ * and notify listeners about acquired/expiring tickets via signals
+ */
 int
 ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 {
@@ -499,6 +526,7 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 						"krb-valid-ticket",
 						"dont-show-again");
 			}
+			ka_applet_signal_emit (applet, KA_SIGNAL_ACQUIRED_TGT, expiry);
 			expiry_notified = FALSE;
 		} else if (remaining < applet->priv->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS &&
 			   !applet->priv->renewable) {
@@ -528,6 +556,7 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 						"krb-no-valid-ticket",
 						"dont-show-again");
 			}
+			ka_applet_signal_emit (applet, KA_SIGNAL_EXPIRED_TGT, expiry);
 			expiry_notified = TRUE;
 			last_warn = 0;
 		}
@@ -833,6 +862,21 @@ KaPwDialog*
 ka_applet_get_pwdialog(const KaApplet* applet)
 {
 	return applet->priv->pwdialog;
+}
+
+void
+ka_applet_signal_emit (KaApplet* this, KaAppletSignalNumber signum,
+		       krb5_timestamp expiry)
+{
+	KaAppletClass *klass = KA_APPLET_GET_CLASS (this);
+	char *princ;
+
+	princ = ka_unparse_name ();
+	if (!princ)
+		return;
+
+	g_signal_emit (this, klass->signals[signum], 0, princ, (guint32)expiry);
+	g_free (princ);
 }
 
 /* create the tray icon applet */

@@ -75,6 +75,9 @@ ka_pwdialog_finalize(GObject *object)
 static void
 ka_pwdialog_class_init(KaPwDialogClass *klass)
 {
+	GObjectClass *object_class = G_OBJECT_CLASS(klass);
+
+	object_class->finalize = ka_pwdialog_finalize;
 	g_type_class_add_private(klass, sizeof(KaPwDialogPrivate));
 
 }

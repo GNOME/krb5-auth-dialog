@@ -1,1 +1,3 @@
-krb5-auth-dialog-C.omf
+krb5-auth-dialog-*.omf
+*/.xml2po.mo
+??/krb5-auth-dialog.xml

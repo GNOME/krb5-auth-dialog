@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-09 11:08+0300\n"
+"POT-Creation-Date: 2010-04-02 15:49+0300\n"
 "PO-Revision-Date: 2009-07-05 15:19+0300\n"
 "Last-Translator: wanderlust <wanderlust@ukr.net>\n"
 "Language-Team: ukrainian <Ukrainian <uk@li.org>>\n"
@@ -24,15 +24,27 @@ msgid "Network Authentication"
 msgstr "Мережева аутентифікація"
 
 #: ../src/krb5-auth-dialog.xml.h:2
+msgid "Service Tickets"
+msgstr "Квиток на сервіс"
+
+#: ../src/krb5-auth-dialog.xml.h:3
 msgid "_Renew Ticket"
 msgstr "Оновити _квиток"
 
-#: ../src/krb5-auth-pwdialog.c:165
+#: ../src/krb5-auth-dialog.c:172
+msgid "unknown error"
+msgstr "невідома помилка"
+
+#: ../src/krb5-auth-dialog.c:329
+msgid "Expired"
+msgstr "Вийшов термін"
+
+#: ../src/krb5-auth-pwdialog.c:170
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Неможливо отримати квиток kerberos: '%s'"
 
-#: ../src/krb5-auth-pwdialog.c:202 ../src/krb5-auth-applet.c:358
+#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:359
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -40,22 +52,27 @@ msgstr[0] "Термін дії Вашого мандату закінчитьс�
 msgstr[1] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
 msgstr[2] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
 
-#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:363
+#: ../src/krb5-auth-pwdialog.c:212 ../src/krb5-auth-applet.c:364
 msgid "Your credentials have expired"
 msgstr "Термін дії Вашого мандату закінчився"
 
-#: ../src/krb5-auth-pwdialog.c:228
+#: ../src/krb5-auth-pwdialog.c:233
 msgid "Please enter your Kerberos password:"
 msgstr "Введіть Ваш пароль Kerberos:"
 
-#: ../src/krb5-auth-pwdialog.c:239
+#: ../src/krb5-auth-pwdialog.c:244
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Будь-ласка, введіть пароль для '%s':"
 
-#: ../src/krb5-auth-pwdialog.c:259
+#: ../src/krb5-auth-pwdialog.c:264
 msgid "The password you entered is invalid"
 msgstr "Введений Вами пароль невірний"
+
+#: ../src/krb5-auth-pwdialog.c:280
+#, c-format
+msgid "%s Error"
+msgstr "Помилка %s"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -1379,36 +1396,41 @@ msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Погане магічне число для GSSAPI QUEUE"
 
 #. Translators: First number is hours, second number is minutes
-#: ../src/krb5-auth-applet.c:354
+#: ../src/krb5-auth-applet.c:355
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Термін дії Ваших мандатів завершиться через %.2d:%.2d год"
 
-#: ../src/krb5-auth-applet.c:450
+#: ../src/krb5-auth-applet.c:460
 msgid "Don't show me this again"
 msgstr "Не показувати знову"
 
-#: ../src/krb5-auth-applet.c:487
+#: ../src/krb5-auth-applet.c:497
 msgid "Network credentials valid"
 msgstr "Дючі мережеві мандати"
 
-#: ../src/krb5-auth-applet.c:488
+#: ../src/krb5-auth-applet.c:498
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Ви оновили власні мандати Kerberos."
 
-#: ../src/krb5-auth-applet.c:501
+#: ../src/krb5-auth-applet.c:511
 msgid "Network credentials expiring"
 msgstr "Термін дії мережевих мандатів закінчується"
 
-#: ../src/krb5-auth-applet.c:516
+#: ../src/krb5-auth-applet.c:526
 msgid "Network credentials expired"
 msgstr "Термін дії мережевих мандатів закінчився"
 
-#: ../src/krb5-auth-applet.c:517
+#: ../src/krb5-auth-applet.c:527
 msgid "Your Kerberos credentails have expired."
 msgstr "Термін дії Ваших мандатів Kerberos закінчився."
 
-#: ../src/krb5-auth-applet.c:581
+#: ../src/krb5-auth-applet.c:570
+#, c-format
+msgid "There was an error launching the preferences dialog: %s"
+msgstr "Під час запуску діалогу парметрів виникла помилка: %s"
+
+#: ../src/krb5-auth-applet.c:611
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1418,14 +1440,14 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/krb5-auth-applet.c:617
+#: ../src/krb5-auth-applet.c:647
 msgid "translator-credits"
 msgstr "wanderlust <wanderlust@ukr.net>"
 
 #. kdestroy
-#: ../src/krb5-auth-applet.c:652
+#: ../src/krb5-auth-applet.c:689
 msgid "Remove Credentials _Cache"
-msgstr "Очистити кеш мандатів"
+msgstr "Очистити _кеш мандатів"
 
 #: ../src/krb5-auth-tools.c:45
 #, c-format
@@ -1435,6 +1457,34 @@ msgid ""
 msgstr ""
 "При відображенні довідки виникла помилка:\n"
 "%s"
+
+#: ../src/krb5-auth-tickets.c:54
+msgid "Principal"
+msgstr "Головуючий"
+
+#: ../src/krb5-auth-tickets.c:60
+msgid "Start Time"
+msgstr "Час початку"
+
+#: ../src/krb5-auth-tickets.c:66
+msgid "End Time"
+msgstr "Час закінчення"
+
+#: ../src/krb5-auth-tickets.c:72
+msgid "Fwd"
+msgstr "Пересланий"
+
+#: ../src/krb5-auth-tickets.c:78
+msgid "Proxy"
+msgstr "Проксі"
+
+#: ../src/krb5-auth-tickets.c:84
+msgid "Renew"
+msgstr "Оновити"
+
+#: ../src/krb5-auth-tickets.c:107
+msgid "Error displaying service ticket information"
+msgstr "Помилка при показі інформації про квиток"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Network Authentication Dialog"
@@ -1582,7 +1632,9 @@ msgstr "При виборі, вимагає квитки поновлення"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:8
 msgid "If checked, use a security token (Smartcard) to authenticate."
-msgstr "Якщо відмічено, використовувати пристрій безпеки (смарткартку) для автентифікації."
+msgstr ""
+"Якщо відмічено, використовувати пристрій безпеки (смарткартку) для "
+"автентифікації."
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:9
 msgid "Kerberos"
@@ -1665,5 +1717,3 @@ msgstr "передача через проксі"
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:29
 msgid "renewable"
 msgstr "можливість поновлення"
-
-

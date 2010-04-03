@@ -2,7 +2,8 @@ krb5-auth-dialog is a simple dialog that monitors kerberos tickets, and
 pops up a dialog when they are about to expire.  Eventually, we expect
 it to be part of GNOME.
 
-Configuration:
+Configuration
+=============
 Configuration settings are handled via gconf.
 
 You can set the principal that is used to acquire tickets via:
@@ -26,7 +27,8 @@ do this, the etpo binary in etpo/ can be used to extract the public
 strings that kerberos uses.  We are checking that in for now, until
 kerberos gets translated.
 
-Requesting a TGT via DBus:
+DBus API
+========
 You can request a ticket granting ticket via DBus:
 
  dbus-send --print-reply --type=method_call \
@@ -37,3 +39,5 @@ You can request a ticket granting ticket via DBus:
 
 If the sent principal doesn't match the one currently in the ticket cache the
 request fails. To request a TGT for the "default" principal use string:''.
+
+See examples/tgt-signals.py for information about sent DBus signals.

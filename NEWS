@@ -1,4 +1,16 @@
 ============
+Version 0.15
+============
+* Add DBus signals for ticket acquisition, expiry and renewal.
+* Bug fixes
+* UI translations:
+	- Andrej Žnidaršič (sl)
+	- Jorge González (es)
+	- Matej Urbančič (sl)
+	- Maxim V. Dziumanenko (uk)
+	- Petr Kovar (cs)
+
+============
 Version 0.14
 ============
 * add ticket flags to "list tickets" dialog

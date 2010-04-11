@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2009-11-02 11:26+0000\n"
-"PO-Revision-Date: 2010-02-20 09:48+0100\n"
+"POT-Creation-Date: 2010-02-20 08:49+0000\n"
+"PO-Revision-Date: 2010-04-11 16:00+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
 #: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.desktop.in.h:2
@@ -36,7 +36,7 @@ msgstr "_Renovar tique"
 msgid "unknown error"
 msgstr "error desconocido"
 
-#: ../src/krb5-auth-dialog.c:328
+#: ../src/krb5-auth-dialog.c:329
 msgid "Expired"
 msgstr "Caducado"
 
@@ -813,12 +813,12 @@ msgstr "La caché de credenciales ya está registrada."
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
 #: ../src/dummy-strings.c:156
 msgid "Key table type is already registered."
-msgstr ""
+msgstr "El tipo de tabla de claves ya está registrado."
 
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
 #: ../src/dummy-strings.c:157
 msgid "Credentials cache I/O operation failed XXX"
-msgstr ""
+msgstr "Falló la operación XXX de credenciales de caché de E/S"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
 #: ../src/dummy-strings.c:158
@@ -844,21 +844,22 @@ msgstr "Error al escribir en la caché de credenciales"
 #: ../src/dummy-strings.c:162
 msgid "No more memory to allocate (in credentials cache code)"
 msgstr ""
+"No hay más memoria para asignar (en el código de la caché de credenciales)"
 
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: ../src/dummy-strings.c:163
 msgid "Bad format in credentials cache"
-msgstr ""
+msgstr "Formato erróneo en la caché de credenciales"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
 #: ../src/dummy-strings.c:164
 msgid "No credentials found with supported encryption types"
-msgstr ""
+msgstr "No se encontraron credenciales con los tipos de cifrado soportados"
 
 #. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
 #: ../src/dummy-strings.c:165
 msgid "Invalid KDC option combination (library internal error)"
-msgstr ""
+msgstr "Combinación de opción KDC no válida (error interno de la biblioteca)"
 
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
 #: ../src/dummy-strings.c:166
@@ -868,7 +869,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
 #: ../src/dummy-strings.c:167
 msgid "No credentials supplied to library routine"
-msgstr ""
+msgstr "No se proporcionaron credenciales a la rutina de la biblioteca"
 
 #. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
 #: ../src/dummy-strings.c:168
@@ -910,16 +911,19 @@ msgstr "Falló general de preautenticación"
 #: ../src/dummy-strings.c:175
 msgid "Unsupported replay cache format version number"
 msgstr ""
+"El número de versión de formato de la caché de repetición no está soportado"
 
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
 #: ../src/dummy-strings.c:176
 msgid "Unsupported credentials cache format version number"
 msgstr ""
+"El número de versión de formato de la caché de repetición no está soportado"
 
 #. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
 #: ../src/dummy-strings.c:177
 msgid "Unsupported key table format version number"
 msgstr ""
+"El número de versión de formato de la tabla de claves no está soportado"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: ../src/dummy-strings.c:178

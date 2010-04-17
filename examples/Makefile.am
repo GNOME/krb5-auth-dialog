@@ -1,2 +1,5 @@
+NULL =
+
 EXTRA_DIST = \
-	tgt-signals.py
+	tgt-signals.py \
+	$(NULL)

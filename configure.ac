@@ -18,8 +18,8 @@ AM_GLIB_GNU_GETTEXT
 AC_PROG_CC
 AC_ISC_POSIX
 AC_HEADER_STDC
-AM_PROG_LIBTOOL
-AM_PROG_LEX
+AC_PROG_LIBTOOL
+AC_PROG_LEX
 AC_PROG_YACC
 
 AM_PROG_CC_C_O
@@ -247,9 +247,9 @@ AC_MSG_NOTICE([=====================])
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Libraries])
 AC_MSG_NOTICE([])
-AC_MSG_NOTICE([         kerberos: $KRB5_CFLAGS $KRB5_LIBS])
-AC_MSG_NOTICE([              gtk: $GTK_CFLAGS $GTK_LIBS])
-AC_MSG_NOTICE([             dbus: $DBUS_CFLAGS $DBUS_LIBS])
+AC_MSG_NOTICE([         Kerberos: $KRB5_CFLAGS $KRB5_LIBS])
+AC_MSG_NOTICE([              GTK: $GTK_CFLAGS $GTK_LIBS])
+AC_MSG_NOTICE([             DBus: $DBUS_CFLAGS $DBUS_LIBS])
 AC_MSG_NOTICE([            gconf: $GCONF_CFLAGS $GCONF_LIBS])
 AC_MSG_NOTICE([         gio-unix: $GIO_UNIX_CFLAGS $GIO_UNIX_LIBS $GIO_CFLAGS $GIO_LIBS])
 if test "$with_libnotify" = "yes" ; then

@@ -9,7 +9,7 @@
 	<maintainer>
 		<foaf:Person>
 			<foaf:name>Guido Günther</foaf:name>
-			<foaf:mbox rdf:resource="agx@sigxcpu.org" />
+			<foaf:mbox rdf:resource="mailto:agx@sigxcpu.org" />
 			<gnome:userid>guidog</gnome:userid>
 		</foaf:Person>
 	</maintainer>

@@ -247,6 +247,7 @@ preferences/Makefile
 preferences/krb5-auth-dialog-preferences.1
 help/Makefile
 examples/Makefile
+plugins/Makefile
 ])
 
 AC_MSG_NOTICE([])

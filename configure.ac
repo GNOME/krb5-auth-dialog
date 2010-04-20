@@ -218,7 +218,7 @@ AC_SUBST(check_interval)
 
 minimum_lifetime=30
 AC_DEFINE_UNQUOTED(MINUTES_BEFORE_PROMPTING,[$minimum_lifetime],
-		   [Define the to the minimum amount of time (m) a credential
+		   [Define to the minimum amount of time (m) a credential
 		    will have to be valid before we will ask the user to get
 		    fresh credentials.])
 AC_SUBST(minimum_lifetime)
@@ -228,6 +228,23 @@ dnl Plugins
 dnl
 KA_PLUGINS_DIR="$libdir/krb5-auth-dialog/plugins"
 AC_SUBST(KA_PLUGINS_DIR)
+
+dnl PAM Plugin
+AC_ARG_WITH(pam-plugin,
+  [  --with-pam-plugin, enable PAM plugin],
+  [with_pam_plugin=yes],
+  [with_pam_plugin=no])
+if test x"$with_pam_plugin" = x"yes"; then
+  have_pam=no
+  AC_CHECK_LIB(pam, pam_start, have_pam=yes)
+  if test "x$have_pam" = "xyes"; then
+        PAM_LIBS="${PAM_LIBS} -lpam"
+  else
+        AC_MSG_ERROR("PAM libraries not found")
+  fi
+fi
+AC_SUBST(PAM_LIBS)
+AM_CONDITIONAL([ENABLE_PAM_PLUGIN],[test "x$with_pam_plugin" = "xyes"])
 
 dnl Final stage
 AC_OUTPUT([
@@ -279,4 +296,11 @@ AC_MSG_NOTICE([            Debug : $enable_debug])
 AC_MSG_NOTICE([  Minimum Lifetime: $minimum_lifetime minutes])
 AC_MSG_NOTICE([    Check Interval: $check_interval seconds])
 AC_MSG_NOTICE([])
-
+AC_MSG_NOTICE([Plugins])
+AC_MSG_NOTICE([])
+if test "$with_pam_plugin" = "yes" ; then
+AC_MSG_NOTICE([  PAM plugin: $PAM_LIBS])
+else
+AC_MSG_NOTICE([  PAM plugin: no])
+fi
+AC_MSG_NOTICE([])

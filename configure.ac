@@ -42,6 +42,7 @@ PKG_CHECK_MODULES(DBUS, dbus-glib-1 >= $DBUS_REQUIRED)
 PKG_CHECK_MODULES(GCONF, gconf-2.0 >= $GCONF_REQUIRED)
 PKG_CHECK_MODULES(GIO_UNIX, gio-unix-2.0 >= $GIO_UNIX_REQUIRED)
 PKG_CHECK_MODULES(GIO, gio-2.0 >= $GIO_REQUIRED)
+PKG_CHECK_MODULES(GMODULE, gmodule-2.0)
 
 AM_GCONF_SOURCE_2
 
@@ -218,10 +219,17 @@ AC_SUBST(check_interval)
 minimum_lifetime=30
 AC_DEFINE_UNQUOTED(MINUTES_BEFORE_PROMPTING,[$minimum_lifetime],
 		   [Define the to the minimum amount of time (m) a credential
-		    will have to be valid before we'll ask the user to get
+		    will have to be valid before we will ask the user to get
 		    fresh credentials.])
 AC_SUBST(minimum_lifetime)
 
+dnl
+dnl Plugins
+dnl
+KA_PLUGINS_DIR="$libdir/krb5-auth-dialog/plugins"
+AC_SUBST(KA_PLUGINS_DIR)
+
+dnl Final stage
 AC_OUTPUT([
 Makefile
 krb5-auth-dialog.spec

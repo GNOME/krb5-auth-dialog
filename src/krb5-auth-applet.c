@@ -28,6 +28,7 @@
 #include "krb5-auth-gconf.h"
 #include "krb5-auth-tools.h"
 #include "krb5-auth-tickets.h"
+#include "ka-plugin-loader.h"
 #include "ka-closures.h"
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
@@ -78,6 +79,7 @@ struct _KaAppletPrivate
 
 	KaPwDialog *pwdialog;		/* the password dialog */
 	int	   pw_prompt_secs;	/* when to start prompting for a password */
+	KaPluginLoader *loader;		/* Plugin loader */
 
 #ifdef HAVE_LIBNOTIFY
 	NotifyNotification* notification;/* notification messages */
@@ -219,6 +221,10 @@ ka_applet_dispose(GObject* object)
 	if (applet->priv->uixml) {
 		g_object_unref(applet->priv->uixml);
 		applet->priv->uixml = NULL;
+	}
+	if (applet->priv->loader) {
+		g_object_unref(applet->priv->loader);
+		applet->priv->loader = NULL;
 	}
 
 	if (parent_class->dispose != NULL)
@@ -928,7 +934,9 @@ ka_applet_create()
 	applet->priv->gconf = ka_gconf_init (applet);
 	g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
 
-	ka_tickets_dialog_create(applet->priv->uixml);
+	ka_tickets_dialog_create (applet->priv->uixml);
+	applet->priv->loader = ka_plugin_loader_create (applet);
+	g_return_val_if_fail (applet->priv->loader != NULL, NULL);
 
 	return applet;
 }

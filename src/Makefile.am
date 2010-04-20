@@ -38,6 +38,10 @@ krb5_auth_dialog_SOURCES =	\
 	krb5-auth-tools.h	\
 	krb5-auth-tickets.c	\
 	krb5-auth-tickets.h	\
+	ka-plugin.c		\
+	ka-plugin.h		\
+	ka-plugin-loader.c	\
+	ka-plugin-loader.h	\
 	ka-closures.h		\
 	ka-closures.c		\
 	dummy-strings.c		\
@@ -50,10 +54,12 @@ krb5_auth_dialog_CPPFLAGS = \
 	-DDATA_DIR=\""$(datadir)"\" \
 	-DLOCALE_DIR=\""$(localedir)/"\" \
 	-DBIN_DIR=\""$(bindir)/"\" \
+	-DKA_PLUGINS_DIR=\""$(KA_PLUGINS_DIR)"\" \
 	$(AM_CPPFLAGS) \
 	$(NULL)
 
 krb5_auth_dialog_CFLAGS = \
+	$(GMODULE_CFLAGS) \
 	$(GTK_CFLAGS) \
 	$(DBUS_CFLAGS) \
 	$(GCONF_CFLAGS) \
@@ -74,6 +80,7 @@ krb5_auth_dialog_LDADD = \
 	$(DBUS_LIBS) \
 	$(GCONF_LIBS) \
 	$(GIO_LIBS) \
+	$(GMODULE_LIBS) \
 	$(GTK_LIBS) \
 	$(NULL)
 

@@ -28,6 +28,7 @@
 #include "krb5-auth-gconf.h"
 #include "krb5-auth-tools.h"
 #include "krb5-auth-tickets.h"
+#include "ka-closures.h"
 #ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
 #endif
@@ -347,7 +348,7 @@ ka_applet_class_init(KaAppletClass *klass)
 			0,
 			NULL,
 			NULL,
-			g_cclosure_marshal_VOID__STRING,
+			ka_closure_VOID__STRING_UINT,
 			G_TYPE_NONE,
 			2, /* number of parameters */
 			G_TYPE_STRING,

@@ -37,6 +37,8 @@ krb5_auth_dialog_SOURCES =	\
 	krb5-auth-tools.h	\
 	krb5-auth-tickets.c	\
 	krb5-auth-tickets.h	\
+	ka-closures.h		\
+	ka-closures.c		\
 	dummy-strings.c		\
 	$(NULL)
 

@@ -510,9 +510,11 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 	int remaining = expiry - now;
 	static int last_warn = 0;
 	static gboolean expiry_notified = FALSE;
+	static krb5_timestamp old_expiry = 0;
 	gboolean notify = TRUE;
 	const char* tray_icon = ka_applet_select_icon (applet, remaining);
 	char* tooltip_text = ka_applet_tooltip_text (remaining);
+
 
 	if (remaining > 0) {
 		if (expiry_notified) {
@@ -529,20 +531,26 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 			}
 			ka_applet_signal_emit (applet, KA_SIGNAL_ACQUIRED_TGT, expiry);
 			expiry_notified = FALSE;
-		} else if (remaining < applet->priv->pw_prompt_secs && (now - last_warn) > NOTIFY_SECONDS &&
-			   !applet->priv->renewable) {
-			ka_gconf_get_bool(applet->priv->gconf,
+		} else {
+			if (remaining < applet->priv->pw_prompt_secs
+			    && (now - last_warn) > NOTIFY_SECONDS
+			    && !applet->priv->renewable) {
+				ka_gconf_get_bool(applet->priv->gconf,
 					  KA_GCONF_KEY_NOTIFY_EXPIRING,
 					  &notify);
-			if (notify) {
-				applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_EXPIRING;
-				ka_send_event_notification (applet,
+				if (notify) {
+					applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_EXPIRING;
+					ka_send_event_notification (applet,
 						_("Network credentials expiring"),
 						tooltip_text,
 						"krb-expiring-ticket",
 						"dont-show-again");
+				}
+				last_warn = now;
 			}
-			last_warn = now;
+			/* ticket lifetime got longer e.g. by kinit -R */
+			if (old_expiry && expiry > old_expiry)
+				ka_applet_signal_emit (applet, KA_SIGNAL_RENEWED_TGT, expiry);
 		}
 	} else {
 		if (!expiry_notified) {
@@ -563,6 +571,7 @@ ka_applet_update_status(KaApplet* applet, krb5_timestamp expiry)
 		}
 	}
 
+	old_expiry = expiry;
 	gtk_status_icon_set_from_icon_name (applet->priv->tray_icon, tray_icon);
 	gtk_status_icon_set_tooltip_text (applet->priv->tray_icon, tooltip_text);
 	g_free(tooltip_text);

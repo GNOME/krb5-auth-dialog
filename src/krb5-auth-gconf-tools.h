@@ -39,6 +39,7 @@
 #define KA_GCONF_KEY_NOTIFY_EXPIRING	KA_GCONF_PATH "/notify/expiring"
 
 gboolean ka_gconf_get_string (GConfClient* client, const char* key, char** value);
+gboolean ka_gconf_get_string_list (GConfClient* client, const char* key, GSList** list);
 gboolean ka_gconf_get_int (GConfClient* client, const char* key, int* value);
 gboolean ka_gconf_get_bool (GConfClient* client, const char* key, gboolean* value);
 gboolean ka_gconf_set_bool (GConfClient* client, const char* key, gboolean value);

@@ -50,6 +50,30 @@ ka_gconf_get_string (GConfClient* client,
 
 
 gboolean
+ka_gconf_get_string_list (GConfClient* client,
+		          const char* key,
+		          GSList** list)
+{
+	GError*		error = NULL;
+	gboolean	success = FALSE;
+
+	g_return_val_if_fail (client != NULL, FALSE);
+	g_return_val_if_fail (key != NULL, FALSE);
+	g_return_val_if_fail (*list == NULL, FALSE);
+
+	if ((*list = gconf_client_get_list (client, key,
+	                                   GCONF_VALUE_STRING, &error))) {
+		if (error) {
+			g_print ("%s", error->message);
+			g_error_free (error);
+		} else
+			success = TRUE;
+	}
+	return success;
+}
+
+
+gboolean
 ka_gconf_get_int (GConfClient* client,
 		    const char* key,
 		    int* value)

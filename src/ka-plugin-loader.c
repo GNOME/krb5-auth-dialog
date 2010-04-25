@@ -16,8 +16,12 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
+#include <gconf/gconf-client.h>
+
 #include "ka-plugin-loader.h"
 #include "ka-plugin.h"
+#include "krb5-auth-applet.h"
+#include "krb5-auth-gconf-tools.h"
 
 #include <gmodule.h>
 
@@ -30,14 +34,14 @@ typedef struct _KaPluginLoaderPrivate KaPluginLoaderPrivate;
 
 struct _KaPluginLoaderPrivate {
 	KaApplet *applet;
+	GSList *active_plugins;
 };
 
 
 static KaPlugin*
-load_plugin (KaPluginLoader *self, const char *path)
+load_plugin (const char *path)
 {
 	KaPlugin *plugin = NULL;
-	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
 	GModule *module;
 	KaPluginCreateFunc plugin_create_func;
 	int *major_plugin_version, *minor_plugin_version;
@@ -81,9 +85,6 @@ load_plugin (KaPluginLoader *self, const char *path)
 		g_message ("Loaded plugin %s", ka_plugin_get_name (plugin));
 	} else
 		g_warning ("Could not load plugin %s: initialization failed", path);
-
-	ka_plugin_activate(plugin, priv->applet);
-
 out:
 	if (!plugin)
 		g_module_close (module);
@@ -95,46 +96,89 @@ out:
 static void
 load_plugins (KaPluginLoader *self)
 {
-	GDir *dir;
-	const char *fname;
+	int i;
+	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
+	const char *pname;
+	GConfClient *gconf;
+	GSList *plugins = NULL;
 
 	if (!g_module_supported ()) {
 		g_warning ("GModules are not supported on your platform!");
 		return;
 	}
+	gconf = ka_applet_get_gconf_client (priv->applet);
 
-	dir = g_dir_open (KA_PLUGINS_DIR, 0, NULL);
-	if (!dir) {
-		g_warning ("No plugins found");
-		return;
+	/* For now we only load the plugins on program startup */
+	ka_gconf_get_string_list(gconf, KA_GCONF_KEY_PLUGINS_ENABLED, &plugins);
+	if (!plugins) {
+		g_message ("No plugins to load");
+		return ;
 	}
 
-	while ((fname = g_dir_read_name (dir)) != NULL) {
+	for (i=0; (pname = g_slist_nth_data (plugins, i)) != NULL; i++) {
 		char *path;
+		char *fname;
 		KaPlugin *plugin;
 
-		if (!g_str_has_suffix (fname, G_MODULE_SUFFIX))
-			continue;
-
+		fname = g_strdup_printf("libka-plugin-%s.%s", pname, G_MODULE_SUFFIX);
 		path = g_module_build_path (KA_PLUGINS_DIR, fname);
-		plugin = load_plugin (self, path);
+
+		plugin = load_plugin (path);
+		if (plugin) {
+			ka_plugin_activate(plugin, priv->applet);
+			priv->active_plugins = g_slist_prepend (priv->active_plugins, plugin);
+		}
+		g_free (fname);
 		g_free (path);
 	}
-	g_dir_close (dir);
+	g_slist_free (plugins);
+}
+
+
+static void
+deactivate_plugin(gpointer plugin, gpointer user_data)
+{
+	KaApplet *applet = KA_APPLET (user_data);
+
+	KA_DEBUG ("Deactivating plugin %s", ka_plugin_get_name (plugin));
+	ka_plugin_deactivate (plugin, applet);
+}
+
+
+static void
+ka_plugin_loader_dispose(GObject *object)
+{
+	KaPluginLoader *self = KA_PLUGIN_LOADER(object);
+	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
+	GObjectClass *parent_class = G_OBJECT_CLASS (ka_plugin_loader_parent_class);
+
+	/* We need to do this before dropping the ref on applet */
+	g_slist_foreach (priv->active_plugins, deactivate_plugin, priv->applet);
+	g_slist_free (priv->active_plugins);
+
+	if (priv->applet)
+		priv->applet = NULL;
+
+	if (parent_class->dispose != NULL)
+		parent_class->dispose (object);
 }
 
 
 static void
 ka_plugin_loader_class_init (KaPluginLoaderClass *klass)
 {
-	g_type_class_add_private (klass, sizeof (KaPluginLoaderPrivate));
+	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 
+	object_class->dispose = ka_plugin_loader_dispose;
+	g_type_class_add_private (klass, sizeof (KaPluginLoaderPrivate));
 }
 
 
 static void
-ka_plugin_loader_init (KaPluginLoader *self G_GNUC_UNUSED)
+ka_plugin_loader_init (KaPluginLoader *self)
 {
+	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
+	priv->active_plugins = NULL;
 }
 
 
@@ -149,12 +193,11 @@ KaPluginLoader*
 ka_plugin_loader_create (KaApplet* applet)
 {
 	KaPluginLoader *loader;
-	KaPluginLoaderPrivate *priv ;
+	KaPluginLoaderPrivate *priv;
 
 	loader = ka_plugin_loader_new();
 	priv = GET_PRIVATE (loader);
 	priv->applet = applet;
-
 	load_plugins (loader);
 
 	return loader;

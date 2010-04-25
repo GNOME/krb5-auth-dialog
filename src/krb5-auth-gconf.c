@@ -166,8 +166,9 @@ ka_gconf_key_changed_callback (GConfClient* client,
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_PROXIABLE) == 0) {
 		ka_gconf_set_tgt_proxiable (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_NOTIFY_VALID)
-		    || g_strcmp0 (key,KA_GCONF_KEY_NOTIFY_EXPIRING)
-		    || g_strcmp0 (key,KA_GCONF_KEY_NOTIFY_EXPIRED)) {
+		    || g_strcmp0 (key, KA_GCONF_KEY_NOTIFY_EXPIRING)
+		    || g_strcmp0 (key, KA_GCONF_KEY_NOTIFY_EXPIRED)
+		    || g_strcmp0 (key, KA_GCONF_KEY_PLUGINS_ENABLED)) {
 		/* nothing to do */
 	} else
 		g_warning("Received notification for unknown gconf key %s", key);

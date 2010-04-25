@@ -142,5 +142,18 @@
         <long>Notify user when ticket has expired</long>
       </locale>
     </schema>
+
+    <schema>
+      <key>/schemas/apps/krb5-auth-dialog/plugins/enabled</key>
+      <applyto>/apps/krb5-auth-dialog/plugins/enabled</applyto>
+      <owner>krb5-auth-dialog</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+
+      <locale name="C">
+        <short>Enabled plugins</short>
+	<long>List of plugins that should be loaded and activated on startup.</long>
+      </locale>
+    </schema>
   </schemalist>
 </gconfschemafile>

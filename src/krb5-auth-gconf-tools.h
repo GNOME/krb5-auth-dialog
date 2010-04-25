@@ -37,6 +37,7 @@
 #define KA_GCONF_KEY_NOTIFY_VALID	KA_GCONF_PATH "/notify/valid"
 #define KA_GCONF_KEY_NOTIFY_EXPIRED	KA_GCONF_PATH "/notify/expired"
 #define KA_GCONF_KEY_NOTIFY_EXPIRING	KA_GCONF_PATH "/notify/expiring"
+#define KA_GCONF_KEY_PLUGINS_ENABLED	KA_GCONF_PATH "/plugins/enabled"
 
 gboolean ka_gconf_get_string (GConfClient* client, const char* key, char** value);
 gboolean ka_gconf_get_string_list (GConfClient* client, const char* key, GSList** list);

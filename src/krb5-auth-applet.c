@@ -874,6 +874,12 @@ ka_applet_get_pwdialog(const KaApplet* applet)
 	return applet->priv->pwdialog;
 }
 
+GConfClient*
+ka_applet_get_gconf_client(const KaApplet* self)
+{
+	return self->priv->gconf;
+}
+
 void
 ka_applet_signal_emit (KaApplet* this, KaAppletSignalNumber signum,
 		       krb5_timestamp expiry)

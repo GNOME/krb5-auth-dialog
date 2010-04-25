@@ -23,6 +23,7 @@
 
 #include <glib-object.h>
 #include <glib/gprintf.h>
+#include <gconf/gconf-client.h>
 #include <krb5.h>
 
 #include "config.h"
@@ -47,6 +48,7 @@ void ka_applet_set_tgt_renewable(KaApplet* applet, gboolean renewable);
 gboolean ka_applet_get_tgt_renewable(const KaApplet* applet);
 guint ka_applet_get_pw_prompt_secs(const KaApplet* applet);
 KaPwDialog* ka_applet_get_pwdialog(const KaApplet* applet);
+GConfClient* ka_applet_get_gconf_client(const KaApplet* applet);
 void ka_applet_signal_emit(KaApplet* applet, KaAppletSignalNumber signum,
                            krb5_timestamp expiry);
 

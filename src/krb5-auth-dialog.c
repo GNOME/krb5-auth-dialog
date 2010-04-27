@@ -41,7 +41,7 @@
 #include "krb5-auth-pwdialog.h"
 #include "krb5-auth-dbus.h"
 #include "krb5-auth-tools.h"
-#include "krb5-auth-tickets.h"
+#include "ka-tickets.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
 #include <libnm_glib.h>

@@ -27,7 +27,7 @@
 #include "krb5-auth-gconf-tools.h"
 #include "krb5-auth-gconf.h"
 #include "krb5-auth-tools.h"
-#include "krb5-auth-tickets.h"
+#include "ka-tickets.h"
 #include "ka-plugin-loader.h"
 #include "ka-closures.h"
 #ifdef HAVE_LIBNOTIFY

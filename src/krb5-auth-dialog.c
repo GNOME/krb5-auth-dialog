@@ -40,7 +40,7 @@
 #include "krb5-auth-applet.h"
 #include "krb5-auth-pwdialog.h"
 #include "krb5-auth-dbus.h"
-#include "krb5-auth-tools.h"
+#include "ka-tools.h"
 #include "ka-tickets.h"
 
 #ifdef ENABLE_NETWORK_MANAGER

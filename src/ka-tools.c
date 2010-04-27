@@ -19,7 +19,7 @@
 #include "config.h"
 
 #include <glib/gi18n.h>
-#include "krb5-auth-tools.h"
+#include "ka-tools.h"
 
 void
 ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
@@ -55,4 +55,3 @@ ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
   }
   g_free (url);
 }
-

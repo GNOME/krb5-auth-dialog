@@ -26,7 +26,7 @@
 #include "krb5-auth-dialog.h"
 #include "krb5-auth-gconf-tools.h"
 #include "krb5-auth-gconf.h"
-#include "krb5-auth-tools.h"
+#include "ka-tools.h"
 #include "ka-tickets.h"
 #include "ka-plugin-loader.h"
 #include "ka-closures.h"

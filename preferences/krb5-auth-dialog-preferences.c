@@ -34,7 +34,7 @@
 #include <glib/gi18n.h>
 
 #include "krb5-auth-gconf-tools.h"
-#include "krb5-auth-tools.h"
+#include "ka-tools.h"
 
 #define PKINIT_SMARTCARD "PKCS11:" SC_PKCS11
 #define PKINIT_FILE "FILE:"

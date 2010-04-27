@@ -30,4 +30,3 @@ void ka_show_help (GdkScreen* screen, const char* section, GtkWindow* window);
 G_END_DECLS
 
 #endif
-

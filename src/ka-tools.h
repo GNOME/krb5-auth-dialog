@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef KRB5_AUTH_TOOLS
-#define KRB5_AUTH_TOOLS
+#ifndef KA_TOOLS
+#define KA_TOOLS
 
 #include <gtk/gtk.h>
 

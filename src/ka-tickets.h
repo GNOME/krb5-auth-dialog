@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef KRB5_AUTH_TICKETS_H
-#define KRB5_AUTH_TICKETS_H
+#ifndef KA_TICKETS_H
+#define KA_TICKETS_H
 
 enum ticket_columns {
 	PRINCIPAL_COLUMN,

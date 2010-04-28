@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef KRB5_AUTH_GCONF_H
-#define KRB5_AUTH_GCONF_H
+#ifndef KA_GCONF_H
+#define KA_GCONF_H
 
 #include <gconf/gconf-client.h>
 #include "ka-applet-priv.h"

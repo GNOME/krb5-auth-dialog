@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef KRB5_AUTH_DIALOG
-#define KRB5_AUTH_DIALOG
+#ifndef KA_DIALOG
+#define KA_DIALOG
 
 #include "ka-applet-priv.h"
 

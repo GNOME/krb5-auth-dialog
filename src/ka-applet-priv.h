@@ -20,8 +20,8 @@
 
 /* "Private" header - functions not exported to plugins */
 
-#ifndef KRB5_AUTH_APPLET_H
-#define KRB5_AUTH_APPLET_H
+#ifndef KA_APPLET_PRIV_H
+#define KA_APPLET_PRIV_H
 
 #include <glib-object.h>
 #include <glib/gprintf.h>

@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef KRB5_AUTH_PWDIALOG_H
-#define KRB5_AUTH_PWDIALOG_H
+#ifndef KA_PWDIALOG_H
+#define KA_PWDIALOG_H
 
 #include <glib.h>
 #include <glib-object.h>

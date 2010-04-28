@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef KRB5_AUTH_GCONF_TOOLS_H
-#define KRB5_AUTH_GCONF_TOOLS_H
+#ifndef KA_GCONF_TOOLS_H
+#define KA_GCONF_TOOLS_H
 
 #include "config.h"
 

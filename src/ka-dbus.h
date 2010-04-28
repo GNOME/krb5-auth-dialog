@@ -24,7 +24,7 @@
 #include <glib.h>
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
-#include "krb5-auth-applet.h"
+#include "ka-applet-priv.h"
 
 gboolean ka_dbus_connect(unsigned int* status);
 gboolean ka_dbus_service(KaApplet* applet);

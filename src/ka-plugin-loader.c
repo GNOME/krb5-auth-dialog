@@ -20,7 +20,7 @@
 
 #include "ka-plugin-loader.h"
 #include "ka-plugin.h"
-#include "krb5-auth-applet.h"
+#include "ka-applet-priv.h"
 #include "ka-gconf-tools.h"
 
 #include <gmodule.h>

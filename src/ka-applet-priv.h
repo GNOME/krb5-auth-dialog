@@ -1,6 +1,6 @@
 /* Krb5 Auth Applet -- Acquire and release kerberos tickets
  *
- * (C) 2008 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2008,2010 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,6 +17,8 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  *
  */
+
+/* "Private" header - functions not exported to plugins */
 
 #ifndef KRB5_AUTH_APPLET_H
 #define KRB5_AUTH_APPLET_H

@@ -22,7 +22,7 @@
 #define KRB5_AUTH_GCONF_H
 
 #include <gconf/gconf-client.h>
-#include "krb5-auth-applet.h"
+#include "ka-applet-priv.h"
 
 GConfClient* ka_gconf_init (KaApplet* applet);
 

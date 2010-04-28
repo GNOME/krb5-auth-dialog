@@ -22,7 +22,7 @@
 
 #include <glib/gi18n.h>
 
-#include "krb5-auth-applet.h"
+#include "ka-applet-priv.h"
 #include "ka-dialog.h"
 #include "ka-pwdialog.h"
 

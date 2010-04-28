@@ -21,7 +21,7 @@
 #include "config.h"
 
 #include <dbus/dbus-glib.h>
-#include "krb5-auth-applet.h"
+#include "ka-applet-priv.h"
 #include "ka-dialog.h"
 #include "ka-dbus.h"
 #include "ka-dbus-glue.h"

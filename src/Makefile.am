@@ -23,8 +23,8 @@ $(service_DATA): $(service_in_files) Makefile
 krb5_auth_dialog_SOURCES =	\
 	ka-dialog.c      	\
 	ka-dialog.h      	\
-	krb5-auth-applet.c	\
-	krb5-auth-applet.h	\
+	ka-applet.c		\
+	ka-applet-priv.h	\
 	ka-applet.h		\
 	ka-pwdialog.c    	\
 	ka-pwdialog.h    	\

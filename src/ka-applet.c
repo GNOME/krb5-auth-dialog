@@ -22,7 +22,7 @@
 
 #include <glib/gi18n.h>
 
-#include "krb5-auth-applet.h"
+#include "ka-applet-priv.h"
 #include "ka-dialog.h"
 #include "ka-gconf-tools.h"
 #include "ka-gconf.h"
@@ -406,8 +406,8 @@ ka_applet_select_icon(KaApplet* applet, int remaining)
 	if (remaining > 0) {
 		if (remaining < applet->priv->pw_prompt_secs &&
 		    !applet->priv->renewable)
-		    	tray_icon = exp_icon;
-		else			
+			tray_icon = exp_icon;
+		else
 			tray_icon = val_icon;
 	}
 
@@ -940,4 +940,3 @@ ka_applet_create()
 
 	return applet;
 }
-

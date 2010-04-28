@@ -21,7 +21,7 @@
 #ifndef KRB5_AUTH_DIALOG
 #define KRB5_AUTH_DIALOG
 
-#include "krb5-auth-applet.h"
+#include "ka-applet-priv.h"
 
 gboolean ka_destroy_ccache (KaApplet* applet);
 gboolean ka_grab_credentials(KaApplet* applet);

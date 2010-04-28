@@ -1,14 +1,14 @@
 [type: gettext/glade]src/krb5-auth-dialog.xml
-src/krb5-auth-dialog.c
-src/krb5-auth-pwdialog.c
+src/ka-dialog.c
+src/ka-pwdialog.c
 src/dummy-strings.c
-src/krb5-auth-applet.c
-src/krb5-auth-tools.c
-src/krb5-auth-tickets.c
+src/ka-applet.c
+src/ka-tools.c
+src/ka-tickets.c
 src/krb5-auth-dialog.desktop.in
 src/krb5-auth-dialog.schemas.in
 gtksecentry/gtksecentry.c
 secmem/util.c
-preferences/krb5-auth-dialog-preferences.c
+preferences/ka-preferences.c
 preferences/krb5-auth-dialog-preferences.desktop.in
 [type: gettext/glade]preferences/krb5-auth-dialog-preferences.xml

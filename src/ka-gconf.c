@@ -24,7 +24,7 @@
 
 #include "krb5-auth-applet.h"
 #include "ka-gconf-tools.h"
-#include "krb5-auth-gconf.h"
+#include "ka-gconf.h"
 
 static gboolean
 ka_gconf_set_principal (GConfClient* client, KaApplet* applet)

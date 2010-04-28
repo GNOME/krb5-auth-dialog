@@ -23,7 +23,7 @@
 #include <glib/gi18n.h>
 
 #include "krb5-auth-applet.h"
-#include "krb5-auth-dialog.h"
+#include "ka-dialog.h"
 #include "ka-gconf-tools.h"
 #include "ka-gconf.h"
 #include "ka-tools.h"

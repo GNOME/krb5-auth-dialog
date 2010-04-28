@@ -23,7 +23,7 @@
 #include <glib/gi18n.h>
 
 #include "krb5-auth-applet.h"
-#include "krb5-auth-dialog.h"
+#include "ka-dialog.h"
 #include "ka-pwdialog.h"
 
 struct _KaPwDialog {

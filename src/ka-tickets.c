@@ -24,7 +24,7 @@
 #include <gtk/gtk.h>
 
 #include "ka-tickets.h"
-#include "krb5-auth-dialog.h"
+#include "ka-dialog.h"
 
 static GtkListStore *tickets;
 static GtkWidget    *tickets_dialog;

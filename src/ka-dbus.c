@@ -22,7 +22,7 @@
 
 #include <dbus/dbus-glib.h>
 #include "krb5-auth-applet.h"
-#include "krb5-auth-dialog.h"
+#include "ka-dialog.h"
 #include "ka-dbus.h"
 #include "ka-dbus-glue.h"
 

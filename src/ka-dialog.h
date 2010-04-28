@@ -30,4 +30,3 @@ gboolean ka_get_service_tickets(GtkListStore *tickets);
 char* ka_unparse_name(void);
 int ka_tgt_valid_seconds(void);
 #endif
-

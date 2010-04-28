@@ -4,7 +4,7 @@ bin_PROGRAMS = krb5-auth-dialog-preferences
 man_MANS = krb5-auth-dialog-preferences.1
 
 krb5_auth_dialog_preferences_SOURCES = \
-	krb5-auth-dialog-preferences.c \
+	ka-preferences.c \
 	$(top_srcdir)/src/ka-gconf-tools.c \
 	$(top_srcdir)/src/ka-gconf-tools.h \
 	$(top_srcdir)/src/ka-tools.c \

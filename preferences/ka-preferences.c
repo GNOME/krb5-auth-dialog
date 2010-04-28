@@ -21,7 +21,7 @@
  * based on the vino capplet which is:
  *
  * 	Copyright (C) 2003 Sun Microsystems, Inc.
- * 	Copyright (C) 2006 Jonh Wendell <wendell@bani.com.br> 
+ * 	Copyright (C) 2006 Jonh Wendell <wendell@bani.com.br>
  *
  * 	Authors:
  *      	Mark McLoughlin <mark@skynet.ie>

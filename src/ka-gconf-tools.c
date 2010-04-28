@@ -20,7 +20,7 @@
 #include "config.h"
 
 #include <gconf/gconf-client.h>
-#include <krb5-auth-gconf-tools.h>
+#include <ka-gconf-tools.h>
 
 gboolean
 ka_gconf_get_string (GConfClient* client,
@@ -147,4 +147,3 @@ ka_gconf_set_bool (GConfClient* client,
 	}
 	return TRUE;
 }
-

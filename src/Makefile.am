@@ -30,8 +30,8 @@ krb5_auth_dialog_SOURCES =	\
 	krb5-auth-pwdialog.h    \
 	krb5-auth-gconf.c	\
 	krb5-auth-gconf.h	\
-	krb5-auth-gconf-tools.c	\
-	krb5-auth-gconf-tools.h	\
+	ka-gconf-tools.c	\
+	ka-gconf-tools.h	\
 	ka-dbus.c		\
 	ka-dbus.h		\
 	ka-tools.c		\

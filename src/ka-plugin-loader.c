@@ -21,7 +21,7 @@
 #include "ka-plugin-loader.h"
 #include "ka-plugin.h"
 #include "krb5-auth-applet.h"
-#include "krb5-auth-gconf-tools.h"
+#include "ka-gconf-tools.h"
 
 #include <gmodule.h>
 

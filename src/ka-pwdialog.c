@@ -24,7 +24,7 @@
 
 #include "krb5-auth-applet.h"
 #include "krb5-auth-dialog.h"
-#include "krb5-auth-pwdialog.h"
+#include "ka-pwdialog.h"
 
 struct _KaPwDialog {
   GObject parent;
@@ -307,4 +307,3 @@ ka_pwdialog_create(GtkBuilder* xml)
 
 	return pwdialog;
 }
-

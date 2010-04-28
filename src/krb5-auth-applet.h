@@ -28,7 +28,7 @@
 
 #include "config.h"
 #include "ka-applet.h"
-#include "krb5-auth-pwdialog.h"
+#include "ka-pwdialog.h"
 
 G_BEGIN_DECLS
 

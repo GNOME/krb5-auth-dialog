@@ -24,7 +24,7 @@
 #include "krb5-auth-applet.h"
 #include "krb5-auth-dialog.h"
 #include "ka-dbus.h"
-#include "krb5-auth-applet-dbus-glue.h"
+#include "ka-dbus-glue.h"
 
 static DBusGConnection *session;
 

@@ -85,10 +85,10 @@ krb5_auth_dialog_LDADD = \
 	$(NULL)
 
 BUILT_SOURCES = \
-	krb5-auth-applet-dbus-glue.h \
+	ka-dbus-glue.h \
 	$(NULL)
 
-krb5-auth-applet-dbus-glue.h: $(srcdir)/krb5-auth-applet-dbus.xml
+ka-dbus-glue.h: $(srcdir)/ka-dbus.xml
 	dbus-binding-tool                 \
 		--mode=glib-server        \
 		--prefix=krb5_auth_dialog \
@@ -110,14 +110,14 @@ EXTRA_DIST = \
 	$(schema_in_files) \
 	$(autostart_in_files) \
 	$(service_in_files) \
-	$(srcdir)/krb5-auth-applet-dbus.xml \
+	$(srcdir)/ka-dbus.xml \
 	krb5-auth-dialog.1.in \
 	$(NULL)
 
 CLEANFILES = $(schema_DATA) $(service_DATA)
 DISTCLEANFILES = \
 	krb5-auth-dialog.desktop \
-	krb5-auth-applet-dbus-glue.h \
+	ka-dbus-glue.h \
 	$(NULL)
 
 install-data-local: $(schema_DATA)

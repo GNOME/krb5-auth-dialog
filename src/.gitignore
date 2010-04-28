@@ -1,4 +1,4 @@
-krb5-auth-applet-dbus-glue.h
+ka-dbus-glue.h
 krb5-auth-dialog
 krb5-auth-dialog.1
 krb5-auth-dialog.desktop

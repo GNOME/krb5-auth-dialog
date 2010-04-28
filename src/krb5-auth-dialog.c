@@ -39,7 +39,7 @@
 #include "krb5-auth-dialog.h"
 #include "krb5-auth-applet.h"
 #include "krb5-auth-pwdialog.h"
-#include "krb5-auth-dbus.h"
+#include "ka-dbus.h"
 #include "ka-tools.h"
 #include "ka-tickets.h"
 

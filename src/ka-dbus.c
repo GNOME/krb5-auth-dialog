@@ -23,7 +23,7 @@
 #include <dbus/dbus-glib.h>
 #include "krb5-auth-applet.h"
 #include "krb5-auth-dialog.h"
-#include "krb5-auth-dbus.h"
+#include "ka-dbus.h"
 #include "krb5-auth-applet-dbus-glue.h"
 
 static DBusGConnection *session;
@@ -117,4 +117,3 @@ ka_dbus_connect(unsigned int* status)
 	}
 	return TRUE;
 }
-

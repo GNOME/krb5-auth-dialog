@@ -230,21 +230,28 @@ KA_PLUGINS_DIR="$libdir/krb5-auth-dialog/plugins"
 AC_SUBST(KA_PLUGINS_DIR)
 
 dnl PAM Plugin
-AC_ARG_WITH(pam-plugin,
-  [  --with-pam-plugin, enable PAM plugin],
-  [with_pam_plugin=yes],
-  [with_pam_plugin=no])
-if test x"$with_pam_plugin" = x"yes"; then
-  have_pam=no
-  AC_CHECK_LIB(pam, pam_start, have_pam=yes)
-  if test "x$have_pam" = "xyes"; then
-        PAM_LIBS="${PAM_LIBS} -lpam"
+PAM_LIBS=
+AC_ARG_WITH([pam],
+  AC_HELP_STRING([--with-pam], [use PAM @<:@default=check@:>@]),
+  [],
+  [with_pam=check])
+
+if test "$with_pam" != "no"; then
+  if test "$with_pam" = "check"; then
+      AC_CHECK_LIB([pam], [pam_start], [with_pam=yes], [with_pam=no])
   else
-        AC_MSG_ERROR("PAM libraries not found")
+      fail=0
+      AC_CHECK_LIB([pam], [pam_start], [], [fail=1])
+      test $fail = 1 &&
+        AC_MSG_ERROR([You must install the PAM development package in order to compile krb5-auth-dialog])
   fi
 fi
+
+if test "$with_pam" = "yes"; then
+  PAM_LIBS="${PAM_LIBS} -lpam"
+fi
 AC_SUBST(PAM_LIBS)
-AM_CONDITIONAL([ENABLE_PAM_PLUGIN],[test "x$with_pam_plugin" = "xyes"])
+AM_CONDITIONAL([ENABLE_PAM_PLUGIN],[test "$with_pam" = "yes"])
 
 dnl Final stage
 AC_OUTPUT([
@@ -298,7 +305,7 @@ AC_MSG_NOTICE([    Check Interval: $check_interval seconds])
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Plugins])
 AC_MSG_NOTICE([])
-if test "$with_pam_plugin" = "yes" ; then
+if test "$with_pam" = "yes" ; then
 AC_MSG_NOTICE([  PAM plugin: $PAM_LIBS])
 else
 AC_MSG_NOTICE([  PAM plugin: no])

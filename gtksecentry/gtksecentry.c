@@ -776,7 +776,7 @@ gtk_secure_entry_get_property(GObject * object,
 static void
 gtk_secure_entry_init(GtkSecureEntry * entry)
 {
-    GTK_WIDGET_SET_FLAGS(entry, GTK_CAN_FOCUS);
+    gtk_widget_set_can_focus (GTK_WIDGET(entry), TRUE);
 
     entry->text_size = MIN_SIZE;
     WITH_SECURE_MEM(entry->text = g_malloc(entry->text_size));
@@ -836,10 +836,13 @@ gtk_secure_entry_realize(GtkWidget * widget)
 {
     GtkSecureEntry *entry;
     GtkEditable *editable;
+    GdkWindow *window;
+    GtkStyle *style;
     GdkWindowAttr attributes;
     gint attributes_mask;
 
-    GTK_WIDGET_SET_FLAGS(widget, GTK_REALIZED);
+    gtk_widget_set_realized (widget, TRUE);
+
     entry = GTK_SECURE_ENTRY(widget);
     editable = GTK_EDITABLE(widget);
 
@@ -864,10 +867,10 @@ gtk_secure_entry_realize(GtkWidget * widget)
     attributes_mask =
 	GDK_WA_X | GDK_WA_Y | GDK_WA_VISUAL | GDK_WA_COLORMAP;
 
-    widget->window =
-	gdk_window_new(gtk_widget_get_parent_window(widget), &attributes,
-		       attributes_mask);
-    gdk_window_set_user_data(widget->window, entry);
+    window = gdk_window_new(gtk_widget_get_parent_window(widget),
+		            &attributes, attributes_mask);
+    gtk_widget_set_window (widget, window);
+    gdk_window_set_user_data(window, entry);
 
     get_text_area_size(entry, &attributes.x, &attributes.y,
 		       &attributes.width, &attributes.height);
@@ -878,19 +881,19 @@ gtk_secure_entry_realize(GtkWidget * widget)
     attributes_mask |= GDK_WA_CURSOR;
 
     entry->text_area =
-	gdk_window_new(widget->window, &attributes, attributes_mask);
+	gdk_window_new(window, &attributes, attributes_mask);
     gdk_window_set_user_data(entry->text_area, entry);
 
     gdk_cursor_unref(attributes.cursor);
 
-    widget->style = gtk_style_attach(widget->style, widget->window);
+    style = gtk_widget_get_style (widget);
+    style = gtk_style_attach(style, window);
+    gtk_widget_set_style (widget, style);
 
-    gdk_window_set_background(widget->window,
-			      &widget->style->
-			      base[GTK_WIDGET_STATE(widget)]);
+    gdk_window_set_background(window,
+			      &style->base[gtk_widget_get_state (widget)]);
     gdk_window_set_background(entry->text_area,
-			      &widget->style->
-			      base[GTK_WIDGET_STATE(widget)]);
+			      &style->base[gtk_widget_get_state (widget)]);
 
     gdk_window_show(entry->text_area);
 
@@ -922,6 +925,7 @@ static void
 get_borders(GtkSecureEntry * entry, gint * xborder, gint * yborder)
 {
     GtkWidget *widget = GTK_WIDGET(entry);
+    GtkStyle *style;
     gint focus_width;
     gboolean interior_focus;
 
@@ -929,9 +933,10 @@ get_borders(GtkSecureEntry * entry, gint * xborder, gint * yborder)
 			 "interior-focus", &interior_focus,
 			 "focus-line-width", &focus_width, NULL);
 
+    style = gtk_widget_get_style (widget);
     if (entry->has_frame) {
-	*xborder = widget->style->xthickness;
-	*yborder = widget->style->ythickness;
+	*xborder = style->xthickness;
+	*yborder = style->ythickness;
     } else {
 	*xborder = 0;
 	*yborder = 0;
@@ -948,13 +953,15 @@ gtk_secure_entry_size_request(GtkWidget * widget,
 			      GtkRequisition * requisition)
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
+    GtkStyle *style;
     PangoFontMetrics *metrics;
     gint xborder, yborder;
     PangoContext *context;
 
+    style = gtk_widget_get_style (widget);
     context = gtk_widget_get_pango_context(widget);
     metrics = pango_context_get_metrics(context,
-					widget->style->font_desc,
+					style->font_desc,
 					pango_context_get_language
 					(context));
 
@@ -993,8 +1000,10 @@ get_text_area_size(GtkSecureEntry * entry,
     gint xborder, yborder;
     GtkRequisition requisition;
     GtkWidget *widget = GTK_WIDGET(entry);
+    GtkAllocation allocation;
 
     gtk_widget_get_child_requisition(widget, &requisition);
+    gtk_widget_get_allocation (GTK_WIDGET(entry), &allocation);
 
     get_borders(entry, &xborder, &yborder);
 
@@ -1005,7 +1014,7 @@ get_text_area_size(GtkSecureEntry * entry,
 	*y = yborder;
 
     if (width)
-	*width = GTK_WIDGET(entry)->allocation.width - xborder * 2;
+	*width = allocation.width - xborder * 2;
 
     if (height)
 	*height = requisition.height - yborder * 2;
@@ -1017,26 +1026,28 @@ get_widget_window_size(GtkSecureEntry * entry,
 {
     GtkRequisition requisition;
     GtkWidget *widget = GTK_WIDGET(entry);
+    GtkAllocation allocation;
 
     gtk_widget_get_child_requisition(widget, &requisition);
+    gtk_widget_get_allocation (GTK_WIDGET(entry), &allocation);
 
     if (x)
-	*x = widget->allocation.x;
+	*x = allocation.x;
 
     if (y) {
 	if (entry->is_cell_renderer)
-	    *y = widget->allocation.y;
+	    *y = allocation.y;
 	else
-	    *y = widget->allocation.y + (widget->allocation.height -
-					 requisition.height) / 2;
+	    *y = allocation.y + (allocation.height -
+				 requisition.height) / 2;
     }
 
     if (width)
-	*width = widget->allocation.width;
+	*width = allocation.width;
 
     if (height) {
 	if (entry->is_cell_renderer)
-	    *height = widget->allocation.height;
+	    *height = allocation.height;
 	else
 	    *height = requisition.height;
     }
@@ -1048,9 +1059,9 @@ gtk_secure_entry_size_allocate(GtkWidget * widget,
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
 
-    widget->allocation = *allocation;
+    gtk_widget_set_allocation (widget, allocation);
 
-    if (GTK_WIDGET_REALIZED(widget)) {
+    if (gtk_widget_get_realized (widget)) {
 	/* We call gtk_widget_get_child_requisition, since we want (for
 	 * backwards compatibility reasons) the realization here to
 	 * be affected by the usize of the entry, if set
@@ -1059,7 +1070,8 @@ gtk_secure_entry_size_allocate(GtkWidget * widget,
 
 	get_widget_window_size(entry, &x, &y, &width, &height);
 
-	gdk_window_move_resize(widget->window, x, y, width, height);
+	gdk_window_move_resize(gtk_widget_get_window (widget),
+			       x, y, width, height);
 
 	get_text_area_size(entry, &x, &y, &width, &height);
 
@@ -1072,6 +1084,8 @@ gtk_secure_entry_size_allocate(GtkWidget * widget,
 static void
 gtk_secure_entry_draw_frame(GtkWidget * widget)
 {
+    GtkStyle *style;
+    GdkWindow *window;
     gint x = 0, y = 0;
     gint width, height;
     gboolean interior_focus;
@@ -1081,27 +1095,29 @@ gtk_secure_entry_draw_frame(GtkWidget * widget)
 			 "interior-focus", &interior_focus,
 			 "focus-line-width", &focus_width, NULL);
 
-    gdk_drawable_get_size(widget->window, &width, &height);
+    window = gtk_widget_get_window (widget);
+    gdk_drawable_get_size(window, &width, &height);
 
-    if (GTK_WIDGET_HAS_FOCUS(widget) && !interior_focus) {
+    if (gtk_widget_has_focus (widget) && !interior_focus) {
 	x += focus_width;
 	y += focus_width;
 	width -= 2 * focus_width;
 	height -= 2 * focus_width;
     }
 
-    gtk_paint_shadow(widget->style, widget->window,
+    style = gtk_widget_get_style (widget);
+    gtk_paint_shadow(style, window,
 		     GTK_STATE_NORMAL, GTK_SHADOW_IN,
 		     NULL, widget, "entry", x, y, width, height);
 
-    if (GTK_WIDGET_HAS_FOCUS(widget) && !interior_focus) {
+    if (gtk_widget_has_focus (widget) && !interior_focus) {
 	x -= focus_width;
 	y -= focus_width;
 	width += 2 * focus_width;
 	height += 2 * focus_width;
 
-	gtk_paint_focus(widget->style, widget->window,
-			GTK_WIDGET_STATE(widget), NULL, widget, "entry", 0,
+	gtk_paint_focus(style, window,
+			gtk_widget_get_state (widget), NULL, widget, "entry", 0,
 			0, width, height);
     }
 }
@@ -1110,21 +1126,24 @@ static gint
 gtk_secure_entry_expose(GtkWidget * widget, GdkEventExpose * event)
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
+    GtkStyle *style;
 
-    if (widget->window == event->window)
+    if (gtk_widget_get_window (widget) == event->window)
 	gtk_secure_entry_draw_frame(widget);
     else if (entry->text_area == event->window) {
 	gint area_width, area_height;
 
 	get_text_area_size(entry, NULL, NULL, &area_width, &area_height);
 
-	gtk_paint_flat_box(widget->style, entry->text_area,
-			   GTK_WIDGET_STATE(widget), GTK_SHADOW_NONE,
+
+	style = gtk_widget_get_style (widget);
+	gtk_paint_flat_box(style, entry->text_area,
+			   gtk_widget_get_state (widget), GTK_SHADOW_NONE,
 			   NULL, widget, "entry_bg",
 			   0, 0, area_width, area_height);
 
 	if ((entry->invisible_char != 0) &&
-	    GTK_WIDGET_HAS_FOCUS(widget) &&
+	    gtk_widget_has_focus (widget) &&
 	    entry->selection_bound == entry->current_pos
 	    && entry->cursor_visible)
 	    gtk_secure_entry_draw_cursor(GTK_SECURE_ENTRY(widget));
@@ -1147,7 +1166,7 @@ gtk_secure_entry_button_press(GtkWidget * widget, GdkEventButton * event)
 
     entry->button = event->button;
 
-    if (!GTK_WIDGET_HAS_FOCUS(widget)) {
+    if (!gtk_widget_has_focus (widget)) {
 	entry->in_click = TRUE;
 	gtk_widget_grab_focus(widget);
 	entry->in_click = FALSE;
@@ -1351,7 +1370,7 @@ gtk_secure_entry_grab_focus(GtkWidget * widget)
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
     gboolean select_on_focus;
 
-    GTK_WIDGET_SET_FLAGS(widget, GTK_CAN_DEFAULT);
+    gtk_widget_set_can_default (widget, TRUE);
     GTK_WIDGET_CLASS(parent_class)->grab_focus(widget);
 
     /* read current select on focus setting from GtkEntry */
@@ -1381,17 +1400,17 @@ gtk_secure_entry_state_changed(GtkWidget * widget,
 			       GtkStateType previous_state G_GNUC_UNUSED)
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
+    GtkStyle *style;
 
-    if (GTK_WIDGET_REALIZED(widget)) {
-	gdk_window_set_background(widget->window,
-				  &widget->style->
-				  base[GTK_WIDGET_STATE(widget)]);
+    style = gtk_widget_get_style (widget);
+    if (gtk_widget_get_realized (widget)) {
+	gdk_window_set_background(gtk_widget_get_window(widget),
+				  &style->base[gtk_widget_get_state (widget)]);
 	gdk_window_set_background(entry->text_area,
-				  &widget->style->
-				  base[GTK_WIDGET_STATE(widget)]);
+				  &style->base[gtk_widget_get_state (widget)]);
     }
 
-    if (!GTK_WIDGET_IS_SENSITIVE(widget)) {
+    if (!gtk_widget_is_sensitive (widget)) {
 	/* Clear any selection */
 	gtk_editable_select_region(GTK_EDITABLE(entry), entry->current_pos,
 				   entry->current_pos);
@@ -1517,16 +1536,16 @@ static void
 gtk_secure_entry_style_set(GtkWidget * widget, GtkStyle * previous_style)
 {
     GtkSecureEntry *entry = GTK_SECURE_ENTRY(widget);
+    GtkStyle *style;
 
     gtk_secure_entry_recompute(entry);
 
-    if (previous_style && GTK_WIDGET_REALIZED(widget)) {
-	gdk_window_set_background(widget->window,
-				  &widget->style->
-				  base[GTK_WIDGET_STATE(widget)]);
+    style = gtk_widget_get_style (widget);
+    if (previous_style && gtk_widget_get_realized (widget)) {
+	gdk_window_set_background(gtk_widget_get_window (widget),
+				  &style->base[gtk_widget_get_state (widget)]);
 	gdk_window_set_background(entry->text_area,
-				  &widget->style->
-				  base[GTK_WIDGET_STATE(widget)]);
+				  &style->base[gtk_widget_get_state (widget)]);
     }
 }
 
@@ -1879,13 +1898,18 @@ gtk_secure_entry_real_activate(GtkSecureEntry * entry)
     if (entry->activates_default) {
 	toplevel = gtk_widget_get_toplevel(widget);
 	if (GTK_IS_WINDOW(toplevel)) {
-	    window = GTK_WINDOW(toplevel);
+	    GtkWidget *default_widget;
 
-	    if (window &&
-		widget != window->default_widget &&
-		!(widget == window->focus_widget &&
-		  (!window->default_widget
-		   || !GTK_WIDGET_SENSITIVE(window->default_widget))))
+	    window = GTK_WINDOW(toplevel);
+	    if (window)
+		default_widget = gtk_window_get_default_widget (window);
+	    else
+		return;
+
+	    if (widget != default_widget &&
+		!(widget == gtk_window_get_focus (window) &&
+		  (!default_widget
+		   || !gtk_widget_get_sensitive (default_widget))))
 		gtk_window_activate_default(window);
 	}
     }
@@ -2159,7 +2183,7 @@ gtk_secure_entry_create_layout(GtkSecureEntry * entry,
 
 	pango_dir = pango_find_base_dir(entry->text, entry->n_bytes);
 	if (pango_dir == PANGO_DIRECTION_NEUTRAL) {
-	    if (GTK_WIDGET_HAS_FOCUS(widget)) {
+	    if (gtk_widget_has_focus (widget)) {
 		GdkDisplay *display = gtk_widget_get_display(widget);
 		GdkKeymap *keymap = gdk_keymap_get_for_display(display);
 		pango_dir = gdk_keymap_get_direction(keymap);
@@ -2264,24 +2288,24 @@ get_layout_position(GtkSecureEntry * entry, gint * x, gint * y)
 static void
 gtk_secure_entry_draw_text(GtkSecureEntry * entry)
 {
-    GtkWidget *widget;
+    GtkWidget *widget = GTK_WIDGET(entry);
     PangoLayoutLine *line;
+    GtkStyle *style;
 
     if (entry->invisible_char == 0)
 	return;
 
-    if (GTK_WIDGET_DRAWABLE(entry)) {
+    if (gtk_widget_is_drawable (widget)) {
 	PangoLayout *layout = gtk_secure_entry_ensure_layout(entry, TRUE);
 	gint x, y;
 	gint start_pos, end_pos;
 
-	widget = GTK_WIDGET(entry);
-
 	get_layout_position(entry, &x, &y);
 
+	style = gtk_widget_get_style (widget);
 	gdk_draw_layout(entry->text_area,
-			widget->style->text_gc[widget->state], x, y,
-			layout);
+			style->text_gc[gtk_widget_get_state (widget)],
+				       x, y, layout);
 
 	if (gtk_editable_get_selection_bounds
 	    (GTK_EDITABLE(entry), &start_pos, &end_pos)) {
@@ -2304,12 +2328,12 @@ gtk_secure_entry_draw_text(GtkSecureEntry * entry)
 
 	    pango_layout_get_extents(layout, NULL, &logical_rect);
 
-	    if (GTK_WIDGET_HAS_FOCUS(entry)) {
-		selection_gc = widget->style->base_gc[GTK_STATE_SELECTED];
-		text_gc = widget->style->text_gc[GTK_STATE_SELECTED];
+	    if (gtk_widget_has_focus (widget)) {
+		selection_gc = style->base_gc[GTK_STATE_SELECTED];
+		text_gc = style->text_gc[GTK_STATE_SELECTED];
 	    } else {
-		selection_gc = widget->style->base_gc[GTK_STATE_ACTIVE];
-		text_gc = widget->style->text_gc[GTK_STATE_ACTIVE];
+		selection_gc = style->base_gc[GTK_STATE_ACTIVE];
+		text_gc = style->text_gc[GTK_STATE_ACTIVE];
 	    }
 
 	    for (i = 0; i < n_ranges; i++) {
@@ -2362,13 +2386,13 @@ draw_insertion_cursor(GtkSecureEntry * entry,
 static void
 gtk_secure_entry_draw_cursor(GtkSecureEntry * entry)
 {
+    GtkWidget *widget = GTK_WIDGET(entry);
     GdkKeymap *keymap =
 	gdk_keymap_get_for_display(gtk_widget_get_display
-				   (GTK_WIDGET(entry)));
+				   (widget));
     PangoDirection keymap_direction = gdk_keymap_get_direction(keymap);
 
-    if (GTK_WIDGET_DRAWABLE(entry)) {
-	GtkWidget *widget = GTK_WIDGET(entry);
+    if (gtk_widget_is_drawable (widget)) {
 	GdkRectangle cursor_location;
 	gboolean split_cursor;
 
@@ -2426,7 +2450,7 @@ gtk_secure_entry_draw_cursor(GtkSecureEntry * entry)
 static void
 gtk_secure_entry_queue_draw(GtkSecureEntry * entry)
 {
-    if (GTK_WIDGET_REALIZED(entry))
+    if (gtk_widget_get_realized (GTK_WIDGET(entry)))
 	gdk_window_invalidate_rect(entry->text_area, NULL, FALSE);
 }
 
@@ -2515,7 +2539,7 @@ gtk_secure_entry_adjust_scroll(GtkSecureEntry * entry)
     PangoLayoutLine *line;
     PangoRectangle logical_rect;
 
-    if (!GTK_WIDGET_REALIZED(entry))
+    if (!gtk_widget_get_realized (GTK_WIDGET(entry)))
 	return;
 
     gdk_drawable_get_size(entry->text_area, &text_area_width, NULL);
@@ -3105,10 +3129,11 @@ gtk_secure_entry_mnemonic_activate(GtkWidget * widget,
 static gboolean
 cursor_blinks(GtkSecureEntry * entry)
 {
-    GtkSettings *settings = gtk_widget_get_settings(GTK_WIDGET(entry));
+    GtkWidget *widget = GTK_WIDGET(entry);
+    GtkSettings *settings = gtk_widget_get_settings(widget);
     gboolean blink;
 
-    if (GTK_WIDGET_HAS_FOCUS(entry) &&
+    if (gtk_widget_has_focus (widget) &&
 	entry->selection_bound == entry->current_pos) {
 	g_object_get(settings, "gtk-cursor-blink", &blink, NULL);
 	return blink;
@@ -3130,24 +3155,28 @@ get_cursor_time(GtkSecureEntry * entry)
 static void
 show_cursor(GtkSecureEntry * entry)
 {
+    GtkWidget *widget = GTK_WIDGET(entry);
+
     if (!entry->cursor_visible) {
 	entry->cursor_visible = TRUE;
 
-	if (GTK_WIDGET_HAS_FOCUS(entry)
+	if (gtk_widget_has_focus (widget)
 	    && entry->selection_bound == entry->current_pos)
-	    gtk_widget_queue_draw(GTK_WIDGET(entry));
+	    gtk_widget_queue_draw(widget);
     }
 }
 
 static void
 hide_cursor(GtkSecureEntry * entry)
 {
+    GtkWidget *widget = GTK_WIDGET(entry);
+
     if (entry->cursor_visible) {
 	entry->cursor_visible = FALSE;
 
-	if (GTK_WIDGET_HAS_FOCUS(entry)
+	if (gtk_widget_has_focus (widget)
 	    && entry->selection_bound == entry->current_pos)
-	    gtk_widget_queue_draw(GTK_WIDGET(entry));
+	    gtk_widget_queue_draw(widget);
     }
 }
 
@@ -3158,19 +3187,21 @@ static gint
 blink_cb(gpointer data)
 {
     GtkSecureEntry *entry;
+    GtkWidget *widget;
 
     GDK_THREADS_ENTER();
 
     entry = GTK_SECURE_ENTRY(data);
+    widget = GTK_WIDGET (entry);
 
-    if (!GTK_WIDGET_HAS_FOCUS(entry)) {
+    if (!gtk_widget_has_focus (widget)) {
 	g_warning
 	    ("GtkSecureEntry - did not receive focus-out-event. If you\n"
 	     "connect a handler to this signal, it must return\n"
 	     "FALSE so the entry gets the event as well");
     }
 
-    g_assert(GTK_WIDGET_HAS_FOCUS(entry));
+    g_assert(gtk_widget_has_focus (widget));
     g_assert(entry->selection_bound == entry->current_pos);
 
     if (entry->cursor_visible) {

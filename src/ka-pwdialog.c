@@ -96,7 +96,8 @@ grab_keyboard (GtkWidget *win, GdkEvent *event, gpointer data)
 
 	GdkGrabStatus status;
 	if (!pwdialog->priv->grabbed) {
-		status = gdk_keyboard_grab (win->window, FALSE, gdk_event_get_time (event));
+		status = gdk_keyboard_grab (gtk_widget_get_window (win),
+					    FALSE, gdk_event_get_time (event));
 		if (status == GDK_GRAB_SUCCESS)
 			pwdialog->priv->grabbed = TRUE;
 		else
@@ -123,7 +124,7 @@ ungrab_keyboard (GtkWidget *win G_GNUC_UNUSED,
 static gboolean
 window_state_changed (GtkWidget *win, GdkEventWindowState *event, gpointer data)
 {
-	GdkWindowState state = gdk_window_get_state (win->window);
+	GdkWindowState state = gdk_window_get_state (gtk_widget_get_window (win));
 
 	if (state & GDK_WINDOW_STATE_WITHDRAWN ||
 	    state & GDK_WINDOW_STATE_ICONIFIED ||

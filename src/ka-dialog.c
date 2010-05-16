@@ -223,8 +223,12 @@ credentials_expiring_real (KaApplet* applet)
 	    (now + ka_applet_get_pw_prompt_secs(applet) > my_creds.times.endtime))
 		retval = TRUE;
 
-	/* If our creds are expiring, determine whether they are renewable */
-	if (retval && get_cred_renewable(&my_creds) && my_creds.times.renew_till > now) {
+	/* If our creds are expiring, determine whether they are renewable.
+	 * If the expiry is already at the renew_till time, don't consider
+	 * credentials renewable */
+	if (retval && get_cred_renewable(&my_creds)
+	    && my_creds.times.renew_till > now
+	    && my_creds.times.renew_till > creds_expiry) {
 		ka_applet_set_tgt_renewable(applet, TRUE);
 	}
 

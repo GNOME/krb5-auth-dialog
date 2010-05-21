@@ -12,17 +12,15 @@
 #
 # Guido Günther <agx@sigxcpu.org>, 2009.
 # Mario Blättermann <mariobl@gnome.org>, 2009, 2010.
-# Christian Kirbach <Christian.Kirbach@googlemail.com>, 2009.
-#
+# Christian Kirbach  <Christian.Kirbach@googlemail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
-"auth-dialog&component=general\n"
-"POT-Creation-Date: 2010-04-27 17:51+0000\n"
-"PO-Revision-Date: 2010-05-02 12:11+0100\n"
-"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-21 09:43+0200\n"
+"PO-Revision-Date: 2010-05-20 16:43+0200\n"
+"Last-Translator: Christian Kirbach  <Christian.Kirbach@googlemail.com>\n"
+"Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,44 +41,44 @@ msgstr "Service-Tickets"
 msgid "_Renew Ticket"
 msgstr "Ticket _erneuern"
 
-#: ../src/krb5-auth-dialog.c:172
+#: ../src/ka-dialog.c:172
 msgid "unknown error"
 msgstr "Unbekannter Fehler"
 
-#: ../src/krb5-auth-dialog.c:328
+#: ../src/ka-dialog.c:332
 msgid "Expired"
 msgstr "Abgelaufen"
 
-#: ../src/krb5-auth-pwdialog.c:173
+#: ../src/ka-pwdialog.c:174
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Kerberos-Ticket konnte nicht erlangt werden: »%s«"
 
-#: ../src/krb5-auth-pwdialog.c:210 ../src/krb5-auth-applet.c:390
+#: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:390
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Ihre Anmeldeinformationen laufen in %d Minute ab"
 msgstr[1] "Ihre Anmeldeinformationen laufen in %d Minuten ab"
 
-#: ../src/krb5-auth-pwdialog.c:215 ../src/krb5-auth-applet.c:395
+#: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:395
 msgid "Your credentials have expired"
 msgstr "Anmeldeinformationen abgelaufen"
 
-#: ../src/krb5-auth-pwdialog.c:236
+#: ../src/ka-pwdialog.c:237
 msgid "Please enter your Kerberos password:"
 msgstr "Bitte geben Sie ihr Kerberos-Passwort ein:"
 
-#: ../src/krb5-auth-pwdialog.c:247
+#: ../src/ka-pwdialog.c:248
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Bitte geben Sie das Passwort für »%s« ein:"
 
-#: ../src/krb5-auth-pwdialog.c:267
+#: ../src/ka-pwdialog.c:268
 msgid "The password you entered is invalid"
 msgstr "Das eingegebene Passwort ist nicht gültig"
 
-#: ../src/krb5-auth-pwdialog.c:283
+#: ../src/ka-pwdialog.c:284
 #, c-format
 msgid "%s Error"
 msgstr "%s-Fehler"
@@ -208,8 +206,9 @@ msgstr "Client oder Server hat einen Null-Schlüssel"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
 #: ../src/dummy-strings.c:33
+#, fuzzy
 msgid "Ticket is ineligible for postdating"
-msgstr ""
+msgstr "Ticket kommt nicht für ? in Frage"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
 #: ../src/dummy-strings.c:34
@@ -244,7 +243,7 @@ msgstr "KDC unterstützt padata-Typ nicht"
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
 #: ../src/dummy-strings.c:40
 msgid "KDC has no support for transited type"
-msgstr ""
+msgstr "KDC unterstützt transit-Typ nicht"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
 #: ../src/dummy-strings.c:41
@@ -400,8 +399,9 @@ msgstr "Unpassender Prüfsummentyp in Nachricht"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
 #: ../src/dummy-strings.c:71
+#, fuzzy
 msgid "Policy rejects transited path"
-msgstr ""
+msgstr "Richtlinie lehnt ? ab"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:72
@@ -650,7 +650,8 @@ msgstr "Kerberos-Dienst ist unbekannt"
 #: ../src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
 msgstr ""
-"Es kann kein KDC des angeforderten Administrationsbereiches kontaktiert werden"
+"Es kann kein KDC des angeforderten Administrationsbereiches kontaktiert "
+"werden"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
@@ -687,7 +688,7 @@ msgstr "Nachricht ist eine Wiederholung"
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: ../src/dummy-strings.c:128
 msgid "Replay I/O operation failed XXX"
-msgstr ""
+msgstr "Wiederholen der E/A-Operation ist fehlgeschlagen"
 
 #. krb5_err.et:krb5:KRB5_RC_IO
 #: ../src/dummy-strings.c:129
@@ -705,7 +706,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: ../src/dummy-strings.c:131
 msgid "End-of-file on replay cache I/O"
-msgstr ""
+msgstr "Dateiende erreicht beim Wiederholungs-Zwischenspeicher"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: ../src/dummy-strings.c:132
@@ -722,7 +723,7 @@ msgstr "Zugriff verweigert im Code des Wiederholungs-Zwischenspeichers"
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
 #: ../src/dummy-strings.c:134
 msgid "I/O error in replay cache i/o code"
-msgstr ""
+msgstr "E/A-Fehler im Wiederholungs-Zwischenspeicher"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: ../src/dummy-strings.c:135
@@ -750,7 +751,7 @@ msgstr "Ungültiges Format der Übersetzungsdatei des Administrationsbereiches"
 #. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
 #: ../src/dummy-strings.c:139
 msgid "Can't open/find lname translation database"
-msgstr ""
+msgstr "Die lname-Übersetzungsdatenbank kann nicht gefunden/geöffnet werden"
 
 #. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
 #: ../src/dummy-strings.c:140
@@ -842,7 +843,7 @@ msgstr "Typ der Schlüsseltabelle ist bereits registriert."
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
 #: ../src/dummy-strings.c:157
 msgid "Credentials cache I/O operation failed XXX"
-msgstr ""
+msgstr "Vorgang des Anmeldedaten-Zwischenspeichers ist fehlgeschlagen"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
 #: ../src/dummy-strings.c:158
@@ -950,7 +951,8 @@ msgstr ""
 #: ../src/dummy-strings.c:177
 msgid "Unsupported key table format version number"
 msgstr ""
-"Nicht unterstützte Formatversionsnummer des Schlüsseltabelle-Zwischenspeichers"
+"Nicht unterstützte Formatversionsnummer des Schlüsseltabelle-"
+"Zwischenspeichers"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: ../src/dummy-strings.c:178
@@ -966,7 +968,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_REQUIRED
 #: ../src/dummy-strings.c:180
 msgid "Hostname cannot be canonicalized"
-msgstr ""
+msgstr "Der Rechnername kann nicht kanonisch angegeben werden"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
 #: ../src/dummy-strings.c:181
@@ -992,8 +994,9 @@ msgstr ""
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: ../src/dummy-strings.c:185
+#, fuzzy
 msgid "Requesting ticket can't get forwardable tickets"
-msgstr ""
+msgstr "Angefordertes Ticket ?"
 
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
 #: ../src/dummy-strings.c:186
@@ -1043,7 +1046,8 @@ msgstr "Name der Schlüsseltabelle ist zu lang"
 #: ../src/dummy-strings.c:194
 msgid "Key version number for principal in key table is incorrect"
 msgstr ""
-"Versionsnummer des Schlüssels für Principal in Schlüsseltabelle ist fehlerhaft"
+"Versionsnummer des Schlüssels für Principal in Schlüsseltabelle ist "
+"fehlerhaft"
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: ../src/dummy-strings.c:195
@@ -1431,41 +1435,41 @@ msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Falsche magische Zahl für GSSAPI QUEUE"
 
 #. Translators: First number is hours, second number is minutes
-#: ../src/krb5-auth-applet.c:386
+#: ../src/ka-applet.c:386
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Anmeldeinformationen laufen in %.2d:%.2dh ab."
 
-#: ../src/krb5-auth-applet.c:491
+#: ../src/ka-applet.c:491
 msgid "Don't show me this again"
 msgstr "Dies nicht mehr anzeigen"
 
-#: ../src/krb5-auth-applet.c:533
+#: ../src/ka-applet.c:533
 msgid "Network credentials valid"
 msgstr "Anmeldeinformationen sind gültig"
 
-#: ../src/krb5-auth-applet.c:534
+#: ../src/ka-applet.c:534
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Sie haben Ihre Kerberos-Anmeldeinformationen erneuert."
 
-#: ../src/krb5-auth-applet.c:550
+#: ../src/ka-applet.c:550
 msgid "Network credentials expiring"
 msgstr "Anmeldeinformationen laufen ab"
 
-#: ../src/krb5-auth-applet.c:569
+#: ../src/ka-applet.c:569
 msgid "Network credentials expired"
 msgstr "Anmeldeinformationen abgelaufen"
 
-#: ../src/krb5-auth-applet.c:570
+#: ../src/ka-applet.c:570
 msgid "Your Kerberos credentails have expired."
 msgstr "Ihre Kerberos-Anmeldeinformationen sind abgelaufen."
 
-#: ../src/krb5-auth-applet.c:615
+#: ../src/ka-applet.c:615
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "Fehler beim Öffnen des Einstellungsdialogs: %s"
 
-#: ../src/krb5-auth-applet.c:656
+#: ../src/ka-applet.c:656
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1475,7 +1479,7 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/krb5-auth-applet.c:692
+#: ../src/ka-applet.c:692
 msgid "translator-credits"
 msgstr ""
 "Guido Günther <agx@sigxcpu.org>\n"
@@ -1483,11 +1487,11 @@ msgstr ""
 "Christian Kirbach <Christian.Kirbach@googlemail.com>"
 
 #. kdestroy
-#: ../src/krb5-auth-applet.c:734
+#: ../src/ka-applet.c:734
 msgid "Remove Credentials _Cache"
 msgstr "_Anmeldeinformationen löschen"
 
-#: ../src/krb5-auth-tools.c:45
+#: ../src/ka-tools.c:45
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1496,31 +1500,31 @@ msgstr ""
 "Fehler beim Anzeigen der Hilfe:\n"
 "%s"
 
-#: ../src/krb5-auth-tickets.c:54
+#: ../src/ka-tickets.c:54
 msgid "Principal"
 msgstr "Principal"
 
-#: ../src/krb5-auth-tickets.c:60
+#: ../src/ka-tickets.c:60
 msgid "Start Time"
 msgstr "Startzeit"
 
-#: ../src/krb5-auth-tickets.c:66
+#: ../src/ka-tickets.c:66
 msgid "End Time"
 msgstr "Endzeit"
 
-#: ../src/krb5-auth-tickets.c:72
+#: ../src/ka-tickets.c:72
 msgid "Fwd"
-msgstr ""
+msgstr "Weiterleiten"
 
-#: ../src/krb5-auth-tickets.c:78
+#: ../src/ka-tickets.c:78
 msgid "Proxy"
 msgstr "Proxy"
 
-#: ../src/krb5-auth-tickets.c:84
+#: ../src/ka-tickets.c:84
 msgid "Renew"
 msgstr "Erneuern"
 
-#: ../src/krb5-auth-tickets.c:107
+#: ../src/ka-tickets.c:107
 msgid "Error displaying service ticket information"
 msgstr "Fehler beim Anzeigen der Informationen des Tickets des Dienstes"
 
@@ -1568,7 +1572,7 @@ msgstr "PKINIT-Bezeichner"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:10
 msgid "PKINIT trust anchors"
-msgstr ""
+msgstr "PKINIT Vertrauensinstitutionen"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:11
 msgid "Prompt minutes before expiry"
@@ -1576,7 +1580,7 @@ msgstr "Minuten vor Ablauf nachfragen"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:12
 msgid "Proxiable ticket"
-msgstr ""
+msgstr "Proxy-fähiges Ticket"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:13
 msgid "Renewable ticket"
@@ -1584,15 +1588,15 @@ msgstr "Erneuerbares Ticket"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:14
 msgid "Requested tickets should be forwardable"
-msgstr ""
+msgstr "Angeforderte Tickets sollten weiterleitbar sein"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:15
 msgid "Requested tickets should be proxiable"
-msgstr ""
+msgstr "Angeforderte Tickets sollten proxy-fähig sein"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:16
 msgid "Requested tickets should be renewable"
-msgstr ""
+msgstr "Angeforderte Tickets sollten erneuerbar sein"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:17
 msgid "Show a trayicon in the status area of the panel"
@@ -1603,7 +1607,8 @@ msgid "Show trayicon"
 msgstr "Benachrichtigungssymbol anzeigen"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:19
-msgid "Start prompting/displaying notifications that many minutes before expiry"
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
 msgstr "So viele Minuten vor Ablauf benachrichtigen/anzeigen"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:20
@@ -1631,16 +1636,18 @@ msgstr "Benachrichtigung über gültiges Ticket"
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr ""
+"Warnung: q-agent mit Admistratorrechten auszuführen ist auf diesem System "
+"gefährlich\n"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:345
+#: ../preferences/ka-preferences.c:345
 msgid "Choose Certificate"
 msgstr "Zertifikat wählen"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:361
+#: ../preferences/ka-preferences.c:361
 msgid "X509 Certificates"
 msgstr "X509-Zertifikate"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:365
+#: ../preferences/ka-preferences.c:365
 msgid "all files"
 msgstr "Alle Dateien"
 
@@ -1679,8 +1686,8 @@ msgstr "Legt fest, ob erneuerbare Tickets angefordert werden sollen"
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:8
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
-"Legt fest, ob ein Sicherheits-Token (Smartcard) zur Identifizierung verwendet "
-"wird"
+"Legt fest, ob ein Sicherheits-Token (Smartcard) zur Identifizierung "
+"verwendet wird"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:9
 msgid "Kerberos"
@@ -1741,7 +1748,7 @@ msgstr "Warnen"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:23
 msgid "X509 trust anchors:"
-msgstr ""
+msgstr "X509 Vertrauensinstitution:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:24
 msgid "_Browse..."

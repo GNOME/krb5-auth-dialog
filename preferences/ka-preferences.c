@@ -826,7 +826,7 @@ main (int argc, char *argv[])
       g_print ("%s\n%s\n",
                error->message,
                help_msg);
-     g_error_free (error);
+     g_clear_error (&error);
      return 1;
   }
   textdomain (PACKAGE);

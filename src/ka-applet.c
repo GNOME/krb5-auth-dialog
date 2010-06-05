@@ -620,7 +620,7 @@ ka_applet_cb_preferences (GtkWidget* menuitem G_GNUC_UNUSED,
 				  G_CALLBACK (gtk_widget_destroy),
 				  NULL);
 		gtk_widget_show (message_dialog);
-		g_error_free (error);
+		g_clear_error (&error);
 	  }
 }
 
@@ -661,7 +661,7 @@ ka_about_dialog_url_hook (GtkAboutDialog *about,
 				  G_CALLBACK (gtk_widget_destroy),
 				  NULL);
 		gtk_widget_show (message_dialog);
-		g_error_free (error);
+		g_clear_error (&error);
 	  }
 }
 

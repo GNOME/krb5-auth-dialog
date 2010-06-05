@@ -762,8 +762,7 @@ monitor_ccache(KaApplet *applet)
 	}
 out:
 	g_object_unref (ccache);
-	if (err)
-		g_error_free (err);
+	g_clear_error (&err);
 	return ret;
 }
 
@@ -1138,7 +1137,7 @@ main (int argc, char *argv[])
 		g_print ("%s\n%s\n",
 			 error->message,
 			 help_msg);
-		g_error_free (error);
+		g_clear_error (&error);
 		return 1;
 	}
 	g_option_context_free (context);

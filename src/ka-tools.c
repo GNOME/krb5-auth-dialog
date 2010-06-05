@@ -51,7 +51,7 @@ ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
                   NULL);
 
       gtk_widget_show (message_dialog);
-      g_error_free (error);
+      g_clear_error (&error);
   }
   g_free (url);
 }

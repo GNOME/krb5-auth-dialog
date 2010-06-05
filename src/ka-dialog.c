@@ -732,14 +732,13 @@ ccache_changed_cb (GFileMonitor *monitor G_GNUC_UNUSED,
 }
 
 
-static gboolean
+static GFileMonitor*
 monitor_ccache(KaApplet *applet)
 {
 	const gchar *ccache_name;
 	GFile *ccache;
-	GFileMonitor *monitor;
+	GFileMonitor *monitor = NULL;
 	GError *err = NULL;
-	gboolean ret = FALSE;
 
 	ccache_name = ka_ccache_filename ();
 	g_return_val_if_fail (ccache_name != NULL, FALSE);
@@ -753,17 +752,14 @@ monitor_ccache(KaApplet *applet)
 			credentials_expiring ((gpointer)applet);
 		else
 			g_warning ("Failed to monitor %s: %s", ccache_name, err->message);
-		goto out;
 	} else {
 		/* g_file_monitor_set_rate_limit(monitor, 10*1000); */
 		g_signal_connect (monitor, "changed", G_CALLBACK (ccache_changed_cb), applet);
 		KA_DEBUG ("Monitoring %s", ccache_name);
-		ret = TRUE;
 	}
-out:
 	g_object_unref (ccache);
 	g_clear_error (&err);
-	return ret;
+	return monitor;
 }
 
 
@@ -1127,6 +1123,7 @@ main (int argc, char *argv[])
 			"Always run", NULL},
 		{ NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL }
 	};
+	GFileMonitor *monitor = NULL;
 
 	context = g_option_context_new ("- Kerberos 5 credential checking");
 	g_option_context_add_main_entries (context, options, NULL);
@@ -1164,11 +1161,13 @@ main (int argc, char *argv[])
 
 		if (credentials_expiring ((gpointer)applet)) {
 			g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, applet);
-			monitor_ccache (applet);
+			monitor = monitor_ccache (applet);
 		}
 		ka_dbus_service(applet);
 		gtk_main ();
 	}
 	ka_nm_shutdown();
+	if (monitor)
+		g_object_unref (monitor);
 	return 0;
 }

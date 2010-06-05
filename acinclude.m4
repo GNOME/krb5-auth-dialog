@@ -121,7 +121,7 @@ dnl taken from libvirt which was
 dnl taken from gnome-common/macros2/gnome-compiler-flags.m4
 dnl
 dnl We've added:
-dnl   -Wextra -Wshadow -Wcast-align -Wwrite-strings -Waggregate-return -Wstrict-prototypes -Winline -Wredundant-decls
+dnl   -Wextra -Wshadow -Wcast-align -Wwrite-strings -Waggregate-return -Winline -Wredundant-decls
 dnl We've removed
 dnl   CFLAGS="$realsave_CFLAGS"
 dnl   to avoid clobbering user-specified CFLAGS
@@ -153,7 +153,7 @@ AC_DEFUN([KA_COMPILE_WARNINGS],[
     maximum|error)
 	try_compiler_flags="-Wall -Wformat -Wformat-security -Wmissing-prototypes -Wnested-externs -Wpointer-arith"
 	try_compiler_flags="$try_compiler_flags -Wextra -Wshadow -Wcast-align -Wwrite-strings -Waggregate-return"
-	try_compiler_flags="$try_compiler_flags -Wstrict-prototypes -Winline -Wredundant-decls -Wno-sign-compare"
+	try_compiler_flags="$try_compiler_flags -Winline -Wredundant-decls -Wno-sign-compare"
 	try_compiler_flags="$try_compiler_flags $common_flags"
 	if test "$enable_compile_warnings" = "error" ; then
 	    try_compiler_flags="$try_compiler_flags -Werror"

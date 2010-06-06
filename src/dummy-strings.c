@@ -5,7 +5,7 @@
 const char *dummy[] = {
 	/* Translators: files from dummy-strings.c are *all* possible errors
            returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-	   doubt please translate strings from files starting with krb5-auth
+	   doubt please translate strings from files starting with ka- and krb5-auth-
 	   first since these are the ones the user will see in any case. */
 	N_("ASN.1 failed call to system time library"),	/* asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT */
 	N_("ASN.1 structure is missing a required field"),	/* asn1_err.et:asn1:ASN1_MISSING_FIELD */

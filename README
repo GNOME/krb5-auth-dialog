@@ -20,12 +20,6 @@ gconftool-2 --type=string --set /apps/krb5-auth-dialog/pk_userid "FILE:/path/to/
 or if you're using a smartcard:
 gconftool-2 --type=string --set /apps/krb5-auth-dialog/pk_userid "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"
 
-A note on translations:
-Kerberos doesn't translate either its prompts or its error messages.
-As the prompt is very visible, we need to translate it externally.  To
-do this, the etpo binary in etpo/ can be used to extract the public
-strings that kerberos uses.  We are checking that in for now, until
-kerberos gets translated.
 
 DBus API
 ========
@@ -42,6 +36,7 @@ request fails. To request a TGT for the "default" principal use string:''.
 
 See examples/tgt-signals.py for information about sent DBus signals.
 
+
 Plugins
 =======
 Plugins are currently disabled by default. To enable them you have to set the gconf key:
@@ -51,3 +46,19 @@ gconftool-2 --set --list-type=string --type=list  /apps/krb5-auth-dialog/plugins
 
 To list currently enabled plugins:
 gconftool-2 --get --list-type=string  /apps/krb5-auth-dialog/plugins/enabled
+
+
+A Note on Translations
+======================
+Kerberos doesn't translate either its prompts or its error messages.
+As the prompt is very visible, we need to translate it externally.  To
+do this, the etpo binary in etpo/ can be used to extract the public
+strings that kerberos uses.  We are checking that in for now, until
+kerberos gets translated.
+
+If your language doesn't have a translation yet and you want to provide one do a
+
+	cd po; make krb5-auth-dialog.pot
+
+in the unpacked source tree to get a template of translatable strings.
+

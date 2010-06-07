@@ -1,7 +1,6 @@
 [Desktop Entry]
 _Name=Network Authentication
 _Comment=Kerberos Network Authentication Dialog
-Encoding=UTF-8
 Exec=krb5-auth-dialog
 Terminal=false
 Type=Application

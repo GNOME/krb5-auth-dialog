@@ -232,8 +232,8 @@ credentials_expiring_real (KaApplet* applet)
 		ka_applet_set_tgt_renewable(applet, TRUE);
 	}
 
-	krb5_free_cred_contents (kcontext, &my_creds);
 out:
+	krb5_free_cred_contents (kcontext, &my_creds);
 	ka_applet_update_status(applet, creds_expiry);
 	return retval;
 }
@@ -859,6 +859,7 @@ ka_renew_credentials (KaApplet* applet)
 
 	retval = ka_get_tgt_from_ccache (kcontext, &my_creds);
 	if (!retval) {
+		krb5_free_cred_contents (kcontext, &my_creds);
 		krb5_cc_close (kcontext, ccache);
 		return -1;
 	}
@@ -867,7 +868,7 @@ ka_renew_credentials (KaApplet* applet)
 	set_options_from_creds (applet, kcontext, &my_creds, &opts);
 
 	if (ka_applet_get_tgt_renewable(applet)) {
-
+		krb5_free_cred_contents (kcontext, &my_creds);
 		retval = get_renewed_creds (kcontext, &my_creds, kprincipal, ccache, NULL);
 		if (retval)
 			goto out;

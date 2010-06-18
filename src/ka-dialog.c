@@ -877,12 +877,11 @@ ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 				     get_principal_realm_data(principal), 0)) {
 		goto out_free_princ;
 	}
-
 	pattern.client = principal;
 	if (!krb5_cc_retrieve_cred(context, ccache, 0, &pattern, creds))
 		ret = TRUE;
-	krb5_free_principal(context, pattern.server);
 
+	krb5_free_principal(context, pattern.server);
 out_free_princ:
 	krb5_free_principal(context, principal);
 out:

@@ -206,6 +206,7 @@ credentials_expiring_real (KaApplet* applet)
 	krb5_timestamp now;
 	gboolean retval = FALSE;
 
+	memset(&my_creds, 0, sizeof(my_creds));
 	ka_applet_set_tgt_renewable(applet, FALSE);
 	if (!ka_get_tgt_from_ccache (kcontext, &my_creds)) {
 		creds_expiry = 0;
@@ -806,6 +807,7 @@ ka_renew_credentials (KaApplet* applet)
 	krb5_creds my_creds;
 	krb5_ccache ccache;
 
+	memset(&my_creds, 0, sizeof(my_creds));
 	if (kprincipal == NULL) {
 		retval = ka_parse_name(applet, kcontext, &kprincipal);
 		if (retval)

@@ -1,4 +1,19 @@
 ============
+Vesion 0.16
+===========
+* Add plugin system
+* Memory leaks plugged
+* Bug fixes
+* Make -DSEAL safe
+* UI translations:
+	- Andrej Žnidaršič (sl)
+	- Christian.Kirbach (de)
+	- Fran Diéguez (gl)
+	- Jorge González (es)
+	- Mario Blättermann (de)
+	- Petter Reinholdtsen (nb)
+
+============
 Version 0.15
 ============
 * Add DBus signals for ticket acquisition, expiry and renewal.

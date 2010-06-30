@@ -2317,7 +2317,11 @@ gtk_secure_entry_draw_text(GtkSecureEntry * entry)
 		g_utf8_offset_to_pointer(text, start_pos) - text;
 	    gint end_index =
 		g_utf8_offset_to_pointer(text, end_pos) - text;
+#if GTK_CHECK_VERSION(2, 90, 5)
+	    cairo_region_t *clip_region = cairo_region_create();
+#else
 	    GdkRegion *clip_region = gdk_region_new();
+#endif
 	    GdkGC *text_gc;
 	    GdkGC *selection_gc;
 
@@ -2350,15 +2354,22 @@ gtk_secure_entry_draw_text(GtkSecureEntry * entry)
 		gdk_draw_rectangle(entry->text_area, selection_gc, TRUE,
 				   rect.x, rect.y, rect.width,
 				   rect.height);
-
+#if GTK_CHECK_VERSION(2, 90, 5)
+		cairo_region_union_rectangle (clip_region, &rect);
+#else
 		gdk_region_union_with_rect(clip_region, &rect);
+#endif
 	    }
 
 	    gdk_gc_set_clip_region(text_gc, clip_region);
 	    gdk_draw_layout(entry->text_area, text_gc, x, y, layout);
 	    gdk_gc_set_clip_region(text_gc, NULL);
 
+#if GTK_CHECK_VERSION(2, 90, 5)
+	    cairo_region_destroy(clip_region);
+#else
 	    gdk_region_destroy(clip_region);
+#endif
 	    g_free(ranges);
 	}
     }

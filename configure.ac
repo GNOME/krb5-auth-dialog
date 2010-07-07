@@ -74,6 +74,8 @@ if test "x$KRB5_CONFIG" != "xnone"; then
    KRB5_CFLAGS="`${KRB5_CONFIG} --cflags krb5`"
    AC_SUBST(KRB5_CFLAGS)
    AC_SUBST(KRB5_LIBS)
+else
+   AC_MSG_ERROR([krb5-config not found. You need to install a Kerberos development package])
 fi
 
 dnl Check for API differences between Heimdal and MIT Kerberos

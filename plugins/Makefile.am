@@ -11,6 +11,7 @@ endif
 pkglib_LTLIBRARIES = \
 	libka-plugin-dummy.la \
 	$(PAM_PLUGIN) \
+	libka-plugin-afs.la \
 	$(NULL)
 
 # Dummy example plugin
@@ -47,3 +48,19 @@ libka_plugin_pam_la_LDFLAGS = \
 	$(PAM_LIBS) \
 	$(NULL)
 endif
+
+# AFS plugin
+libka_plugin_afs_la_SOURCES = \
+	ka-plugin-afs.c \
+	ka-plugin-afs.h \
+	$(NULL)
+
+libka_plugin_afs_la_CPPFLAGS = \
+	$(GTK_CFLAGS)       \
+	-I$(top_srcdir)/src \
+	$(NULL)
+
+libka_plugin_afs_la_LDFLAGS = \
+	-module \
+	-avoid-version \
+	$(NULL)

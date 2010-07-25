@@ -1,5 +1,5 @@
-# translation of nb.po to Norwegian BokmÃ¥l
-# Norwegian bokmÃ¥l translation of krb5-auth-dialog
+# translation of nb.po to Norwegian Bokmål
+# Norwegian bokmål translation of krb5-auth-dialog
 # Copyright (C) 2005 Red Hat, Inc.
 # This file is distributed under the same license as the krb5-auth-dialog package.
 #
@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: nb\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-21 09:43+0200\n"
-"PO-Revision-Date: 2010-06-05 17:11MET\n"
+"PO-Revision-Date: 2010-07-25 01:08MET\n"
 "Last-Translator: Petter Reinholdtsen <pere@hungry.com>\n"
-"Language-Team: Norwegian BokmÃ¥l <i18n-nb@lister.ping.uio.no>\n"
+"Language-Team: Norwegian Bokmål <i18n-nb@lister.ping.uio.no>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,9 +25,8 @@ msgid "Network Authentication"
 msgstr "Nettverksautentisering"
 
 #: ../src/krb5-auth-dialog.xml.h:2
-#, fuzzy
 msgid "Service Tickets"
-msgstr "Fo_rny billett"
+msgstr "Tjenestebilletter"
 
 #: ../src/krb5-auth-dialog.xml.h:3
 msgid "_Renew Ticket"
@@ -39,23 +38,23 @@ msgstr "ukjent feil"
 
 #: ../src/ka-dialog.c:332
 msgid "Expired"
-msgstr "UtgÃ¥tt"
+msgstr "Utgått"
 
 #: ../src/ka-pwdialog.c:174
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr ""
+msgstr "Fikk ikke tak i kerberosbillett: '%s'"
 
 #: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:390
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "PÃ¥loggingsinformasjonen utlÃ¸per om %d minutt"
-msgstr[1] "PÃ¥loggingsinformasjonen utlÃ¸per om %d minutter"
+msgstr[0] "Påloggingsinformasjonen utløper om %d minutt"
+msgstr[1] "Påloggingsinformasjonen utløper om %d minutter"
 
 #: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:395
 msgid "Your credentials have expired"
-msgstr "PÃ¥loggingsinformasjonen har gÃ¥tt ut"
+msgstr "Påloggingsinformasjonen har gått ut"
 
 #: ../src/ka-pwdialog.c:237
 msgid "Please enter your Kerberos password:"
@@ -64,7 +63,7 @@ msgstr "Vennligst skriv inn ditt Kerberos-passord:"
 #: ../src/ka-pwdialog.c:248
 #, c-format
 msgid "Please enter the password for '%s':"
-msgstr "Vennligst oppgi passord for Â«%sÂ»:"
+msgstr "Vennligst oppgi passord for «%s»:"
 
 #: ../src/ka-pwdialog.c:268
 msgid "The password you entered is invalid"
@@ -101,7 +100,7 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
 #: ../src/dummy-strings.c:14
 msgid "ASN.1 value too large"
-msgstr ""
+msgstr "ASN.1-verdi for stor"
 
 #. asn1_err.et:asn1:ASN1_OVERFLOW
 #: ../src/dummy-strings.c:15
@@ -146,22 +145,22 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: ../src/dummy-strings.c:23
 msgid "No error"
-msgstr ""
+msgstr "Ingen feil"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NONE
 #: ../src/dummy-strings.c:24
 msgid "Client's entry in database has expired"
-msgstr ""
+msgstr "Klientens oppføring i databasen har gått ut"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
 #: ../src/dummy-strings.c:25
 msgid "Server's entry in database has expired"
-msgstr ""
+msgstr "Tjenerens oppføring i databasen har gått ut"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
 #: ../src/dummy-strings.c:26
 msgid "Requested protocol version not supported"
-msgstr ""
+msgstr "Forespurt protokollversjon er ikke støttet"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
 #: ../src/dummy-strings.c:27
@@ -191,7 +190,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
 #: ../src/dummy-strings.c:32
 msgid "Client or server has a null key"
-msgstr "Klient eller tjener har en tom nÃ¸kkel"
+msgstr "Klient eller tjener har en tom nøkkel"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
 #: ../src/dummy-strings.c:33
@@ -291,12 +290,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
 #: ../src/dummy-strings.c:52
 msgid "Ticket expired"
-msgstr "Billett utgÃ¥tt"
+msgstr "Billett utgått"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
 #: ../src/dummy-strings.c:53
 msgid "Ticket not yet valid"
-msgstr "Billett er ikke gyldig ennÃ¥"
+msgstr "Billett er ikke gyldig ennå"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
 #: ../src/dummy-strings.c:54
@@ -356,7 +355,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
 #: ../src/dummy-strings.c:65
 msgid "Service key not available"
-msgstr ""
+msgstr "Tjenestenøkkel er ikke tilgjengelig"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
@@ -377,7 +376,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
 #: ../src/dummy-strings.c:69
 msgid "Incorrect sequence number in message"
-msgstr ""
+msgstr "Feil sekvensnummer i melding"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
 #: ../src/dummy-strings.c:70
@@ -392,7 +391,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:72
 msgid "Response too big for UDP, retry with TCP"
-msgstr ""
+msgstr "Responsen er for stor for UDP.  Forsøk på nytt med TCP"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
 #: ../src/dummy-strings.c:73
@@ -487,7 +486,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: ../src/dummy-strings.c:91
 msgid "Public key encryption not supported"
-msgstr ""
+msgstr "Offentlig nøkkel-kryptering er ikke støttet"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
 #: ../src/dummy-strings.c:92
@@ -502,7 +501,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
 #: ../src/dummy-strings.c:94
 msgid "Cannot read password"
-msgstr ""
+msgstr "Kan ikke lese passord"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
 #: ../src/dummy-strings.c:95
@@ -547,7 +546,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
 #: ../src/dummy-strings.c:103
 msgid "Credential cache name malformed"
-msgstr ""
+msgstr "Navn på fullmaktsmellomlager er ikke velformet"
 
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
 #: ../src/dummy-strings.c:104
@@ -627,7 +626,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: ../src/dummy-strings.c:119
 msgid "Kerberos service unknown"
-msgstr ""
+msgstr "Ukjent kerberostjeneste"
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
@@ -1382,38 +1381,33 @@ msgstr ""
 
 #. Translators: First number is hours, second number is minutes
 #: ../src/ka-applet.c:386
-#, fuzzy, c-format
+#, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
-msgstr "PÃ¥loggingsinformasjonen utlÃ¸per om %d minutt"
+msgstr "Fine fullmakter utgår om %.2d:%.2dt"
 
 #: ../src/ka-applet.c:491
 msgid "Don't show me this again"
 msgstr "Ikke vis meg dette igjen"
 
 #: ../src/ka-applet.c:533
-#, fuzzy
 msgid "Network credentials valid"
-msgstr "PÃ¥loggingsinformasjonen har gÃ¥tt ut"
+msgstr "Nettverksfullmakter er gyldige"
 
 #: ../src/ka-applet.c:534
-#, fuzzy
 msgid "You've refreshed your Kerberos credentials."
-msgstr "PÃ¥loggingsinformasjonen har gÃ¥tt ut"
+msgstr "Du har fornyhet dine kerberosfullmakter"
 
 #: ../src/ka-applet.c:550
-#, fuzzy
 msgid "Network credentials expiring"
-msgstr "PÃ¥loggingsinformasjonen har gÃ¥tt ut"
+msgstr "Nettverksfullmaktene går ut"
 
 #: ../src/ka-applet.c:569
-#, fuzzy
 msgid "Network credentials expired"
-msgstr "PÃ¥loggingsinformasjonen har gÃ¥tt ut"
+msgstr "Nettverksfullmaktene har gått ut"
 
 #: ../src/ka-applet.c:570
-#, fuzzy
 msgid "Your Kerberos credentails have expired."
-msgstr "PÃ¥loggingsinformasjonen har gÃ¥tt ut"
+msgstr "Dine kerberosfullmakter har gått ut."
 
 #: ../src/ka-applet.c:615
 #, c-format
@@ -1430,12 +1424,12 @@ msgstr ""
 #. Translators: add the translators of your language here
 #: ../src/ka-applet.c:692
 msgid "translator-credits"
-msgstr ""
+msgstr "Petter Reinholdtsen <pere@hungry.com>, 2010"
 
 #. kdestroy
 #: ../src/ka-applet.c:734
 msgid "Remove Credentials _Cache"
-msgstr ""
+msgstr "Fjern fullmakts_mellomlager"
 
 #: ../src/ka-tools.c:45
 #, c-format
@@ -1494,15 +1488,15 @@ msgstr "Liste over utvidelser som skal lastes og aktiveres ved start"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:5
 msgid "Notify user when ticket becomes valid"
-msgstr ""
+msgstr "Meld fra til bruker når billett blir gyldig"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
 msgid "Notify user when ticket has expired"
-msgstr ""
+msgstr "Meld fra til bruker når billett har gått ut"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:7
 msgid "Notify user when ticket is about to expire"
-msgstr ""
+msgstr "Meld fra til bruker når billett snart går ut"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:8
 msgid "PKINIT CA certificates"
@@ -1595,7 +1589,7 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:1
 msgid "Appearance"
-msgstr ""
+msgstr "Utseende"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:2
 msgid "Applet"
@@ -1643,7 +1637,7 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:13
 msgid "Notifications"
-msgstr ""
+msgstr "Varsler"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:14
 msgid "PKINIT:"
@@ -1651,7 +1645,7 @@ msgstr "PKINIT:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:15
 msgid "Requested Kerberos tickets should be:"
-msgstr ""
+msgstr "Forespurte kerberosbilletter bør være:"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:16
 msgid ""
@@ -1678,7 +1672,7 @@ msgstr "Brukerid:"
 #. Used in combination: 'Warn x minutes before expiry'
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:22
 msgid "Warn"
-msgstr ""
+msgstr "Varsle"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:23
 msgid "X509 trust anchors:"
@@ -1690,12 +1684,12 @@ msgstr ""
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:25
 msgid "forwardable"
-msgstr ""
+msgstr "videresendbar"
 
 #. Used in combination: 'Warn x minutes before expiry'
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:27
 msgid "minutes before expiry"
-msgstr ""
+msgstr "minutter før utgåelsen"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:28
 msgid "proxiable"
@@ -1708,3 +1702,5 @@ msgstr "fornybar"
 msgid "PKINIT anchors:"
 msgstr "PKINIT Anker:"
 
+msgid "_List Tickets"
+msgstr "_Vis billetter"

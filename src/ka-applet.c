@@ -750,7 +750,7 @@ ka_applet_create_context_menu (KaApplet* applet)
 	ka_applet_menu_add_separator_item (menu);
 
 	/* Ticket dialog */
-	menu_item = gtk_image_menu_item_new_with_mnemonic("_List Tickets");
+	menu_item = gtk_image_menu_item_new_with_mnemonic(_("_List Tickets"));
 	g_signal_connect (G_OBJECT (menu_item), "activate",
 			  G_CALLBACK (ka_applet_cb_show_tickets), applet);
 	gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);

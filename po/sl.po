@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&component=general\n"
-"POT-Creation-Date: 2010-04-29 08:29+0000\n"
-"PO-Revision-Date: 2010-05-01 09:34+0100\n"
+"POT-Creation-Date: 2010-07-29 10:31+0000\n"
+"PO-Revision-Date: 2010-07-31 17:36+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -38,16 +38,16 @@ msgstr "_Obnovi vstopnico"
 msgid "unknown error"
 msgstr "neznana napaka"
 
-#: ../src/ka-dialog.c:328
+#: ../src/ka-dialog.c:333
 msgid "Expired"
 msgstr "Pretečeno"
 
-#: ../src/ka-pwdialog.c:173
+#: ../src/ka-pwdialog.c:174
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Ni mogoče pridobiti vstopnice kerberos: '%s'"
 
-#: ../src/ka-pwdialog.c:210
+#: ../src/ka-pwdialog.c:211
 #: ../src/ka-applet.c:390
 #, c-format
 msgid "Your credentials expire in %d minute"
@@ -57,32 +57,32 @@ msgstr[1] "Vaša poverila potečejo v %d minuti"
 msgstr[2] "Vaša poverila potečejo v %d minutah"
 msgstr[3] "Vaša poverila potečejo v %d minutah"
 
-#: ../src/ka-pwdialog.c:215
+#: ../src/ka-pwdialog.c:216
 #: ../src/ka-applet.c:395
 msgid "Your credentials have expired"
 msgstr "Vaša poverila so potekla"
 
-#: ../src/ka-pwdialog.c:236
+#: ../src/ka-pwdialog.c:237
 msgid "Please enter your Kerberos password:"
 msgstr "Vnesite svoje geslo Kerberos:"
 
-#: ../src/ka-pwdialog.c:247
+#: ../src/ka-pwdialog.c:248
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Vnesite geslo za '%s':"
 
-#: ../src/ka-pwdialog.c:267
+#: ../src/ka-pwdialog.c:268
 msgid "The password you entered is invalid"
 msgstr "Vneseno geslo je neveljavno"
 
-#: ../src/ka-pwdialog.c:283
+#: ../src/ka-pwdialog.c:284
 #, c-format
 msgid "%s Error"
 msgstr "%s napaka"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with krb5-auth
+#. doubt please translate strings from files starting with ka- and krb5-auth-
 #. first since these are the ones the user will see in any case.
 #: ../src/dummy-strings.c:10
 msgid "ASN.1 failed call to system time library"
@@ -1393,36 +1393,36 @@ msgstr "Slabo čarobno število od GSSAPI VRSTE"
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vaša poverila potečejo v %.2d%.2dh"
 
-#: ../src/ka-applet.c:491
+#: ../src/ka-applet.c:500
 msgid "Don't show me this again"
 msgstr "Tega ne prikaži več"
 
-#: ../src/ka-applet.c:533
+#: ../src/ka-applet.c:542
 msgid "Network credentials valid"
 msgstr "Omrežna varovala so veljavna"
 
-#: ../src/ka-applet.c:534
+#: ../src/ka-applet.c:543
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Osvežili ste svoja poverila Kerberos"
 
-#: ../src/ka-applet.c:550
+#: ../src/ka-applet.c:559
 msgid "Network credentials expiring"
 msgstr "Omrežna varovala bodo potekla"
 
-#: ../src/ka-applet.c:569
+#: ../src/ka-applet.c:578
 msgid "Network credentials expired"
 msgstr "Omrežna varovala so potekla"
 
-#: ../src/ka-applet.c:570
+#: ../src/ka-applet.c:579
 msgid "Your Kerberos credentails have expired."
 msgstr "Vaša varovala Kerberos so potekla."
 
-#: ../src/ka-applet.c:615
+#: ../src/ka-applet.c:624
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "Prišlo je do napake med zagonom pogovornega okna možnosti: %s"
 
-#: ../src/ka-applet.c:656
+#: ../src/ka-applet.c:665
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1432,16 +1432,21 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-applet.c:692
+#: ../src/ka-applet.c:701
 msgid "translator-credits"
 msgstr ""
 "Andrej Žnidaršič\n"
 "Matej Urbančič"
 
 #. kdestroy
-#: ../src/ka-applet.c:734
+#: ../src/ka-applet.c:743
 msgid "Remove Credentials _Cache"
 msgstr "Odstrani _predpomnilnik varoval"
+
+#. Ticket dialog
+#: ../src/ka-applet.c:753
+msgid "_List Tickets"
+msgstr "_Naštej vstopnice"
 
 #: ../src/ka-tools.c:45
 #, c-format
@@ -1710,69 +1715,4 @@ msgstr "posredovano"
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:29
 msgid "renewable"
 msgstr "obnovljiva"
-
-#~ msgid "_Preferences"
-#~ msgstr "_Možnosti"
-#~ msgid "_About"
-#~ msgstr "_O Programu"
-#~ msgid "_Quit"
-#~ msgstr "_Končaj"
-#~ msgid "Cursor Position"
-#~ msgstr "Položaj kazalca"
-#~ msgid "The current position of the insertion cursor in chars"
-#~ msgstr "Trenutni položaj kazalca vstavljanja v znakih"
-#~ msgid "Selection Bound"
-#~ msgstr "Vezava izbire"
-#~ msgid ""
-#~ "The position of the opposite end of the selection from the cursor in chars"
-#~ msgstr "Položaj nasprotnega konca izbire od kazalca (v znakih)"
-#~ msgid "Maximum length"
-#~ msgstr "Največja dolžina"
-#~ msgid "Maximum number of characters for this entry. Zero if no maximum"
-#~ msgstr "Največje število znakov v tem vnosu. Vrednost 0 onemogoči omejitev"
-#~ msgid "Has Frame"
-#~ msgstr "Ima okvir"
-#~ msgid "FALSE removes outside bevel from entry"
-#~ msgstr "Neizbrana možnost odstrani zunanjo izobčenost vnosa"
-#~ msgid "Invisible character"
-#~ msgstr "Nevidni znak"
-#~ msgid ""
-#~ "The character to use when masking entry contents (in \"password mode\")"
-#~ msgstr "Znak za maskiranje vsebine vnosa (v \"geselskem načinu\")"
-#~ msgid "Activates default"
-#~ msgstr "Zaženi privzetega"
-#~ msgid ""
-#~ "Whether to activate the default widget (such as the default button in a "
-#~ "dialog) when Enter is pressed"
-#~ msgstr ""
-#~ "Ali se zažene privzet gradnik (na primer privzet gumb pogovornega okna), "
-#~ "ko je pritisnjena vnosna tipka."
-#~ msgid "Width in chars"
-#~ msgstr "Širina v znakih"
-#~ msgid "Number of characters to leave space for in the entry"
-#~ msgstr "Število znakov za katere naj bo v vnosu izpuščen prostor"
-#~ msgid "Scroll offset"
-#~ msgstr "Drsni zamik"
-#~ msgid "Number of pixels of the entry scrolled off the screen to the left"
-#~ msgstr "Število točk vnosa, ki drsijo mimo zaslona na levo"
-#~ msgid "Text"
-#~ msgstr "Besedilo"
-#~ msgid "The contents of the entry"
-#~ msgstr "Vsebina vnosa"
-#~ msgid "    "
-#~ msgstr "    "
-#~ msgid "PKINT anchors:"
-#~ msgstr "Sidra PKINT:"
-#~ msgid "Path to CA certificates used as trust anchors for PKINIT"
-#~ msgstr "Pot do potrdil CA, ki so uporabljena kot sidra zaupanja za PKINIT "
-#~ msgid ""
-#~ "The principal's public/private/certificate identifier. Leave empty if not "
-#~ "using PKINIT."
-#~ msgstr ""
-#~ "Ravnateljevo javno/zasebno/potrdilno določilo. V kolikor PKINIT ni v "
-#~ "uporabi, je možnost izpuščena."
-#~ msgid "gtk-close"
-#~ msgstr "gtk-close"
-#~ msgid "gtk-help"
-#~ msgstr "gtk-help"
 

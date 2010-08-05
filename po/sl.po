@@ -1,4 +1,4 @@
-# Slovenian translation for krb5-auth-dialog.
+# Slovenian translations for krb5-auth-dialog.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
 #
@@ -6,11 +6,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: krb5-auth-dialog\n"
+"Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&component=general\n"
 "POT-Creation-Date: 2010-07-29 10:31+0000\n"
-"PO-Revision-Date: 2010-07-31 17:36+0100\n"
-"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"PO-Revision-Date: 2010-08-05 13:21+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -331,7 +331,7 @@ msgstr "Nepravilen spletni naslov"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
 #: ../src/dummy-strings.c:59
 msgid "Protocol version mismatch"
-msgstr "Neujemanje različice protokola"
+msgstr "Neskladje različice protokola"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
 #: ../src/dummy-strings.c:60
@@ -463,12 +463,12 @@ msgstr "Stanje preklica ni na voljo"
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
 #: ../src/dummy-strings.c:85
 msgid "Client name mismatch"
-msgstr "Neujemanje imena odjemalca"
+msgstr "Neskladje imena odjemalca"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
 #: ../src/dummy-strings.c:86
 msgid "KDC name mismatch"
-msgstr "Neujemanje imena KDC"
+msgstr "Neskladje imena KDC"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
 #: ../src/dummy-strings.c:87
@@ -563,7 +563,7 @@ msgstr "Neznana vrsta predpomnilnika poveril"
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:105
 msgid "Matching credential not found"
-msgstr "Skladajočega poverila ni mogoče najti"
+msgstr "Skladnega poverila ni mogoče najti"
 
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
 #: ../src/dummy-strings.c:106
@@ -603,7 +603,7 @@ msgstr "Časovni zamik sistemske ure je v odgovoru KDC prevelik"
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: ../src/dummy-strings.c:113
 msgid "Client/server realm mismatch in initial ticket request"
-msgstr "Neujemanje področja odjemalca/strežnika v začetni zahtevi vstopnice"
+msgstr "Neskladje področja odjemalca/strežnika v začetni zahtevi vstopnice"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: ../src/dummy-strings.c:114
@@ -1684,7 +1684,7 @@ msgstr "Uporabi SmartCard"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:20
 msgid "Userid:"
-msgstr "Uporabniški id:"
+msgstr "Uporabniški ID:"
 
 #. Used in combination: 'Warn x minutes before expiry'
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:22
@@ -1710,9 +1710,8 @@ msgstr "minut pred iztekom"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:28
 msgid "proxiable"
-msgstr "posredovano"
+msgstr "posredovana"
 
 #: ../preferences/krb5-auth-dialog-preferences.xml.h:29
 msgid "renewable"
 msgstr "obnovljiva"
-

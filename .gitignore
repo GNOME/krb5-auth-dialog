@@ -12,7 +12,6 @@ config.status
 config.sub
 configure
 compile
-COPYING
 depcomp
 INSTALL
 install-sh

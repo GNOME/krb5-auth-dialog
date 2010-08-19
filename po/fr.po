@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2010-04-27 17:51+0000\n"
+"POT-Creation-Date: 2010-07-26 11:26+0000\n"
 "PO-Revision-Date: 2010-07-04 22:01+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -32,51 +32,51 @@ msgstr "Tickets de service"
 msgid "_Renew Ticket"
 msgstr "_Renouveler le ticket"
 
-#: ../src/krb5-auth-dialog.c:172
+#: ../src/ka-dialog.c:172
 msgid "unknown error"
 msgstr "erreur inconnue"
 
-#: ../src/krb5-auth-dialog.c:328
+#: ../src/ka-dialog.c:333
 msgid "Expired"
 msgstr "Expiré"
 
-#: ../src/krb5-auth-pwdialog.c:173
+#: ../src/ka-pwdialog.c:174
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Impossible d'acquérir le ticket Kerberos : « %s »"
 
-#: ../src/krb5-auth-pwdialog.c:210 ../src/krb5-auth-applet.c:390
+#: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:390
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Vos informations d'authentification vont expirer dans %d minute"
 msgstr[1] "Vos informations d'authentification vont expirer dans %d minutes"
 
-#: ../src/krb5-auth-pwdialog.c:215 ../src/krb5-auth-applet.c:395
+#: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:395
 msgid "Your credentials have expired"
 msgstr "Vos informations d'authentification ont expiré."
 
-#: ../src/krb5-auth-pwdialog.c:236
+#: ../src/ka-pwdialog.c:237
 msgid "Please enter your Kerberos password:"
 msgstr "Veuillez saisir votre mot de passe Kerberos :"
 
-#: ../src/krb5-auth-pwdialog.c:247
+#: ../src/ka-pwdialog.c:248
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Veuillez saisir le mot de passe pour « %s » :"
 
-#: ../src/krb5-auth-pwdialog.c:267
+#: ../src/ka-pwdialog.c:268
 msgid "The password you entered is invalid"
 msgstr "Le mot de passe que vous avez saisi n'est pas valide"
 
-#: ../src/krb5-auth-pwdialog.c:283
+#: ../src/ka-pwdialog.c:284
 #, c-format
 msgid "%s Error"
 msgstr "Erreur %s"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with krb5-auth
+#. doubt please translate strings from files starting with ka- and krb5-auth-
 #. first since these are the ones the user will see in any case.
 #: ../src/dummy-strings.c:10
 msgid "ASN.1 failed call to system time library"
@@ -1402,43 +1402,43 @@ msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Numéro magique GSSAPI QUEUE incorrect"
 
 #. Translators: First number is hours, second number is minutes
-#: ../src/krb5-auth-applet.c:386
+#: ../src/ka-applet.c:386
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vos informations d'authentification expirent dans %.2d h %.2d"
 
-#: ../src/krb5-auth-applet.c:491
+#: ../src/ka-applet.c:500
 msgid "Don't show me this again"
 msgstr "Ne plus afficher"
 
-#: ../src/krb5-auth-applet.c:533
+#: ../src/ka-applet.c:542
 msgid "Network credentials valid"
 msgstr "Informations d'authentification réseau valides"
 
-#: ../src/krb5-auth-applet.c:534
+#: ../src/ka-applet.c:543
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Vous avez actualisé vos informations d'authentification Kerberos."
 
-#: ../src/krb5-auth-applet.c:550
+#: ../src/ka-applet.c:559
 msgid "Network credentials expiring"
 msgstr "Informations d'authentification Kerberos en cours d'expiration"
 
-#: ../src/krb5-auth-applet.c:569
+#: ../src/ka-applet.c:578
 msgid "Network credentials expired"
 msgstr "Informations d'authentification réseau expirées"
 
-#: ../src/krb5-auth-applet.c:570
+#: ../src/ka-applet.c:579
 msgid "Your Kerberos credentails have expired."
 msgstr "Vos informations d'authentification Kerberos ont expiré."
 
-#: ../src/krb5-auth-applet.c:615
+#: ../src/ka-applet.c:624
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr ""
 "Une erreur est survenue lors de l'ouverture de la boîte de dialogue des "
 "préférences : %s"
 
-#: ../src/krb5-auth-applet.c:656
+#: ../src/ka-applet.c:665
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1448,18 +1448,23 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/krb5-auth-applet.c:692
+#: ../src/ka-applet.c:701
 msgid "translator-credits"
 msgstr ""
 "Laurent Coudeur <laurentc@iol.ie>\n"
 "Claude Paroz <claude@2xlibre.net>"
 
 #. kdestroy
-#: ../src/krb5-auth-applet.c:734
+#: ../src/ka-applet.c:743
 msgid "Remove Credentials _Cache"
 msgstr "Supprimer le _cache des informations d'authentification"
 
-#: ../src/krb5-auth-tools.c:45
+#. Ticket dialog
+#: ../src/ka-applet.c:753
+msgid "_List Tickets"
+msgstr "É_numérer les tickets"
+
+#: ../src/ka-tools.c:45
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1468,31 +1473,31 @@ msgstr ""
 "Une erreur est survenue lors de l'affichage de l'aide :\n"
 "%s"
 
-#: ../src/krb5-auth-tickets.c:54
+#: ../src/ka-tickets.c:54
 msgid "Principal"
 msgstr "Principal"
 
-#: ../src/krb5-auth-tickets.c:60
+#: ../src/ka-tickets.c:60
 msgid "Start Time"
 msgstr "Heure de début"
 
-#: ../src/krb5-auth-tickets.c:66
+#: ../src/ka-tickets.c:66
 msgid "End Time"
 msgstr "Heure de fin"
 
-#: ../src/krb5-auth-tickets.c:72
+#: ../src/ka-tickets.c:72
 msgid "Fwd"
 msgstr "Transfert"
 
-#: ../src/krb5-auth-tickets.c:78
+#: ../src/ka-tickets.c:78
 msgid "Proxy"
 msgstr "Proxy"
 
-#: ../src/krb5-auth-tickets.c:84
+#: ../src/ka-tickets.c:84
 msgid "Renew"
 msgstr "Renouvellement"
 
-#: ../src/krb5-auth-tickets.c:107
+#: ../src/ka-tickets.c:107
 msgid "Error displaying service ticket information"
 msgstr "Erreur lors de l'affichage des informations du ticket de service"
 
@@ -1608,15 +1613,15 @@ msgstr "Notification de ticket valide"
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Avertissement : exécuter q-agent setuid sur ce système est dangereux\n"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:345
+#: ../preferences/ka-preferences.c:345
 msgid "Choose Certificate"
 msgstr "Choix d'un certificat"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:361
+#: ../preferences/ka-preferences.c:361
 msgid "X509 Certificates"
 msgstr "Certificats X509"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:365
+#: ../preferences/ka-preferences.c:365
 msgid "all files"
 msgstr "tous les fichiers"
 

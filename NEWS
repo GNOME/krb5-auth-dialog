@@ -1,6 +1,20 @@
 ============
-Vesion 0.16
-===========
+Version 0.17
+============
+* Add AFS plugin
+* Add --with-gtk to select the GTK+ 2 or 3
+* UI translations:
+	Andrej Žnidaršič (sl)
+	Bruno Brouard (fr)
+	Claude Paroz (fr)
+	Jorge González (es)
+	Mario Blättermann (de)
+	Petter Reinholdtsen (nb)
+	Yinghua Wang (zh_CN)
+
+============
+Version 0.16
+============
 * Add plugin system
 * Memory leaks plugged
 * Bug fixes

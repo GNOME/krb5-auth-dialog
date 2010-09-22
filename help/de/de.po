@@ -1,18 +1,20 @@
 # German translation of the krb5-auth-dialog manual.
 # Mario Blättermann <mariobl@gnome.org>, 2009.
+# Christian Kirbach <Christian.Kirbach@googlemail.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2009-06-15 09:12+0000\n"
-"PO-Revision-Date: 2009-06-15 11:40+0100\n"
+"POT-Creation-Date: 2010-09-12 12:02+0000\n"
+"PO-Revision-Date: 2010-09-20 22:34+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
-"Language-Team: German <gnome-de@gnome.org>\n"
+"Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: German\n"
 "X-Poedit-Country: GERMANY\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
@@ -25,7 +27,8 @@ msgstr "translated"
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/krb5-auth-dialog.xml:189(None)
 msgid ""
-"@@image: 'figures/trayicon-expiring.png'; md5=cb1dbed310e568e7cb4684bac85c6969"
+"@@image: 'figures/trayicon-expiring.png'; "
+"md5=cb1dbed310e568e7cb4684bac85c6969"
 msgstr "translated"
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
@@ -44,7 +47,8 @@ msgstr ""
 #. When image changes, this message will be marked fuzzy or untranslated for you.
 #. It doesn't matter what you translate it to: it's not used at all.
 #: C/krb5-auth-dialog.xml:241(None)
-msgid "@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
+msgid ""
+"@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
 msgstr ""
 
 #. When image changes, this message will be marked fuzzy or untranslated for you.
@@ -54,7 +58,8 @@ msgid "@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
 msgstr ""
 
 #: C/krb5-auth-dialog.xml:39(title)
-msgid "<application>Kerberos Network Authentication Dialog</application> Manual"
+msgid ""
+"<application>Kerberos Network Authentication Dialog</application> Manual"
 msgstr "<application>Kerberos Netzwerkanmeldungsdialog</application>-Handbuch"
 
 #: C/krb5-auth-dialog.xml:41(para)
@@ -79,8 +84,8 @@ msgid ""
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
 "Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or in "
-"the file COPYING-DOCS distributed with this manual."
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
 msgstr ""
 "Das vorliegende Dokument kann gemäß den Bedingungen der GNU Free "
 "Documentation License (GFDL), Version 1.1 oder jeder späteren, von der Free "
@@ -123,14 +128,14 @@ msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
 "THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK "
-"AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED "
-"VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION "
-"PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY "
-"CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR "
-"CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS "
-"LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS "
-"AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
 "DIESES DOKUMENT WIRD »WIE VORLIEGEND« GELIEFERT, OHNE GARANTIEN IRGENDEINER "
 "ART, SOWOHL AUSDRÜCKLICH GENANNTE ALS AUCH ANGEDEUTETE. DIES BEZIEHT SICH "
@@ -139,8 +144,8 @@ msgstr ""
 "ZWECK GEEIGNET IST ODER DASS ES KEINE RECHTE DRITTER VERLETZT. DAS VOLLE "
 "RISIKO WAS QUALITÄT, GENAUIGKEIT UND LEISTUNG DES DOKUMENTS ODER VERÄNDERTE "
 "FASSUNGEN DES DOKUMENTS LIEGT BEI IHNEN. SOLLTE EIN DOKUMENT ODER EINE "
-"VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART BEINHALTEN, TRAGEN SIE (NICHT "
-"DER URSPRUNGSAUTOR, DER AUTOR ODER EIN MITWIRKENDER) DIE KOSTEN FÜR "
+"VERÄNDERTE FASSUNG DAVON FEHLER IRGENDEINER ART BEINHALTEN, TRAGEN SIE "
+"(NICHT DER URSPRUNGSAUTOR, DER AUTOR ODER EIN MITWIRKENDER) DIE KOSTEN FÜR "
 "NOTWENDIGE DIENSTLEISTUNGEN, REPARATUREN ODER FEHLERKORREKTUREN. DIESER "
 "HAFTUNGSAUSSCHLUSS IST EIN ESSENZIELLER TEIL DIESER LIZENZ. DIE VERWENDUNG "
 "EINES DOKUMENTS ODER EINER VERÄNDERTEN VERSION DES DOKUMENTS IST NICHT "
@@ -151,11 +156,11 @@ msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
 "CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR "
-"ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY "
-"CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK "
-"STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR "
-"LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
 "VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
 "POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
@@ -164,13 +169,13 @@ msgstr ""
 "ANDERWEITIG KANN DER AUTOR, URSPRUNGSAUTOR, EIN MITWIRKENDER ODER EIN "
 "VERTRIEBSPARTNER DIESES DOKUMENTS ODER EINER VERÄNDERTEN FASSUNG DES "
 "DOKUMENTS ODER EIN ZULIEFERER EINER DIESER PARTEIEN, HAFTBAR GEMACHT WERDEN "
-"FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER FOLGESCHÄDEN JEGLICHER "
-"ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN SCHÄDEN DURCH VERLUST VON "
-"KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER COMPUTERFEHLFUNKTIONEN ODER "
-"ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH AUS ODER IN VERBINDUNG MIT DER "
-"VERWENDUNG DES DOKUMENTS UND VERÄNDERTER FASSUNGEN DES DOKUMENTS ERGEBEN, "
-"AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER SCHÄDEN "
-"INFORMIERT WAREN."
+"FÜR DIREKTE, INDIREKTE, SPEZIELLE, VERSEHENTLICHE ODER FOLGESCHÄDEN "
+"JEGLICHER ART, EINSCHLIEßLICH UND OHNE EINSCHRÄNKUNGEN SCHÄDEN DURCH VERLUST "
+"VON KULANZ, ARBEITSAUSFALL, COMPUTERVERSAGEN ODER COMPUTERFEHLFUNKTIONEN "
+"ODER ALLE ANDEREN SCHÄDEN ODER VERLUSTE, DIE SICH AUS ODER IN VERBINDUNG MIT "
+"DER VERWENDUNG DES DOKUMENTS UND VERÄNDERTER FASSUNGEN DES DOKUMENTS "
+"ERGEBEN, AUCH WENN DIE OBEN GENANNTEN PARTEIEN ÜBER DIE MÖGLICHKEIT SOLCHER "
+"SCHÄDEN INFORMIERT WAREN."
 
 #: C/krb5-auth-dialog.xml:28(para)
 msgid ""
@@ -179,8 +184,8 @@ msgid ""
 "<placeholder-1/>"
 msgstr ""
 "DAS DOKUMENT UND VERÄNDERTE FASSUNGEN DES DOKUMENTS WERDEN UNTER DEN "
-"BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT DEM "
-"WEITERGEHENDEN VERSTÄNDNIS, DASS: <placeholder-1/>"
+"BEDINGUNGEN DER GNU FREE DOCUMENTATION LICENSE ZUR VERFÜGUNG GESTELLT MIT "
+"DEM WEITERGEHENDEN VERSTÄNDNIS, DASS: <placeholder-1/>"
 
 #: C/krb5-auth-dialog.xml:69(firstname)
 msgid "Jonathan"
@@ -223,9 +228,8 @@ msgid ""
 "This manual describes how to use the Kerberos Network Authentication Dialog "
 "to manage your Kerberos tickets."
 msgstr ""
-"Dieses Handbuch beschreibt, wie Sie den Kerberos "
-"Netzwerkanmeldungsdialog dazu verwenden können, Ihre Kerberos-"
-"Tickets zu verwalten."
+"Dieses Handbuch beschreibt, wie Sie den Kerberos Netzwerkanmeldungsdialog "
+"dazu verwenden können, Ihre Kerberos-Tickets zu verwalten."
 
 #: C/krb5-auth-dialog.xml:116(title)
 msgid "Feedback"
@@ -259,26 +263,32 @@ msgstr "krb5-auth-dialog"
 
 #: C/krb5-auth-dialog.xml:136(para)
 msgid ""
-"Kerberos Network Authentication Dialog is an applet for the <systemitem>GNOME "
-"desktop</systemitem> that monitors and refreshes your Kerberos ticket. It "
-"pops up reminders when the ticket is about to expire."
+"Kerberos Network Authentication Dialog is an applet for the "
+"<systemitem>GNOME desktop</systemitem> that monitors and refreshes your "
+"Kerberos ticket. It pops up reminders when the ticket is about to expire."
 msgstr ""
-"Der Kerberos Netzwerkanmeldungsdialog ist ein Applet für den "
-"<systemitem>GNOME-Desktop</systemitem>, welches Ihre Kerberos-Tickets "
-"überwacht und auffrischt. Erinnerungen werden angezeigt, sobald ein Ticket "
-"abzulaufen droht."
+"Der Kerberos Netzwerkanmeldungsdialog ist ein Applet für die "
+"<systemitem>GNOME-Arbeitsumgebung</systemitem>, welches Ihre Kerberos-"
+"Tickets überwacht und auffrischt. Erinnerungen werden angezeigt, sobald ein "
+"Ticket abzulaufen droht."
 
 #: C/krb5-auth-dialog.xml:141(para)
 msgid ""
 "Once you have acquired a Kerberos ticket - be it via GDM or via the applet "
-"itself - the applet will handle the ticket's renewal until it expires. It can "
-"also be used to destroy (remove) the credential cache, to acquire a ticket "
-"with different options or to switch to another principal."
+"itself - the applet will handle the ticket's renewal until it expires. It "
+"can also be used to destroy (remove) the credential cache, to acquire a "
+"ticket with different options or to switch to another principal."
 msgstr ""
+"Sobald Sie ein neues Kerberos-Ticket erhalten haben - sei es über Anmeldung "
+"via GDM oder durch das Applet selbst - wird das Applet die Erneuerung des "
+"Ticket bis zu dessen Ablaufen übernehmen. Das Applet kann außerdem zur "
+"Löschung des Ticket-Caches, zur Anforderung eines neuen Tickets mit anderen "
+"Einstellungen und zum Ändern des eingestellten Principals verwendet werden."
 
+# Aufruf per CLI
 #: C/krb5-auth-dialog.xml:146(title)
 msgid "Usage"
-msgstr "Benutzung"
+msgstr "Aufruf"
 
 #: C/krb5-auth-dialog.xml:147(para)
 msgid ""
@@ -297,8 +307,8 @@ msgstr "Befehlszeile"
 
 #: C/krb5-auth-dialog.xml:155(para)
 msgid ""
-"Type <command>krb5-auth-dialog --always</command>, then press <keycap>Return</"
-"keycap>:"
+"Type <command>krb5-auth-dialog --always</command>, then press "
+"<keycap>Return</keycap>:"
 msgstr ""
 "Geben Sie <command>krb5-auth-dialog --always</command> ein und drücken Sie "
 "anschließend die <keycap>Eingabetaste</keycap>:"
@@ -311,38 +321,46 @@ msgstr ""
 
 #: C/krb5-auth-dialog.xml:167(title) C/krb5-auth-dialog.xml:170(title)
 msgid "Valid Kerberos ticket"
-msgstr ""
+msgstr "Gültiges Kerberos-Ticket"
 
 #: C/krb5-auth-dialog.xml:168(para)
 msgid ""
 "You have a valid Kerberos ticket that can be used to authenticate to network "
 "services."
 msgstr ""
+"Sie besitzen ein gültiges Kerberos-Ticket, welches für die Anmeldung an "
+"Netzwerkdiensten benutzt werden kann."
 
 #: C/krb5-auth-dialog.xml:182(title) C/krb5-auth-dialog.xml:185(title)
 msgid "Kerberos ticket expiring"
-msgstr ""
+msgstr "Kerberos-Ticket droht abzulaufen"
 
 #: C/krb5-auth-dialog.xml:183(para)
 msgid ""
 "The Kerberos ticket is about to expire but it can still be used to "
 "authenticate to network services."
 msgstr ""
-"Das Kerberos-Ticket droht abzulaufen, aber ist noch immer dazu verwendbar, "
-"sich an Netzwerkdiensten zu legitimieren."
+"Das Kerberos-Ticket droht abzulaufen, ist aber noch immer dazu verwendbar, "
+"sich an Netzwerkdiensten anzumelden."
 
 #: C/krb5-auth-dialog.xml:196(title) C/krb5-auth-dialog.xml:200(title)
 msgid "Kerberos ticket expired"
-msgstr ""
+msgstr "Kerberos-Ticket ist abgelaufen"
 
 #: C/krb5-auth-dialog.xml:197(para)
 msgid ""
 "Your Kerberos became invalid (e.g. expired). It can no longer be used to "
 "authenticate to network services. This is not a problem if the application "
 "that requires Kerberos knows how to request a new ticket via "
-"<application>Kerberos Network Authentication Dialog</application>. In case it "
-"doesn't you can just left click on the applet an reenter your password."
+"<application>Kerberos Network Authentication Dialog</application>. In case "
+"it doesn't you can just left click on the applet an reenter your password."
 msgstr ""
+"Ihr Kerberos Ticket ist ungültig (abgelaufen). Es kann nicht länger für die "
+"Anmeldung an Netzwerkdiensten benutzt werden. Dies ist kein Problem, falls "
+"die Anwendung, welche Kerberos benötigt, in der Lage ist ein neues Ticket "
+"via <application>Kerberos Netzwerkanmeldungsdialog</application> "
+"anzufordern. Andernfalls können Sie mit der linken Maustaste auf das Applet "
+"klicken und das Passwort neu eingeben."
 
 #: C/krb5-auth-dialog.xml:213(title)
 msgid "Notification Messages"
@@ -358,45 +376,52 @@ msgstr ""
 
 #: C/krb5-auth-dialog.xml:219(title)
 msgid "Kerberos credentials valid"
-msgstr ""
+msgstr "Kerberos-Anmeldedaten sind gültig"
 
 #: C/krb5-auth-dialog.xml:220(para)
 msgid ""
-"You just acquired a valid Kerberos ticket that can be used to authenticate to "
-"network services."
+"You just acquired a valid Kerberos ticket that can be used to authenticate "
+"to network services."
 msgstr ""
+"Sie haben soeben ein gültiges Kerberos Ticket erhalten, welches für die "
+"Anmeldung an Netzwerkdiensten benutzt werden kann."
 
 #: C/krb5-auth-dialog.xml:222(title)
 msgid "Notification when Kerberos credentials become valid"
-msgstr ""
+msgstr "Benachrichtigung, falls Kerberos Anmeldedaten gültig sind"
 
 #: C/krb5-auth-dialog.xml:234(title)
 msgid "Kerberos credentials expiring"
-msgstr ""
+msgstr "Kerberos-Anmeldedaten drohen abzulaufen"
 
 #: C/krb5-auth-dialog.xml:235(para)
 msgid ""
-"Your Kerberos credentials are about to expire. You can left click on the tray "
-"applet to refresh them."
+"Your Kerberos credentials are about to expire. You can left click on the "
+"tray applet to refresh them."
 msgstr ""
+"Ihre Kerberos Anmeldedaten drohen abzulaufen. Sie können die Anmeldedaten "
+"durch einen Klick mit der linken Maustaste auf das Applet erneuern."
 
 #: C/krb5-auth-dialog.xml:237(title)
 msgid "Notification when Kerberos credentials expiring"
-msgstr ""
+msgstr "Benachrichtigung, falls Kerberos Anmeldedaten abzulaufen drohen"
 
 #: C/krb5-auth-dialog.xml:249(title)
 msgid "Kerberos credentials expired"
-msgstr ""
+msgstr "Kerberos-Anmeldedaten sind abgelaufen"
 
+# Deppenleerzeichen
 #: C/krb5-auth-dialog.xml:250(para)
 msgid ""
 "Your Kerberos credentials just expired. They can no longer be used to "
 "authenticate to network services."
 msgstr ""
+"Ihre Kerberos-Anmeldedaten sind soeben abgelaufen. Sie können nicht mehr für "
+"eine Anmeldung an Netzwerkdiensten benutzt werden."
 
 #: C/krb5-auth-dialog.xml:252(title)
 msgid "Notification when Kerberos credentials expired"
-msgstr ""
+msgstr "Benachrichtigung, falls Kerberos-Anmeldedaten abgelaufen sind"
 
 #: C/krb5-auth-dialog.xml:265(title)
 msgid "Preferences"
@@ -404,7 +429,7 @@ msgstr "Einstellungen"
 
 #: C/krb5-auth-dialog.xml:269(title)
 msgid "Kerberos Principal Preferences"
-msgstr ""
+msgstr "Einstellungen für Kerberos-Principal"
 
 #: C/krb5-auth-dialog.xml:274(para)
 msgid "Dialog Element"
@@ -416,29 +441,38 @@ msgstr "Beschreibung"
 
 #: C/krb5-auth-dialog.xml:285(guilabel)
 msgid "Kerberos Principal"
-msgstr ""
+msgstr "Kerberos-Principal"
 
 #: C/krb5-auth-dialog.xml:289(para)
 msgid ""
-"The Kerberos principal to use. Leave blanc to use you current username. If "
-"you change this setting you have to destroy the credential cache before these "
-"setting takes effect."
+"The Kerberos principal to use. Leave blank to use you current username. If "
+"you change this setting you have to destroy the credential cache before "
+"these setting takes effect."
 msgstr ""
+"Der Kerberos-Principal, welcher benutzt werden soll. Um Ihren aktuellen "
+"Benutzernamen zu verwenden, Feld bitte leer lassen. Falls Sie diese "
+"Einstellung ändern, müssen Sie den Ticket-Cache löschen bevor die Änderung "
+"wirksam wird."
 
 #: C/krb5-auth-dialog.xml:296(guilabel)
 msgid "PKINIT Userid"
-msgstr ""
+msgstr "PKINIT-Benutzerkennung"
 
+# Security token? Bitte in der de.po der GUI nachschauen. Wir verwenden »« anstatt \"
 #: C/krb5-auth-dialog.xml:300(para)
 msgid ""
 "The principals public/private/certificate identifier. Leave empty if not "
 "using PKINIT. To enable using a security token add the path to the pkcs11 "
 "Library here, e.g. \"PKCS11:/usr/lib/opensc/opensc-pkcs11.so\""
 msgstr ""
+"Die öffentliche/private/zertifizierte Kennung des Principals. Feld bitte "
+"leer lassen, falls PKINIT nicht benutzt wird. Um die Verwendung eines "
+"Sicherheits-Token zu aktivieren, fügen Sie den Pfad zur pkcs11-Bibliothek "
+"hier ein, zum Beispiel  »PKCS11:/usr/lib/opensc/opensc-pkcs11.so«"
 
 #: C/krb5-auth-dialog.xml:306(guilabel)
 msgid "PKINIT anchors"
-msgstr ""
+msgstr "PKINIT-Anker"
 
 #: C/krb5-auth-dialog.xml:310(para)
 msgid ""
@@ -446,10 +480,13 @@ msgid ""
 "set this if it hasn't been set up globally in <filename>/etc/krb5.conf</"
 "filename>"
 msgstr ""
+"Pfad zu CA Zertifikaten, welche als »trust anchors« für pkinit verwendet "
+"werden. Sie müssen diese Einstellung nur vornehmen, falls sie nicht in "
+"<filename>/etc/krb5.conf</filename> definiert wurde."
 
 #: C/krb5-auth-dialog.xml:316(guilabel)
 msgid "forwardable"
-msgstr ""
+msgstr "weiterleitbar"
 
 #: C/krb5-auth-dialog.xml:320(para)
 msgid ""
@@ -457,10 +494,14 @@ msgid ""
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
+"Gibt an, ob das angeforderte Kerberos Ticket als »weiterleitbar« definiert "
+"wird. Die Änderung dieser Einstellung erfordert eine erneute Anmeldung, "
+"indem Sie mit der linken Maustaste auf das Applet klicken und Ihr Passwort "
+"eingeben."
 
 #: C/krb5-auth-dialog.xml:326(guilabel)
 msgid "renewable"
-msgstr ""
+msgstr "erneuerbar"
 
 #: C/krb5-auth-dialog.xml:330(para)
 msgid ""
@@ -468,10 +509,13 @@ msgid ""
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
+"Gibt an, ob das angeforderte Kerberos-Ticket als »erneuerbar« definiert wird. "
+"Die Änderung dieser Einstellung erfordert eine erneute Anmeldung, indem Sie "
+"mit der linken Maustaste auf das Applet klicken und Ihr Passwort eingeben."
 
 #: C/krb5-auth-dialog.xml:336(guilabel)
 msgid "proxiable"
-msgstr ""
+msgstr "proxy-fähig"
 
 #: C/krb5-auth-dialog.xml:340(para)
 msgid ""
@@ -479,20 +523,26 @@ msgid ""
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
+"Gibt an, ob das angeforderte Kerberos Ticket als »proxy-fähig« definiert "
+"wird. Die Änderung dieser Einstellung erfordert eine erneute Anmeldung, "
+"indem Sie mit der linken Maustaste auf das Applet klicken und Ihr Passwort "
+"eingeben."
 
 #: C/krb5-auth-dialog.xml:346(guilabel)
 msgid "Warn .. minutes before expiry"
-msgstr ""
+msgstr "Warnung … Minuten vor Ablaufen des Tickets"
 
 #: C/krb5-auth-dialog.xml:350(para)
 msgid ""
 "Notifications that your credentials are about to expire will be sent that "
 "many minutes before expiry."
 msgstr ""
+"Benachrichtigungen, dass Ihre Anmeldedaten abzulaufen drohen, werden in den "
+"hier eingegebenen Minuten vor Ablaufen des Tickets verschickt."
 
 #: C/krb5-auth-dialog.xml:356(guilabel)
 msgid "Show tray icon"
-msgstr ""
+msgstr "Benachrichtigungssymbol anzeigen"
 
 #: C/krb5-auth-dialog.xml:360(para)
 msgid ""
@@ -505,15 +555,23 @@ msgstr ""
 
 #: C/krb5-auth-dialog.xml:266(para)
 msgid ""
-"You can set preferences by selecting \"Preferences\" from the applets context "
-"menu or by selecting \"Network Authentication\" in the <application>Control "
-"Center</application>. <table frame=\"topbot\" id=\"tbl-principal-prefs"
-"\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec "
-"colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/><placeholder-2/"
-"><placeholder-3/></tgroup></table>"
+"You can set preferences by selecting \"Preferences\" from the applets "
+"context menu or by selecting \"Network Authentication\" in the "
+"<application>Control Center</application>. <table frame=\"topbot\" id=\"tbl-"
+"principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1"
+"\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/><placeholder-"
+"2/><placeholder-3/></tgroup></table>"
 msgstr ""
+"Sie können Einstellungen ändern, indem Sie  »Einstellungen« im Kontextmenü "
+"des Applets auswählen oder indem Sie  »Netzwerkanmeldung« in der  "
+"<application>Systemverwaltung</application> auswählen. <table frame=\"topbot"
+"\" id=\"tbl-principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1"
+"\" rowsep=\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/"
+"><placeholder-2/><placeholder-3/></tgroup></table>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/krb5-auth-dialog.xml:0(None)
 msgid "translator-credits"
-msgstr "Mario Blättermann <mariobl@gnome.org>, 2009"
+msgstr ""
+"Mario Blättermann <mariobl@gnome.org>, 2009\n"
+"Markus Egger <markus.egger.www@gmail.com>"

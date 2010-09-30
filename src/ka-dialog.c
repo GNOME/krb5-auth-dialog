@@ -44,7 +44,7 @@
 #include "ka-tickets.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
-#include <libnm_glib.h>
+#include <nm-client.h>
 #endif
 
 #ifdef HAVE_HX509_ERR_H
@@ -65,7 +65,7 @@ static int ka_renew_credentials (KaApplet* applet);
 static gboolean ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds);
 
 #ifdef ENABLE_NETWORK_MANAGER
-libnm_glib_ctx *nm_context;
+NMClient *nm_client;
 #endif
 
 /* YAY for different Kerberos implementations */
@@ -454,29 +454,30 @@ cleanup:
 
 #ifdef ENABLE_NETWORK_MANAGER
 static void
-network_state_cb (libnm_glib_ctx *context,
-                  gpointer data)
+ka_nm_client_state_changed_cb (NMClient *client,
+                               GParamSpec *pspec G_GNUC_UNUSED,
+                               gpointer data)
 {
-	gboolean *online = (gboolean*) data;
+    NMState  state;
+    gboolean *online = (gboolean*) data;
 
-	libnm_glib_state state;
-
-	state = libnm_glib_get_network_state (context);
-
-	switch (state)
-	{
-		case LIBNM_NO_DBUS:
-		case LIBNM_NO_NETWORKMANAGER:
-		case LIBNM_INVALID_CONTEXT:
-			/* do nothing */
-			break;
-		case LIBNM_NO_NETWORK_CONNECTION:
-			*online = FALSE;
-			break;
-		case LIBNM_ACTIVE_NETWORK_CONNECTION:
-			*online = TRUE;
-			break;
-	}
+    state = nm_client_get_state(client);
+    switch (state) {
+        case NM_STATE_UNKNOWN:
+        case NM_STATE_ASLEEP:
+        case NM_STATE_CONNECTING:
+            KA_DEBUG("Network state: %d", state);
+	    /* do nothing */
+            break;
+        case NM_STATE_DISCONNECTED:
+            KA_DEBUG("Network disconnected");
+            *online = FALSE;
+            break;
+        case NM_STATE_CONNECTED:
+            KA_DEBUG("Network connected");
+            *online = TRUE;
+            break;
+    }
 }
 #endif
 
@@ -1033,10 +1034,10 @@ static void
 ka_nm_shutdown(void)
 {
 #ifdef ENABLE_NETWORK_MANAGER
-	if (nm_context) {
-		libnm_glib_shutdown (nm_context);
-		nm_context = NULL;
-	}
+    if (nm_client) {
+        g_object_unref (nm_client);
+        nm_client = NULL;
+    }
 #endif
 }
 
@@ -1045,21 +1046,18 @@ static gboolean
 ka_nm_init(void)
 {
 #ifdef ENABLE_NETWORK_MANAGER
-	guint32 nm_callback_id;
-
-	nm_context = libnm_glib_init ();
-	if (!nm_context) {
-		g_warning ("Could not initialize libnm_glib");
-	} else {
-		nm_callback_id = libnm_glib_register_callback (nm_context, network_state_cb, &is_online, NULL);
-		if (nm_callback_id == 0) {
-			ka_nm_shutdown ();
-
-			g_warning ("Could not connect to NetworkManager, connection status will not be managed!");
-		}
-	}
+    nm_client = nm_client_new();
+    if (!nm_client) {
+        g_warning ("Could not initialize nm-client");
+    } else {
+        g_signal_connect(nm_client, "notify::state",
+                         G_CALLBACK(ka_nm_client_state_changed_cb),
+                         &is_online);
+	/* Set initial state */
+	ka_nm_client_state_changed_cb(nm_client, NULL, &is_online);
+    }
 #endif /* ENABLE_NETWORK_MANAGER */
-	return TRUE;
+    return TRUE;
 }
 
 

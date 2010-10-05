@@ -442,11 +442,28 @@ ka_notify_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
 
 
 static void
+ka_notify_get_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
+                                gchar *action,
+                                gpointer user_data)
+{
+    KaApplet *self = KA_APPLET (user_data);
+
+    if (strcmp (action, "ka-acquire-tgt") == 0) {
+        KA_DEBUG ("Getting new tgt");
+        ka_grab_credentials (self);
+    } else {
+        g_warning ("unkonwn action for callback");
+    }
+}
+
+
+static void
 ka_send_event_notification (KaApplet *applet,
                             const char *summary,
                             const char *message,
                             const char *icon,
-                            const char *action)
+                            const char *action,
+                            gboolean get_ticket_action)
 {
     const char *notify_icon;
     GError *error = NULL;
@@ -482,7 +499,17 @@ ka_send_event_notification (KaApplet *applet,
     notify_notification_add_action (applet->priv->notification, action,
                                     _("Don't show me this again"),
                                     (NotifyActionCallback)
-                                    ka_notify_action_cb, applet, NULL);
+                                    ka_notify_action_cb, applet,
+                                    NULL);
+    if (get_ticket_action) {
+        notify_notification_add_action (applet->priv->notification,
+                                        "ka-acquire-tgt",
+                                        _("Get Ticket"),
+                                        (NotifyActionCallback)
+                                        ka_notify_get_ticket_action_cb,
+                                        applet,
+                                        NULL);
+    }
     ka_show_notification (applet);
 }
 #else
@@ -524,7 +551,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                                             _("Network credentials valid"),
                                             _("You've refreshed your Kerberos credentials."),
                                             "krb-valid-ticket",
-                                            "dont-show-again");
+                                            "dont-show-again", FALSE);
             }
             ka_applet_signal_emit (applet, KA_SIGNAL_ACQUIRED_TGT, expiry);
             expiry_notified = FALSE;
@@ -541,7 +568,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                                                 _("Network credentials expiring"),
                                                 tooltip_text,
                                                 "krb-expiring-ticket",
-                                                "dont-show-again");
+                                                "dont-show-again", TRUE);
                 }
                 last_warn = now;
             }
@@ -559,7 +586,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                                             _("Network credentials expired"),
                                             _("Your Kerberos credentails have expired."),
                                             "krb-no-valid-ticket",
-                                            "dont-show-again");
+                                            "dont-show-again", TRUE);
             }
             ka_applet_signal_emit (applet, KA_SIGNAL_EXPIRED_TGT, expiry);
             expiry_notified = TRUE;

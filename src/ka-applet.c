@@ -522,8 +522,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                 applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_VALID;
                 ka_send_event_notification (applet,
                                             _("Network credentials valid"),
-                                            _
-                                            ("You've refreshed your Kerberos credentials."),
+                                            _("You've refreshed your Kerberos credentials."),
                                             "krb-valid-ticket",
                                             "dont-show-again");
             }
@@ -539,8 +538,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                     applet->priv->notify_gconf_key =
                         KA_GCONF_KEY_NOTIFY_EXPIRING;
                     ka_send_event_notification (applet,
-                                                _
-                                                ("Network credentials expiring"),
+                                                _("Network credentials expiring"),
                                                 tooltip_text,
                                                 "krb-expiring-ticket",
                                                 "dont-show-again");
@@ -559,8 +557,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                 applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_EXPIRED;
                 ka_send_event_notification (applet,
                                             _("Network credentials expired"),
-                                            _
-                                            ("Your Kerberos credentails have expired."),
+                                            _("Your Kerberos credentails have expired."),
                                             "krb-no-valid-ticket",
                                             "dont-show-again");
             }
@@ -726,8 +723,7 @@ ka_applet_create_context_menu (KaApplet *applet)
 
     /* kdestroy */
     menu_item =
-        gtk_image_menu_item_new_with_mnemonic (_
-                                               ("Remove Credentials _Cache"));
+        gtk_image_menu_item_new_with_mnemonic (_("Remove Credentials _Cache"));
     g_signal_connect (G_OBJECT (menu_item), "activate",
                       G_CALLBACK (ka_applet_cb_destroy_ccache), applet);
     image = gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_MENU);

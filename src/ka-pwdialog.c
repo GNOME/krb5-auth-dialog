@@ -25,6 +25,7 @@
 #include "ka-applet-priv.h"
 #include "ka-dialog.h"
 #include "ka-pwdialog.h"
+#include "ka-entry-buffer.h"
 
 struct _KaPwDialog {
   GObject parent;
@@ -196,7 +197,7 @@ ka_pwdialog_hide (const KaPwDialog* pwdialog, gboolean force)
 const gchar*
 ka_pwdialog_get_password(KaPwDialog *pwdialog)
 {
-	return gtk_secure_entry_get_text (GTK_SECURE_ENTRY (pwdialog->priv->pw_entry));
+	return gtk_entry_get_text (GTK_ENTRY(pwdialog->priv->pw_entry));
 }
 
 gboolean
@@ -229,7 +230,6 @@ ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
 {
 	KaPwDialogPrivate *priv = pwdialog->priv;
 	gchar *wrong_markup = NULL;
-	GtkWidget *e;
 	gchar *prompt;
 	int pw4len;
 
@@ -251,13 +251,8 @@ ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
 		}
 	}
 
-	e = gtk_entry_new ();
-	gtk_secure_entry_set_invisible_char (GTK_SECURE_ENTRY (priv->pw_entry),
-	                                     gtk_entry_get_invisible_char (GTK_ENTRY (e)));
-	gtk_widget_destroy (e);
-
 	/* Clear the password entry field */
-	gtk_secure_entry_set_text (GTK_SECURE_ENTRY (priv->pw_entry), "");
+	gtk_entry_set_text (GTK_ENTRY (priv->pw_entry), "");
 
 	/* Use the prompt label that krb5 provides us */
 	gtk_label_set_text (GTK_LABEL (priv->krb_label), prompt);
@@ -292,18 +287,21 @@ KaPwDialog*
 ka_pwdialog_create(GtkBuilder* xml)
 {
 	KaPwDialog *pwdialog = ka_pwdialog_new();
+	KaEntryBuffer *buffer = ka_entry_buffer_new ();
 	KaPwDialogPrivate *priv = pwdialog->priv;
 	GtkWidget *entry_hbox = NULL;
 
 	priv->dialog = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_dialog"));
 	priv->status_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_status_label"));
 	priv->krb_label = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_message_label"));
-	priv->pw_entry = GTK_WIDGET (gtk_secure_entry_new ());
+	priv->pw_entry = GTK_WIDGET (gtk_entry_new_with_buffer (GTK_ENTRY_BUFFER(buffer)));
+	gtk_entry_set_visibility(GTK_ENTRY(priv->pw_entry), FALSE);
+	g_object_unref (buffer);
 	priv->error_dialog = ka_error_dialog_new();
 
 	entry_hbox = GTK_WIDGET (gtk_builder_get_object (xml, "entry_hbox"));
 	gtk_container_add (GTK_CONTAINER (entry_hbox), priv->pw_entry);
-	gtk_secure_entry_set_activates_default (GTK_SECURE_ENTRY (priv->pw_entry), TRUE);
+	gtk_entry_set_activates_default (GTK_ENTRY (priv->pw_entry), TRUE);
 	gtk_widget_show (priv->pw_entry);
 
 	return pwdialog;

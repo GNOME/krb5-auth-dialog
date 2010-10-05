@@ -39,7 +39,7 @@ AC_MSG_RESULT([$with_gtk])
 
 case "$with_gtk" in
   2.0) GTK_API_VERSION=2.0
-       GTK_REQUIRED=2.16.0
+       GTK_REQUIRED=2.18.0
        GLIB_REQUIRED=2.16.0
        DBUS_REQUIRED=0.60
        GCONF_REQUIRED=2.8
@@ -281,7 +281,6 @@ krb5-auth-dialog.spec
 src/Makefile
 src/krb5-auth-dialog.1
 secmem/Makefile
-gtksecentry/Makefile
 icons/Makefile
 icons/22x22/Makefile
 icons/48x48/Makefile

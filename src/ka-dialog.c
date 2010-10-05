@@ -32,7 +32,6 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include "gtksecentry.h"
 #include "secmem-util.h"
 #include "memory.h"
 

@@ -44,11 +44,12 @@ krb5_auth_dialog_SOURCES =	\
 	ka-plugin-loader.h	\
 	ka-closures.h		\
 	ka-closures.c		\
+	ka-entry-buffer.h	\
+	ka-entry-buffer.c	\
 	dummy-strings.c		\
 	$(NULL)
 
 krb5_auth_dialog_CPPFLAGS = \
-	-I$(top_srcdir)/gtksecentry \
 	-I$(top_srcdir)/secmem \
 	-DKA_DATA_DIR=\""$(pkgdatadir)"\" \
 	-DDATA_DIR=\""$(datadir)"\" \
@@ -71,7 +72,6 @@ krb5_auth_dialog_CFLAGS = \
 	$(NULL)
 
 krb5_auth_dialog_LDADD = \
-	$(top_builddir)/gtksecentry/libgtksecentry.a \
 	$(top_builddir)/secmem/libsecmem.a \
 	$(NETWORK_MANAGER_LIBS) \
 	$(LIBCAP) \
@@ -95,7 +95,6 @@ ka-dbus-glue.h: $(srcdir)/ka-dbus.xml
 		$< > $@
 
 AM_CPPFLAGS = \
-	-I $(top_srcdir)/gtksecentry/ \
 	-I $(top_srcdir)/secmem/ \
 	$(DISABLE_DEPRECATED) \
 	$(NULL)

@@ -23,9 +23,9 @@
 
 #include <glib.h>
 #include <glib-object.h>
+#include <gtk/gtk.h>
 
 #include "config.h"
-#include "gtksecentry.h"
 
 G_BEGIN_DECLS
 

@@ -652,35 +652,6 @@ ka_applet_cb_quit (GtkMenuItem *menuitem G_GNUC_UNUSED, gpointer user_data)
 
 
 static void
-ka_about_dialog_url_hook (GtkAboutDialog *about,
-                          const gchar *alink,
-                          gpointer data G_GNUC_UNUSED)
-{
-    GError *error = NULL;
-
-    gtk_show_uri (gtk_window_get_screen (GTK_WINDOW (about)),
-                  alink, gtk_get_current_event_time (), &error);
-
-    if (error) {
-        GtkWidget *message_dialog;
-
-        message_dialog = gtk_message_dialog_new (GTK_WINDOW (about),
-                                                 GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                 GTK_MESSAGE_ERROR,
-                                                 GTK_BUTTONS_CLOSE,
-                                                 _("There was an error displaying %s:\n%s"),
-                                                 alink, error->message);
-        gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
-
-        g_signal_connect (message_dialog, "response",
-                          G_CALLBACK (gtk_widget_destroy), NULL);
-        gtk_widget_show (message_dialog);
-        g_clear_error (&error);
-    }
-}
-
-
-static void
 ka_applet_cb_about_dialog (GtkMenuItem *menuitem G_GNUC_UNUSED,
                            gpointer user_data G_GNUC_UNUSED)
 {
@@ -692,7 +663,6 @@ ka_applet_cb_about_dialog (GtkMenuItem *menuitem G_GNUC_UNUSED,
         NULL
     };
 
-    gtk_about_dialog_set_url_hook (ka_about_dialog_url_hook, NULL, NULL);
     gtk_show_about_dialog (NULL,
                            "authors", authors,
                            "version", VERSION,

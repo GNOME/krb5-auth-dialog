@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&component=general\n"
-"POT-Creation-Date: 2010-07-26 11:26+0000\n"
-"PO-Revision-Date: 2010-07-27 00:21+0100\n"
+"POT-Creation-Date: 2010-10-05 13:11+0000\n"
+"PO-Revision-Date: 2010-10-06 21:11+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -56,14 +56,14 @@ msgstr "Abgelaufen"
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Kerberos-Ticket konnte nicht erlangt werden: »%s«"
 
-#: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:390
+#: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:375
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Ihre Anmeldeinformationen laufen in %d Minute ab"
 msgstr[1] "Ihre Anmeldeinformationen laufen in %d Minuten ab"
 
-#: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:395
+#: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:380
 msgid "Your credentials have expired"
 msgstr "Anmeldeinformationen abgelaufen"
 
@@ -1430,8 +1430,7 @@ msgstr "Falsche magische Zahl für GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Falsche magische Zahl für GSSAPI QUEUE"
 
-#. Translators: First number is hours, second number is minutes
-#: ../src/ka-applet.c:386
+#: ../src/ka-applet.c:369
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Anmeldeinformationen laufen in %.2d:%.2dh ab."
@@ -1440,32 +1439,36 @@ msgstr "Anmeldeinformationen laufen in %.2d:%.2dh ab."
 msgid "Don't show me this again"
 msgstr "Dies nicht mehr anzeigen"
 
-#: ../src/ka-applet.c:542
+#: ../src/ka-applet.c:507
+msgid "Get Ticket"
+msgstr "Ticket holen"
+
+#: ../src/ka-applet.c:551
 msgid "Network credentials valid"
 msgstr "Anmeldeinformationen sind gültig"
 
-#: ../src/ka-applet.c:543
+#: ../src/ka-applet.c:552
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Sie haben Ihre Kerberos-Anmeldeinformationen erneuert."
 
-#: ../src/ka-applet.c:559
+#: ../src/ka-applet.c:568
 msgid "Network credentials expiring"
 msgstr "Anmeldeinformationen laufen ab"
 
-#: ../src/ka-applet.c:578
+#: ../src/ka-applet.c:586
 msgid "Network credentials expired"
 msgstr "Anmeldeinformationen abgelaufen"
 
-#: ../src/ka-applet.c:579
+#: ../src/ka-applet.c:587
 msgid "Your Kerberos credentails have expired."
 msgstr "Ihre Kerberos-Anmeldeinformationen sind abgelaufen."
 
-#: ../src/ka-applet.c:624
+#: ../src/ka-applet.c:631
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "Fehler beim Öffnen des Einstellungsdialogs: %s"
 
-#: ../src/ka-applet.c:665
+#: ../src/ka-applet.c:671
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
@@ -1475,20 +1478,19 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-applet.c:701
+#: ../src/ka-applet.c:708
 msgid "translator-credits"
 msgstr ""
 "Guido Günther <agx@sigxcpu.org>\n"
 "Mario Blättermann <mariobl@gnome.org>\n"
 "Christian Kirbach <Christian.Kirbach@googlemail.com>"
 
-#. kdestroy
-#: ../src/ka-applet.c:743
+#: ../src/ka-applet.c:753
 msgid "Remove Credentials _Cache"
 msgstr "_Anmeldeinformationen löschen"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:753
+#: ../src/ka-applet.c:763
 msgid "_List Tickets"
 msgstr "Tickets auf_listen"
 

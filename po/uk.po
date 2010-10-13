@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # wanderlust <wanderlust@ukr.net>, 2009.
 #
-# wanderlust <wanderlust@ukr.net>, 2009.
+# Maxim Dziumanenko <dziumanenko@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-02 15:49+0300\n"
-"PO-Revision-Date: 2009-07-05 15:19+0300\n"
-"Last-Translator: wanderlust <wanderlust@ukr.net>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
+"auth-dialog&component=general\n"
+"POT-Creation-Date: 2010-10-05 13:11+0000\n"
+"PO-Revision-Date: 2010-10-13 15:19+0300\n"
+"Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
 "Language-Team: ukrainian <Ukrainian <uk@li.org>>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,20 +32,20 @@ msgstr "Квиток на сервіс"
 msgid "_Renew Ticket"
 msgstr "Оновити _квиток"
 
-#: ../src/krb5-auth-dialog.c:172
+#: ../src/ka-dialog.c:172
 msgid "unknown error"
 msgstr "невідома помилка"
 
-#: ../src/krb5-auth-dialog.c:329
+#: ../src/ka-dialog.c:333
 msgid "Expired"
 msgstr "Вийшов термін"
 
-#: ../src/krb5-auth-pwdialog.c:170
+#: ../src/ka-pwdialog.c:174
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Неможливо отримати квиток kerberos: '%s'"
 
-#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:359
+#: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:375
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -52,31 +53,31 @@ msgstr[0] "Термін дії Вашого мандату закінчитьс�
 msgstr[1] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
 msgstr[2] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
 
-#: ../src/krb5-auth-pwdialog.c:212 ../src/krb5-auth-applet.c:364
+#: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:380
 msgid "Your credentials have expired"
 msgstr "Термін дії Вашого мандату закінчився"
 
-#: ../src/krb5-auth-pwdialog.c:233
+#: ../src/ka-pwdialog.c:237
 msgid "Please enter your Kerberos password:"
 msgstr "Введіть Ваш пароль Kerberos:"
 
-#: ../src/krb5-auth-pwdialog.c:244
+#: ../src/ka-pwdialog.c:248
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Будь-ласка, введіть пароль для '%s':"
 
-#: ../src/krb5-auth-pwdialog.c:264
+#: ../src/ka-pwdialog.c:268
 msgid "The password you entered is invalid"
 msgstr "Введений Вами пароль невірний"
 
-#: ../src/krb5-auth-pwdialog.c:280
+#: ../src/ka-pwdialog.c:284
 #, c-format
 msgid "%s Error"
 msgstr "Помилка %s"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with krb5-auth
+#. doubt please translate strings from files starting with ka- and krb5-auth-
 #. first since these are the ones the user will see in any case.
 #: ../src/dummy-strings.c:10
 msgid "ASN.1 failed call to system time library"
@@ -311,7 +312,7 @@ msgstr "Чужий квиток"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
 #: ../src/dummy-strings.c:56
 msgid "Ticket/authenticator don't match"
-msgstr "Квиток та аутентифікатор не збігаються"
+msgstr "Квиток та автентифікатор не збігаються"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: ../src/dummy-strings.c:57
@@ -863,7 +864,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
 #: ../src/dummy-strings.c:166
 msgid "Request missing second ticket"
-msgstr "Запит відсутьогоі другого квитка"
+msgstr "Запит відсутнього другого квитка"
 
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
 #: ../src/dummy-strings.c:167
@@ -1060,12 +1061,12 @@ msgstr "Невідома помилка getaddrinfo"
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: ../src/dummy-strings.c:204
 msgid "no data available for host/domain name"
-msgstr "Дані про ім'я хоста/домену відсутні"
+msgstr "Дані про ім'я вузла/домену відсутні"
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
 #: ../src/dummy-strings.c:205
 msgid "host/domain name not found"
-msgstr "Ім'я хоста/домену не знайдено"
+msgstr "Ім'я вузла/домену не знайдено"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: ../src/dummy-strings.c:206
@@ -1395,94 +1396,104 @@ msgstr "Погане магічне число для GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Погане магічне число для GSSAPI QUEUE"
 
-#. Translators: First number is hours, second number is minutes
-#: ../src/krb5-auth-applet.c:355
+#: ../src/ka-applet.c:369
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
-msgstr "Термін дії Ваших мандатів завершиться через %.2d:%.2d год"
+msgstr "Термін дії Ваших мандатів завершиться через %.2d:%.2d годин"
 
-#: ../src/krb5-auth-applet.c:460
+#: ../src/ka-applet.c:500
 msgid "Don't show me this again"
 msgstr "Не показувати знову"
 
-#: ../src/krb5-auth-applet.c:497
+#: ../src/ka-applet.c:507
+#| msgid "_Renew Ticket"
+msgid "Get Ticket"
+msgstr "Отримати _квиток"
+
+#: ../src/ka-applet.c:551
 msgid "Network credentials valid"
 msgstr "Дючі мережеві мандати"
 
-#: ../src/krb5-auth-applet.c:498
+#: ../src/ka-applet.c:552
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Ви оновили власні мандати Kerberos."
 
-#: ../src/krb5-auth-applet.c:511
+#: ../src/ka-applet.c:568
 msgid "Network credentials expiring"
 msgstr "Термін дії мережевих мандатів закінчується"
 
-#: ../src/krb5-auth-applet.c:526
+#: ../src/ka-applet.c:586
 msgid "Network credentials expired"
 msgstr "Термін дії мережевих мандатів закінчився"
 
-#: ../src/krb5-auth-applet.c:527
+#: ../src/ka-applet.c:587
 msgid "Your Kerberos credentails have expired."
 msgstr "Термін дії Ваших мандатів Kerberos закінчився."
 
-#: ../src/krb5-auth-applet.c:570
+#: ../src/ka-applet.c:631
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
-msgstr "Під час запуску діалогу парметрів виникла помилка: %s"
+msgstr "Під час запуску діалогу параметрів виникла помилка: %s"
 
-#: ../src/krb5-auth-applet.c:611
+#: ../src/ka-applet.c:671
 #, c-format
 msgid ""
 "There was an error displaying %s:\n"
 "%s"
 msgstr ""
-"При відображенні %s виникла помилка:\n"
+"При показі %s виникла помилка:\n"
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/krb5-auth-applet.c:647
+#: ../src/ka-applet.c:708
 msgid "translator-credits"
-msgstr "wanderlust <wanderlust@ukr.net>"
+msgstr "Максим Дзюманенко <dziumanenko@gmail.com>"
+"wanderlust <wanderlust@ukr.net>"
 
-#. kdestroy
-#: ../src/krb5-auth-applet.c:689
+#: ../src/ka-applet.c:753
 msgid "Remove Credentials _Cache"
 msgstr "Очистити _кеш мандатів"
 
-#: ../src/krb5-auth-tools.c:45
+#. Ticket dialog
+#: ../src/ka-applet.c:763
+#| msgid "Service Tickets"
+msgid "_List Tickets"
+msgstr "_Список квитів"
+
+#: ../src/ka-tools.c:45
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
-"При відображенні довідки виникла помилка:\n"
+"При показі довідки виникла помилка:\n"
 "%s"
 
-#: ../src/krb5-auth-tickets.c:54
+#: ../src/ka-tickets.c:54
 msgid "Principal"
-msgstr "Головуючий"
+msgstr "Голова"
 
-#: ../src/krb5-auth-tickets.c:60
+#: ../src/ka-tickets.c:60
 msgid "Start Time"
 msgstr "Час початку"
 
-#: ../src/krb5-auth-tickets.c:66
+#: ../src/ka-tickets.c:66
 msgid "End Time"
 msgstr "Час закінчення"
 
-#: ../src/krb5-auth-tickets.c:72
+#: ../src/ka-tickets.c:72
 msgid "Fwd"
 msgstr "Пересланий"
 
-#: ../src/krb5-auth-tickets.c:78
+#: ../src/ka-tickets.c:78
 msgid "Proxy"
 msgstr "Проксі"
 
-#: ../src/krb5-auth-tickets.c:84
+#: ../src/ka-tickets.c:84
 msgid "Renew"
 msgstr "Оновити"
 
-#: ../src/krb5-auth-tickets.c:107
+#: ../src/ka-tickets.c:107
 msgid "Error displaying service ticket information"
 msgstr "Помилка при показі інформації про квиток"
 
@@ -1491,93 +1502,101 @@ msgid "Kerberos Network Authentication Dialog"
 msgstr "Діалогове вікно мережевої аутентифікації Kerberos"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:1
+msgid "Enabled plugins"
+msgstr "Увімкнені модулі"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:2
 msgid "Forwardable ticket"
 msgstr "Квиток перенаправлення"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:2
+#: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "Kerberos principal"
 msgstr "Адміністратор доступу Kerberos"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:3
-msgid "Notify user when ticket becomes valid"
-msgstr "Попереджувати користувача, коли квиток стане діючим"
-
 #: ../src/krb5-auth-dialog.schemas.in.h:4
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr "Список модулів, які завантажуються при старті."
+
+#: ../src/krb5-auth-dialog.schemas.in.h:5
+msgid "Notify user when ticket becomes valid"
+msgstr "Попереджувати користувача, коли квиток стане чинним"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:6
 msgid "Notify user when ticket has expired"
 msgstr "Попереджувати користувача, коли завершився термін дії квитка"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:5
+#: ../src/krb5-auth-dialog.schemas.in.h:7
 msgid "Notify user when ticket is about to expire"
 msgstr "Попереджувати користувача, коли завершується термін дії квитка"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:6
+#: ../src/krb5-auth-dialog.schemas.in.h:8
 msgid "PKINIT CA certificates"
 msgstr "Сертифікати PKINIT CA"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:7
+#: ../src/krb5-auth-dialog.schemas.in.h:9
 msgid "PKINIT identifier"
 msgstr "Ідентифікатор PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:8
+#: ../src/krb5-auth-dialog.schemas.in.h:10
 msgid "PKINIT trust anchors"
 msgstr "Довірчі прив'язки PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:9
+#: ../src/krb5-auth-dialog.schemas.in.h:11
 msgid "Prompt minutes before expiry"
 msgstr "Показувати час до завершення"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:10
+#: ../src/krb5-auth-dialog.schemas.in.h:12
 msgid "Proxiable ticket"
 msgstr "Квиток може передаватися через проксі"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:11
+#: ../src/krb5-auth-dialog.schemas.in.h:13
 msgid "Renewable ticket"
 msgstr "Квиток може відновлюватися"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:12
+#: ../src/krb5-auth-dialog.schemas.in.h:14
 msgid "Requested tickets should be forwardable"
 msgstr "Задані квитки повинні перенаправлятися"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:13
+#: ../src/krb5-auth-dialog.schemas.in.h:15
 msgid "Requested tickets should be proxiable"
 msgstr "Задані квитки повинні передаватися через проксі"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:14
+#: ../src/krb5-auth-dialog.schemas.in.h:16
 msgid "Requested tickets should be renewable"
 msgstr "Задані квитки повинні відновлюватися"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:15
+#: ../src/krb5-auth-dialog.schemas.in.h:17
 msgid "Show a trayicon in the status area of the panel"
 msgstr "Показувати значок на панелі у області статусу"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:16
+#: ../src/krb5-auth-dialog.schemas.in.h:18
 msgid "Show trayicon"
 msgstr "Показувати значок"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:17
+#: ../src/krb5-auth-dialog.schemas.in.h:19
 msgid ""
 "Start prompting/displaying notifications that many minutes before expiry"
 msgstr "Запустити повідомлення запиту/відображення про час завершення"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:18
+#: ../src/krb5-auth-dialog.schemas.in.h:20
 msgid "The kerberos principal to acquire the ticket for"
 msgstr "Адміністратор доступу Kerberos отримує квиток для"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:19
+#: ../src/krb5-auth-dialog.schemas.in.h:21
 msgid "The principal's public/private/certificate identifier when using PKINIT"
 msgstr ""
 "Загально доступний або ж приватний Ідентифікатор чи ідентифікатор "
 "сертифікату адміністратора доступу при використанні PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:20
+#: ../src/krb5-auth-dialog.schemas.in.h:22
 msgid "ticket expired notification"
 msgstr "Повідомлення про закінчений терміну дії квитка"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:21
+#: ../src/krb5-auth-dialog.schemas.in.h:23
 msgid "ticket expiring notification"
 msgstr "Повідомлення про закінчення терміну дії квитка"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:22
+#: ../src/krb5-auth-dialog.schemas.in.h:24
 msgid "valid ticket notification"
 msgstr "Повідомлення про дійсність квитка"
 
@@ -1586,15 +1605,15 @@ msgstr "Повідомлення про дійсність квитка"
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Увага: використання на цій системі q-agent з setuid є небезпечним\n"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:345
+#: ../preferences/ka-preferences.c:345
 msgid "Choose Certificate"
 msgstr "Оберіть сертифікат"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:361
+#: ../preferences/ka-preferences.c:361
 msgid "X509 Certificates"
 msgstr "Сертифікат X509"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:365
+#: ../preferences/ka-preferences.c:365
 msgid "all files"
 msgstr "усі файли"
 

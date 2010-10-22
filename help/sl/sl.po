@@ -1,0 +1,350 @@
+# Slovenian translation for krb5-auth-dialog help.
+# Copyright (C) 2010 krb5-auth-dialog's COPYRIGHT HOLDER
+# This file is distributed under the same license as the krb5-auth-dialog package.
+#
+# Ime Priimek <email>, leto
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: krb5-auth-dialog help master\n"
+"POT-Creation-Date: 2010-10-13 12:22+0000\n"
+"PO-Revision-Date: 2010-10-22 08:14+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
+"X-Poedit-Country: SLOVENIA\n"
+"X-Poedit-Language: Slovenian\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/krb5-auth-dialog.xml:174(None)
+msgid "@@image: 'figures/trayicon-valid.png'; md5=78989c41fd36e23c0a97b87a2cc440e4"
+msgstr "@@image: 'figures/trayicon-valid.png'; md5=78989c41fd36e23c0a97b87a2cc440e4"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/krb5-auth-dialog.xml:189(None)
+msgid "@@image: 'figures/trayicon-expiring.png'; md5=cb1dbed310e568e7cb4684bac85c6969"
+msgstr "@@image: 'figures/trayicon-expiring.png'; md5=cb1dbed310e568e7cb4684bac85c6969"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/krb5-auth-dialog.xml:204(None)
+msgid "@@image: 'figures/trayicon-expired.png'; md5=40c03749e8e3773a0e931232a89e3fe2"
+msgstr "@@image: 'figures/trayicon-expired.png'; md5=40c03749e8e3773a0e931232a89e3fe2"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/krb5-auth-dialog.xml:226(None)
+msgid "@@image: 'figures/ka-valid.png'; md5=143d137c326eeba1ec48cba8f5805cc1"
+msgstr "@@image: 'figures/ka-valid.png'; md5=143d137c326eeba1ec48cba8f5805cc1"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/krb5-auth-dialog.xml:241(None)
+msgid "@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
+msgstr "@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
+
+#. When image changes, this message will be marked fuzzy or untranslated for you.
+#. It doesn't matter what you translate it to: it's not used at all.
+#: C/krb5-auth-dialog.xml:256(None)
+msgid "@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
+msgstr "@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
+
+#: C/krb5-auth-dialog.xml:39(title)
+msgid "<application>Kerberos Network Authentication Dialog</application> Manual"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:41(para)
+msgid "Kerberos Network Authentication Dialog is a small helper that monitors and refreshes your Kerberos ticket."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:46(year)
+msgid "2009"
+msgstr "2009"
+
+#: C/krb5-auth-dialog.xml:47(holder)
+#: C/krb5-auth-dialog.xml:62(publishername)
+msgid "Guido Günther"
+msgstr "Guido Günther"
+
+#: C/krb5-auth-dialog.xml:2(para)
+msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:12(para)
+msgid "This manual is part of a collection of GNOME manuals distributed under the GFDL. If you want to distribute this manual separately from the collection, you can do so by adding a copy of the license to the manual, as described in section 6 of the license."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:19(para)
+msgid "Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and the members of the GNOME Documentation Project are made aware of those trademarks, then the names are in capital letters or initial capital letters."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:35(para)
+msgid "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:55(para)
+msgid "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:28(para)
+msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:69(firstname)
+msgid "Jonathan"
+msgstr "Jonathan"
+
+#: C/krb5-auth-dialog.xml:70(surname)
+msgid "Blandford"
+msgstr "Blandford"
+
+#: C/krb5-auth-dialog.xml:71(email)
+msgid "rjb@redhat.com"
+msgstr "rjb@redhat.com"
+
+#: C/krb5-auth-dialog.xml:74(firstname)
+msgid "Guido"
+msgstr "Guido"
+
+#: C/krb5-auth-dialog.xml:75(surname)
+msgid "Günther"
+msgstr "Günther"
+
+#: C/krb5-auth-dialog.xml:76(email)
+msgid "agx@sigxcpu.org"
+msgstr "agx@sigxcpu.org"
+
+#: C/krb5-auth-dialog.xml:103(revnumber)
+msgid "2.0"
+msgstr "2.0"
+
+#: C/krb5-auth-dialog.xml:104(date)
+msgid "May 2009"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:106(para)
+msgid "Guido Günther <email>agx@sigxcpu.org</email>"
+msgstr "Guido Günther <email>agx@sigxcpu.org</email>"
+
+#: C/krb5-auth-dialog.xml:112(releaseinfo)
+msgid "This manual describes how to use the Kerberos Network Authentication Dialog to manage your Kerberos tickets."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:116(title)
+msgid "Feedback"
+msgstr "Odziv"
+
+#: C/krb5-auth-dialog.xml:117(para)
+msgid "To report a bug or make a suggestion regarding this package or this manual, use <ulink url=\"http://bugzilla.gnome.org\" type=\"http\">GNOME's Bugzilla</ulink>."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:129(title)
+msgid "Introduction"
+msgstr "Uvod"
+
+#: C/krb5-auth-dialog.xml:0(application)
+msgid "Kerberos Network Authentication Dialog"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:132(secondary)
+msgid "Manual"
+msgstr "Priročnik"
+
+#: C/krb5-auth-dialog.xml:133(tertiary)
+msgid "krb5-auth-dialog"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:136(para)
+msgid "Kerberos Network Authentication Dialog is an applet for the <systemitem>GNOME desktop</systemitem> that monitors and refreshes your Kerberos ticket. It pops up reminders when the ticket is about to expire."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:141(para)
+msgid "Once you have acquired a Kerberos ticket - be it via GDM or via the applet itself - the applet will handle the ticket's renewal until it expires. It can also be used to destroy (remove) the credential cache, to acquire a ticket with different options or to switch to another principal."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:146(title)
+msgid "Usage"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:147(para)
+msgid "<application>Kerberos Network Authentication Dialog</application> is usually started in GNOME startup, but you can manually start <application>Kerberos Network Authentication Dialog</application> by doing:"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:153(term)
+msgid "Command line"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:155(para)
+msgid "Type <command>krb5-auth-dialog --always</command>, then press <keycap>Return</keycap>:"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:162(para)
+msgid "The tray icon will indicate one of tree states:"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:167(title)
+#: C/krb5-auth-dialog.xml:170(title)
+msgid "Valid Kerberos ticket"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:168(para)
+msgid "You have a valid Kerberos ticket that can be used to authenticate to network services."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:182(title)
+#: C/krb5-auth-dialog.xml:185(title)
+msgid "Kerberos ticket expiring"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:183(para)
+msgid "The Kerberos ticket is about to expire but it can still be used to authenticate to network services."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:196(title)
+#: C/krb5-auth-dialog.xml:200(title)
+msgid "Kerberos ticket expired"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:197(para)
+msgid "Your Kerberos became invalid (e.g. expired). It can no longer be used to authenticate to network services. This is not a problem if the application that requires Kerberos knows how to request a new ticket via <application>Kerberos Network Authentication Dialog</application>. In case it doesn't you can just left click on the applet an reenter your password."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:213(title)
+msgid "Notification Messages"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:214(para)
+msgid "When Kerberos Network Authentication Dialog has started, the following notifications may be displayed."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:219(title)
+msgid "Kerberos credentials valid"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:220(para)
+msgid "You just acquired a valid Kerberos ticket that can be used to authenticate to network services."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:222(title)
+msgid "Notification when Kerberos credentials become valid"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:234(title)
+msgid "Kerberos credentials expiring"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:235(para)
+msgid "Your Kerberos credentials are about to expire. You can left click on the tray applet to refresh them."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:237(title)
+msgid "Notification when Kerberos credentials expiring"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:249(title)
+msgid "Kerberos credentials expired"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:250(para)
+msgid "Your Kerberos credentials just expired. They can no longer be used to authenticate to network services."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:252(title)
+msgid "Notification when Kerberos credentials expired"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:265(title)
+msgid "Preferences"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:269(title)
+msgid "Kerberos Principal Preferences"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:274(para)
+msgid "Dialog Element"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:277(para)
+msgid "Description"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:285(guilabel)
+msgid "Kerberos Principal"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:289(para)
+msgid "The Kerberos principal to use. Leave blank to use you current username. If you change this setting you have to destroy the credential cache before these setting takes effect."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:296(guilabel)
+msgid "PKINIT Userid"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:300(para)
+msgid "The principals public/private/certificate identifier. Leave empty if not using PKINIT. To enable using a security token add the path to the pkcs11 Library here, e.g. \"PKCS11:/usr/lib/opensc/opensc-pkcs11.so\""
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:306(guilabel)
+msgid "PKINIT anchors"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:310(para)
+msgid "Path to CA certificates used as trust anchors for pkinit. You only need to set this if it hasn't been set up globally in <filename>/etc/krb5.conf</filename>"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:316(guilabel)
+msgid "forwardable"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:320(para)
+msgid "Whether the requested Kerberos ticket should be forwardable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:326(guilabel)
+msgid "renewable"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:330(para)
+msgid "Whether the requested Kerberos ticket should be renewable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:336(guilabel)
+msgid "proxiable"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:340(para)
+msgid "Whether the requested Kerberos ticket should be proxiable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:346(guilabel)
+msgid "Warn .. minutes before expiry"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:350(para)
+msgid "Notifications that your credentials are about to expire will be sent that many minutes before expiry."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:356(guilabel)
+msgid "Show tray icon"
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:360(para)
+msgid "Whether to show the tray icon. Disabling the tray icon will also disable notifications, the password dialog will be brought up instead."
+msgstr ""
+
+#: C/krb5-auth-dialog.xml:266(para)
+msgid "You can set preferences by selecting \"Preferences\" from the applets context menu or by selecting \"Network Authentication\" in the <application>Control Center</application>. <table frame=\"topbot\" id=\"tbl-principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/><placeholder-2/><placeholder-3/></tgroup></table>"
+msgstr ""
+
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
+#: C/krb5-auth-dialog.xml:0(None)
+msgid "translator-credits"
+msgstr ""
+

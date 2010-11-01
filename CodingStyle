@@ -18,8 +18,16 @@ CodingStyle
          --space-after-for                      \
          --space-after-if                       \
          --space-after-while                    \
-         --cuddle-else --braces-on-if-line      \
+         --cuddle-else                          \
+         --braces-on-if-line                    \
          --procnames-start-lines                \
          --braces-on-struct-decl-line           \
          --braces-after-func-def-line           \
-         --blank-lines-after-declarations
+         --blank-lines-after-declarations       \
+         -Tgchar -Tgpointer -TG_MODULE_EXPORT   \
+         -TGParamSpec -TGValue -TGObject        \
+         -TGtkWidget -TGtkMenuItem              \
+         -TKaPlugin -TKaApplet -TKaAppletClass  \
+         -TKaPluginDummy -TKaPluginDummyClass   \
+         -TKaPluginPam -TKaPluginPamClass       \
+         -TKaPluginAfs -TKaPluginAfsClass

@@ -211,6 +211,15 @@ AM_CONDITIONAL(HAVE_LIBNOTIFY, [test "x$with_libnotify" = "xyes"])
 AC_SUBST(LIBNOTIFY_CFLAGS)
 AC_SUBST(LIBNOTIFY_LIBS)
 
+if test "x$with_libnotify" = "xyes" ; then
+    savedCFLAGS="$CFLAGS"
+    CFLAGS="$LIBNOTIFY_CFLAGS $CFLAGS"
+    savedLIBS="$LIBS"
+    LIBS="$LIBNOTIFY_LIBS $LIBS"
+    AC_CHECK_FUNCS([notify_notification_new_with_status_icon])
+    CFLAGS="$savedCFLAGS"
+    LIBS="$savedLIBS"
+fi
 
 dnl secmem
 dnl Checks for library functions.

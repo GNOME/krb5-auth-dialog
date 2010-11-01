@@ -489,10 +489,14 @@ ka_send_event_notification (KaApplet *applet,
     notify_icon = icon ? icon : "krb-valid-ticket";
 
     applet->priv->notification =
+#if HAVE_NOTIFY_NOTIFICATION_NEW_WITH_STATUS_ICON
         notify_notification_new_with_status_icon (summary,
                                                   message,
                                                   notify_icon,
                                                   applet->priv->tray_icon);
+#else
+        notify_notification_new (summary, message, notify_icon);
+#endif
 
     notify_notification_set_urgency (applet->priv->notification,
                                      NOTIFY_URGENCY_NORMAL);

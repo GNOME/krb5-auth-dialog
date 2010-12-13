@@ -82,6 +82,7 @@ struct _KaAppletPrivate {
 #ifdef HAVE_LIBNOTIFY
     NotifyNotification *notification;   /* notification messages */
 #endif                          /* HAVE_LIBNOTIFY */
+    char *krb_msg;              /* Additional banner delivered by Kerberos */
     const char *notify_gconf_key;       /* disable notification gconf key */
     char *principal;            /* the principal to request */
     gboolean renewable;         /* credentials renewable? */
@@ -242,6 +243,7 @@ ka_applet_finalize (GObject *object)
     g_free (applet->priv->principal);
     g_free (applet->priv->pk_userid);
     g_free (applet->priv->pk_anchors);
+    g_free (applet->priv->krb_msg);
     /* no need to free applet->priv */
 
     if (parent_class->finalize != NULL)
@@ -547,18 +549,26 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
 
     if (remaining > 0) {
         if (expiry_notified) {
+            const char* msg;
             ka_gconf_get_bool (applet->priv->gconf,
                                KA_GCONF_KEY_NOTIFY_VALID, &notify);
             if (notify) {
                 applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_VALID;
+
+                if (applet->priv->krb_msg)
+                    msg = applet->priv->krb_msg;
+                else
+                    msg = _("You've refreshed your Kerberos credentials.");
                 ka_send_event_notification (applet,
                                             _("Network credentials valid"),
-                                            _("You've refreshed your Kerberos credentials."),
+                                            msg,
                                             "krb-valid-ticket",
                                             "dont-show-again", FALSE);
             }
             ka_applet_signal_emit (applet, KA_SIGNAL_ACQUIRED_TGT, expiry);
             expiry_notified = FALSE;
+            g_free (applet->priv->krb_msg);
+            applet->priv->krb_msg = NULL;
         } else {
             if (remaining < applet->priv->pw_prompt_secs
                 && (now - last_warn) > NOTIFY_SECONDS
@@ -880,6 +890,13 @@ GConfClient *
 ka_applet_get_gconf_client (const KaApplet *self)
 {
     return self->priv->gconf;
+}
+
+void
+ka_applet_set_msg (KaApplet *self, const char *msg)
+{
+    g_free (self->priv->krb_msg);
+    self->priv->krb_msg = g_strdup (msg);
 }
 
 void

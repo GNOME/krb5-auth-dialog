@@ -402,6 +402,9 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
 	canceled = FALSE;
 	canceled_creds_expiry = 0;
 
+	if (banner && !num_prompts)
+            ka_applet_set_msg (applet, banner);
+
 	for (i = 0; i < num_prompts; i++) {
 		const gchar *password = NULL;
 		int password_len = 0;

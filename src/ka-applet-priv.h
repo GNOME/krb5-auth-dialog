@@ -51,6 +51,7 @@ KaPwDialog *ka_applet_get_pwdialog (const KaApplet *self);
 GConfClient *ka_applet_get_gconf_client (const KaApplet *self);
 void ka_applet_signal_emit (KaApplet *self, KaAppletSignalNumber signum,
                             krb5_timestamp expiry);
+void ka_applet_set_msg (KaApplet *self, const char *msg);
 
 /* create the applet */
 KaApplet *ka_applet_create (void);

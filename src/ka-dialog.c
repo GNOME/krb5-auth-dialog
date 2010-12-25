@@ -848,7 +848,8 @@ ka_renew_credentials (KaApplet* applet)
 				       my_creds.times.endtime);
 	}
 out:
-	creds_expiry = my_creds.times.endtime;
+	if (!retval)
+		creds_expiry = my_creds.times.endtime;
 	krb5_free_cred_contents (kcontext, &my_creds);
 	krb5_cc_close (kcontext, ccache);
 	return retval;

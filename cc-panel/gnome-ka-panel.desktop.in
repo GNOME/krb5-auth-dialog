@@ -1,0 +1,17 @@
+[Desktop Entry]
+_Name=Kerberos Authentication
+_Comment=Set your Kerberos network authentication preferences
+Exec=gnome-ka-properties
+Icon=krb-valid-ticket
+Terminal=false
+Type=Application
+StartupNotify=true
+# The X-GNOME-Settings-Panel is necessary to show in the main shell UI
+Categories=GNOME;GTK;Settings;DesktopSettings;X-GNOME-Settings-Panel;
+OnlyShowIn=GNOME;
+X-GNOME-Settings-Panel=ka-panel
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=krb5-auth-dialog
+X-GNOME-Bugzilla-Component=general
+# Translators: those are keywords for the example control-center panel
+_X-GNOME-Keywords=Kerberos;Authentication

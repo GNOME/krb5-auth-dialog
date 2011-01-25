@@ -11,3 +11,6 @@ secmem/util.c
 preferences/ka-preferences.c
 preferences/krb5-auth-dialog-preferences.desktop.in
 [type: gettext/glade]preferences/krb5-auth-dialog-preferences.xml
+cc-panel/gnome-ka-panel.desktop.in
+[type: gettext/glade]cc-panel/ka-panel.ui
+cc-panel/cc-ka-panel.c

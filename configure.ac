@@ -59,6 +59,7 @@ PKG_CHECK_MODULES(DBUS, dbus-glib-1 >= $DBUS_REQUIRED)
 PKG_CHECK_MODULES(GCONF, gconf-2.0 >= $GCONF_REQUIRED)
 PKG_CHECK_MODULES(GIO, [gio-2.0, gio-unix-2.0])
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0)
+PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED)
 
 dnl check for deprecated symbols:
 dnl GNOME_MAINTAINER_MODE_DEFINES
@@ -184,42 +185,16 @@ if test "x$enable_network_manager" = "xyes"; then
 fi
 AM_CONDITIONAL([ENABLE_NETWORK_MANAGER],[test "x$enable_network_manager" = "xyes"])
 
+
 dnl libnotify
-LIBNOTIFY_CFLAGS=
-LIBNOTIFY_LIBS=
-AC_ARG_WITH(libnotify,
-  [  --with-libnotify	use libnotify for status messages],
-  [],
-  [with_libnotify=check])
+savedCFLAGS="$CFLAGS"
+savedLIBS="$LIBS"
+CFLAGS="$LIBNOTIFY_CFLAGS $CFLAGS"
+LIBS="$LIBNOTIFY_LIBS $LIBS"
+AC_CHECK_FUNCS([notify_notification_new_with_status_icon])
+CFLAGS="$savedCFLAGS"
+LIBS="$savedLIBS"
 
-if test "x$with_libnotify" = "xyes" -o "x$with_libnotify" = "xcheck"; then
-  PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED,
-    [with_libnotify=yes], [
-    if test "x$with_libnotify" = "xcheck" ; then
-       with_libnotify=no
-    else
-       AC_MSG_ERROR(
-         [You must install libnotify >= $LIBNOTIFY_REQUIRED to compile krb5-auth-dialog])
-    fi
-  ])
-  if test "x$with_libnotify" = "xyes" ; then
-    AC_DEFINE_UNQUOTED(HAVE_LIBNOTIFY, 1,
-      [use libnotify for status messages])
-  fi
-fi
-AM_CONDITIONAL(HAVE_LIBNOTIFY, [test "x$with_libnotify" = "xyes"])
-AC_SUBST(LIBNOTIFY_CFLAGS)
-AC_SUBST(LIBNOTIFY_LIBS)
-
-if test "x$with_libnotify" = "xyes" ; then
-    savedCFLAGS="$CFLAGS"
-    CFLAGS="$LIBNOTIFY_CFLAGS $CFLAGS"
-    savedLIBS="$LIBS"
-    LIBS="$LIBNOTIFY_LIBS $LIBS"
-    AC_CHECK_FUNCS([notify_notification_new_with_status_icon])
-    CFLAGS="$savedCFLAGS"
-    LIBS="$savedLIBS"
-fi
 
 dnl libgnome-control-center
 dnl for the new panel

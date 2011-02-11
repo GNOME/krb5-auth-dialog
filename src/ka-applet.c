@@ -30,9 +30,7 @@
 #include "ka-tickets.h"
 #include "ka-plugin-loader.h"
 #include "ka-closures.h"
-#ifdef HAVE_LIBNOTIFY
 #include <libnotify/notify.h>
-#endif
 
 #define NOTIFY_SECONDS 300
 
@@ -79,9 +77,7 @@ struct _KaAppletPrivate {
     int pw_prompt_secs;         /* when to start prompting for a password */
     KaPluginLoader *loader;     /* Plugin loader */
 
-#ifdef HAVE_LIBNOTIFY
     NotifyNotification *notification;   /* notification messages */
-#endif                          /* HAVE_LIBNOTIFY */
     char *krb_msg;              /* Additional banner delivered by Kerberos */
     const char *notify_gconf_key;       /* disable notification gconf key */
     char *principal;            /* the principal to request */
@@ -402,7 +398,6 @@ ka_applet_select_icon (KaApplet *applet, int remaining)
 }
 
 
-#ifdef HAVE_LIBNOTIFY
 static gboolean
 ka_show_notification (KaApplet *applet)
 {
@@ -518,17 +513,6 @@ ka_send_event_notification (KaApplet *applet,
     }
     ka_show_notification (applet);
 }
-#else
-static void
-ka_send_event_notification (KaApplet *applet G_GNUC_UNUSED,
-                            const char *summary G_GNUC_UNUSED,
-                            const char *message G_GNUC_UNUSED,
-                            const char *icon G_GNUC_UNUSED,
-                            const char *action G_GNUC_UNUSED)
-{
-}
-#endif /* ! HAVE_LIBNOTIFY */
-
 
 /*
  * update the tray icon's tooltip and icon

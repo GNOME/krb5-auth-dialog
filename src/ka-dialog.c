@@ -487,38 +487,17 @@ ka_nm_client_state_changed_cb (NMClient *client,
 static gboolean
 credentials_expiring (gpointer *data)
 {
-	int retval;
-	gboolean give_up;
 	KaApplet* applet = KA_APPLET(data);
 
 	KA_DEBUG("Checking expiry <%ds", ka_applet_get_pw_prompt_secs(applet));
 	if (credentials_expiring_real (applet) && is_online) {
 		KA_DEBUG("Expiry @ %ld", creds_expiry);
 
-		if (!ka_renew_credentials (applet)) {
+		if (!ka_renew_credentials (applet))
 			KA_DEBUG("Credentials renewed");
-			goto out;
-		}
-
-		/* no popup when using a trayicon */
-		if (ka_applet_get_show_trayicon(applet))
-			goto out;
-
-		give_up = canceled && (creds_expiry == canceled_creds_expiry);
-		if (!give_up) {
-			do {
-				retval = grab_credentials (applet);
-				give_up = canceled &&
-					  (creds_expiry == canceled_creds_expiry);
-			} while ((retval != 0) &&
-			         (retval != KRB5_REALM_CANT_RESOLVE) &&
-			         (retval != KRB5_KDC_UNREACH) &&
-				 invalid_auth &&
-			         !give_up);
-		}
 	}
-out:
 	ka_applet_update_status(applet, creds_expiry);
+
 	return TRUE;
 }
 
@@ -1118,10 +1097,9 @@ main (int argc, char *argv[])
 			return 1;
 		ka_nm_init();
 
-		if (credentials_expiring ((gpointer)applet)) {
-			g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, applet);
-			monitor = monitor_ccache (applet);
-		}
+		g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, applet);
+		monitor = monitor_ccache (applet);
+
 		ka_dbus_service(applet);
 		gtk_main ();
 	}

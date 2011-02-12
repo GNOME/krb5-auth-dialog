@@ -84,19 +84,6 @@ ka_gconf_set_prompt_mins (GConfClient* client, KaApplet* applet)
 
 
 static gboolean
-ka_gconf_set_show_trayicon (GConfClient* client, KaApplet* applet)
-{
-	gboolean show_trayicon = TRUE;
-
-	if(!ka_gconf_get_bool(client, KA_GCONF_KEY_SHOW_TRAYICON, &show_trayicon)) {
-		show_trayicon = TRUE;
-	}
-	g_object_set(applet, "show-trayicon", show_trayicon, NULL);
-	return TRUE;
-}
-
-
-static gboolean
 ka_gconf_set_tgt_forwardable (GConfClient* client, KaApplet* applet)
 {
 	gboolean forwardable = FALSE;
@@ -153,8 +140,6 @@ ka_gconf_key_changed_callback (GConfClient* client,
 		ka_gconf_set_principal (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_PROMPT_MINS) == 0) {
 		ka_gconf_set_prompt_mins (client, applet);
-	} else if (g_strcmp0 (key, KA_GCONF_KEY_SHOW_TRAYICON) == 0) {
-		ka_gconf_set_show_trayicon (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_PK_USERID) == 0) {
 		ka_gconf_set_pk_userid (client, applet);
 	} else if (g_strcmp0 (key, KA_GCONF_KEY_PK_ANCHORS) == 0) {
@@ -195,7 +180,6 @@ ka_gconf_init (KaApplet* applet)
 	/* setup defaults */
 	ka_gconf_set_principal (client, applet);
 	ka_gconf_set_prompt_mins (client, applet);
-	ka_gconf_set_show_trayicon (client, applet);
 	ka_gconf_set_pk_userid(client, applet);
 	ka_gconf_set_pk_anchors(client, applet);
 	ka_gconf_set_tgt_forwardable(client, applet);

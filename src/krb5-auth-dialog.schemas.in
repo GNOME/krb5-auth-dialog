@@ -1,19 +1,6 @@
 <gconfschemafile>
   <schemalist>
     <schema>
-      <key>/schemas/apps/krb5-auth-dialog/show_trayicon</key>
-      <applyto>/apps/krb5-auth-dialog/show_trayicon</applyto>
-      <owner>krb5-auth-dialog</owner>
-      <type>bool</type>
-      <default>1</default>
-
-      <locale name="C">
-        <short>Show trayicon</short>
-        <long>Show a trayicon in the status area of the panel</long>
-      </locale>
-    </schema>
-
-    <schema>
       <key>/schemas/apps/krb5-auth-dialog/principal</key>
       <applyto>/apps/krb5-auth-dialog/principal</applyto>
       <owner>krb5-auth-dialog</owner>

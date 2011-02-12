@@ -54,7 +54,6 @@ struct _CcKaPanelPrivate {
     GtkWidget *forwardable_toggle;
     GtkWidget *proxiable_toggle;
     GtkWidget *renewable_toggle;
-    GtkWidget *trayicon_toggle;
     GtkWidget *prompt_mins_entry;
 
     guint     listeners [N_LISTENERS];
@@ -596,63 +595,6 @@ cc_ka_panel_setup_renewable_toggle (CcKaPanelPrivate *priv)
     return renewable;
 }
 
-static void
-cc_ka_panel_trayicon_toggled (GtkToggleButton *toggle,
-                              CcKaPanelPrivate *priv)
-{
-    gboolean trayicon;
-
-    trayicon = gtk_toggle_button_get_active (toggle);
-    gconf_client_set_bool (priv->client, KA_GCONF_KEY_SHOW_TRAYICON, trayicon, NULL);
-}
-
-
-static void
-cc_ka_panel_trayicon_notify (GConfClient *client G_GNUC_UNUSED,
-                             guint cnx_id G_GNUC_UNUSED,
-                             GConfEntry *entry,
-                             CcKaPanelPrivate *priv)
-{
-    gboolean trayicon;
-
-    if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-        return;
-
-    trayicon = gconf_value_get_bool (entry->value) != FALSE;
-
-    if (trayicon != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (priv->trayicon_toggle)))
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->trayicon_toggle), trayicon);
-}
-
-
-static gboolean
-cc_ka_panel_setup_trayicon_toggle (CcKaPanelPrivate *priv)
-{
-    gboolean trayicon;
-
-    priv->trayicon_toggle = WID (priv->builder, "trayicon_toggle");
-    g_assert (priv->trayicon_toggle != NULL);
-
-    trayicon = gconf_client_get_bool (priv->client, KA_GCONF_KEY_SHOW_TRAYICON, NULL);
-
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->trayicon_toggle), trayicon);
-
-    g_signal_connect (priv->trayicon_toggle, "toggled",
-                      G_CALLBACK (cc_ka_panel_trayicon_toggled), priv);
-
-    if (!gconf_client_key_is_writable (priv->client, KA_GCONF_KEY_SHOW_TRAYICON, NULL)) {
-        gtk_widget_set_sensitive (priv->trayicon_toggle, FALSE);
-    }
-
-    priv->listeners [priv->n_listeners] =
-        gconf_client_notify_add (priv->client,
-                                 KA_GCONF_KEY_SHOW_TRAYICON,
-                                 (GConfClientNotifyFunc) cc_ka_panel_trayicon_notify,
-                                 priv, NULL, NULL);
-    priv->n_listeners++;
-    return trayicon;
-}
-
 
 static void
 cc_ka_panel_prompt_mins_changed (GtkSpinButton *button,
@@ -818,7 +760,6 @@ cc_ka_panel_init (CcKaPanel *self)
     cc_ka_panel_setup_forwardable_toggle (priv);
     cc_ka_panel_setup_proxiable_toggle (priv);
     cc_ka_panel_setup_renewable_toggle (priv);
-    cc_ka_panel_setup_trayicon_toggle (priv);
     cc_ka_panel_setup_prompt_mins_entry (priv);
 
     g_assert (priv->n_listeners == N_LISTENERS);

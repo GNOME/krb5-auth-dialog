@@ -45,7 +45,6 @@ enum {
     KA_PROP_PRINCIPAL,
     KA_PROP_PK_USERID,
     KA_PROP_PK_ANCHORS,
-    KA_PROP_TRAYICON,
     KA_PROP_PW_PROMPT_MINS,
     KA_PROP_TGT_FORWARDABLE,
     KA_PROP_TGT_PROXIABLE,
@@ -71,7 +70,6 @@ struct _KaAppletPrivate {
     GtkStatusIcon *tray_icon;   /* the tray icon */
     GtkWidget *context_menu;    /* the tray icon's context menu */
     const char *icons[3];       /* for invalid, expiring and valid tickts */
-    gboolean show_trayicon;     /* show the trayicon */
     gboolean ns_persistence;    /* does the notification server support persistence */
 
     KaPwDialog *pwdialog;       /* the password dialog */
@@ -119,12 +117,6 @@ ka_applet_set_property (GObject *object,
         g_free (self->priv->pk_anchors);
         self->priv->pk_anchors = g_value_dup_string (value);
         KA_DEBUG ("%s: %s", pspec->name, self->priv->pk_anchors);
-        break;
-
-    case KA_PROP_TRAYICON:
-        self->priv->show_trayicon = g_value_get_boolean (value);
-        KA_DEBUG ("%s: %s", pspec->name,
-                  self->priv->show_trayicon ? "True" : "False");
         break;
 
     case KA_PROP_PW_PROMPT_MINS:
@@ -176,10 +168,6 @@ ka_applet_get_property (GObject *object,
 
     case KA_PROP_PK_ANCHORS:
         g_value_set_string (value, self->priv->pk_anchors);
-        break;
-
-    case KA_PROP_TRAYICON:
-        g_value_set_boolean (value, self->priv->show_trayicon);
         break;
 
     case KA_PROP_PW_PROMPT_MINS:
@@ -296,13 +284,6 @@ ka_applet_class_init (KaAppletClass *klass)
                                  "Get/Set Pkinit trust anchors",
                                  "", G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class, KA_PROP_PK_ANCHORS, pspec);
-
-    pspec = g_param_spec_boolean ("show-trayicon",
-                                  "Show tray icon",
-                                  "Show/Hide the tray icon",
-                                  TRUE,
-                                  G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class, KA_PROP_TRAYICON, pspec);
 
     pspec = g_param_spec_uint ("pw-prompt-mins",
                                "Password prompting interval",
@@ -849,24 +830,6 @@ ka_tray_icon_on_click (GtkStatusIcon *status_icon G_GNUC_UNUSED,
 
 
 static gboolean
-ka_applet_cb_show_trayicon (KaApplet *applet,
-                            GParamSpec *property G_GNUC_UNUSED,
-                            gpointer data G_GNUC_UNUSED)
-{
-    g_return_val_if_fail (applet != NULL, FALSE);
-    g_return_val_if_fail (applet->priv->tray_icon != NULL, FALSE);
-
-    /* no tray icon if the notification service supports persistence */
-    if (applet->priv->ns_persistence)
-        return TRUE;
-
-    gtk_status_icon_set_visible (applet->priv->tray_icon,
-                                 applet->priv->show_trayicon);
-    return TRUE;
-}
-
-
-static gboolean
 ka_applet_create_tray_icon (KaApplet *self)
 {
     GtkStatusIcon *tray_icon;
@@ -993,10 +956,7 @@ ka_applet_create ()
         g_error ("Failure to create context menu");
 
     ka_ns_check_persistence(applet);
-
-    if (ka_applet_create_tray_icon (applet))
-        g_signal_connect (applet, "notify::show-trayicon",
-            G_CALLBACK (ka_applet_cb_show_trayicon), NULL);
+    ka_applet_create_tray_icon (applet);
 
     applet->priv->uixml = gtk_builder_new ();
     ret = gtk_builder_add_from_file (applet->priv->uixml,

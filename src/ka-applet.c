@@ -72,6 +72,7 @@ struct _KaAppletPrivate {
     GtkWidget *context_menu;    /* the tray icon's context menu */
     const char *icons[3];       /* for invalid, expiring and valid tickts */
     gboolean show_trayicon;     /* show the trayicon */
+    gboolean ns_persistence;    /* does the notification server support persistence */
 
     KaPwDialog *pwdialog;       /* the password dialog */
     int pw_prompt_secs;         /* when to start prompting for a password */
@@ -90,6 +91,8 @@ struct _KaAppletPrivate {
 
     GConfClient *gconf;         /* gconf client */
 };
+
+static void ka_close_notification (KaApplet *self);
 
 static void
 ka_applet_set_property (GObject *object,
@@ -207,6 +210,8 @@ ka_applet_dispose (GObject *object)
 {
     KaApplet *applet = KA_APPLET (object);
     GObjectClass *parent_class = G_OBJECT_CLASS (ka_applet_parent_class);
+
+    ka_close_notification (applet);
 
     if (applet->priv->tray_icon) {
         g_object_unref (applet->priv->tray_icon);
@@ -384,17 +389,28 @@ ka_applet_tooltip_text (int remaining)
 static const char *
 ka_applet_select_icon (KaApplet *applet, int remaining)
 {
-    enum ka_icon tray_icon = inv_icon;
+    enum ka_icon status_icon = inv_icon;
 
     if (remaining > 0) {
         if (remaining < applet->priv->pw_prompt_secs &&
             !applet->priv->renewable)
-            tray_icon = exp_icon;
+            status_icon = exp_icon;
         else
-            tray_icon = val_icon;
+            status_icon = val_icon;
     }
 
-    return applet->priv->icons[tray_icon];
+    return applet->priv->icons[status_icon];
+}
+
+
+static gboolean
+ka_tray_icon_is_embedded (KaApplet *self)
+{
+    if (self->priv->tray_icon
+        && gtk_status_icon_is_embedded (self->priv->tray_icon))
+        return TRUE;
+    else
+        return FALSE;
 }
 
 
@@ -402,7 +418,8 @@ static gboolean
 ka_show_notification (KaApplet *applet)
 {
     /* wait for the panel to be settled before showing a bubble */
-    if (gtk_status_icon_is_embedded (applet->priv->tray_icon)) {
+    if (applet->priv->ns_persistence
+        || ka_tray_icon_is_embedded (applet)) {
         GError *error = NULL;
         gboolean ret;
 
@@ -455,63 +472,101 @@ ka_notify_get_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
 
 
 static void
-ka_send_event_notification (KaApplet *applet,
+ka_close_notification (KaApplet *self)
+{
+    GError *error = NULL;
+
+    if (self->priv->notification != NULL) {
+        if (!notify_notification_close (self->priv->notification, &error)) {
+            if (error)
+                g_warning ("Cannot close notification %s", error->message);
+            else
+                g_warning ("Cannot close notification");
+        }
+        g_object_unref (self->priv->notification);
+        g_clear_error (&error);
+        self->priv->notification = NULL;
+    }
+}
+
+static void
+ka_send_event_notification (KaApplet *self,
                             const char *summary,
                             const char *message,
                             const char *icon,
                             const char *action,
                             gboolean get_ticket_action)
 {
-    const char *notify_icon;
-    GError *error = NULL;
+    NotifyNotification *notification;
+    const char *hint;
+    gint timeout;
 
-    g_return_if_fail (applet != NULL);
+    g_return_if_fail (self != NULL);
     g_return_if_fail (summary != NULL);
     g_return_if_fail (message != NULL);
 
     if (!notify_is_initted ())
         notify_init (PACKAGE);
 
-    if (applet->priv->notification != NULL) {
-        if (!notify_notification_close (applet->priv->notification, &error)) {
-            if (error)
-                g_warning ("Cannot close notification %s", error->message);
-            else
-                g_warning ("Cannot close notification");
-        }
-        g_object_unref (applet->priv->notification);
-        g_clear_error (&error);
+    if (self->priv->notification) {
+        notification = self->priv->notification;
+        notify_notification_update (notification, summary, message, icon);
+    } else {
+        notification = self->priv->notification =
+#if HAVE_NOTIFY_NOTIFICATION_NEW_WITH_STATUS_ICON
+            notify_notification_new_with_status_icon (summary,
+                                                      message,
+                                                      icon,
+                                                      self->priv->tray_icon);
+#else
+            notify_notification_new (summary, message, icon);
+#endif
+        notify_notification_set_urgency (notification, NOTIFY_URGENCY_NORMAL);
+
     }
 
-    notify_icon = icon ? icon : "krb-valid-ticket";
+    if (self->priv->ns_persistence) {
+        hint = get_ticket_action ? "resident" : "transient";
+        timeout = get_ticket_action ? NOTIFY_EXPIRES_NEVER : NOTIFY_EXPIRES_DEFAULT;
 
-    applet->priv->notification =
-#if HAVE_NOTIFY_NOTIFICATION_NEW_WITH_STATUS_ICON
-        notify_notification_new_with_status_icon (summary,
-                                                  message,
-                                                  notify_icon,
-                                                  applet->priv->tray_icon);
-#else
-        notify_notification_new (summary, message, notify_icon);
+        notify_notification_set_timeout (notification, timeout);
+        notify_notification_clear_hints (notification);
+#if HAVE_NOTIFY_NOTIFICATION_SET_HINT
+        notify_notification_set_hint (notification,
+                                      hint,
+                                      g_variant_new_boolean (TRUE));
 #endif
+    }
 
-    notify_notification_set_urgency (applet->priv->notification,
-                                     NOTIFY_URGENCY_NORMAL);
-    notify_notification_add_action (applet->priv->notification, action,
-                                    _("Don't show me this again"),
-                                    (NotifyActionCallback)
-                                    ka_notify_action_cb, applet,
-                                    NULL);
+    notify_notification_clear_actions(notification);
     if (get_ticket_action) {
-        notify_notification_add_action (applet->priv->notification,
+        notify_notification_add_action (notification,
                                         "ka-acquire-tgt",
                                         _("Get Ticket"),
                                         (NotifyActionCallback)
                                         ka_notify_get_ticket_action_cb,
-                                        applet,
+                                        self,
                                         NULL);
+        if (!self->priv->ns_persistence) {
+            notify_notification_add_action (notification,
+                                            action,
+                                            _("Don't show me this again"),
+                                            (NotifyActionCallback)
+                                            ka_notify_action_cb, self,
+                                            NULL);
+        }
     }
-    ka_show_notification (applet);
+    ka_show_notification (self);
+}
+
+
+static void
+ka_update_tray_icon (KaApplet *self, const char *icon, const char *tooltip)
+{
+    if (self->priv->tray_icon) {
+        gtk_status_icon_set_from_icon_name (self->priv->tray_icon, icon);
+        gtk_status_icon_set_tooltip_text (self->priv->tray_icon, tooltip);
+    }
 }
 
 /*
@@ -527,7 +582,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
     static gboolean expiry_notified = FALSE;
     static krb5_timestamp old_expiry = 0;
     gboolean notify = TRUE;
-    const char *tray_icon = ka_applet_select_icon (applet, remaining);
+    const char *status_icon = ka_applet_select_icon (applet, remaining);
     char *tooltip_text = ka_applet_tooltip_text (remaining);
 
 
@@ -593,8 +648,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
     }
 
     old_expiry = expiry;
-    gtk_status_icon_set_from_icon_name (applet->priv->tray_icon, tray_icon);
-    gtk_status_icon_set_tooltip_text (applet->priv->tray_icon, tooltip_text);
+    ka_update_tray_icon(applet, status_icon, tooltip_text);
     g_free (tooltip_text);
     return 0;
 }
@@ -802,6 +856,10 @@ ka_applet_cb_show_trayicon (KaApplet *applet,
     g_return_val_if_fail (applet != NULL, FALSE);
     g_return_val_if_fail (applet->priv->tray_icon != NULL, FALSE);
 
+    /* no tray icon if the notification service supports persistence */
+    if (applet->priv->ns_persistence)
+        return TRUE;
+
     gtk_status_icon_set_visible (applet->priv->tray_icon,
                                  applet->priv->show_trayicon);
     return TRUE;
@@ -809,22 +867,24 @@ ka_applet_cb_show_trayicon (KaApplet *applet,
 
 
 static gboolean
-ka_applet_create_tray_icon (KaApplet *applet)
+ka_applet_create_tray_icon (KaApplet *self)
 {
     GtkStatusIcon *tray_icon;
 
-    tray_icon = gtk_status_icon_new ();
+    if (self->priv->ns_persistence)
+        return FALSE;
+
+    tray_icon = self->priv->tray_icon = gtk_status_icon_new ();
 
     g_signal_connect (G_OBJECT (tray_icon), "activate",
-                      G_CALLBACK (ka_tray_icon_on_click), applet);
+                      G_CALLBACK (ka_tray_icon_on_click), self);
     g_signal_connect (G_OBJECT (tray_icon),
                       "popup-menu",
-                      G_CALLBACK (ka_tray_icon_on_menu), applet);
+                      G_CALLBACK (ka_tray_icon_on_menu), self);
     gtk_status_icon_set_from_icon_name (tray_icon,
-                                        applet->priv->icons[exp_icon]);
+                                        self->priv->icons[exp_icon]);
     gtk_status_icon_set_tooltip_text (tray_icon, PACKAGE);
     gtk_status_icon_set_title (tray_icon, KA_NAME);
-    applet->priv->tray_icon = tray_icon;
     return TRUE;
 }
 
@@ -844,12 +904,6 @@ guint
 ka_applet_get_pw_prompt_secs (const KaApplet *applet)
 {
     return applet->priv->pw_prompt_secs;
-}
-
-gboolean
-ka_applet_get_show_trayicon (const KaApplet *applet)
-{
-    return applet->priv->show_trayicon;
 }
 
 void
@@ -899,6 +953,30 @@ ka_applet_signal_emit (KaApplet *this,
     g_free (princ);
 }
 
+
+static void
+ka_ns_check_persistence (KaApplet *self)
+{
+    GList   *caps;
+    GList   *l;
+
+    self->priv->ns_persistence = FALSE;
+    caps = notify_get_server_caps ();
+    if (caps == NULL) {
+            g_warning ("Failed to read server caps");
+            return;
+    }
+
+    l = g_list_find_custom (caps, "persistence", (GCompareFunc)strcmp);
+    if (l != NULL) {
+        self->priv->ns_persistence = TRUE;
+        KA_DEBUG ("Notification server supports persistence.");
+    }
+    g_list_foreach (caps, (GFunc) g_free, NULL);
+    g_list_free (caps);
+}
+
+
 /* create the tray icon applet */
 KaApplet *
 ka_applet_create ()
@@ -909,13 +987,16 @@ ka_applet_create ()
 
     if (!(ka_applet_setup_icons (applet)))
         g_error ("Failure to setup icons");
-    if (!ka_applet_create_tray_icon (applet))
-        g_error ("Failure to create tray icon");
+    gtk_window_set_default_icon_name (applet->priv->icons[val_icon]);
+
     if (!ka_applet_create_context_menu (applet))
         g_error ("Failure to create context menu");
-    gtk_window_set_default_icon_name (applet->priv->icons[val_icon]);
-    g_signal_connect (applet, "notify::show-trayicon",
-                      G_CALLBACK (ka_applet_cb_show_trayicon), NULL);
+
+    ka_ns_check_persistence(applet);
+
+    if (ka_applet_create_tray_icon (applet))
+        g_signal_connect (applet, "notify::show-trayicon",
+            G_CALLBACK (ka_applet_cb_show_trayicon), NULL);
 
     applet->priv->uixml = gtk_builder_new ();
     ret = gtk_builder_add_from_file (applet->priv->uixml,

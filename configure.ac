@@ -191,7 +191,8 @@ savedCFLAGS="$CFLAGS"
 savedLIBS="$LIBS"
 CFLAGS="$LIBNOTIFY_CFLAGS $CFLAGS"
 LIBS="$LIBNOTIFY_LIBS $LIBS"
-AC_CHECK_FUNCS([notify_notification_new_with_status_icon])
+AC_CHECK_FUNCS([notify_notification_new_with_status_icon \
+                notify_notification_set_hint])
 CFLAGS="$savedCFLAGS"
 LIBS="$savedLIBS"
 

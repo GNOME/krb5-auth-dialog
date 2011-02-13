@@ -4,7 +4,7 @@
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkDialog" id="krb5_dialog">
     <property name="border_width">6</property>
-    <property name="title" translatable="yes">Network Authentication</property>
+    <property name="title" translatable="yes">Kerberos Authentication</property>
     <property name="resizable">False</property>
     <property name="window_position">center-always</property>
     <property name="type_hint">dialog</property>

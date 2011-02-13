@@ -1,6 +1,6 @@
 /* Krb5 Auth Applet -- Acquire and release kerberos tickets
  *
- * (C) 2008,2010 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2008,2010,2011 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@
 #include "ka-pwdialog.h"
 
 G_BEGIN_DECLS
-#define KA_NAME _("Network Authentication")
+#define KA_NAME _("Kerberos Authentication")
 /* signals emitted by KaApplet */
     typedef enum {
     KA_SIGNAL_ACQUIRED_TGT,     /* New TGT acquired */

@@ -1,5 +1,5 @@
 [Desktop Entry]
-_Name=Network Authentication
+_Name=Kerberos Authentication
 _Comment=Kerberos Network Authentication Dialog
 Exec=krb5-auth-dialog
 Terminal=false

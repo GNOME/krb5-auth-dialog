@@ -681,7 +681,7 @@ ka_applet_cb_preferences (GtkWidget *menuitem G_GNUC_UNUSED,
 
     g_spawn_command_line_async (BIN_DIR
                                 G_DIR_SEPARATOR_S
-                                "krb5-auth-dialog-preferences", &error);
+                                "gnome-control-center ka-panel", &error);
     if (error) {
         GtkWidget *message_dialog;
 

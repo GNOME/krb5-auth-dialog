@@ -418,10 +418,11 @@ ka_show_notification (KaApplet *applet)
 }
 
 
+/* Callback to handle disabling of notification */
 static void
-ka_notify_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
-                     gchar *action,
-                     gpointer user_data)
+ka_notify_disable_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
+                              gchar *action,
+                              gpointer user_data)
 {
     KaApplet *self = KA_APPLET (user_data);
 
@@ -436,16 +437,25 @@ ka_notify_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
 }
 
 
+/* Callback to handle ticket related actions */
 static void
-ka_notify_get_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
-                                gchar *action,
-                                gpointer user_data)
+ka_notify_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
+                            gchar *action,
+                            gpointer user_data)
 {
     KaApplet *self = KA_APPLET (user_data);
+
+    g_return_if_fail (self != NULL);
 
     if (strcmp (action, "ka-acquire-tgt") == 0) {
         KA_DEBUG ("Getting new tgt");
         ka_grab_credentials (self);
+    } else if (strcmp (action, "ka-remove-ccache") == 0) {
+        KA_DEBUG ("Removing ccache");
+        ka_destroy_ccache (self);
+    } else if (strcmp (action, "ka-list-tickets") == 0) {
+        KA_DEBUG ("Listing tickets");
+        ka_tickets_dialog_run ();
     } else {
         g_warning ("unkonwn action for callback");
     }
@@ -475,7 +485,6 @@ ka_send_event_notification (KaApplet *self,
                             const char *summary,
                             const char *message,
                             const char *icon,
-                            const char *action,
                             gboolean get_ticket_action)
 {
     NotifyNotification *notification;
@@ -503,12 +512,11 @@ ka_send_event_notification (KaApplet *self,
             notify_notification_new (summary, message, icon);
 #endif
         notify_notification_set_urgency (notification, NOTIFY_URGENCY_NORMAL);
-
     }
 
     if (self->priv->ns_persistence) {
-        hint = get_ticket_action ? "resident" : "transient";
-        timeout = get_ticket_action ? NOTIFY_EXPIRES_NEVER : NOTIFY_EXPIRES_DEFAULT;
+        hint = "resident";
+        timeout = NOTIFY_EXPIRES_NEVER;
 
         notify_notification_set_timeout (notification, timeout);
         notify_notification_clear_hints (notification);
@@ -520,21 +528,41 @@ ka_send_event_notification (KaApplet *self,
     }
 
     notify_notification_clear_actions(notification);
+    /* Add List Tickets button until we moved this into cc-panl */
+    if (self->priv->ns_persistence) {
+        notify_notification_add_action (notification,
+                                        "ka-list-tickets",
+                                        _("List Tickets"),
+                                        (NotifyActionCallback)
+                                        ka_notify_ticket_action_cb,
+                                        self,
+                                        NULL);
+    }
+
     if (get_ticket_action) {
         notify_notification_add_action (notification,
                                         "ka-acquire-tgt",
                                         _("Get Ticket"),
                                         (NotifyActionCallback)
-                                        ka_notify_get_ticket_action_cb,
+                                        ka_notify_ticket_action_cb,
                                         self,
                                         NULL);
+    } else {
         if (!self->priv->ns_persistence) {
             notify_notification_add_action (notification,
-                                            action,
+                                            "dont-show-again",
                                             _("Don't show me this again"),
                                             (NotifyActionCallback)
-                                            ka_notify_action_cb, self,
+                                            ka_notify_disable_action_cb, self,
                                             NULL);
+        } else {
+            notify_notification_add_action (notification,
+                                        "ka-remove-ccache",
+                                        _("Remove Credentials Cache"),
+                                        (NotifyActionCallback)
+                                        ka_notify_ticket_action_cb,
+                                        self,
+                                        NULL);
         }
     }
     ka_show_notification (self);
@@ -583,7 +611,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                                             _("Network credentials valid"),
                                             msg,
                                             "krb-valid-ticket",
-                                            "dont-show-again", FALSE);
+                                            FALSE);
             }
             ka_applet_signal_emit (applet, KA_SIGNAL_ACQUIRED_TGT, expiry);
             expiry_notified = FALSE;
@@ -602,7 +630,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                                                 _("Network credentials expiring"),
                                                 tooltip_text,
                                                 "krb-expiring-ticket",
-                                                "dont-show-again", TRUE);
+                                                TRUE);
                 }
                 last_warn = now;
             }
@@ -620,7 +648,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                                             _("Network credentials expired"),
                                             _("Your Kerberos credentails have expired."),
                                             "krb-no-valid-ticket",
-                                            "dont-show-again", TRUE);
+                                            TRUE);
             }
             ka_applet_signal_emit (applet, KA_SIGNAL_EXPIRED_TGT, expiry);
             expiry_notified = TRUE;

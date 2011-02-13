@@ -8,6 +8,10 @@ autostart_in_files = krb5-auth-dialog.desktop.in
 autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
+desktopdir = $(datadir)/applications
+desktop_in_files = krb5-auth-dialog.desktop.in
+desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
+
 schemadir = $(GCONF_SCHEMA_FILE_DIR)
 schema_in_files = krb5-auth-dialog.schemas.in
 schema_DATA = $(schema_in_files:.schemas.in=.schemas)

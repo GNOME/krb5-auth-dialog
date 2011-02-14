@@ -496,7 +496,7 @@ ka_send_event_notification (KaApplet *self,
     g_return_if_fail (message != NULL);
 
     if (!notify_is_initted ())
-        notify_init (PACKAGE);
+        notify_init (KA_NAME);
 
     if (self->priv->notification) {
         notification = self->priv->notification;

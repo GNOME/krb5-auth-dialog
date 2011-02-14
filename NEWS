@@ -1,3 +1,26 @@
+===============
+Version 2.91.6
+===============
+* Add "Get ticket" button to notifications
+* Disable tray icon if the notification server supports persistent notifications
+* Move preferences to a gnome-control-center panel
+* Display account expiry prompts returned by the KDC
+* Drop gtksecentry and use GtkEntryBuffer with secmem instead
+* Use NMClient GObject instead of deprecated functions
+* Install desktop file to /u/s/applications so GNOME shell can find the icons
+* UI translations:
+	Andrej Žnidaršič (sl)
+	Bruno Brouard (fr)
+	Daniel Mustieles (es)
+	Djavan Fagundes (pt_BR)
+	Jorge González (es)
+	Mario Blättermann (de)
+	Matej Urbančič (sl)
+	Maxim V. Dziumanenko (uk)
+* Doc translations:
+	Mario Blättermann (de)
+	Matej Urbančič (sl)
+
 ============
 Version 0.17
 ============

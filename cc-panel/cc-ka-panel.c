@@ -35,7 +35,7 @@ G_DEFINE_DYNAMIC_TYPE (CcKaPanel, cc_ka_panel, CC_TYPE_PANEL)
 #define PKINIT_SMARTCARD "PKCS11:" SC_PKCS11
 #define PKINIT_FILE "FILE:"
 
-#define N_LISTENERS 8
+#define N_LISTENERS 7
 
 typedef struct _CcKaPanelPrivate CcKaPanelPrivate;
 

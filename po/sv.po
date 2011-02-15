@@ -1,66 +1,83 @@
 # Swedish translation for krb5-auth-dialog.
-# Copyright (C) 2009 Free Software Foundation, Inc.
+# Copyright (C) 2009, 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the krb5-auth-dialog package.
-# Daniel Nylander <po@danielnylander.se>, 2009.
+# Daniel Nylander <po@danielnylander.se>, 2009, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-14 11:42+0200\n"
-"PO-Revision-Date: 2009-06-14 11:47+0100\n"
+"POT-Creation-Date: 2011-02-15 22:01+0100\n"
+"PO-Revision-Date: 2011-02-15 22:15+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../src/krb5-auth-dialog.xml.h:1
-#: ../src/krb5-auth-dialog.c:53
-#: ../src/krb5-auth-dialog.desktop.in.h:2
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
-msgid "Network Authentication"
-msgstr "Nätverksautentisering"
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Kerberos-autentisering"
 
 #: ../src/krb5-auth-dialog.xml.h:2
+msgid "Service Tickets"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.xml.h:3
 msgid "_Renew Ticket"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.c:820
+#: ../src/ka-dialog.c:171
+msgid "unknown error"
+msgstr "okänt fel"
+
+#: ../src/ka-dialog.c:332
+msgid "Expired"
+msgstr ""
+
+#: ../src/ka-pwdialog.c:175
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr ""
 
-#: ../src/krb5-auth-pwdialog.c:173
-#: ../src/krb5-auth-applet.c:358
+#: ../src/ka-pwdialog.c:212
+#: ../src/ka-applet.c:359
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/krb5-auth-pwdialog.c:178
-#: ../src/krb5-auth-applet.c:363
+#: ../src/ka-pwdialog.c:217
+#: ../src/ka-applet.c:364
 msgid "Your credentials have expired"
 msgstr ""
 
-#: ../src/krb5-auth-pwdialog.c:199
+#: ../src/ka-pwdialog.c:237
 msgid "Please enter your Kerberos password:"
 msgstr "Ange ditt Kerberos-lösenord:"
 
-#: ../src/krb5-auth-pwdialog.c:210
+#: ../src/ka-pwdialog.c:248
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Ange lösenordet för \"%s\":"
 
-#: ../src/krb5-auth-pwdialog.c:230
+#: ../src/ka-pwdialog.c:263
 msgid "The password you entered is invalid"
 msgstr "Lösenordet som du angav är ogiltigt"
 
+#: ../src/ka-pwdialog.c:279
+#, c-format
+msgid "%s Error"
+msgstr "%s fel"
+
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with krb5-auth
+#. doubt please translate strings from files starting with ka- and krb5-auth-
 #. first since these are the ones the user will see in any case.
 #: ../src/dummy-strings.c:10
 msgid "ASN.1 failed call to system time library"
@@ -74,7 +91,7 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_MISSING_FIELD
 #: ../src/dummy-strings.c:12
 msgid "ASN.1 unexpected field number"
-msgstr ""
+msgstr "ASN.1 oväntat fältnummer"
 
 #. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
 #: ../src/dummy-strings.c:13
@@ -84,7 +101,7 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
 #: ../src/dummy-strings.c:14
 msgid "ASN.1 value too large"
-msgstr ""
+msgstr "ASN.1 värdet är för stort"
 
 #. asn1_err.et:asn1:ASN1_OVERFLOW
 #: ../src/dummy-strings.c:15
@@ -109,7 +126,7 @@ msgstr ""
 #. asn1_err.et:asn1:ASN1_BAD_FORMAT
 #: ../src/dummy-strings.c:19
 msgid "ASN.1 parse error"
-msgstr ""
+msgstr "ASN.1 tolkningsfel"
 
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:20
@@ -159,12 +176,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:29
 msgid "Client not found in Kerberos database"
-msgstr ""
+msgstr "Klienten hittades inte i Kerberos-databasen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:30
 msgid "Server not found in Kerberos database"
-msgstr ""
+msgstr "Servern hittades inte i Kerberos-databasen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:31
@@ -199,7 +216,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
 #: ../src/dummy-strings.c:37
 msgid "KDC has no support for encryption type"
-msgstr ""
+msgstr "KDC saknar stöd för krypteringstypen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:38
@@ -304,7 +321,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
 #: ../src/dummy-strings.c:58
 msgid "Incorrect net address"
-msgstr ""
+msgstr "Felaktig nätadress"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
 #: ../src/dummy-strings.c:59
@@ -314,7 +331,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
 #: ../src/dummy-strings.c:60
 msgid "Invalid message type"
-msgstr ""
+msgstr "Ogiltig meddelandetyp"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
 #: ../src/dummy-strings.c:61
@@ -334,12 +351,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
 #: ../src/dummy-strings.c:64
 msgid "Key version is not available"
-msgstr ""
+msgstr "Nyckelversionen är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
 #: ../src/dummy-strings.c:65
 msgid "Service key not available"
-msgstr ""
+msgstr "Tjänstenyckeln är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
@@ -361,7 +378,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
 #: ../src/dummy-strings.c:69
 msgid "Incorrect sequence number in message"
-msgstr ""
+msgstr "Felaktigt sekvensnummer i meddelandet"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
 #: ../src/dummy-strings.c:70
@@ -376,7 +393,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:72
 msgid "Response too big for UDP, retry with TCP"
-msgstr ""
+msgstr "Svaret är för stort för UDP, försöker med TCP"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
 #: ../src/dummy-strings.c:73
@@ -391,12 +408,12 @@ msgstr "Fältet är för långt för denna implementation"
 #. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
 #: ../src/dummy-strings.c:75
 msgid "Client not trusted"
-msgstr ""
+msgstr "Klienten är inte pålitlig"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
 #: ../src/dummy-strings.c:76
 msgid "KDC not trusted"
-msgstr ""
+msgstr "KDC är inte pålitlig"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
 #: ../src/dummy-strings.c:77
@@ -431,12 +448,12 @@ msgstr "Spärrat certifikat"
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
 #: ../src/dummy-strings.c:83
 msgid "Revocation status unknown"
-msgstr ""
+msgstr "Spärrstatus är okänd"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
 #: ../src/dummy-strings.c:84
 msgid "Revocation status unavailable"
-msgstr ""
+msgstr "Spärrstatus är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
 #: ../src/dummy-strings.c:85
@@ -446,7 +463,7 @@ msgstr "Klientnamnet stämmer inte"
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
 #: ../src/dummy-strings.c:86
 msgid "KDC name mismatch"
-msgstr ""
+msgstr "KDC-namnet stämmer inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
 #: ../src/dummy-strings.c:87
@@ -461,7 +478,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: ../src/dummy-strings.c:89
 msgid "Checksum must be included"
-msgstr ""
+msgstr "Kontrollsumman måste inkluderas"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: ../src/dummy-strings.c:90
@@ -471,7 +488,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: ../src/dummy-strings.c:91
 msgid "Public key encryption not supported"
-msgstr ""
+msgstr "Kryptering med publik nyckel stöds inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
 #: ../src/dummy-strings.c:92
@@ -496,12 +513,12 @@ msgstr "Lösenorden stämmer inte"
 #. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
 #: ../src/dummy-strings.c:96
 msgid "Password read interrupted"
-msgstr ""
+msgstr "Lösenordsläsningen avbröts"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
 #: ../src/dummy-strings.c:97
 msgid "Illegal character in component name"
-msgstr ""
+msgstr "Otillåtet tecken i komponentnamnet"
 
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
 #: ../src/dummy-strings.c:98
@@ -511,7 +528,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
 #: ../src/dummy-strings.c:99
 msgid "Can't open/find Kerberos configuration file"
-msgstr ""
+msgstr "Kan inte öppna/hitta konfigurationfil för Kerberos"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
 #: ../src/dummy-strings.c:100
@@ -611,7 +628,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: ../src/dummy-strings.c:119
 msgid "Kerberos service unknown"
-msgstr ""
+msgstr "Kerberos-tjänsten är okänd"
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
@@ -761,17 +778,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: ../src/dummy-strings.c:150
 msgid "DES key has bad parity"
-msgstr ""
+msgstr "DES-nyckeln har dålig paritet"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
 #: ../src/dummy-strings.c:151
 msgid "DES key is a weak key"
-msgstr ""
+msgstr "DES-nyckeln är en svag nyckel"
 
 #. krb5_err.et:krb5:KRB5DES_WEAK_KEY
 #: ../src/dummy-strings.c:152
 msgid "Bad encryption type"
-msgstr ""
+msgstr "Dålig krypteringstyp"
 
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
 #: ../src/dummy-strings.c:153
@@ -901,7 +918,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: ../src/dummy-strings.c:178
 msgid "Program lacks support for address type"
-msgstr ""
+msgstr "Programmet saknar stöd för adresstypen"
 
 #. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
 #: ../src/dummy-strings.c:179
@@ -996,12 +1013,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_LIB_EXPIRED
 #: ../src/dummy-strings.c:197
 msgid "New password cannot be zero length"
-msgstr ""
+msgstr "Nytt lösenord får inte vara noll tecken långt"
 
 #. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
 #: ../src/dummy-strings.c:198
 msgid "Password change failed"
-msgstr ""
+msgstr "Ändring av lösenord misslyckades"
 
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: ../src/dummy-strings.c:199
@@ -1011,7 +1028,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
 #: ../src/dummy-strings.c:200
 msgid "Encryption type not permitted"
-msgstr ""
+msgstr "Krypteringstypen tillåts inte"
 
 #. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
 #: ../src/dummy-strings.c:201
@@ -1021,12 +1038,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:202
 msgid "Program called an obsolete, deleted function"
-msgstr ""
+msgstr "Programmet anropade en föråldrad, borttagen funktion"
 
 #. krb5_err.et:krb5:KRB5_OBSOLETE_FN
 #: ../src/dummy-strings.c:203
 msgid "unknown getaddrinfo failure"
-msgstr ""
+msgstr "okänt getaddrinfo-fel"
 
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: ../src/dummy-strings.c:204
@@ -1036,12 +1053,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
 #: ../src/dummy-strings.c:205
 msgid "host/domain name not found"
-msgstr ""
+msgstr "värd-/domännamnet hittades inte"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: ../src/dummy-strings.c:206
 msgid "service name unknown"
-msgstr ""
+msgstr "tjänstenamnet är okänt"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: ../src/dummy-strings.c:207
@@ -1365,44 +1382,54 @@ msgstr ""
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr ""
 
-#. Translators: First number is hours, second number is minutes
-#: ../src/krb5-auth-applet.c:354
+#: ../src/ka-applet.c:353
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:450
+#: ../src/ka-applet.c:535
+msgid "List Tickets"
+msgstr ""
+
+#: ../src/ka-applet.c:545
+msgid "Get Ticket"
+msgstr ""
+
+#: ../src/ka-applet.c:554
 msgid "Don't show me this again"
 msgstr "Visa inte detta igen"
 
-#: ../src/krb5-auth-applet.c:487
-msgid "Network credentials valid"
+#: ../src/ka-applet.c:561
+msgid "Remove Credentials Cache"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:488
+#: ../src/ka-applet.c:609
 msgid "You've refreshed your Kerberos credentials."
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:501
+#: ../src/ka-applet.c:611
+msgid "Network credentials valid"
+msgstr ""
+
+#: ../src/ka-applet.c:630
 msgid "Network credentials expiring"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:516
+#: ../src/ka-applet.c:648
 msgid "Network credentials expired"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:517
+#: ../src/ka-applet.c:649
 msgid "Your Kerberos credentails have expired."
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:581
+#: ../src/ka-applet.c:692
 #, c-format
-msgid ""
-"There was an error displaying %s:\n"
-"%s"
+msgid "There was an error launching the preferences dialog: %s"
 msgstr ""
 
-#: ../src/krb5-auth-applet.c:616
+#. Translators: add the translators of your language here
+#: ../src/ka-applet.c:739
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -1410,84 +1437,118 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#. kdestroy
-#: ../src/krb5-auth-applet.c:651
+#: ../src/ka-applet.c:784
 msgid "Remove Credentials _Cache"
 msgstr ""
 
-#: ../src/krb5-auth-tools.c:45
+#. Ticket dialog
+#: ../src/ka-applet.c:794
+msgid "_List Tickets"
+msgstr ""
+
+#: ../src/ka-tools.c:45
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
+"Det uppstod ett fel vid visning av hjälp:\n"
+"%s"
 
-#: ../src/krb5-auth-dialog.desktop.in.h:1
+#: ../src/ka-tickets.c:54
+msgid "Principal"
+msgstr ""
+
+#: ../src/ka-tickets.c:60
+msgid "Start Time"
+msgstr "Starttid"
+
+#: ../src/ka-tickets.c:66
+msgid "End Time"
+msgstr "Sluttid"
+
+#: ../src/ka-tickets.c:72
+msgid "Fwd"
+msgstr ""
+
+#: ../src/ka-tickets.c:78
+msgid "Proxy"
+msgstr ""
+
+#: ../src/ka-tickets.c:84
+msgid "Renew"
+msgstr ""
+
+#: ../src/ka-tickets.c:107
+msgid "Error displaying service ticket information"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:1
-msgid "Forwardable ticket"
+msgid "Enabled plugins"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:2
-msgid "Kerberos principal"
+msgid "Forwardable ticket"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:3
-msgid "Notify user when ticket becomes valid"
+msgid "Kerberos principal"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:4
-msgid "Notify user when ticket has expired"
+msgid "List of plugins that should be loaded and activated on startup."
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:5
-msgid "Notify user when ticket is about to expire"
+msgid "Notify user when ticket becomes valid"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
-msgid "PKINIT CA certificates"
+msgid "Notify user when ticket has expired"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:7
-msgid "PKINIT identifier"
+msgid "Notify user when ticket is about to expire"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:8
-msgid "PKINIT trust anchors"
+msgid "PKINIT CA certificates"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:9
-msgid "Prompt minutes before expiry"
+msgid "PKINIT identifier"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:10
-msgid "Proxiable ticket"
+msgid "PKINIT trust anchors"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:11
-msgid "Renewable ticket"
+msgid "Prompt minutes before expiry"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:12
-msgid "Requested tickets should be forwardable"
+msgid "Proxiable ticket"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:13
-msgid "Requested tickets should be proxiable"
+msgid "Renewable ticket"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:14
-msgid "Requested tickets should be renewable"
+msgid "Requested tickets should be forwardable"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:15
-msgid "Show a trayicon in the status area of the panel"
+msgid "Requested tickets should be proxiable"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:16
-msgid "Show trayicon"
+msgid "Requested tickets should be renewable"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:17
@@ -1514,183 +1575,132 @@ msgstr ""
 msgid "valid ticket notification"
 msgstr ""
 
-#: ../gtksecentry/gtksecentry.c:454
-msgid "Cursor Position"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:456
-msgid "The current position of the insertion cursor in chars"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:463
-msgid "Selection Bound"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:465
-msgid "The position of the opposite end of the selection from the cursor in chars"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:472
-msgid "Maximum length"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:474
-msgid "Maximum number of characters for this entry. Zero if no maximum"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:482
-msgid "Has Frame"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:484
-msgid "FALSE removes outside bevel from entry"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:493
-msgid "Invisible character"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:495
-msgid "The character to use when masking entry contents (in \"password mode\")"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:504
-msgid "Activates default"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:506
-msgid "Whether to activate the default widget (such as the default button in a dialog) when Enter is pressed"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:511
-msgid "Width in chars"
-msgstr "Bredd i tecken"
-
-#: ../gtksecentry/gtksecentry.c:513
-msgid "Number of characters to leave space for in the entry"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:521
-msgid "Scroll offset"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:523
-msgid "Number of pixels of the entry scrolled off the screen to the left"
-msgstr ""
-
-#: ../gtksecentry/gtksecentry.c:530
-msgid "Text"
-msgstr "Text"
-
-#: ../gtksecentry/gtksecentry.c:532
-msgid "The contents of the entry"
-msgstr ""
-
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
+#. Translators: those are keywords for the example control-center panel
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:3
+msgid "Kerberos;Authentication"
+msgstr "Kerberos;Autentisering"
+
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:4
 msgid "Set your Kerberos network authentication preferences"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:1
-msgid "Appearance"
-msgstr "Utseende"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:2
+#: ../cc-panel/ka-panel.ui.h:1
 msgid "Applet"
-msgstr ""
+msgstr "Panelprogram"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:3
-msgid "If checked, display the tray icon in the status bar"
-msgstr ""
+#: ../cc-panel/ka-panel.ui.h:2
+msgid "Certificate and private key used for authentication"
+msgstr "Certifikat och privat nyckel som används för autentisering"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
+#: ../cc-panel/ka-panel.ui.h:3
 msgid "If checked, request forwardable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
+#: ../cc-panel/ka-panel.ui.h:4
 msgid "If checked, request proxiable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
+#: ../cc-panel/ka-panel.ui.h:5
 msgid "If checked, request renewable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
+#: ../cc-panel/ka-panel.ui.h:6
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+
+#: ../cc-panel/ka-panel.ui.h:7
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
-msgid "Kerberos Authentication Configuration"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
+#: ../cc-panel/ka-panel.ui.h:8
 msgid "Kerberos User"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
+#: ../cc-panel/ka-panel.ui.h:9
 msgid "Kerberos principal:"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
+#: ../cc-panel/ka-panel.ui.h:10
 msgid "Notifications"
 msgstr "Notifieringar"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
-msgid "PKINIT anchors:"
+#: ../cc-panel/ka-panel.ui.h:11
+msgid "PKINIT:"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
-msgid "PKINIT userid:"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:14
-msgid "Path to CA certificates used as trust anchors for PKINIT"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:15
+#: ../cc-panel/ka-panel.ui.h:12
 msgid "Requested Kerberos tickets should be:"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:16
+#: ../cc-panel/ka-panel.ui.h:13
 msgid "Send notification about ticket expiry that many minutes before it finally expires"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:17
-msgid "Show tray icon"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:18
-msgid "The principal's public/private/certificate identifier. Leave empty if not using PKINIT."
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
+#: ../cc-panel/ka-panel.ui.h:14
 msgid "Ticket Options"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:20
+#: ../cc-panel/ka-panel.ui.h:15
+msgid "Use Smartcard"
+msgstr "Använd smartkort"
+
+#: ../cc-panel/ka-panel.ui.h:16
+msgid "Userid:"
+msgstr ""
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../cc-panel/ka-panel.ui.h:18
 msgid "Warn"
 msgstr "Varna"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:21
+#: ../cc-panel/ka-panel.ui.h:19
+msgid "X509 trust anchors:"
+msgstr ""
+
+#: ../cc-panel/ka-panel.ui.h:20
+msgid "_Browse..."
+msgstr "_Bläddra..."
+
+#: ../cc-panel/ka-panel.ui.h:21
 msgid "forwardable"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:22
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../cc-panel/ka-panel.ui.h:23
 msgid "minutes before expiry"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:23
+#: ../cc-panel/ka-panel.ui.h:24
 msgid "proxiable"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
+#: ../cc-panel/ka-panel.ui.h:25
 msgid "renewable"
 msgstr ""
 
+#: ../cc-panel/cc-ka-panel.c:345
+msgid "Choose Certificate"
+msgstr "Välj certifikat"
+
+#: ../cc-panel/cc-ka-panel.c:361
+msgid "X509 Certificates"
+msgstr "X509-certifikat"
+
+#: ../cc-panel/cc-ka-panel.c:365
+msgid "all files"
+msgstr "alla filer"
+
+#~ msgid "Appearance"
+#~ msgstr "Utseende"
+#~ msgid "Width in chars"
+#~ msgstr "Bredd i tecken"
+#~ msgid "Text"
+#~ msgstr "Text"
 #~ msgid "_About"
 #~ msgstr "_Om"
 #~ msgid "_Quit"

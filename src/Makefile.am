@@ -105,7 +105,7 @@ AM_CPPFLAGS = \
 
 pkgdatadir = $(datadir)/krb5-auth-dialog
 pkgdata_DATA = \
-	krb5-auth-dialog.xml \
+	krb5-auth-dialog.ui \
 	$(NULL)
 
 EXTRA_DIST = \

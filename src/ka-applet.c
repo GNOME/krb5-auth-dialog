@@ -989,7 +989,7 @@ ka_applet_create ()
     applet->priv->uixml = gtk_builder_new ();
     ret = gtk_builder_add_from_file (applet->priv->uixml,
                                      KA_DATA_DIR G_DIR_SEPARATOR_S
-                                     PACKAGE ".xml", &error);
+                                     PACKAGE ".ui", &error);
     if (!ret) {
         g_assert (error);
         g_assert (error->message);

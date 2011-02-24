@@ -1,6 +1,19 @@
 ===============
-Version 2.91.6
+Version 2.91.90
 ===============
+* Check credential cache right after startup so the user gets immediate
+  feedback about her/his Kerberos tickets.
+* Make "always run" the default, don't exit when no ticket cache exists
+* Try harder to detect the notification daemon's persistence capabilities
+  during the autostart phase (works around #642666)
+* UI translations:
+	Andrej Žnidaršič (sl)
+	Daniel Mustieles (es)
+	Daniel Nylander (sv)
+
+==============
+Version 2.91.6
+==============
 * Add "Get ticket" button to notifications
 * Disable tray icon if the notification server supports persistent notifications
 * Move preferences to a gnome-control-center panel

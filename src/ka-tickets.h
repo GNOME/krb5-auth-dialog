@@ -22,18 +22,18 @@
 #define KA_TICKETS_H
 
 enum ticket_columns {
-	PRINCIPAL_COLUMN,
-	START_TIME_COLUMN,
-	END_TIME_COLUMN,
-	FORWARDABLE_COLUMN,
-	RENEWABLE_COLUMN,
-	PROXIABLE_COLUMN,
-	N_COLUMNS
+    PRINCIPAL_COLUMN,
+    START_TIME_COLUMN,
+    END_TIME_COLUMN,
+    FORWARDABLE_COLUMN,
+    RENEWABLE_COLUMN,
+    PROXIABLE_COLUMN,
+    N_COLUMNS
 };
 
 
-GtkWidget* ka_tickets_dialog_create(GtkBuilder *xml);
-void ka_tickets_dialog_run(void);
+GtkWidget *ka_tickets_dialog_create (GtkBuilder *xml);
+void ka_tickets_dialog_run (void);
 
 
 #endif

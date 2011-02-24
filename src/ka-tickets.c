@@ -27,89 +27,90 @@
 #include "ka-dialog.h"
 
 static GtkListStore *tickets;
-static GtkWidget    *tickets_dialog;
+static GtkWidget *tickets_dialog;
 
-GtkWidget*
-ka_tickets_dialog_create(GtkBuilder *xml)
+GtkWidget *
+ka_tickets_dialog_create (GtkBuilder *xml)
 {
-	GtkCellRenderer *text_renderer, *toggle_renderer;
-	GtkTreeViewColumn *column;
-	GtkTreeView *tickets_view;
+    GtkCellRenderer *text_renderer, *toggle_renderer;
+    GtkTreeViewColumn *column;
+    GtkTreeView *tickets_view;
 
-	tickets = gtk_list_store_new (N_COLUMNS,
-				      G_TYPE_STRING,
-				      G_TYPE_STRING,
-				      G_TYPE_STRING,
-				      G_TYPE_BOOLEAN,
-				      G_TYPE_BOOLEAN,
-				      G_TYPE_BOOLEAN);
+    tickets = gtk_list_store_new (N_COLUMNS,
+                                  G_TYPE_STRING,
+                                  G_TYPE_STRING,
+                                  G_TYPE_STRING,
+                                  G_TYPE_BOOLEAN,
+                                  G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
-	tickets_dialog = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_tickets_dialog"));
-	tickets_view = GTK_TREE_VIEW (gtk_builder_get_object (xml, "krb5_tickets_treeview"));
-	gtk_tree_view_set_model(GTK_TREE_VIEW(tickets_view), GTK_TREE_MODEL(tickets));
+    tickets_dialog =
+        GTK_WIDGET (gtk_builder_get_object (xml, "krb5_tickets_dialog"));
+    tickets_view =
+        GTK_TREE_VIEW (gtk_builder_get_object (xml, "krb5_tickets_treeview"));
+    gtk_tree_view_set_model (GTK_TREE_VIEW (tickets_view),
+                             GTK_TREE_MODEL (tickets));
 
-	text_renderer = gtk_cell_renderer_text_new();
-	toggle_renderer = gtk_cell_renderer_toggle_new();
+    text_renderer = gtk_cell_renderer_text_new ();
+    toggle_renderer = gtk_cell_renderer_toggle_new ();
 
-	column = gtk_tree_view_column_new_with_attributes(_("Principal"),
-							  text_renderer,
-							  "text",
-							  PRINCIPAL_COLUMN,
-							  NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	column = gtk_tree_view_column_new_with_attributes(_("Start Time"),
-							  text_renderer,
-							  "text",
-							  START_TIME_COLUMN,
-							  NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	column = gtk_tree_view_column_new_with_attributes(_("End Time"),
-							  text_renderer,
-							  "markup",
-							  END_TIME_COLUMN,
-							  NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	column = gtk_tree_view_column_new_with_attributes(_("Fwd"),
-							  toggle_renderer,
-							  "active",
-							  FORWARDABLE_COLUMN,
-							  NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	column = gtk_tree_view_column_new_with_attributes(_("Proxy"),
-							  toggle_renderer,
-							  "active",
-							  PROXIABLE_COLUMN,
-							  NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	column = gtk_tree_view_column_new_with_attributes(_("Renew"),
-							  toggle_renderer,
-							  "active",
-							  RENEWABLE_COLUMN,
-							  NULL);
-	gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
-	return tickets_dialog;
+    column = gtk_tree_view_column_new_with_attributes (_("Principal"),
+                                                       text_renderer,
+                                                       "text",
+                                                       PRINCIPAL_COLUMN,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+    column = gtk_tree_view_column_new_with_attributes (_("Start Time"),
+                                                       text_renderer,
+                                                       "text",
+                                                       START_TIME_COLUMN,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+    column = gtk_tree_view_column_new_with_attributes (_("End Time"),
+                                                       text_renderer,
+                                                       "markup",
+                                                       END_TIME_COLUMN, NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+    column = gtk_tree_view_column_new_with_attributes (_("Fwd"),
+                                                       toggle_renderer,
+                                                       "active",
+                                                       FORWARDABLE_COLUMN,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+    column = gtk_tree_view_column_new_with_attributes (_("Proxy"),
+                                                       toggle_renderer,
+                                                       "active",
+                                                       PROXIABLE_COLUMN,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+    column = gtk_tree_view_column_new_with_attributes (_("Renew"),
+                                                       toggle_renderer,
+                                                       "active",
+                                                       RENEWABLE_COLUMN,
+                                                       NULL);
+    gtk_tree_view_append_column (GTK_TREE_VIEW (tickets_view), column);
+    return tickets_dialog;
 }
 
 void
-ka_tickets_dialog_run()
+ka_tickets_dialog_run ()
 {
-	if (ka_get_service_tickets(tickets)) {
-		gtk_window_present(GTK_WINDOW(tickets_dialog));
-		gtk_dialog_run(GTK_DIALOG(tickets_dialog));
-		gtk_widget_hide(tickets_dialog);
-	} else {
-		GtkWidget *message_dialog;
+    if (ka_get_service_tickets (tickets)) {
+        gtk_window_present (GTK_WINDOW (tickets_dialog));
+        gtk_dialog_run (GTK_DIALOG (tickets_dialog));
+        gtk_widget_hide (tickets_dialog);
+    } else {
+        GtkWidget *message_dialog;
 
-		message_dialog = gtk_message_dialog_new (NULL,
-					GTK_DIALOG_DESTROY_WITH_PARENT,
-					GTK_MESSAGE_ERROR,
-					GTK_BUTTONS_CLOSE,
-					_("Error displaying service ticket information"));
-		gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
+        message_dialog = gtk_message_dialog_new (NULL,
+                                                 GTK_DIALOG_DESTROY_WITH_PARENT,
+                                                 GTK_MESSAGE_ERROR,
+                                                 GTK_BUTTONS_CLOSE,
+                                                 _
+                                                 ("Error displaying service ticket information"));
+        gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
 
-		g_signal_connect (message_dialog, "response",
-				  G_CALLBACK (gtk_widget_destroy),
-				  NULL);
-		gtk_widget_show (message_dialog);
-	}
+        g_signal_connect (message_dialog, "response",
+                          G_CALLBACK (gtk_widget_destroy), NULL);
+        gtk_widget_show (message_dialog);
+    }
 }

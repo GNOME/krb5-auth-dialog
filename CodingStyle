@@ -27,7 +27,10 @@ CodingStyle
          -Tgchar -Tgpointer -TG_MODULE_EXPORT   \
          -TGParamSpec -TGValue -TGObject        \
          -TGtkWidget -TGtkMenuItem              \
+         -TGtkBuilder -TGdkEventWindowState     \
          -TKaPlugin -TKaApplet -TKaAppletClass  \
          -TKaPluginDummy -TKaPluginDummyClass   \
          -TKaPluginPam -TKaPluginPamClass       \
-         -TKaPluginAfs -TKaPluginAfsClass
+         -TKaPluginAfs -TKaPluginAfsClass       \
+         -TKaPwDialog                           \
+         -Tkrb5_creds -TDBusGMethodInvocation   \

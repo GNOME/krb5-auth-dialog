@@ -28,7 +28,6 @@
 #include "config.h"
 
 G_BEGIN_DECLS
-
 #define KA_TYPE_PWDIALOG            (ka_pwdialog_get_type ())
 #define KA_PWDIALOG(obj)            \
     (G_TYPE_CHECK_INSTANCE_CAST ((obj), KA_TYPE_PWDIALOG, KaPwDialog))
@@ -40,26 +39,26 @@ G_BEGIN_DECLS
     (G_TYPE_CHECK_CLASS_TYPE ((klass), KA_TYPE_PWDIALOG))
 #define KA_PWDIALOG_GET_CLASS(obj)  \
     (G_TYPE_INSTANCE_GET_CLASS ((obj), KA_TYPE_PWDIALOG, KaPwDialogClass))
-
-typedef struct _KaPwDialog        KaPwDialog;
-typedef struct _KaPwDialogClass   KaPwDialogClass;
+    typedef struct _KaPwDialog KaPwDialog;
+typedef struct _KaPwDialogClass KaPwDialogClass;
 typedef struct _KaPwDialogPrivate KaPwDialogPrivate;
 
 GType ka_pwdialog_get_type (void);
 
 /* public functions */
-KaPwDialog* ka_pwdialog_create(GtkBuilder *xml);
+KaPwDialog *ka_pwdialog_create (GtkBuilder *xml);
+
 /* setup everything for the next prompting */
-void ka_pwdialog_setup (KaPwDialog* pwdialog, const gchar *krb5prompt,
+void ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
                         gboolean invalid_auth);
-gint ka_pwdialog_run(KaPwDialog *pwdialog);
-void ka_pwdialog_hide(const KaPwDialog *pwdialog, gboolean force);
-void ka_pwdialog_set_persist(KaPwDialog *pwdialog, gboolean persist);
+gint ka_pwdialog_run (KaPwDialog *pwdialog);
+void ka_pwdialog_hide (const KaPwDialog *pwdialog, gboolean force);
+void ka_pwdialog_set_persist (KaPwDialog *pwdialog, gboolean persist);
 void ka_pwdialog_error (KaPwDialog *pwdialog, const char *msg);
+
 /* update the expiry information in the status entry */
 gboolean ka_pwdialog_status_update (KaPwDialog *pwdialog);
-const gchar* ka_pwdialog_get_password(KaPwDialog *dialog);
+const gchar *ka_pwdialog_get_password (KaPwDialog *dialog);
 
 G_END_DECLS
-
 #endif

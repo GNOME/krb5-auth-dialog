@@ -502,6 +502,15 @@ credentials_expiring (gpointer *data)
 }
 
 
+/* run once, then terminate the timer */
+static gboolean
+credentials_expiring_once (gpointer *data)
+{
+    credentials_expiring(data);
+    return FALSE;
+}
+
+
 /*
  * set ticket options by looking at krb5.conf and gconf
  */
@@ -1096,6 +1105,7 @@ main (int argc, char *argv[])
 		ka_nm_init();
 
 		g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL, (GSourceFunc)credentials_expiring, applet);
+		g_idle_add ((GSourceFunc)credentials_expiring_once, applet);
 		monitor = monitor_ccache (applet);
 
 		ka_dbus_service(applet);

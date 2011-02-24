@@ -1056,9 +1056,10 @@ main (int argc, char *argv[])
 	const char *help_msg = "Run '" PACKAGE " --help' to see a full list of available command line options";
 	const GOptionEntry options [] = {
 		{"auto", 'a', 0, G_OPTION_ARG_NONE, &run_auto,
-			"Only run if an initialized ccache is found (default)", NULL},
+			"Only run if an initialized ccache is found", NULL},
+		/* accepted for compatibility only */
 		{"always", 'A', 0, G_OPTION_ARG_NONE, &run_always,
-			"Always run", NULL},
+			"Always run (default)", NULL},
 		{ NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL }
 	};
 	GFileMonitor *monitor = NULL;
@@ -1085,10 +1086,7 @@ main (int argc, char *argv[])
 	if (!ka_dbus_connect (&status))
 		exit(status);
 
-	if (run_always && !run_auto) {
-		always_run = TRUE;
-	}
-
+	always_run = !run_auto;
 	if (using_krb5 () || always_run) {
 		g_set_application_name (KA_NAME);
 

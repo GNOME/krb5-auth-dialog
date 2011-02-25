@@ -22,16 +22,12 @@
 #define KA_DBUS_H
 
 #include <glib.h>
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
 #include "ka-applet-priv.h"
 
-gboolean ka_dbus_connect (unsigned int *status);
-gboolean ka_dbus_service (KaApplet *applet);
+gboolean ka_dbus_connect (KaApplet *applet);
+void ka_dbus_disconnect (void);
 gboolean ka_dbus_acquire_tgt (KaApplet *applet,
-                              const gchar *principal,
-                              DBusGMethodInvocation *context);
-gboolean ka_dbus_destroy_ccache (KaApplet *applet,
-                                 DBusGMethodInvocation *context);
+                              const gchar *principal);
+gboolean ka_dbus_destroy_ccache (KaApplet *applet);
 
 #endif /* KA_DBUS_H */

@@ -51,6 +51,14 @@ enum {
     KA_PROP_TGT_RENEWABLE,
 };
 
+
+const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
+    "krb-tgt-acquired",
+    "krb-tgt-renewed",
+    "krb-tgt-expired",
+};
+
+
 struct _KaApplet {
     GObject parent;
 
@@ -252,12 +260,6 @@ ka_applet_class_init (KaAppletClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
     GParamSpec *pspec;
-
-    const gchar *signalNames[KA_SIGNAL_COUNT] = {
-        "krb-tgt-acquired",
-        "krb-tgt-renewed",
-        "krb-tgt-expired"
-    };
     int i;
 
     object_class->dispose = ka_applet_dispose;
@@ -320,7 +322,7 @@ ka_applet_class_init (KaAppletClass *klass)
     for (i = 0; i < KA_SIGNAL_COUNT; i++) {
         guint signalId;
 
-        signalId = g_signal_new (signalNames[i], G_OBJECT_CLASS_TYPE (klass),
+        signalId = g_signal_new (ka_signal_names[i], G_OBJECT_CLASS_TYPE (klass),
                                  G_SIGNAL_RUN_LAST, 0, NULL, NULL,
                                  ka_closure_VOID__STRING_UINT,
                                  G_TYPE_NONE, 2,   /* number of parameters */
@@ -707,8 +709,7 @@ ka_applet_cb_quit (GtkMenuItem *menuitem G_GNUC_UNUSED, gpointer user_data)
 {
     KaApplet *applet = KA_APPLET (user_data);
 
-    g_object_unref (applet);
-    gtk_main_quit ();
+    ka_applet_destroy (applet);
 }
 
 
@@ -975,6 +976,15 @@ ka_ns_check_persistence (KaApplet *self)
         } else
             break;
     } while (seconds);
+}
+
+
+/* destroy the applet and quit */
+void
+ka_applet_destroy (KaApplet* applet)
+{
+    g_object_unref (applet);
+    gtk_main_quit ();
 }
 
 

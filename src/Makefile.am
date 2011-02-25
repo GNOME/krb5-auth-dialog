@@ -66,7 +66,6 @@ krb5_auth_dialog_CPPFLAGS = \
 krb5_auth_dialog_CFLAGS = \
 	$(GMODULE_CFLAGS) \
 	$(GTK_CFLAGS) \
-	$(DBUS_CFLAGS) \
 	$(GCONF_CFLAGS) \
 	$(KRB5_CFLAGS) \
 	$(NETWORK_MANAGER_CFLAGS) \
@@ -81,22 +80,11 @@ krb5_auth_dialog_LDADD = \
 	$(LIBCAP) \
 	$(KRB5_LIBS) \
 	$(LIBNOTIFY_LIBS) \
-	$(DBUS_LIBS) \
 	$(GCONF_LIBS) \
 	$(GIO_LIBS) \
 	$(GMODULE_LIBS) \
 	$(GTK_LIBS) \
 	$(NULL)
-
-BUILT_SOURCES = \
-	ka-dbus-glue.h \
-	$(NULL)
-
-ka-dbus-glue.h: $(srcdir)/ka-dbus.xml
-	dbus-binding-tool                 \
-		--mode=glib-server        \
-		--prefix=krb5_auth_dialog \
-		$< > $@
 
 AM_CPPFLAGS = \
 	-I $(top_srcdir)/secmem/ \
@@ -113,14 +101,12 @@ EXTRA_DIST = \
 	$(schema_in_files) \
 	$(autostart_in_files) \
 	$(service_in_files) \
-	$(srcdir)/ka-dbus.xml \
 	krb5-auth-dialog.1.in \
 	$(NULL)
 
 CLEANFILES = $(schema_DATA) $(service_DATA)
 DISTCLEANFILES = \
 	krb5-auth-dialog.desktop \
-	ka-dbus-glue.h \
 	$(NULL)
 
 install-data-local: $(schema_DATA)

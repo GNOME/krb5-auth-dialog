@@ -39,7 +39,7 @@ struct _KaPluginAfsPrivate {
 };
 
 static void
-event_cb (gpointer *applet, gchar *princ, guint when, gpointer user_data)
+event_cb (gpointer *applet, gchar *princ, guint when, gpointer user_data G_GNUC_UNUSED)
 {
     GError *err = NULL;
     gboolean ret;
@@ -73,10 +73,10 @@ ka_plugin_afs_activate (KaPlugin *self, KaApplet *applet)
 
     priv->handlers[0] = g_signal_connect (applet,
                                           "krb-tgt-acquired",
-                                          G_CALLBACK (event_cb), "Acquired");
+                                          G_CALLBACK (event_cb), NULL);
     priv->handlers[1] = g_signal_connect (applet,
                                           "krb-tgt-renewed",
-                                          G_CALLBACK (event_cb), "Renewed");
+                                          G_CALLBACK (event_cb), NULL);
 }
 
 static void

@@ -1055,7 +1055,6 @@ main (int argc, char *argv[])
     GOptionContext *context;
     GError *error = NULL;
 
-    guint status = 0;
     gboolean run_auto = FALSE, run_always = FALSE;
 
     const char *help_msg =
@@ -1088,9 +1087,6 @@ main (int argc, char *argv[])
     bindtextdomain (PACKAGE, LOCALE_DIR);
     ka_secmem_init ();
 
-    if (!ka_dbus_connect (&status))
-        exit (status);
-
     always_run = !run_auto;
     if (using_krb5 () || always_run) {
         g_set_application_name (KA_NAME);
@@ -1098,6 +1094,11 @@ main (int argc, char *argv[])
         applet = ka_applet_create ();
         if (!applet)
             return 1;
+
+        if (!ka_dbus_connect (applet)) {
+            ka_applet_destroy (applet);
+            return 1;
+        }
         ka_nm_init ();
 
         g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
@@ -1105,11 +1106,15 @@ main (int argc, char *argv[])
         g_idle_add ((GSourceFunc) credentials_expiring_once, applet);
         monitor = monitor_ccache (applet);
 
-        ka_dbus_service (applet);
         gtk_main ();
     }
+    ka_dbus_disconnect ();
     ka_nm_shutdown ();
     if (monitor)
         g_object_unref (monitor);
     return 0;
 }
+
+/*
+ * vim:ts=4:sts=4:sw=4:et:
+ */

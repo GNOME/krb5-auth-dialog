@@ -42,6 +42,8 @@ G_BEGIN_DECLS
     KA_SIGNAL_COUNT
 } KaAppletSignalNumber;
 
+extern const gchar *ka_signal_names[];
+
 /* public functions */
 gboolean ka_applet_get_show_trayicon (const KaApplet *self);
 void ka_applet_set_tgt_renewable (KaApplet *self, gboolean renewable);
@@ -53,8 +55,11 @@ void ka_applet_signal_emit (KaApplet *self, KaAppletSignalNumber signum,
                             krb5_timestamp expiry);
 void ka_applet_set_msg (KaApplet *self, const char *msg);
 
+
 /* create the applet */
 KaApplet *ka_applet_create (void);
+/* destroy the applet */
+void ka_applet_destroy (KaApplet *self);
 
 /* update tooltip and icon */
 int ka_applet_update_status (KaApplet *self, krb5_timestamp expiry);

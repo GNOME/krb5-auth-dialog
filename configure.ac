@@ -1,8 +1,8 @@
-AC_INIT([krb5-auth-dialog], [2.91.91])
+AC_INIT([krb5-auth-dialog],[2.91.91])
 AC_CONFIG_SRCDIR(src/ka-dialog.c)
 dnl Make automake keep quiet about wildcards & other GNUmake-isms
-AM_INIT_AUTOMAKE([-Wno-portability])
-AM_CONFIG_HEADER(config.h)
+AM_INIT_AUTOMAKE([1.11.1 dist-bzip2 -Wno-portability])
+AC_CONFIG_HEADERS([config.h])
 
 AM_MAINTAINER_MODE
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
@@ -16,9 +16,9 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package])
 AM_GLIB_GNU_GETTEXT
 
 AC_PROG_CC
-AC_ISC_POSIX
+AC_SEARCH_LIBS([strerror],[cposix])
 AC_HEADER_STDC
-AC_PROG_LIBTOOL
+LT_INIT
 AC_PROG_LEX
 AC_PROG_YACC
 
@@ -70,8 +70,7 @@ fi
 
 dnl --enable-debug=(yes|no)
 AC_ARG_ENABLE(debug,
-              AC_HELP_STRING([--enable-debug=no/yes],
-                             [enable debugging output]),[],[enable_debug=no])
+              AS_HELP_STRING([--enable-debug=no/yes],[enable debugging output]),[],[enable_debug=no])
 if test x"$enable_debug" = x"yes"; then
    AC_DEFINE(ENABLE_DEBUG, 1, [whether debugging is enabled])
 fi
@@ -208,8 +207,7 @@ GNUPG_CHECK_MLOCK
 GNUPG_CHECK_TYPEDEF(byte, HAVE_BYTE_TYPEDEF)
 GNUPG_CHECK_TYPEDEF(ulong, HAVE_ULONG_TYPEDEF)
 dnl Check for libcap
-AC_ARG_WITH([libcap], AC_HELP_STRING([--without-libcap],
-            [Disable support for capabilities library]))
+AC_ARG_WITH([libcap], AS_HELP_STRING([--without-libcap],[Disable support for capabilities library]))
 if test "x$with_libcap" != "xno"; then
   AC_PATH_PROG(SETCAP, setcap, :, "$PATH:/sbin:/usr/sbin")
   AC_CHECK_LIB(cap, cap_set_proc, [
@@ -242,7 +240,7 @@ AC_SUBST(KA_PLUGINS_DIR)
 dnl PAM Plugin
 PAM_LIBS=
 AC_ARG_WITH([pam],
-  AC_HELP_STRING([--with-pam], [use PAM @<:@default=check@:>@]),
+  AS_HELP_STRING([--with-pam],[use PAM @<:@default=check@:>@]),
   [],
   [with_pam=check])
 
@@ -264,7 +262,7 @@ AC_SUBST(PAM_LIBS)
 AM_CONDITIONAL([ENABLE_PAM_PLUGIN],[test "$with_pam" = "yes"])
 
 dnl Final stage
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 krb5-auth-dialog.spec
 src/Makefile
@@ -281,6 +279,7 @@ examples/Makefile
 plugins/Makefile
 cc-panel/Makefile
 ])
+AC_OUTPUT
 
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Configuration summary])

@@ -1,4 +1,10 @@
 ===============
+Version 2.91.91
+===============
+* Migrate to GDBus (#622885)
+* add more DBus examples
+
+===============
 Version 2.91.90
 ===============
 * Check credential cache right after startup so the user gets immediate

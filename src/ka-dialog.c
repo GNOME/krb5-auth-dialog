@@ -44,6 +44,10 @@
 
 #ifdef ENABLE_NETWORK_MANAGER
 #include <nm-client.h>
+
+#if !defined(NM_CHECK_VERSION)
+#define NM_CHECK_VERSION(x,y,z) 0
+#endif
 #endif
 
 #ifdef HAVE_HX509_ERR_H
@@ -471,11 +475,20 @@ ka_nm_client_state_changed_cb (NMClient * client,
         KA_DEBUG ("Network state: %d", state);
         /* do nothing */
         break;
+#if NM_CHECK_VERSION(0,8,992)
+    case NM_STATE_DISCONNECTING:
+#endif
     case NM_STATE_DISCONNECTED:
         KA_DEBUG ("Network disconnected");
         *online = FALSE;
         break;
+#if NM_CHECK_VERSION(0,8,992)
+    case NM_STATE_CONNECTED_LOCAL:
+    case NM_STATE_CONNECTED_SITE:
+    case NM_STATE_CONNECTED_GLOBAL:
+#else
     case NM_STATE_CONNECTED:
+#endif
         KA_DEBUG ("Network connected");
         *online = TRUE;
         break;

@@ -4,7 +4,7 @@
 	 xmlns:gnome="http://api.gnome.org/doap-extensions#"
 	 xmlns="http://usefulinc.com/ns/doap#">
 	<name xml:lang="en">krb5-auth-dialog</name>
-	<shortdesc xml:lang="en">Tray applet to acquire, monitor and refresh Kerberos tickets</shortdesc>
+	<shortdesc xml:lang="en">Applet to acquire, monitor and refresh Kerberos tickets</shortdesc>
 	<homepage rdf:resource="https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/" />
 	<maintainer>
 		<foaf:Person>

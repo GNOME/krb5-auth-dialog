@@ -610,7 +610,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                 else
                     msg = _("You've refreshed your Kerberos credentials.");
                 ka_send_event_notification (applet,
-                                            _("Kerberos credentials valid"),
+                                            _("Network credentials valid"),
                                             msg,
                                             "krb-valid-ticket",
                                             FALSE);
@@ -629,7 +629,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
                     applet->priv->notify_gconf_key =
                         KA_GCONF_KEY_NOTIFY_EXPIRING;
                     ka_send_event_notification (applet,
-                                                _("Kerberos credentials expiring"),
+                                                _("Network credentials expiring"),
                                                 tooltip_text,
                                                 "krb-expiring-ticket",
                                                 TRUE);
@@ -647,7 +647,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
             if (notify) {
                 applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_EXPIRED;
                 ka_send_event_notification (applet,
-                                            _("Kerberos credentials expired"),
+                                            _("Network credentials expired"),
                                             _("Your Kerberos credentails have expired."),
                                             "krb-no-valid-ticket",
                                             TRUE);

@@ -1,4 +1,15 @@
 ===============
+Version 2.91.93
+===============
+* cc-panel: Move pkinit properties to separate tab
+* Update for NetworkManager 0.9 (Dan Williams)
+* Minor bug fixes
+* UI translations:
+	Bruno Brouard (fr)
+	Daniel Mustieles (es)
+	Joe Hansen (da)
+
+===============
 Version 2.91.91
 ===============
 * Migrate to GDBus (#622885)

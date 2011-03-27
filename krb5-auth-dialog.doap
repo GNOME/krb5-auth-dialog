@@ -13,5 +13,12 @@
 			<gnome:userid>guidog</gnome:userid>
 		</foaf:Person>
 	</maintainer>
+	<description>krb5-auth-dialog is an applet for the GNOME desktop that monitors and
+refreshes your Kerberos ticket. It pops up reminders when the ticket is
+about to expire.
+
+It features ticket autorenewal, supports PKINIT, can obtain tokens for
+authentication to AFS, has a DBus API and is extensible via plugins.
+	</description>
 </Project>
 

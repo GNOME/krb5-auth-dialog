@@ -6,6 +6,8 @@
 	<name xml:lang="en">krb5-auth-dialog</name>
 	<shortdesc xml:lang="en">Applet to acquire, monitor and refresh Kerberos tickets</shortdesc>
 	<homepage rdf:resource="https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/" />
+	<bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=krb5-auth-dialog" />
+	<download-page rdf:resource="http://download.gnome.org/sources/krb5-auth-dialog/" />
 	<maintainer>
 		<foaf:Person>
 			<foaf:name>Guido Günther</foaf:name>

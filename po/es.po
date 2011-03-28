@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-23 14:05+0000\n"
-"PO-Revision-Date: 2011-03-24 10:48+0100\n"
+"POT-Creation-Date: 2011-03-26 07:43+0000\n"
+"PO-Revision-Date: 2011-03-28 13:29+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -37,7 +37,11 @@ msgstr "_Renovar tique"
 msgid "unknown error"
 msgstr "error desconocido"
 
-#: ../src/ka-dialog.c:335
+#: ../src/ka-dialog.c:317
+msgid "Your ticket cache is currently empty"
+msgstr "Su caché de tiques está vacía actualmente"
+
+#: ../src/ka-dialog.c:343
 msgid "Expired"
 msgstr "Caducado"
 
@@ -1428,12 +1432,10 @@ msgid "You've refreshed your Kerberos credentials."
 msgstr "Ha actualizado sus credenciales de Kerberos."
 
 #: ../src/ka-applet.c:613
-#| msgid "Network credentials expired"
 msgid "Network credentials valid"
 msgstr "Credenciales de red válidas"
 
 #: ../src/ka-applet.c:632
-#| msgid "Network credentials expired"
 msgid "Network credentials expiring"
 msgstr "Las credenciales de red van a caducar"
 
@@ -1665,7 +1667,6 @@ msgid "Notifications"
 msgstr "Notificaciones"
 
 #: ../cc-panel/ka-panel.ui.h:13
-#| msgid "PKINIT:"
 msgid "PKINIT"
 msgstr "PKINIT"
 
@@ -1693,7 +1694,6 @@ msgid "Use Smartcard"
 msgstr "Usar tarjeta inteligente"
 
 #: ../cc-panel/ka-panel.ui.h:18
-#| msgid "Userid:"
 msgid "Userid"
 msgstr "ID de usuario"
 
@@ -1703,7 +1703,6 @@ msgid "Warn"
 msgstr "Advertir"
 
 #: ../cc-panel/ka-panel.ui.h:21
-#| msgid "X509 trust anchors:"
 msgid "X509 trust anchors"
 msgstr "Anclas de confianza de X509"
 

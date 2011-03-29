@@ -7,9 +7,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&component=general\n"
-"POT-Creation-Date: 2011-02-15 21:16+0000\n"
-"PO-Revision-Date: 2011-02-18 13:16+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2011-03-27 20:16+0000\n"
+"PO-Revision-Date: 2011-03-28 08:41+0100\n"
 "Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -21,35 +21,39 @@ msgstr ""
 "X-Poedit-Language: Slovenian\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../src/krb5-auth-dialog.xml.h:1
+#: ../src/krb5-auth-dialog.ui.h:1
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 #: ../cc-panel/gnome-ka-panel.desktop.in.h:1
 msgid "Kerberos Authentication"
 msgstr "Overitev Kerberos"
 
-#: ../src/krb5-auth-dialog.xml.h:2
+#: ../src/krb5-auth-dialog.ui.h:2
 msgid "Service Tickets"
 msgstr "Storitvene vstopnice"
 
-#: ../src/krb5-auth-dialog.xml.h:3
+#: ../src/krb5-auth-dialog.ui.h:3
 msgid "_Renew Ticket"
 msgstr "_Obnovi vstopnico"
 
-#: ../src/ka-dialog.c:171
+#: ../src/ka-dialog.c:177
 msgid "unknown error"
 msgstr "neznana napaka"
 
-#: ../src/ka-dialog.c:332
+#: ../src/ka-dialog.c:317
+msgid "Your ticket cache is currently empty"
+msgstr "Vaš predpomnilnik vozovnic je trenutno prazen"
+
+#: ../src/ka-dialog.c:343
 msgid "Expired"
 msgstr "Pretečeno"
 
-#: ../src/ka-pwdialog.c:175
+#: ../src/ka-pwdialog.c:178
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Ni mogoče pridobiti vstopnice kerberos: '%s'"
 
-#: ../src/ka-pwdialog.c:212
-#: ../src/ka-applet.c:359
+#: ../src/ka-pwdialog.c:217
+#: ../src/ka-applet.c:361
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -58,25 +62,25 @@ msgstr[1] "Vaša poverila potečejo v %d minuti"
 msgstr[2] "Vaša poverila potečejo v %d minutah"
 msgstr[3] "Vaša poverila potečejo v %d minutah"
 
-#: ../src/ka-pwdialog.c:217
-#: ../src/ka-applet.c:364
+#: ../src/ka-pwdialog.c:222
+#: ../src/ka-applet.c:366
 msgid "Your credentials have expired"
 msgstr "Vaša poverila so potekla"
 
-#: ../src/ka-pwdialog.c:237
+#: ../src/ka-pwdialog.c:245
 msgid "Please enter your Kerberos password:"
 msgstr "Vnesite svoje geslo Kerberos:"
 
-#: ../src/ka-pwdialog.c:248
+#: ../src/ka-pwdialog.c:258
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Vnesite geslo za '%s':"
 
-#: ../src/ka-pwdialog.c:263
+#: ../src/ka-pwdialog.c:276
 msgid "The password you entered is invalid"
 msgstr "Vneseno geslo je neveljavno"
 
-#: ../src/ka-pwdialog.c:279
+#: ../src/ka-pwdialog.c:292
 #, c-format
 msgid "%s Error"
 msgstr "%s napaka"
@@ -1388,65 +1392,65 @@ msgstr "Slabo čarobno število za GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Slabo čarobno število od GSSAPI VRSTE"
 
-#: ../src/ka-applet.c:353
+#: ../src/ka-applet.c:355
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vaša poverila potečejo v %.2d%.2dh"
 
-#: ../src/ka-applet.c:535
+#: ../src/ka-applet.c:537
 msgid "List Tickets"
 msgstr "Izpiši vstopnice"
 
-#: ../src/ka-applet.c:545
+#: ../src/ka-applet.c:547
 msgid "Get Ticket"
 msgstr "Dobi vstopnico"
 
-#: ../src/ka-applet.c:554
+#: ../src/ka-applet.c:556
 msgid "Don't show me this again"
 msgstr "Tega ne prikaži več"
 
-#: ../src/ka-applet.c:561
+#: ../src/ka-applet.c:563
 msgid "Remove Credentials Cache"
 msgstr "Odstrani predpomnilnik varoval"
 
-#: ../src/ka-applet.c:609
+#: ../src/ka-applet.c:611
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Osvežili ste svoja poverila Kerberos"
 
-#: ../src/ka-applet.c:611
+#: ../src/ka-applet.c:613
 msgid "Network credentials valid"
 msgstr "Omrežna varovala so veljavna"
 
-#: ../src/ka-applet.c:630
+#: ../src/ka-applet.c:632
 msgid "Network credentials expiring"
 msgstr "Omrežna varovala bodo potekla"
 
-#: ../src/ka-applet.c:648
+#: ../src/ka-applet.c:650
 msgid "Network credentials expired"
 msgstr "Omrežna varovala so potekla"
 
-#: ../src/ka-applet.c:649
+#: ../src/ka-applet.c:651
 msgid "Your Kerberos credentails have expired."
 msgstr "Vaša varovala Kerberos so potekla."
 
-#: ../src/ka-applet.c:692
+#: ../src/ka-applet.c:694
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "Prišlo je do napake med zagonom pogovornega okna možnosti: %s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-applet.c:739
+#: ../src/ka-applet.c:740
 msgid "translator-credits"
 msgstr ""
 "Andrej Žnidaršič\n"
 "Matej Urbančič"
 
-#: ../src/ka-applet.c:784
+#: ../src/ka-applet.c:785
 msgid "Remove Credentials _Cache"
 msgstr "Odstrani _predpomnilnik varoval"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:794
+#: ../src/ka-applet.c:795
 msgid "_List Tickets"
 msgstr "_Naštej vstopnice"
 
@@ -1459,31 +1463,31 @@ msgstr ""
 "Prišlo je do napake med prikazovanjem pomoči:\n"
 "%s"
 
-#: ../src/ka-tickets.c:54
+#: ../src/ka-tickets.c:56
 msgid "Principal"
 msgstr "Ravnatelj"
 
-#: ../src/ka-tickets.c:60
+#: ../src/ka-tickets.c:62
 msgid "Start Time"
 msgstr "Začetni čas"
 
-#: ../src/ka-tickets.c:66
+#: ../src/ka-tickets.c:68
 msgid "End Time"
 msgstr "Končni čas"
 
-#: ../src/ka-tickets.c:72
+#: ../src/ka-tickets.c:73
 msgid "Fwd"
 msgstr "Posreduj"
 
-#: ../src/ka-tickets.c:78
+#: ../src/ka-tickets.c:79
 msgid "Proxy"
 msgstr "Posredovalni strežnik"
 
-#: ../src/ka-tickets.c:84
+#: ../src/ka-tickets.c:85
 msgid "Renew"
 msgstr "Obnovi"
 
-#: ../src/ka-tickets.c:107
+#: ../src/ka-tickets.c:109
 msgid "Error displaying service ticket information"
 msgstr "Napaka med prikazovanjem podrobnosti storitvene vstopnice"
 
@@ -1594,96 +1598,104 @@ msgid "Set your Kerberos network authentication preferences"
 msgstr "Nastavitev možnosti Kerberos overitve omrežja"
 
 #: ../cc-panel/ka-panel.ui.h:1
-msgid "Applet"
-msgstr "Aplet"
-
-#: ../cc-panel/ka-panel.ui.h:2
 msgid "Certificate and private key used for authentication"
 msgstr "Potrdilo in osebni ključ uporabljena za overitev"
 
+#: ../cc-panel/ka-panel.ui.h:2
+msgid "Certificate used to verify digital signatures."
+msgstr "Potrdilo, ki se uporablja za potrjevanje digitalnih podpisov."
+
 #: ../cc-panel/ka-panel.ui.h:3
+msgid "Configure the use of certificates and smartcards for your Kerberos network authentication."
+msgstr "Nastavite uporabo potrdil in pametnih kartic za vašo overitev omrežja Kerberos."
+
+#: ../cc-panel/ka-panel.ui.h:4
 msgid "If checked, request forwardable tickets"
 msgstr "Izbrana možnost določi zahtevo za uporabo prenosljivih vstopnic"
 
-#: ../cc-panel/ka-panel.ui.h:4
+#: ../cc-panel/ka-panel.ui.h:5
 msgid "If checked, request proxiable tickets"
 msgstr "Izbrana možnost omogoči zahtevo za posredovalno vstopnico"
 
-#: ../cc-panel/ka-panel.ui.h:5
+#: ../cc-panel/ka-panel.ui.h:6
 msgid "If checked, request renewable tickets"
 msgstr "Izbrana možnost določi zahtevo za uporabo obnovljivih vstopnic"
 
-#: ../cc-panel/ka-panel.ui.h:6
+#: ../cc-panel/ka-panel.ui.h:7
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr "Izbrana možnost omogoči zahtevo za uporabo Varnostne SmartCard za overjanje"
 
-#: ../cc-panel/ka-panel.ui.h:7
+#: ../cc-panel/ka-panel.ui.h:8
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../cc-panel/ka-panel.ui.h:8
+#: ../cc-panel/ka-panel.ui.h:9
+msgid "Kerberos Ticket Options"
+msgstr "Možnosti vstopnice Kerberos"
+
+#: ../cc-panel/ka-panel.ui.h:10
 msgid "Kerberos User"
 msgstr "Uporabnik Kerberos"
 
-#: ../cc-panel/ka-panel.ui.h:9
+#: ../cc-panel/ka-panel.ui.h:11
 msgid "Kerberos principal:"
 msgstr "Kerberos ravnatelj:"
 
-#: ../cc-panel/ka-panel.ui.h:10
+#: ../cc-panel/ka-panel.ui.h:12
 msgid "Notifications"
 msgstr "Obvestila"
 
-#: ../cc-panel/ka-panel.ui.h:11
-msgid "PKINIT:"
-msgstr "PKINIT:"
+#: ../cc-panel/ka-panel.ui.h:13
+msgid "PKINIT"
+msgstr "PKINIT"
 
-#: ../cc-panel/ka-panel.ui.h:12
+#: ../cc-panel/ka-panel.ui.h:14
 msgid "Requested Kerberos tickets should be:"
 msgstr "Zahtevane vstopnice Kerberos bi morale biti:"
 
-#: ../cc-panel/ka-panel.ui.h:13
+#: ../cc-panel/ka-panel.ui.h:15
 msgid "Send notification about ticket expiry that many minutes before it finally expires"
 msgstr "Pošiljanje obvestila o preteku vstopnice toliko minut pred končnim pretekom."
 
-#: ../cc-panel/ka-panel.ui.h:14
-msgid "Ticket Options"
-msgstr "Možnosti vstopnice"
+#: ../cc-panel/ka-panel.ui.h:16
+msgid "The name of your Kerberos account. Leave blank to use your current username."
+msgstr "Ime vašega računa Kerberos. Pustite prazno za uporabo vašega trenutnega uporabniškega imena."
 
-#: ../cc-panel/ka-panel.ui.h:15
+#: ../cc-panel/ka-panel.ui.h:17
 msgid "Use Smartcard"
 msgstr "Uporabi SmartCard"
 
-#: ../cc-panel/ka-panel.ui.h:16
-msgid "Userid:"
-msgstr "Uporabniški ID:"
+#: ../cc-panel/ka-panel.ui.h:18
+msgid "Userid"
+msgstr "Uporabniški id"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:18
+#: ../cc-panel/ka-panel.ui.h:20
 msgid "Warn"
 msgstr "Opozori"
 
-#: ../cc-panel/ka-panel.ui.h:19
-msgid "X509 trust anchors:"
-msgstr "X509 zaupna sidra:"
+#: ../cc-panel/ka-panel.ui.h:21
+msgid "X509 trust anchors"
+msgstr "X509 zaupna sidra"
 
-#: ../cc-panel/ka-panel.ui.h:20
+#: ../cc-panel/ka-panel.ui.h:22
 msgid "_Browse..."
 msgstr "_Prebrskaj ..."
 
-#: ../cc-panel/ka-panel.ui.h:21
+#: ../cc-panel/ka-panel.ui.h:23
 msgid "forwardable"
 msgstr "prenosljiva"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:23
-msgid "minutes before expiry"
-msgstr "minut pred iztekom"
+#: ../cc-panel/ka-panel.ui.h:25
+msgid "minutes before ticket expiry"
+msgstr "Opozorilo pred potekom v minutah"
 
-#: ../cc-panel/ka-panel.ui.h:24
+#: ../cc-panel/ka-panel.ui.h:26
 msgid "proxiable"
 msgstr "posredovana"
 
-#: ../cc-panel/ka-panel.ui.h:25
+#: ../cc-panel/ka-panel.ui.h:27
 msgid "renewable"
 msgstr "obnovljiva"
 
@@ -1699,6 +1711,8 @@ msgstr "X509 potrdila"
 msgid "all files"
 msgstr "vse datoteke"
 
+#~ msgid "Applet"
+#~ msgstr "Aplet"
 #~ msgid "Network Authentication"
 #~ msgstr "Overitev omrežja"
 #~ msgid "Show a trayicon in the status area of the panel"

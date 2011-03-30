@@ -13,5 +13,5 @@ X-GNOME-Settings-Panel=ka-panel
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=krb5-auth-dialog
 X-GNOME-Bugzilla-Component=general
-# Translators: those are keywords for the example control-center panel
+# Translators: those are keywords for the Kerberos authentication control-center panel
 _X-GNOME-Keywords=Kerberos;Authentication

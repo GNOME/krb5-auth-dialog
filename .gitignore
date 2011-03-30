@@ -20,6 +20,7 @@ install-sh
 install.sh
 krb5-auth-dialog.spec
 krb5-auth-dialog-*.tar.gz
+krb5-auth-dialog-*.tar.bz2
 libtool
 ltmain.sh
 Makefile

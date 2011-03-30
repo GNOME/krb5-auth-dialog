@@ -591,14 +591,14 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
     int remaining = expiry - now;
     static int last_warn = 0;
     static gboolean expiry_notified = FALSE;
+    static gboolean initial_notification = TRUE;
     static krb5_timestamp old_expiry = 0;
     gboolean notify = TRUE;
     const char *status_icon = ka_applet_select_icon (applet, remaining);
     char *tooltip_text = ka_applet_tooltip_text (remaining);
 
-
     if (remaining > 0) {
-        if (expiry_notified) {
+        if (expiry_notified || initial_notification) {
             const char* msg;
             ka_gconf_get_bool (applet->priv->gconf,
                                KA_GCONF_KEY_NOTIFY_VALID, &notify);
@@ -607,8 +607,12 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
 
                 if (applet->priv->krb_msg)
                     msg = applet->priv->krb_msg;
-                else
-                    msg = _("You've refreshed your Kerberos credentials.");
+                else {
+                    if (initial_notification)
+                        msg = _("You have valid Kerberos credentials.");
+                    else
+                        msg = _("You've refreshed your Kerberos credentials.");
+                }
                 ka_send_event_notification (applet,
                                             _("Network credentials valid"),
                                             msg,
@@ -661,6 +665,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
     old_expiry = expiry;
     ka_update_tray_icon(applet, status_icon, tooltip_text);
     g_free (tooltip_text);
+    initial_notification = FALSE;
     return 0;
 }
 

@@ -81,7 +81,7 @@ struct _KaAppletPrivate {
     gboolean ns_persistence;    /* does the notification server support persistence */
 
     KaPwDialog *pwdialog;       /* the password dialog */
-    int pw_prompt_secs;         /* when to start prompting for a password */
+    int pw_prompt_secs;         /* when to start sending notifications */
     KaPluginLoader *loader;     /* Plugin loader */
 
     NotifyNotification *notification;   /* notification messages */
@@ -530,7 +530,7 @@ ka_send_event_notification (KaApplet *self,
     }
 
     notify_notification_clear_actions(notification);
-    /* Add List Tickets button until we moved this into cc-panl */
+
     if (self->priv->ns_persistence) {
         notify_notification_add_action (notification,
                                         "ka-list-tickets",
@@ -736,7 +736,7 @@ ka_applet_cb_about_dialog (GtkMenuItem *menuitem G_GNUC_UNUSED,
                            "logo-icon-name", "krb-valid-ticket",
                            "copyright",
                            "Copyright (C) 2004,2005,2006 Red Hat, Inc.,\n"
-                           "2008,2009 Guido Günther",
+                           "2008-2011 Guido Günther",
                            "website-label", PACKAGE " website",
                            "website",
                            "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",

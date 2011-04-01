@@ -171,9 +171,9 @@ static const GDBusInterfaceVTable interface_vtable =
 
 
 static void
-ka_dbus_on_name_acquired (GDBusConnection *connection,
-                          const gchar *name G_GNUC_UNUSED,
-                          gpointer user_data)
+ka_dbus_on_bus_acquired (GDBusConnection *connection,
+                         const gchar     *name G_GNUC_UNUSED,
+                         gpointer         user_data)
 {
     KaApplet *applet = user_data;
     guint id;
@@ -233,8 +233,8 @@ ka_dbus_connect (KaApplet *applet)
     dbus_owner_id = g_bus_own_name (G_BUS_TYPE_SESSION,
                                     "org.gnome.KrbAuthDialog",
                                     G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT,
+                                    ka_dbus_on_bus_acquired,
                                     NULL,
-                                    ka_dbus_on_name_acquired,
                                     ka_dbus_on_name_lost,
                                     applet,
                                     NULL);

@@ -1,3 +1,14 @@
+=============
+Version 3.0.0
+=============
+* fix DBus activation
+* fix missing initial notification
+* UI translations:
+	Andrej Žnidaršič (sl)
+	Daniel Mustieles (es)
+	Kjartan Maraas (nb)
+	Mario Blättermann (de)
+
 ===============
 Version 2.91.93
 ===============

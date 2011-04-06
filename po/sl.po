@@ -8,14 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-27 20:16+0000\n"
-"PO-Revision-Date: 2011-03-28 08:41+0100\n"
-"Last-Translator: Andrej Žnidaršič <andrej.znidarsic@gmail.com>\n"
+"POT-Creation-Date: 2011-04-04 17:53+0000\n"
+"PO-Revision-Date: 2011-04-06 10:08+0100\n"
+"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-Language: Slovenian\n"
@@ -1413,44 +1413,48 @@ msgstr "Tega ne prikaži več"
 msgid "Remove Credentials Cache"
 msgstr "Odstrani predpomnilnik varoval"
 
-#: ../src/ka-applet.c:611
+#: ../src/ka-applet.c:612
+msgid "You have valid Kerberos credentials."
+msgstr "Naložena so veljavna poverila Kerberos"
+
+#: ../src/ka-applet.c:614
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Osvežili ste svoja poverila Kerberos"
 
-#: ../src/ka-applet.c:613
+#: ../src/ka-applet.c:617
 msgid "Network credentials valid"
 msgstr "Omrežna varovala so veljavna"
 
-#: ../src/ka-applet.c:632
+#: ../src/ka-applet.c:636
 msgid "Network credentials expiring"
 msgstr "Omrežna varovala bodo potekla"
 
-#: ../src/ka-applet.c:650
+#: ../src/ka-applet.c:654
 msgid "Network credentials expired"
 msgstr "Omrežna varovala so potekla"
 
-#: ../src/ka-applet.c:651
+#: ../src/ka-applet.c:655
 msgid "Your Kerberos credentails have expired."
 msgstr "Vaša varovala Kerberos so potekla."
 
-#: ../src/ka-applet.c:694
+#: ../src/ka-applet.c:699
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "Prišlo je do napake med zagonom pogovornega okna možnosti: %s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-applet.c:740
+#: ../src/ka-applet.c:745
 msgid "translator-credits"
 msgstr ""
 "Andrej Žnidaršič\n"
 "Matej Urbančič"
 
-#: ../src/ka-applet.c:785
+#: ../src/ka-applet.c:790
 msgid "Remove Credentials _Cache"
 msgstr "Odstrani _predpomnilnik varoval"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:795
+#: ../src/ka-applet.c:800
 msgid "_List Tickets"
 msgstr "_Naštej vstopnice"
 
@@ -1475,15 +1479,15 @@ msgstr "Začetni čas"
 msgid "End Time"
 msgstr "Končni čas"
 
-#: ../src/ka-tickets.c:73
+#: ../src/ka-tickets.c:74
 msgid "Fwd"
 msgstr "Posreduj"
 
-#: ../src/ka-tickets.c:79
+#: ../src/ka-tickets.c:80
 msgid "Proxy"
 msgstr "Posredovalni strežnik"
 
-#: ../src/ka-tickets.c:85
+#: ../src/ka-tickets.c:86
 msgid "Renew"
 msgstr "Obnovi"
 
@@ -1588,7 +1592,7 @@ msgstr "obvestilo veljavne vstopnice"
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Opozorilo: poganjanje q-agent setuid na tem sistemu je nevarno\n"
 
-#. Translators: those are keywords for the example control-center panel
+#. Translators: those are keywords for the Kerberos authentication control-center panel
 #: ../cc-panel/gnome-ka-panel.desktop.in.h:3
 msgid "Kerberos;Authentication"
 msgstr "Kerberos;Overitev"
@@ -1713,23 +1717,29 @@ msgstr "vse datoteke"
 
 #~ msgid "Applet"
 #~ msgstr "Aplet"
+
 #~ msgid "Network Authentication"
 #~ msgstr "Overitev omrežja"
+
 #~ msgid "Show a trayicon in the status area of the panel"
 #~ msgstr "Prikaz ikone sistemske vrstice v področju stanja na pultu"
+
 #~ msgid "Show trayicon"
 #~ msgstr "Pokaži ikono sistemske vrstice"
+
 #~ msgid "Appearance"
 #~ msgstr "Videz"
+
 #~ msgid "If checked, display the tray icon in the status bar"
 #~ msgstr ""
 #~ "Izbrana možnost določi prikaz ikone sistemske vrstice v vrstici stanja"
+
 #~ msgid "Show tray icon"
 #~ msgstr "Pokaži ikono sistemske vrstice"
+
 #~ msgid ""
 #~ "There was an error displaying %s:\n"
 #~ "%s"
 #~ msgstr ""
 #~ "Prišlo je do napake med prikazovanjem %s:\n"
 #~ "%s"
-

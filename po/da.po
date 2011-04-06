@@ -15,8 +15,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-13 12:04+0100\n"
-"PO-Revision-Date: 2011-02-27 19:00+0000\n"
+"POT-Creation-Date: 2011-04-06 22:33+0200\n"
+"PO-Revision-Date: 2011-04-02 19:00+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -42,7 +42,12 @@ msgstr "_Forny billet"
 msgid "unknown error"
 msgstr "ukendt fejl"
 
-#: ../src/ka-dialog.c:335
+# er i øjeblikket tomt 
+#: ../src/ka-dialog.c:317
+msgid "Your ticket cache is currently empty"
+msgstr "Dit billetmellemlager er aktuelt tomt"
+
+#: ../src/ka-dialog.c:343
 msgid "Expired"
 msgstr "Udløbet"
 
@@ -1419,33 +1424,37 @@ msgstr "Vis mig ikke dette igen"
 msgid "Remove Credentials Cache"
 msgstr "Fjern akkreditivmellemlager"
 
-#: ../src/ka-applet.c:611
+#: ../src/ka-applet.c:612
+msgid "You have valid Kerberos credentials."
+msgstr "Du har gyldige Kerberosakkreditiver."
+
+#: ../src/ka-applet.c:614
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Du har opdateret dine Kerberosakkreditiver."
 
-#: ../src/ka-applet.c:613
+#: ../src/ka-applet.c:617
 msgid "Network credentials valid"
 msgstr "Netværksakkreditiver er gyldige"
 
-#: ../src/ka-applet.c:632
+#: ../src/ka-applet.c:636
 msgid "Network credentials expiring"
 msgstr "Netværksakkreditiver udløber"
 
-#: ../src/ka-applet.c:650
+#: ../src/ka-applet.c:654
 msgid "Network credentials expired"
 msgstr "Netværksakkreditiver er udløbet"
 
-#: ../src/ka-applet.c:651
+#: ../src/ka-applet.c:655
 msgid "Your Kerberos credentails have expired."
 msgstr "Dine Kerberosakkreditiver er udløbet."
 
-#: ../src/ka-applet.c:694
+#: ../src/ka-applet.c:699
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "Der opstod en fejl under opstart af indstillingsdialogen: %s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-applet.c:740
+#: ../src/ka-applet.c:745
 msgid "translator-credits"
 msgstr ""
 "Joe Hansen, 2011.\n"
@@ -1453,12 +1462,12 @@ msgstr ""
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/ka-applet.c:785
+#: ../src/ka-applet.c:790
 msgid "Remove Credentials _Cache"
 msgstr "Fjern akkreditiv_mellemlager"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:795
+#: ../src/ka-applet.c:800
 msgid "_List Tickets"
 msgstr "_Vis billetter"
 
@@ -1483,15 +1492,15 @@ msgstr "Starttidspunkt"
 msgid "End Time"
 msgstr "Sluttidspunkt"
 
-#: ../src/ka-tickets.c:73
+#: ../src/ka-tickets.c:74
 msgid "Fwd"
 msgstr "Videresend"
 
-#: ../src/ka-tickets.c:79
+#: ../src/ka-tickets.c:80
 msgid "Proxy"
 msgstr "Proxy"
 
-#: ../src/ka-tickets.c:85
+#: ../src/ka-tickets.c:86
 msgid "Renew"
 msgstr "Forny"
 
@@ -1599,7 +1608,7 @@ msgstr "påmindelse for gyldig billet"
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Advarsel: Kørsel af q-agent setuid på dette system er farligt\n"
 
-#. Translators: those are keywords for the example control-center panel
+#. Translators: those are keywords for the Kerberos authentication control-center panel
 #: ../cc-panel/gnome-ka-panel.desktop.in.h:3
 msgid "Kerberos;Authentication"
 msgstr "Kerberos;Godkendelse"
@@ -1609,98 +1618,115 @@ msgid "Set your Kerberos network authentication preferences"
 msgstr "Angiv dine indstillinger for Kerberos' netværksgodkendelse"
 
 #: ../cc-panel/ka-panel.ui.h:1
-msgid "Applet"
-msgstr "Panelprogram"
-
-#: ../cc-panel/ka-panel.ui.h:2
 msgid "Certificate and private key used for authentication"
 msgstr "Certifikat og privat nøgle brugt for godkendelse"
 
+#: ../cc-panel/ka-panel.ui.h:2
+msgid "Certificate used to verify digital signatures."
+msgstr "Certifikat brugt til at verificere digitale underskrifter."
+
 #: ../cc-panel/ka-panel.ui.h:3
+msgid ""
+"Configure the use of certificates and smartcards for your Kerberos network "
+"authentication."
+msgstr ""
+"Konfigurer brugen af certifikater og smartkort for Kerberos' "
+"netværksgodkendelse."
+
+#: ../cc-panel/ka-panel.ui.h:4
 msgid "If checked, request forwardable tickets"
 msgstr "Hvis afkrydset: Anmod om billetter som kan videresendes"
 
-#: ../cc-panel/ka-panel.ui.h:4
+#: ../cc-panel/ka-panel.ui.h:5
 msgid "If checked, request proxiable tickets"
 msgstr "Hvis afkrydset: Anmod om billetter som tillader proxy"
 
-#: ../cc-panel/ka-panel.ui.h:5
+#: ../cc-panel/ka-panel.ui.h:6
 msgid "If checked, request renewable tickets"
 msgstr "Hvis afkrydset: Anmod om billetter som kan fornyes"
 
-#: ../cc-panel/ka-panel.ui.h:6
+#: ../cc-panel/ka-panel.ui.h:7
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr "Hvis afkrydset: Brug et sikkerhedssymbol (Smartcard) til godkendelsen."
 
-#: ../cc-panel/ka-panel.ui.h:7
+#: ../cc-panel/ka-panel.ui.h:8
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../cc-panel/ka-panel.ui.h:8
+# Billetindstillinger for Kerberos - måske
+#: ../cc-panel/ka-panel.ui.h:9
+msgid "Kerberos Ticket Options"
+msgstr "Kerberos' billetindstillinger"
+
+#: ../cc-panel/ka-panel.ui.h:10
 msgid "Kerberos User"
 msgstr "Kerberosbruger"
 
-#: ../cc-panel/ka-panel.ui.h:9
+#: ../cc-panel/ka-panel.ui.h:11
 msgid "Kerberos principal:"
 msgstr "Kerberoshoved:"
 
-#: ../cc-panel/ka-panel.ui.h:10
+#: ../cc-panel/ka-panel.ui.h:12
 msgid "Notifications"
 msgstr "Påmindelser"
 
-#: ../cc-panel/ka-panel.ui.h:11
-msgid "PKINIT:"
-msgstr "PKINIT:"
+#: ../cc-panel/ka-panel.ui.h:13
+msgid "PKINIT"
+msgstr "PKINIT"
 
-#: ../cc-panel/ka-panel.ui.h:12
+#: ../cc-panel/ka-panel.ui.h:14
 msgid "Requested Kerberos tickets should be:"
 msgstr "De anmodne Kerberosbilletter skal være:"
 
-#: ../cc-panel/ka-panel.ui.h:13
+#: ../cc-panel/ka-panel.ui.h:15
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr "Send påmindelse om billetudløb med dette antal minutter før udløb"
 
-#: ../cc-panel/ka-panel.ui.h:14
-msgid "Ticket Options"
-msgstr "Billetindstillinger"
+# eller "nuværende brugernavn." 
+#: ../cc-panel/ka-panel.ui.h:16
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+"Navnet på din Kerberoskonto. Efterlad tom for at bruge dit aktuelle "
+"brugernavn."
 
-#: ../cc-panel/ka-panel.ui.h:15
+#: ../cc-panel/ka-panel.ui.h:17
 msgid "Use Smartcard"
 msgstr "Brug smartcard"
 
-#: ../cc-panel/ka-panel.ui.h:16
-msgid "Userid:"
-msgstr "Bruger-id:"
+#: ../cc-panel/ka-panel.ui.h:18
+msgid "Userid"
+msgstr "Bruger-id"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:18
+#: ../cc-panel/ka-panel.ui.h:20
 msgid "Warn"
 msgstr "Advar"
 
-#: ../cc-panel/ka-panel.ui.h:19
-msgid "X509 trust anchors:"
-msgstr "X509-troværdighedsankre:"
+#: ../cc-panel/ka-panel.ui.h:21
+msgid "X509 trust anchors"
+msgstr "X509-troværdighedsankre"
 
-#: ../cc-panel/ka-panel.ui.h:20
+#: ../cc-panel/ka-panel.ui.h:22
 msgid "_Browse..."
 msgstr "_Gennemse..."
 
-#: ../cc-panel/ka-panel.ui.h:21
+#: ../cc-panel/ka-panel.ui.h:23
 msgid "forwardable"
 msgstr "kan videresendes"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:23
-msgid "minutes before expiry"
-msgstr "minutter før udløb"
+#: ../cc-panel/ka-panel.ui.h:25
+msgid "minutes before ticket expiry"
+msgstr "minutter før billetudløb"
 
-#: ../cc-panel/ka-panel.ui.h:24
+#: ../cc-panel/ka-panel.ui.h:26
 msgid "proxiable"
 msgstr "tillader proxies"
 
-#: ../cc-panel/ka-panel.ui.h:25
+#: ../cc-panel/ka-panel.ui.h:27
 msgid "renewable"
 msgstr "kan fornyes"
 

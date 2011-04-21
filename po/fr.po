@@ -1,9 +1,9 @@
 # French translation of krb5-auth-dialog.
-# Copyright (C) 2009 Free Software Foundation, Inc.
+# Copyright (C) 2009-2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the krb5-auth-dialog package.
 #
 # Laurent Coudeur <laurentc@iol.ie>, 2009
-# Claude Paroz <claude@2xlibre.net>, 2009-2010
+# Claude Paroz <claude@2xlibre.net>, 2009-2011
 # Bruno Brouard <annoa.b@gmail.com>, 2011
 #
 msgid ""
@@ -11,9 +11,9 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-03-20 10:38+0000\n"
-"PO-Revision-Date: 2011-03-20 11:35+0100\n"
-"Last-Translator: Bruno Brouard <annoa.b@gmail.com>\n"
+"POT-Creation-Date: 2011-03-30 13:43+0000\n"
+"PO-Revision-Date: 2011-04-21 17:35+0200\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -37,7 +37,11 @@ msgstr "_Renouveler le ticket"
 msgid "unknown error"
 msgstr "erreur inconnue"
 
-#: ../src/ka-dialog.c:335
+#: ../src/ka-dialog.c:317
+msgid "Your ticket cache is currently empty"
+msgstr "Votre cache de tickets est actuellement vide"
+
+#: ../src/ka-dialog.c:343
 msgid "Expired"
 msgstr "Expiré"
 
@@ -1423,27 +1427,31 @@ msgstr "Ne plus afficher"
 msgid "Remove Credentials Cache"
 msgstr "Supprimer le cache des informations d'authentification"
 
-#: ../src/ka-applet.c:611
+#: ../src/ka-applet.c:612
+msgid "You have valid Kerberos credentials."
+msgstr "Vos informations d'authentification Kerberos sont valides."
+
+#: ../src/ka-applet.c:614
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Vous avez actualisé vos informations d'authentification Kerberos."
 
-#: ../src/ka-applet.c:613
+#: ../src/ka-applet.c:617
 msgid "Network credentials valid"
 msgstr "Informations d'authentification réseau valides"
 
-#: ../src/ka-applet.c:632
+#: ../src/ka-applet.c:636
 msgid "Network credentials expiring"
 msgstr "Informations d'authentification Kerberos en cours d'expiration"
 
-#: ../src/ka-applet.c:650
+#: ../src/ka-applet.c:654
 msgid "Network credentials expired"
 msgstr "Informations d'authentification réseau expirées"
 
-#: ../src/ka-applet.c:651
+#: ../src/ka-applet.c:655
 msgid "Your Kerberos credentails have expired."
 msgstr "Vos informations d'authentification Kerberos ont expiré."
 
-#: ../src/ka-applet.c:694
+#: ../src/ka-applet.c:699
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr ""
@@ -1451,18 +1459,18 @@ msgstr ""
 "préférences : %s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-applet.c:740
+#: ../src/ka-applet.c:745
 msgid "translator-credits"
 msgstr ""
 "Laurent Coudeur <laurentc@iol.ie>\n"
 "Claude Paroz <claude@2xlibre.net>"
 
-#: ../src/ka-applet.c:785
+#: ../src/ka-applet.c:790
 msgid "Remove Credentials _Cache"
 msgstr "Supprimer le _cache des informations d'authentification"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:795
+#: ../src/ka-applet.c:800
 msgid "_List Tickets"
 msgstr "É_numérer les tickets"
 
@@ -1487,15 +1495,15 @@ msgstr "Heure de début"
 msgid "End Time"
 msgstr "Heure de fin"
 
-#: ../src/ka-tickets.c:73
+#: ../src/ka-tickets.c:74
 msgid "Fwd"
 msgstr "Transfert"
 
-#: ../src/ka-tickets.c:79
+#: ../src/ka-tickets.c:80
 msgid "Proxy"
 msgstr "Proxy"
 
-#: ../src/ka-tickets.c:85
+#: ../src/ka-tickets.c:86
 msgid "Renew"
 msgstr "Renouvellement"
 
@@ -1605,7 +1613,7 @@ msgstr "Notification de ticket valide"
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Avertissement : exécuter q-agent setuid sur ce système est dangereux\n"
 
-#. Translators: those are keywords for the example control-center panel
+#. Translators: those are keywords for the Kerberos authentication control-center panel
 #: ../cc-panel/gnome-ka-panel.desktop.in.h:3
 msgid "Kerberos;Authentication"
 msgstr "Authentification;Kerberos"
@@ -1619,51 +1627,63 @@ msgid "Certificate and private key used for authentication"
 msgstr "Certificat et clé privée utilisés pour l'authentification"
 
 #: ../cc-panel/ka-panel.ui.h:2
+msgid "Certificate used to verify digital signatures."
+msgstr "Certificat utilisé pour vérifier les signatures numériques."
+
+#: ../cc-panel/ka-panel.ui.h:3
+msgid ""
+"Configure the use of certificates and smartcards for your Kerberos network "
+"authentication."
+msgstr ""
+"Configure l'utilisation de certificats et de cartes à puce pour l'authentification "
+"sur des réseaux Kerberos." 
+
+#: ../cc-panel/ka-panel.ui.h:4
 msgid "If checked, request forwardable tickets"
 msgstr "Si coché, demande des tickets transférables"
 
-#: ../cc-panel/ka-panel.ui.h:3
+#: ../cc-panel/ka-panel.ui.h:5
 msgid "If checked, request proxiable tickets"
 msgstr "Si coché, demande des tickets utilisables via proxy"
 
-#: ../cc-panel/ka-panel.ui.h:4
+#: ../cc-panel/ka-panel.ui.h:6
 msgid "If checked, request renewable tickets"
 msgstr "Si coché, demande des tickets renouvelables"
 
-#: ../cc-panel/ka-panel.ui.h:5
+#: ../cc-panel/ka-panel.ui.h:7
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
-"Si coché, utilise un jeton de sécurité (Smartcard) pour l'authentification."
+"Si coché, utilise un jeton de sécurité (carte à puce) pour l'authentification."
 
-#: ../cc-panel/ka-panel.ui.h:6
+#: ../cc-panel/ka-panel.ui.h:8
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../cc-panel/ka-panel.ui.h:7
+#: ../cc-panel/ka-panel.ui.h:9
 msgid "Kerberos Ticket Options"
 msgstr "Options des tickets Kerberos"
 
-#: ../cc-panel/ka-panel.ui.h:8
+#: ../cc-panel/ka-panel.ui.h:10
 msgid "Kerberos User"
 msgstr "Utilisateur Kerberos"
 
-#: ../cc-panel/ka-panel.ui.h:9
+#: ../cc-panel/ka-panel.ui.h:11
 msgid "Kerberos principal:"
 msgstr "Principal Kerberos :"
 
-#: ../cc-panel/ka-panel.ui.h:10
+#: ../cc-panel/ka-panel.ui.h:12
 msgid "Notifications"
 msgstr "Notifications"
 
-#: ../cc-panel/ka-panel.ui.h:11
-msgid "PKINIT:"
-msgstr "PKINIT :"
+#: ../cc-panel/ka-panel.ui.h:13
+msgid "PKINIT"
+msgstr "PKINIT"
 
-#: ../cc-panel/ka-panel.ui.h:12
+#: ../cc-panel/ka-panel.ui.h:14
 msgid "Requested Kerberos tickets should be:"
 msgstr "Les tickets Kerberos demandés doivent être :"
 
-#: ../cc-panel/ka-panel.ui.h:13
+#: ../cc-panel/ka-panel.ui.h:15
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
@@ -1671,41 +1691,48 @@ msgstr ""
 "Envoyer une notification à propos de l'expiration d'un ticket tant de "
 "minutes avant qu'il n'expire"
 
-#: ../cc-panel/ka-panel.ui.h:14
-msgid "Use Smartcard"
-msgstr "Utiliser une Smartcard"
+#: ../cc-panel/ka-panel.ui.h:16
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+"Le nom de votre compte Kerberos. Laissez vide pour utiliser votre nom "
+"d'utilisateur actuel."
 
-#: ../cc-panel/ka-panel.ui.h:15
-msgid "Userid:"
-msgstr "Identifiant :"
+#: ../cc-panel/ka-panel.ui.h:17
+msgid "Use Smartcard"
+msgstr "Utiliser une carte à puce"
+
+#: ../cc-panel/ka-panel.ui.h:18
+msgid "Userid"
+msgstr "Identifiant"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:17
+#: ../cc-panel/ka-panel.ui.h:20
 msgid "Warn"
 msgstr "Avertir"
 
-#: ../cc-panel/ka-panel.ui.h:18
-msgid "X509 trust anchors:"
-msgstr "Ancrages de confiance X509 :"
+#: ../cc-panel/ka-panel.ui.h:21
+msgid "X509 trust anchors"
+msgstr "Ancrages de confiance X509"
 
-#: ../cc-panel/ka-panel.ui.h:19
+#: ../cc-panel/ka-panel.ui.h:22
 msgid "_Browse..."
 msgstr "_Parcourir..."
 
-#: ../cc-panel/ka-panel.ui.h:20
+#: ../cc-panel/ka-panel.ui.h:23
 msgid "forwardable"
 msgstr "transférables"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:22
+#: ../cc-panel/ka-panel.ui.h:25
 msgid "minutes before ticket expiry"
 msgstr "minutes avant l'expiration du ticket"
 
-#: ../cc-panel/ka-panel.ui.h:23
+#: ../cc-panel/ka-panel.ui.h:26
 msgid "proxiable"
 msgstr "utilisables via proxy"
 
-#: ../cc-panel/ka-panel.ui.h:24
+#: ../cc-panel/ka-panel.ui.h:27
 msgid "renewable"
 msgstr "renouvelables"
 
@@ -1720,4 +1747,3 @@ msgstr "Certificats X509"
 #: ../cc-panel/cc-ka-panel.c:365
 msgid "all files"
 msgstr "tous les fichiers"
-

@@ -1076,7 +1076,7 @@ main (int argc, char *argv[])
     GOptionContext *context;
     GError *error = NULL;
 
-    gboolean run_auto = FALSE, run_always = FALSE;
+    gboolean run_auto = FALSE;
 
     const char *help_msg =
         "Run '" PACKAGE
@@ -1084,9 +1084,6 @@ main (int argc, char *argv[])
     const GOptionEntry options[] = {
         {"auto", 'a', 0, G_OPTION_ARG_NONE, &run_auto,
          "Only run if an initialized ccache is found", NULL},
-        /* accepted for compatibility only */
-        {"always", 'A', 0, G_OPTION_ARG_NONE, &run_always,
-         "Always run (default)", NULL},
         {NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
     };
     GFileMonitor *monitor = NULL;

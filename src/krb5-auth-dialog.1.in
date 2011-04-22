@@ -4,7 +4,7 @@
 krb5-auth-dialog \- Kerberos 5 credential checking
 
 .SH SYNOPSIS
-.B krb5-auth-dialog [--always|--auto]
+.B krb5-auth-dialog [--auto]
 
 .SH DESCRIPTION
 The krb5-auth-dialog application will periodically check (every
@@ -15,13 +15,10 @@ credentials, prompting the user for whatever information is necessary.
 
 .SH ARGUMENTS
 
-.IP --always
-By default, krb5-auth-dialog will exit if it finds that the user has no
-Kerberos credentials.  If this option is specified, then it will instead
-attempt to get credentials.
-
-.IP --auto
-Overrides the --always option, restoring the default behavior.
+.TP
+\fB--auto\fR
+If this option is specified, \fBkrb5-auth-dialog\fR will exit if it finds that the
+user has no Kerberos credentials.
 
 .SH "SEE ALSO"
 .BR krb5.conf (5)
@@ -35,3 +32,5 @@ bug database at http://bugzilla.gnome.org/ against the
 Christopher Aillon <caillon@redhat.com>
 .br
 Jonathan Blandford <jrb@redhat.com>
+.br
+Guido Günther <agx@sigxcpu.org>

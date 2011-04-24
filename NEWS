@@ -1,4 +1,14 @@
 =============
+Version 3.0.1
+=============
+* Fix documentation of --auto
+* UI translations:
+	Claude Paroz (fr)
+	Daniel Mustieles (es)
+	Joe Hansen (da)
+	Matej Urbančič (sl)
+
+=============
 Version 3.0.0
 =============
 * fix DBus activation

@@ -1,48 +1,52 @@
 # Czech translation for krb5-auth-dialog.
-# Copyright (C) 2010 krb5-auth-dialog's COPYRIGHT HOLDER
+# Copyright (C) 2010, 2011 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
-# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2010.
-#
+# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2010, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-21 19:37+0100\n"
-"PO-Revision-Date: 2010-02-25 22:29+0100\n"
+"POT-Creation-Date: 2011-06-10 15:45+0200\n"
+"PO-Revision-Date: 2011-05-27 18:02+0100\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.desktop.in.h:2
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
-msgid "Network Authentication"
-msgstr "Síťová autentizace"
+#: ../src/krb5-auth-dialog.ui.h:1 ../src/krb5-auth-dialog.desktop.in.h:1
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Autentizace Kerberos"
 
-#: ../src/krb5-auth-dialog.xml.h:2
+#: ../src/krb5-auth-dialog.ui.h:2
 msgid "Service Tickets"
 msgstr "Lístky služeb"
 
-#: ../src/krb5-auth-dialog.xml.h:3
+#: ../src/krb5-auth-dialog.ui.h:3
 msgid "_Renew Ticket"
 msgstr "_Obnovit lístek"
 
-#: ../src/krb5-auth-dialog.c:172
+#: ../src/ka-dialog.c:177
 msgid "unknown error"
 msgstr "neznámá chyba"
 
-#: ../src/krb5-auth-dialog.c:329
+#: ../src/ka-dialog.c:317
+msgid "Your ticket cache is currently empty"
+msgstr "Vaše mezipaměť přihlašovacích údajů je prázdná"
+
+#: ../src/ka-dialog.c:343
 msgid "Expired"
 msgstr "Platnost vypršela"
 
-#: ../src/krb5-auth-pwdialog.c:170
+#: ../src/ka-pwdialog.c:178
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Nelze získat lístek: '%s'"
 
-#: ../src/krb5-auth-pwdialog.c:207 ../src/krb5-auth-applet.c:359
+#: ../src/ka-pwdialog.c:217 ../src/ka-applet.c:361
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -50,31 +54,31 @@ msgstr[0] "Vaše přihlašovací údaje vyprší za %d minutu"
 msgstr[1] "Vaše přihlašovací údaje vyprší za %d minuty"
 msgstr[2] "Vaše přihlašovací údaje vyprší za %d minut"
 
-#: ../src/krb5-auth-pwdialog.c:212 ../src/krb5-auth-applet.c:364
+#: ../src/ka-pwdialog.c:222 ../src/ka-applet.c:366
 msgid "Your credentials have expired"
 msgstr "Vaše přihlašovací údaje vypršely"
 
-#: ../src/krb5-auth-pwdialog.c:233
+#: ../src/ka-pwdialog.c:245
 msgid "Please enter your Kerberos password:"
 msgstr "Vložte prosím své Kerberos heslo:"
 
-#: ../src/krb5-auth-pwdialog.c:244
+#: ../src/ka-pwdialog.c:258
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Vložte prosím své heslo pro '%s':"
 
-#: ../src/krb5-auth-pwdialog.c:264
+#: ../src/ka-pwdialog.c:276
 msgid "The password you entered is invalid"
 msgstr "Vložené heslo není platné"
 
-#: ../src/krb5-auth-pwdialog.c:280
+#: ../src/ka-pwdialog.c:292
 #, c-format
 msgid "%s Error"
 msgstr "Chyba %s"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with krb5-auth
+#. doubt please translate strings from files starting with ka- and krb5-auth-
 #. first since these are the ones the user will see in any case.
 #: ../src/dummy-strings.c:10
 msgid "ASN.1 failed call to system time library"
@@ -158,7 +162,7 @@ msgstr "Záznam serveru v databázi vypršel"
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
 #: ../src/dummy-strings.c:26
 msgid "Requested protocol version not supported"
-msgstr ""
+msgstr "Požadovaná verze protokolu není podporována"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
 #: ../src/dummy-strings.c:27
@@ -173,17 +177,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:29
 msgid "Client not found in Kerberos database"
-msgstr ""
+msgstr "Klient nebyl nalezen v databázi Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:30
 msgid "Server not found in Kerberos database"
-msgstr ""
+msgstr "Server nebyl nalezen v databázi Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:31
 msgid "Principal has multiple entries in Kerberos database"
-msgstr ""
+msgstr "Principal má v databázi Kerberos více záznamů"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
 #: ../src/dummy-strings.c:32
@@ -203,7 +207,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
 #: ../src/dummy-strings.c:35
 msgid "KDC policy rejects request"
-msgstr ""
+msgstr "Požadavek byl odmítnut politikou KDC"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
 #: ../src/dummy-strings.c:36
@@ -213,7 +217,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
 #: ../src/dummy-strings.c:37
 msgid "KDC has no support for encryption type"
-msgstr ""
+msgstr "KDC nepodporuje typ šifrování"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:38
@@ -263,7 +267,7 @@ msgstr "Platnost hesla vypršela"
 #. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
 #: ../src/dummy-strings.c:47
 msgid "Preauthentication failed"
-msgstr ""
+msgstr "Preautentizace selhala"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
 #: ../src/dummy-strings.c:48
@@ -283,7 +287,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
 #: ../src/dummy-strings.c:51
 msgid "Decrypt integrity check failed"
-msgstr ""
+msgstr "Selhala kontrola integrity při dešifrování"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
 #: ../src/dummy-strings.c:52
@@ -308,7 +312,7 @@ msgstr "Lístek je pro někoho jiného"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
 #: ../src/dummy-strings.c:56
 msgid "Ticket/authenticator don't match"
-msgstr ""
+msgstr "Lístek/autentikátor neodpovídá"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: ../src/dummy-strings.c:57
@@ -569,7 +573,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
 #: ../src/dummy-strings.c:108
 msgid "Wrong principal in request"
-msgstr ""
+msgstr "Špatný principal v požadavku"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
 #: ../src/dummy-strings.c:109
@@ -579,7 +583,7 @@ msgstr "Lístek nese nesprávné nastavení příznaků"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: ../src/dummy-strings.c:110
 msgid "Requested principal and ticket don't match"
-msgstr ""
+msgstr "Požadovaný principal a lístek si neodpovídají"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: ../src/dummy-strings.c:111
@@ -629,7 +633,7 @@ msgstr "Neznámá služba Kerberos"
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
-msgstr ""
+msgstr "Pro požadovaný realm nelze kontaktovat žádný KDC"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
@@ -1377,159 +1381,173 @@ msgstr ""
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr ""
 
-#. Translators: First number is hours, second number is minutes
-#: ../src/krb5-auth-applet.c:355
+#: ../src/ka-applet.c:355
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vaše přihlašovací údaje vyprší za %.2d:%.2dh"
 
-#: ../src/krb5-auth-applet.c:460
+#: ../src/ka-applet.c:537
+msgid "List Tickets"
+msgstr "Lístky služeb"
+
+#: ../src/ka-applet.c:547
+msgid "Get Ticket"
+msgstr "Získat lístek"
+
+#: ../src/ka-applet.c:556
 msgid "Don't show me this again"
 msgstr "Znovu nezobrazovat"
 
-#: ../src/krb5-auth-applet.c:497
-msgid "Network credentials valid"
-msgstr ""
+#: ../src/ka-applet.c:563
+msgid "Remove Credentials Cache"
+msgstr "Odstranit mezipaměť přihlašovacích údajů"
 
-#: ../src/krb5-auth-applet.c:498
+#: ../src/ka-applet.c:612
+msgid "You have valid Kerberos credentials."
+msgstr "Vaše přihlašovací údaje jsou platné."
+
+#: ../src/ka-applet.c:614
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Aktualizovali jste své přihlašovací údaje."
 
-#: ../src/krb5-auth-applet.c:511
+#: ../src/ka-applet.c:617
+msgid "Network credentials valid"
+msgstr "Síťové přihlašovací údaje jsou platné"
+
+#: ../src/ka-applet.c:636
 msgid "Network credentials expiring"
-msgstr ""
+msgstr "Blíží se konec platnosti síťových přihlašovacích údajů"
 
-#: ../src/krb5-auth-applet.c:526
+#: ../src/ka-applet.c:654
 msgid "Network credentials expired"
-msgstr ""
+msgstr "Platnost síťových přihlašovacích údajů vypršela"
 
-#: ../src/krb5-auth-applet.c:527
+#: ../src/ka-applet.c:655
 msgid "Your Kerberos credentails have expired."
-msgstr ""
+msgstr "Platnost vašich přihlašovacích údajů Kerberos vypršela."
 
-#: ../src/krb5-auth-applet.c:570
+#: ../src/ka-applet.c:699
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
-msgstr ""
-
-#: ../src/krb5-auth-applet.c:611
-#, c-format
-msgid ""
-"There was an error displaying %s:\n"
-"%s"
-msgstr ""
+msgstr "Při spouštění dialogového okna předvoleb došlo k chybě: %s "
 
 #. Translators: add the translators of your language here
-#: ../src/krb5-auth-applet.c:647
+#: ../src/ka-applet.c:745
 msgid "translator-credits"
-msgstr ""
+msgstr "Zdeněk Hataš <zdenek.hatas@gmail.com>"
 
-#. kdestroy
-#: ../src/krb5-auth-applet.c:689
+#: ../src/ka-applet.c:790
 msgid "Remove Credentials _Cache"
 msgstr "Odstranit mezipaměť přihlašova_cích údajů"
 
-#: ../src/krb5-auth-tools.c:45
+#. Ticket dialog
+#: ../src/ka-applet.c:800
+msgid "_List Tickets"
+msgstr "_Lístky služeb"
+
+#: ../src/ka-tools.c:45
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
 msgstr ""
+"Při pokusu o zobrazení nápovědy došlo k chybě:\n"
+"%s"
 
-#: ../src/krb5-auth-tickets.c:54
+#: ../src/ka-tickets.c:56
 msgid "Principal"
 msgstr "Principal"
 
-#: ../src/krb5-auth-tickets.c:60
+#: ../src/ka-tickets.c:62
 msgid "Start Time"
 msgstr "Začátek platnosti"
 
-#: ../src/krb5-auth-tickets.c:66
+#: ../src/ka-tickets.c:68
 msgid "End Time"
 msgstr "Konec platnosti"
 
-#: ../src/krb5-auth-tickets.c:72
+#: ../src/ka-tickets.c:74
 msgid "Fwd"
 msgstr ""
 
-#: ../src/krb5-auth-tickets.c:78
+#: ../src/ka-tickets.c:80
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
-#: ../src/krb5-auth-tickets.c:84
+#: ../src/ka-tickets.c:86
 msgid "Renew"
-msgstr ""
+msgstr "Obnovit"
 
-#: ../src/krb5-auth-tickets.c:107
+#: ../src/ka-tickets.c:109
 msgid "Error displaying service ticket information"
-msgstr ""
+msgstr "Chyba zobrazení informací o lístku služby"
 
-#: ../src/krb5-auth-dialog.desktop.in.h:1
+#: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
-msgstr ""
+msgstr "Dialog síťové autentizace Kerberos"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:1
+msgid "Enabled plugins"
+msgstr "Povolené zásuvné moduly"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:2
 msgid "Forwardable ticket"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:2
+#: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "Kerberos principal"
 msgstr "Kerberos principal"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:3
-msgid "Notify user when ticket becomes valid"
-msgstr ""
-
 #: ../src/krb5-auth-dialog.schemas.in.h:4
-msgid "Notify user when ticket has expired"
-msgstr ""
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr "Seznam zásuvných modulů, které budou nahrány a aktivovány při startu."
 
 #: ../src/krb5-auth-dialog.schemas.in.h:5
-msgid "Notify user when ticket is about to expire"
-msgstr ""
+msgid "Notify user when ticket becomes valid"
+msgstr "Upozornit uživatele, když lístek začne platit"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
+msgid "Notify user when ticket has expired"
+msgstr "Upozornit uživatele, když lístek přestane platit"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:7
+msgid "Notify user when ticket is about to expire"
+msgstr "Upozornit uživatele na blížící se vypršení platnosti lístku"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:8
 msgid "PKINIT CA certificates"
 msgstr "Certifikát CA pro PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:7
+#: ../src/krb5-auth-dialog.schemas.in.h:9
 msgid "PKINIT identifier"
 msgstr "Identifikátor PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:8
+#: ../src/krb5-auth-dialog.schemas.in.h:10
 msgid "PKINIT trust anchors"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:9
+#: ../src/krb5-auth-dialog.schemas.in.h:11
 msgid "Prompt minutes before expiry"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:10
+#: ../src/krb5-auth-dialog.schemas.in.h:12
 msgid "Proxiable ticket"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:11
+#: ../src/krb5-auth-dialog.schemas.in.h:13
 msgid "Renewable ticket"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:12
+#: ../src/krb5-auth-dialog.schemas.in.h:14
 msgid "Requested tickets should be forwardable"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:13
+#: ../src/krb5-auth-dialog.schemas.in.h:15
 msgid "Requested tickets should be proxiable"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:14
-msgid "Requested tickets should be renewable"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:15
-msgid "Show a trayicon in the status area of the panel"
-msgstr ""
-
 #: ../src/krb5-auth-dialog.schemas.in.h:16
-msgid "Show trayicon"
+msgid "Requested tickets should be renewable"
 msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:17
@@ -1539,7 +1557,7 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:18
 msgid "The kerberos principal to acquire the ticket for"
-msgstr ""
+msgstr "Kerberos principal, pro který bude získán lístek"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:19
 msgid "The principal's public/private/certificate identifier when using PKINIT"
@@ -1560,132 +1578,141 @@ msgstr ""
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
-msgstr ""
+msgstr "Pozor: provozovat q-agent setuid na tomto systému je nebezpečné\n"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:345
-msgid "Choose Certificate"
-msgstr "Vyberte certifikát"
+#. Translators: those are keywords for the Kerberos authentication control-center panel
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:3
+msgid "Kerberos;Authentication"
+msgstr "Kerberos;Autentizace"
 
-#: ../preferences/krb5-auth-dialog-preferences.c:361
-msgid "X509 Certificates"
-msgstr "Certifikáty X.509"
-
-#: ../preferences/krb5-auth-dialog-preferences.c:365
-msgid "all files"
-msgstr "všechny soubory"
-
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:4
 msgid "Set your Kerberos network authentication preferences"
-msgstr ""
+msgstr "Nastavte své předvolby síťové autentizace Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:1
-msgid "Appearance"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:2
-msgid "Applet"
-msgstr "Applet"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:3
+#: ../cc-panel/ka-panel.ui.h:1
 msgid "Certificate and private key used for authentication"
 msgstr "Certifikát a soukromý klíč použitý k autentizaci"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
-msgid "If checked, display the tray icon in the status bar"
-msgstr ""
+#: ../cc-panel/ka-panel.ui.h:2
+msgid "Certificate used to verify digital signatures."
+msgstr "Certifikát použitý pro ověření digitálních podpisů."
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
+#: ../cc-panel/ka-panel.ui.h:3
+msgid ""
+"Configure the use of certificates and smartcards for your Kerberos network "
+"authentication."
+msgstr ""
+"Nastavit použití certifikátů a čipových karet při síťové autentizaci "
+"Kerberos."
+
+#: ../cc-panel/ka-panel.ui.h:4
 msgid "If checked, request forwardable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
+#: ../cc-panel/ka-panel.ui.h:5
 msgid "If checked, request proxiable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
+#: ../cc-panel/ka-panel.ui.h:6
 msgid "If checked, request renewable tickets"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
+#: ../cc-panel/ka-panel.ui.h:7
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
+#: ../cc-panel/ka-panel.ui.h:8
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
-msgid "Kerberos Authentication Configuration"
-msgstr "Nastavení autentizace Kerberos"
+#: ../cc-panel/ka-panel.ui.h:9
+msgid "Kerberos Ticket Options"
+msgstr "Vlastnosti lístku Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
+#: ../cc-panel/ka-panel.ui.h:10
 msgid "Kerberos User"
 msgstr "Uživatel"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
+#: ../cc-panel/ka-panel.ui.h:11
 msgid "Kerberos principal:"
 msgstr "Principal:"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
+#: ../cc-panel/ka-panel.ui.h:12
 msgid "Notifications"
 msgstr "Upozornění"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:14
-msgid "PKINIT:"
-msgstr "PKINIT:"
+#: ../cc-panel/ka-panel.ui.h:13
+msgid "PKINIT"
+msgstr "PKINIT"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:15
+#: ../cc-panel/ka-panel.ui.h:14
 msgid "Requested Kerberos tickets should be:"
 msgstr "Požadované lístky Kerberos mohou být:"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:16
+#: ../cc-panel/ka-panel.ui.h:15
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:17
-msgid "Show tray icon"
+#: ../cc-panel/ka-panel.ui.h:16
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
+"Název vašeho účtu Kerberos. Ponechte prázdné, pokud chcete použit aktuální uživatelské jméno."
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:18
-msgid "Ticket Options"
-msgstr "Vlastnosti lístku"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
+#: ../cc-panel/ka-panel.ui.h:17
 msgid "Use Smartcard"
 msgstr "Použít čipovou kartu"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:20
-msgid "Userid:"
-msgstr "Id uživatele:"
+#: ../cc-panel/ka-panel.ui.h:18
+msgid "Userid"
+msgstr "Id uživatele"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:22
+#: ../cc-panel/ka-panel.ui.h:20
 msgid "Warn"
+msgstr "Upozornit"
+
+#: ../cc-panel/ka-panel.ui.h:21
+msgid "X509 trust anchors"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:23
-msgid "X509 trust anchors:"
-msgstr ""
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
+#: ../cc-panel/ka-panel.ui.h:22
 msgid "_Browse..."
-msgstr ""
+msgstr "_Procházet..."
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:25
+#: ../cc-panel/ka-panel.ui.h:23
 msgid "forwardable"
 msgstr ""
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:27
-msgid "minutes before expiry"
-msgstr "minut do vypršení"
+#: ../cc-panel/ka-panel.ui.h:25
+msgid "minutes before ticket expiry"
+msgstr "minut do vypršení lístku"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:28
+#: ../cc-panel/ka-panel.ui.h:26
 msgid "proxiable"
 msgstr ""
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:29
+#: ../cc-panel/ka-panel.ui.h:27
 msgid "renewable"
 msgstr ""
+
+#: ../cc-panel/cc-ka-panel.c:345
+msgid "Choose Certificate"
+msgstr "Vyberte certifikát"
+
+#: ../cc-panel/cc-ka-panel.c:361
+msgid "X509 Certificates"
+msgstr "Certifikáty X.509"
+
+#: ../cc-panel/cc-ka-panel.c:365
+msgid "all files"
+msgstr "všechny soubory"
+
+#~ msgid "Network Authentication"
+#~ msgstr "Síťová autentizace"
+
+#~ msgid "Applet"
+#~ msgstr "Applet"

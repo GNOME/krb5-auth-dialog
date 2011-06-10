@@ -35,7 +35,7 @@ msgstr "neznámá chyba"
 
 #: ../src/ka-dialog.c:317
 msgid "Your ticket cache is currently empty"
-msgstr "Vaše mezipaměť přihlašovacích údajů je prázdná"
+msgstr "Mezipaměť vašich přihlašovacích údajů je prázdná"
 
 #: ../src/ka-dialog.c:343
 msgid "Expired"
@@ -1659,7 +1659,7 @@ msgstr ""
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
-"Název vašeho účtu Kerberos. Ponechte prázdné, pokud chcete použit aktuální uživatelské jméno."
+"Název vašeho účtu Kerberos. Ponechte prázdné, pokud chcete použít aktuální uživatelské jméno."
 
 #: ../cc-panel/ka-panel.ui.h:17
 msgid "Use Smartcard"

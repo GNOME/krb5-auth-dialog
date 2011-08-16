@@ -1,72 +1,77 @@
 # Chinese (China) translation for krb5-auth-dialog.
-# Copyright (C) 2010 Free Software Foundation, Inc.
+# Copyright (C) 2010, 2011 Free Software Foundation, Inc.
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # Yinghua_Wang <wantinghard@gmail.com>, 2010.
+# Aron Xu <aronxu@gnome.org>, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
-"auth-dialog&component=general\n"
-"POT-Creation-Date: 2010-07-29 10:31+0000\n"
-"PO-Revision-Date: 2010-08-11 19:30+0800\n"
-"Last-Translator: Yinghua Wang <wantinghard@gmail.com>\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-16 15:16+0000\n"
+"PO-Revision-Date: 2011-08-16 15:21+0000\n"
+"Last-Translator: Aron Xu <happyaron.xu@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+"Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.desktop.in.h:2
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
-msgid "Network Authentication"
-msgstr "网络认证"
+#: ../src/krb5-auth-dialog.ui.h:1 ../src/krb5-auth-dialog.desktop.in.h:1
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Kerberos 认证"
 
-#: ../src/krb5-auth-dialog.xml.h:2
+#: ../src/krb5-auth-dialog.ui.h:2
 msgid "Service Tickets"
 msgstr "服务票据"
 
-#: ../src/krb5-auth-dialog.xml.h:3
+#: ../src/krb5-auth-dialog.ui.h:3
 msgid "_Renew Ticket"
 msgstr "更新票据(_R)"
 
-#: ../src/ka-dialog.c:172
+#: ../src/ka-dialog.c:177
 msgid "unknown error"
 msgstr "未知错误"
 
-#: ../src/ka-dialog.c:333
+#: ../src/ka-dialog.c:317
+msgid "Your ticket cache is currently empty"
+msgstr ""
+
+#: ../src/ka-dialog.c:343
 msgid "Expired"
 msgstr "已过期"
 
-#: ../src/ka-pwdialog.c:174
+#: ../src/ka-pwdialog.c:178
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "无法获取 Kerberos 票据：'%s'"
 
-#: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:390
+#: ../src/ka-pwdialog.c:217 ../src/ka-applet.c:361
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "您的证书于 %d 分钟后过期"
 
-#: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:395
+#: ../src/ka-pwdialog.c:222 ../src/ka-applet.c:366
 msgid "Your credentials have expired"
 msgstr "您的证书已过期"
 
-#: ../src/ka-pwdialog.c:237
+#: ../src/ka-pwdialog.c:245
 msgid "Please enter your Kerberos password:"
 msgstr "请输入您的 Kerberos 密码："
 
-#: ../src/ka-pwdialog.c:248
+#: ../src/ka-pwdialog.c:258
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "请输入 '%s' 的密码："
 
-#: ../src/ka-pwdialog.c:268
+#: ../src/ka-pwdialog.c:276
 msgid "The password you entered is invalid"
 msgstr "您输入的密码不正确"
 
-#: ../src/ka-pwdialog.c:284
+#: ../src/ka-pwdialog.c:292
 #, c-format
 msgid "%s Error"
 msgstr "%s 错误"
@@ -226,7 +231,6 @@ msgstr "KDC 不支持 padata 类型"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
 #: ../src/dummy-strings.c:40
-#, fuzzy
 msgid "KDC has no support for transited type"
 msgstr "KDC 不支持过渡类型"
 
@@ -383,13 +387,11 @@ msgstr "信息中的校验和类型不合适"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
 #: ../src/dummy-strings.c:71
-#, fuzzy
 msgid "Policy rejects transited path"
 msgstr "策略拒绝中转路径"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:72
-#, fuzzy
 msgid "Response too big for UDP, retry with TCP"
 msgstr "UDP 响应数据包过大，用 TCP 重试"
 
@@ -400,7 +402,6 @@ msgstr "普通错误(见 e-text)"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
 #: ../src/dummy-strings.c:74
-#, fuzzy
 msgid "Field is too long for this implementation"
 msgstr "此实现的字段过长"
 
@@ -471,9 +472,8 @@ msgstr "密钥用途不一致"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
 #: ../src/dummy-strings.c:88
-#, fuzzy
 msgid "Digest in certificate not accepted"
-msgstr "详查证书不被接受"
+msgstr ""
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: ../src/dummy-strings.c:89
@@ -482,9 +482,8 @@ msgstr "必须包含校验和"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: ../src/dummy-strings.c:90
-#, fuzzy
 msgid "Digest in signed-data not accepted"
-msgstr "详查签名的数据不被接受"
+msgstr ""
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: ../src/dummy-strings.c:91
@@ -1107,341 +1106,348 @@ msgstr "插件不支持该操作"
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
 #: ../src/dummy-strings.c:215
 msgid "Kerberos V5 magic number table"
-msgstr "Kerberos V5 幻数表"
+msgstr "Kerberos V5 魔数表"
 
 #. kv5m_err.et:kv5m:KV5M_NONE
 #: ../src/dummy-strings.c:216
 msgid "Bad magic number for krb5_principal structure"
-msgstr "krb5_principal 结构的幻数有误"
+msgstr "krb5_principal 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PRINCIPAL
 #: ../src/dummy-strings.c:217
 msgid "Bad magic number for krb5_data structure"
-msgstr "krb5_data 结构的幻数有误"
+msgstr "krb5_data 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_DATA
 #: ../src/dummy-strings.c:218
 msgid "Bad magic number for krb5_keyblock structure"
-msgstr "krb5_keyblock 结构的幻数有误"
+msgstr "krb5_keyblock 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_KEYBLOCK
 #: ../src/dummy-strings.c:219
 msgid "Bad magic number for krb5_checksum structure"
-msgstr "krb5_checksum 结构的幻数有误"
+msgstr "krb5_checksum 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM
 #: ../src/dummy-strings.c:220
 msgid "Bad magic number for krb5_encrypt_block structure"
-msgstr "krb5_encrypt_block 结构的幻数有误"
+msgstr "krb5_encrypt_block 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
 #: ../src/dummy-strings.c:221
 msgid "Bad magic number for krb5_enc_data structure"
-msgstr "krb5_enc_data 结构的幻数有误"
+msgstr "krb5_enc_data 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_DATA
 #: ../src/dummy-strings.c:222
 msgid "Bad magic number for krb5_cryptosystem_entry structure"
-msgstr "krb5_cryptosystem_entry 结构的幻数有误"
+msgstr "krb5_cryptosystem_entry 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
 #: ../src/dummy-strings.c:223
 msgid "Bad magic number for krb5_cs_table_entry structure"
-msgstr "krb5_cs_table_entry 结构的幻数有误"
+msgstr "krb5_cs_table_entry 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
 #: ../src/dummy-strings.c:224
 msgid "Bad magic number for krb5_checksum_entry structure"
-msgstr "krb5_checksum_entry 结构的幻数有误"
+msgstr "krb5_checksum_entry 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
 #: ../src/dummy-strings.c:225
 msgid "Bad magic number for krb5_authdata structure"
-msgstr "krb5_authdata 结构的幻数有误"
+msgstr "krb5_authdata 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA
 #: ../src/dummy-strings.c:226
 msgid "Bad magic number for krb5_transited structure"
-msgstr "krb5_transited 结构的幻数有误"
+msgstr "krb5_transited 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_TRANSITED
 #: ../src/dummy-strings.c:227
 msgid "Bad magic number for krb5_enc_tkt_part structure"
-msgstr "krb5_enc_tkt_part 结构的幻数有误"
+msgstr "krb5_enc_tkt_part 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
 #: ../src/dummy-strings.c:228
 msgid "Bad magic number for krb5_ticket structure"
-msgstr "krb5_ticket 结构的幻数有误"
+msgstr "krb5_ticket 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_TICKET
 #: ../src/dummy-strings.c:229
 msgid "Bad magic number for krb5_authenticator structure"
-msgstr "krb5_authenticator 结构的幻数有误"
+msgstr "krb5_authenticator 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
 #: ../src/dummy-strings.c:230
 msgid "Bad magic number for krb5_tkt_authent structure"
-msgstr "krb5_tkt_authent 结构的幻数有误"
+msgstr "krb5_tkt_authent 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
 #: ../src/dummy-strings.c:231
 msgid "Bad magic number for krb5_creds structure"
-msgstr "krb5_creds 结构的幻数有误"
+msgstr "krb5_creds 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CREDS
 #: ../src/dummy-strings.c:232
 msgid "Bad magic number for krb5_last_req_entry structure"
-msgstr "krb5_last_req_entry 结构的幻数有误"
+msgstr "krb5_last_req_entry 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
 #: ../src/dummy-strings.c:233
 msgid "Bad magic number for krb5_pa_data structure"
-msgstr "krb5_pa_data 结构的幻数有误"
+msgstr "krb5_pa_data 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PA_DATA
 #: ../src/dummy-strings.c:234
 msgid "Bad magic number for krb5_kdc_req structure"
-msgstr "krb5_kdc_req 结构的幻数有误"
+msgstr "krb5_kdc_req 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REQ
 #: ../src/dummy-strings.c:235
 msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
-msgstr "krb5_enc_kdc_rep_part 结构的幻数有误"
+msgstr "krb5_enc_kdc_rep_part 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
 #: ../src/dummy-strings.c:236
 msgid "Bad magic number for krb5_kdc_rep structure"
-msgstr "krb5_kdc_rep 结构的幻数有误"
+msgstr "krb5_kdc_rep 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REP
 #: ../src/dummy-strings.c:237
 msgid "Bad magic number for krb5_error structure"
-msgstr "krb5_error 结构的幻数有误"
+msgstr "krb5_error 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ERROR
 #: ../src/dummy-strings.c:238
 msgid "Bad magic number for krb5_ap_req structure"
-msgstr "krb5_ap_req 结构的幻数有误"
+msgstr "krb5_ap_req 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REQ
 #: ../src/dummy-strings.c:239
 msgid "Bad magic number for krb5_ap_rep structure"
-msgstr "krb5_ap_rep 结构的幻数有误"
+msgstr "krb5_ap_rep 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP
 #: ../src/dummy-strings.c:240
 msgid "Bad magic number for krb5_ap_rep_enc_part structure"
-msgstr "krb5_ap_rep_enc_part 结构的幻数有误"
+msgstr "krb5_ap_rep_enc_part 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
 #: ../src/dummy-strings.c:241
 msgid "Bad magic number for krb5_response structure"
-msgstr "krb5_response 结构的幻数有误"
+msgstr "krb5_response 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_RESPONSE
 #: ../src/dummy-strings.c:242
 msgid "Bad magic number for krb5_safe structure"
-msgstr "krb5_safe 结构的幻数有误"
+msgstr "krb5_safe 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_SAFE
 #: ../src/dummy-strings.c:243
 msgid "Bad magic number for krb5_priv structure"
-msgstr "krb5_priv 结构的幻数有误"
+msgstr "krb5_priv 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV
 #: ../src/dummy-strings.c:244
 msgid "Bad magic number for krb5_priv_enc_part structure"
-msgstr "krb5_priv_enc_part 结构的幻数有误"
+msgstr "krb5_priv_enc_part 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
 #: ../src/dummy-strings.c:245
 msgid "Bad magic number for krb5_cred structure"
-msgstr "krb5_cred 结构的幻数有误"
+msgstr "krb5_cred 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CRED
 #: ../src/dummy-strings.c:246
 msgid "Bad magic number for krb5_cred_info structure"
-msgstr "krb5_cred_info 结构的幻数有误"
+msgstr "krb5_cred_info 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_INFO
 #: ../src/dummy-strings.c:247
 msgid "Bad magic number for krb5_cred_enc_part structure"
-msgstr "krb5_cred_enc_part 结构的幻数有误"
+msgstr "krb5_cred_enc_part 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
 #: ../src/dummy-strings.c:248
 msgid "Bad magic number for krb5_pwd_data structure"
-msgstr "krb5_pwd_data 结构的幻数有误"
+msgstr "krb5_pwd_data 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PWD_DATA
 #: ../src/dummy-strings.c:249
 msgid "Bad magic number for krb5_address structure"
-msgstr "krb5_address 结构的幻数有误"
+msgstr "krb5_address 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ADDRESS
 #: ../src/dummy-strings.c:250
 msgid "Bad magic number for krb5_keytab_entry structure"
-msgstr "krb5_keytab_entry 结构的幻数有误"
+msgstr "krb5_keytab_entry 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
 #: ../src/dummy-strings.c:251
 msgid "Bad magic number for krb5_context structure"
-msgstr "krb5_context 结构的幻数有误"
+msgstr "krb5_context 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CONTEXT
 #: ../src/dummy-strings.c:252
 msgid "Bad magic number for krb5_os_context structure"
-msgstr "krb5_os_context 结构的幻数有误"
+msgstr "krb5_os_context 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
 #: ../src/dummy-strings.c:253
 msgid "Bad magic number for krb5_alt_method structure"
-msgstr "krb5_alt_method 结构的幻数有误"
+msgstr "krb5_alt_method 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ALT_METHOD
 #: ../src/dummy-strings.c:254
 msgid "Bad magic number for krb5_etype_info_entry structure"
-msgstr "krb5_etype_info_entry 结构的幻数有误"
+msgstr "krb5_etype_info_entry 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
 #: ../src/dummy-strings.c:255
 msgid "Bad magic number for krb5_db_context structure"
-msgstr "krb5_db_context 结构的幻数有误"
+msgstr "krb5_db_context 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
 #: ../src/dummy-strings.c:256
 msgid "Bad magic number for krb5_auth_context structure"
-msgstr "krb5_auth_context 结构的幻数有误"
+msgstr "krb5_auth_context 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
 #: ../src/dummy-strings.c:257
 msgid "Bad magic number for krb5_keytab structure"
-msgstr "krb5_keytab 结构的幻数有误"
+msgstr "krb5_keytab 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB
 #: ../src/dummy-strings.c:258
 msgid "Bad magic number for krb5_rcache structure"
-msgstr "krb5_rcache 结构的幻数有误"
+msgstr "krb5_rcache 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_RCACHE
 #: ../src/dummy-strings.c:259
 msgid "Bad magic number for krb5_ccache structure"
-msgstr "krb5_ccache 结构的幻数有误"
+msgstr "krb5_ccache 结构的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_CCACHE
 #: ../src/dummy-strings.c:260
 msgid "Bad magic number for krb5_preauth_ops"
-msgstr "krb5_preauth_ops 的幻数有误"
+msgstr "krb5_preauth_ops 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
 #: ../src/dummy-strings.c:261
 msgid "Bad magic number for krb5_sam_challenge"
-msgstr "krb5_sam_challenge 的幻数有误"
+msgstr "krb5_sam_challenge 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
 #: ../src/dummy-strings.c:262
 msgid "Bad magic number for krb5_sam_challenge_2"
-msgstr "krb5_sam_challenge_2 的幻数有误"
+msgstr "krb5_sam_challenge_2 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
 #: ../src/dummy-strings.c:263
 msgid "Bad magic number for krb5_sam_key"
-msgstr "krb5_sam_key 的幻数有误"
+msgstr "krb5_sam_key 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_KEY
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
 #: ../src/dummy-strings.c:264 ../src/dummy-strings.c:265
 msgid "Bad magic number for krb5_enc_sam_response_enc"
-msgstr "krb5_enc_sam_response_enc 的幻数有误"
+msgstr "krb5_enc_sam_response_enc 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
 #: ../src/dummy-strings.c:266
 msgid "Bad magic number for krb5_sam_response"
-msgstr "krb5_sam_response 的幻数有误"
+msgstr "krb5_sam_response 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
 #: ../src/dummy-strings.c:267
 msgid "Bad magic number for krb5_sam_response 2"
-msgstr "krb5_sam_response 2 的幻数有误"
+msgstr "krb5_sam_response 2 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
 #: ../src/dummy-strings.c:268
 msgid "Bad magic number for krb5_predicted_sam_response"
-msgstr "krb5_predicted_sam_response 的幻数有误"
+msgstr "krb5_predicted_sam_response 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
 #: ../src/dummy-strings.c:269
 msgid "Bad magic number for passwd_phrase_element"
-msgstr "passwd_phrase_element 的幻数有误"
+msgstr "passwd_phrase_element 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
 #: ../src/dummy-strings.c:270
 msgid "Bad magic number for GSSAPI OID"
-msgstr "GSSAPI OID 的幻数有误"
+msgstr "GSSAPI OID 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_GSS_OID
 #: ../src/dummy-strings.c:271
 msgid "Bad magic number for GSSAPI QUEUE"
-msgstr "GSSAPI  QUEUE 的幻数有误"
+msgstr "GSSAPI  QUEUE 的魔数有误"
 
-#. Translators: First number is hours, second number is minutes
-#: ../src/ka-applet.c:386
+#: ../src/ka-applet.c:355
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "您的证书将于 %.2d:%.2dh 后过期"
 
-#: ../src/ka-applet.c:500
+#: ../src/ka-applet.c:537
 #, fuzzy
+msgid "List Tickets"
+msgstr "列出票据(_L)"
+
+#: ../src/ka-applet.c:547
+#, fuzzy
+msgid "Get Ticket"
+msgstr "列出票据(_L)"
+
+#: ../src/ka-applet.c:556
 msgid "Don't show me this again"
-msgstr "不要再告诉我这个了"
+msgstr "不再显示此信息"
 
-#: ../src/ka-applet.c:542
-msgid "Network credentials valid"
-msgstr "网络证书有效"
+#: ../src/ka-applet.c:563
+#, fuzzy
+msgid "Remove Credentials Cache"
+msgstr "移除证书缓存(_C)"
 
-#: ../src/ka-applet.c:543
+#: ../src/ka-applet.c:612
+msgid "You have valid Kerberos credentials."
+msgstr "您的 Kerberos 证书有效。"
+
+#: ../src/ka-applet.c:614
 msgid "You've refreshed your Kerberos credentials."
 msgstr "您已更新自己的 Kerberos 证书。"
 
-#: ../src/ka-applet.c:559
+#: ../src/ka-applet.c:617
+msgid "Network credentials valid"
+msgstr "网络证书有效"
+
+#: ../src/ka-applet.c:636
 msgid "Network credentials expiring"
 msgstr "网络证书即将过期"
 
-#: ../src/ka-applet.c:578
+#: ../src/ka-applet.c:654
 msgid "Network credentials expired"
 msgstr "网络证书已过期"
 
-#: ../src/ka-applet.c:579
+#: ../src/ka-applet.c:655
 msgid "Your Kerberos credentails have expired."
 msgstr "您的 Kerberos 证书已过期。"
 
-#: ../src/ka-applet.c:624
+#: ../src/ka-applet.c:699
 #, c-format
 msgid "There was an error launching the preferences dialog: %s"
 msgstr "启动首选项对话框时出错：%s"
 
-#: ../src/ka-applet.c:665
-#, c-format
-msgid ""
-"There was an error displaying %s:\n"
-"%s"
-msgstr ""
-"显示 %s 出错：\n"
-"%s"
-
 #. Translators: add the translators of your language here
-#: ../src/ka-applet.c:701
+#: ../src/ka-applet.c:745
 msgid "translator-credits"
 msgstr "Yinghua_Wang <wantinghard@gmail.com>"
 
-#. kdestroy
-#: ../src/ka-applet.c:743
+#: ../src/ka-applet.c:790
 msgid "Remove Credentials _Cache"
 msgstr "移除证书缓存(_C)"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:753
+#: ../src/ka-applet.c:800
 msgid "_List Tickets"
 msgstr "列出票据(_L)"
 
@@ -1454,35 +1460,35 @@ msgstr ""
 "显示帮助时出现了一个错误：\n"
 "%s"
 
-#: ../src/ka-tickets.c:54
+#: ../src/ka-tickets.c:56
 msgid "Principal"
 msgstr "委托方"
 
-#: ../src/ka-tickets.c:60
+#: ../src/ka-tickets.c:62
 msgid "Start Time"
 msgstr "开始时间"
 
-#: ../src/ka-tickets.c:66
+#: ../src/ka-tickets.c:68
 msgid "End Time"
 msgstr "结束时间"
 
-#: ../src/ka-tickets.c:72
+#: ../src/ka-tickets.c:74
 msgid "Fwd"
 msgstr "转发"
 
-#: ../src/ka-tickets.c:78
+#: ../src/ka-tickets.c:80
 msgid "Proxy"
 msgstr "代理"
 
-#: ../src/ka-tickets.c:84
+#: ../src/ka-tickets.c:86
 msgid "Renew"
 msgstr "更新"
 
-#: ../src/ka-tickets.c:107
+#: ../src/ka-tickets.c:109
 msgid "Error displaying service ticket information"
 msgstr "显示服务票据信息出错"
 
-#: ../src/krb5-auth-dialog.desktop.in.h:1
+#: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Kerberos 网络认证对话框"
 
@@ -1551,36 +1557,28 @@ msgid "Requested tickets should be renewable"
 msgstr "请求的票据要是可更新的"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:17
-msgid "Show a trayicon in the status area of the panel"
-msgstr "在面板的状态区显示托盘图标"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:18
-msgid "Show trayicon"
-msgstr "显示托盘图标"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:19
 #, fuzzy
 msgid ""
 "Start prompting/displaying notifications that many minutes before expiry"
 msgstr "在过期前这么多分钟前开始提示/显示通知"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:20
+#: ../src/krb5-auth-dialog.schemas.in.h:18
 msgid "The kerberos principal to acquire the ticket for"
 msgstr "获取票据的 Kerberos 委托方"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:21
+#: ../src/krb5-auth-dialog.schemas.in.h:19
 msgid "The principal's public/private/certificate identifier when using PKINIT"
 msgstr "使用 PKINIT 时委托方的公/私/证书标识符"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:22
+#: ../src/krb5-auth-dialog.schemas.in.h:20
 msgid "ticket expired notification"
 msgstr "票据过期通知"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:23
+#: ../src/krb5-auth-dialog.schemas.in.h:21
 msgid "ticket expiring notification"
 msgstr "票据将过期通知"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:24
+#: ../src/krb5-auth-dialog.schemas.in.h:22
 msgid "valid ticket notification"
 msgstr "有效票据通知"
 
@@ -1589,131 +1587,162 @@ msgstr "有效票据通知"
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "警告：在此系统上执行 q-agent setuid 是危险的\n"
 
-#: ../preferences/ka-preferences.c:345
-msgid "Choose Certificate"
-msgstr "选择证书"
+#. Translators: those are keywords for the Kerberos authentication control-center panel
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:3
+msgid "Kerberos;Authentication"
+msgstr "Kerberos;Authentication;认证"
 
-#: ../preferences/ka-preferences.c:361
-msgid "X509 Certificates"
-msgstr "X509 证书"
-
-#: ../preferences/ka-preferences.c:365
-msgid "all files"
-msgstr "所有文件"
-
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
+#: ../cc-panel/gnome-ka-panel.desktop.in.h:4
 msgid "Set your Kerberos network authentication preferences"
 msgstr "设置您的 Kerberos 网络认证首选参数"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:1
-msgid "Appearance"
-msgstr "外观"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:2
-msgid "Applet"
-msgstr "小程序"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:3
+#: ../cc-panel/ka-panel.ui.h:1
 msgid "Certificate and private key used for authentication"
 msgstr "用于认证的证书和私钥"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
-msgid "If checked, display the tray icon in the status bar"
-msgstr "如果选择，在状态栏显示托盘图标"
+#: ../cc-panel/ka-panel.ui.h:2
+msgid "Certificate used to verify digital signatures."
+msgstr "用于校验数字签名的证书。"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
+#: ../cc-panel/ka-panel.ui.h:3
+msgid ""
+"Configure the use of certificates and smartcards for your Kerberos network "
+"authentication."
+msgstr ""
+"为您的 Kerberos 网络认证配置证书和智能卡。"
+
+#: ../cc-panel/ka-panel.ui.h:4
 msgid "If checked, request forwardable tickets"
 msgstr "如果选择，请求可转发的票据"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
+#: ../cc-panel/ka-panel.ui.h:5
 msgid "If checked, request proxiable tickets"
 msgstr "如果选择，请求可代理的票据"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
+#: ../cc-panel/ka-panel.ui.h:6
 msgid "If checked, request renewable tickets"
 msgstr "如果选择，请求可更新的票据"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
+#: ../cc-panel/ka-panel.ui.h:7
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr "如果选择，使用加密令牌(智能卡)认证。"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
+#: ../cc-panel/ka-panel.ui.h:8
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
-msgid "Kerberos Authentication Configuration"
-msgstr "Kerberos 认证配置"
+#: ../cc-panel/ka-panel.ui.h:9
+#, fuzzy
+msgid "Kerberos Ticket Options"
+msgstr "票据选项"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
+#: ../cc-panel/ka-panel.ui.h:10
 msgid "Kerberos User"
 msgstr "Kerberos 用户"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
+#: ../cc-panel/ka-panel.ui.h:11
 msgid "Kerberos principal:"
 msgstr "Kerberos 委托方："
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
+#: ../cc-panel/ka-panel.ui.h:12
 msgid "Notifications"
 msgstr "通知"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:14
-msgid "PKINIT:"
-msgstr "PKINIT："
+#: ../cc-panel/ka-panel.ui.h:13
+msgid "PKINIT"
+msgstr "PKINIT"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:15
+#: ../cc-panel/ka-panel.ui.h:14
 msgid "Requested Kerberos tickets should be:"
 msgstr "请求的 Kerberos 票据应该："
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:16
+#: ../cc-panel/ka-panel.ui.h:15
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr "在票据最终过期前若干分钟发送票据过期通知"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:17
-msgid "Show tray icon"
-msgstr "显示托盘图标"
+#: ../cc-panel/ka-panel.ui.h:16
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+"您的 Kerberos 帐号名。留空使用当前用户名。"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:18
-msgid "Ticket Options"
-msgstr "票据选项"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
+#: ../cc-panel/ka-panel.ui.h:17
 msgid "Use Smartcard"
 msgstr "使用智能卡"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:20
-msgid "Userid:"
-msgstr "用户标识："
+#: ../cc-panel/ka-panel.ui.h:18
+msgid "Userid"
+msgstr "用户标识"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:22
+#: ../cc-panel/ka-panel.ui.h:20
 msgid "Warn"
 msgstr "警告"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:23
-msgid "X509 trust anchors:"
-msgstr "X509 信任标记："
+#: ../cc-panel/ka-panel.ui.h:21
+msgid "X509 trust anchors"
+msgstr "X509 信任标记"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
+#: ../cc-panel/ka-panel.ui.h:22
 msgid "_Browse..."
 msgstr "浏览(_B)..."
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:25
+#: ../cc-panel/ka-panel.ui.h:23
 msgid "forwardable"
 msgstr "可转发的"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:27
+#: ../cc-panel/ka-panel.ui.h:25
 #, fuzzy
-msgid "minutes before expiry"
+msgid "minutes before ticket expiry"
 msgstr "过期前的分钟数"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:28
+#: ../cc-panel/ka-panel.ui.h:26
 msgid "proxiable"
 msgstr "可代理的"
 
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:29
+#: ../cc-panel/ka-panel.ui.h:27
 msgid "renewable"
 msgstr "可更新的"
+
+#: ../cc-panel/cc-ka-panel.c:345
+msgid "Choose Certificate"
+msgstr "选择证书"
+
+#: ../cc-panel/cc-ka-panel.c:361
+msgid "X509 Certificates"
+msgstr "X509 证书"
+
+#: ../cc-panel/cc-ka-panel.c:365
+msgid "all files"
+msgstr "所有文件"
+
+#~ msgid "Network Authentication"
+#~ msgstr "网络认证"
+
+#~ msgid ""
+#~ "There was an error displaying %s:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "显示 %s 出错：\n"
+#~ "%s"
+
+#~ msgid "Show a trayicon in the status area of the panel"
+#~ msgstr "在面板的状态区显示托盘图标"
+
+#~ msgid "Show trayicon"
+#~ msgstr "显示托盘图标"
+
+#~ msgid "Appearance"
+#~ msgstr "外观"
+
+#~ msgid "Applet"
+#~ msgstr "小程序"
+
+#~ msgid "If checked, display the tray icon in the status bar"
+#~ msgstr "如果选择，在状态栏显示托盘图标"
+
+#~ msgid "Show tray icon"
+#~ msgstr "显示托盘图标"

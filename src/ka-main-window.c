@@ -27,9 +27,10 @@
 
 #include "ka-main-window.h"
 #include "ka-dialog.h"
+#include "ka-tools.h"
 
 static GtkListStore *tickets;
-static GtkWidget *main_window;
+static GtkWindow *main_window;
 
 static void
 ccache_changed_cb (KaApplet* applet G_GNUC_UNUSED,
@@ -39,7 +40,58 @@ ccache_changed_cb (KaApplet* applet G_GNUC_UNUSED,
     ka_get_service_tickets (tickets);
 }
 
-GtkWidget *
+static void
+menuitem_close_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                   gpointer user_data G_GNUC_UNUSED)
+{
+    ka_main_window_hide();
+}
+
+static void
+menuitem_preferences_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                         gpointer user_data G_GNUC_UNUSED)
+{
+    KA_DEBUG("");
+}
+
+static void
+menuitem_about_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                   gpointer user_data G_GNUC_UNUSED)
+{
+    KA_DEBUG("");
+}
+
+static void
+menuitem_help_contents_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                   gpointer user_data G_GNUC_UNUSED)
+{
+    ka_show_help (gtk_window_get_screen (main_window), NULL, NULL);
+}
+
+
+static void
+ka_main_window_create_menu (KaApplet *applet, GtkBuilder *xml)
+{
+    GtkMenuItem *item;
+
+#define CONNECT_MENU(name)                                              \
+    item = GTK_MENU_ITEM (gtk_builder_get_object (xml,                  \
+                                                  "menuitem_" #name));  \
+    g_signal_connect (item,                                             \
+                      "activate",                                       \
+                      G_CALLBACK(menuitem_ ##name## _cb),               \
+                      applet)
+
+    CONNECT_MENU(close);
+    CONNECT_MENU(preferences);
+    CONNECT_MENU(about);
+    CONNECT_MENU(help_contents);
+
+#undef CONNECT_MENU  
+}
+
+
+GtkWindow *
 ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
 {
     GtkCellRenderer *text_renderer, *toggle_renderer;
@@ -53,7 +105,7 @@ ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
                                   G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
     main_window =
-        GTK_WIDGET (gtk_builder_get_object (xml, "krb5_main_window"));
+        GTK_WINDOW (gtk_builder_get_object (xml, "krb5_main_window"));
     tickets_view =
         GTK_TREE_VIEW (gtk_builder_get_object (xml, "krb5_tickets_treeview"));
     gtk_tree_view_set_model (GTK_TREE_VIEW (tickets_view),
@@ -102,6 +154,8 @@ ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
     g_signal_connect (applet, "krb-ccache-changed",
                       G_CALLBACK(ccache_changed_cb),
                       NULL);
+
+    ka_main_window_create_menu(applet, xml);
     return main_window;
 }
 
@@ -109,7 +163,7 @@ void
 ka_main_window_show ()
 {
     if (ka_get_service_tickets (tickets)) {
-        gtk_window_present (GTK_WINDOW (main_window));
+        gtk_window_present (main_window);
     } else {
         GtkWidget *message_dialog;
         
@@ -131,5 +185,5 @@ void
 ka_main_window_hide ()
 {
     KA_DEBUG("Hiding main window");
-    gtk_widget_hide (main_window);
+    gtk_widget_hide (GTK_WIDGET(main_window));
 }

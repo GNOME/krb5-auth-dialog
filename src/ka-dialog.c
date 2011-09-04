@@ -677,9 +677,9 @@ ka_unparse_name ()
 
 
 static void
-ccache_changed_cb (GFileMonitor * monitor G_GNUC_UNUSED,
-                   GFile * file,
-                   GFile * other_file G_GNUC_UNUSED,
+ccache_changed_cb (GFileMonitor *monitor G_GNUC_UNUSED,
+                   GFile *file,
+                   GFile *other_file G_GNUC_UNUSED,
                    GFileMonitorEvent event_type, gpointer data)
 {
     KaApplet *applet = KA_APPLET (data);
@@ -691,6 +691,7 @@ ccache_changed_cb (GFileMonitor * monitor G_GNUC_UNUSED,
     case G_FILE_MONITOR_EVENT_CHANGED:
         KA_DEBUG ("%s changed", ccache_name);
         credentials_expiring ((gpointer) applet);
+        g_signal_emit_by_name(applet, "krb-ccache-changed");
         break;
     default:
         KA_DEBUG ("%s unhandled event: %d", ccache_name, event_type);

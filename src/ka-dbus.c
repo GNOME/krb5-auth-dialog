@@ -156,7 +156,7 @@ ka_dbus_connect_signals(KaApplet *applet)
 {
     int i;
 
-    for (i = 0; i < KA_SIGNAL_COUNT; i++) {
+    for (i = 0; i < KA_SIGNAL_COUNT-1; i++) {
         g_signal_connect (applet, ka_signal_names[i],
                           G_CALLBACK (ka_dbus_signal_cb),
                           (gpointer)ka_signal_names[i]);

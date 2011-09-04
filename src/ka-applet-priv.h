@@ -34,11 +34,13 @@
 
 G_BEGIN_DECLS
 #define KA_NAME _("Kerberos Authentication")
+
 /* signals emitted by KaApplet */
-    typedef enum {
+typedef enum {
     KA_SIGNAL_ACQUIRED_TGT,     /* New TGT acquired */
     KA_SIGNAL_RENEWED_TGT,      /* TGT got renewed */
     KA_SIGNAL_EXPIRED_TGT,      /* TGT expired or ticket cache got destroyed */
+    KA_CCACHE_CHANGED,          /* The credential cache changed */
     KA_SIGNAL_COUNT
 } KaAppletSignalNumber;
 

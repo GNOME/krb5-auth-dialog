@@ -56,6 +56,7 @@ const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
     "krb-tgt-acquired",
     "krb-tgt-renewed",
     "krb-tgt-expired",
+    "krb-ccache-changed",
 };
 
 
@@ -318,8 +319,7 @@ ka_applet_class_init (KaAppletClass *klass)
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class,
                                      KA_PROP_TGT_RENEWABLE, pspec);
-
-    for (i = 0; i < KA_SIGNAL_COUNT; i++) {
+    for (i=0; i < KA_SIGNAL_COUNT-1; i++) {
         guint signalId;
 
         signalId = g_signal_new (ka_signal_names[i], G_OBJECT_CLASS_TYPE (klass),
@@ -329,6 +329,12 @@ ka_applet_class_init (KaAppletClass *klass)
                                  G_TYPE_STRING, G_TYPE_UINT);
         klass->signals[i] = signalId;
     }
+    klass->signals[KA_CCACHE_CHANGED] = g_signal_new (
+        ka_signal_names[KA_CCACHE_CHANGED], 
+        G_OBJECT_CLASS_TYPE (klass),
+        G_SIGNAL_RUN_LAST, 0, NULL, NULL,
+        g_cclosure_marshal_VOID__VOID,
+        G_TYPE_NONE, 0);
 }
 
 
@@ -1028,7 +1034,7 @@ ka_applet_create ()
     applet->priv->gconf = ka_gconf_init (applet);
     g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
 
-    ka_main_window_create (applet->priv->uixml);
+    ka_main_window_create (applet, applet->priv->uixml);
     applet->priv->loader = ka_plugin_loader_create (applet);
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);
 

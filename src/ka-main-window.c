@@ -31,8 +31,16 @@
 static GtkListStore *tickets;
 static GtkWidget *main_window;
 
+static void
+ccache_changed_cb (KaApplet* applet G_GNUC_UNUSED,
+                   gpointer user_data G_GNUC_UNUSED)
+{
+    KA_DEBUG("Refreshing ticket list");
+    ka_get_service_tickets (tickets);
+}
+
 GtkWidget *
-ka_main_window_create (GtkBuilder *xml)
+ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
 {
     GtkCellRenderer *text_renderer, *toggle_renderer;
     GtkTreeView *tickets_view;
@@ -90,6 +98,10 @@ ka_main_window_create (GtkBuilder *xml)
                                                 "active",
                                                 RENEWABLE_COLUMN,
                                                 NULL);
+
+    g_signal_connect (applet, "krb-ccache-changed",
+                      G_CALLBACK(ccache_changed_cb),
+                      NULL);
     return main_window;
 }
 

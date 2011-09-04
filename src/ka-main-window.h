@@ -21,6 +21,8 @@
 #ifndef KA_TICKETS_H
 #define KA_TICKETS_H
 
+#include "ka-applet.h"
+
 enum ticket_columns {
     PRINCIPAL_COLUMN,
     START_TIME_COLUMN,
@@ -32,7 +34,7 @@ enum ticket_columns {
 };
 
 
-GtkWidget *ka_main_window_create (GtkBuilder *xml);
+GtkWidget *ka_main_window_create (KaApplet *applet, GtkBuilder *xml);
 void ka_main_window_show (void);
 void ka_main_window_hide (void);
 

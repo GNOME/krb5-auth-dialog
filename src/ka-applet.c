@@ -29,6 +29,7 @@
 #include "ka-tools.h"
 #include "ka-main-window.h"
 #include "ka-plugin-loader.h"
+#include "ka-preferences.h"
 #include "ka-closures.h"
 #include <libnotify/notify.h>
 
@@ -1014,6 +1015,8 @@ ka_applet_create ()
     g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
 
     ka_main_window_create (applet, applet->priv->uixml);
+    ka_preferences_window_create (applet, applet->priv->uixml);
+
     applet->priv->loader = ka_plugin_loader_create (applet);
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);
 

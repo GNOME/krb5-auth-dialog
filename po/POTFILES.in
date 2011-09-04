@@ -5,9 +5,7 @@ src/dummy-strings.c
 src/ka-applet.c
 src/ka-tools.c
 src/ka-main-window.c
+src/ka-preferences.c
 src/krb5-auth-dialog.desktop.in
 src/krb5-auth-dialog.schemas.in
 secmem/util.c
-cc-panel/gnome-ka-panel.desktop.in
-[type: gettext/glade]cc-panel/ka-panel.ui
-cc-panel/cc-ka-panel.c

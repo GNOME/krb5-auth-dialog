@@ -277,7 +277,6 @@ po/Makefile.in
 help/Makefile
 examples/Makefile
 plugins/Makefile
-cc-panel/Makefile
 ])
 AC_OUTPUT
 

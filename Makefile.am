@@ -1,6 +1,6 @@
 NULL = 
 
-SUBDIRS = secmem src po etpo icons help examples plugins cc-panel
+SUBDIRS = secmem src po etpo icons help examples plugins
 
 EXTRA_DIST = \
 	krb5-auth-dialog.spec \

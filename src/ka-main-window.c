@@ -28,6 +28,7 @@
 #include "ka-main-window.h"
 #include "ka-dialog.h"
 #include "ka-tools.h"
+#include "ka-preferences.h"
 
 static GtkListStore *tickets;
 static GtkWindow *main_window;
@@ -51,7 +52,7 @@ static void
 menuitem_preferences_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
                          gpointer user_data G_GNUC_UNUSED)
 {
-    KA_DEBUG("");
+    ka_preferences_window_show (main_window);
 }
 
 static void

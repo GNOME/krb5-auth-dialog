@@ -46,6 +46,8 @@ krb5_auth_dialog_SOURCES =	\
 	ka-plugin.h		\
 	ka-plugin-loader.c	\
 	ka-plugin-loader.h	\
+	ka-preferences.c	\
+	ka-preferences.h	\
 	ka-closures.h		\
 	ka-closures.c		\
 	ka-entry-buffer.h	\

@@ -4,7 +4,7 @@ src/ka-pwdialog.c
 src/dummy-strings.c
 src/ka-applet.c
 src/ka-tools.c
-src/ka-tickets.c
+src/ka-main-window.c
 src/krb5-auth-dialog.desktop.in
 src/krb5-auth-dialog.schemas.in
 secmem/util.c

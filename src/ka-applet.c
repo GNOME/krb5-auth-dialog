@@ -27,7 +27,7 @@
 #include "ka-gconf-tools.h"
 #include "ka-gconf.h"
 #include "ka-tools.h"
-#include "ka-tickets.h"
+#include "ka-main-window.h"
 #include "ka-plugin-loader.h"
 #include "ka-closures.h"
 #include <libnotify/notify.h>
@@ -456,8 +456,8 @@ ka_notify_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
         KA_DEBUG ("Removing ccache");
         ka_destroy_ccache (self);
     } else if (strcmp (action, "ka-list-tickets") == 0) {
-        KA_DEBUG ("Listing tickets");
-        ka_tickets_dialog_run ();
+        KA_DEBUG ("Showing main window");
+        ka_main_window_show ();
     } else {
         g_warning ("unkonwn action for callback");
     }
@@ -771,7 +771,7 @@ static void
 ka_applet_cb_show_tickets (GtkMenuItem *menuitem G_GNUC_UNUSED,
                            gpointer user_data G_GNUC_UNUSED)
 {
-    ka_tickets_dialog_run ();
+    ka_main_window_show ();
 }
 
 
@@ -1028,7 +1028,7 @@ ka_applet_create ()
     applet->priv->gconf = ka_gconf_init (applet);
     g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
 
-    ka_tickets_dialog_create (applet->priv->uixml);
+    ka_main_window_create (applet->priv->uixml);
     applet->priv->loader = ka_plugin_loader_create (applet);
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);
 

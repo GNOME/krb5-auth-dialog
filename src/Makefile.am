@@ -40,8 +40,8 @@ krb5_auth_dialog_SOURCES =	\
 	ka-dbus.h		\
 	ka-tools.c		\
 	ka-tools.h		\
-	ka-tickets.c		\
-	ka-tickets.h		\
+	ka-main-window.c	\
+	ka-main-window.h	\
 	ka-plugin.c		\
 	ka-plugin.h		\
 	ka-plugin-loader.c	\

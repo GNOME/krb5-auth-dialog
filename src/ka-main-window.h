@@ -32,8 +32,9 @@ enum ticket_columns {
 };
 
 
-GtkWidget *ka_tickets_dialog_create (GtkBuilder *xml);
-void ka_tickets_dialog_run (void);
+GtkWidget *ka_main_window_create (GtkBuilder *xml);
+void ka_main_window_show (void);
+void ka_main_window_hide (void);
 
 
 #endif

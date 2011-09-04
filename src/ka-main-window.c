@@ -1,6 +1,8 @@
-/* Krb5 Auth Applet -- Acquire and release kerberos tickets
+/* -*- c-file-style: "linux"; c-basic-offset: 4; indent-tabs-mode: nil; -*- *
  *
- * (C) 2009 Guido Guenther <agx@sigxcpu.org>
+ * Krb5 Auth Applet -- Acquire and release kerberos tickets
+ *
+ * (C) 2009,2011 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -23,14 +25,14 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 
-#include "ka-tickets.h"
+#include "ka-main-window.h"
 #include "ka-dialog.h"
 
 static GtkListStore *tickets;
-static GtkWidget *tickets_dialog;
+static GtkWidget *main_window;
 
 GtkWidget *
-ka_tickets_dialog_create (GtkBuilder *xml)
+ka_main_window_create (GtkBuilder *xml)
 {
     GtkCellRenderer *text_renderer, *toggle_renderer;
     GtkTreeView *tickets_view;
@@ -42,8 +44,8 @@ ka_tickets_dialog_create (GtkBuilder *xml)
                                   G_TYPE_BOOLEAN,
                                   G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
-    tickets_dialog =
-        GTK_WIDGET (gtk_builder_get_object (xml, "krb5_tickets_dialog"));
+    main_window =
+        GTK_WIDGET (gtk_builder_get_object (xml, "krb5_main_window"));
     tickets_view =
         GTK_TREE_VIEW (gtk_builder_get_object (xml, "krb5_tickets_treeview"));
     gtk_tree_view_set_model (GTK_TREE_VIEW (tickets_view),
@@ -88,19 +90,17 @@ ka_tickets_dialog_create (GtkBuilder *xml)
                                                 "active",
                                                 RENEWABLE_COLUMN,
                                                 NULL);
-    return tickets_dialog;
+    return main_window;
 }
 
 void
-ka_tickets_dialog_run ()
+ka_main_window_show ()
 {
     if (ka_get_service_tickets (tickets)) {
-        gtk_window_present (GTK_WINDOW (tickets_dialog));
-        gtk_dialog_run (GTK_DIALOG (tickets_dialog));
-        gtk_widget_hide (tickets_dialog);
+        gtk_window_present (GTK_WINDOW (main_window));
     } else {
         GtkWidget *message_dialog;
-
+        
         message_dialog = gtk_message_dialog_new (NULL,
                                                  GTK_DIALOG_DESTROY_WITH_PARENT,
                                                  GTK_MESSAGE_ERROR,
@@ -108,9 +108,16 @@ ka_tickets_dialog_run ()
                                                  _
                                                  ("Error displaying service ticket information"));
         gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
-
+        
         g_signal_connect (message_dialog, "response",
                           G_CALLBACK (gtk_widget_destroy), NULL);
         gtk_widget_show (message_dialog);
     }
+}
+
+void
+ka_main_window_hide ()
+{
+    KA_DEBUG("Hiding main window");
+    gtk_widget_hide (main_window);
 }

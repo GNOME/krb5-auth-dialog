@@ -40,7 +40,7 @@
 #include "ka-pwdialog.h"
 #include "ka-dbus.h"
 #include "ka-tools.h"
-#include "ka-tickets.h"
+#include "ka-main-window.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
 #include <nm-client.h>

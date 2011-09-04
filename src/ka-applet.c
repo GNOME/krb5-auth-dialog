@@ -1020,6 +1020,8 @@ ka_applet_create ()
         g_assert (error->message);
         g_error ("Failed to load UI XML: %s", error->message);
     }
+    gtk_builder_connect_signals (applet->priv->uixml, NULL);
+
     applet->priv->pwdialog = ka_pwdialog_create (applet->priv->uixml);
     g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 

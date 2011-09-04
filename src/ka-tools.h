@@ -26,6 +26,7 @@
 G_BEGIN_DECLS
 
 void ka_show_help (GdkScreen* screen, const char* section, GtkWindow* window);
+void ka_show_about (void);
 
 G_END_DECLS
 

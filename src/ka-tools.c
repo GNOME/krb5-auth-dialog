@@ -55,3 +55,31 @@ ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
   }
   g_free (url);
 }
+
+
+void 
+ka_show_about ()
+{
+    const gchar *authors[] = {
+        "Christopher Aillon <caillon@redhat.com>",
+        "Jonathan Blandford <jrb@redhat.com>",
+        "Colin Walters <walters@verbum.org>",
+        "Guido Günther <agx@sigxcpu.org>",
+        NULL
+    };
+
+    gtk_show_about_dialog (NULL,
+                           "authors", authors,
+                           "version", VERSION,
+                           "logo-icon-name", "krb-valid-ticket",
+                           "copyright",
+                           "Copyright (C) 2004,2005,2006 Red Hat, Inc.,\n"
+                           "2008-2011 Guido Günther",
+                           "website-label", PACKAGE " website",
+                           "website",
+                           "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",
+                           "license", "GNU General Public License Version 2",
+                           /* Translators: add the translators of your language here */
+                           "translator-credits", _("translator-credits"),
+                           NULL);
+}

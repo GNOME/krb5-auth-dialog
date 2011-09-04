@@ -58,7 +58,7 @@ static void
 menuitem_about_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
                    gpointer user_data G_GNUC_UNUSED)
 {
-    KA_DEBUG("");
+    ka_show_about ();
 }
 
 static void

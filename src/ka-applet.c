@@ -687,33 +687,6 @@ ka_applet_menu_add_separator_item (GtkWidget *menu)
     gtk_widget_show (menu_item);
 }
 
-static void
-ka_applet_preferences_cb (GtkWidget *menuitem G_GNUC_UNUSED,
-                          gpointer user_data G_GNUC_UNUSED)
-{
-    GError *error = NULL;
-
-    g_spawn_command_line_async (BIN_DIR
-                                G_DIR_SEPARATOR_S
-                                "gnome-control-center ka-panel", &error);
-    if (error) {
-        GtkWidget *message_dialog;
-
-        message_dialog = gtk_message_dialog_new (NULL,
-                                                 GTK_DIALOG_DESTROY_WITH_PARENT,
-                                                 GTK_MESSAGE_ERROR,
-                                                 GTK_BUTTONS_CLOSE,
-                                                 _("There was an error launching the preferences dialog: %s"),
-                                                 error->message);
-        gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
-
-        g_signal_connect (message_dialog, "response",
-                          G_CALLBACK (gtk_widget_destroy), NULL);
-        gtk_widget_show (message_dialog);
-        g_clear_error (&error);
-    }
-}
-
 
 /* Free all resources and quit */
 static void
@@ -722,14 +695,6 @@ ka_applet_quit_cb (GtkMenuItem *menuitem G_GNUC_UNUSED, gpointer user_data)
     KaApplet *applet = KA_APPLET (user_data);
 
     ka_applet_destroy (applet);
-}
-
-
-static void
-ka_applet_about_dialog_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                           gpointer user_data G_GNUC_UNUSED)
-{
-    ka_show_about();
 }
 
 
@@ -788,23 +753,10 @@ ka_applet_create_context_menu (KaApplet *applet)
                       G_CALLBACK (ka_applet_show_tickets_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
-    /* Preferences */
-    menu_item =
-        gtk_image_menu_item_new_from_stock (GTK_STOCK_PREFERENCES, NULL);
-    g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_preferences_cb), applet);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
-
-    /* About item */
+    /* Help item */
     menu_item = gtk_image_menu_item_new_from_stock (GTK_STOCK_HELP, NULL);
     g_signal_connect (G_OBJECT (menu_item), "activate",
                       G_CALLBACK (ka_applet_show_help_cb), applet);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
-
-    /* About item */
-    menu_item = gtk_image_menu_item_new_from_stock (GTK_STOCK_ABOUT, NULL);
-    g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_about_dialog_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
     ka_applet_menu_add_separator_item (menu);

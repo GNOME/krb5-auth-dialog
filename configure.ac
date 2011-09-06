@@ -193,13 +193,6 @@ CFLAGS="$savedCFLAGS"
 LIBS="$savedLIBS"
 
 
-dnl libgnome-control-center
-dnl for the new panel
-PKG_CHECK_MODULES(CONTROL_CENTER, [
- libgnome-control-center >= 2.31.4])
-PANELS_DIR="${libdir}/control-center-1/panels"
-AC_SUBST(PANELS_DIR)
-
 dnl secmem
 dnl Checks for library functions.
 AC_CHECK_FUNCS(seteuid stpcpy mmap)
@@ -300,7 +293,6 @@ AC_MSG_NOTICE([  Network Manager: $NETWORK_MANAGER_CFLAGS $NETWORK_MANAGER_LIBS]
 else
 AC_MSG_NOTICE([  Network Manager: no])
 fi
-AC_MSG_NOTICE([         gnome-cc: $CONTROL_CENTER_CFLAGS $CONTROL_CENTER_LIBS])
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Miscellaneous])
 AC_MSG_NOTICE([])

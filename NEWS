@@ -1,3 +1,15 @@
+==============
+Version 3.1.91
+==============
+* Move preferences from cc into the app (BZ#657292)
+* Update ticket list on ccache changes
+* Add menu bar to ticket dialog making help accessible again
+* UI translations:
+	Aron Xu (zh_CN)
+	dmustieles (es)
+	Fran Dieguez (gl)
+	Petr Kovar (cs)
+
 =============
 Version 3.0.1
 =============

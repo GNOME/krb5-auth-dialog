@@ -87,6 +87,11 @@ struct _KaAppletPrivate {
     int pw_prompt_secs;         /* when to start sending notifications */
     KaPluginLoader *loader;     /* Plugin loader */
 
+    /* command line handling */
+    gboolean startup_ccache;    /* ccache found on startup */
+    gboolean auto_run;          /* only start with valid ccache */
+
+    /* GConf optins */
     NotifyNotification *notification;   /* notification messages */
     char *krb_msg;              /* Additional banner delivered by Kerberos */
     const char *notify_gconf_key;       /* disable notification gconf key */
@@ -101,22 +106,95 @@ struct _KaAppletPrivate {
     GConfClient *gconf;         /* gconf client */
 };
 
+
 static void ka_close_notification (KaApplet *self);
+static gboolean is_initialized;
 
 static void 
 ka_applet_activate (GApplication *application G_GNUC_UNUSED)
 {
+    if (is_initialized) {
+        KA_DEBUG ("Main window activated");
+        ka_main_window_show ();
+    } else
+        is_initialized = TRUE;
+}
+
+
+static int
+ka_applet_command_line (GApplication            *application,
+                        GApplicationCommandLine *cmdline G_GNUC_UNUSED)
+{
+    KaApplet *self = KA_APPLET(application);
+    KA_DEBUG ("Evaluating command line");
+    
+    if (!self->priv->startup_ccache &&
+        self->priv->auto_run)
+        ka_applet_destroy (self);
+    else
+        ka_applet_activate (application);
+    return 0;
+}
+
+
+
+static gint
+ka_applet_local_command_line (GApplication *application,
+                              gchar ***argv,
+                              gint *exit_status)
+{
+    KaApplet *self = KA_APPLET(application);
+    GOptionContext *context;
+    GError *error = NULL;
+
+    gint argc = g_strv_length (*argv);
+    gboolean auto_run = FALSE;
+
+    const char *help_msg =
+        "Run '" PACKAGE
+        " --help' to see a full list of available command line options";
+    const GOptionEntry options[] = {
+        {"auto", 'a', 0, G_OPTION_ARG_NONE, &auto_run,
+         "Only run if an initialized ccache is found", NULL},
+        {NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
+    };
+
+    KA_DEBUG ("Parsing local command line");
+    
+    context = g_option_context_new ("- Kerberos 5 credential checking");
+    g_option_context_add_main_entries (context, options, NULL);
+    g_option_context_add_group (context, gtk_get_option_group (TRUE));
+    g_option_context_parse (context, &argc, argv, &error);
+
+    if (error) {
+        g_print ("%s\n%s\n", error->message, help_msg);
+        g_clear_error (&error);
+        *exit_status = 1;
+    } else {
+        self->priv->auto_run = auto_run;
+        *exit_status = 0;
+    }
+
+    g_option_context_free (context);
+    return FALSE;
 }
 
 static void
 ka_applet_startup (GApplication *application)
 {
     KaApplet *self = KA_APPLET (application);
+    GtkWindow *main_window;
 
+    KA_DEBUG ("Primary application");
+
+    self->priv->startup_ccache = ka_kerberos_init (self);
     if (!ka_dbus_connect (self)) {
         ka_applet_destroy (self);
     }
-    ka_kerberos_init (self);
+
+    main_window = ka_main_window_create (self, self->priv->uixml);
+    gtk_application_add_window (GTK_APPLICATION(self), main_window);
+    ka_preferences_window_create (self, self->priv->uixml);
 }
 
 static void
@@ -285,12 +363,13 @@ ka_applet_class_init (KaAppletClass *klass)
     object_class->finalize = ka_applet_finalize;
     g_type_class_add_private (klass, sizeof (KaAppletPrivate));
 
-    G_APPLICATION_CLASS (klass)->activate = ka_applet_activate;
+    G_APPLICATION_CLASS (klass)->local_command_line =   \
+        ka_applet_local_command_line;
+    G_APPLICATION_CLASS (klass)->command_line = ka_applet_command_line;
     G_APPLICATION_CLASS (klass)->startup = ka_applet_startup;
 
     object_class->set_property = ka_applet_set_property;
     object_class->get_property = ka_applet_get_property;
-
 
     pspec = g_param_spec_string ("principal",
                                  "Principal",
@@ -947,12 +1026,21 @@ ka_ns_check_persistence (KaApplet *self)
 
 /* destroy the applet and quit */
 void
-ka_applet_destroy (KaApplet* applet)
+ka_applet_destroy (KaApplet* self)
 {
-    g_object_unref (applet);
-    gtk_main_quit ();
+    GList *windows, *first;
+
     ka_dbus_disconnect ();
+
+    windows = gtk_application_get_windows (GTK_APPLICATION(self));
+    if (windows) {
+        first = g_list_first (windows);
+        gtk_application_remove_window(GTK_APPLICATION (self), 
+                                      GTK_WINDOW (first->data));
+    }
+
     ka_kerberos_destroy ();
+    g_object_unref (self);
 }
 
 
@@ -961,10 +1049,9 @@ KaApplet *
 ka_applet_create ()
 {
     KaApplet *applet = ka_applet_new ();
-    GtkWindow *main_window;
     GError *error = NULL;
     gboolean ret;
-    
+
     if (!(ka_applet_setup_icons (applet)))
         g_error ("Failure to setup icons");
     gtk_window_set_default_icon_name (applet->priv->icons[val_icon]);
@@ -991,10 +1078,6 @@ ka_applet_create ()
 
     applet->priv->gconf = ka_gconf_init (applet);
     g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
-
-    main_window = ka_main_window_create (applet, applet->priv->uixml);
-    gtk_application_add_window (GTK_APPLICATION(applet), main_window);
-    ka_preferences_window_create (applet, applet->priv->uixml);
 
     applet->priv->loader = ka_plugin_loader_create (applet);
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);

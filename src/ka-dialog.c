@@ -59,7 +59,6 @@ static krb5_timestamp creds_expiry;
 static krb5_timestamp canceled_creds_expiry;
 static gboolean canceled;
 static gboolean invalid_auth;
-static gboolean always_run;
 static gboolean is_online = TRUE;
 GFileMonitor *ccache_monitor;
 
@@ -899,7 +898,7 @@ ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 }
 
 static gboolean
-using_krb5 (void)
+ka_krb5_context_init ()
 {
     krb5_error_code err;
     gboolean have_tgt = FALSE;
@@ -915,6 +914,14 @@ using_krb5 (void)
         krb5_free_cred_contents (kcontext, &creds);
     }
     return have_tgt;
+}
+
+
+static gboolean
+ka_krb5_context_free ()
+{
+    krb5_free_context (kcontext);
+    return TRUE;
 }
 
 
@@ -1073,13 +1080,15 @@ ka_nm_init (void)
 gboolean
 ka_kerberos_init (KaApplet *applet)
 {
-    ka_nm_init ();
+    gboolean ret;
 
+    ret = ka_krb5_context_init (applet);
+    ka_nm_init ();
     g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
                            (GSourceFunc) credentials_expiring, applet);
     g_idle_add ((GSourceFunc) credentials_expiring_once, applet);
     ccache_monitor = monitor_ccache (applet);
-    return TRUE;
+    return ret;
 }
 
 
@@ -1090,6 +1099,8 @@ ka_kerberos_destroy ()
 
     if (ccache_monitor)
         g_object_unref (ccache_monitor);
+
+    ka_krb5_context_free ();
     return TRUE;
 }
 
@@ -1098,47 +1109,21 @@ int
 main (int argc, char *argv[])
 {
     KaApplet *applet;
-    GOptionContext *context;
-    GError *error = NULL;
-
-    gboolean run_auto = FALSE;
-
-    const char *help_msg =
-        "Run '" PACKAGE
-        " --help' to see a full list of available command line options";
-    const GOptionEntry options[] = {
-        {"auto", 'a', 0, G_OPTION_ARG_NONE, &run_auto,
-         "Only run if an initialized ccache is found", NULL},
-        {NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
-    };
-
-    context = g_option_context_new ("- Kerberos 5 credential checking");
-    g_option_context_add_main_entries (context, options, NULL);
-    g_option_context_add_group (context, gtk_get_option_group (TRUE));
-    g_option_context_parse (context, &argc, &argv, &error);
-
-    if (error) {
-        g_print ("%s\n%s\n", error->message, help_msg);
-        g_clear_error (&error);
-        return 1;
-    }
-    g_option_context_free (context);
+    int ret = 0;
 
     textdomain (PACKAGE);
     bind_textdomain_codeset (PACKAGE, "UTF-8");
     bindtextdomain (PACKAGE, LOCALE_DIR);
     ka_secmem_init ();
+    g_set_application_name (KA_NAME);
 
-    always_run = !run_auto;
-    if (using_krb5 () || always_run) {
-        g_set_application_name (KA_NAME);
+    gtk_init (&argc, &argv);
+    applet = ka_applet_create ();
+    if (!applet)
+        return 1;
 
-        applet = ka_applet_create ();
-        if (!applet)
-            return 1;
-        g_application_run (G_APPLICATION(applet), argc, argv);
-    }
-    return 0;
+    ret = g_application_run (G_APPLICATION(applet), argc, argv);
+    return ret;
 }
 
 /*

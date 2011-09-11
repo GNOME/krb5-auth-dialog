@@ -1125,7 +1125,7 @@ main (int argc, char *argv[])
         g_idle_add ((GSourceFunc) credentials_expiring_once, applet);
         monitor = monitor_ccache (applet);
 
-        gtk_main ();
+        g_application_run (G_APPLICATION(applet), argc, argv);
     }
     ka_dbus_disconnect ();
     ka_nm_shutdown ();

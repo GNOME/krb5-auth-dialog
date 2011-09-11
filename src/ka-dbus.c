@@ -24,7 +24,6 @@
 #include "ka-dialog.h"
 #include "ka-dbus.h"
 
-static guint dbus_owner_id;
 static GDBusConnection *dbus_connection;
 static const char *dbus_object_path = "/org/gnome/KrbAuthDialog";
 static const char *dbus_interface_name = "org.gnome.KrbAuthDialog";
@@ -171,18 +170,19 @@ static const GDBusInterfaceVTable interface_vtable =
 
 
 static void
-ka_dbus_on_bus_acquired (GDBusConnection *connection,
-                         const gchar     *name G_GNUC_UNUSED,
-                         gpointer         user_data)
+ka_dbus_on_get_bus_cb (GObject *source_object G_GNUC_UNUSED,
+                       GAsyncResult *res,
+                       gpointer      user_data)
 {
     KaApplet *applet = user_data;
     guint id;
 
+    dbus_connection = g_bus_get_finish (res, NULL);
     introspection_data = g_dbus_node_info_new_for_xml (
         ka_dbus_introspection_xml,
         NULL);
 
-    id = g_dbus_connection_register_object (connection,
+    id = g_dbus_connection_register_object (dbus_connection,
                                         "/org/gnome/KrbAuthDialog",
                                         introspection_data->interfaces[0],
                                         &interface_vtable,
@@ -190,22 +190,8 @@ ka_dbus_on_bus_acquired (GDBusConnection *connection,
                                         NULL,  /* user_data_free_func */
                                         NULL); /* GError** */
     if (!id)
-        g_error ("Failed to regiester DBus object");
+        g_error ("Failed to register DBus object");
     ka_dbus_connect_signals (applet);
-
-    dbus_connection = connection;
-}
-
-
-static void
-ka_dbus_on_name_lost (GDBusConnection *connection G_GNUC_UNUSED,
-                      const gchar *name G_GNUC_UNUSED,
-                      gpointer user_data)
-{
-    KaApplet *applet = user_data;
-
-    g_warning ("Cannot acquire DBUS name");
-    ka_applet_destroy (applet);
 }
 
 
@@ -217,10 +203,6 @@ ka_dbus_disconnect ()
         introspection_data = NULL;
     }
 
-    if (dbus_owner_id) {
-        g_bus_unown_name (dbus_owner_id);
-        dbus_owner_id = 0;
-    }
     dbus_connection = NULL;
 }
 
@@ -230,17 +212,12 @@ ka_dbus_connect (KaApplet *applet)
 {
     g_return_val_if_fail (applet != 0, FALSE);
 
-    dbus_owner_id = g_bus_own_name (G_BUS_TYPE_SESSION,
-                                    "org.gnome.KrbAuthDialog",
-                                    G_BUS_NAME_OWNER_FLAGS_ALLOW_REPLACEMENT,
-                                    ka_dbus_on_bus_acquired,
-                                    NULL,
-                                    ka_dbus_on_name_lost,
-                                    applet,
-                                    NULL);
+    g_bus_get (G_BUS_TYPE_SESSION, NULL, ka_dbus_on_get_bus_cb,
+               applet);
     return TRUE;
 }
 
 /*
  * vim:ts=4:sts=4:sw=4:et:
  */
+

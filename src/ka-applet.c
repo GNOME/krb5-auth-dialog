@@ -62,18 +62,18 @@ const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
 
 
 struct _KaApplet {
-    GObject parent;
+    GtkApplication parent;
 
     KaAppletPrivate *priv;
 };
 
 struct _KaAppletClass {
-    GObjectClass parent;
+    GtkApplicationClass parent;
 
     guint signals[KA_SIGNAL_COUNT];
 };
 
-G_DEFINE_TYPE (KaApplet, ka_applet, G_TYPE_OBJECT);
+G_DEFINE_TYPE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
 
 struct _KaAppletPrivate {
     GtkBuilder *uixml;
@@ -342,7 +342,9 @@ ka_applet_class_init (KaAppletClass *klass)
 static KaApplet *
 ka_applet_new (void)
 {
-    return g_object_new (KA_TYPE_APPLET, NULL);
+    return g_object_new (KA_TYPE_APPLET, 
+                         "application-id", "org.gnome.KrbAuthDialog",
+                         NULL);
 }
 
 
@@ -936,9 +938,10 @@ KaApplet *
 ka_applet_create ()
 {
     KaApplet *applet = ka_applet_new ();
+    GtkWindow *main_window;
     GError *error = NULL;
     gboolean ret;
-
+    
     if (!(ka_applet_setup_icons (applet)))
         g_error ("Failure to setup icons");
     gtk_window_set_default_icon_name (applet->priv->icons[val_icon]);
@@ -966,7 +969,8 @@ ka_applet_create ()
     applet->priv->gconf = ka_gconf_init (applet);
     g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
 
-    ka_main_window_create (applet, applet->priv->uixml);
+    main_window = ka_main_window_create (applet, applet->priv->uixml);
+    gtk_application_add_window (GTK_APPLICATION(applet), main_window);
     ka_preferences_window_create (applet, applet->priv->uixml);
 
     applet->priv->loader = ka_plugin_loader_create (applet);

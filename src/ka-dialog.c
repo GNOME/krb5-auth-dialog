@@ -38,7 +38,6 @@
 #include "ka-dialog.h"
 #include "ka-applet-priv.h"
 #include "ka-pwdialog.h"
-#include "ka-dbus.h"
 #include "ka-tools.h"
 #include "ka-main-window.h"
 
@@ -62,6 +61,7 @@ static gboolean canceled;
 static gboolean invalid_auth;
 static gboolean always_run;
 static gboolean is_online = TRUE;
+GFileMonitor *ccache_monitor;
 
 static int grab_credentials (KaApplet *applet);
 static int ka_renew_credentials (KaApplet *applet);
@@ -1070,6 +1070,30 @@ ka_nm_init (void)
 }
 
 
+gboolean
+ka_kerberos_init (KaApplet *applet)
+{
+    ka_nm_init ();
+
+    g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
+                           (GSourceFunc) credentials_expiring, applet);
+    g_idle_add ((GSourceFunc) credentials_expiring_once, applet);
+    ccache_monitor = monitor_ccache (applet);
+    return TRUE;
+}
+
+
+gboolean
+ka_kerberos_destroy ()
+{
+    ka_nm_shutdown ();
+
+    if (ccache_monitor)
+        g_object_unref (ccache_monitor);
+    return TRUE;
+}
+
+
 int
 main (int argc, char *argv[])
 {
@@ -1087,7 +1111,6 @@ main (int argc, char *argv[])
          "Only run if an initialized ccache is found", NULL},
         {NULL, 0, 0, G_OPTION_ARG_NONE, NULL, NULL, NULL}
     };
-    GFileMonitor *monitor = NULL;
 
     context = g_option_context_new ("- Kerberos 5 credential checking");
     g_option_context_add_main_entries (context, options, NULL);
@@ -1113,24 +1136,8 @@ main (int argc, char *argv[])
         applet = ka_applet_create ();
         if (!applet)
             return 1;
-
-        if (!ka_dbus_connect (applet)) {
-            ka_applet_destroy (applet);
-            return 1;
-        }
-        ka_nm_init ();
-
-        g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
-                               (GSourceFunc) credentials_expiring, applet);
-        g_idle_add ((GSourceFunc) credentials_expiring_once, applet);
-        monitor = monitor_ccache (applet);
-
         g_application_run (G_APPLICATION(applet), argc, argv);
     }
-    ka_dbus_disconnect ();
-    ka_nm_shutdown ();
-    if (monitor)
-        g_object_unref (monitor);
     return 0;
 }
 

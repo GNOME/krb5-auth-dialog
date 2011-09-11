@@ -23,6 +23,7 @@
 #include <glib/gi18n.h>
 
 #include "ka-applet-priv.h"
+#include "ka-dbus.h"
 #include "ka-dialog.h"
 #include "ka-gconf-tools.h"
 #include "ka-gconf.h"
@@ -101,6 +102,22 @@ struct _KaAppletPrivate {
 };
 
 static void ka_close_notification (KaApplet *self);
+
+static void 
+ka_applet_activate (GApplication *application G_GNUC_UNUSED)
+{
+}
+
+static void
+ka_applet_startup (GApplication *application)
+{
+    KaApplet *self = KA_APPLET (application);
+
+    if (!ka_dbus_connect (self)) {
+        ka_applet_destroy (self);
+    }
+    ka_kerberos_init (self);
+}
 
 static void
 ka_applet_set_property (GObject *object,
@@ -268,8 +285,12 @@ ka_applet_class_init (KaAppletClass *klass)
     object_class->finalize = ka_applet_finalize;
     g_type_class_add_private (klass, sizeof (KaAppletPrivate));
 
+    G_APPLICATION_CLASS (klass)->activate = ka_applet_activate;
+    G_APPLICATION_CLASS (klass)->startup = ka_applet_startup;
+
     object_class->set_property = ka_applet_set_property;
     object_class->get_property = ka_applet_get_property;
+
 
     pspec = g_param_spec_string ("principal",
                                  "Principal",
@@ -930,6 +951,8 @@ ka_applet_destroy (KaApplet* applet)
 {
     g_object_unref (applet);
     gtk_main_quit ();
+    ka_dbus_disconnect ();
+    ka_kerberos_destroy ();
 }
 
 

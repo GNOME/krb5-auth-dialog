@@ -23,6 +23,9 @@
 
 #include "ka-applet-priv.h"
 
+gboolean ka_kerberos_init (KaApplet *applet);
+gboolean ka_kerberos_destroy (void);
+
 gboolean ka_destroy_ccache (KaApplet* applet);
 gboolean ka_grab_credentials(KaApplet* applet);
 gboolean ka_check_credentials (KaApplet *applet, const char* principal);

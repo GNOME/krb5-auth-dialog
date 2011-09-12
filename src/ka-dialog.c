@@ -1082,6 +1082,7 @@ ka_kerberos_init (KaApplet *applet)
 {
     gboolean ret;
 
+    ka_secmem_init ();
     ret = ka_krb5_context_init (applet);
     ka_nm_init ();
     g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
@@ -1102,28 +1103,6 @@ ka_kerberos_destroy ()
 
     ka_krb5_context_free ();
     return TRUE;
-}
-
-
-int
-main (int argc, char *argv[])
-{
-    KaApplet *applet;
-    int ret = 0;
-
-    textdomain (PACKAGE);
-    bind_textdomain_codeset (PACKAGE, "UTF-8");
-    bindtextdomain (PACKAGE, LOCALE_DIR);
-    ka_secmem_init ();
-    g_set_application_name (KA_NAME);
-
-    gtk_init (&argc, &argv);
-    applet = ka_applet_create ();
-    if (!applet)
-        return 1;
-
-    ret = g_application_run (G_APPLICATION(applet), argc, argv);
-    return ret;
 }
 
 /*

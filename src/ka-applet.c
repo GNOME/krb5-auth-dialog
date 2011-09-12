@@ -1024,14 +1024,13 @@ ka_ns_check_persistence (KaApplet *self)
 }
 
 
-/* destroy the applet and quit */
+/* undo what was done on startup() */
 void
 ka_applet_destroy (KaApplet* self)
 {
     GList *windows, *first;
 
     ka_dbus_disconnect ();
-
     windows = gtk_application_get_windows (GTK_APPLICATION(self));
     if (windows) {
         first = g_list_first (windows);
@@ -1040,7 +1039,6 @@ ka_applet_destroy (KaApplet* self)
     }
 
     ka_kerberos_destroy ();
-    g_object_unref (self);
 }
 
 
@@ -1083,6 +1081,28 @@ ka_applet_create ()
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);
 
     return applet;
+}
+
+int
+main (int argc, char *argv[])
+{
+    KaApplet *applet;
+    int ret = 0;
+
+    textdomain (PACKAGE);
+    bind_textdomain_codeset (PACKAGE, "UTF-8");
+    bindtextdomain (PACKAGE, LOCALE_DIR);
+
+    g_set_application_name (KA_NAME);
+
+    gtk_init (&argc, &argv);
+    applet = ka_applet_create ();
+    if (!applet)
+        return 1;
+
+    ret = g_application_run (G_APPLICATION(applet), argc, argv);
+    g_object_unref (applet);
+    return ret;
 }
 
 /*

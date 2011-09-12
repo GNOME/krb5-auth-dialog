@@ -27,32 +27,12 @@ AM_PROG_CC_C_O
 KA_COMPILE_WARNINGS([maximum])
 GNOME_DOC_INIT
 
-AC_MSG_CHECKING([which gtk+ version to compile against])
-AC_ARG_WITH([gtk],
-  [AS_HELP_STRING([--with-gtk=2.0|3.0],[which gtk+ version to compile against (default: 3.0)])],
-  [case "$with_gtk" in
-     2.0|3.0) ;;
-     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
-   esac],
-  [with_gtk=3.0])
-AC_MSG_RESULT([$with_gtk])
+GTK_REQUIRED=3.0
+GLIB_REQUIRED=2.28
+GCONF_REQUIRED=2.31
+LIBNOTIFY_REQUIRED=0.7.0
 
-case "$with_gtk" in
-  2.0) GTK_API_VERSION=2.0
-       GTK_REQUIRED=2.18.0
-       GLIB_REQUIRED=2.26.0
-       GCONF_REQUIRED=2.8
-       LIBNOTIFY_REQUIRED=0.4
-       ;;
-  3.0) GTK_API_VERSION=3.0
-       GTK_REQUIRED=2.90.4
-       GLIB_REQUIRED=2.26.0
-       GCONF_REQUIRED=2.31
-       LIBNOTIFY_REQUIRED=0.5.1
-       ;;
-esac
-
-PKG_CHECK_MODULES(GTK, [gtk+-$GTK_API_VERSION >= $GTK_REQUIRED, glib-2.0 >= $GLIB_REQUIRED])
+PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= $GTK_REQUIRED, glib-2.0 >= $GLIB_REQUIRED])
 PKG_CHECK_MODULES(GCONF, gconf-2.0 >= $GCONF_REQUIRED)
 PKG_CHECK_MODULES(GIO, [gio-2.0, gio-unix-2.0])
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0)

@@ -26,7 +26,7 @@
 #include <gtk/gtk.h>
 
 #include "ka-main-window.h"
-#include "ka-dialog.h"
+#include "ka-kerberos.h"
 #include "ka-tools.h"
 #include "ka-preferences.h"
 

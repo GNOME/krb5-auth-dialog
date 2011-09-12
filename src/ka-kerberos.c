@@ -35,7 +35,7 @@
 #include "secmem-util.h"
 #include "memory.h"
 
-#include "ka-dialog.h"
+#include "ka-kerberos.h"
 #include "ka-applet-priv.h"
 #include "ka-pwdialog.h"
 #include "ka-tools.h"

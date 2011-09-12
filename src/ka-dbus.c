@@ -21,7 +21,7 @@
 #include "config.h"
 
 #include "ka-applet-priv.h"
-#include "ka-dialog.h"
+#include "ka-kerberos.h"
 #include "ka-dbus.h"
 
 static GDBusConnection *dbus_connection;

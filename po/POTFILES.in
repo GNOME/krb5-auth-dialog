@@ -1,5 +1,5 @@
 [type: gettext/glade]src/krb5-auth-dialog.ui
-src/ka-dialog.c
+src/ka-kerberos.c
 src/ka-pwdialog.c
 src/dummy-strings.c
 src/ka-applet.c

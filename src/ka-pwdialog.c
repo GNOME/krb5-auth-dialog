@@ -23,7 +23,7 @@
 #include <glib/gi18n.h>
 
 #include "ka-applet-priv.h"
-#include "ka-dialog.h"
+#include "ka-kerberos.h"
 #include "ka-pwdialog.h"
 #include "ka-entry-buffer.h"
 

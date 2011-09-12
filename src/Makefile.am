@@ -25,8 +25,8 @@ $(service_DATA): $(service_in_files) Makefile
 	sed -e "s|\@BINDIR\@|$(bindir)|" $< > $@
 
 krb5_auth_dialog_SOURCES =	\
-	ka-dialog.c      	\
-	ka-dialog.h      	\
+	ka-kerberos.c      	\
+	ka-kerberos.h      	\
 	ka-applet.c		\
 	ka-applet-priv.h	\
 	ka-applet.h		\

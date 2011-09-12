@@ -24,7 +24,7 @@
 
 #include "ka-applet-priv.h"
 #include "ka-dbus.h"
-#include "ka-dialog.h"
+#include "ka-kerberos.h"
 #include "ka-gconf-tools.h"
 #include "ka-gconf.h"
 #include "ka-tools.h"

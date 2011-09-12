@@ -1,5 +1,5 @@
 AC_INIT([krb5-auth-dialog],[3.1.91])
-AC_CONFIG_SRCDIR(src/ka-dialog.c)
+AC_CONFIG_SRCDIR(src/ka-kerberos.c)
 dnl Make automake keep quiet about wildcards & other GNUmake-isms
 AM_INIT_AUTOMAKE([1.11.1 dist-bzip2 -Wno-portability])
 AC_CONFIG_HEADERS([config.h])

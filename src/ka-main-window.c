@@ -134,18 +134,21 @@ ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
                                                 END_TIME_COLUMN,
                                                 NULL);
     gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+                      /* Translators: this is an abbreviation for forwardable */
                                                 _("Fwd"),
                                                 toggle_renderer,
                                                 "active",
                                                 FORWARDABLE_COLUMN,
                                                 NULL);
     gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+                        /* Translators: this is an abbreviation for proxiable */
                                                 _("Proxy"),
                                                 toggle_renderer,
                                                 "active",
                                                 PROXIABLE_COLUMN,
                                                 NULL);
     gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+                        /* Translators: this is an abbreviation for renewable */
                                                 _("Renew"),
                                                 toggle_renderer,
                                                 "active",

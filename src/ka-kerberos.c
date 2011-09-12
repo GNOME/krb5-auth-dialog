@@ -2,7 +2,7 @@
  * Copyright (C) 2004,2005,2006 Red Hat, Inc.
  * Authored by Christopher Aillon <caillon@redhat.com>
  *
- * Copyright (C) 2008,2009,2010 Guido Guenther <agx@sigxcpu.org>
+ * Copyright (C) 2008,2009,2010,2011 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -60,6 +60,7 @@ static krb5_timestamp canceled_creds_expiry;
 static gboolean canceled;
 static gboolean invalid_auth;
 static gboolean is_online = TRUE;
+static gboolean kcontext_valid;
 GFileMonitor *ccache_monitor;
 
 static int grab_credentials (KaApplet *applet);
@@ -907,6 +908,8 @@ ka_krb5_context_init ()
     err = krb5_init_context (&kcontext);
     if (err)
         return FALSE;
+    else
+        kcontext_valid = TRUE;
 
     have_tgt = ka_get_tgt_from_ccache (kcontext, &creds);
     if (have_tgt) {
@@ -920,7 +923,10 @@ ka_krb5_context_init ()
 static gboolean
 ka_krb5_context_free ()
 {
-    krb5_free_context (kcontext);
+    if (kcontext_valid) {
+        krb5_free_context (kcontext);
+        kcontext_valid = FALSE;
+    }
     return TRUE;
 }
 

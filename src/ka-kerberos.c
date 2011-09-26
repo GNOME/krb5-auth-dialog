@@ -315,8 +315,6 @@ ka_get_service_tickets (GtkListStore * tickets)
             gtk_list_store_append (tickets, &iter);
             gtk_list_store_set (tickets, &iter,
                                 PRINCIPAL_COLUMN, _("Your ticket cache is currently empty"),
-                                START_TIME_COLUMN, 0,
-                                END_TIME_COLUMN, 0,
                                 FORWARDABLE_COLUMN, FALSE,
                                 RENEWABLE_COLUMN, FALSE,
                                 PROXIABLE_COLUMN, FALSE, -1);

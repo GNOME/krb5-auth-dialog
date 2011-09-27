@@ -169,15 +169,11 @@ static const GDBusInterfaceVTable interface_vtable =
 };
 
 
-static void
-ka_dbus_on_get_bus_cb (GObject *source_object G_GNUC_UNUSED,
-                       GAsyncResult *res,
-                       gpointer      user_data)
+static gboolean
+ka_dbus_register (KaApplet *applet)
 {
-    KaApplet *applet = user_data;
     guint id;
 
-    dbus_connection = g_bus_get_finish (res, NULL);
     introspection_data = g_dbus_node_info_new_for_xml (
         ka_dbus_introspection_xml,
         NULL);
@@ -189,9 +185,10 @@ ka_dbus_on_get_bus_cb (GObject *source_object G_GNUC_UNUSED,
                                         applet,
                                         NULL,  /* user_data_free_func */
                                         NULL); /* GError** */
-    if (!id)
-        g_error ("Failed to register DBus object");
+
+    g_return_val_if_fail(id, FALSE);
     ka_dbus_connect_signals (applet);
+    return TRUE;
 }
 
 
@@ -212,9 +209,10 @@ ka_dbus_connect (KaApplet *applet)
 {
     g_return_val_if_fail (applet != 0, FALSE);
 
-    g_bus_get (G_BUS_TYPE_SESSION, NULL, ka_dbus_on_get_bus_cb,
-               applet);
-    return TRUE;
+    dbus_connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, NULL);
+    g_return_val_if_fail (dbus_connection != NULL, FALSE);
+
+    return ka_dbus_register(applet);
 }
 
 /*

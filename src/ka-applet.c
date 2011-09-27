@@ -188,10 +188,6 @@ ka_applet_startup (GApplication *application)
     KA_DEBUG ("Primary application");
 
     self->priv->startup_ccache = ka_kerberos_init (self);
-    if (!ka_dbus_connect (self)) {
-        ka_applet_destroy (self);
-    }
-
     main_window = ka_main_window_create (self, self->priv->uixml);
     gtk_application_add_window (GTK_APPLICATION(self), main_window);
     ka_preferences_window_create (self, self->priv->uixml);
@@ -1079,6 +1075,8 @@ ka_applet_create ()
 
     applet->priv->loader = ka_plugin_loader_create (applet);
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);
+
+    g_return_val_if_fail (ka_dbus_connect (applet), NULL);
 
     return applet;
 }

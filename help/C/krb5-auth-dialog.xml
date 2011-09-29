@@ -153,14 +153,14 @@
       <term>Command line</term>
       <listitem>
 	<para>
-	  Type <command>krb5-auth-dialog --always</command>,
+	  Type <command>krb5-auth-dialog</command>,
           then press <keycap>Return</keycap>:
         </para>
       </listitem>
     </varlistentry>
   </variablelist>
   <para>
-    The tray icon will indicate one of tree states:
+    The tray icon will indicate one of three states:
   </para>
 
   <section id="trayicon-valid">

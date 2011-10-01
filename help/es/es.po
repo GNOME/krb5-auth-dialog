@@ -2,13 +2,13 @@
 # Spanish translation of krb5-auth-dialog.
 # Copyright (C) 2009 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
+# Jorge González <jorgegonz@svn.gnome.org>, 2009, 2011.
 #
-# Jorge González <jorgegonz@svn.gnome.org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.help.master\n"
-"POT-Creation-Date: 2009-07-02 11:33+0000\n"
-"PO-Revision-Date: 2009-07-09 21:06+0200\n"
+"POT-Creation-Date: 2011-09-29 15:56+0000\n"
+"PO-Revision-Date: 2011-10-01 11:45+0200\n"
 "Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
 "Language-Team: Español <gnome-es-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -312,15 +312,16 @@ msgid "Command line"
 msgstr "Línea de comandos"
 
 #: C/krb5-auth-dialog.xml:155(para)
+#| msgid ""
+#| "Type <command>krb5-auth-dialog --always</command>, then press "
+#| "<keycap>Return</keycap>:"
 msgid ""
-"Type <command>krb5-auth-dialog --always</command>, then press "
-"<keycap>Return</keycap>:"
-msgstr ""
-"Escriba <command>krb5-auth-dialog --always</command> después pulse "
-"<keycap>Intro</keycap>:"
+"Type <command>krb5-auth-dialog</command>, then press <keycap>Return</keycap>:"
+msgstr "Escriba <command>krb5-auth-dialog</command> y <keycap>Intro</keycap>:"
 
 #: C/krb5-auth-dialog.xml:162(para)
-msgid "The tray icon will indicate one of tree states:"
+#| msgid "The tray icon will indicate one of tree states:"
+msgid "The tray icon will indicate one of three states:"
 msgstr "El icono de la bandeja indicará uno de estos tres estados:"
 
 #: C/krb5-auth-dialog.xml:167(title) C/krb5-auth-dialog.xml:170(title)
@@ -448,10 +449,6 @@ msgid "Kerberos Principal"
 msgstr "Principal de Kerberos"
 
 #: C/krb5-auth-dialog.xml:289(para)
-#| msgid ""
-#| "The Kerberos principal to use. Leave blanc to use you current username. "
-#| "If you change this setting you have to destroy the credential cache "
-#| "before these setting takes effect."
 msgid ""
 "The Kerberos principal to use. Leave blank to use you current username. If "
 "you change this setting you have to destroy the credential cache before "
@@ -563,9 +560,9 @@ msgid ""
 "You can set preferences by selecting \"Preferences\" from the applets "
 "context menu or by selecting \"Network Authentication\" in the "
 "<application>Control Center</application>. <table frame=\"topbot\" id=\"tbl-"
-"principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1"
-"\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/><placeholder-"
-"2/><placeholder-3/></tgroup></table>"
+"principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep="
+"\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/"
+"><placeholder-2/><placeholder-3/></tgroup></table>"
 msgstr ""
 "Puede establecer sus preferencias seleccionando «Preferencias» del menú "
 "contextual de la miniaplicación o seleccionando «Autenticación de red» en el "
@@ -574,7 +571,7 @@ msgstr ""
 "rowsep=\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/"
 "><placeholder-2/><placeholder-3/></tgroup></table>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
+#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
 #: C/krb5-auth-dialog.xml:0(None)
 msgid "translator-credits"
 msgstr "Jorge González <jorgegonz@svn.gnome.org>, 2009"

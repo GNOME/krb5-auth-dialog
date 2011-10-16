@@ -1,4 +1,17 @@
 ==============
+Version 3.2.1
+==============
+* Fix DBus activation
+* Add missing categories to the desktop file
+* Fix options in documentation
+* UI translations:
+	Claude Paroz (fr)
+	Zdeněk Hataš (cs)
+
+* Doc translations:
+	Daniel Mustieles (es)
+
+==============
 Version 3.2.0
 ==============
 * Use GtkApplication

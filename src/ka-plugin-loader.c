@@ -16,12 +16,10 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  */
 
-#include <gconf/gconf-client.h>
-
 #include "ka-plugin-loader.h"
 #include "ka-plugin.h"
+#include "ka-settings.h"
 #include "ka-applet-priv.h"
-#include "ka-gconf-tools.h"
 
 #include <gmodule.h>
 
@@ -98,29 +96,33 @@ load_plugins (KaPluginLoader *self)
 {
 	int i;
 	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
-	const char *pname;
-	GConfClient *gconf;
-	GSList *plugins = NULL;
+	GSettings *settings;
+	char **plugins = NULL;
 
 	if (!g_module_supported ()) {
 		g_warning ("GModules are not supported on your platform!");
 		return;
 	}
-	gconf = ka_applet_get_gconf_client (priv->applet);
+	settings = g_settings_get_child(ka_applet_get_settings (priv->applet),
+                                        KA_SETTING_CHILD_PLUGINS);
 
 	/* For now we only load the plugins on program startup */
-	ka_gconf_get_string_list(gconf, KA_GCONF_KEY_PLUGINS_ENABLED, &plugins);
+	plugins = g_settings_get_strv(settings,
+                                      KA_SETTING_KEY_PLUGINS_ENABLED);
+
 	if (!plugins) {
 		g_message ("No plugins to load");
-		return ;
+		return;
 	}
 
-	for (i=0; (pname = g_slist_nth_data (plugins, i)) != NULL; i++) {
+	for (i = 0; plugins[i]; i++) {
 		char *path;
 		char *fname;
 		KaPlugin *plugin;
 
-		fname = g_strdup_printf("libka-plugin-%s.%s", pname, G_MODULE_SUFFIX);
+		fname = g_strdup_printf("libka-plugin-%s.%s",
+                                        plugins[i],
+                                        G_MODULE_SUFFIX);
 		path = g_module_build_path (KA_PLUGINS_DIR, fname);
 
 		plugin = load_plugin (path);
@@ -131,7 +133,8 @@ load_plugins (KaPluginLoader *self)
 		g_free (fname);
 		g_free (path);
 	}
-	g_slist_free (plugins);
+	g_strfreev (plugins);
+	g_object_unref (settings);
 }
 
 

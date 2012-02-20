@@ -20,7 +20,7 @@
 #include "config.h"
 #include "ka-preferences.h"
 
-#include "ka-gconf-tools.h"
+#include "ka-settings.h"
 #include "ka-tools.h"
 
 #include <glib/gi18n.h>
@@ -30,12 +30,12 @@
 #define PKINIT_SMARTCARD "PKCS11:" SC_PKCS11
 #define PKINIT_FILE "FILE:"
 
-#define N_LISTENERS 7
+#define N_BINDINGS 3
 
 struct _KaPreferencesPrivate {
     GtkBuilder *builder;
 
-    GConfClient *client;
+    GSettings *settings;
 
     GtkWidget *dialog;
     GtkWidget *notebook;
@@ -45,28 +45,21 @@ struct _KaPreferencesPrivate {
     GtkWidget *smartcard_toggle;
     GtkWidget *pkanchors_entry;
     GtkWidget *pkanchors_button;
-    GtkWidget *forwardable_toggle;
-    GtkWidget *proxiable_toggle;
-    GtkWidget *renewable_toggle;
     GtkWidget *prompt_mins_entry;
 
-    guint     listeners [N_LISTENERS];
-    int       n_listeners;
+    GBinding* bindings[N_BINDINGS];
+    int       n_bindings;
 } prefs;
 
 
 static void
-ka_preferences_principal_notify (GConfClient *client G_GNUC_UNUSED,
-                                 guint cnx_id G_GNUC_UNUSED,
-                                 GConfEntry *entry,
+ka_preferences_principal_notify (GSettings *settings,
+                                 gchar *key,
                                  gpointer userdata G_GNUC_UNUSED)
 {
     const char *principal;
 
-    if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
-      return;
-
-    principal = gconf_value_get_string (entry->value);
+    principal = g_settings_get_string (settings, key);
 
     if (!principal || !strlen(principal))
         gtk_entry_set_text (GTK_ENTRY (prefs.principal_entry), "");
@@ -81,63 +74,48 @@ ka_preferences_principal_notify (GConfClient *client G_GNUC_UNUSED,
 
 static void
 ka_preferences_principal_changed (GtkEntry *entry,
-                                  gpointer userdata G_GNUC_UNUSED)
+                                  gpointer userdata)
 {
     const char *principal;
+    KaApplet *applet = KA_APPLET(userdata);
 
     principal = gtk_entry_get_text (entry);
 
-    if (!principal || !strlen(principal))
-        gconf_client_unset (prefs.client, KA_GCONF_KEY_PRINCIPAL, NULL);
+    if (principal || strlen(principal))
+        g_object_set (applet, KA_PROP_NAME_PRINCIPAL, principal, NULL);
     else
-        gconf_client_set_string (prefs.client, KA_GCONF_KEY_PRINCIPAL, principal, NULL);
+        g_object_set (applet, KA_PROP_NAME_PRINCIPAL, "", NULL);
 }
 
 
 static void
-ka_preferences_setup_principal_entry ()
+ka_preferences_setup_principal_entry (KaApplet *applet)
 {
-    char     *principal = NULL;
+    char *principal = NULL;
 
     prefs.principal_entry = WID (prefs.builder, "principal_entry");
     g_assert (prefs.principal_entry != NULL);
 
-    if (!ka_gconf_get_string (prefs.client, KA_GCONF_KEY_PRINCIPAL, &principal))
+    g_object_get (applet, KA_PROP_NAME_PRINCIPAL, &principal, NULL);
+    if (!principal)
         g_warning ("Getting principal failed");
-
     if (principal && strlen(principal))
         gtk_entry_set_text (GTK_ENTRY (prefs.principal_entry), principal);
-    if (principal)
-        g_free (principal);
+    g_free (principal);
 
     g_signal_connect (prefs.principal_entry, "changed",
-                      G_CALLBACK (ka_preferences_principal_changed), NULL);
-
-    if (!gconf_client_key_is_writable (prefs.client, KA_GCONF_KEY_PRINCIPAL, NULL)) {
-        gtk_widget_set_sensitive (prefs.principal_entry, FALSE);
-    }
-
-    prefs.listeners [prefs.n_listeners] =
-        gconf_client_notify_add (prefs.client,
-                                 KA_GCONF_KEY_PRINCIPAL,
-                                 (GConfClientNotifyFunc) ka_preferences_principal_notify,
-                                 NULL, NULL, NULL);
-    prefs.n_listeners++;
+                      G_CALLBACK (ka_preferences_principal_changed), applet);
 }
 
 
 static void
-ka_preferences_pkuserid_notify (GConfClient *client G_GNUC_UNUSED,
-                                guint cnx_id G_GNUC_UNUSED,
-                                GConfEntry *entry,
-                                gpointer *userdata G_GNUC_UNUSED)
+ka_preferences_pkuserid_notify (GSettings *settings,
+                                gchar *key,
+                                gpointer userdata G_GNUC_UNUSED)
 {
     const char *pkuserid;
 
-    if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
-        return;
-
-    pkuserid = gconf_value_get_string (entry->value);
+    pkuserid = g_settings_get_string (settings, key);
 
     if (!pkuserid || !strlen(pkuserid))
         gtk_entry_set_text (GTK_ENTRY (prefs.pkuserid_entry), "");
@@ -153,62 +131,47 @@ ka_preferences_pkuserid_notify (GConfClient *client G_GNUC_UNUSED,
 
 static void
 ka_preferences_pkuserid_changed (GtkEntry *entry,
-                                 gpointer *user_data G_GNUC_UNUSED)
+                                 gpointer *userdata)
 {
     const char *pkuserid;
+    KaApplet *applet = KA_APPLET(userdata);
 
     pkuserid = gtk_entry_get_text (entry);
 
     if (!pkuserid || !strlen(pkuserid))
-        gconf_client_unset (prefs.client, KA_GCONF_KEY_PK_USERID, NULL);
+        g_object_set (applet, KA_PROP_NAME_PK_USERID, "", NULL);
     else
-        gconf_client_set_string (prefs.client, KA_GCONF_KEY_PK_USERID, pkuserid, NULL);
+        g_object_set (applet, KA_PROP_NAME_PK_USERID, pkuserid, NULL);
 }
 
-
 static void
-ka_preferences_setup_pkuserid_entry ()
+ka_preferences_setup_pkuserid_entry (KaApplet *applet)
 {
     char     *pkuserid = NULL;
 
     prefs.pkuserid_entry = WID(prefs.builder, "pkuserid_entry");
     g_assert (prefs.pkuserid_entry != NULL);
 
-    if (!ka_gconf_get_string (prefs.client, KA_GCONF_KEY_PK_USERID, &pkuserid))
+    g_object_get (applet, KA_PROP_NAME_PK_USERID, &pkuserid, NULL);
+    if (!pkuserid)
         g_warning ("Getting pkuserid failed");
-
     if (pkuserid && strlen(pkuserid))
         gtk_entry_set_text (GTK_ENTRY (prefs.pkuserid_entry), pkuserid);
     if (pkuserid)
         g_free (pkuserid);
 
     g_signal_connect (prefs.pkuserid_entry, "changed",
-                      G_CALLBACK (ka_preferences_pkuserid_changed), NULL);
-    if (!gconf_client_key_is_writable (prefs.client, KA_GCONF_KEY_PK_USERID, NULL)) {
-        gtk_widget_set_sensitive (prefs.pkuserid_entry, FALSE);
-    }
-
-    prefs.listeners [prefs.n_listeners] =
-        gconf_client_notify_add (prefs.client,
-                                 KA_GCONF_KEY_PK_USERID,
-                                 (GConfClientNotifyFunc) ka_preferences_pkuserid_notify,
-                                 NULL, NULL, NULL);
-    prefs.n_listeners++;
+                      G_CALLBACK (ka_preferences_pkuserid_changed), applet);
 }
 
-
 static void
-ka_preferences_pkanchors_notify (GConfClient *client G_GNUC_UNUSED,
-                                 guint cnx_id G_GNUC_UNUSED,
-                                 GConfEntry *entry,
+ka_preferences_pkanchors_notify (GSettings *settings,
+                                 gchar *key,
                                  gpointer userdata G_GNUC_UNUSED)
 {
     const char *pkanchors;
 
-    if (!entry->value || entry->value->type != GCONF_VALUE_STRING)
-        return;
-
-    pkanchors = gconf_value_get_string (entry->value);
+    pkanchors = g_settings_get_string (settings, key);
 
     if (!pkanchors || !strlen(pkanchors))
         gtk_entry_set_text (GTK_ENTRY (prefs.pkanchors_entry), "");
@@ -216,37 +179,38 @@ ka_preferences_pkanchors_notify (GConfClient *client G_GNUC_UNUSED,
         const char *old_pkanchors;
 
         old_pkanchors = gtk_entry_get_text (GTK_ENTRY (prefs.pkanchors_entry));
-        if (!old_pkanchors || (old_pkanchors && strcmp (old_pkanchors, pkanchors)))
+        if (!old_pkanchors || (old_pkanchors && strcmp (old_pkanchors,
+                                                        pkanchors)))
             gtk_entry_set_text (GTK_ENTRY (prefs.pkanchors_entry), pkanchors);
     }
 }
 
-
 static void
 ka_preferences_pkanchors_changed (GtkEntry *entry,
-                                  gpointer userdata G_GNUC_UNUSED)
+                                  gpointer userdata)
 {
     const char *pkanchors;
+    KaApplet *applet = KA_APPLET(userdata);
 
     pkanchors = gtk_entry_get_text (entry);
 
     if (!pkanchors || !strlen(pkanchors))
-        gconf_client_unset (prefs.client, KA_GCONF_KEY_PK_ANCHORS, NULL);
+        g_object_set (applet, KA_PROP_NAME_PK_ANCHORS, "", NULL);
     else
-        gconf_client_set_string (prefs.client, KA_GCONF_KEY_PK_ANCHORS,
-                                 pkanchors, NULL);
+        g_object_set (applet, KA_PROP_NAME_PK_ANCHORS, pkanchors, NULL);
 }
 
 
 static void
-ka_preferences_setup_pkanchors_entry ()
+ka_preferences_setup_pkanchors_entry (KaApplet *applet)
 {
     char *pkanchors = NULL;
 
     prefs.pkanchors_entry = WID(prefs.builder, "pkanchors_entry");
     g_assert (prefs.pkanchors_entry != NULL);
 
-    if (!ka_gconf_get_string (prefs.client, KA_GCONF_KEY_PK_ANCHORS, &pkanchors))
+    g_object_get (applet, KA_PROP_NAME_PK_ANCHORS, &pkanchors, NULL);
+    if (!pkanchors)
         g_warning ("Getting pkanchors failed");
 
     if (pkanchors && strlen(pkanchors))
@@ -255,17 +219,7 @@ ka_preferences_setup_pkanchors_entry ()
         g_free (pkanchors);
 
     g_signal_connect (prefs.pkanchors_entry, "changed",
-                      G_CALLBACK (ka_preferences_pkanchors_changed), NULL);
-    if (!gconf_client_key_is_writable (prefs.client, KA_GCONF_KEY_PK_ANCHORS, NULL)) {
-        gtk_widget_set_sensitive (prefs.pkanchors_entry, FALSE);
-    }
-
-    prefs.listeners [prefs.n_listeners] =
-        gconf_client_notify_add (prefs.client,
-                                 KA_GCONF_KEY_PK_ANCHORS,
-                                 (GConfClientNotifyFunc) ka_preferences_pkanchors_notify,
-                                 NULL, NULL, NULL);
-    prefs.n_listeners++;
+                      G_CALLBACK (ka_preferences_pkanchors_changed), applet);
 }
 
 
@@ -279,10 +233,11 @@ ka_preferences_toggle_pkuserid_entry (gboolean state, gpointer userdata G_GNUC_U
 
 static void
 ka_preferences_smartcard_toggled (GtkToggleButton *toggle,
-                                  gpointer userdata G_GNUC_UNUSED)
+                                  gpointer userdata)
 {
     gboolean smartcard = gtk_toggle_button_get_active (toggle);
     static gchar *old_path = NULL;
+    KaApplet *applet = KA_APPLET(userdata);
 
     if (smartcard) {
         const char *path;
@@ -292,31 +247,33 @@ ka_preferences_smartcard_toggled (GtkToggleButton *toggle,
             g_free (old_path);
             old_path = g_strdup (path);
         }
+
         ka_preferences_toggle_pkuserid_entry (FALSE, NULL);
-        gconf_client_set_string (prefs.client, KA_GCONF_KEY_PK_USERID, PKINIT_SMARTCARD, NULL);
+        g_object_set (applet, KA_SETTING_KEY_PK_USERID, PKINIT_SMARTCARD, NULL);
     } else {
         ka_preferences_toggle_pkuserid_entry (TRUE, NULL);
         if (old_path)
-            gconf_client_set_string (prefs.client, KA_GCONF_KEY_PK_USERID, old_path, NULL);
+            g_object_set (applet, KA_SETTING_KEY_PK_USERID, old_path, NULL);
         else
-            gconf_client_unset (prefs.client, KA_GCONF_KEY_PK_USERID, NULL);
+            g_object_set (applet, KA_SETTING_KEY_PK_USERID, old_path, "", NULL);
     }
 }
 
 
 static void
-ka_preferences_setup_smartcard_toggle ()
+ka_preferences_setup_smartcard_toggle (KaApplet *applet)
 {
     char *pkuserid = NULL;
 
     prefs.smartcard_toggle = WID (prefs.builder, "smartcard_toggle");
     g_assert (prefs.smartcard_toggle != NULL);
 
-    if (!ka_gconf_get_string (prefs.client, KA_GCONF_KEY_PK_USERID, &pkuserid))
-        g_warning ("Getting pkanchors failed");
+    g_object_get(applet, KA_PROP_NAME_PK_USERID, &pkuserid, NULL);
+    if (!pkuserid)
+        g_warning ("Getting pk userid failed");
 
     g_signal_connect (prefs.smartcard_toggle, "toggled",
-                      G_CALLBACK (ka_preferences_smartcard_toggled), NULL);
+                      G_CALLBACK (ka_preferences_smartcard_toggled), applet);
 
     if (!g_strcmp0 (pkuserid, PKINIT_SMARTCARD))
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs.smartcard_toggle), TRUE);
@@ -411,267 +368,148 @@ ka_preferences_setup_pkanchors_button ()
 
 }
 
+static void
+ka_preferences_setup_forwardable_toggle (KaApplet *applet)
+{
+    GBinding *binding;
+    GtkWidget *toggle;
+
+    toggle = WID (prefs.builder, "forwardable_toggle");
+    g_assert (toggle != NULL);
+
+    binding = g_object_bind_property (applet,
+                                      KA_PROP_NAME_TGT_FORWARDABLE,
+                                      toggle,
+                                      "active",
+                                      G_BINDING_BIDIRECTIONAL);
+    prefs.bindings[prefs.n_bindings] = binding;
+    prefs.n_bindings++;
+}
 
 static void
-ka_preferences_forwardable_toggled (GtkToggleButton *toggle,
-                                    gpointer userdata G_GNUC_UNUSED)
+ka_preferences_setup_proxiable_toggle (KaApplet *applet)
 {
-    gboolean forwardable;
+    GBinding *binding;
+    GtkWidget *toggle;
 
-    forwardable = gtk_toggle_button_get_active (toggle);
+    toggle = WID (prefs.builder, "proxiable_toggle");
+    g_assert (toggle != NULL);
 
-    gconf_client_set_bool (prefs.client, KA_GCONF_KEY_FORWARDABLE, forwardable, NULL);
+    binding = g_object_bind_property (applet,
+                                      KA_PROP_NAME_TGT_PROXIABLE,
+                                      toggle,
+                                      "active",
+                                      G_BINDING_BIDIRECTIONAL);
+    prefs.bindings[prefs.n_bindings] = binding;
+    prefs.n_bindings++;
 }
-
 
 static void
-ka_preferences_forwardable_notify (GConfClient *client G_GNUC_UNUSED,
-                                   guint cnx_id G_GNUC_UNUSED,
-                                   GConfEntry *entry,
-                                   gpointer userdata G_GNUC_UNUSED)
+ka_preferences_setup_renewable_toggle (KaApplet *applet)
 {
-    gboolean forwardable;
+    GBinding *binding;
+    GtkWidget *toggle;
 
-    if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-      return;
+    toggle = WID (prefs.builder, "renewable_toggle");
+    g_assert (toggle != NULL);
 
-    forwardable = gconf_value_get_bool (entry->value) != FALSE;
-
-    if (forwardable != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (prefs.forwardable_toggle)))
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs.forwardable_toggle), forwardable);
-}
-
-
-static gboolean
-ka_preferences_setup_forwardable_toggle ()
-{
-    gboolean forwardable;
-
-    prefs.forwardable_toggle = WID (prefs.builder, "forwardable_toggle");
-    g_assert (prefs.forwardable_toggle != NULL);
-
-    forwardable = gconf_client_get_bool (prefs.client, KA_GCONF_KEY_FORWARDABLE, NULL);
-
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs.forwardable_toggle), forwardable);
-
-    g_signal_connect (prefs.forwardable_toggle, "toggled",
-                      G_CALLBACK (ka_preferences_forwardable_toggled), NULL);
-
-    if (!gconf_client_key_is_writable (prefs.client, KA_GCONF_KEY_FORWARDABLE, NULL)) {
-        gtk_widget_set_sensitive (prefs.forwardable_toggle, FALSE);
-    }
-
-    prefs.listeners [prefs.n_listeners] =
-        gconf_client_notify_add (prefs.client,
-                                 KA_GCONF_KEY_FORWARDABLE,
-                                 (GConfClientNotifyFunc) ka_preferences_forwardable_notify,
-                                 NULL, NULL, NULL);
-    prefs.n_listeners++;
-    return forwardable;
-}
-
-
-static void
-ka_preferences_proxiable_toggled (GtkToggleButton *toggle,
-                                  gpointer userdata G_GNUC_UNUSED)
-{
-    gboolean proxiable;
-
-    proxiable = gtk_toggle_button_get_active (toggle);
-
-    gconf_client_set_bool (prefs.client, KA_GCONF_KEY_PROXIABLE, proxiable, NULL);
-}
-
-
-static void
-ka_preferences_proxiable_notify (GConfClient *client G_GNUC_UNUSED,
-                                 guint cnx_id G_GNUC_UNUSED,
-                                 GConfEntry *entry,
-                                 gpointer userdata G_GNUC_UNUSED)
-{
-    gboolean proxiable;
-
-    if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-        return;
-
-    proxiable = gconf_value_get_bool (entry->value) != FALSE;
-
-    if (proxiable != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (prefs.proxiable_toggle)))
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs.proxiable_toggle), proxiable);
-}
-
-
-static gboolean
-ka_preferences_setup_proxiable_toggle ()
-{
-    gboolean proxiable;
-
-    prefs.proxiable_toggle = WID (prefs.builder, "proxiable_toggle");
-    g_assert (prefs.proxiable_toggle != NULL);
-
-    proxiable = gconf_client_get_bool (prefs.client, KA_GCONF_KEY_PROXIABLE, NULL);
-
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs.proxiable_toggle), proxiable);
-
-    g_signal_connect (prefs.proxiable_toggle, "toggled",
-                      G_CALLBACK (ka_preferences_proxiable_toggled), NULL);
-
-    if (!gconf_client_key_is_writable (prefs.client, KA_GCONF_KEY_PROXIABLE, NULL)) {
-        gtk_widget_set_sensitive (prefs.proxiable_toggle, FALSE);
-    }
-
-    prefs.listeners [prefs.n_listeners] =
-        gconf_client_notify_add (prefs.client,
-                                 KA_GCONF_KEY_PROXIABLE,
-                                 (GConfClientNotifyFunc) ka_preferences_proxiable_notify,
-                                 NULL, NULL, NULL);
-    prefs.n_listeners++;
-    return proxiable;
-}
-
-
-static void
-ka_preferences_renewable_toggled (GtkToggleButton *toggle,
-                                  gpointer userdata G_GNUC_UNUSED)
-{
-    gboolean renewable;
-
-    renewable = gtk_toggle_button_get_active (toggle);
-
-    gconf_client_set_bool (prefs.client, KA_GCONF_KEY_RENEWABLE, renewable, NULL);
-}
-
-
-static void
-ka_preferences_renewable_notify (GConfClient *client G_GNUC_UNUSED,
-                                 guint cnx_id G_GNUC_UNUSED,
-                                 GConfEntry *entry,
-                                 gpointer userdata G_GNUC_UNUSED)
-{
-    gboolean renewable;
-
-    if (!entry->value || entry->value->type != GCONF_VALUE_BOOL)
-        return;
-
-    renewable = gconf_value_get_bool (entry->value) != FALSE;
-
-    if (renewable != gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (prefs.renewable_toggle)))
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs.renewable_toggle), renewable);
-}
-
-
-static gboolean
-ka_preferences_setup_renewable_toggle ()
-{
-    gboolean renewable;
-
-    prefs.renewable_toggle = WID (prefs.builder, "renewable_toggle");
-    g_assert (prefs.renewable_toggle != NULL);
-
-    renewable = gconf_client_get_bool (prefs.client, KA_GCONF_KEY_RENEWABLE, NULL);
-
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (prefs.renewable_toggle), renewable);
-
-    g_signal_connect (prefs.renewable_toggle, "toggled",
-                      G_CALLBACK (ka_preferences_renewable_toggled), NULL);
-
-    if (!gconf_client_key_is_writable (prefs.client, KA_GCONF_KEY_RENEWABLE, NULL)) {
-        gtk_widget_set_sensitive (prefs.renewable_toggle, FALSE);
-    }
-
-    prefs.listeners [prefs.n_listeners] =
-        gconf_client_notify_add (prefs.client,
-                                 KA_GCONF_KEY_RENEWABLE,
-                                 (GConfClientNotifyFunc) ka_preferences_renewable_notify,
-                                 NULL, NULL, NULL);
-    prefs.n_listeners++;
-    return renewable;
+    binding = g_object_bind_property (applet,
+                                      KA_PROP_NAME_TGT_RENEWABLE,
+                                      toggle,
+                                      "active",
+                                      G_BINDING_BIDIRECTIONAL);
+    prefs.bindings[prefs.n_bindings] = binding;
+    prefs.n_bindings++;
 }
 
 
 static void
 ka_preferences_prompt_mins_changed (GtkSpinButton *button,
-                                    gpointer userdata G_GNUC_UNUSED)
+                                    gpointer userdata)
 {
     gint prompt_mins;
+    KaApplet *applet = KA_APPLET(userdata);
 
     prompt_mins = gtk_spin_button_get_value_as_int (button);
-    gconf_client_set_int (prefs.client, KA_GCONF_KEY_PROMPT_MINS, prompt_mins, NULL);
+    g_object_set (applet, KA_PROP_NAME_PW_PROMPT_MINS, prompt_mins, NULL);
 }
 
 
 static void
-ka_preferences_prompt_mins_notify (GConfClient *client G_GNUC_UNUSED,
-                                   guint cnx_id G_GNUC_UNUSED,
-                                   GConfEntry *entry,
+ka_preferences_prompt_mins_notify (GSettings *settings,
+                                   gchar *key,
                                    gpointer userdata G_GNUC_UNUSED)
 {
     gint prompt_mins;
 
-    if (!entry->value || entry->value->type != GCONF_VALUE_INT)
-        return;
-
-    prompt_mins = gconf_value_get_int (entry->value);
-
-    if (prompt_mins != gtk_spin_button_get_value_as_int (GTK_SPIN_BUTTON (prefs.prompt_mins_entry)))
-        gtk_spin_button_set_value (GTK_SPIN_BUTTON (prefs.prompt_mins_entry), prompt_mins);
+    prompt_mins = g_settings_get_int (settings, key);
+    if (prompt_mins != gtk_spin_button_get_value_as_int (
+            GTK_SPIN_BUTTON (prefs.prompt_mins_entry)))
+        gtk_spin_button_set_value (GTK_SPIN_BUTTON (prefs.prompt_mins_entry),
+                                   prompt_mins);
 }
 
-
-static gint
-ka_preferences_setup_prompt_mins_entry ()
+static void
+ka_preferences_setup_prompt_mins_entry (KaApplet *applet)
 {
     gint prompt_mins;
 
     prefs.prompt_mins_entry = WID (prefs.builder, "prompt_mins_entry");
     g_assert (prefs.prompt_mins_entry != NULL);
 
-    prompt_mins = gconf_client_get_int (prefs.client, KA_GCONF_KEY_PROMPT_MINS, NULL);
+    g_object_get (applet, KA_PROP_NAME_PW_PROMPT_MINS, &prompt_mins, NULL);
 
-    gtk_spin_button_set_value (GTK_SPIN_BUTTON (prefs.prompt_mins_entry), prompt_mins);
+    gtk_spin_button_set_value (GTK_SPIN_BUTTON (prefs.prompt_mins_entry),
+                               prompt_mins);
 
     g_signal_connect (prefs.prompt_mins_entry, "value-changed",
-                      G_CALLBACK (ka_preferences_prompt_mins_changed), NULL);
-
-    if (!gconf_client_key_is_writable (prefs.client, KA_GCONF_KEY_PROMPT_MINS, NULL)) {
-        gtk_widget_set_sensitive (prefs.prompt_mins_entry, FALSE);
-    }
-
-    prefs.listeners [prefs.n_listeners] =
-        gconf_client_notify_add (prefs.client,
-                                 KA_GCONF_KEY_PROMPT_MINS,
-                                 (GConfClientNotifyFunc) ka_preferences_prompt_mins_notify,
-                                 NULL, NULL, NULL);
-    prefs.n_listeners++;
-    return prompt_mins;
+                      G_CALLBACK (ka_preferences_prompt_mins_changed), applet);
 }
 
 
+static void
+ka_preferences_settings_changed (GSettings *settings,
+                                 gchar *key,
+                                 gpointer userdata)
+{
+    KaApplet *applet = KA_APPLET (userdata);
+
+    if (!g_strcmp0 (key, KA_SETTING_KEY_PRINCIPAL))
+        ka_preferences_principal_notify (settings, key, applet);
+    else if (!g_strcmp0(key, KA_SETTING_KEY_PK_USERID))
+        ka_preferences_pkuserid_notify (settings, key, applet);
+    else if (!g_strcmp0(key, KA_SETTING_KEY_PK_ANCHORS))
+        ka_preferences_pkanchors_notify (settings, key, applet);
+    else if (!g_strcmp0(key, KA_SETTING_KEY_PW_PROMPT_MINS))
+        ka_preferences_prompt_mins_notify (settings, key, applet);
+}
+
 void
-ka_preferences_window_create (KaApplet *applet G_GNUC_UNUSED,
+ka_preferences_window_create (KaApplet *applet,
                               GtkBuilder *xml)
 {
-    prefs.client = gconf_client_get_default ();
-    gconf_client_add_dir (prefs.client, KA_GCONF_PATH,
-                          GCONF_CLIENT_PRELOAD_ONELEVEL, NULL);
-
     prefs.builder = xml;
-    ka_preferences_setup_principal_entry (prefs);
-    ka_preferences_setup_pkuserid_entry (prefs);
-    ka_preferences_setup_pkuserid_button (prefs);
-    ka_preferences_setup_smartcard_toggle (prefs);
-    ka_preferences_setup_pkanchors_entry(prefs);
-    ka_preferences_setup_pkanchors_button (prefs);
-    ka_preferences_setup_forwardable_toggle (prefs);
-    ka_preferences_setup_proxiable_toggle (prefs);
-    ka_preferences_setup_renewable_toggle (prefs);
-    ka_preferences_setup_prompt_mins_entry (prefs);
+    ka_preferences_setup_principal_entry (applet);
+    ka_preferences_setup_pkuserid_entry (applet);
+    ka_preferences_setup_pkuserid_button (applet);
+    ka_preferences_setup_smartcard_toggle (applet);
+    ka_preferences_setup_pkanchors_entry (applet);
+    ka_preferences_setup_pkanchors_button (applet);
 
-    g_assert (prefs.n_listeners == N_LISTENERS);
+    ka_preferences_setup_forwardable_toggle (applet);
+    ka_preferences_setup_proxiable_toggle (applet);
+    ka_preferences_setup_renewable_toggle (applet);
+    ka_preferences_setup_prompt_mins_entry (applet);
+
+    g_signal_connect (ka_applet_get_settings(applet),
+                      "changed",
+                      G_CALLBACK (ka_preferences_settings_changed),
+                      applet);
+
+    g_assert (prefs.n_bindings == N_BINDINGS);
 
     prefs.notebook = WID (xml, "ka_notebook");
     prefs.dialog = WID (xml, "krb5_preferences_dialog");
-
 }
 
 void
@@ -682,6 +520,15 @@ ka_preferences_window_show (GtkWindow *main_window)
     gtk_window_present (GTK_WINDOW(prefs.dialog));
     gtk_dialog_run (GTK_DIALOG (prefs.dialog));
     gtk_widget_hide (prefs.dialog);
+}
+
+void
+ka_preferences_window_destroy ()
+{
+    int i;
+
+    for (i = 0; i < prefs.n_bindings; i++)
+        g_object_unref (prefs.bindings[i]);
 }
 
 /*

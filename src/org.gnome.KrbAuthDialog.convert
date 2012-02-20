@@ -1,0 +1,13 @@
+[org.gnome.KrbAuthDialog]
+principal = /apps/krb5-auth-dialog/principal
+pk-userid = /apps/krb5-auth-dialog/pk_userid
+pk-anchors = /apps/krb5-auth-dialog/pk_anchors
+prompt-minutes = /apps/krb5-auth-dialog/prompt_minutes
+
+[org.gnome.KrbAuthDialog.notify]
+valid = /apps/krb5-auth-dialog/notify/valid
+expiring = /apps/krb5-auth-dialog/notify/expiring
+expired = /apps/krb5-auth-dialog/notify/expired
+
+[org.gnome.KrbAuthDialog.plugins]
+enabled = /apps/krb5-auth-dialog/plugins/enabled

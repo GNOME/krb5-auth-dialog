@@ -29,11 +29,9 @@ GNOME_DOC_INIT
 
 GTK_REQUIRED=3.0
 GLIB_REQUIRED=2.28
-GCONF_REQUIRED=2.31
 LIBNOTIFY_REQUIRED=0.7.0
 
 PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= $GTK_REQUIRED, glib-2.0 >= $GLIB_REQUIRED])
-PKG_CHECK_MODULES(GCONF, gconf-2.0 >= $GCONF_REQUIRED)
 PKG_CHECK_MODULES(GIO, [gio-2.0, gio-unix-2.0])
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0)
 PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED)
@@ -41,12 +39,7 @@ PKG_CHECK_MODULES(LIBNOTIFY, libnotify >= $LIBNOTIFY_REQUIRED)
 dnl check for deprecated symbols:
 dnl GNOME_MAINTAINER_MODE_DEFINES
 
-AM_GCONF_SOURCE_2
-
-AC_PATH_PROG([GCONFTOOL], [gconftool-2], [no])
-if test "$GCONFTOOL" = "no"; then
-  AC_MSG_ERROR([gconftool-2 not found])
-fi
+GLIB_GSETTINGS
 
 dnl --enable-debug=(yes|no)
 AC_ARG_ENABLE(debug,
@@ -261,7 +254,6 @@ AC_MSG_NOTICE([Libraries])
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([         Kerberos: $KRB5_CFLAGS $KRB5_LIBS])
 AC_MSG_NOTICE([              GTK: $GTK_CFLAGS $GTK_LIBS])
-AC_MSG_NOTICE([            gconf: $GCONF_CFLAGS $GCONF_LIBS])
 AC_MSG_NOTICE([         gio-unix: $GIO_UNIX_CFLAGS $GIO_UNIX_LIBS $GIO_CFLAGS $GIO_LIBS])
 if test "$with_libnotify" = "yes" ; then
 AC_MSG_NOTICE([        libnotify: $LIBNOTIFY_CFLAGS $LIBNOTIFY_LIBS])

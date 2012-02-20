@@ -21,9 +21,23 @@
 #ifndef KA_GCONF_H
 #define KA_GCONF_H
 
-#include <gconf/gconf-client.h>
 #include "ka-applet-priv.h"
 
-GConfClient* ka_gconf_init (KaApplet* applet);
+#define KA_SETTING_SCHEMA               "org.gnome.KrbAuthDialog"
+#define KA_SETTING_KEY_PRINCIPAL        "principal"
+#define KA_SETTING_KEY_PK_USERID        "pk-userid"
+#define KA_SETTING_KEY_PK_ANCHORS       "pk-anchors"
+#define KA_SETTING_KEY_PW_PROMPT_MINS   "prompt-minutes"
+#define KA_SETTING_KEY_TGT_FORWARDABLE  "forwardable"
+#define KA_SETTING_KEY_TGT_RENEWABLE    "renewable"
+#define KA_SETTING_KEY_TGT_PROXIABLE    "proxiable"
+#define KA_SETTING_CHILD_NOTIFY         "notify"
+#define KA_SETTING_KEY_NOTIFY_VALID     "valid"
+#define KA_SETTING_KEY_NOTIFY_EXPIRED   "expired"
+#define KA_SETTING_KEY_NOTIFY_EXPIRING  "expiring"
+#define KA_SETTING_CHILD_PLUGINS        "plugins"
+#define KA_SETTING_KEY_PLUGINS_ENABLED  "enabled"
+
+GSettings* ka_settings_init (KaApplet* applet);
 
 #endif

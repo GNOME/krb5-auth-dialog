@@ -4,22 +4,19 @@ it to be part of GNOME.
 
 Configuration
 =============
-Configuration settings are handled via gconf.
+Configuration settings are handled via gsettings.
 
 You can set the principal that is used to acquire tickets via:
-gconftool-2 --type=string --set /apps/krb5-auth-dialog/principal "principal@YOUR.REALM"
-
-You can hide the tray icon via:
-gconftool-2 --type=bool --set /apps/krb5-auth-dialog/show_trayicon false
+gsettings set org.gnome.KrbAuthDialog principal "principal@YOUR.REALM"
 
 You can set the time of the first password prompt via:
-gconftool-2 --type=int --set /apps/krb5-auth-dialog/prompt_minutes 30
+gsettings set org.gnome.KrbAuthDialog prompt-minutes 30
 
 You can set the principals pkinit identifier via:
-gconftool-2 --type=string --set /apps/krb5-auth-dialog/pk_userid "FILE:/path/to/user.pem,/path/to/user.key"
-or if you're using a smartcard:
-gconftool-2 --type=string --set /apps/krb5-auth-dialog/pk_userid "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"
+gsettings set org.gnome.KrbAuthDialog pk-userid "FILE:/path/to/user.pem,/path/to/user.key"
 
+or if you're using a smartcard:
+gsettings set org.gnome.KrbAuthDialog pk-userid "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"
 
 DBus API
 ========
@@ -39,13 +36,48 @@ See examples/tgt-signals.py for information about sent DBus signals.
 
 Plugins
 =======
-Plugins are currently disabled by default. To enable them you have to set the gconf key:
+Plugins are currently disabled by default. Individual plugins can be enabled via gsettings:
 
 Enable pam and dummy plugions:
-gconftool-2 --set --list-type=string --type=list  /apps/krb5-auth-dialog/plugins/enabled [pam,dummy]
+.
+
+You can set the principal that is used to acquire tickets via:
+gsettings set org.gnome.KrbAuthDialog principal "principal@YOUR.REALM"
+
+You can set the time of the first password prompt via:
+gsettings set org.gnome.KrbAuthDialog prompt-minutes 30
+
+You can set the principals pkinit identifier via:
+gsettings set org.gnome.KrbAuthDialog pk-userid "FILE:/path/to/user.pem,/path/to/user.key"
+
+or if you're using a smartcard:
+gsettings set org.gnome.KrbAuthDialog pk-userid "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"
+
+DBus API
+========
+You can request a ticket granting ticket via DBus:
+
+ dbus-send --print-reply --type=method_call \
+              --dest=org.gnome.KrbAuthDialog \
+               /org/gnome/KrbAuthDialog \
+               org.gnome.KrbAuthDialog.acquireTgt \
+               string:'principal'
+
+If the sent principal doesn't match the one currently in the ticket cache the
+request fails. To request a TGT for the "default" principal use string:''.
+
+See examples/tgt-signals.py for information about sent DBus signals.
+
+
+Plugins
+=======
+Plugins are currently disabled by default. Individual plugins can be enabled via gsettings:
+
+Enable pam and dummy plugions:
+gsettings set org.gnome.KrbAuthDialog.plugins enabled "['pam', 'dummy']"
 
 To list currently enabled plugins:
-gconftool-2 --get --list-type=string  /apps/krb5-auth-dialog/plugins/enabled
+gsettings get org.gnome.KrbAuthDialog.plugins enabled
 
 
 A Note on Translations

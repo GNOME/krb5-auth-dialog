@@ -12,10 +12,11 @@ desktopdir = $(datadir)/applications
 desktop_in_files = krb5-auth-dialog.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
-schemadir = $(GCONF_SCHEMA_FILE_DIR)
-schema_in_files = krb5-auth-dialog.schemas.in
-schema_DATA = $(schema_in_files:.schemas.in=.schemas)
-@INTLTOOL_SCHEMAS_RULE@
+gsettings_SCHEMAS = org.gnome.KrbAuthDialog.gschema.xml
+@GSETTINGS_RULES@
+
+convertdir = $(datadir)/GConf/gsettings
+dist_convert_DATA = org.gnome.KrbAuthDialog.convert
 
 servicedir       = $(datadir)/dbus-1/services
 service_in_files = org.gnome.KrbAuthDialog.service.in
@@ -32,10 +33,8 @@ krb5_auth_dialog_SOURCES =	\
 	ka-applet.h		\
 	ka-pwdialog.c    	\
 	ka-pwdialog.h    	\
-	ka-gconf.c		\
-	ka-gconf.h		\
-	ka-gconf-tools.c	\
-	ka-gconf-tools.h	\
+	ka-settings.c		\
+	ka-settings.h		\
 	ka-dbus.c		\
 	ka-dbus.h		\
 	ka-tools.c		\
@@ -68,7 +67,6 @@ krb5_auth_dialog_CPPFLAGS = \
 krb5_auth_dialog_CFLAGS = \
 	$(GMODULE_CFLAGS) \
 	$(GTK_CFLAGS) \
-	$(GCONF_CFLAGS) \
 	$(KRB5_CFLAGS) \
 	$(NETWORK_MANAGER_CFLAGS) \
 	$(LIBNOTIFY_CFLAGS) \
@@ -82,7 +80,6 @@ krb5_auth_dialog_LDADD = \
 	$(LIBCAP) \
 	$(KRB5_LIBS) \
 	$(LIBNOTIFY_LIBS) \
-	$(GCONF_LIBS) \
 	$(GIO_LIBS) \
 	$(GMODULE_LIBS) \
 	$(GTK_LIBS) \
@@ -103,6 +100,7 @@ EXTRA_DIST = \
 	$(schema_in_files) \
 	$(autostart_in_files) \
 	$(service_in_files) \
+	org.gnome.KrbAuthDialog.gschema.xml \
 	krb5-auth-dialog.1.in \
 	$(NULL)
 
@@ -110,13 +108,4 @@ CLEANFILES = $(schema_DATA) $(service_DATA)
 DISTCLEANFILES = \
 	krb5-auth-dialog.desktop \
 	$(NULL)
-
-install-data-local: $(schema_DATA)
-if GCONF_SCHEMAS_INSTALL
-	if test -z "$(DESTDIR)" ; then \
-	for p in $^ ; do \
-		GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $$p 2>&1 > /dev/null; \
-	done \
-	fi
-endif
 

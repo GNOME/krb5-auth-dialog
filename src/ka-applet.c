@@ -25,8 +25,7 @@
 #include "ka-applet-priv.h"
 #include "ka-dbus.h"
 #include "ka-kerberos.h"
-#include "ka-gconf-tools.h"
-#include "ka-gconf.h"
+#include "ka-settings.h"
 #include "ka-tools.h"
 #include "ka-main-window.h"
 #include "ka-plugin-loader.h"
@@ -91,10 +90,10 @@ struct _KaAppletPrivate {
     gboolean startup_ccache;    /* ccache found on startup */
     gboolean auto_run;          /* only start with valid ccache */
 
-    /* GConf optins */
+    /* GSettings options */
     NotifyNotification *notification;   /* notification messages */
     char *krb_msg;              /* Additional banner delivered by Kerberos */
-    const char *notify_gconf_key;       /* disable notification gconf key */
+    const char *notify_key;     /* name of disable notification setting key */
     char *principal;            /* the principal to request */
     gboolean renewable;         /* credentials renewable? */
     char *pk_userid;            /* "userid" for pkint */
@@ -103,7 +102,7 @@ struct _KaAppletPrivate {
     gboolean tgt_renewable;     /* request a renewable ticket */
     gboolean tgt_proxiable;     /* request a proxiable ticket */
 
-    GConfClient *gconf;         /* gconf client */
+    GSettings *settings;         /* GSettings client */
 };
 
 
@@ -369,25 +368,25 @@ ka_applet_class_init (KaAppletClass *klass)
     object_class->set_property = ka_applet_set_property;
     object_class->get_property = ka_applet_get_property;
 
-    pspec = g_param_spec_string ("principal",
+    pspec = g_param_spec_string (KA_PROP_NAME_PRINCIPAL,
                                  "Principal",
                                  "Get/Set Kerberos principal",
                                  "", G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class, KA_PROP_PRINCIPAL, pspec);
 
-    pspec = g_param_spec_string ("pk-userid",
+    pspec = g_param_spec_string (KA_PROP_NAME_PK_USERID,
                                  "PKinit identifier",
                                  "Get/Set Pkinit identifier",
                                  "", G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class, KA_PROP_PK_USERID, pspec);
 
-    pspec = g_param_spec_string ("pk-anchors",
+    pspec = g_param_spec_string (KA_PROP_NAME_PK_ANCHORS,
                                  "PKinit trust anchors",
                                  "Get/Set Pkinit trust anchors",
                                  "", G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class, KA_PROP_PK_ANCHORS, pspec);
 
-    pspec = g_param_spec_uint ("pw-prompt-mins",
+    pspec = g_param_spec_uint (KA_PROP_NAME_PW_PROMPT_MINS,
                                "Password prompting interval",
                                "Password prompting interval in minutes",
                                0, G_MAXUINT, MINUTES_BEFORE_PROMPTING,
@@ -395,7 +394,7 @@ ka_applet_class_init (KaAppletClass *klass)
     g_object_class_install_property (object_class,
                                      KA_PROP_PW_PROMPT_MINS, pspec);
 
-    pspec = g_param_spec_boolean ("tgt-forwardable",
+    pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_FORWARDABLE,
                                   "Forwardable ticket",
                                   "wether to request forwardable tickets",
                                   FALSE,
@@ -403,7 +402,7 @@ ka_applet_class_init (KaAppletClass *klass)
     g_object_class_install_property (object_class,
                                      KA_PROP_TGT_FORWARDABLE, pspec);
 
-    pspec = g_param_spec_boolean ("tgt-proxiable",
+    pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_PROXIABLE,
                                   "Proxiable ticket",
                                   "wether to request proxiable tickets",
                                   FALSE,
@@ -411,7 +410,7 @@ ka_applet_class_init (KaAppletClass *klass)
     g_object_class_install_property (object_class,
                                      KA_PROP_TGT_PROXIABLE, pspec);
 
-    pspec = g_param_spec_boolean ("tgt-renewable",
+    pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_RENEWABLE,
                                   "Renewable ticket",
                                   "wether to request renewable tickets",
                                   FALSE,
@@ -534,15 +533,20 @@ ka_notify_disable_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
                               gpointer user_data)
 {
     KaApplet *self = KA_APPLET (user_data);
+    GSettings *ns = g_settings_get_child (self->priv->settings,
+                                              KA_SETTING_CHILD_NOTIFY);
 
     if (strcmp (action, "dont-show-again") == 0) {
-        KA_DEBUG ("turning of notification %s", self->priv->notify_gconf_key);
-        ka_gconf_set_bool (self->priv->gconf,
-                           self->priv->notify_gconf_key, FALSE);
-        self->priv->notify_gconf_key = NULL;
+        KA_DEBUG ("turning of notification %s", self->priv->notify_key);
+        if (!g_settings_set_boolean (ns,
+                                     self->priv->notify_key, FALSE)) {
+            g_warning("Failed to set %s", self->priv->notify_key);
+        }
+        self->priv->notify_key = NULL;
     } else {
         g_warning ("unkonwn action for callback");
     }
+    g_object_unref (ns);
 }
 
 
@@ -693,6 +697,18 @@ ka_update_tray_icon (KaApplet *self, const char *icon, const char *tooltip)
     }
 }
 
+/* check whether a given notification is enabled */
+static gboolean
+get_notify_enabled (KaApplet *self, const char *key)
+{
+    gboolean ret;
+    GSettings *ns = g_settings_get_child (self->priv->settings,
+                                          KA_SETTING_CHILD_NOTIFY);
+    ret = g_settings_get_boolean (ns, key);
+    g_object_unref (ns);
+    return ret;
+}
+
 /*
  * update the tray icon's tooltip and icon
  * and notify listeners about acquired/expiring tickets via signals
@@ -713,10 +729,9 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
     if (remaining > 0) {
         if (expiry_notified || initial_notification) {
             const char* msg;
-            ka_gconf_get_bool (applet->priv->gconf,
-                               KA_GCONF_KEY_NOTIFY_VALID, &notify);
+            notify = get_notify_enabled (applet, KA_SETTING_KEY_NOTIFY_VALID);
             if (notify) {
-                applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_VALID;
+                applet->priv->notify_key = KA_SETTING_KEY_NOTIFY_VALID;
 
                 if (applet->priv->krb_msg)
                     msg = applet->priv->krb_msg;
@@ -740,11 +755,11 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
             if (remaining < applet->priv->pw_prompt_secs
                 && (now - last_warn) > NOTIFY_SECONDS
                 && !applet->priv->renewable) {
-                ka_gconf_get_bool (applet->priv->gconf,
-                                   KA_GCONF_KEY_NOTIFY_EXPIRING, &notify);
+                notify = get_notify_enabled (applet,
+                                             KA_SETTING_KEY_NOTIFY_EXPIRING);
                 if (notify) {
-                    applet->priv->notify_gconf_key =
-                        KA_GCONF_KEY_NOTIFY_EXPIRING;
+                    applet->priv->notify_key =
+                        KA_SETTING_KEY_NOTIFY_EXPIRING;
                     ka_send_event_notification (applet,
                                                 _("Network credentials expiring"),
                                                 tooltip_text,
@@ -759,10 +774,9 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
         }
     } else {
         if (!expiry_notified) {
-            ka_gconf_get_bool (applet->priv->gconf,
-                               KA_GCONF_KEY_NOTIFY_EXPIRED, &notify);
+            notify = get_notify_enabled (applet, KA_SETTING_KEY_NOTIFY_EXPIRED);
             if (notify) {
-                applet->priv->notify_gconf_key = KA_GCONF_KEY_NOTIFY_EXPIRED;
+                applet->priv->notify_key = KA_SETTING_KEY_NOTIFY_EXPIRED;
                 ka_send_event_notification (applet,
                                             _("Network credentials expired"),
                                             _("Your Kerberos credentials have expired."),
@@ -965,10 +979,10 @@ ka_applet_get_pwdialog (const KaApplet *applet)
     return applet->priv->pwdialog;
 }
 
-GConfClient *
-ka_applet_get_gconf_client (const KaApplet *self)
+GSettings *
+ka_applet_get_settings (const KaApplet *self)
 {
-    return self->priv->gconf;
+    return self->priv->settings;
 }
 
 void
@@ -1043,6 +1057,7 @@ ka_applet_destroy (KaApplet* self)
     }
 
     ka_kerberos_destroy ();
+    ka_preferences_window_destroy ();
 }
 
 
@@ -1078,8 +1093,8 @@ ka_applet_create ()
     applet->priv->pwdialog = ka_pwdialog_create (applet->priv->uixml);
     g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 
-    applet->priv->gconf = ka_gconf_init (applet);
-    g_return_val_if_fail (applet->priv->gconf != NULL, NULL);
+    applet->priv->settings = ka_settings_init (applet);
+    g_return_val_if_fail (applet->priv->settings != NULL, NULL);
 
     applet->priv->loader = ka_plugin_loader_create (applet);
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);

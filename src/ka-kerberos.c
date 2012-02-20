@@ -531,7 +531,7 @@ credentials_expiring_once (gpointer *data)
 
 
 /*
- * set ticket options by looking at krb5.conf and gconf
+ * set ticket options by looking at krb5.conf and gsettings
  */
 static void
 ka_set_ticket_options (KaApplet *applet, krb5_context context,

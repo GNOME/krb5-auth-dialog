@@ -3,3 +3,4 @@ krb5-auth-dialog.1
 krb5-auth-dialog.desktop
 krb5-auth-dialog.schemas
 org.gnome.KrbAuthDialog.service
+org.gnome.KrbAuthDialog.gschema.valid

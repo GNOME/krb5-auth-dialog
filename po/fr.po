@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2011-09-06 10:36+0000\n"
+"POT-Creation-Date: 2012-05-28 12:58+0000\n"
 "PO-Revision-Date: 2011-10-01 23:20+0200\n"
 "Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
@@ -20,15 +20,115 @@ msgstr ""
 "Content-Transfer-Encoding: 8 bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../src/krb5-auth-dialog.ui.h:1
+#.
+#. * vim:ts:sts=4:sw=4:et:
+#.
+#: ../src/krb5-auth-dialog.ui.h:1 ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Authentification de Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:2
+msgid "_Renew Ticket"
+msgstr "_Renouveler le ticket"
+
+#: ../src/krb5-auth-dialog.ui.h:3
+msgid "Service Tickets"
+msgstr "Tickets de service"
+
+#: ../src/krb5-auth-dialog.ui.h:4
+msgid "_File"
+msgstr "_Fichier"
+
+#: ../src/krb5-auth-dialog.ui.h:5
+msgid "_Edit"
+msgstr "É_dition"
+
+#: ../src/krb5-auth-dialog.ui.h:6
+msgid "_Help"
+msgstr "Aid_e"
+
+#: ../src/krb5-auth-dialog.ui.h:7
+msgid "Kerberos User"
+msgstr "Utilisateur Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:8
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+"Le nom de votre compte Kerberos. Laissez vide pour utiliser votre nom "
+"d'utilisateur actuel."
+
+#: ../src/krb5-auth-dialog.ui.h:9
+msgid "Kerberos principal:"
+msgstr "Principal Kerberos :"
+
+#: ../src/krb5-auth-dialog.ui.h:10
+msgid "Kerberos Ticket Options"
+msgstr "Options des tickets Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:11
+msgid "Requested Kerberos tickets should be:"
+msgstr "Les tickets Kerberos demandés doivent être :"
+
+#: ../src/krb5-auth-dialog.ui.h:12
+msgid "forwardable"
+msgstr "transférables"
+
+#: ../src/krb5-auth-dialog.ui.h:13
+msgid "If checked, request forwardable tickets"
+msgstr "Si coché, demande des tickets transférables"
+
+#: ../src/krb5-auth-dialog.ui.h:14
+msgid "renewable"
+msgstr "renouvelables"
+
+#: ../src/krb5-auth-dialog.ui.h:15
+msgid "If checked, request renewable tickets"
+msgstr "Si coché, demande des tickets renouvelables"
+
+#: ../src/krb5-auth-dialog.ui.h:16
+msgid "proxiable"
+msgstr "utilisables via proxy"
+
+#: ../src/krb5-auth-dialog.ui.h:17
+msgid "If checked, request proxiable tickets"
+msgstr "Si coché, demande des tickets utilisables via proxy"
+
+#: ../src/krb5-auth-dialog.ui.h:18
+msgid "Kerberos"
+msgstr "Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:19
+msgid "Userid"
+msgstr "Identifiant"
+
+#: ../src/krb5-auth-dialog.ui.h:20
+msgid "Use Smartcard"
+msgstr "Utiliser une carte à puce"
+
+#: ../src/krb5-auth-dialog.ui.h:21
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+"Si coché, utilise un jeton de sécurité (carte à puce) pour "
+"l'authentification."
+
+#: ../src/krb5-auth-dialog.ui.h:22
 msgid "Certificate and private key used for authentication"
 msgstr "Certificat et clé privée utilisés pour l'authentification"
 
-#: ../src/krb5-auth-dialog.ui.h:2
+#: ../src/krb5-auth-dialog.ui.h:23
+msgid "_Browse..."
+msgstr "_Parcourir..."
+
+#: ../src/krb5-auth-dialog.ui.h:24
+msgid "X509 trust anchors"
+msgstr "Ancrages de confiance X509"
+
+#: ../src/krb5-auth-dialog.ui.h:25
 msgid "Certificate used to verify digital signatures."
 msgstr "Certificat utilisé pour vérifier les signatures numériques."
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#: ../src/krb5-auth-dialog.ui.h:26
 msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
@@ -36,60 +136,20 @@ msgstr ""
 "Configure l'utilisation de certificats et de cartes à puce pour "
 "l'authentification sur des réseaux Kerberos."
 
-#: ../src/krb5-auth-dialog.ui.h:4
-msgid "If checked, request forwardable tickets"
-msgstr "Si coché, demande des tickets transférables"
-
-#: ../src/krb5-auth-dialog.ui.h:5
-msgid "If checked, request proxiable tickets"
-msgstr "Si coché, demande des tickets utilisables via proxy"
-
-#: ../src/krb5-auth-dialog.ui.h:6
-msgid "If checked, request renewable tickets"
-msgstr "Si coché, demande des tickets renouvelables"
-
-#: ../src/krb5-auth-dialog.ui.h:7
-msgid "If checked, use a security token (Smartcard) to authenticate."
-msgstr ""
-"Si coché, utilise un jeton de sécurité (carte à puce) pour "
-"l'authentification."
-
-#: ../src/krb5-auth-dialog.ui.h:8
-msgid "Kerberos"
-msgstr "Kerberos"
-
-#.
-#. * vim:ts:sts=4:sw=4:et:
-#.
-#: ../src/krb5-auth-dialog.ui.h:9 ../src/krb5-auth-dialog.desktop.in.h:1
-msgid "Kerberos Authentication"
-msgstr "Authentification de Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:10
-msgid "Kerberos Ticket Options"
-msgstr "Options des tickets Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:11
-msgid "Kerberos User"
-msgstr "Utilisateur Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:12
-msgid "Kerberos principal:"
-msgstr "Principal Kerberos :"
-
-#: ../src/krb5-auth-dialog.ui.h:13
-msgid "Notifications"
-msgstr "Notifications"
-
-#: ../src/krb5-auth-dialog.ui.h:14
+#: ../src/krb5-auth-dialog.ui.h:27
 msgid "PKINIT"
 msgstr "PKINIT"
 
-#: ../src/krb5-auth-dialog.ui.h:15
-msgid "Requested Kerberos tickets should be:"
-msgstr "Les tickets Kerberos demandés doivent être :"
+#: ../src/krb5-auth-dialog.ui.h:28
+msgid "Notifications"
+msgstr "Notifications"
 
-#: ../src/krb5-auth-dialog.ui.h:16
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../src/krb5-auth-dialog.ui.h:30
+msgid "Warn"
+msgstr "Avertir"
+
+#: ../src/krb5-auth-dialog.ui.h:31
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
@@ -97,80 +157,20 @@ msgstr ""
 "Envoyer une notification à propos de l'expiration d'un ticket tant de "
 "minutes avant qu'il n'expire"
 
-#: ../src/krb5-auth-dialog.ui.h:17
-msgid "Service Tickets"
-msgstr "Tickets de service"
-
-#: ../src/krb5-auth-dialog.ui.h:18
-msgid ""
-"The name of your Kerberos account. Leave blank to use your current username."
-msgstr ""
-"Le nom de votre compte Kerberos. Laissez vide pour utiliser votre nom "
-"d'utilisateur actuel."
-
-#: ../src/krb5-auth-dialog.ui.h:19
-msgid "Use Smartcard"
-msgstr "Utiliser une carte à puce"
-
-#: ../src/krb5-auth-dialog.ui.h:20
-msgid "Userid"
-msgstr "Identifiant"
-
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:22
-msgid "Warn"
-msgstr "Avertir"
-
-#: ../src/krb5-auth-dialog.ui.h:23
-msgid "X509 trust anchors"
-msgstr "Ancrages de confiance X509"
-
-#: ../src/krb5-auth-dialog.ui.h:24
-msgid "_Browse..."
-msgstr "_Parcourir..."
-
-#: ../src/krb5-auth-dialog.ui.h:25
-msgid "_Edit"
-msgstr "É_dition"
-
-#: ../src/krb5-auth-dialog.ui.h:26
-msgid "_File"
-msgstr "_Fichier"
-
-#: ../src/krb5-auth-dialog.ui.h:27
-msgid "_Help"
-msgstr "Aid_e"
-
-#: ../src/krb5-auth-dialog.ui.h:28
-msgid "_Renew Ticket"
-msgstr "_Renouveler le ticket"
-
-#: ../src/krb5-auth-dialog.ui.h:29
-msgid "forwardable"
-msgstr "transférables"
-
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:31
+#: ../src/krb5-auth-dialog.ui.h:33
 msgid "minutes before ticket expiry"
 msgstr "minutes avant l'expiration du ticket"
 
-#: ../src/krb5-auth-dialog.ui.h:32
-msgid "proxiable"
-msgstr "utilisables via proxy"
-
-#: ../src/krb5-auth-dialog.ui.h:33
-msgid "renewable"
-msgstr "renouvelables"
-
-#: ../src/ka-dialog.c:177
+#: ../src/ka-kerberos.c:177
 msgid "unknown error"
 msgstr "erreur inconnue"
 
-#: ../src/ka-dialog.c:317
+#: ../src/ka-kerberos.c:317
 msgid "Your ticket cache is currently empty"
 msgstr "Votre cache de tickets est actuellement vide"
 
-#: ../src/ka-dialog.c:343
+#: ../src/ka-kerberos.c:341
 msgid "Expired"
 msgstr "Expiré"
 
@@ -179,14 +179,14 @@ msgstr "Expiré"
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Impossible d'acquérir le ticket Kerberos : « %s »"
 
-#: ../src/ka-pwdialog.c:217 ../src/ka-applet.c:368
+#: ../src/ka-pwdialog.c:217 ../src/ka-applet.c:466
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Vos informations d'authentification vont expirer dans %d minute"
 msgstr[1] "Vos informations d'authentification vont expirer dans %d minutes"
 
-#: ../src/ka-pwdialog.c:222 ../src/ka-applet.c:373
+#: ../src/ka-pwdialog.c:222 ../src/ka-applet.c:471
 msgid "Your credentials have expired"
 msgstr "Vos informations d'authentification ont expiré."
 
@@ -1535,57 +1535,57 @@ msgstr "Numéro magique GSSAPI OID incorrect"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Numéro magique GSSAPI QUEUE incorrect"
 
-#: ../src/ka-applet.c:362
+#: ../src/ka-applet.c:460
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vos informations d'authentification expirent dans %.2d h %.2d"
 
-#: ../src/ka-applet.c:544
+#: ../src/ka-applet.c:642
 msgid "List Tickets"
 msgstr "Énumérer les tickets"
 
-#: ../src/ka-applet.c:554
+#: ../src/ka-applet.c:652
 msgid "Get Ticket"
 msgstr "Obtenir le ticket"
 
-#: ../src/ka-applet.c:563
+#: ../src/ka-applet.c:661
 msgid "Don't show me this again"
 msgstr "Ne plus afficher"
 
-#: ../src/ka-applet.c:570
+#: ../src/ka-applet.c:668
 msgid "Remove Credentials Cache"
 msgstr "Supprimer le cache des informations d'authentification"
 
-#: ../src/ka-applet.c:619
+#: ../src/ka-applet.c:717
 msgid "You have valid Kerberos credentials."
 msgstr "Vos informations d'authentification Kerberos sont valides."
 
-#: ../src/ka-applet.c:621
+#: ../src/ka-applet.c:719
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Vous avez actualisé vos informations d'authentification Kerberos."
 
-#: ../src/ka-applet.c:624
+#: ../src/ka-applet.c:722
 msgid "Network credentials valid"
 msgstr "Informations d'authentification réseau valides"
 
-#: ../src/ka-applet.c:643
+#: ../src/ka-applet.c:741
 msgid "Network credentials expiring"
 msgstr "Informations d'authentification Kerberos en cours d'expiration"
 
-#: ../src/ka-applet.c:661
+#: ../src/ka-applet.c:759
 msgid "Network credentials expired"
 msgstr "Informations d'authentification réseau expirées"
 
-#: ../src/ka-applet.c:662
-msgid "Your Kerberos credentails have expired."
+#: ../src/ka-applet.c:760
+msgid "Your Kerberos credentials have expired."
 msgstr "Vos informations d'authentification Kerberos ont expiré."
 
-#: ../src/ka-applet.c:741
+#: ../src/ka-applet.c:839
 msgid "Remove Credentials _Cache"
 msgstr "Supprimer le _cache des informations d'authentification"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:751
+#: ../src/ka-applet.c:849
 msgid "_List Tickets"
 msgstr "É_numérer les tickets"
 
@@ -1617,19 +1617,22 @@ msgstr "Heure de début"
 msgid "End Time"
 msgstr "Heure de fin"
 
-#: ../src/ka-main-window.c:137
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:138
 msgid "Fwd"
 msgstr "Transfert"
 
-#: ../src/ka-main-window.c:143
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:145
 msgid "Proxy"
 msgstr "Proxy"
 
-#: ../src/ka-main-window.c:149
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:152
 msgid "Renew"
 msgstr "Renouvellement"
 
-#: ../src/ka-main-window.c:176
+#: ../src/ka-main-window.c:179
 msgid "Error displaying service ticket information"
 msgstr "Erreur lors de l'affichage des informations du ticket de service"
 
@@ -1650,97 +1653,97 @@ msgid "Kerberos Network Authentication Dialog"
 msgstr "Boîte de dialogue d'authentification réseau Kerberos"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:1
-msgid "Enabled plugins"
-msgstr "Greffons actifs"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:2
-msgid "Forwardable ticket"
-msgstr "Ticket transférable"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "Kerberos principal"
 msgstr "Principal Kerberos"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:4
-msgid "List of plugins that should be loaded and activated on startup."
-msgstr "Liste de greffons qui sont chargés et activés au démarrage."
+#: ../src/krb5-auth-dialog.schemas.in.h:2
+msgid "The kerberos principal to acquire the ticket for"
+msgstr "Le principal Kerberos pour lequel obtenir le ticket"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:5
-msgid "Notify user when ticket becomes valid"
-msgstr "Avertir l'utilisateur lorsque le ticket devient valide"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:6
-msgid "Notify user when ticket has expired"
-msgstr "Avertir l'utilisateur lorsque le ticket a expiré"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:7
-msgid "Notify user when ticket is about to expire"
-msgstr "Avertir l'utilisateur lorsque le ticket est sur le point d'expirer"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:8
-msgid "PKINIT CA certificates"
-msgstr "Certificats CA PKINIT"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:9
+#: ../src/krb5-auth-dialog.schemas.in.h:3
 msgid "PKINIT identifier"
 msgstr "Identifiant PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:10
+#: ../src/krb5-auth-dialog.schemas.in.h:4
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr ""
+"L'identifiant publique/privé/certificat du principal lors de l'utilisation "
+"de PKINIT"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:5
 msgid "PKINIT trust anchors"
 msgstr "Ancrages de confiance PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:11
+#: ../src/krb5-auth-dialog.schemas.in.h:6
+msgid "PKINIT CA certificates"
+msgstr "Certificats CA PKINIT"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:7
 msgid "Prompt minutes before expiry"
 msgstr "Avertir n minutes avant l'expiration"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:12
-msgid "Proxiable ticket"
-msgstr "Ticket utilisable via proxy"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:13
-msgid "Renewable ticket"
-msgstr "Ticket renouvelable"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:14
-msgid "Requested tickets should be forwardable"
-msgstr "Les tickets demandés doivent être transférables"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:15
-msgid "Requested tickets should be proxiable"
-msgstr "Les tickets demandés doivent être utilisables au travers d'un proxy"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:16
-msgid "Requested tickets should be renewable"
-msgstr "Les tickets demandés doivent être renouvelables"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:17
+#: ../src/krb5-auth-dialog.schemas.in.h:8
 msgid ""
 "Start prompting/displaying notifications that many minutes before expiry"
 msgstr ""
 "Commencer à demander/afficher des notifications tant de minutes avant "
 "l'expiration"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:18
-msgid "The kerberos principal to acquire the ticket for"
-msgstr "Le principal Kerberos pour lequel obtenir le ticket"
+#: ../src/krb5-auth-dialog.schemas.in.h:9
+msgid "Forwardable ticket"
+msgstr "Ticket transférable"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:19
-msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr ""
-"L'identifiant publique/privé/certificat du principal lors de l'utilisation "
-"de PKINIT"
+#: ../src/krb5-auth-dialog.schemas.in.h:10
+msgid "Requested tickets should be forwardable"
+msgstr "Les tickets demandés doivent être transférables"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:20
-msgid "ticket expired notification"
-msgstr "Notification de ticket expiré"
+#: ../src/krb5-auth-dialog.schemas.in.h:11
+msgid "Renewable ticket"
+msgstr "Ticket renouvelable"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:21
+#: ../src/krb5-auth-dialog.schemas.in.h:12
+msgid "Requested tickets should be renewable"
+msgstr "Les tickets demandés doivent être renouvelables"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:13
+msgid "Proxiable ticket"
+msgstr "Ticket utilisable via proxy"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:14
+msgid "Requested tickets should be proxiable"
+msgstr "Les tickets demandés doivent être utilisables au travers d'un proxy"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:15
+msgid "valid ticket notification"
+msgstr "Notification de ticket valide"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:16
+msgid "Notify user when ticket becomes valid"
+msgstr "Avertir l'utilisateur lorsque le ticket devient valide"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:17
 msgid "ticket expiring notification"
 msgstr "Notification de ticket en cours d'expiration"
 
+#: ../src/krb5-auth-dialog.schemas.in.h:18
+msgid "Notify user when ticket is about to expire"
+msgstr "Avertir l'utilisateur lorsque le ticket est sur le point d'expirer"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:19
+msgid "ticket expired notification"
+msgstr "Notification de ticket expiré"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:20
+msgid "Notify user when ticket has expired"
+msgstr "Avertir l'utilisateur lorsque le ticket a expiré"
+
+#: ../src/krb5-auth-dialog.schemas.in.h:21
+msgid "Enabled plugins"
+msgstr "Greffons actifs"
+
 #: ../src/krb5-auth-dialog.schemas.in.h:22
-msgid "valid ticket notification"
-msgstr "Notification de ticket valide"
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr "Liste de greffons qui sont chargés et activés au démarrage."
 
 #: ../secmem/util.c:106
 #, c-format

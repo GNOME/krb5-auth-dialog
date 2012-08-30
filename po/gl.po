@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.po.master.gl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-24 00:12+0100\n"
-"PO-Revision-Date: 2012-03-24 00:12+0100\n"
+"POT-Creation-Date: 2012-08-30 14:41+0200\n"
+"PO-Revision-Date: 2012-08-30 14:41+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Gtranslator 2.91.5\n"
 
 #.
 #. * vim:ts:sts=4:sw=4:et:
@@ -1566,8 +1566,8 @@ msgid "Network credentials expired"
 msgstr "As credenciais de rede caducaron"
 
 #: ../src/ka-applet.c:760
-msgid "Your Kerberos credentails have expired."
-msgstr "As súas credenciais Kerberos caducaron."
+msgid "Your Kerberos credentials have expired."
+msgstr "As súas credenciais de Kerberos caducaron."
 
 #: ../src/ka-applet.c:839
 msgid "Remove Credentials _Cache"

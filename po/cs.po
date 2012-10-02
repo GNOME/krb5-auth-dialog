@@ -178,22 +178,22 @@ msgstr "Nelze získat lístek: '%s'"
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "Vaše přihlašovací údaje vyprší za %d minutu"
-msgstr[1] "Vaše přihlašovací údaje vyprší za %d minuty"
-msgstr[2] "Vaše přihlašovací údaje vyprší za %d minut"
+msgstr[0] "Vaše pověření údaje vyprší za %d minutu"
+msgstr[1] "Vaše pověření vyprší za %d minuty"
+msgstr[2] "Vaše pověření vyprší za %d minut"
 
 #: ../src/ka-pwdialog.c:222 ../src/ka-applet.c:373
 msgid "Your credentials have expired"
-msgstr "Vaše přihlašovací údaje vypršely"
+msgstr "Vaše pověření vypršelo"
 
 #: ../src/ka-pwdialog.c:245
 msgid "Please enter your Kerberos password:"
-msgstr "Vložte prosím své Kerberos heslo:"
+msgstr "Vložte prosím své heslo Kerberos:"
 
 #: ../src/ka-pwdialog.c:258
 #, c-format
 msgid "Please enter the password for '%s':"
-msgstr "Vložte prosím své heslo pro '%s':"
+msgstr "Vložte prosím své heslo pro „%s“:"
 
 #: ../src/ka-pwdialog.c:276
 msgid "The password you entered is invalid"
@@ -365,12 +365,12 @@ msgstr "KDC nemá podporu pro datový typ transited"
 #. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
 #: ../src/dummy-strings.c:41
 msgid "Clients credentials have been revoked"
-msgstr "Přihlašovací údaje klienta byly zneplatněny"
+msgstr "Pověření klienta bylo odvoláno"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
 #: ../src/dummy-strings.c:42
 msgid "Credentials for server have been revoked"
-msgstr "Přihlašovací údaje severu byly zneplatněny"
+msgstr "Pověření severu bylo odvoláno"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
 #: ../src/dummy-strings.c:43
@@ -676,22 +676,22 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
 #: ../src/dummy-strings.c:103
 msgid "Credential cache name malformed"
-msgstr ""
+msgstr "Chybný název mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
 #: ../src/dummy-strings.c:104
 msgid "Unknown credential cache type"
-msgstr ""
+msgstr "Neznámý typ mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:105
 msgid "Matching credential not found"
-msgstr ""
+msgstr "Odopvídající pověření nebylo nalezeno"
 
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
 #: ../src/dummy-strings.c:106
 msgid "End of credential cache reached"
-msgstr ""
+msgstr "Dosažen konec mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_CC_END
 #: ../src/dummy-strings.c:107
@@ -726,7 +726,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: ../src/dummy-strings.c:113
 msgid "Client/server realm mismatch in initial ticket request"
-msgstr ""
+msgstr "Nesouhlasí sféry klienta/serveru požadavku na počáteční tiket"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: ../src/dummy-strings.c:114
@@ -751,7 +751,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:118
 msgid "Cannot find KDC for requested realm"
-msgstr "Nelze nalézt KDC pro požadovanou doménu"
+msgstr "Nelze nalézt KDC pro požadovanou sféru"
 
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: ../src/dummy-strings.c:119
@@ -761,7 +761,7 @@ msgstr "Neznámá služba Kerberos"
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
-msgstr "Pro požadovaný realm nelze kontaktovat žádný KDC"
+msgstr "Pro požadovanou sféru nelze kontaktovat žádný KDC"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
@@ -901,7 +901,7 @@ msgstr "Chyba zápisu do tabulky klíčů"
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: ../src/dummy-strings.c:149
 msgid "Cannot find ticket for requested realm"
-msgstr "Pro požadovanou doménu nelze najít lístek"
+msgstr "Pro požadovanou sféru nelze najít lístek"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: ../src/dummy-strings.c:150
@@ -931,7 +931,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
 #: ../src/dummy-strings.c:155
 msgid "Credentials cache type is already registered."
-msgstr ""
+msgstr "Typ mezipaměti s pověřeními je již zaregistrován."
 
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
 #: ../src/dummy-strings.c:156
@@ -941,27 +941,27 @@ msgstr "Typ tabulky s klíči je již zaregistrován"
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
 #: ../src/dummy-strings.c:157
 msgid "Credentials cache I/O operation failed XXX"
-msgstr ""
+msgstr "V/V operace mezipaměti s pověřeními selhala XXX"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
 #: ../src/dummy-strings.c:158
 msgid "Credentials cache permissions incorrect"
-msgstr "Nesprávná oprávnění mezipaměti přihlašovacích údajů"
+msgstr "Nesprávná oprávnění mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_FCC_PERM
 #: ../src/dummy-strings.c:159
 msgid "No credentials cache found"
-msgstr "Nebyla nalezena mezipaměť přihlašovacích údajů"
+msgstr "Nebyla nalezena mezipaměť s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_FCC_NOFILE
 #: ../src/dummy-strings.c:160
 msgid "Internal credentials cache error"
-msgstr ""
+msgstr "Interní chyba mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_FCC_INTERNAL
 #: ../src/dummy-strings.c:161
 msgid "Error writing to credentials cache"
-msgstr ""
+msgstr "Chyba zápisu do mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_CC_WRITE
 #: ../src/dummy-strings.c:162
@@ -971,7 +971,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: ../src/dummy-strings.c:163
 msgid "Bad format in credentials cache"
-msgstr ""
+msgstr "Chybný formát v mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
 #: ../src/dummy-strings.c:164
@@ -1036,12 +1036,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
 #: ../src/dummy-strings.c:176
 msgid "Unsupported credentials cache format version number"
-msgstr ""
+msgstr "Nepodporované číslo verze formátu mezipaměti s pověřeními"
 
 #. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
 #: ../src/dummy-strings.c:177
 msgid "Unsupported key table format version number"
-msgstr ""
+msgstr "Nepodporované číslo verze formátu tabulky s klíči"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: ../src/dummy-strings.c:178
@@ -1061,7 +1061,7 @@ msgstr "Název počítače nelze převést do kanonického tvaru"
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
 #: ../src/dummy-strings.c:181
 msgid "Cannot determine realm for host"
-msgstr "Nelze zjistit realm pro hosta"
+msgstr "Nelze určit sféru pro počítač"
 
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
 #: ../src/dummy-strings.c:182
@@ -1076,7 +1076,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
 #: ../src/dummy-strings.c:184
 msgid "Cannot resolve network address for KDC in requested realm"
-msgstr ""
+msgstr "Nelze zjistit síťovou adresu pro KDC v požadované sféře"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: ../src/dummy-strings.c:185
@@ -1096,7 +1096,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: ../src/dummy-strings.c:188
 msgid "Configuration file does not specify default realm"
-msgstr ""
+msgstr "Soubor s nastavením neurčuje výchozí sféru"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
 #: ../src/dummy-strings.c:189
@@ -1176,7 +1176,7 @@ msgstr "selhání funkce getaddrinfo z neznámých příčin"
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: ../src/dummy-strings.c:204
 msgid "no data available for host/domain name"
-msgstr ""
+msgstr "nejsou dostupná žádná data pro název počítače/domény"
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
 #: ../src/dummy-strings.c:205
@@ -1191,7 +1191,7 @@ msgstr "neznámé jméno služby"
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: ../src/dummy-strings.c:207
 msgid "Cannot determine realm for numeric host address"
-msgstr ""
+msgstr "Nelze určit sféru pro číselnou adresu počítače"
 
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
 #: ../src/dummy-strings.c:208
@@ -1512,7 +1512,7 @@ msgstr "Špatné magické číslo pro GSSAPI QUEUE"
 #: ../src/ka-applet.c:362
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
-msgstr "Vaše přihlašovací údaje vyprší za %.2d:%.2dh"
+msgstr "Vaše pověření vyprší za %.2d:%.2dh"
 
 #: ../src/ka-applet.c:544
 msgid "List Tickets"
@@ -1528,35 +1528,35 @@ msgstr "Znovu nezobrazovat"
 
 #: ../src/ka-applet.c:570
 msgid "Remove Credentials Cache"
-msgstr "Odstranit mezipaměť přihlašovacích údajů"
+msgstr "Odstranit mezipaměť s pověřeními"
 
 #: ../src/ka-applet.c:619
 msgid "You have valid Kerberos credentials."
-msgstr "Vaše přihlašovací údaje jsou platné."
+msgstr "Vaše pověření jsou platná."
 
 #: ../src/ka-applet.c:621
 msgid "You've refreshed your Kerberos credentials."
-msgstr "Aktualizovali jste své přihlašovací údaje."
+msgstr "Aktualizovali jste svá pověření Kerberos."
 
 #: ../src/ka-applet.c:624
 msgid "Network credentials valid"
-msgstr "Síťové přihlašovací údaje jsou platné"
+msgstr "Síťová pověření jsou platná"
 
 #: ../src/ka-applet.c:643
 msgid "Network credentials expiring"
-msgstr "Blíží se konec platnosti síťových přihlašovacích údajů"
+msgstr "Blíží se konec platnosti síťových pověření"
 
 #: ../src/ka-applet.c:661
 msgid "Network credentials expired"
-msgstr "Platnost síťových přihlašovacích údajů vypršela"
+msgstr "Platnost síťových pověření vypršela"
 
 #: ../src/ka-applet.c:662
 msgid "Your Kerberos credentails have expired."
-msgstr "Platnost vašich přihlašovacích údajů Kerberos vypršela."
+msgstr "Platnost vašich pověření Kerberos vypršela."
 
 #: ../src/ka-applet.c:741
 msgid "Remove Credentials _Cache"
-msgstr "Odstranit mezipaměť přihlašova_cích údajů"
+msgstr "Odstranit _mezipaměť s pověřeními"
 
 #. Ticket dialog
 #: ../src/ka-applet.c:751
@@ -1714,12 +1714,3 @@ msgstr ""
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Pozor: provozovat q-agent setuid na tomto systému je nebezpečné\n"
-
-#~ msgid "There was an error launching the preferences dialog: %s"
-#~ msgstr "Při spouštění dialogového okna předvoleb došlo k chybě: %s "
-
-#~ msgid "Kerberos;Authentication"
-#~ msgstr "Kerberos;Autentizace"
-
-#~ msgid "Set your Kerberos network authentication preferences"
-#~ msgstr "Nastavte své předvolby síťové autentizace Kerberos"

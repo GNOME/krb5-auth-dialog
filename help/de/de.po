@@ -5,9 +5,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2010-09-12 12:02+0000\n"
-"PO-Revision-Date: 2010-09-20 22:34+0100\n"
-"Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
+"POT-Creation-Date: 2012-03-23 23:12+0000\n"
+"PO-Revision-Date: 2012-05-13 21:40+0100\n"
+"Last-Translator: Daniel Winzen <d@winzen4.de>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -307,17 +307,15 @@ msgstr "Befehlszeile"
 
 #: C/krb5-auth-dialog.xml:155(para)
 msgid ""
-"Type <command>krb5-auth-dialog --always</command>, then press "
-"<keycap>Return</keycap>:"
+"Type <command>krb5-auth-dialog</command>, then press <keycap>Return</keycap>:"
 msgstr ""
-"Geben Sie <command>krb5-auth-dialog --always</command> ein und drücken Sie "
+"Geben Sie <command>krb5-auth-dialog</command> ein und drücken Sie "
 "anschließend die <keycap>Eingabetaste</keycap>:"
 
 #: C/krb5-auth-dialog.xml:162(para)
-msgid "The tray icon will indicate one of tree states:"
+msgid "The tray icon will indicate one of three states:"
 msgstr ""
-"Das Symbol im Benachrichtigungsfeld zeigt einen der folgenden drei Zustände "
-"an:"
+"Das Benachrichtigungssymbol zeigt einen der folgenden drei Zustände an:"
 
 #: C/krb5-auth-dialog.xml:167(title) C/krb5-auth-dialog.xml:170(title)
 msgid "Valid Kerberos ticket"

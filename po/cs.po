@@ -723,7 +723,7 @@ msgstr "Odpověď KDC nesplnila očekávání"
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
 #: ../src/dummy-strings.c:112
 msgid "Clock skew too great in KDC reply"
-msgstr ""
+msgstr "Zkreslení hodin v odpovědi KDC je příliš velké"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: ../src/dummy-strings.c:113
@@ -773,7 +773,7 @@ msgstr "Nenalezen místní název pro název principalu"
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: ../src/dummy-strings.c:123
 msgid "Replay cache type is already registered"
-msgstr ""
+msgstr "Typ mezipaměti odpovědí je již zaregistrován"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
 #: ../src/dummy-strings.c:124
@@ -783,7 +783,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
 #: ../src/dummy-strings.c:125
 msgid "Replay cache type is unknown"
-msgstr ""
+msgstr "Typ mezipaměti odpovědí je neznámý"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
 #: ../src/dummy-strings.c:126
@@ -808,12 +808,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_NOIO
 #: ../src/dummy-strings.c:130
 msgid "Replay cache name parse/format error"
-msgstr ""
+msgstr "Chyba zpracování/formátu názvu mezipaměti odpovědí"
 
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: ../src/dummy-strings.c:131
 msgid "End-of-file on replay cache I/O"
-msgstr ""
+msgstr "Konec souboru při V/V operaci na mezipaměti odpovědí"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: ../src/dummy-strings.c:132
@@ -973,17 +973,17 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: ../src/dummy-strings.c:163
 msgid "Bad format in credentials cache"
-msgstr "Chybný formát v mezipaměti s pověřeními"
+msgstr "Chybný formát v mezipaměti pověření"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
 #: ../src/dummy-strings.c:164
 msgid "No credentials found with supported encryption types"
-msgstr ""
+msgstr "Nebylo nalezeno žádné pověření s podporovanými typy šifrování"
 
 #. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
 #: ../src/dummy-strings.c:165
 msgid "Invalid KDC option combination (library internal error)"
-msgstr ""
+msgstr "Neplatná kombinace voleb KDC (interní chyba knihovny)"
 
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
 #: ../src/dummy-strings.c:166
@@ -1033,7 +1033,7 @@ msgstr "Obecná chyba preautentizace"
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
 #: ../src/dummy-strings.c:175
 msgid "Unsupported replay cache format version number"
-msgstr ""
+msgstr "Nepodporované číslo verze formátu u mezipaměti odpovědí"
 
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
 #: ../src/dummy-strings.c:176
@@ -1088,12 +1088,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
 #: ../src/dummy-strings.c:186
 msgid "Bad principal name while trying to forward credentials"
-msgstr ""
+msgstr "Chybný název principalu při pokusu o předání pověření"
 
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: ../src/dummy-strings.c:187
 msgid "Looping detected inside krb5_get_in_tkt"
-msgstr ""
+msgstr "Zjištěno zacyklení v krb5_get_in_tkt"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: ../src/dummy-strings.c:188
@@ -1123,7 +1123,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
 #: ../src/dummy-strings.c:193
 msgid "Keytab name too long"
-msgstr ""
+msgstr "Název tabulky s klíči je příliš dlouhý"
 
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
 #: ../src/dummy-strings.c:194
@@ -1153,7 +1153,7 @@ msgstr "Změna hesla selhala"
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: ../src/dummy-strings.c:199
 msgid "Bad format in keytab"
-msgstr ""
+msgstr "Chybný formát v tabulce klíčů"
 
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
 #: ../src/dummy-strings.c:200
@@ -1238,222 +1238,222 @@ msgstr ""
 #. kv5m_err.et:kv5m:KV5M_NONE
 #: ../src/dummy-strings.c:216
 msgid "Bad magic number for krb5_principal structure"
-msgstr "Špatné magické číslo pro krb5_principal structure"
+msgstr "Špatné magické číslo pro strukturu krb5_principale"
 
 #. kv5m_err.et:kv5m:KV5M_PRINCIPAL
 #: ../src/dummy-strings.c:217
 msgid "Bad magic number for krb5_data structure"
-msgstr "Špatné magické číslo pro krb5_data structure"
+msgstr "Špatné magické číslo pro strukturu krb5_data"
 
 #. kv5m_err.et:kv5m:KV5M_DATA
 #: ../src/dummy-strings.c:218
 msgid "Bad magic number for krb5_keyblock structure"
-msgstr "Špatné magické číslo pro krb5_keyblock structure"
+msgstr "Špatné magické číslo pro strukturu krb5_keyblock"
 
 #. kv5m_err.et:kv5m:KV5M_KEYBLOCK
 #: ../src/dummy-strings.c:219
 msgid "Bad magic number for krb5_checksum structure"
-msgstr "Špatné magické číslo pro krb5_checksum structure"
+msgstr "Špatné magické číslo pro strukturu krb5_checksum"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM
 #: ../src/dummy-strings.c:220
 msgid "Bad magic number for krb5_encrypt_block structure"
-msgstr "Špatné magické číslo pro krb5_encrypt_block structure"
+msgstr "Špatné magické číslo pro strukturu krb5_encrypt_block"
 
 #. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
 #: ../src/dummy-strings.c:221
 msgid "Bad magic number for krb5_enc_data structure"
-msgstr "Špatné magické číslo pro krb5_enc_data structure"
+msgstr "Špatné magické číslo pro strukturu krb5_enc_data"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_DATA
 #: ../src/dummy-strings.c:222
 msgid "Bad magic number for krb5_cryptosystem_entry structure"
-msgstr "Špatné magické číslo pro krb5_cryptosystem_entry structure"
+msgstr "Špatné magické číslo pro strukturu krb5_cryptosystem_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
 #: ../src/dummy-strings.c:223
 msgid "Bad magic number for krb5_cs_table_entry structure"
-msgstr "Špatné magické číslo pro krb5_cs_table_entry structure"
+msgstr "Špatné magické číslo pro strukturu krb5_cs_table_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
 #: ../src/dummy-strings.c:224
 msgid "Bad magic number for krb5_checksum_entry structure"
-msgstr "Špatné magické číslo pro krb5_checksum_entry structure"
+msgstr "Špatné magické číslo pro strukturu krb5_checksum_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
 #: ../src/dummy-strings.c:225
 msgid "Bad magic number for krb5_authdata structure"
-msgstr "Špatné magické číslo pro krb5_authdata structure"
+msgstr "Špatné magické číslo pro strukturu krb5_authdata"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA
 #: ../src/dummy-strings.c:226
 msgid "Bad magic number for krb5_transited structure"
-msgstr "Špatné magické číslo pro krb5_transited structure"
+msgstr "Špatné magické číslo pro strukturu krb5_transited"
 
 #. kv5m_err.et:kv5m:KV5M_TRANSITED
 #: ../src/dummy-strings.c:227
 msgid "Bad magic number for krb5_enc_tkt_part structure"
-msgstr "Špatné magické číslo pro krb5_enc_tkt_part structure"
+msgstr "Špatné magické číslo pro strukturu krb5_enc_tkt_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
 #: ../src/dummy-strings.c:228
 msgid "Bad magic number for krb5_ticket structure"
-msgstr "Špatné magické číslo pro krb5_ticket structure"
+msgstr "Špatné magické číslo pro strukturu krb5_ticket"
 
 #. kv5m_err.et:kv5m:KV5M_TICKET
 #: ../src/dummy-strings.c:229
 msgid "Bad magic number for krb5_authenticator structure"
-msgstr "Špatné magické číslo pro krb5_authenticator structure"
+msgstr "Špatné magické číslo pro strukturu krb5_authenticator"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
 #: ../src/dummy-strings.c:230
 msgid "Bad magic number for krb5_tkt_authent structure"
-msgstr "Špatné magické číslo pro krb5_tkt_authent structure"
+msgstr "Špatné magické číslo pro strukturu krb5_tkt_authent"
 
 #. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
 #: ../src/dummy-strings.c:231
 msgid "Bad magic number for krb5_creds structure"
-msgstr "Špatné magické číslo pro krb5_creds structure"
+msgstr "Špatné magické číslo pro strukturu krb5_creds"
 
 #. kv5m_err.et:kv5m:KV5M_CREDS
 #: ../src/dummy-strings.c:232
 msgid "Bad magic number for krb5_last_req_entry structure"
-msgstr "Špatné magické číslo pro krb5_last_req_entry structure"
+msgstr "Špatné magické číslo pro strukturu krb5_last_req_entry"
 
 #. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
 #: ../src/dummy-strings.c:233
 msgid "Bad magic number for krb5_pa_data structure"
-msgstr "Špatné magické číslo pro krb5_pa_data structure"
+msgstr "Špatné magické číslo pro strukturu krb5_pa_data"
 
 #. kv5m_err.et:kv5m:KV5M_PA_DATA
 #: ../src/dummy-strings.c:234
 msgid "Bad magic number for krb5_kdc_req structure"
-msgstr "Špatné magické číslo pro krb5_kdc_req structure"
+msgstr "Špatné magické číslo pro strukturu krb5_kdc_req"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REQ
 #: ../src/dummy-strings.c:235
 msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
-msgstr "Špatné magické číslo pro krb5_enc_kdc_rep_part structure"
+msgstr "Špatné magické číslo pro strukturu krb5_enc_kdc_rep_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
 #: ../src/dummy-strings.c:236
 msgid "Bad magic number for krb5_kdc_rep structure"
-msgstr "Špatné magické číslo pro krb5_kdc_rep structure"
+msgstr "Špatné magické číslo pro strukturu krb5_kdc_rep"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REP
 #: ../src/dummy-strings.c:237
 msgid "Bad magic number for krb5_error structure"
-msgstr "Špatné magické číslo pro krb5_error structure"
+msgstr "Špatné magické číslo pro strukturu krb5_error"
 
 #. kv5m_err.et:kv5m:KV5M_ERROR
 #: ../src/dummy-strings.c:238
 msgid "Bad magic number for krb5_ap_req structure"
-msgstr "Špatné magické číslo pro krb5_ap_req structure"
+msgstr "Špatné magické číslo pro strukturu krb5_ap_req"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REQ
 #: ../src/dummy-strings.c:239
 msgid "Bad magic number for krb5_ap_rep structure"
-msgstr "Špatné magické číslo pro krb5_ap_rep structure"
+msgstr "Špatné magické číslo pro strukturu krb5_ap_rep"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP
 #: ../src/dummy-strings.c:240
 msgid "Bad magic number for krb5_ap_rep_enc_part structure"
-msgstr "Špatné magické číslo pro krb5_ap_rep_enc_part structure"
+msgstr "Špatné magické číslo pro strukturu krb5_ap_rep_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
 #: ../src/dummy-strings.c:241
 msgid "Bad magic number for krb5_response structure"
-msgstr "Špatné magické číslo pro krb5_response structure"
+msgstr "Špatné magické číslo pro strukturu krb5_response"
 
 #. kv5m_err.et:kv5m:KV5M_RESPONSE
 #: ../src/dummy-strings.c:242
 msgid "Bad magic number for krb5_safe structure"
-msgstr "Špatné magické číslo pro krb5_safe structure"
+msgstr "Špatné magické číslo pro strukturu krb5_safe"
 
 #. kv5m_err.et:kv5m:KV5M_SAFE
 #: ../src/dummy-strings.c:243
 msgid "Bad magic number for krb5_priv structure"
-msgstr "Špatné magické číslo pro krb5_priv structure"
+msgstr "Špatné magické číslo pro strukturu krb5_priv"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV
 #: ../src/dummy-strings.c:244
 msgid "Bad magic number for krb5_priv_enc_part structure"
-msgstr "Špatné magické číslo pro krb5_priv_enc_part structure"
+msgstr "Špatné magické číslo pro strukturu krb5_priv_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
 #: ../src/dummy-strings.c:245
 msgid "Bad magic number for krb5_cred structure"
-msgstr "Špatné magické číslo pro krb5_cred structure"
+msgstr "Špatné magické číslo pro strukturu krb5_cred"
 
 #. kv5m_err.et:kv5m:KV5M_CRED
 #: ../src/dummy-strings.c:246
 msgid "Bad magic number for krb5_cred_info structure"
-msgstr "Špatné magické číslo pro krb5_cred_info structure"
+msgstr "Špatné magické číslo pro strukturu krb5_cred_info"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_INFO
 #: ../src/dummy-strings.c:247
 msgid "Bad magic number for krb5_cred_enc_part structure"
-msgstr "Špatné magické číslo pro krb5_cred_enc_part structure"
+msgstr "Špatné magické číslo pro strukturu krb5_cred_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
 #: ../src/dummy-strings.c:248
 msgid "Bad magic number for krb5_pwd_data structure"
-msgstr "Špatné magické číslo pro krb5_pwd_data structure"
+msgstr "Špatné magické číslo pro strukturu krb5_pwd_data"
 
 #. kv5m_err.et:kv5m:KV5M_PWD_DATA
 #: ../src/dummy-strings.c:249
 msgid "Bad magic number for krb5_address structure"
-msgstr "Špatné magické číslo pro krb5_address structure"
+msgstr "Špatné magické číslo pro strukturu krb5_address"
 
 #. kv5m_err.et:kv5m:KV5M_ADDRESS
 #: ../src/dummy-strings.c:250
 msgid "Bad magic number for krb5_keytab_entry structure"
-msgstr "Špatné magické číslo pro krb5_keytab_entry structure"
+msgstr "Špatné magické číslo pro strukturu krb5_keytab_entry"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
 #: ../src/dummy-strings.c:251
 msgid "Bad magic number for krb5_context structure"
-msgstr "Špatné magické číslo pro krb5_context structure"
+msgstr "Špatné magické číslo pro strukturu krb5_context"
 
 #. kv5m_err.et:kv5m:KV5M_CONTEXT
 #: ../src/dummy-strings.c:252
 msgid "Bad magic number for krb5_os_context structure"
-msgstr "Špatné magické číslo pro krb5_os_context structure"
+msgstr "Špatné magické číslo pro strukturu krb5_os_context"
 
 #. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
 #: ../src/dummy-strings.c:253
 msgid "Bad magic number for krb5_alt_method structure"
-msgstr "Špatné magické číslo pro krb5_alt_method structure"
+msgstr "Špatné magické číslo pro strukturu krb5_alt_method"
 
 #. kv5m_err.et:kv5m:KV5M_ALT_METHOD
 #: ../src/dummy-strings.c:254
 msgid "Bad magic number for krb5_etype_info_entry structure"
-msgstr "Špatné magické číslo pro krb5_etype_info_entry structure"
+msgstr "Špatné magické číslo pro strukturu krb5_etype_info_entry"
 
 #. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
 #: ../src/dummy-strings.c:255
 msgid "Bad magic number for krb5_db_context structure"
-msgstr "Špatné magické číslo pro krb5_db_context structure"
+msgstr "Špatné magické číslo pro strukturu krb5_db_context"
 
 #. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
 #: ../src/dummy-strings.c:256
 msgid "Bad magic number for krb5_auth_context structure"
-msgstr "Špatné magické číslo pro krb5_auth_context structure"
+msgstr "Špatné magické číslo pro strukturu krb5_auth_context"
 
 #. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
 #: ../src/dummy-strings.c:257
 msgid "Bad magic number for krb5_keytab structure"
-msgstr "Špatné magické číslo pro krb5_keytab structure"
+msgstr "Špatné magické číslo pro strukturu krb5_keytab"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB
 #: ../src/dummy-strings.c:258
 msgid "Bad magic number for krb5_rcache structure"
-msgstr "Špatné magické číslo pro krb5_rcache structure"
+msgstr "Špatné magické číslo pro strukturu krb5_rcache"
 
 #. kv5m_err.et:kv5m:KV5M_RCACHE
 #: ../src/dummy-strings.c:259
 msgid "Bad magic number for krb5_ccache structure"
-msgstr "Špatné magické číslo pro krb5_ccache structure"
+msgstr "Špatné magické číslo pro strukturu krb5_ccache"
 
 #. kv5m_err.et:kv5m:KV5M_CCACHE
 #: ../src/dummy-strings.c:260

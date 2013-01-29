@@ -1128,7 +1128,7 @@ msgstr "Název tabulky s klíči je příliš dlouhý"
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
 #: ../src/dummy-strings.c:194
 msgid "Key version number for principal in key table is incorrect"
-msgstr ""
+msgstr "Číslo verze klíče pro principal v tabulce klíčů je nesprávné"
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: ../src/dummy-strings.c:195
@@ -1208,12 +1208,12 @@ msgstr "služba není dostupná"
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: ../src/dummy-strings.c:210
 msgid "Ccache function not supported: read-only ccache type"
-msgstr ""
+msgstr "Funkce Ccache není podporována: typ ccache je ke čtení"
 
 #. krb5_err.et:krb5:KRB5_CC_READONLY
 #: ../src/dummy-strings.c:211
 msgid "Ccache function not supported: not implemented"
-msgstr ""
+msgstr "Funkce Ccache není podporována: neimplementováno"
 
 #. krb5_err.et:krb5:KRB5_CC_NOSUPP
 #: ../src/dummy-strings.c:212
@@ -1223,7 +1223,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
 #: ../src/dummy-strings.c:213
 msgid "Supplied data not handled by this plugin"
-msgstr ""
+msgstr "Dodaná data nejsou obsluhována tímto zásuvným modulem"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: ../src/dummy-strings.c:214
@@ -1233,7 +1233,7 @@ msgstr "Tato operace není modulem podporována"
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
 #: ../src/dummy-strings.c:215
 msgid "Kerberos V5 magic number table"
-msgstr ""
+msgstr "Tabulka magických čísel Kerberos V5"
 
 #. kv5m_err.et:kv5m:KV5M_NONE
 #: ../src/dummy-strings.c:216

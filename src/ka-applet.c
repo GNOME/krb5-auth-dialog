@@ -1,6 +1,6 @@
 /* Krb5 Auth Applet -- Acquire and release kerberos tickets
  *
- * (C) 2008,2009,2010 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2008,2009,2010,2013 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -620,6 +620,12 @@ ka_send_event_notification (KaApplet *self,
 #endif
         notify_notification_set_urgency (notification, NOTIFY_URGENCY_NORMAL);
     }
+
+#if HAVE_NOTIFY_NOTIFICATION_SET_HINT
+    notify_notification_set_hint (notification,
+                                  "desktop-entry",
+                                  g_variant_new_string (PACKAGE));
+#endif
 
     if (self->priv->ns_persistence) {
         hint = "resident";

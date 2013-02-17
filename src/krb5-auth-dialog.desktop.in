@@ -9,3 +9,4 @@ Categories=GNOME;GTK;Utility;Network;
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=krb5-auth-dialog
 X-GNOME-Bugzilla-Component=general
+X-GNOME-UsesNotifications=true

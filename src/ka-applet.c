@@ -191,6 +191,8 @@ ka_applet_startup (GApplication *application)
     main_window = ka_main_window_create (self, self->priv->uixml);
     gtk_application_add_window (GTK_APPLICATION(self), main_window);
     ka_preferences_window_create (self, self->priv->uixml);
+
+    G_APPLICATION_CLASS (ka_applet_parent_class)->startup (application);
 }
 
 static void

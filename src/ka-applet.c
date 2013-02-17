@@ -110,7 +110,7 @@ struct _KaAppletPrivate {
 static void ka_close_notification (KaApplet *self);
 static gboolean is_initialized;
 
-static void 
+static void
 ka_applet_activate (GApplication *application G_GNUC_UNUSED)
 {
     if (is_initialized) {
@@ -127,7 +127,7 @@ ka_applet_command_line (GApplication            *application,
 {
     KaApplet *self = KA_APPLET(application);
     KA_DEBUG ("Evaluating command line");
-    
+
     if (!self->priv->startup_ccache &&
         self->priv->auto_run)
         ka_applet_destroy (self);
@@ -160,7 +160,7 @@ ka_applet_local_command_line (GApplication *application,
     };
 
     KA_DEBUG ("Parsing local command line");
-    
+
     context = g_option_context_new ("- Kerberos 5 credential checking");
     g_option_context_add_main_entries (context, options, NULL);
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
@@ -427,7 +427,7 @@ ka_applet_class_init (KaAppletClass *klass)
         klass->signals[i] = signalId;
     }
     klass->signals[KA_CCACHE_CHANGED] = g_signal_new (
-        ka_signal_names[KA_CCACHE_CHANGED], 
+        ka_signal_names[KA_CCACHE_CHANGED],
         G_OBJECT_CLASS_TYPE (klass),
         G_SIGNAL_RUN_LAST, 0, NULL, NULL,
         g_cclosure_marshal_VOID__VOID,
@@ -438,7 +438,7 @@ ka_applet_class_init (KaAppletClass *klass)
 static KaApplet *
 ka_applet_new (void)
 {
-    return g_object_new (KA_TYPE_APPLET, 
+    return g_object_new (KA_TYPE_APPLET,
                          "application-id", "org.gnome.KrbAuthDialog",
                          NULL);
 }
@@ -1030,7 +1030,7 @@ ka_applet_destroy (KaApplet* self)
     windows = gtk_application_get_windows (GTK_APPLICATION(self));
     if (windows) {
         first = g_list_first (windows);
-        gtk_application_remove_window(GTK_APPLICATION (self), 
+        gtk_application_remove_window(GTK_APPLICATION (self),
                                       GTK_WINDOW (first->data));
     }
 

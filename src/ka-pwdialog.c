@@ -1,6 +1,6 @@
 /* Krb5 Auth Applet -- Acquire and release kerberos tickets
  *
- * (C) 2009 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2009,2013 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -88,17 +88,57 @@ ka_pwdialog_new (void)
     return g_object_new (KA_TYPE_PWDIALOG, NULL);
 }
 
+static GdkGrabStatus
+for_each_keyboard (GdkWindow *window, GdkEvent *event,
+                   GdkGrabStatus (*func)(GdkDevice*,
+                                         GdkWindow*,
+                                         GdkEvent*))
+{
+    GdkDisplay *display;
+    GdkDeviceManager *device_manager;
+    GdkDevice *device;
+    GList *devices, *dev;
+    GdkGrabStatus ret = GDK_GRAB_SUCCESS;
+
+    display = gdk_window_get_display (window);
+    device_manager = gdk_display_get_device_manager (display);
+    devices = gdk_device_manager_list_devices (device_manager,
+                                               GDK_DEVICE_TYPE_MASTER);
+
+    for (dev = devices; dev; dev = dev->next) {
+        device = dev->data;
+        if (gdk_device_get_source (device) != GDK_SOURCE_KEYBOARD)
+            continue;
+        ret = (*func)(device, window, event);
+    }
+
+    g_list_free (devices);
+    return ret;
+}
+
+static GdkGrabStatus
+grab_keyboard_func (GdkDevice *device, GdkWindow *window, GdkEvent *event)
+{
+    return gdk_device_grab (device,
+                            window,
+                            GDK_OWNERSHIP_WINDOW,
+                            FALSE,
+                            GDK_ALL_EVENTS_MASK,
+                            NULL,
+                            gdk_event_get_time (event));
+}
 
 static gboolean
 grab_keyboard (GtkWidget *win, GdkEvent * event, gpointer data)
 {
     KaPwDialog *pwdialog = KA_PWDIALOG (data);
-
     GdkGrabStatus status;
 
     if (!pwdialog->priv->grabbed) {
-        status = gdk_keyboard_grab (gtk_widget_get_window (win),
-                                    FALSE, gdk_event_get_time (event));
+        status = for_each_keyboard(gtk_widget_get_window (win),
+                                   event,
+                                   &grab_keyboard_func);
+
         if (status == GDK_GRAB_SUCCESS)
             pwdialog->priv->grabbed = TRUE;
         else
@@ -107,6 +147,15 @@ grab_keyboard (GtkWidget *win, GdkEvent * event, gpointer data)
     return FALSE;
 }
 
+static GdkGrabStatus
+ungrab_keyboard_func (GdkDevice *device,
+                      GdkWindow *window G_GNUC_UNUSED,
+                      GdkEvent *event)
+{
+    gdk_device_ungrab (device,
+                       gdk_event_get_time (event));
+    return 0;
+}
 
 static gboolean
 ungrab_keyboard (GtkWidget *win G_GNUC_UNUSED,
@@ -114,9 +163,12 @@ ungrab_keyboard (GtkWidget *win G_GNUC_UNUSED,
 {
     KaPwDialog *pwdialog = KA_PWDIALOG (data);
 
-    if (pwdialog->priv->grabbed)
-        gdk_keyboard_ungrab (gdk_event_get_time (event));
-    pwdialog->priv->grabbed = FALSE;
+    if (pwdialog->priv->grabbed) {
+        for_each_keyboard(gtk_widget_get_window (win),
+                          event,
+                          &ungrab_keyboard_func);
+        pwdialog->priv->grabbed = FALSE;
+    }
     return FALSE;
 }
 

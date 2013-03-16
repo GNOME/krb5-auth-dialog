@@ -314,7 +314,8 @@ ka_get_service_tickets (GtkListStore * tickets)
         if (!g_file_test (ka_ccache_filename (), G_FILE_TEST_EXISTS))
             gtk_list_store_append (tickets, &iter);
             gtk_list_store_set (tickets, &iter,
-                                PRINCIPAL_COLUMN, _("Your ticket cache is currently empty"),
+                                PRINCIPAL_COLUMN,
+                                _("Your ticket cache is currently empty"),
                                 FORWARDABLE_COLUMN, FALSE,
                                 RENEWABLE_COLUMN, FALSE,
                                 PROXIABLE_COLUMN, FALSE, -1);
@@ -337,8 +338,10 @@ ka_get_service_tickets (GtkListStore * tickets)
             strcpy (end_time_markup, end_time);
         else
             g_snprintf (end_time_markup, sizeof (end_time_markup),
-                        "%s <span foreground=\"red\" style=\"italic\">(%s)</span>",
-                        end_time, _("Expired"));
+                        "%s <span foreground=\"red\" "
+                        "style=\"italic\">(%s)</span>",
+                        end_time,
+                        _("Expired"));
 
         forwardable = get_cred_forwardable (&creds);
         renewable = get_cred_renewable (&creds);

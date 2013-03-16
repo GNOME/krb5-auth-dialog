@@ -64,6 +64,7 @@ void ka_applet_set_msg (KaApplet *self, const char *msg);
 #define KA_PROP_NAME_TGT_FORWARDABLE "tgt-forwardable"
 #define KA_PROP_NAME_TGT_PROXIABLE   "tgt-proxiable"
 #define KA_PROP_NAME_TGT_RENEWABLE   "tgt-renewable"
+#define KA_PROP_NAME_CONF_TICKETS    "conf-tickets"
 
 /* create the applet */
 KaApplet *ka_applet_create (void);

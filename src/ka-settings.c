@@ -42,6 +42,7 @@ ka_setup_bindings(KaApplet* applet,
     do_binding(TGT_FORWARDABLE);
     do_binding(TGT_PROXIABLE);
     do_binding(TGT_RENEWABLE);
+    do_binding(CONF_TICKETS);
 }
 
 #undef do_binding

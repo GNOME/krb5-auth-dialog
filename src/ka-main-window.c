@@ -2,7 +2,7 @@
  *
  * Krb5 Auth Applet -- Acquire and release kerberos tickets
  *
- * (C) 2009,2011 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2009,2011,2013 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,11 +34,14 @@ static GtkListStore *tickets;
 static GtkWindow *main_window;
 
 static void
-ccache_changed_cb (KaApplet* applet G_GNUC_UNUSED,
+ccache_changed_cb (KaApplet* applet,
                    gpointer user_data G_GNUC_UNUSED)
 {
+    gboolean conf_tickets;
+
     KA_DEBUG("Refreshing ticket list");
-    ka_get_service_tickets (tickets);
+    g_object_get(applet, KA_PROP_NAME_CONF_TICKETS, &conf_tickets, NULL);
+    ka_get_service_tickets (tickets, !conf_tickets);
 }
 
 static void
@@ -164,9 +167,12 @@ ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
 }
 
 void
-ka_main_window_show ()
+ka_main_window_show (KaApplet *applet)
 {
-    if (ka_get_service_tickets (tickets)) {
+    gboolean conf_tickets;
+
+    g_object_get(applet, KA_PROP_NAME_CONF_TICKETS, &conf_tickets, NULL);
+    if (ka_get_service_tickets (tickets, !conf_tickets)) {
         gtk_window_present (main_window);
     } else {
         GtkWidget *message_dialog;

@@ -35,6 +35,11 @@
       <summary>Proxiable ticket</summary>
       <description>Requested tickets should be proxiable</description>
     </key>
+    <key name="conf-tickets" type="b">
+      <default>false</default>
+      <summary>Configuration tickets</summary>
+      <description>Show configuration tickets</description>
+    </key>
     <child name="notify" schema="org.gnome.KrbAuthDialog.notify"/>
     <child name="plugins" schema="org.gnome.KrbAuthDialog.plugins"/>
   </schema>

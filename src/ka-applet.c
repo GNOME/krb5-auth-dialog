@@ -50,6 +50,7 @@ enum {
     KA_PROP_TGT_FORWARDABLE,
     KA_PROP_TGT_PROXIABLE,
     KA_PROP_TGT_RENEWABLE,
+    KA_PROP_CONF_TICKETS,
 };
 
 
@@ -101,6 +102,7 @@ struct _KaAppletPrivate {
     gboolean tgt_forwardable;   /* request a forwardable ticket */
     gboolean tgt_renewable;     /* request a renewable ticket */
     gboolean tgt_proxiable;     /* request a proxiable ticket */
+    gboolean conf_tickets;      /* whether to display configuration tickets */
 
     GSettings *settings;         /* GSettings client */
 };
@@ -112,9 +114,11 @@ static gboolean is_initialized;
 static void
 ka_applet_activate (GApplication *application G_GNUC_UNUSED)
 {
+    KaApplet *self = KA_APPLET(application);
+
     if (is_initialized) {
         KA_DEBUG ("Main window activated");
-        ka_main_window_show ();
+        ka_main_window_show (self);
     } else
         is_initialized = TRUE;
 }
@@ -244,6 +248,12 @@ ka_applet_set_property (GObject *object,
                   self->priv->tgt_renewable ? "True" : "False");
         break;
 
+    case KA_PROP_CONF_TICKETS:
+        self->priv->conf_tickets = g_value_get_boolean (value);
+        KA_DEBUG ("%s: %s", pspec->name,
+                  self->priv->tgt_renewable ? "True" : "False");
+        break;
+
     default:
         /* We don't have any other property... */
         G_OBJECT_WARN_INVALID_PROPERTY_ID (object, property_id, pspec);
@@ -286,6 +296,10 @@ ka_applet_get_property (GObject *object,
 
     case KA_PROP_TGT_RENEWABLE:
         g_value_set_boolean (value, self->priv->tgt_renewable);
+        break;
+
+    case KA_PROP_CONF_TICKETS:
+        g_value_set_boolean (value, self->priv->conf_tickets);
         break;
 
     default:
@@ -417,6 +431,15 @@ ka_applet_class_init (KaAppletClass *klass)
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class,
                                      KA_PROP_TGT_RENEWABLE, pspec);
+
+    pspec = g_param_spec_boolean (KA_PROP_NAME_CONF_TICKETS,
+                                  "Configuration tickets",
+                                  "wether to show configuration tickets",
+                                  FALSE,
+                                  G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
+    g_object_class_install_property (object_class,
+                                     KA_PROP_CONF_TICKETS, pspec);
+
     for (i=0; i < KA_SIGNAL_COUNT-1; i++) {
         guint signalId;
 
@@ -568,7 +591,7 @@ ka_notify_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
         ka_destroy_ccache (self);
     } else if (strcmp (action, "ka-list-tickets") == 0) {
         KA_DEBUG ("Showing main window");
-        ka_main_window_show ();
+        ka_main_window_show (self);
     } else {
         g_warning ("unkonwn action for callback");
     }
@@ -840,9 +863,9 @@ ka_applet_destroy_ccache_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
 
 static void
 ka_applet_show_tickets_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                           gpointer user_data G_GNUC_UNUSED)
+                           gpointer user_data)
 {
-    ka_main_window_show ();
+    ka_main_window_show (KA_APPLET(user_data));
 }
 
 

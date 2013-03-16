@@ -31,6 +31,7 @@
 #define KA_SETTING_KEY_TGT_FORWARDABLE  "forwardable"
 #define KA_SETTING_KEY_TGT_RENEWABLE    "renewable"
 #define KA_SETTING_KEY_TGT_PROXIABLE    "proxiable"
+#define KA_SETTING_KEY_CONF_TICKETS     "conf-tickets"
 #define KA_SETTING_CHILD_NOTIFY         "notify"
 #define KA_SETTING_KEY_NOTIFY_VALID     "valid"
 #define KA_SETTING_KEY_NOTIFY_EXPIRED   "expired"

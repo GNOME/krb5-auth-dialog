@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-15 14:20+0000\n"
-"PO-Revision-Date: 2013-03-15 16:50+0100\n"
+"POT-Creation-Date: 2013-03-16 16:10+0000\n"
+"PO-Revision-Date: 2013-03-16 17:33+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -159,17 +159,17 @@ msgstr "neznana napaka"
 msgid "Your ticket cache is currently empty"
 msgstr "Vaš predpomnilnik vozovnic je trenutno prazen"
 
-#: ../src/ka-kerberos.c:341
+#: ../src/ka-kerberos.c:348
 msgid "Expired"
 msgstr "Pretečeno"
 
-#: ../src/ka-pwdialog.c:178
+#: ../src/ka-pwdialog.c:230
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Ni mogoče pridobiti vstopnice kerberos: '%s'"
 
-#: ../src/ka-pwdialog.c:217
-#: ../src/ka-applet.c:467
+#: ../src/ka-pwdialog.c:269
+#: ../src/ka-applet.c:490
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -178,25 +178,25 @@ msgstr[1] "Vaša poverila potečejo v %d minuti"
 msgstr[2] "Vaša poverila potečejo v %d minutah"
 msgstr[3] "Vaša poverila potečejo v %d minutah"
 
-#: ../src/ka-pwdialog.c:222
-#: ../src/ka-applet.c:472
+#: ../src/ka-pwdialog.c:274
+#: ../src/ka-applet.c:495
 msgid "Your credentials have expired"
 msgstr "Vaša poverila so potekla"
 
-#: ../src/ka-pwdialog.c:245
+#: ../src/ka-pwdialog.c:297
 msgid "Please enter your Kerberos password:"
 msgstr "Vnesite svoje geslo Kerberos:"
 
-#: ../src/ka-pwdialog.c:258
+#: ../src/ka-pwdialog.c:310
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Vnesite geslo za '%s':"
 
-#: ../src/ka-pwdialog.c:276
+#: ../src/ka-pwdialog.c:328
 msgid "The password you entered is invalid"
 msgstr "Vneseno geslo je neveljavno"
 
-#: ../src/ka-pwdialog.c:292
+#: ../src/ka-pwdialog.c:344
 #, c-format
 msgid "%s Error"
 msgstr "%s napaka"
@@ -1508,57 +1508,57 @@ msgstr "Slabo čarobno število za GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Slabo čarobno število od GSSAPI VRSTE"
 
-#: ../src/ka-applet.c:461
+#: ../src/ka-applet.c:484
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vaša poverila potečejo v %.2d%.2dh"
 
-#: ../src/ka-applet.c:654
+#: ../src/ka-applet.c:677
 msgid "List Tickets"
 msgstr "Izpiši vstopnice"
 
-#: ../src/ka-applet.c:664
+#: ../src/ka-applet.c:687
 msgid "Get Ticket"
 msgstr "Dobi vstopnico"
 
-#: ../src/ka-applet.c:673
+#: ../src/ka-applet.c:696
 msgid "Don't show me this again"
 msgstr "Tega ne prikaži več"
 
-#: ../src/ka-applet.c:680
+#: ../src/ka-applet.c:703
 msgid "Remove Credentials Cache"
 msgstr "Odstrani predpomnilnik poveril"
 
-#: ../src/ka-applet.c:740
+#: ../src/ka-applet.c:763
 msgid "You have valid Kerberos credentials."
 msgstr "Naložena so veljavna poverila Kerberos"
 
-#: ../src/ka-applet.c:742
+#: ../src/ka-applet.c:765
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Osvežili ste svoja poverila Kerberos"
 
-#: ../src/ka-applet.c:745
+#: ../src/ka-applet.c:768
 msgid "Network credentials valid"
 msgstr "Omrežna poverila so veljavna"
 
-#: ../src/ka-applet.c:764
+#: ../src/ka-applet.c:787
 msgid "Network credentials expiring"
 msgstr "Omrežna poverila bodo potekla"
 
-#: ../src/ka-applet.c:781
+#: ../src/ka-applet.c:804
 msgid "Network credentials expired"
 msgstr "Omrežna poverila so potekla"
 
-#: ../src/ka-applet.c:782
+#: ../src/ka-applet.c:805
 msgid "Your Kerberos credentials have expired."
 msgstr "Poverila Kerberos so potekla."
 
-#: ../src/ka-applet.c:861
+#: ../src/ka-applet.c:884
 msgid "Remove Credentials _Cache"
 msgstr "Odstrani _predpomnilnik poveril"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:871
+#: ../src/ka-applet.c:894
 msgid "_List Tickets"
 msgstr "_Naštej vstopnice"
 
@@ -1578,34 +1578,34 @@ msgstr ""
 "Andrej Žnidaršič\n"
 "Matej Urbančič"
 
-#: ../src/ka-main-window.c:119
+#: ../src/ka-main-window.c:122
 msgid "Principal"
 msgstr "Ravnatelj"
 
-#: ../src/ka-main-window.c:125
+#: ../src/ka-main-window.c:128
 msgid "Start Time"
 msgstr "Začetni čas"
 
-#: ../src/ka-main-window.c:131
+#: ../src/ka-main-window.c:134
 msgid "End Time"
 msgstr "Končni čas"
 
 #. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:138
+#: ../src/ka-main-window.c:141
 msgid "Fwd"
 msgstr "Posreduj"
 
 #. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:145
+#: ../src/ka-main-window.c:148
 msgid "Proxy"
 msgstr "Posredovalni strežnik"
 
 #. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:152
+#: ../src/ka-main-window.c:155
 msgid "Renew"
 msgstr "Obnovi"
 
-#: ../src/ka-main-window.c:179
+#: ../src/ka-main-window.c:185
 msgid "Error displaying service ticket information"
 msgstr "Napaka med prikazovanjem podrobnosti storitvene vstopnice"
 
@@ -1630,7 +1630,6 @@ msgid "Kerberos principal"
 msgstr "Kerberos ravnatelj"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
-#| msgid "The kerberos principal to acquire the ticket for"
 msgid "The Kerberos principal to acquire the ticket for"
 msgstr "Ravnatelj Kerberos za izdajo vstopnice za"
 
@@ -1683,34 +1682,42 @@ msgid "Requested tickets should be proxiable"
 msgstr "Zahtevano vstopnico bi moralo biti mogoče posredovati"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:15
+msgid "Configuration tickets"
+msgstr "Nastavitvene vstopnice"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
+msgid "Show configuration tickets"
+msgstr "Pokaži nastavitvene vstopnice"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
 msgid "valid ticket notification"
 msgstr "obvestilo veljavne vstopnice"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:18
 msgid "Notify user when ticket becomes valid"
 msgstr "Obvesti uporabnika, ko vstopnica postane veljavna"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:19
 msgid "ticket expiring notification"
 msgstr "obvestilo o pretekanju vstopnice"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:18
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:20
 msgid "Notify user when ticket is about to expire"
 msgstr "Obvesti uporabnika, ko bo vstopnica potekla"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:19
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:21
 msgid "ticket expired notification"
 msgstr "obvestilo potekle vstopnice"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:20
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:22
 msgid "Notify user when ticket has expired"
 msgstr "Obvesti uporabnika ob poteku vstopnice"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:21
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:23
 msgid "Enabled plugins"
 msgstr "Omogočeni vstavki"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:22
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:24
 msgid "List of plugins that should be loaded and activated on startup."
 msgstr "Seznam vstavkov, ki bodo naloženi in omogočeni ob zagonu."
 

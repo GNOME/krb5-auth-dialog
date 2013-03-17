@@ -1,4 +1,23 @@
 ==============
+Version 3.7.92
+==============
+* Use GSettings instead of GConf
+* Hide configuration tickets by default (BZ#649830)
+* UI translations:
+	Bruno Brouard (fr)
+	Daniel Mustieles (es)
+	Enrico Nicoletto (pt_BR)
+	Fran Diéguez (gl)
+	Marek Černocký (cs)
+	Martin Srebotnjak (sl)
+	Matej Urbančič (sl)
+	Rafael Ferreira (pt_BR)
+	Zdeněk Hataš (cs)
+
+* Doc translations:
+	Daniel Winzen (de)
+
+==============
 Version 3.2.1
 ==============
 * Fix DBus activation

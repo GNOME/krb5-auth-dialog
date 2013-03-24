@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <requires lib="gtk+" version="2.16"/>
+  <!-- interface-requires gtk+ 3.0 -->
   <object class="GtkAdjustment" id="adjustment1">
     <property name="upper">100</property>
     <property name="step_increment">1</property>
@@ -29,7 +29,6 @@
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="use_stock">True</property>
               </object>
               <packing>
@@ -46,7 +45,6 @@
                 <property name="can_default">True</property>
                 <property name="has_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="use_underline">True</property>
               </object>
               <packing>
@@ -197,7 +195,6 @@
               <object class="GtkMenuItem" id="menuitem1">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_File</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -209,7 +206,6 @@
                         <property name="label">gtk-close</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                       </object>
@@ -222,7 +218,6 @@
               <object class="GtkMenuItem" id="menuitem2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_Edit</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -234,7 +229,6 @@
                         <property name="label">gtk-preferences</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                       </object>
@@ -247,7 +241,6 @@
               <object class="GtkMenuItem" id="menuitem4">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="use_action_appearance">False</property>
                 <property name="label" translatable="yes">_Help</property>
                 <property name="use_underline">True</property>
                 <child type="submenu">
@@ -259,7 +252,6 @@
                         <property name="label">gtk-help</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                       </object>
@@ -269,7 +261,6 @@
                         <property name="label">gtk-about</property>
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="use_action_appearance">False</property>
                         <property name="use_underline">True</property>
                         <property name="use_stock">True</property>
                       </object>
@@ -324,7 +315,6 @@
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="use_action_appearance">False</property>
                 <property name="use_stock">True</property>
               </object>
               <packing>
@@ -541,7 +531,6 @@
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip_markup" translatable="yes">If checked, request forwardable tickets</property>
                                     <property name="tooltip_text" translatable="yes">If checked, request forwardable tickets</property>
-                                    <property name="use_action_appearance">False</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -583,7 +572,6 @@
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip_markup" translatable="yes">If checked, request renewable tickets</property>
                                     <property name="tooltip_text" translatable="yes">If checked, request renewable tickets</property>
-                                    <property name="use_action_appearance">False</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -625,7 +613,6 @@
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip_markup" translatable="yes">If checked, request proxiable tickets</property>
                                     <property name="tooltip_text" translatable="yes">If checked, request proxiable tickets</property>
-                                    <property name="use_action_appearance">False</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -744,7 +731,6 @@
                                         <property name="has_tooltip">True</property>
                                         <property name="tooltip_markup" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
                                         <property name="tooltip_text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
-                                        <property name="use_action_appearance">False</property>
                                         <property name="xalign">0</property>
                                         <property name="draw_indicator">True</property>
                                       </object>
@@ -799,7 +785,6 @@
                                         <property name="visible">True</property>
                                         <property name="can_focus">True</property>
                                         <property name="receives_default">True</property>
-                                        <property name="use_action_appearance">False</property>
                                         <property name="use_underline">True</property>
                                       </object>
                                       <packing>
@@ -892,7 +877,6 @@
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <property name="use_action_appearance">False</property>
                             <property name="use_underline">True</property>
                           </object>
                           <packing>
@@ -1019,9 +1003,9 @@
                                 <property name="tooltip_text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
                                 <property name="invisible_char">●</property>
                                 <property name="invisible_char_set">True</property>
+                                <property name="adjustment">adjustment1</property>
                                 <property name="snap_to_ticks">True</property>
                                 <property name="numeric">True</property>
-				<property name="adjustment">adjustment1</property>
                               </object>
                               <packing>
                                 <property name="expand">False</property>

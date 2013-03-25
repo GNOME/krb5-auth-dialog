@@ -207,13 +207,33 @@ GtkWindow *ka_applet_last_focused_window (KaApplet *self)
     return NULL;
 }
 
+
+static void
+action_remove_credentails_cache (GSimpleAction *action G_GNUC_UNUSED,
+                                 GVariant *parameter G_GNUC_UNUSED,
+                                 gpointer userdata)
+{
+    KaApplet *self = userdata;
+    ka_destroy_ccache (self);
+}
+
+
+static void
+action_list_tickets (GSimpleAction *action G_GNUC_UNUSED,
+                     GVariant *parameter G_GNUC_UNUSED,
+                     gpointer userdata)
+{
+    KaApplet *self = userdata;
+    ka_main_window_show (self);
+}
+
+
 static void
 action_preferences (GSimpleAction *action G_GNUC_UNUSED,
 		    GVariant *parameter G_GNUC_UNUSED,
 		    gpointer userdata)
 {
     KaApplet *self = userdata;
-
     ka_preferences_run (self->priv->prefs);
 }
 
@@ -305,6 +325,14 @@ ka_applet_handle_debug(KaApplet *self)
 
     g_strfreev (debug_opts);
 }
+
+
+static GActionEntry app_entries[] = {
+    { "preferences", action_preferences, NULL, NULL, NULL, {0} },
+    { "about", action_about, NULL, NULL, NULL, {0} },
+    { "help", action_help, NULL, NULL, NULL, {0} },
+    { "quit", action_quit, NULL, NULL, NULL, {0} },
+};
 
 
 static void
@@ -954,100 +982,41 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
 }
 
 
-static void
-ka_applet_tray_icon_menu_add_separator_item (GtkWidget *menu)
-{
-    GtkWidget *menu_item;
-
-    menu_item = gtk_separator_menu_item_new ();
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
-    gtk_widget_show (menu_item);
-}
-
-
-/* Free all resources and quit */
-static void
-ka_applet_tray_icon_quit_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                             gpointer user_data)
-{
-    KaApplet *applet = KA_APPLET (user_data);
-
-    ka_applet_destroy (applet);
-}
-
-
-static void
-ka_applet_tray_icon_show_help_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                                  gpointer user_data)
-{
-    KaApplet *applet = KA_APPLET (user_data);
-
-G_GNUC_BEGIN_IGNORE_DEPRECATIONS
-    ka_show_help (gtk_status_icon_get_screen (applet->priv->tray_icon), NULL,
-                  NULL);
-G_GNUC_END_IGNORE_DEPRECATIONS
-}
-
-
-static void
-ka_applet_tray_icon_destroy_ccache_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                                       gpointer user_data)
-{
-    KaApplet *applet = KA_APPLET (user_data);
-
-    ka_destroy_ccache (applet);
-}
-
-static void
-ka_applet_tray_icon_show_tickets_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                                     gpointer user_data)
-{
-    ka_main_window_show (KA_APPLET(user_data));
-}
-
+static GActionEntry trayicon_entries[] = {
+    { "remove_credentials_cache", action_remove_credentails_cache, NULL, NULL, NULL, {0} },
+    { "list_tickets", action_list_tickets, NULL, NULL, NULL, {0} },
+    { "preferences", action_preferences, NULL, NULL, NULL, {0} },
+    { "about", action_about, NULL, NULL, NULL, {0} },
+    { "help", action_help, NULL, NULL, NULL, {0} },
+    { "quit", action_quit, NULL, NULL, NULL, {0} },
+};
 
 /* The tray icon's context menu */
 static gboolean
-ka_applet_create_context_menu (KaApplet *applet)
+ka_applet_create_tray_icon_context_menu (KaApplet *self)
 {
-    GtkWidget *menu;
-    GtkWidget *menu_item;
+    GtkBuilder *builder;
+    GMenuModel *model;
+    GSimpleActionGroup *group;
 
-    menu = gtk_menu_new ();
+    builder = gtk_builder_new_from_resource (
+        "/org/gnome/krb5-auth-dialog/ui/tray-icon-menu.ui");
+    model = G_MENU_MODEL (
+        gtk_builder_get_object (builder, "tray-icon-context-menu"));
 
-    /* kdestroy */
-    menu_item =
-        gtk_menu_item_new_with_mnemonic (_("Remove Credentials _Cache"));
-    g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_tray_icon_destroy_ccache_cb),
-                      applet);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
+    self->priv->context_menu = gtk_menu_new_from_model (model);
+    gtk_widget_show_all (self->priv->context_menu);
 
-    ka_applet_tray_icon_menu_add_separator_item (menu);
+    group = g_simple_action_group_new ();
+    g_action_map_add_action_entries (G_ACTION_MAP (group),
+                                     trayicon_entries, G_N_ELEMENTS (trayicon_entries),
+                                     self);
 
-    /* Ticket dialog */
-    menu_item = gtk_menu_item_new_with_mnemonic (_("_List Tickets"));
-    g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_tray_icon_show_tickets_cb), applet);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
+    gtk_widget_insert_action_group (GTK_WIDGET(self->priv->context_menu),
+                                    "trayicon",
+                                    G_ACTION_GROUP(group));
 
-    /* Help item */
-    menu_item = gtk_menu_item_new_with_mnemonic (_("_Help"));
-    g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_tray_icon_show_help_cb), applet);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
-
-    ka_applet_tray_icon_menu_add_separator_item (menu);
-
-    /* Quit */
-    menu_item = gtk_menu_item_new_with_mnemonic (_("_Quit"));
-    g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_tray_icon_quit_cb), applet);
-    gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
-
-    gtk_widget_show_all (menu);
-    applet->priv->context_menu = menu;
-
+    g_object_unref (builder);
     return TRUE;
 }
 
@@ -1102,6 +1071,7 @@ G_GNUC_END_IGNORE_DEPRECATIONS
     g_signal_connect (G_OBJECT (tray_icon),
                       "popup-menu",
                       G_CALLBACK (ka_tray_icon_on_menu), self);
+    ka_applet_create_tray_icon_context_menu (self);
     return TRUE;
 }
 
@@ -1225,6 +1195,9 @@ ka_applet_destroy (KaApplet* self)
     gtk_widget_destroy (GTK_WIDGET(self->priv->prefs));
     self->priv->prefs = NULL;
 
+    gtk_widget_destroy (GTK_WIDGET(self->priv->context_menu));
+    self->priv->context_menu = NULL;
+
     ka_kerberos_destroy ();
 }
 
@@ -1241,12 +1214,6 @@ ka_applet_create ()
         g_error ("Failure to setup icons");
     gtk_window_set_default_icon_name (applet->priv->icons[val_icon]);
 
-    if (!ka_applet_create_context_menu (applet))
-        g_error ("Failure to create context menu");
-
-    ka_ns_check_persistence(applet);
-    ka_applet_create_tray_icon (applet);
-
     applet->priv->pwdialog = ka_pwdialog_new ();
     g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 
@@ -1257,6 +1224,9 @@ ka_applet_create ()
     g_return_val_if_fail (applet->priv->loader != NULL, NULL);
 
     g_return_val_if_fail (ka_dbus_connect (applet), NULL);
+
+    ka_ns_check_persistence(applet);
+    ka_applet_create_tray_icon (applet);
 
     return applet;
 }

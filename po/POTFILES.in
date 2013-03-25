@@ -1,4 +1,5 @@
 [type: gettext/glade]src/resources/ui/app-menu.ui
+[type: gettext/glade]src/resources/ui/tray-icon-menu.ui
 [type: gettext/glade]src/resources/ui/ka-main-window.ui
 [type: gettext/glade]src/resources/ui/ka-preferences.ui
 [type: gettext/glade]src/resources/ui/ka-pwdialog.ui

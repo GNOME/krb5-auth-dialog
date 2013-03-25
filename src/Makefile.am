@@ -108,6 +108,7 @@ EXTRA_DIST = \
 	resources/ui/ka-main-window.ui \
 	resources/ui/ka-preferences.ui \
 	resources/ui/ka-pwdialog.ui \
+	resources/ui/tray-icon-menu.ui \
 	$(NULL)
 
 CLEANFILES = $(schema_DATA) \

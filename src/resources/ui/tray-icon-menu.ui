@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="tray-icon-context-menu">
+    <section>
+      <item>
+        <attribute name="action">trayicon.remove_credentials_cache</attribute>
+        <attribute name="label" translatable="yes">Remove Credentials _Cache</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="action">trayicon.list_tickets</attribute>
+        <attribute name="label" translatable="yes">_List Tickets</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="action">trayicon.help</attribute>
+        <attribute name="label" translatable="yes">_Help</attribute>
+      </item>
+    </section>
+    <section>
+      <item>
+        <attribute name="action">trayicon.quit</attribute>
+        <attribute name="label" translatable="yes">_Quit</attribute>
+      </item>
+    </section>
+  </menu>
+</interface>

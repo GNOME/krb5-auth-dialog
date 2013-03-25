@@ -34,7 +34,7 @@ enum ticket_columns {
 };
 
 
-GtkWindow *ka_main_window_create (KaApplet *applet, GtkBuilder *xml);
+GtkApplicationWindow *ka_main_window_create (KaApplet *applet, GtkBuilder *xml);
 void ka_main_window_show (KaApplet *applet);
 void ka_main_window_hide (void);
 

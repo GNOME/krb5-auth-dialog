@@ -513,10 +513,13 @@ ka_preferences_window_create (KaApplet *applet,
 }
 
 void
-ka_preferences_window_show (GtkWindow *main_window)
+ka_preferences_window_show (KaApplet *applet)
 {
-    if (main_window)
-        gtk_window_set_transient_for (GTK_WINDOW(prefs.dialog), main_window);
+    GtkWindow *parent = ka_applet_last_focused_window (applet);
+
+    if (parent)
+        gtk_window_set_transient_for (GTK_WINDOW(prefs.dialog),
+                                      GTK_WINDOW(parent));
     gtk_window_present (GTK_WINDOW(prefs.dialog));
     gtk_dialog_run (GTK_DIALOG (prefs.dialog));
     gtk_widget_hide (prefs.dialog);

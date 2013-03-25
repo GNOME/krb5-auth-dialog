@@ -22,11 +22,12 @@
 #define KA_TOOLS
 
 #include <gtk/gtk.h>
+#include <ka-applet-priv.h>
 
 G_BEGIN_DECLS
 
 void ka_show_help (GdkScreen* screen, const char* section, GtkWindow* window);
-void ka_show_about (void);
+void ka_show_about (KaApplet *applet);
 
 G_END_DECLS
 

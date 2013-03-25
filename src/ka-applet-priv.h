@@ -55,6 +55,7 @@ GSettings *ka_applet_get_settings (const KaApplet *self);
 void ka_applet_signal_emit (KaApplet *self, KaAppletSignalNumber signum,
                             krb5_timestamp expiry);
 void ka_applet_set_msg (KaApplet *self, const char *msg);
+GtkWindow* ka_applet_last_focused_window(KaApplet *self);
 
 /* properties */
 #define KA_PROP_NAME_PRINCIPAL       "principal"

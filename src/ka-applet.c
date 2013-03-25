@@ -182,20 +182,102 @@ ka_applet_local_command_line (GApplication *application,
     return FALSE;
 }
 
+GtkWindow *ka_applet_last_focused_window (KaApplet *self)
+{
+    GList *l = gtk_application_get_windows (GTK_APPLICATION(self));
+
+    if (l != NULL )
+        return g_list_first (l)->data;
+
+    return NULL;
+}
+
+static void
+action_preferences (GSimpleAction *action G_GNUC_UNUSED,
+		    GVariant *parameter G_GNUC_UNUSED,
+		    gpointer userdata)
+{
+    KaApplet *self = userdata;
+
+    ka_preferences_window_show (self);
+}
+
+static void
+action_about (GSimpleAction *action G_GNUC_UNUSED,
+              GVariant *parameter G_GNUC_UNUSED,
+              gpointer userdata)
+{
+    KaApplet *self = KA_APPLET(userdata);
+
+    ka_show_about (self);
+}
+
+static void
+action_help (GSimpleAction *action G_GNUC_UNUSED,
+              GVariant *parameter G_GNUC_UNUSED,
+              gpointer userdata)
+{
+    KaApplet *self = KA_APPLET(userdata);
+    GtkWindow *window = ka_applet_last_focused_window (self);
+
+    ka_show_help (gtk_window_get_screen (window), NULL, NULL);
+}
+
+static void
+action_quit (GSimpleAction *action G_GNUC_UNUSED,
+             GVariant *parameter G_GNUC_UNUSED,
+             gpointer userdata)
+{
+    KaApplet *self = KA_APPLET (userdata);
+
+    ka_applet_destroy (self);
+}
+
+static GActionEntry app_entries[] = {
+    { "preferences", action_preferences, NULL, NULL, NULL, {0} },
+    { "about", action_about, NULL, NULL, NULL, {0} },
+    { "help", action_help, NULL, NULL, NULL, {0} },
+    { "quit", action_quit, NULL, NULL, NULL, {0} },
+};
+
+static void
+ka_applet_app_menu_create(KaApplet *self,
+                          GtkBuilder *uixml)
+{
+    const gchar *debug_no_app_menu;
+    GMenuModel *model = G_MENU_MODEL(gtk_builder_get_object (uixml,
+                                                             "app-menu"));
+    g_action_map_add_action_entries (G_ACTION_MAP (self),
+                                     app_entries, G_N_ELEMENTS (app_entries),
+                                     self);
+
+    g_assert (model != NULL);
+    gtk_application_set_app_menu (GTK_APPLICATION(self),
+                                  model);
+
+    debug_no_app_menu = g_getenv ("KRB5_AUTH_DIALOG_DEBUG_NO_APP_MENU");
+    if (debug_no_app_menu) {
+        KA_DEBUG ("Disabling app menu GtkSetting as requested...");
+        g_object_set (gtk_settings_get_default (),
+                      "gtk-shell-shows-app-menu", FALSE,
+                      NULL);
+    }
+}
+
 static void
 ka_applet_startup (GApplication *application)
 {
     KaApplet *self = KA_APPLET (application);
-    GtkWindow *main_window;
 
     KA_DEBUG ("Primary application");
 
+    G_APPLICATION_CLASS (ka_applet_parent_class)->startup (application);
+
     self->priv->startup_ccache = ka_kerberos_init (self);
-    main_window = ka_main_window_create (self, self->priv->uixml);
-    gtk_application_add_window (GTK_APPLICATION(self), main_window);
+    ka_main_window_create (self, self->priv->uixml);
     ka_preferences_window_create (self, self->priv->uixml);
 
-    G_APPLICATION_CLASS (ka_applet_parent_class)->startup (application);
+    ka_applet_app_menu_create(self, self->priv->uixml);
 }
 
 static void
@@ -821,7 +903,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
 
 
 static void
-ka_applet_menu_add_separator_item (GtkWidget *menu)
+ka_applet_tray_icon_menu_add_separator_item (GtkWidget *menu)
 {
     GtkWidget *menu_item;
 
@@ -833,7 +915,8 @@ ka_applet_menu_add_separator_item (GtkWidget *menu)
 
 /* Free all resources and quit */
 static void
-ka_applet_quit_cb (GtkMenuItem *menuitem G_GNUC_UNUSED, gpointer user_data)
+ka_applet_tray_icon_quit_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                             gpointer user_data)
 {
     KaApplet *applet = KA_APPLET (user_data);
 
@@ -842,8 +925,8 @@ ka_applet_quit_cb (GtkMenuItem *menuitem G_GNUC_UNUSED, gpointer user_data)
 
 
 static void
-ka_applet_show_help_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                        gpointer user_data)
+ka_applet_tray_icon_show_help_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                                  gpointer user_data)
 {
     KaApplet *applet = KA_APPLET (user_data);
 
@@ -853,8 +936,8 @@ ka_applet_show_help_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
 
 
 static void
-ka_applet_destroy_ccache_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                             gpointer user_data)
+ka_applet_tray_icon_destroy_ccache_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                                       gpointer user_data)
 {
     KaApplet *applet = KA_APPLET (user_data);
 
@@ -862,8 +945,8 @@ ka_applet_destroy_ccache_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
 }
 
 static void
-ka_applet_show_tickets_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
-                           gpointer user_data)
+ka_applet_tray_icon_show_tickets_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
+                                     gpointer user_data)
 {
     ka_main_window_show (KA_APPLET(user_data));
 }
@@ -883,31 +966,32 @@ ka_applet_create_context_menu (KaApplet *applet)
     menu_item =
         gtk_image_menu_item_new_with_mnemonic (_("Remove Credentials _Cache"));
     g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_destroy_ccache_cb), applet);
+                      G_CALLBACK (ka_applet_tray_icon_destroy_ccache_cb),
+                      applet);
     image = gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_MENU);
     gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
-    ka_applet_menu_add_separator_item (menu);
+    ka_applet_tray_icon_menu_add_separator_item (menu);
 
     /* Ticket dialog */
     menu_item = gtk_image_menu_item_new_with_mnemonic (_("_List Tickets"));
     g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_show_tickets_cb), applet);
+                      G_CALLBACK (ka_applet_tray_icon_show_tickets_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
     /* Help item */
     menu_item = gtk_image_menu_item_new_from_stock (GTK_STOCK_HELP, NULL);
     g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_show_help_cb), applet);
+                      G_CALLBACK (ka_applet_tray_icon_show_help_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
-    ka_applet_menu_add_separator_item (menu);
+    ka_applet_tray_icon_menu_add_separator_item (menu);
 
     /* Quit */
     menu_item = gtk_image_menu_item_new_from_stock (GTK_STOCK_QUIT, NULL);
     g_signal_connect (G_OBJECT (menu_item), "activate",
-                      G_CALLBACK (ka_applet_quit_cb), applet);
+                      G_CALLBACK (ka_applet_tray_icon_quit_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
     gtk_widget_show_all (menu);

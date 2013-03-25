@@ -58,8 +58,10 @@ ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
 
 
 void 
-ka_show_about ()
+ka_show_about (KaApplet *applet)
 {
+    GtkWindow *parent = ka_applet_last_focused_window (applet);
+
     const gchar *authors[] = {
         "Christopher Aillon <caillon@redhat.com>",
         "Jonathan Blandford <jrb@redhat.com>",
@@ -68,7 +70,7 @@ ka_show_about ()
         NULL
     };
 
-    gtk_show_about_dialog (NULL,
+    gtk_show_about_dialog (parent,
                            "authors", authors,
                            "version", VERSION,
                            "logo-icon-name", "krb-valid-ticket",

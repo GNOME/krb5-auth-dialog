@@ -11,7 +11,7 @@ G_BEGIN_DECLS
 
 void ka_preferences_window_create (KaApplet *applet, GtkBuilder *xml);
 void ka_preferences_window_destroy (void);
-void ka_preferences_window_show (GtkWindow *main_window);
+void ka_preferences_window_show (KaApplet *applet);
 
 
 G_END_DECLS

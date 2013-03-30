@@ -71,7 +71,7 @@ msgstr "Požadované lístky Kerberos mohou být:"
 
 #: ../src/krb5-auth-dialog.ui.h:12
 msgid "forwardable"
-msgstr "přenositelné"
+msgstr "přenositelný"
 
 #: ../src/krb5-auth-dialog.ui.h:13
 msgid "If checked, request forwardable tickets"
@@ -79,7 +79,7 @@ msgstr "Je-li zaškrtnuto, požadovat přenositelné (forwardable) lístky"
 
 #: ../src/krb5-auth-dialog.ui.h:14
 msgid "renewable"
-msgstr "obnovitelné"
+msgstr "obnovitelný"
 
 #: ../src/krb5-auth-dialog.ui.h:15
 msgid "If checked, request renewable tickets"
@@ -87,7 +87,7 @@ msgstr "Je-li zaškrtnuto, požadovat obnovitelné (renewable) lístky"
 
 #: ../src/krb5-auth-dialog.ui.h:16
 msgid "proxiable"
-msgstr "delegovatelné"
+msgstr "delegovatelný"
 
 #: ../src/krb5-auth-dialog.ui.h:17
 msgid "If checked, request proxiable tickets"
@@ -99,7 +99,7 @@ msgstr "Kerberos"
 
 #: ../src/krb5-auth-dialog.ui.h:19
 msgid "Userid"
-msgstr "Id uživatele"
+msgstr "ID uživatele"
 
 #: ../src/krb5-auth-dialog.ui.h:20
 msgid "Use Smartcard"
@@ -115,11 +115,11 @@ msgstr "Certifikát a soukromý klíč použitý k autentizaci"
 
 #: ../src/krb5-auth-dialog.ui.h:23
 msgid "_Browse..."
-msgstr "_Procházet..."
+msgstr "_Procházet…"
 
 #: ../src/krb5-auth-dialog.ui.h:24
 msgid "X509 trust anchors"
-msgstr ""
+msgstr "Pevné body důvěry X509"
 
 #: ../src/krb5-auth-dialog.ui.h:25
 msgid "Certificate used to verify digital signatures."
@@ -151,13 +151,13 @@ msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr ""
-"Posílat oznámení o vypršení platnosti lístku tento počet minut před končeným "
-"vypršením"
+"Posílat oznámení o vypršení platnosti lístku tento počet minut před úplným "
+"vypršením platnosti"
 
 #. Used in combination: 'Warn x minutes before expiry'
 #: ../src/krb5-auth-dialog.ui.h:33
 msgid "minutes before ticket expiry"
-msgstr "minut do vypršení lístku"
+msgstr "minut před vypršením platnosti lístku"
 
 #: ../src/ka-kerberos.c:177
 msgid "unknown error"
@@ -1534,7 +1534,7 @@ msgstr "Odstranit mezipaměť s pověřeními"
 
 #: ../src/ka-applet.c:717
 msgid "You have valid Kerberos credentials."
-msgstr "Vaše pověření jsou platná."
+msgstr "Vaše pověření Kerberos jsou platná."
 
 #: ../src/ka-applet.c:719
 msgid "You've refreshed your Kerberos credentials."
@@ -1644,7 +1644,7 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.schemas.in.h:5
 msgid "PKINIT trust anchors"
-msgstr ""
+msgstr "Pevné body důvěry PKINIT"
 
 #: ../src/krb5-auth-dialog.schemas.in.h:6
 msgid "PKINIT CA certificates"

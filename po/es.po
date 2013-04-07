@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-25 11:44+0000\n"
-"PO-Revision-Date: 2013-03-28 17:29+0100\n"
+"POT-Creation-Date: 2013-03-28 17:00+0000\n"
+"PO-Revision-Date: 2013-04-07 18:59+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -22,7 +22,6 @@ msgstr ""
 "X-Generator: Gtranslator 2.91.5\n"
 
 #: ../src/krb5-auth-dialog.ui.h:1
-#| msgid "_Preferences"
 msgid "Prefere_nces"
 msgstr "Prefere_ncias"
 
@@ -1662,7 +1661,6 @@ msgid "Kerberos principal"
 msgstr "Principal de Kerberos"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
-#, fuzzy
 #| msgid "The kerberos principal to acquire the ticket for"
 msgid "The Kerberos principal to acquire the ticket for"
 msgstr "El principal de Kerberos para el que adquirir el tique"

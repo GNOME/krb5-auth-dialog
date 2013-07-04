@@ -221,8 +221,10 @@ credentials_expiring_real (KaApplet *applet)
     }
 
     /* copy principal from cache if any */
-    if (krb5_principal_compare (kcontext, my_creds.client, kprincipal)) {
-        krb5_free_principal (kcontext, kprincipal);
+    if (kprincipal == NULL ||
+        krb5_principal_compare (kcontext, my_creds.client, kprincipal)) {
+        if (kprincipal)
+            krb5_free_principal (kcontext, kprincipal);
         krb5_copy_principal (kcontext, my_creds.client, &kprincipal);
     }
     creds_expiry = my_creds.times.endtime;

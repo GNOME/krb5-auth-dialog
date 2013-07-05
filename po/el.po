@@ -1,0 +1,1755 @@
+# Greek translation for krb5-auth-dialog.
+# Copyright (C) 2013 krb5-auth-dialog's COPYRIGHT HOLDER
+# This file is distributed under the same license as the krb5-auth-dialog package.
+# Dimitris Spingos <dmtrs32@gmail.com>, 2013.
+# keratea <dmtrs32@gmail.com>, 2013.
+# Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: krb5-auth-dialog master\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5"
+"-auth-dialog&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2013-06-08 18:40+0000\n"
+"PO-Revision-Date: 2013-07-05 08:33+0300\n"
+"Last-Translator: Dimitris Spingos (Δημήτρης Σπίγγος) <dmtrs32@gmail.com>\n"
+"Language-Team: team@gnome.gr\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.7.1\n"
+"X-Project-Style: gnome\n"
+
+#: ../src/krb5-auth-dialog.ui.h:1
+msgid "Prefere_nces"
+msgstr "Προ_τιμήσεις"
+
+#: ../src/krb5-auth-dialog.ui.h:2
+msgid "_About"
+msgstr "_Περί"
+
+#: ../src/krb5-auth-dialog.ui.h:3
+msgid "_Help"
+msgstr "_Βοήθεια"
+
+#: ../src/krb5-auth-dialog.ui.h:4
+msgid "_Quit"
+msgstr "Έ_ξοδος"
+
+#.
+#. * vim:ts:sts=4:sw=4:et:
+#.
+#: ../src/krb5-auth-dialog.ui.h:5 ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Πιστοποίηση Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:6
+msgid "_Renew Ticket"
+msgstr "_Ανανέωση εισιτηρίου"
+
+#: ../src/krb5-auth-dialog.ui.h:7
+msgid "Service Tickets"
+msgstr "Εισιτήρια υπηρεσίας"
+
+#: ../src/krb5-auth-dialog.ui.h:8
+msgid "Kerberos User"
+msgstr "Χρήστης Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:9
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+"Το όνομα του λογαριασμού σας Kerberos. Αφήστε κενό για να χρησιμοποιήσετε το "
+"τρέχον όνομα χρήστη."
+
+#: ../src/krb5-auth-dialog.ui.h:10
+msgid "Kerberos principal:"
+msgstr "Κύριο του Kerberos:"
+
+#: ../src/krb5-auth-dialog.ui.h:11
+msgid "Kerberos Ticket Options"
+msgstr "Επιλογές εισιτηρίου του Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:12
+msgid "Requested Kerberos tickets should be:"
+msgstr "Τα εισιτήρια του Kerberos που ζητήθηκαν πρέπει να είναι:"
+
+#: ../src/krb5-auth-dialog.ui.h:13
+msgid "forwardable"
+msgstr "προωθήσιμα"
+
+#: ../src/krb5-auth-dialog.ui.h:14
+msgid "If checked, request forwardable tickets"
+msgstr "Αν σημειωθεί, αίτηση προωθήσιμων εισιτηρίων"
+
+#: ../src/krb5-auth-dialog.ui.h:15
+msgid "renewable"
+msgstr "ανανεώσιμο"
+
+#: ../src/krb5-auth-dialog.ui.h:16
+msgid "If checked, request renewable tickets"
+msgstr "Αν σημειωθεί, αίτηση ανανεώσιμων εισιτηρίων"
+
+#: ../src/krb5-auth-dialog.ui.h:17
+msgid "proxiable"
+msgstr "με μεσολάβηση"
+
+#: ../src/krb5-auth-dialog.ui.h:18
+msgid "If checked, request proxiable tickets"
+msgstr "Αν σημειωθεί, αίτηση εισιτηρίων με μεσολάβηση"
+
+#: ../src/krb5-auth-dialog.ui.h:19
+msgid "Kerberos"
+msgstr "Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:20
+msgid "Userid"
+msgstr "Αναγνωριστικό χρήστη"
+
+#: ../src/krb5-auth-dialog.ui.h:21
+msgid "Use Smartcard"
+msgstr "Χρήση έξυπνης κάρτας"
+
+#: ../src/krb5-auth-dialog.ui.h:22
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+"Αν σημειωθεί, χρησιμοποιήστε ένα διακριτικό ασφάλειας (έξυπνη κάρτα) για "
+"πιστοποίηση."
+
+#: ../src/krb5-auth-dialog.ui.h:23
+msgid "Certificate and private key used for authentication"
+msgstr "Χρησιμοποιούμενα πιστοποιητικό και ιδιωτικό κλειδί για πιστοποίηση"
+
+#: ../src/krb5-auth-dialog.ui.h:24
+msgid "_Browse..."
+msgstr "_Περιήγηση..."
+
+#: ../src/krb5-auth-dialog.ui.h:25
+msgid "X509 trust anchors"
+msgstr "έμπιστες άγκυρες X509"
+
+#: ../src/krb5-auth-dialog.ui.h:26
+msgid "Certificate used to verify digital signatures."
+msgstr "Χρησιμοποιούμενο πιστοποιητικό για επιβεβαίωση ψηφιακών υπογραφών."
+
+#: ../src/krb5-auth-dialog.ui.h:27
+msgid ""
+"Configure the use of certificates and smartcards for your Kerberos network "
+"authentication."
+msgstr ""
+"Ρυθμίστε τη χρήση των πιστοποιητικών και έξυπνων καρτών για πιστοποίηση "
+"δικτύου Kerberos."
+
+#: ../src/krb5-auth-dialog.ui.h:28
+msgid "PKINIT"
+msgstr "PKINIT"
+
+#: ../src/krb5-auth-dialog.ui.h:29
+msgid "Notifications"
+msgstr "Ειδοποιήσεις"
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../src/krb5-auth-dialog.ui.h:31
+msgid "Warn"
+msgstr "Προειδοποίηση"
+
+#: ../src/krb5-auth-dialog.ui.h:32
+msgid ""
+"Send notification about ticket expiry that many minutes before it finally "
+"expires"
+msgstr ""
+"Αποστολή ειδοποίησης για λήξη εισιτηρίου μετά τόσα λεπτά, πριν τελικά λήξει"
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../src/krb5-auth-dialog.ui.h:34
+msgid "minutes before ticket expiry"
+msgstr "λεπτά πριν τη λήξη του εισιτηρίου"
+
+#: ../src/ka-kerberos.c:177
+msgid "unknown error"
+msgstr "άγνωστο σφάλμα"
+
+#: ../src/ka-kerberos.c:317
+msgid "Your ticket cache is currently empty"
+msgstr "Η κρυφή μνήμη του εισιτηρίου είναι προς το παρόν κενή"
+
+#: ../src/ka-kerberos.c:348
+msgid "Expired"
+msgstr "Ληγμένο"
+
+#: ../src/ka-pwdialog.c:230
+#, c-format
+msgid "Couldn't acquire kerberos ticket: '%s'"
+msgstr "Αδύνατη η λήψη εισιτηρίου kerberos: '%s'"
+
+#: ../src/ka-pwdialog.c:269 ../src/ka-applet.c:572
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "Τα διαπιστευτήρια λήγουν σε %d λεπτό"
+msgstr[1] "Τα διαπιστευτήρια λήγουν σε %d λεπτά"
+
+#: ../src/ka-pwdialog.c:274 ../src/ka-applet.c:577
+msgid "Your credentials have expired"
+msgstr "Τα διαπιστευτήρια έχουν λήξει"
+
+#: ../src/ka-pwdialog.c:297
+msgid "Please enter your Kerberos password:"
+msgstr "Παρακαλούμε, εισάγετε τον νέο σας κωδικό πρόσβασης Kerberos:"
+
+#: ../src/ka-pwdialog.c:310
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Παρακαλούμε, εισάγετε τον κωδικό πρόσβασης για το '%s':"
+
+#: ../src/ka-pwdialog.c:328
+msgid "The password you entered is invalid"
+msgstr "Ο κωδικός πρόσβασης που εισάγατε είναι άκυρος"
+
+#: ../src/ka-pwdialog.c:344
+#, c-format
+msgid "%s Error"
+msgstr "Σφάλμα %s"
+
+#. Translators: files from dummy-strings.c are *all* possible errors
+#. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
+#. doubt please translate strings from files starting with ka- and krb5-auth-
+#. first since these are the ones the user will see in any case.
+#: ../src/dummy-strings.c:10
+msgid "ASN.1 failed call to system time library"
+msgstr "ASN.1 αποτυχία κλήσης της βιβλιοθήκης χρόνου συστήματος"
+
+#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
+#: ../src/dummy-strings.c:11
+msgid "ASN.1 structure is missing a required field"
+msgstr "ASN.1 λείπει η δομή απαιτούμενου πεδίου"
+
+#. asn1_err.et:asn1:ASN1_MISSING_FIELD
+#: ../src/dummy-strings.c:12
+msgid "ASN.1 unexpected field number"
+msgstr "ASN.1 αναπάντεχος αριθμός πεδίου"
+
+#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
+#: ../src/dummy-strings.c:13
+msgid "ASN.1 type numbers are inconsistent"
+msgstr "ASN.1 οι αριθμοί τύπου είναι ασύμβατοι"
+
+#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
+#: ../src/dummy-strings.c:14
+msgid "ASN.1 value too large"
+msgstr "ASN.1 η τιμή είναι υπερβολικά μεγάλη"
+
+#. asn1_err.et:asn1:ASN1_OVERFLOW
+#: ../src/dummy-strings.c:15
+msgid "ASN.1 encoding ended unexpectedly"
+msgstr "ASN.1 η κωδικοποίηση τελείωσε απροσδόκητα"
+
+#. asn1_err.et:asn1:ASN1_OVERRUN
+#: ../src/dummy-strings.c:16
+msgid "ASN.1 identifier doesn't match expected value"
+msgstr "ASN.1 το αναγνωριστικό δεν ταιριάζει με την αναμενόμενη τιμή"
+
+#. asn1_err.et:asn1:ASN1_BAD_ID
+#: ../src/dummy-strings.c:17
+msgid "ASN.1 length doesn't match expected value"
+msgstr "ASN.1 το μήκος δεν ταιριάζει με την αναμενόμενη τιμή"
+
+#. asn1_err.et:asn1:ASN1_BAD_LENGTH
+#: ../src/dummy-strings.c:18
+msgid "ASN.1 badly-formatted encoding"
+msgstr "ASN.1 κακοσχηματισμένη κωδικοποίηση"
+
+#. asn1_err.et:asn1:ASN1_BAD_FORMAT
+#: ../src/dummy-strings.c:19
+msgid "ASN.1 parse error"
+msgstr "ASN.1 σφάλμα ανάλυσης"
+
+#. asn1_err.et:asn1:ASN1_PARSE_ERROR
+#: ../src/dummy-strings.c:20
+msgid "ASN.1 bad return from gmtime"
+msgstr "ASN.1 εσφαλμένη επιστροφή από gmtime"
+
+#. asn1_err.et:asn1:ASN1_BAD_GMTIME
+#: ../src/dummy-strings.c:21
+msgid "ASN.1 non-constructed indefinite encoding"
+msgstr "ASN.1 μη δομημένη αόριστη κωδικοποίηση"
+
+#. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
+#: ../src/dummy-strings.c:22
+msgid "ASN.1 missing expected EOC"
+msgstr "ASN.1 λείπει η αναμενόμενη EOC"
+
+#. asn1_err.et:asn1:ASN1_MISSING_EOC
+#: ../src/dummy-strings.c:23
+msgid "No error"
+msgstr "Χωρίς σφάλμα"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NONE
+#: ../src/dummy-strings.c:24
+msgid "Client's entry in database has expired"
+msgstr "Η καταχώριση του πελάτη στη βάση δεδομένων έχει λήξει"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
+#: ../src/dummy-strings.c:25
+msgid "Server's entry in database has expired"
+msgstr "Η καταχώριση του διακομιστή στη βάση δεδομένων έχει λήξει"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
+#: ../src/dummy-strings.c:26
+msgid "Requested protocol version not supported"
+msgstr "Η ζητούμενη έκδοση πρωτοκόλλου δεν υποστηρίζεται"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
+#: ../src/dummy-strings.c:27
+msgid "Client's key is encrypted in an old master key"
+msgstr "Το κλειδί του πελάτη κρυπτογραφείται σε ένα παλιό κύριο κλειδί"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
+#: ../src/dummy-strings.c:28
+msgid "Server's key is encrypted in an old master key"
+msgstr "Το κλειδί του διακομιστή κρυπτογραφείται σε ένα παλιό κύριο κλειδί"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
+#: ../src/dummy-strings.c:29
+msgid "Client not found in Kerberos database"
+msgstr "Ο πελάτης δεν βρέθηκε στη βάση δεδομένων του Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
+#: ../src/dummy-strings.c:30
+msgid "Server not found in Kerberos database"
+msgstr "Ο διακομιστής δεν βρέθηκε στη βάση δεδομένων του Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
+#: ../src/dummy-strings.c:31
+msgid "Principal has multiple entries in Kerberos database"
+msgstr "Ο κύριος έχει πολλαπλές καταχωρίσεις στη βάση δεδομένων του Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
+#: ../src/dummy-strings.c:32
+msgid "Client or server has a null key"
+msgstr "Ο πελάτης ή ο διακομιστής έχει ένα κενό κλειδί"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
+#: ../src/dummy-strings.c:33
+msgid "Ticket is ineligible for postdating"
+msgstr "Το εισιτήριο είναι ακατάλληλο για μεταχρονολόγηση"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
+#: ../src/dummy-strings.c:34
+msgid "Requested effective lifetime is negative or too short"
+msgstr "Ο ζητούμενος ενεργός χρόνος ζωής είναι αρνητικός ή υπερβολικά σύντομος"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
+#: ../src/dummy-strings.c:35
+msgid "KDC policy rejects request"
+msgstr "Η πολιτική KDC απορρίπτει το αίτημα"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
+#: ../src/dummy-strings.c:36
+msgid "KDC can't fulfill requested option"
+msgstr "Το KDC αδυνατεί να εκπληρώσει την ζητούμενη επιλογή"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
+#: ../src/dummy-strings.c:37
+msgid "KDC has no support for encryption type"
+msgstr "Το KDC δεν υποστηρίζει τον τύπο κρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:38
+msgid "KDC has no support for checksum type"
+msgstr "Το KDC δεν υποστηρίζει τον τύπο ελεγκτικού αθροίσματος"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
+#: ../src/dummy-strings.c:39
+msgid "KDC has no support for padata type"
+msgstr "Το KDC δεν υποστηρίζει τύπο padata"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
+#: ../src/dummy-strings.c:40
+msgid "KDC has no support for transited type"
+msgstr "Το KDC δεν υποστηρίζει μετακινούμενο τύπο"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
+#: ../src/dummy-strings.c:41
+msgid "Clients credentials have been revoked"
+msgstr "Τα διαπιστευτήρια των πελατών έχουν ανακληθεί"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
+#: ../src/dummy-strings.c:42
+msgid "Credentials for server have been revoked"
+msgstr "Τα διαπιστευτήρια του διακομιστή έχουν ανακληθεί"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
+#: ../src/dummy-strings.c:43
+msgid "TGT has been revoked"
+msgstr "Το TGT έχει ανακληθεί"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
+#: ../src/dummy-strings.c:44
+msgid "Client not yet valid - try again later"
+msgstr "Ο πελάτης δεν είναι ακόμα έγκυρος - προσπαθήστε ξανά αργότερα"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
+#: ../src/dummy-strings.c:45
+msgid "Server not yet valid - try again later"
+msgstr "Ο διακομιστής δεν είναι ακόμα έγκυρος - προσπαθήστε ξανά αργότερα"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
+#: ../src/dummy-strings.c:46
+msgid "Password has expired"
+msgstr "Ο κωδικός πρόσβασης έχει λήξει"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
+#: ../src/dummy-strings.c:47
+msgid "Preauthentication failed"
+msgstr "Αποτυχία προπιστοποίησης"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
+#: ../src/dummy-strings.c:48
+msgid "Additional pre-authentication required"
+msgstr "Απαιτήθηκε πρόσθετη προπιστοποίηση"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
+#: ../src/dummy-strings.c:49
+msgid "Requested server and ticket don't match"
+msgstr "Ο ζητούμενος διακομιστής και το εισιτήριο δεν ταιριάζουν"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
+#: ../src/dummy-strings.c:50
+msgid "A service is not available that is required to process the request"
+msgstr ""
+"Μια υπηρεσία δεν είναι διαθέσιμη που απαιτείται για επεξεργασία του "
+"αιτήματος"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
+#: ../src/dummy-strings.c:51
+msgid "Decrypt integrity check failed"
+msgstr "Αποτυχία ελέγχου της ακεραιότητας αποκρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
+#: ../src/dummy-strings.c:52
+msgid "Ticket expired"
+msgstr "Το εισιτήριο έληξε"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
+#: ../src/dummy-strings.c:53
+msgid "Ticket not yet valid"
+msgstr "Το εισιτήριο δεν είναι ακόμα έγκυρο"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
+#: ../src/dummy-strings.c:54
+msgid "Request is a replay"
+msgstr "Το αίτημα είναι μια επανάληψη"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
+#: ../src/dummy-strings.c:55
+msgid "The ticket isn't for us"
+msgstr "Το εισιτήριο δεν είναι για μας"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
+#: ../src/dummy-strings.c:56
+msgid "Ticket/authenticator don't match"
+msgstr "Το εισιτήριο/ταυτοποιητής δεν ταιριάζουν"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
+#: ../src/dummy-strings.c:57
+msgid "Clock skew too great"
+msgstr "Ο ασύμμετρος χρονιστής είναι υπερβολικά μεγάλος"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
+#: ../src/dummy-strings.c:58
+msgid "Incorrect net address"
+msgstr "Εσφαλμένη διεύθυνση δικτύου"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
+#: ../src/dummy-strings.c:59
+msgid "Protocol version mismatch"
+msgstr "Ασυμφωνία έκδοσης πρωτοκόλλου"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
+#: ../src/dummy-strings.c:60
+msgid "Invalid message type"
+msgstr "Άκυρος τύπος μηνύματος"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
+#: ../src/dummy-strings.c:61
+msgid "Message stream modified"
+msgstr "Η ροή μηνύματος τροποποιήθηκε"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
+#: ../src/dummy-strings.c:62
+msgid "Message out of order"
+msgstr "Το μήνυμα είναι εκτός σειράς"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
+#: ../src/dummy-strings.c:63
+msgid "Illegal cross-realm ticket"
+msgstr "Απαράδεκτο εισιτήριο διασταυρούμενου τομέα"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
+#: ../src/dummy-strings.c:64
+msgid "Key version is not available"
+msgstr "Η έκδοση κλειδιού δεν είναι διαθέσιμη"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
+#: ../src/dummy-strings.c:65
+msgid "Service key not available"
+msgstr "Το κλειδί υπηρεσίας δεν είναι διαθέσιμο"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
+#. krb5_err.et:krb5:KRB5_NO_LOCALNAME
+#: ../src/dummy-strings.c:66 ../src/dummy-strings.c:122
+msgid "Mutual authentication failed"
+msgstr "Αποτυχία αμοιβαίας πιστοποίησης"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
+#: ../src/dummy-strings.c:67
+msgid "Incorrect message direction"
+msgstr "Εσφαλμένη κατεύθυνση μηνύματος"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
+#: ../src/dummy-strings.c:68
+msgid "Alternative authentication method required"
+msgstr "Απαιτείται εναλλακτική μέθοδος πιστοποίησης"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
+#: ../src/dummy-strings.c:69
+msgid "Incorrect sequence number in message"
+msgstr "Εσφαλμένος αριθμός αλληλουχίας στο μήνυμα"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
+#: ../src/dummy-strings.c:70
+msgid "Inappropriate type of checksum in message"
+msgstr "Ακατάλληλος τύπος ελεγκτικού αθροίσματος στο μήνυμα"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
+#: ../src/dummy-strings.c:71
+msgid "Policy rejects transited path"
+msgstr "Η πολιτική απορρίπτει μετακινούμενη διαδρομή"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
+#: ../src/dummy-strings.c:72
+msgid "Response too big for UDP, retry with TCP"
+msgstr "Η απάντηση είναι υπερβολικά μεγάλη για UDP, ξαναπροσπαθήστε με TCP"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
+#: ../src/dummy-strings.c:73
+msgid "Generic error (see e-text)"
+msgstr "Γενικό σφάλμα (δείτε ηλεκτρονικό κείμενο)"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
+#: ../src/dummy-strings.c:74
+msgid "Field is too long for this implementation"
+msgstr "Το πεδίο είναι υπερβολικά μεγάλο για αυτήν την υλοποίηση"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
+#: ../src/dummy-strings.c:75
+msgid "Client not trusted"
+msgstr "Ο πελάτης δεν είναι έμπιστος"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
+#: ../src/dummy-strings.c:76
+msgid "KDC not trusted"
+msgstr "Το KDC δεν είναι έμπιστο"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
+#: ../src/dummy-strings.c:77
+msgid "Invalid signature"
+msgstr "Άκυρη υπογραφή"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
+#: ../src/dummy-strings.c:78
+msgid "Key parameters not accepted"
+msgstr "Οι παράμετροι του κλειδιού δεν είναι αποδεκτές"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
+#: ../src/dummy-strings.c:79
+msgid "Certificate mismatch"
+msgstr "Ασυμφωνία πιστοποιητικού"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
+#: ../src/dummy-strings.c:80
+msgid "Can't verify certificate"
+msgstr "Αδύνατη η επιβεβαίωση του πιστοποιητικού"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
+#: ../src/dummy-strings.c:81
+msgid "Invalid certificate"
+msgstr "Άκυρο πιστοποιητικό"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
+#: ../src/dummy-strings.c:82
+msgid "Revoked certificate"
+msgstr "Ανάκληση πιστοποιητικού"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
+#: ../src/dummy-strings.c:83
+msgid "Revocation status unknown"
+msgstr "Η κατάσταση ανάκλησης είναι άγνωστη"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
+#: ../src/dummy-strings.c:84
+msgid "Revocation status unavailable"
+msgstr "Η κατάσταση ανάκλησης δεν διατίθεται"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
+#: ../src/dummy-strings.c:85
+msgid "Client name mismatch"
+msgstr "Ασυμφωνία ονόματος πελάτη"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
+#: ../src/dummy-strings.c:86
+msgid "KDC name mismatch"
+msgstr "Ασυμφωνία ονόματος KDC"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
+#: ../src/dummy-strings.c:87
+msgid "Inconsistent key purpose"
+msgstr "Ασύμβατος σκοπός κλειδιού"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
+#: ../src/dummy-strings.c:88
+msgid "Digest in certificate not accepted"
+msgstr "Αφομοίωση σε πιστοποιητικό δεν είναι αποδεκτή"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
+#: ../src/dummy-strings.c:89
+msgid "Checksum must be included"
+msgstr "Το ελεγκτικό άθροισμα πρέπει να συμπεριληφθεί"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
+#: ../src/dummy-strings.c:90
+msgid "Digest in signed-data not accepted"
+msgstr "Αφομοίωση σε υπογραμμένα δεδομένα δεν είναι αποδεκτή"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
+#: ../src/dummy-strings.c:91
+msgid "Public key encryption not supported"
+msgstr "Η κρυπτογράφηση δημόσιου κλειδιού δεν υποστηρίζεται"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
+#: ../src/dummy-strings.c:92
+msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
+msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
+
+#. krb5_err.et:krb5:KRB5_ERR_RCSID
+#: ../src/dummy-strings.c:93
+msgid "Invalid flag for file lock mode"
+msgstr "Άκυρη σημαία για την κατάσταση κλειδώματος αρχείου"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
+#: ../src/dummy-strings.c:94
+msgid "Cannot read password"
+msgstr "Αδύνατη η ανάγνωση κωδικού πρόσβασης"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
+#: ../src/dummy-strings.c:95
+msgid "Password mismatch"
+msgstr "Ασυμφωνία κωδικού πρόσβασης"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
+#: ../src/dummy-strings.c:96
+msgid "Password read interrupted"
+msgstr "Διακοπή ανάγνωσης κωδικού πρόσβασης"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
+#: ../src/dummy-strings.c:97
+msgid "Illegal character in component name"
+msgstr "Απαράδεκτος χαρακτήρας σε όνομα στοιχείου"
+
+#. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
+#: ../src/dummy-strings.c:98
+msgid "Malformed representation of principal"
+msgstr "Κακοσχηματισμένη παρουσίαση του κύριου"
+
+#. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
+#: ../src/dummy-strings.c:99
+msgid "Can't open/find Kerberos configuration file"
+msgstr "Αδύνατο το άνοιγμα/εύρεση αρχείου ρυθμίσεων του Kerberos"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
+#: ../src/dummy-strings.c:100
+msgid "Improper format of Kerberos configuration file"
+msgstr "Λαθεμένη μορφή του αρχείου ρυθμίσεων του Kerberos"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
+#: ../src/dummy-strings.c:101
+msgid "Insufficient space to return complete information"
+msgstr "Ανεπαρκής χώρος για επιστροφή πλήρους πληροφορίας"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
+#: ../src/dummy-strings.c:102
+msgid "Invalid message type specified for encoding"
+msgstr "Άκυρος τύπος μηνύματος ορίστηκε για κωδικοποίηση"
+
+#. krb5_err.et:krb5:KRB5_BADMSGTYPE
+#: ../src/dummy-strings.c:103
+msgid "Credential cache name malformed"
+msgstr "Κακοσχηματισμένο όνομα κρυφής μνήμης πιστοποιητικού"
+
+#. krb5_err.et:krb5:KRB5_CC_BADNAME
+#: ../src/dummy-strings.c:104
+msgid "Unknown credential cache type"
+msgstr "Άγνωστος τύπος κρυφής μνήμης πιστοποιητικού"
+
+#. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
+#: ../src/dummy-strings.c:105
+msgid "Matching credential not found"
+msgstr "Δεν βρέθηκε πιστοποιητικό που να συμφωνεί"
+
+#. krb5_err.et:krb5:KRB5_CC_NOTFOUND
+#: ../src/dummy-strings.c:106
+msgid "End of credential cache reached"
+msgstr "Έφτασε το τέλος της κρυφής μνήμης του πιστοποιητικού"
+
+#. krb5_err.et:krb5:KRB5_CC_END
+#: ../src/dummy-strings.c:107
+msgid "Request did not supply a ticket"
+msgstr "Το αίτημα δεν έδωσε εισιτήριο"
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
+#: ../src/dummy-strings.c:108
+msgid "Wrong principal in request"
+msgstr "Εσφαλμένο κύριο στο αίτημα"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
+#: ../src/dummy-strings.c:109
+msgid "Ticket has invalid flag set"
+msgstr "Το εισιτήριο έχει άκυρη ορισμένη σημαία"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
+#: ../src/dummy-strings.c:110
+msgid "Requested principal and ticket don't match"
+msgstr "Ο ζητούμενος κύριος και το εισιτήριο δεν ταιριάζουν"
+
+#. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
+#: ../src/dummy-strings.c:111
+msgid "KDC reply did not match expectations"
+msgstr "Η απάντηση του KDC δεν συμφωνεί με τις προσδοκίες"
+
+#. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
+#: ../src/dummy-strings.c:112
+msgid "Clock skew too great in KDC reply"
+msgstr "Ο ασύμμετρος χρονιστής είναι υπερβολικά μεγάλος στην απάντηση KDC"
+
+#. krb5_err.et:krb5:KRB5_KDCREP_SKEW
+#: ../src/dummy-strings.c:113
+msgid "Client/server realm mismatch in initial ticket request"
+msgstr "Ο τομέας πελάτη/διακομιστή δεν ταιριάζει στο αρχικό αίτημα εισιτηρίου"
+
+#. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
+#: ../src/dummy-strings.c:114
+msgid "Program lacks support for encryption type"
+msgstr "Το πρόγραμμα δεν υποστηρίζει τον τύπο κρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:115
+msgid "Program lacks support for key type"
+msgstr "Το πρόγραμμα δεν υποστηρίζει τον τύπο κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
+#: ../src/dummy-strings.c:116
+msgid "Requested encryption type not used in message"
+msgstr "Ο ζητούμενος τύπος κρυπτογράφησης δεν χρησιμοποιείται στο μήνυμα"
+
+#. krb5_err.et:krb5:KRB5_WRONG_ETYPE
+#: ../src/dummy-strings.c:117
+msgid "Program lacks support for checksum type"
+msgstr "Το πρόγραμμα δεν υποστηρίζει τον τύπο ελεγκτικού αθροίσματος"
+
+#. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
+#: ../src/dummy-strings.c:118
+msgid "Cannot find KDC for requested realm"
+msgstr "Αδύνατη η εύρεση του KDC για το ζητούμενο τομέα"
+
+#. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
+#: ../src/dummy-strings.c:119
+msgid "Kerberos service unknown"
+msgstr "Άγνωστη υπηρεσία του Kerberos"
+
+#. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
+#: ../src/dummy-strings.c:120
+msgid "Cannot contact any KDC for requested realm"
+msgstr "Αδύνατη η επαφή οποιουδήποτε KDC για το ζητούμενο τομέα"
+
+#. krb5_err.et:krb5:KRB5_KDC_UNREACH
+#: ../src/dummy-strings.c:121
+msgid "No local name found for principal name"
+msgstr "Δεν βρέθηκε τοπικό όνομα για το κύριο όνομα"
+
+#. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
+#: ../src/dummy-strings.c:123
+msgid "Replay cache type is already registered"
+msgstr "Ο τύπος κρυφής μνήμης επανάληψης είναι ήδη καταχωρισμένος"
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
+#: ../src/dummy-strings.c:124
+msgid "No more memory to allocate (in replay cache code)"
+msgstr ""
+"Δεν υπάρχει περισσότερη μνήμη για κατανομή (στον κώδικα κρυφής μνήμης "
+"επανάληψης)"
+
+#. krb5_err.et:krb5:KRB5_RC_MALLOC
+#: ../src/dummy-strings.c:125
+msgid "Replay cache type is unknown"
+msgstr "Ο τύπος κρυφής μνήμης επανάληψης είναι άγνωστος"
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
+#: ../src/dummy-strings.c:126
+msgid "Generic unknown RC error"
+msgstr "Γενικό άγνωστο σφάλμα RC"
+
+#. krb5_err.et:krb5:KRB5_RC_UNKNOWN
+#: ../src/dummy-strings.c:127
+msgid "Message is a replay"
+msgstr "Το μήνυμα είναι μια επανάληψη"
+
+#. krb5_err.et:krb5:KRB5_RC_REPLAY
+#: ../src/dummy-strings.c:128
+msgid "Replay I/O operation failed XXX"
+msgstr "Αποτυχία λειτουργίας εισόδου/εξόδου επανάληψης XXX"
+
+#. krb5_err.et:krb5:KRB5_RC_IO
+#: ../src/dummy-strings.c:129
+msgid "Replay cache type does not support non-volatile storage"
+msgstr "Ο τύπος κρυφής μνήμης επανάληψης δεν υποστηρίζει διατηρήσιμη μνήμη"
+
+#. krb5_err.et:krb5:KRB5_RC_NOIO
+#: ../src/dummy-strings.c:130
+msgid "Replay cache name parse/format error"
+msgstr "Σφάλμα ανάλυσης/μορφής ονόματος κρυφής μνήμης επανάληψης"
+
+#. krb5_err.et:krb5:KRB5_RC_PARSE
+#: ../src/dummy-strings.c:131
+msgid "End-of-file on replay cache I/O"
+msgstr "Τέλος αρχείου στην είσοδο/έξοδο κρυφής μνήμης επανάληψης"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_EOF
+#: ../src/dummy-strings.c:132
+msgid "No more memory to allocate (in replay cache I/O code)"
+msgstr ""
+"Δεν υπάρχει περισσότερη μνήμη για κατανομή (στον κώδικα εισόδου/εξόδου "
+"κρυφής μνήμης επανάληψης)"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
+#: ../src/dummy-strings.c:133
+msgid "Permission denied in replay cache code"
+msgstr "Άρνηση πρόσβασης στον κώδικα κρυφής μνήμης επανάληψης"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_PERM
+#: ../src/dummy-strings.c:134
+msgid "I/O error in replay cache i/o code"
+msgstr "Σφάλμα εισόδου/εξόδου στην κρυφή μνήμη επανάληψης κώδικα εισόδου/εξόδου"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_IO
+#: ../src/dummy-strings.c:135
+msgid "Generic unknown RC/IO error"
+msgstr "Γενικό άγνωστο σφάλμα RC/IO"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
+#: ../src/dummy-strings.c:136
+msgid "Insufficient system space to store replay information"
+msgstr "Ανεπαρκής χώρος συστήματος για αποθήκευση πληροφοριών επανάληψης"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_SPACE
+#: ../src/dummy-strings.c:137
+msgid "Can't open/find realm translation file"
+msgstr "Αδύνατο το άνοιγμα/εύρεση αρχείου μετάφρασης τομέα"
+
+#. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
+#: ../src/dummy-strings.c:138
+msgid "Improper format of realm translation file"
+msgstr "Λαθεμένη μορφή του αρχείου μετάφρασης τομέα"
+
+#. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
+#: ../src/dummy-strings.c:139
+msgid "Can't open/find lname translation database"
+msgstr "Αδύνατο το άνοιγμα/εύρεση της βάσης δεδομένων μετάφρασης lname"
+
+#. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
+#: ../src/dummy-strings.c:140
+msgid "No translation available for requested principal"
+msgstr "Δεν υπάρχει διαθέσιμη μετάφραση για το ζητούμενο κύριο"
+
+#. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
+#: ../src/dummy-strings.c:141
+msgid "Improper format of translation database entry"
+msgstr "Λαθεμένη μορφή καταχώρισης βάσης δεδομένων μετάφρασης"
+
+#. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
+#: ../src/dummy-strings.c:142
+msgid "Cryptosystem internal error"
+msgstr "Εσωτερικό σφάλμα συστήματος κρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
+#: ../src/dummy-strings.c:143
+msgid "Key table name malformed"
+msgstr "Κακοσχηματισμένο όνομα πίνακα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KT_BADNAME
+#: ../src/dummy-strings.c:144
+msgid "Unknown Key table type"
+msgstr "Άγνωστος τύπος πίνακα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
+#: ../src/dummy-strings.c:145
+msgid "Key table entry not found"
+msgstr "Δεν βρέθηκε καταχώριση πίνακα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KT_NOTFOUND
+#: ../src/dummy-strings.c:146
+msgid "End of key table reached"
+msgstr "Έφτασε το τέλος του πίνακα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KT_END
+#: ../src/dummy-strings.c:147
+msgid "Cannot write to specified key table"
+msgstr "Αδύνατη η εγγραφή στον συγκεκριμένο πίνακα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KT_NOWRITE
+#: ../src/dummy-strings.c:148
+msgid "Error writing to key table"
+msgstr "Σφάλμα κατά την εγγραφή στον πίνακα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KT_IOERR
+#: ../src/dummy-strings.c:149
+msgid "Cannot find ticket for requested realm"
+msgstr "Αδύνατη η εύρεση του εισιτηρίου για το ζητούμενο τομέα"
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
+#: ../src/dummy-strings.c:150
+msgid "DES key has bad parity"
+msgstr "Το κλειδί DES έχει εσφαλμένη ισοτιμία"
+
+#. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
+#: ../src/dummy-strings.c:151
+msgid "DES key is a weak key"
+msgstr "Το κλειδί DES είναι ασθενές"
+
+#. krb5_err.et:krb5:KRB5DES_WEAK_KEY
+#: ../src/dummy-strings.c:152
+msgid "Bad encryption type"
+msgstr "Εσφαλμένος τύπος κρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
+#: ../src/dummy-strings.c:153
+msgid "Key size is incompatible with encryption type"
+msgstr "Το μέγεθος του κλειδιού είναι ασύμβατο με τον τύπο κρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
+#: ../src/dummy-strings.c:154
+msgid "Message size is incompatible with encryption type"
+msgstr "Το μέγεθος του μηνύματος είναι ασύμβατο με τον τύπο κρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5_BAD_MSIZE
+#: ../src/dummy-strings.c:155
+msgid "Credentials cache type is already registered."
+msgstr "Ο τύπος κρυφής μνήμης διαπιστευτηρίων είναι ήδη καταχωρισμένος."
+
+#. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
+#: ../src/dummy-strings.c:156
+msgid "Key table type is already registered."
+msgstr "Ο τύπος πίνακα κλειδιού είναι ήδη καταχωρισμένος."
+
+#. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
+#: ../src/dummy-strings.c:157
+msgid "Credentials cache I/O operation failed XXX"
+msgstr "Αποτυχία λειτουργίας εισόδου/εξόδου κρυφής μνήμης διαπιστευτηρίων XXX"
+
+#. krb5_err.et:krb5:KRB5_CC_IO
+#: ../src/dummy-strings.c:158
+msgid "Credentials cache permissions incorrect"
+msgstr "Εσφαλμένα δικαιώματα κρυφής μνήμης διαπιστευτηρίων"
+
+#. krb5_err.et:krb5:KRB5_FCC_PERM
+#: ../src/dummy-strings.c:159
+msgid "No credentials cache found"
+msgstr "Δεν βρέθηκε κρυφή μνήμη διαπιστευτηρίων"
+
+#. krb5_err.et:krb5:KRB5_FCC_NOFILE
+#: ../src/dummy-strings.c:160
+msgid "Internal credentials cache error"
+msgstr "Εσωτερικό σφάλμα κρυφής μνήμης διαπιστευτηρίων"
+
+#. krb5_err.et:krb5:KRB5_FCC_INTERNAL
+#: ../src/dummy-strings.c:161
+msgid "Error writing to credentials cache"
+msgstr "Σφάλμα κατά την εγγραφή στην κρυφή μνήμη διαπιστευτηρίων"
+
+#. krb5_err.et:krb5:KRB5_CC_WRITE
+#: ../src/dummy-strings.c:162
+msgid "No more memory to allocate (in credentials cache code)"
+msgstr ""
+"Δεν υπάρχει περισσότερη μνήμη για κατανομή (στον κώδικα κρυφής μνήμης "
+"διαπιστευτηρίων)"
+
+#. krb5_err.et:krb5:KRB5_CC_NOMEM
+#: ../src/dummy-strings.c:163
+msgid "Bad format in credentials cache"
+msgstr "Εσφαλμένη μορφή στην κρυφή μνήμη διαπιστευτηρίων"
+
+#. krb5_err.et:krb5:KRB5_CC_FORMAT
+#: ../src/dummy-strings.c:164
+msgid "No credentials found with supported encryption types"
+msgstr "Δεν βρέθηκαν διαπιστευτήρια με υποστηριζόμενους τύπους κρυπτογράφησης"
+
+#. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
+#: ../src/dummy-strings.c:165
+msgid "Invalid KDC option combination (library internal error)"
+msgstr "Άκυρος συνδυασμός επιλογής KDC (εσωτερικό σφάλμα βιβλιοθήκης)"
+
+#. krb5_err.et:krb5:KRB5_INVALID_FLAGS
+#: ../src/dummy-strings.c:166
+msgid "Request missing second ticket"
+msgstr "Αίτηση δεύτερου εισιτηρίου που λείπει"
+
+#. krb5_err.et:krb5:KRB5_NO_2ND_TKT
+#: ../src/dummy-strings.c:167
+msgid "No credentials supplied to library routine"
+msgstr "Χωρίς παρεχόμενα διαπιστευτήρια στη ρουτίνα βιβλιοθήκης"
+
+#. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
+#: ../src/dummy-strings.c:168
+msgid "Bad sendauth version was sent"
+msgstr "Στάλθηκε εσφαλμένη έκδοση sendauth"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
+#: ../src/dummy-strings.c:169
+msgid "Bad application version was sent (via sendauth)"
+msgstr "Στάλθηκε εσφαλμένη έκδοση εφαρμογής (μέσα από sendauth)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
+#: ../src/dummy-strings.c:170
+msgid "Bad response (during sendauth exchange)"
+msgstr "Εσφαλμένη απάντηση (κατά τη διάρκεια ανταλλαγής sendauth)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
+#: ../src/dummy-strings.c:171
+msgid "Server rejected authentication (during sendauth exchange)"
+msgstr ""
+"Ο διακομιστής απέρριψε την πιστοποίηση (κατά τη διάρκεια της ανταλλαγής "
+"sendauth)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
+#: ../src/dummy-strings.c:172
+msgid "Unsupported preauthentication type"
+msgstr "Ανυποστήρικτος τύπος προπιστοποίησης"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
+#: ../src/dummy-strings.c:173
+msgid "Required preauthentication key not supplied"
+msgstr "Το απαιτούμενο κλειδί προπιστοποίησης δεν δόθηκε"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
+#: ../src/dummy-strings.c:174
+msgid "Generic preauthentication failure"
+msgstr "Γενική αποτυχία προπιστοποίησης"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
+#: ../src/dummy-strings.c:175
+msgid "Unsupported replay cache format version number"
+msgstr "Ανυποστήρικτος αριθμός έκδοσης μορφής κρυφής μνήμης επανάληψης"
+
+#. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
+#: ../src/dummy-strings.c:176
+msgid "Unsupported credentials cache format version number"
+msgstr "Ανυποστήρικτος αριθμός έκδοσης μορφής κρυφής μνήμης διαπιστευτηρίων"
+
+#. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
+#: ../src/dummy-strings.c:177
+msgid "Unsupported key table format version number"
+msgstr "Ανυποστήρικτος αριθμός έκδοσης μορφής πίνακα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
+#: ../src/dummy-strings.c:178
+msgid "Program lacks support for address type"
+msgstr "Το πρόγραμμα δεν υποστηρίζει τον τύπο διεύθυνσης"
+
+#. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
+#: ../src/dummy-strings.c:179
+msgid "Message replay detection requires rcache parameter"
+msgstr "Η αναγνώριση επανάληψης μηνύματος απαιτεί την παράμετρο rcache"
+
+#. krb5_err.et:krb5:KRB5_RC_REQUIRED
+#: ../src/dummy-strings.c:180
+msgid "Hostname cannot be canonicalized"
+msgstr "Αδύνατη η κανονικοποίηση του ονόματος οικοδεσπότη"
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
+#: ../src/dummy-strings.c:181
+msgid "Cannot determine realm for host"
+msgstr "Αδύνατος ο προσδιορισμός τομέα για οικοδεσπότη"
+
+#. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
+#: ../src/dummy-strings.c:182
+msgid "Conversion to service principal undefined for name type"
+msgstr ""
+"Η μετατροπή για την κύρια υπηρεσία είναι αόριστη για τον τύπο του ονόματος"
+
+#. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
+#: ../src/dummy-strings.c:183
+msgid "Initial Ticket response appears to be Version 4 error"
+msgstr "Η αρχική απάντηση εισιτηρίου φαίνεται να είναι σφάλμα της έκδοσης 4"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
+#: ../src/dummy-strings.c:184
+msgid "Cannot resolve network address for KDC in requested realm"
+msgstr "Αδύνατη η επίλυση διεύθυνσης δικτύου για KDC στο ζητούμενο τομέα"
+
+#. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
+#: ../src/dummy-strings.c:185
+msgid "Requesting ticket can't get forwardable tickets"
+msgstr "Το αίτημα του εισιτηρίου δεν μπορεί να πάρει προωθήσιμα εισιτήρια"
+
+#. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
+#: ../src/dummy-strings.c:186
+msgid "Bad principal name while trying to forward credentials"
+msgstr "Εσφαλμένο κύριο όνομα κατά την προσπάθεια προώθησης διαπιστευτηρίων"
+
+#. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
+#: ../src/dummy-strings.c:187
+msgid "Looping detected inside krb5_get_in_tkt"
+msgstr "Αναγνωρίστηκε βρόχος μέσα στο krb5_get_in_tkt"
+
+#. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
+#: ../src/dummy-strings.c:188
+msgid "Configuration file does not specify default realm"
+msgstr "Το αρχείο ρυθμίσεων δεν ορίζει προεπιλεγμένο τομέα"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
+#: ../src/dummy-strings.c:189
+msgid "Bad SAM flags in obtain_sam_padata"
+msgstr "Εσφαλμένες σημαίες SAM στο obtain_sam_padata"
+
+#. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
+#: ../src/dummy-strings.c:190
+msgid "Invalid encryption type in SAM challenge"
+msgstr "Άκυρος τύπος κρυπτογράφησης σε πρόκληση SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
+#: ../src/dummy-strings.c:191
+msgid "Missing checksum in SAM challenge"
+msgstr "Λείπει το ελεγκτικό άθροισμα σε πρόκληση SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
+#: ../src/dummy-strings.c:192
+msgid "Bad checksum in SAM challenge"
+msgstr "Εσφαλμένο ελεγκτικό άθροισμα σε πρόκληση SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
+#: ../src/dummy-strings.c:193
+msgid "Keytab name too long"
+msgstr "Το όνομα καρτέλας κλειδιού ήταν υπερβολικά μεγάλο"
+
+#. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
+#: ../src/dummy-strings.c:194
+msgid "Key version number for principal in key table is incorrect"
+msgstr ""
+"Ο αριθμός έκδοσης κλειδιού για το κύριο στον πίνακα κλειδιού είναι "
+"εσφαλμένος"
+
+#. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
+#: ../src/dummy-strings.c:195
+msgid "This application has expired"
+msgstr "Αυτή η εφαρμογή έχει λήξει"
+
+#. krb5_err.et:krb5:KRB5_APPL_EXPIRED
+#: ../src/dummy-strings.c:196
+msgid "This Krb5 library has expired"
+msgstr "Αυτή η βιβλιοθήκη Krb5 έχει λήξει"
+
+#. krb5_err.et:krb5:KRB5_LIB_EXPIRED
+#: ../src/dummy-strings.c:197
+msgid "New password cannot be zero length"
+msgstr "Ο νέος κωδικός πρόσβασης δεν μπορεί να έχει μηδενικό μήκος"
+
+#. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
+#: ../src/dummy-strings.c:198
+msgid "Password change failed"
+msgstr "Αποτυχία αλλαγής κωδικού πρόσβασης"
+
+#. krb5_err.et:krb5:KRB5_CHPW_FAIL
+#: ../src/dummy-strings.c:199
+msgid "Bad format in keytab"
+msgstr "Εσφαλμένη μορφή στην καρτέλα κλειδιού"
+
+#. krb5_err.et:krb5:KRB5_KT_FORMAT
+#: ../src/dummy-strings.c:200
+msgid "Encryption type not permitted"
+msgstr "Ο τύπος κρυπτογράφησης δεν επιτρέπεται"
+
+#. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
+#: ../src/dummy-strings.c:201
+msgid "No supported encryption types (config file error?)"
+msgstr "Μη υποστηριζόμενοι τύποι κρυπτογράφησης (σφάλμα αρχείου ρυθμίσεων;)"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
+#: ../src/dummy-strings.c:202
+msgid "Program called an obsolete, deleted function"
+msgstr "Το πρόγραμμα κάλεσε μια καταργημένη, διαγραμμένη λειτουργία"
+
+#. krb5_err.et:krb5:KRB5_OBSOLETE_FN
+#: ../src/dummy-strings.c:203
+msgid "unknown getaddrinfo failure"
+msgstr "άγνωστη αποτυχία getaddrinfo"
+
+#. krb5_err.et:krb5:KRB5_EAI_FAIL
+#: ../src/dummy-strings.c:204
+msgid "no data available for host/domain name"
+msgstr "χωρίς διαθέσιμα δεδομένα για το όνομα οικοδεσπότη/τομέα"
+
+#. krb5_err.et:krb5:KRB5_EAI_NODATA
+#: ../src/dummy-strings.c:205
+msgid "host/domain name not found"
+msgstr "δεν βρέθηκε όνομα οικοδεσπότη/τομέα"
+
+#. krb5_err.et:krb5:KRB5_EAI_NONAME
+#: ../src/dummy-strings.c:206
+msgid "service name unknown"
+msgstr "άγνωστο όνομα υπηρεσίας"
+
+#. krb5_err.et:krb5:KRB5_EAI_SERVICE
+#: ../src/dummy-strings.c:207
+msgid "Cannot determine realm for numeric host address"
+msgstr "Αδύνατος ο προσδιορισμός τομέα για αριθμητική διεύθυνση οικοδεσπότη"
+
+#. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
+#: ../src/dummy-strings.c:208
+msgid "Invalid key generation parameters from KDC"
+msgstr "Άκυρες παράμετροι γενιάς κλειδιού από KDC"
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
+#: ../src/dummy-strings.c:209
+msgid "service not available"
+msgstr "η υπηρεσία δεν είναι διαθέσιμη"
+
+#. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
+#: ../src/dummy-strings.c:210
+msgid "Ccache function not supported: read-only ccache type"
+msgstr "Η λειτουργία Ccache δεν υποστηρίζεται: τύπος ccache μόνο για ανάγνωση"
+
+#. krb5_err.et:krb5:KRB5_CC_READONLY
+#: ../src/dummy-strings.c:211
+msgid "Ccache function not supported: not implemented"
+msgstr "Η λειτουργία Ccache δεν υποστηρίζεται: δεν έχει υλοποιηθεί"
+
+#. krb5_err.et:krb5:KRB5_CC_NOSUPP
+#: ../src/dummy-strings.c:212
+msgid "Invalid format of Kerberos lifetime or clock skew string"
+msgstr ""
+"Άκυρη μορφή χρόνου ζωής του Kerberos ή συμβολοσειράς ασύμμετρου ρολογιού"
+
+#. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
+#: ../src/dummy-strings.c:213
+msgid "Supplied data not handled by this plugin"
+msgstr "Τα παρεχόμενα δεδομένα δεν επεξεργάζονται από αυτό το πρόσθετο"
+
+#. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
+#: ../src/dummy-strings.c:214
+msgid "Plugin does not support the operaton"
+msgstr "Το πρόσθετο δεν υποστηρίζει αυτήν τη λειτουργία"
+
+#. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
+#: ../src/dummy-strings.c:215
+msgid "Kerberos V5 magic number table"
+msgstr "Ο πίνακας μαγικών αριθμών V5 του Kerberos"
+
+#. kv5m_err.et:kv5m:KV5M_NONE
+#: ../src/dummy-strings.c:216
+msgid "Bad magic number for krb5_principal structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_principal"
+
+#. kv5m_err.et:kv5m:KV5M_PRINCIPAL
+#: ../src/dummy-strings.c:217
+msgid "Bad magic number for krb5_data structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_data"
+
+#. kv5m_err.et:kv5m:KV5M_DATA
+#: ../src/dummy-strings.c:218
+msgid "Bad magic number for krb5_keyblock structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_keyblock"
+
+#. kv5m_err.et:kv5m:KV5M_KEYBLOCK
+#: ../src/dummy-strings.c:219
+msgid "Bad magic number for krb5_checksum structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_checksum"
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM
+#: ../src/dummy-strings.c:220
+msgid "Bad magic number for krb5_encrypt_block structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_encrypt_block"
+
+#. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
+#: ../src/dummy-strings.c:221
+msgid "Bad magic number for krb5_enc_data structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_enc_data"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_DATA
+#: ../src/dummy-strings.c:222
+msgid "Bad magic number for krb5_cryptosystem_entry structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_cryptosystem_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
+#: ../src/dummy-strings.c:223
+msgid "Bad magic number for krb5_cs_table_entry structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_cs_table_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
+#: ../src/dummy-strings.c:224
+msgid "Bad magic number for krb5_checksum_entry structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_checksum_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
+#: ../src/dummy-strings.c:225
+msgid "Bad magic number for krb5_authdata structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_authdata"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHDATA
+#: ../src/dummy-strings.c:226
+msgid "Bad magic number for krb5_transited structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_transited"
+
+#. kv5m_err.et:kv5m:KV5M_TRANSITED
+#: ../src/dummy-strings.c:227
+msgid "Bad magic number for krb5_enc_tkt_part structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_enc_tkt_part"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
+#: ../src/dummy-strings.c:228
+msgid "Bad magic number for krb5_ticket structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_ticket"
+
+#. kv5m_err.et:kv5m:KV5M_TICKET
+#: ../src/dummy-strings.c:229
+msgid "Bad magic number for krb5_authenticator structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_authenticator"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
+#: ../src/dummy-strings.c:230
+msgid "Bad magic number for krb5_tkt_authent structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_tkt_authent"
+
+#. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
+#: ../src/dummy-strings.c:231
+msgid "Bad magic number for krb5_creds structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_creds"
+
+#. kv5m_err.et:kv5m:KV5M_CREDS
+#: ../src/dummy-strings.c:232
+msgid "Bad magic number for krb5_last_req_entry structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_last_req_entry"
+
+#. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
+#: ../src/dummy-strings.c:233
+msgid "Bad magic number for krb5_pa_data structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_pa_data"
+
+#. kv5m_err.et:kv5m:KV5M_PA_DATA
+#: ../src/dummy-strings.c:234
+msgid "Bad magic number for krb5_kdc_req structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_kdc_req"
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REQ
+#: ../src/dummy-strings.c:235
+msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_enc_kdc_rep_part"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
+#: ../src/dummy-strings.c:236
+msgid "Bad magic number for krb5_kdc_rep structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_kdc_rep"
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REP
+#: ../src/dummy-strings.c:237
+msgid "Bad magic number for krb5_error structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_error"
+
+#. kv5m_err.et:kv5m:KV5M_ERROR
+#: ../src/dummy-strings.c:238
+msgid "Bad magic number for krb5_ap_req structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_ap_req"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REQ
+#: ../src/dummy-strings.c:239
+msgid "Bad magic number for krb5_ap_rep structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_ap_rep"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP
+#: ../src/dummy-strings.c:240
+msgid "Bad magic number for krb5_ap_rep_enc_part structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_ap_rep_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
+#: ../src/dummy-strings.c:241
+msgid "Bad magic number for krb5_response structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_response"
+
+#. kv5m_err.et:kv5m:KV5M_RESPONSE
+#: ../src/dummy-strings.c:242
+msgid "Bad magic number for krb5_safe structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_safe"
+
+#. kv5m_err.et:kv5m:KV5M_SAFE
+#: ../src/dummy-strings.c:243
+msgid "Bad magic number for krb5_priv structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_priv"
+
+#. kv5m_err.et:kv5m:KV5M_PRIV
+#: ../src/dummy-strings.c:244
+msgid "Bad magic number for krb5_priv_enc_part structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_priv_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
+#: ../src/dummy-strings.c:245
+msgid "Bad magic number for krb5_cred structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_cred"
+
+#. kv5m_err.et:kv5m:KV5M_CRED
+#: ../src/dummy-strings.c:246
+msgid "Bad magic number for krb5_cred_info structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_cred_info"
+
+#. kv5m_err.et:kv5m:KV5M_CRED_INFO
+#: ../src/dummy-strings.c:247
+msgid "Bad magic number for krb5_cred_enc_part structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_cred_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
+#: ../src/dummy-strings.c:248
+msgid "Bad magic number for krb5_pwd_data structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_pwd_data"
+
+#. kv5m_err.et:kv5m:KV5M_PWD_DATA
+#: ../src/dummy-strings.c:249
+msgid "Bad magic number for krb5_address structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_address"
+
+#. kv5m_err.et:kv5m:KV5M_ADDRESS
+#: ../src/dummy-strings.c:250
+msgid "Bad magic number for krb5_keytab_entry structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_keytab_entry"
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
+#: ../src/dummy-strings.c:251
+msgid "Bad magic number for krb5_context structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_context"
+
+#. kv5m_err.et:kv5m:KV5M_CONTEXT
+#: ../src/dummy-strings.c:252
+msgid "Bad magic number for krb5_os_context structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_os_context"
+
+#. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
+#: ../src/dummy-strings.c:253
+msgid "Bad magic number for krb5_alt_method structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_alt_method"
+
+#. kv5m_err.et:kv5m:KV5M_ALT_METHOD
+#: ../src/dummy-strings.c:254
+msgid "Bad magic number for krb5_etype_info_entry structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_etype_info_entry"
+
+#. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
+#: ../src/dummy-strings.c:255
+msgid "Bad magic number for krb5_db_context structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_db_context"
+
+#. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
+#: ../src/dummy-strings.c:256
+msgid "Bad magic number for krb5_auth_context structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_auth_context"
+
+#. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
+#: ../src/dummy-strings.c:257
+msgid "Bad magic number for krb5_keytab structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_keytab"
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB
+#: ../src/dummy-strings.c:258
+msgid "Bad magic number for krb5_rcache structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_rcache"
+
+#. kv5m_err.et:kv5m:KV5M_RCACHE
+#: ../src/dummy-strings.c:259
+msgid "Bad magic number for krb5_ccache structure"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_ccache"
+
+#. kv5m_err.et:kv5m:KV5M_CCACHE
+#: ../src/dummy-strings.c:260
+msgid "Bad magic number for krb5_preauth_ops"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_preauth_ops"
+
+#. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
+#: ../src/dummy-strings.c:261
+msgid "Bad magic number for krb5_sam_challenge"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_sam_challenge"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
+#: ../src/dummy-strings.c:262
+msgid "Bad magic number for krb5_sam_challenge_2"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_sam_challenge_2"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
+#: ../src/dummy-strings.c:263
+msgid "Bad magic number for krb5_sam_key"
+msgstr "Εσφαλμένος μαγικός αριθμός για τη δομή krb5_sam_key"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_KEY
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
+#: ../src/dummy-strings.c:264 ../src/dummy-strings.c:265
+msgid "Bad magic number for krb5_enc_sam_response_enc"
+msgstr "εσφαλμένος μαγικός αριθμός για krb5_enc_sam_response_enc"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
+#: ../src/dummy-strings.c:266
+msgid "Bad magic number for krb5_sam_response"
+msgstr "Εσφαλμένος μαγικός αριθμός για krb5_sam_response"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
+#: ../src/dummy-strings.c:267
+msgid "Bad magic number for krb5_sam_response 2"
+msgstr "Εσφαλμένος μαγικός αριθμός για krb5_sam_response 2"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
+#: ../src/dummy-strings.c:268
+msgid "Bad magic number for krb5_predicted_sam_response"
+msgstr "Εσφαλμένος μαγικός αριθμός για krb5_predicted_sam_response"
+
+#. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
+#: ../src/dummy-strings.c:269
+msgid "Bad magic number for passwd_phrase_element"
+msgstr "Εσφαλμένος μαγικός αριθμός για passwd_phrase_element"
+
+#. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
+#: ../src/dummy-strings.c:270
+msgid "Bad magic number for GSSAPI OID"
+msgstr "Εσφαλμένος μαγικός αριθμός για GSSAPI OID"
+
+#. kv5m_err.et:kv5m:KV5M_GSS_OID
+#: ../src/dummy-strings.c:271
+msgid "Bad magic number for GSSAPI QUEUE"
+msgstr "Εσφαλμένος μαγικός αριθμός για GSSAPI QUEUE"
+
+#: ../src/ka-applet.c:566
+#, c-format
+msgid "Your credentials expire in %.2d:%.2dh"
+msgstr "Τα διαπιστευτήρια λήγουν σε %.2d:%.2dh"
+
+#: ../src/ka-applet.c:759
+msgid "List Tickets"
+msgstr "Λίστα εισιτηρίων"
+
+#: ../src/ka-applet.c:769
+msgid "Get Ticket"
+msgstr "Λήψη εισιτηρίου"
+
+#: ../src/ka-applet.c:778
+msgid "Don't show me this again"
+msgstr "Να μην εμφανιστεί αυτό ξανά"
+
+#: ../src/ka-applet.c:785
+msgid "Remove Credentials Cache"
+msgstr "Αφαίρεση κρυφής μνήμης διαπιστευτηρίων"
+
+#: ../src/ka-applet.c:845
+msgid "You have valid Kerberos credentials."
+msgstr "Έχετε έγκυρα διαπιστευτήρια Kerberos."
+
+#: ../src/ka-applet.c:847
+msgid "You've refreshed your Kerberos credentials."
+msgstr "Έχετε ανανεώσει τα διαπιστευτήρια του Kerberos."
+
+#: ../src/ka-applet.c:850
+msgid "Network credentials valid"
+msgstr "Έγκυρα διαπιστευτήρια δικτύου"
+
+#: ../src/ka-applet.c:869
+msgid "Network credentials expiring"
+msgstr "Τα διαπιστευτήρια δικτύου λήγουν"
+
+#: ../src/ka-applet.c:886
+msgid "Network credentials expired"
+msgstr "Τα διαπιστευτήρια δικτύου έληξαν"
+
+#: ../src/ka-applet.c:887
+msgid "Your Kerberos credentials have expired."
+msgstr "Τα διαπιστευτήρια του Kerberos σας έχουν λήξει."
+
+#: ../src/ka-applet.c:967
+msgid "Remove Credentials _Cache"
+msgstr "Αφαίρεση διαπιστευτηρίων _κρυφής μνήμης"
+
+#. Ticket dialog
+#: ../src/ka-applet.c:978
+msgid "_List Tickets"
+msgstr "_Λίστα εισιτηρίων"
+
+#: ../src/ka-tools.c:45
+#, c-format
+msgid ""
+"There was an error displaying help:\n"
+"%s"
+msgstr ""
+"Υπήρξε σφάλμα κατά την εμφάνιση της βοήθειας:\n"
+"%s"
+
+#. Translators: add the translators of your language here
+#: ../src/ka-tools.c:85
+msgid "translator-credits"
+msgstr ""
+"Ελληνική μεταφραστική ομάδα του GNOME\n"
+" Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
+"Για περισσότερα δείτε: http://gnome.gr"
+
+#: ../src/ka-main-window.c:75
+msgid "Principal"
+msgstr "Κύριο"
+
+#: ../src/ka-main-window.c:81
+msgid "Start Time"
+msgstr "Χρόνος έναρξης"
+
+#: ../src/ka-main-window.c:87
+msgid "End Time"
+msgstr "Χρόνος λήξης"
+
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:94
+msgid "Fwd"
+msgstr "Προωθήσιμο"
+
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:101
+msgid "Proxy"
+msgstr "Μεσολαβητής"
+
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:108
+msgid "Renew"
+msgstr "Ανανεώσιμο"
+
+#: ../src/ka-main-window.c:137
+msgid "Error displaying service ticket information"
+msgstr "Σφάλμα εμφάνισης πληροφοριών εισιτηρίου υπηρεσίας"
+
+#: ../src/ka-preferences.c:297
+msgid "Choose Certificate"
+msgstr "Επιλέξτε πιστοποιητικό"
+
+#: ../src/ka-preferences.c:313
+msgid "X509 Certificates"
+msgstr "Πιστοποιητικά X509"
+
+#: ../src/ka-preferences.c:317
+msgid "all files"
+msgstr "όλα τα αρχεία"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:2
+msgid "Kerberos Network Authentication Dialog"
+msgstr "Διάλογος αυθεντικότητας δικτύου Kerberos"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
+msgid "Kerberos principal"
+msgstr "Κύριο του Kerberos"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
+msgid "The Kerberos principal to acquire the ticket for"
+msgstr "Το κύριο του Kerberos για λήψη του εισιτηρίου για"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:3
+msgid "PKINIT identifier"
+msgstr "Αναγνωριστικό PKINIT"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:4
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr ""
+"Το αναγνωριστικό δημόσιο/ιδιωτικό/πιστοποιητικό του κύριου κατά τη χρήση "
+"PKINIT"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:5
+msgid "PKINIT trust anchors"
+msgstr "Έμπιστες άγκυρες PKINIT"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:6
+msgid "PKINIT CA certificates"
+msgstr "Πιστοποιητικά PKINIT CA"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:7
+msgid "Prompt minutes before expiry"
+msgstr "Ειδοποίηση n λεπτών πριν τη λήξη"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:8
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr "Έναρξη ειδοποιήσεων προτροπής/εμφάνισης τόσα λεπτά πριν τη λήξη"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:9
+msgid "Forwardable ticket"
+msgstr "Προωθήσιμο εισιτήριο"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:10
+msgid "Requested tickets should be forwardable"
+msgstr "Τα ζητούμενα εισιτήρια πρέπει να είναι προωθήσιμα"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:11
+msgid "Renewable ticket"
+msgstr "Ανανεώσιμο εισιτήριο"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:12
+msgid "Requested tickets should be renewable"
+msgstr "Τα ζητούμενα εισιτήρια πρέπει να είναι ανανεώσιμα"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:13
+msgid "Proxiable ticket"
+msgstr "Εισιτήριο με μεσολάβηση"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:14
+msgid "Requested tickets should be proxiable"
+msgstr "Τα ζητούμενα εισιτήρια πρέπει να είναι με μεσολάβηση"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:15
+msgid "Configuration tickets"
+msgstr "Εισιτήρια ρύθμισης"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
+msgid "Show configuration tickets"
+msgstr "Εμφάνιση εισιτηρίων ρύθμισης"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
+msgid "valid ticket notification"
+msgstr "έγκυρη ειδοποίηση εισιτηρίου"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:18
+msgid "Notify user when ticket becomes valid"
+msgstr "Να ειδοποιείται ο χρήστης, όταν το εισιτήριο γίνεται έγκυρο"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:19
+msgid "ticket expiring notification"
+msgstr "ειδοποίηση λήξης εισιτηρίου"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:20
+msgid "Notify user when ticket is about to expire"
+msgstr "Να ειδοποιείται ο χρήστης, όταν το εισιτήριο πρόκειται να λήξει"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:21
+msgid "ticket expired notification"
+msgstr "ειδοποίηση ληγμένου εισιτηρίου"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:22
+msgid "Notify user when ticket has expired"
+msgstr "Να ειδοποιείται ο χρήστης, όταν το εισιτήριο έχει λήξει"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:23
+msgid "Enabled plugins"
+msgstr "Ενεργά πρόσθετα"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:24
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr ""
+"Λίστα προσθέτων που πρέπει να φορτωθούν και να ενεργοποιηθούν στην έναρξη."
+
+#: ../secmem/util.c:106
+#, c-format
+msgid "Warning: running q-agent setuid on this system is dangerous\n"
+msgstr "Προειδοποίηση: η εκτέλεση q-agent setuid σε αυτό το σύστημα είναι επικίνδυνη\n"

@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-04-07 17:13+0000\n"
-"PO-Revision-Date: 2013-04-08 07:46-0300\n"
+"POT-Creation-Date: 2013-07-21 19:49+0000\n"
+"PO-Revision-Date: 2013-09-07 13:22-0300\n"
 "Last-Translator: Rafael Ferreira <rafael.f.f1@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <gnome-pt_br-list@gnome.org>\n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 1.5.5\n"
+"X-Generator: Poedit 1.5.7\n"
 
 #: ../src/krb5-auth-dialog.ui.h:1
 msgid "Prefere_nces"
@@ -109,11 +109,12 @@ msgstr "Id do usuário"
 
 #: ../src/krb5-auth-dialog.ui.h:21
 msgid "Use Smartcard"
-msgstr "Usar Smartcard"
+msgstr "Usar cartão inteligente"
 
 #: ../src/krb5-auth-dialog.ui.h:22
 msgid "If checked, use a security token (Smartcard) to authenticate."
-msgstr "Se marcado, usa o token de segurança (Smartcard) para autenticar."
+msgstr ""
+"Se marcado, usa um token de segurança (cartão inteligente) para autenticar."
 
 #: ../src/krb5-auth-dialog.ui.h:23
 msgid "Certificate and private key used for authentication"

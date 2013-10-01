@@ -25,6 +25,11 @@ service_DATA     = $(service_in_files:.service.in=.service)
 $(service_DATA): $(service_in_files) Makefile
 	sed -e "s|\@BINDIR\@|$(bindir)|" $< > $@
 
+@INTLTOOL_XML_RULE@
+appdatadir       = $(datadir)/appdata
+appdata_in_files = krb5-auth-dialog.appdata.xml.in
+appdata_DATA     = $(appdata_in_files:.xml.in=.xml)
+
 krb5_auth_dialog_SOURCES =	\
 	ka-kerberos.c      	\
 	ka-kerberos.h      	\
@@ -100,11 +105,16 @@ EXTRA_DIST = \
 	$(schema_in_files) \
 	$(autostart_in_files) \
 	$(service_in_files) \
+	$(appdata_in_files) \
 	org.gnome.KrbAuthDialog.gschema.xml \
 	krb5-auth-dialog.1.in \
 	$(NULL)
 
-CLEANFILES = $(schema_DATA) $(service_DATA)
+CLEANFILES = $(schema_DATA) \
+	$(service_DATA) \
+	$(appdata_DATA) \
+	$(NULL)
+
 DISTCLEANFILES = \
 	krb5-auth-dialog.desktop \
 	$(NULL)

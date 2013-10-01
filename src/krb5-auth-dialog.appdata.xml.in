@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2013 Guido Günther <agx@sigxcpu.org> -->
+<application>
+  <id type="desktop">krb5-auth-dialog.desktop</id>
+  <licence>CC0</licence>
+  <description>
+    <_p>
+      Kerberos Authentication allows you to list your current Kerberos tickets,
+      and to request a new ticket (authenticate to the Kerberos Server). It also
+      notifies you when your Kerberos credentials are about to expire and renews
+      your ticket automatically if possible.
+    </_p>
+    <_p>
+      This is useful if you need to authenticate to a Kerberos Server (KDC)
+      after your login to the desktop (e.g. on a mobile device).
+    </_p>
+  </description>
+  <screenshots>
+    <screenshot type="default" width="330" height="176">http://honk.sigxcpu.org/con/images/krb5-auth-dialog-pkinit.png</screenshot>
+  </screenshots>
+  <url type="homepage">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
+  <updatecontact>agx_at_sigxcpu.org</updatecontact>
+</application>

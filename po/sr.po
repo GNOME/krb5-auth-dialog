@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5"
 "-auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-04-10 02:24+0000\n"
-"PO-Revision-Date: 2013-05-14 11:24+0200\n"
+"POT-Creation-Date: 2013-10-06 16:24+0000\n"
+"PO-Revision-Date: 2013-10-13 21:48+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -167,11 +167,11 @@ msgstr "минута пре истека купона"
 msgid "unknown error"
 msgstr "непозната грешка"
 
-#: ../src/ka-kerberos.c:317
+#: ../src/ka-kerberos.c:319
 msgid "Your ticket cache is currently empty"
 msgstr "Остава вашег купона је тренутно празна"
 
-#: ../src/ka-kerberos.c:348
+#: ../src/ka-kerberos.c:350
 msgid "Expired"
 msgstr "Истекло"
 
@@ -1018,7 +1018,8 @@ msgstr "Лош одговор (за време размене слања при�
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
 #: ../src/dummy-strings.c:171
 msgid "Server rejected authentication (during sendauth exchange)"
-msgstr "Сервер је одбио потврђивање идентитета (за време размене слања пријаве)"
+msgstr ""
+"Сервер је одбио потврђивање идентитета (за време размене слања пријаве)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
 #: ../src/dummy-strings.c:172
@@ -1633,6 +1634,26 @@ msgstr "све датотеке"
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Прозорче мрежног потврђивања идентитета Кербероса"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"Потврђивање идентитета Кербероса вам дозвољава да прегледате ваше тренутне "
+"купоне Кербероса, и да затражите нови купон (да потврдите идентитет на "
+"серверу Кербероса). Такође вас обавештава када истичу ваша пуномоћства "
+"Кербероса и сам их обнавља ако је могуће."
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+"Ово је корисно ако треба да потврдите идентитет на серверу Кербероса (КДЦ) "
+"након што се пријавите на радну површ (тј. на преносивом уређају)."
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"

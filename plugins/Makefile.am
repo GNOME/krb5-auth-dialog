@@ -12,6 +12,7 @@ pkglib_LTLIBRARIES = \
 	libka-plugin-dummy.la \
 	$(PAM_PLUGIN) \
 	libka-plugin-afs.la \
+	libka-plugin-gnomelock.la \
 	$(NULL)
 
 # Dummy example plugin
@@ -63,4 +64,21 @@ libka_plugin_afs_la_CPPFLAGS = \
 libka_plugin_afs_la_LDFLAGS = \
 	-module \
 	-avoid-version \
+	$(NULL)
+
+# GnomeLock plugin
+libka_plugin_gnomelock_la_SOURCES = \
+	ka-plugin-gnomelock.c \
+	ka-plugin-gnomelock.h \
+	$(NULL)
+
+libka_plugin_gnomelock_la_CPPFLAGS = \
+	$(GIO_CFLAGS)       \
+	-I$(top_srcdir)/src \
+	$(NULL)
+
+libka_plugin_gnomelock_la_LDFLAGS = \
+	-module \
+	-avoid-version \
+	$(GIO_LIBS)       \
 	$(NULL)

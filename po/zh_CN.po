@@ -3,17 +3,18 @@
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # Wylmer Wang <wantinghard@gmail.com>, 2010, 2013.
 # Aron Xu <aronxu@gnome.org>, 2011.
+# YunQiang Su <wzssyqa@gmail.com>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-25 11:44+0000\n"
-"PO-Revision-Date: 2011-08-16 15:21+0000\n"
-"Last-Translator: Wylmer Wang <wantinghard@gmail.com>\n"
+"POT-Creation-Date: 2013-12-19 14:30+0000\n"
+"PO-Revision-Date: 2014-01-25 15:24+0800\n"
+"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
-"Language: zh\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,11 +22,11 @@ msgstr ""
 
 #: ../src/krb5-auth-dialog.ui.h:1
 msgid "Prefere_nces"
-msgstr ""
+msgstr "首选项(_N)"
 
 #: ../src/krb5-auth-dialog.ui.h:2
 msgid "_About"
-msgstr ""
+msgstr "关于(_A)"
 
 #: ../src/krb5-auth-dialog.ui.h:3
 msgid "_Help"
@@ -33,7 +34,7 @@ msgstr "帮助(_H)"
 
 #: ../src/krb5-auth-dialog.ui.h:4
 msgid "_Quit"
-msgstr ""
+msgstr "退出(_Q)"
 
 #.
 #. * vim:ts:sts=4:sw=4:et:
@@ -161,11 +162,11 @@ msgstr "分钟后票据过期"
 msgid "unknown error"
 msgstr "未知错误"
 
-#: ../src/ka-kerberos.c:317
+#: ../src/ka-kerberos.c:319
 msgid "Your ticket cache is currently empty"
 msgstr "您的票据缓存目前为空"
 
-#: ../src/ka-kerberos.c:348
+#: ../src/ka-kerberos.c:350
 msgid "Expired"
 msgstr "已过期"
 
@@ -598,9 +599,8 @@ msgstr "密钥用途不一致"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
 #: ../src/dummy-strings.c:88
-#, fuzzy
 msgid "Digest in certificate not accepted"
-msgstr "不允许对证书提取摘要"
+msgstr "证书的摘要不被接受"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: ../src/dummy-strings.c:89
@@ -609,9 +609,8 @@ msgstr "必须包含校验和"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: ../src/dummy-strings.c:90
-#, fuzzy
 msgid "Digest in signed-data not accepted"
-msgstr "不允许对签名的数据提取摘要"
+msgstr "签名的数据中的摘要不被接受"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: ../src/dummy-strings.c:91
@@ -710,9 +709,8 @@ msgstr "票据的标记集无效"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: ../src/dummy-strings.c:110
-#, fuzzy
 msgid "Requested principal and ticket don't match"
-msgstr "请求的委托方和票据不匹配"
+msgstr "请求的委托方(principal)和票据不匹配"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: ../src/dummy-strings.c:111
@@ -906,9 +904,8 @@ msgstr "无法找到请求的域"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: ../src/dummy-strings.c:150
-#, fuzzy
 msgid "DES key has bad parity"
-msgstr "DES 奇偶检验出错"
+msgstr "DES 键奇偶检验出错"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
 #: ../src/dummy-strings.c:151
@@ -1107,19 +1104,16 @@ msgstr "在 obtain_sam_padata 中有错误的 SAM 标记"
 
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
 #: ../src/dummy-strings.c:190
-#, fuzzy
 msgid "Invalid encryption type in SAM challenge"
 msgstr "SAM challenge 中的加密类型无效"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
 #: ../src/dummy-strings.c:191
-#, fuzzy
 msgid "Missing checksum in SAM challenge"
 msgstr "SAM challenge 中缺少检验和"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
 #: ../src/dummy-strings.c:192
-#, fuzzy
 msgid "Bad checksum in SAM challenge"
 msgstr "SAM challenge 的检验和出错"
 
@@ -1631,13 +1625,28 @@ msgstr "所有文件"
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Kerberos 网络认证对话框"
 
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"Kerberos 认证允许您列出当前的 Kerberos 票据，并请求新的票据(认证到 Kerberos "
+"服务器)。它也会在您的 Kerberos 证书将要过期时通知您，如果可能也会自动更新票据。"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+"这有助于您在登录桌面后在 Kerberos 服务器(KDC)上认证(如在移动设备上)。"
+
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
 msgstr "Kerberos 委托方"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
-#, fuzzy
-#| msgid "The kerberos principal to acquire the ticket for"
 msgid "The Kerberos principal to acquire the ticket for"
 msgstr "获取票据的 Kerberos 委托方"
 
@@ -1662,7 +1671,6 @@ msgid "Prompt minutes before expiry"
 msgstr "提前通知过期的分钟数"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:8
-#, fuzzy
 msgid ""
 "Start prompting/displaying notifications that many minutes before expiry"
 msgstr "在过期前这么多分钟前开始提示/显示通知"
@@ -1693,11 +1701,11 @@ msgstr "请求的票据要是可代理的"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:15
 msgid "Configuration tickets"
-msgstr ""
+msgstr "配置票据"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
 msgid "Show configuration tickets"
-msgstr ""
+msgstr "显示配置票据"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
 msgid "valid ticket notification"

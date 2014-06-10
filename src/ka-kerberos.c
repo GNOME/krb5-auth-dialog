@@ -1027,7 +1027,9 @@ ka_grab_credentials (KaApplet *applet)
         if (retval) {
             gchar *errmsg;
 
-            errmsg = ka_get_error_message (kcontext, retval);
+            errmsg = g_strdup_printf("%s%s",
+                                     ka_get_error_message (kcontext, retval),
+                                     is_online ? "" : _(" (No network connection)"));
             ka_pwdialog_error (pwdialog, errmsg);
             g_free (errmsg);
             break;

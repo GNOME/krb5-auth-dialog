@@ -782,6 +782,8 @@ grab_credentials (KaApplet *applet)
         switch (retval) {
         case KRB5KDC_ERR_PREAUTH_FAILED:
         case KRB5KRB_AP_ERR_BAD_INTEGRITY:
+        case KRB5KRB_AP_ERR_MODIFIED:
+        case KRB5_GET_IN_TKT_LOOP:
 #ifdef HAVE_HX509_ERR_H
         case HX509_PKCS11_LOGIN:
 #endif /* Invalid password/pin, try again. */

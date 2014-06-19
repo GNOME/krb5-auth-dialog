@@ -37,54 +37,44 @@
     <property name="resizable">False</property>
     <property name="window_position">center-always</property>
     <property name="type_hint">dialog</property>
+
+    <child type="titlebar">
+      <object class="GtkHeaderBar" id="headerbar1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <child>
+          <object class="GtkButton" id="cancelbutton1">
+            <property name="label">gtk-cancel</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="can_default">True</property>
+            <property name="receives_default">False</property>
+            <property name="use_stock">True</property>
+          </object>
+          <packing>
+            <property name="pack-type">start</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton" id="krb5_renew_button">
+            <property name="label" translatable="yes">_Renew Ticket</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="can_default">True</property>
+            <property name="has_default">True</property>
+            <property name="receives_default">False</property>
+            <property name="use_underline">True</property>
+          </object>
+          <packing>
+            <property name="pack-type">end</property>
+          </packing>
+	</child>
+      </object>>
+    </child>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox2">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area2">
-            <property name="visible">True</property>
-            <property name="can_focus">False</property>
-            <property name="layout_style">end</property>
-            <child>
-              <object class="GtkButton" id="cancelbutton1">
-                <property name="label">gtk-cancel</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">0</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkButton" id="krb5_renew_button">
-                <property name="label" translatable="yes">_Renew Ticket</property>
-                <property name="visible">True</property>
-                <property name="can_focus">True</property>
-                <property name="can_default">True</property>
-                <property name="has_default">True</property>
-                <property name="receives_default">False</property>
-                <property name="use_underline">True</property>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">False</property>
-                <property name="position">1</property>
-              </packing>
-            </child>
-          </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="pack_type">end</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
         <child>
           <object class="GtkHBox" id="hbox1">
             <property name="visible">True</property>

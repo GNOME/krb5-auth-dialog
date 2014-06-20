@@ -3,23 +3,23 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Jorge González <jorgegonz@svn.gnome.org>, 2009, 2010.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-06 16:24+0000\n"
-"PO-Revision-Date: 2013-10-07 16:24+0200\n"
+"POT-Creation-Date: 2014-06-17 21:38+0000\n"
+"PO-Revision-Date: 2014-06-20 12:12+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n!=1);\n"
-"X-Generator: Gtranslator 2.91.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
 #: ../src/krb5-auth-dialog.ui.h:1
 msgid "Prefere_nces"
@@ -166,48 +166,53 @@ msgstr ""
 msgid "minutes before ticket expiry"
 msgstr "minutos antes de que caduque el tique"
 
-#: ../src/ka-kerberos.c:177
+#: ../src/ka-kerberos.c:176
 msgid "unknown error"
 msgstr "error desconocido"
 
-#: ../src/ka-kerberos.c:319
+#: ../src/ka-kerberos.c:318
 msgid "Your ticket cache is currently empty"
 msgstr "Su caché de tiques está vacía actualmente"
 
-#: ../src/ka-kerberos.c:350
+#: ../src/ka-kerberos.c:349
 msgid "Expired"
 msgstr "Caducado"
 
-#: ../src/ka-pwdialog.c:230
+#: ../src/ka-kerberos.c:1032
+#| msgid "Network Authentication"
+msgid " (No network connection)"
+msgstr "(Sin conexión de red)"
+
+#: ../src/ka-pwdialog.c:229
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "No se pudo obtener el tique de Kerberos: «%s»"
 
-#: ../src/ka-pwdialog.c:269 ../src/ka-applet.c:572
+#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:576
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Sus credenciales caducan en %d minuto"
 msgstr[1] "Sus credenciales caducan en %d minutos"
 
-#: ../src/ka-pwdialog.c:274 ../src/ka-applet.c:577
+#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:581
 msgid "Your credentials have expired"
 msgstr "Sus credenciales han caducado"
 
-#: ../src/ka-pwdialog.c:297
+#: ../src/ka-pwdialog.c:296
 msgid "Please enter your Kerberos password:"
 msgstr "Introduzca su contraseña de Kerberos:"
 
-#: ../src/ka-pwdialog.c:310
+#: ../src/ka-pwdialog.c:309
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Introduzca la contraseña para «%s»:"
 
-#: ../src/ka-pwdialog.c:328
+#: ../src/ka-pwdialog.c:327
 msgid "The password you entered is invalid"
 msgstr "La contraseña que ha introducido no es válida"
 
-#: ../src/ka-pwdialog.c:344
+#: ../src/ka-pwdialog.c:343
 #, c-format
 msgid "%s Error"
 msgstr "Error %s"
@@ -1539,61 +1544,61 @@ msgstr "Número mágico erróneo para GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Número mágico erróneo para GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:566
+#: ../src/ka-applet.c:570
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Sus credenciales caducan en %.2d:%.2dh"
 
-#: ../src/ka-applet.c:759
+#: ../src/ka-applet.c:763
 msgid "List Tickets"
 msgstr "Listar tiques"
 
-#: ../src/ka-applet.c:769
+#: ../src/ka-applet.c:773
 msgid "Get Ticket"
 msgstr "Obtener tique"
 
-#: ../src/ka-applet.c:778
+#: ../src/ka-applet.c:782
 msgid "Don't show me this again"
 msgstr "No mostrar este mensaje de nuevo"
 
-#: ../src/ka-applet.c:785
+#: ../src/ka-applet.c:789
 msgid "Remove Credentials Cache"
 msgstr "Quitar la caché de credenciales"
 
-#: ../src/ka-applet.c:845
+#: ../src/ka-applet.c:849
 msgid "You have valid Kerberos credentials."
 msgstr "Sus credenciales de Kerberos son válidas."
 
-#: ../src/ka-applet.c:847
+#: ../src/ka-applet.c:851
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Ha actualizado sus credenciales de Kerberos."
 
-#: ../src/ka-applet.c:850
+#: ../src/ka-applet.c:854
 msgid "Network credentials valid"
 msgstr "Credenciales de red válidas"
 
-#: ../src/ka-applet.c:869
+#: ../src/ka-applet.c:873
 msgid "Network credentials expiring"
 msgstr "Las credenciales de red van a caducar"
 
-#: ../src/ka-applet.c:886
+#: ../src/ka-applet.c:890
 msgid "Network credentials expired"
 msgstr "Las credenciales de red han caducado"
 
-#: ../src/ka-applet.c:887
+#: ../src/ka-applet.c:891
 msgid "Your Kerberos credentials have expired."
 msgstr "Sus credenciales de Kerberos han caducado."
 
-#: ../src/ka-applet.c:967
+#: ../src/ka-applet.c:971
 msgid "Remove Credentials _Cache"
 msgstr "Quitar la _caché de credenciales"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:978
+#: ../src/ka-applet.c:982
 msgid "_List Tickets"
 msgstr "_Listar tiques"
 
-#: ../src/ka-tools.c:45
+#: ../src/ka-tools.c:44
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1603,52 +1608,52 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:85
+#: ../src/ka-tools.c:84
 msgid "translator-credits"
 msgstr ""
 "Jorge González <jorgegonz@svn.gnome.org>, 2009-2010\n"
 "Daniel Mustieles <daniel.mustieles@gmail.com>, 2009"
 
-#: ../src/ka-main-window.c:75
+#: ../src/ka-main-window.c:74
 msgid "Principal"
 msgstr "Principal"
 
-#: ../src/ka-main-window.c:81
+#: ../src/ka-main-window.c:80
 msgid "Start Time"
 msgstr "Tiempo de inicio"
 
-#: ../src/ka-main-window.c:87
+#: ../src/ka-main-window.c:86
 msgid "End Time"
 msgstr "Tiempo de finalización"
 
 #. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:94
+#: ../src/ka-main-window.c:93
 msgid "Fwd"
 msgstr "Rnv"
 
 #. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:101
+#: ../src/ka-main-window.c:100
 msgid "Proxy"
 msgstr "Proxy"
 
 #. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:108
+#: ../src/ka-main-window.c:107
 msgid "Renew"
 msgstr "Renovar"
 
-#: ../src/ka-main-window.c:137
+#: ../src/ka-main-window.c:136
 msgid "Error displaying service ticket information"
 msgstr "Error al mostrar la información del tique de servicio"
 
-#: ../src/ka-preferences.c:297
+#: ../src/ka-preferences.c:296
 msgid "Choose Certificate"
 msgstr "Elija un certificado"
 
-#: ../src/ka-preferences.c:313
+#: ../src/ka-preferences.c:312
 msgid "X509 Certificates"
 msgstr "Certificados X509"
 
-#: ../src/ka-preferences.c:317
+#: ../src/ka-preferences.c:316
 msgid "all files"
 msgstr "todos los archivos"
 
@@ -1808,9 +1813,6 @@ msgstr "Advertencia: ejecutar q-agent setuid en este sistema es peligroso\n"
 
 #~ msgid "Applet"
 #~ msgstr "Miniaplicación"
-
-#~ msgid "Network Authentication"
-#~ msgstr "Autenticación de red"
 
 #~ msgid "Show a trayicon in the status area of the panel"
 #~ msgstr "Mostrar un icono en la bandeja del sistema en el área del panel"

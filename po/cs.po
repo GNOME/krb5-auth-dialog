@@ -2,15 +2,15 @@
 # Copyright (C) 2010, 2011 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
 #
-# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2010, 2011, 2012, 2013, 2014.
+# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2010 - 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-03-09 10:17+0000\n"
-"PO-Revision-Date: 2014-03-09 16:33+0100\n"
+"POT-Creation-Date: 2014-06-17 21:38+0000\n"
+"PO-Revision-Date: 2014-08-13 17:53+0100\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -177,12 +177,16 @@ msgstr "Mezipaměť vašich přihlašovacích údajů je prázdná"
 msgid "Expired"
 msgstr "Platnost vypršela"
 
+#: ../src/ka-kerberos.c:1032
+msgid " (No network connection)"
+msgstr "(žádné připojení k síti)"
+
 #: ../src/ka-pwdialog.c:229
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Nelze získat lístek: '%s'"
 
-#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:571
+#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:576
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -190,7 +194,7 @@ msgstr[0] "Vaše pověření údaje vyprší za %d minutu"
 msgstr[1] "Vaše pověření vyprší za %d minuty"
 msgstr[2] "Vaše pověření vyprší za %d minut"
 
-#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:576
+#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:581
 msgid "Your credentials have expired"
 msgstr "Vaše pověření vypršelo"
 
@@ -1517,57 +1521,57 @@ msgstr "Špatné magické číslo pro GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Špatné magické číslo pro GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:565
+#: ../src/ka-applet.c:570
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vaše pověření vyprší za %.2d:%.2dh"
 
-#: ../src/ka-applet.c:758
+#: ../src/ka-applet.c:763
 msgid "List Tickets"
 msgstr "Lístky služeb"
 
-#: ../src/ka-applet.c:768
+#: ../src/ka-applet.c:773
 msgid "Get Ticket"
 msgstr "Získat lístek"
 
-#: ../src/ka-applet.c:777
+#: ../src/ka-applet.c:782
 msgid "Don't show me this again"
 msgstr "Znovu nezobrazovat"
 
-#: ../src/ka-applet.c:784
+#: ../src/ka-applet.c:789
 msgid "Remove Credentials Cache"
 msgstr "Odstranit mezipaměť s pověřeními"
 
-#: ../src/ka-applet.c:844
+#: ../src/ka-applet.c:849
 msgid "You have valid Kerberos credentials."
 msgstr "Vaše pověření Kerberos jsou platná."
 
-#: ../src/ka-applet.c:846
+#: ../src/ka-applet.c:851
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Aktualizovali jste svá pověření Kerberos."
 
-#: ../src/ka-applet.c:849
+#: ../src/ka-applet.c:854
 msgid "Network credentials valid"
 msgstr "Síťová pověření jsou platná"
 
-#: ../src/ka-applet.c:868
+#: ../src/ka-applet.c:873
 msgid "Network credentials expiring"
 msgstr "Blíží se konec platnosti síťových pověření"
 
-#: ../src/ka-applet.c:885
+#: ../src/ka-applet.c:890
 msgid "Network credentials expired"
 msgstr "Platnost síťových pověření vypršela"
 
-#: ../src/ka-applet.c:886
+#: ../src/ka-applet.c:891
 msgid "Your Kerberos credentials have expired."
 msgstr "Platnost vašich pověření Kerberos vypršela."
 
-#: ../src/ka-applet.c:966
+#: ../src/ka-applet.c:971
 msgid "Remove Credentials _Cache"
 msgstr "Odstranit _mezipaměť s pověřeními"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:977
+#: ../src/ka-applet.c:982
 msgid "_List Tickets"
 msgstr "_Lístky služeb"
 
@@ -1641,8 +1645,8 @@ msgid ""
 msgstr ""
 "Autentizace Kerberos vám umožní vypsat si držené autentizační lístky nebo "
 "požádat lístek nový (autentizovat se vůči serveru Kerberos). Upozorní Vás "
-"také, pokud se blíží vypršení platnosti vašich přihlašovacích údajů Kerberos. "
-"Pokud je to možné, dovolí vám lístek automaticky obnovit."
+"také, pokud se blíží vypršení platnosti vašich přihlašovacích údajů "
+"Kerberos. Pokud je to možné, dovolí vám lístek automaticky obnovit."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:2
 msgid ""

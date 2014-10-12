@@ -93,6 +93,7 @@ krb5_auth_dialog_LDADD = \
 AM_CPPFLAGS = \
 	-I $(top_srcdir)/secmem/ \
 	$(DISABLE_DEPRECATED) \
+	-DG_LOG_DOMAIN="\"KrbAuthDialog\"" \
 	$(NULL)
 
 pkgdatadir = $(datadir)/krb5-auth-dialog

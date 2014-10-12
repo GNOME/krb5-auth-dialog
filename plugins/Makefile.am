@@ -8,6 +8,12 @@ else
   PAM_PLUGIN =
 endif
 
+AM_CPPFLAGS = \
+	-I$(top_srcdir)/src \
+	$(DISABLE_DEPRECATED) \
+	-DG_LOG_DOMAIN="\"KrbAuthDialog\"" \
+	$(NULL)
+
 pkglib_LTLIBRARIES = \
 	libka-plugin-dummy.la \
 	$(PAM_PLUGIN) \
@@ -22,8 +28,8 @@ libka_plugin_dummy_la_SOURCES = \
 	$(NULL)
 
 libka_plugin_dummy_la_CPPFLAGS = \
-	$(GTK_CFLAGS)       \
-	-I$(top_srcdir)/src \
+	$(AM_CPPFLAGS) \
+	$(GTK_CFLAGS)  \
 	$(NULL)
 
 libka_plugin_dummy_la_LDFLAGS = \
@@ -39,8 +45,8 @@ libka_plugin_pam_la_SOURCES = \
 	$(NULL)
 
 libka_plugin_pam_la_CPPFLAGS = \
+	$(AM_CPPFLAGS) \
 	$(GTK_CFLAGS)       \
-	-I$(top_srcdir)/src \
 	$(NULL)
 
 libka_plugin_pam_la_LDFLAGS = \
@@ -57,8 +63,8 @@ libka_plugin_afs_la_SOURCES = \
 	$(NULL)
 
 libka_plugin_afs_la_CPPFLAGS = \
-	$(GTK_CFLAGS)       \
 	-I$(top_srcdir)/src \
+	$(GTK_CFLAGS)       \
 	$(NULL)
 
 libka_plugin_afs_la_LDFLAGS = \
@@ -73,8 +79,8 @@ libka_plugin_gnomelock_la_SOURCES = \
 	$(NULL)
 
 libka_plugin_gnomelock_la_CPPFLAGS = \
-	$(GIO_CFLAGS)       \
 	-I$(top_srcdir)/src \
+	$(GIO_CFLAGS)       \
 	$(NULL)
 
 libka_plugin_gnomelock_la_LDFLAGS = \

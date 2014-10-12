@@ -75,11 +75,8 @@ void ka_applet_destroy (KaApplet *self);
 int ka_applet_update_status (KaApplet *self, krb5_timestamp expiry);
 
 G_END_DECLS
-#ifdef ENABLE_DEBUG
+
 #define KA_DEBUG(fmt,...) \
-    g_printf ("DEBUG: %s: " fmt "\n", __func__, ##__VA_ARGS__)
-#else
-#define KA_DEBUG(fmt,...) \
-    do { } while (0)
-#endif /* !ENABLE_DEBUG */
+    g_debug ("%s: " fmt, __func__, ##__VA_ARGS__)
+
 #endif

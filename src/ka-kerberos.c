@@ -649,6 +649,10 @@ ka_parse_name (KaApplet *applet, krb5_context krbcontext,
         krb5_free_principal (krbcontext, *kprinc);
 
     g_object_get (applet, KA_PROP_NAME_PRINCIPAL, &principal, NULL);
+    if (principal[0] == '\0') {
+        g_free (principal);
+        principal = g_strdup (g_get_user_name());
+    }
     ret = krb5_parse_name (krbcontext, principal, kprinc);
 
     g_free (principal);

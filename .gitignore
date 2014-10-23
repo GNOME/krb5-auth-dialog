@@ -1,6 +1,8 @@
 *.a
 *.o
 *.lo
+*.mo
+*~
 autom4te.cache/
 .deps/
 .libs/
@@ -19,8 +21,7 @@ INSTALL
 install-sh
 install.sh
 krb5-auth-dialog.spec
-krb5-auth-dialog-*.tar.gz
-krb5-auth-dialog-*.tar.bz2
+krb5-auth-dialog-*.tar.xz
 libtool
 ltmain.sh
 Makefile
@@ -34,3 +35,4 @@ intltool-extract.in
 intltool-merge.in
 intltool-update.in
 gnome-doc-utils.make
+src/krb5-auth-dialog.appdata.xml

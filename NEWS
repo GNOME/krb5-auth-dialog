@@ -1,4 +1,13 @@
 ==============
+Version 3.14.0
+==============
+* Fix empty principal name (Debian Bug #762906)
+* Remote GTK deprecations
+* UI translations:
+	Daniel Mustieles (es)
+	Zdeněk Hataš (cs)
+
+==============
 Version 3.12.0
 ==============
 * Move dialog buttons into header bar

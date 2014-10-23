@@ -245,19 +245,23 @@ static GActionEntry app_entries[] = {
 };
 
 static void
-ka_applet_app_menu_create(KaApplet *self,
-                          GtkBuilder *uixml)
+ka_applet_app_menu_create(KaApplet *self)
+
 {
     const gchar *debug_no_app_menu;
-    GMenuModel *model = G_MENU_MODEL(gtk_builder_get_object (uixml,
-                                                             "app-menu"));
+    GMenuModel *app_menu;
+    GtkBuilder *builder;
+
+    builder = gtk_builder_new_from_resource ("/org/gnome/krb5-auth-dialog/ui/app-menu.ui");
+    app_menu = G_MENU_MODEL (gtk_builder_get_object (builder, "app-menu"));
+
     g_action_map_add_action_entries (G_ACTION_MAP (self),
                                      app_entries, G_N_ELEMENTS (app_entries),
                                      self);
 
-    g_assert (model != NULL);
+    g_assert (app_menu != NULL);
     gtk_application_set_app_menu (GTK_APPLICATION(self),
-                                  model);
+                                  app_menu);
 
     debug_no_app_menu = g_getenv ("KRB5_AUTH_DIALOG_DEBUG_NO_APP_MENU");
     if (debug_no_app_menu) {
@@ -266,6 +270,7 @@ ka_applet_app_menu_create(KaApplet *self,
                       "gtk-shell-shows-app-menu", FALSE,
                       NULL);
     }
+    g_object_unref (builder);
 }
 
 static void
@@ -281,7 +286,7 @@ ka_applet_startup (GApplication *application)
     ka_main_window_create (self, self->priv->uixml);
     ka_preferences_window_create (self, self->priv->uixml);
 
-    ka_applet_app_menu_create(self, self->priv->uixml);
+    ka_applet_app_menu_create(self);
 }
 
 static void

@@ -2,5 +2,6 @@
 <gresources>
   <gresource prefix="/org/gnome/krb5-auth-dialog">
     <file preprocess="xml-stripblanks">ui/ka-pwdialog.ui</file>
+    <file preprocess="xml-stripblanks">ui/app-menu.ui</file>
   </gresource>
 </gresources>

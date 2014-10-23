@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/org/gnome/krb5-auth-dialog">
+    <file preprocess="xml-stripblanks">ui/ka-pwdialog.ui</file>
+  </gresource>
+</gresources>

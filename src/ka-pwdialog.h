@@ -45,7 +45,7 @@ typedef struct _KaPwDialogPrivate KaPwDialogPrivate;
 GType ka_pwdialog_get_type (void);
 
 /* public functions */
-KaPwDialog *ka_pwdialog_create (GtkBuilder *xml);
+KaPwDialog *ka_pwdialog_create (void);
 
 /* setup everything for the next prompting */
 void ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,

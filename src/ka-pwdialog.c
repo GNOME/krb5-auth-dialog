@@ -27,28 +27,28 @@
 #include "ka-entry-buffer.h"
 
 struct _KaPwDialog {
-    GObject parent;
+    GtkDialog parent;
 
     KaPwDialogPrivate *priv;
 };
 
 struct _KaPwDialogClass {
-    GObjectClass parent;
+    GtkDialogClass parent;
 };
-
-G_DEFINE_TYPE (KaPwDialog, ka_pwdialog, G_TYPE_OBJECT);
 
 struct _KaPwDialogPrivate {
     /* The password dialog */
-    GtkWidget *dialog;          /* the password dialog itself */
     GtkWidget *status_label;    /* the wrong password/timeout label */
     GtkWidget *krb_label;       /* krb5 passwort prompt label */
+    GtkWidget *entry_hbox;      /* hbox for the pw entry */
     GtkWidget *pw_entry;        /* password entry field */
+
     gboolean persist;           /* don't hide the dialog when creds are still valid */
     gboolean grabbed;           /* keyboard grabbed? */
     GtkWidget *error_dialog;    /* error dialog */
 };
 
+G_DEFINE_TYPE_WITH_PRIVATE (KaPwDialog, ka_pwdialog, GTK_TYPE_DIALOG);
 
 static void
 ka_pwdialog_init (KaPwDialog *pwdialog)
@@ -56,6 +56,8 @@ ka_pwdialog_init (KaPwDialog *pwdialog)
     pwdialog->priv = G_TYPE_INSTANCE_GET_PRIVATE (pwdialog,
                                                   KA_TYPE_PWDIALOG,
                                                   KaPwDialogPrivate);
+
+    gtk_widget_init_template (GTK_WIDGET (pwdialog));
 }
 
 static void
@@ -67,18 +69,25 @@ ka_pwdialog_finalize (GObject *object)
     gtk_widget_destroy (pwdialog->priv->error_dialog);
     pwdialog->priv->error_dialog = NULL;
 
-    if (parent_class->finalize != NULL)
-        parent_class->finalize (object);
+    parent_class->finalize (object);
 }
 
 static void
 ka_pwdialog_class_init (KaPwDialogClass * klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
+    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
     object_class->finalize = ka_pwdialog_finalize;
-    g_type_class_add_private (klass, sizeof (KaPwDialogPrivate));
 
+    /* Bind class to template
+     */
+    gtk_widget_class_set_template_from_resource (widget_class,
+                                                 "/org/gnome/krb5-auth-dialog/ui/ka-pwdialog.ui");
+
+    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, status_label);
+    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, krb_label);
+    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, entry_hbox);
 }
 
 static KaPwDialog *
@@ -193,29 +202,27 @@ window_state_changed (GtkWidget *win, GdkEventWindowState *event,
 gint
 ka_pwdialog_run (KaPwDialog *self)
 {
-    GtkWidget *dialog = self->priv->dialog;
-
     /* cleanup old error dialog, if present (e.g. user didn't acknowledge
      * the error but clicked the tray icon again) */
     if (self->priv->error_dialog)
         gtk_widget_hide (self->priv->error_dialog);
 
     /* make sure we pop up on top */
-    gtk_window_set_keep_above (GTK_WINDOW (dialog), TRUE);
+    gtk_window_set_keep_above (GTK_WINDOW (self), TRUE);
 
     /*
      * grab the keyboard so that people don't accidentally type their
      * passwords in other windows.
      */
-    g_signal_connect (dialog, "map-event", G_CALLBACK (grab_keyboard), self);
-    g_signal_connect (dialog, "unmap-event", G_CALLBACK (ungrab_keyboard),
+    g_signal_connect (self, "map-event", G_CALLBACK (grab_keyboard), self);
+    g_signal_connect (self, "unmap-event", G_CALLBACK (ungrab_keyboard),
                       self);
-    g_signal_connect (dialog, "window-state-event",
+    g_signal_connect (self, "window-state-event",
                       G_CALLBACK (window_state_changed), self);
 
     gtk_widget_grab_focus (self->priv->pw_entry);
-    gtk_widget_show (dialog);
-    return gtk_dialog_run (GTK_DIALOG (dialog));
+    gtk_widget_show (GTK_WIDGET (self));
+    return gtk_dialog_run (GTK_DIALOG (self));
 }
 
 
@@ -245,7 +252,7 @@ ka_pwdialog_hide (const KaPwDialog *pwdialog, gboolean force)
 {
     KA_DEBUG ("PW Dialog persist: %d", pwdialog->priv->persist);
     if (!pwdialog->priv->persist || force)
-        gtk_widget_hide (pwdialog->priv->dialog);
+        gtk_widget_hide (GTK_WIDGET (pwdialog));
 }
 
 const gchar *
@@ -349,26 +356,20 @@ ka_error_dialog_new (void)
 
 
 KaPwDialog *
-ka_pwdialog_create (GtkBuilder *xml)
+ka_pwdialog_create (void)
 {
     KaPwDialog *pwdialog = ka_pwdialog_new ();
     KaEntryBuffer *buffer = ka_entry_buffer_new ();
     KaPwDialogPrivate *priv = pwdialog->priv;
-    GtkWidget *entry_hbox = NULL;
 
-    priv->dialog = GTK_WIDGET (gtk_builder_get_object (xml, "krb5_dialog"));
-    priv->status_label =
-        GTK_WIDGET (gtk_builder_get_object (xml, "krb5_status_label"));
-    priv->krb_label =
-        GTK_WIDGET (gtk_builder_get_object (xml, "krb5_message_label"));
+    priv->error_dialog = ka_error_dialog_new ();
+
     priv->pw_entry =
         GTK_WIDGET (gtk_entry_new_with_buffer (GTK_ENTRY_BUFFER (buffer)));
     gtk_entry_set_visibility (GTK_ENTRY (priv->pw_entry), FALSE);
     g_object_unref (buffer);
-    priv->error_dialog = ka_error_dialog_new ();
 
-    entry_hbox = GTK_WIDGET (gtk_builder_get_object (xml, "entry_hbox"));
-    gtk_container_add (GTK_CONTAINER (entry_hbox), priv->pw_entry);
+    gtk_container_add (GTK_CONTAINER (priv->entry_hbox), priv->pw_entry);
     gtk_entry_set_activates_default (GTK_ENTRY (priv->pw_entry), TRUE);
     gtk_widget_show (priv->pw_entry);
 

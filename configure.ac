@@ -41,6 +41,9 @@ dnl GNOME_MAINTAINER_MODE_DEFINES
 
 GLIB_GSETTINGS
 
+GLIB_COMPILE_RESOURCES=`$PKG_CONFIG --variable glib_compile_resources gio-2.0`
+AC_SUBST(GLIB_COMPILE_RESOURCES)
+
 dnl --enable-debug=(yes|no)
 AC_ARG_ENABLE(debug,
               AS_HELP_STRING([--enable-debug=no/yes],[enable debugging output]),[],[enable_debug=no])

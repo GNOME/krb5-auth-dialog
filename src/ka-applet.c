@@ -408,7 +408,7 @@ ka_applet_dispose (GObject *object)
         applet->priv->tray_icon = NULL;
     }
     if (applet->priv->pwdialog) {
-        g_object_unref (applet->priv->pwdialog);
+        gtk_widget_destroy (GTK_WIDGET(applet->priv->pwdialog));
         applet->priv->pwdialog = NULL;
     }
     if (applet->priv->uixml) {
@@ -1198,7 +1198,7 @@ ka_applet_create ()
     }
     gtk_builder_connect_signals (applet->priv->uixml, NULL);
 
-    applet->priv->pwdialog = ka_pwdialog_create (applet->priv->uixml);
+    applet->priv->pwdialog = ka_pwdialog_create ();
     g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 
     applet->priv->settings = ka_settings_init (applet);

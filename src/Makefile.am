@@ -57,6 +57,7 @@ krb5_auth_dialog_SOURCES =	\
 	ka-entry-buffer.h	\
 	ka-entry-buffer.c	\
 	dummy-strings.c		\
+	resources.c		\
 	$(NULL)
 
 krb5_auth_dialog_CPPFLAGS = \
@@ -109,14 +110,23 @@ EXTRA_DIST = \
 	$(appdata_in_files) \
 	org.gnome.KrbAuthDialog.gschema.xml \
 	krb5-auth-dialog.1.in \
+        krb5-auth-dialog.gresource.xml \
 	$(NULL)
 
 CLEANFILES = $(schema_DATA) \
 	$(service_DATA) \
 	$(appdata_DATA) \
+	resources.c \
 	$(NULL)
 
 DISTCLEANFILES = \
 	krb5-auth-dialog.desktop \
 	$(NULL)
 
+BUILT_SOURCES = \
+        resources.c \
+	$(NULL)
+
+resources.c: krb5-auth-dialog.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --sourcedir=$(srcdir)/resources --generate-dependencies $(srcdir)/krb5-auth-dialog.gresource.xml)
+	$(AM_V_GEN) $(GLIB_COMPILE_RESOURCES) $(srcdir)/krb5-auth-dialog.gresource.xml \
+	    --target=$@ --sourcedir=$(srcdir)/resources --generate-source

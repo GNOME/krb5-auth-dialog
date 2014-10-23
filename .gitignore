@@ -35,4 +35,5 @@ intltool-extract.in
 intltool-merge.in
 intltool-update.in
 gnome-doc-utils.make
+src/resources.c
 src/krb5-auth-dialog.appdata.xml

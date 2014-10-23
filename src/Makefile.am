@@ -112,6 +112,7 @@ EXTRA_DIST = \
 	krb5-auth-dialog.1.in \
         krb5-auth-dialog.gresource.xml \
 	resources/ui/app-menu.ui \
+	resources/ui/ka-preferences.ui \
 	resources/ui/ka-pwdialog.ui \
 	$(NULL)
 

@@ -484,10 +484,9 @@ ka_preferences_settings_changed (GSettings *settings,
 }
 
 void
-ka_preferences_window_create (KaApplet *applet,
-                              GtkBuilder *xml)
+ka_preferences_window_create (KaApplet *applet)
 {
-    prefs.builder = xml;
+    prefs.builder = gtk_builder_new_from_resource ("/org/gnome/krb5-auth-dialog/ui/ka-preferences.ui");
     ka_preferences_setup_principal_entry (applet);
     ka_preferences_setup_pkuserid_entry (applet);
     ka_preferences_setup_pkuserid_button (applet);
@@ -507,8 +506,8 @@ ka_preferences_window_create (KaApplet *applet,
 
     g_assert (prefs.n_bindings == N_BINDINGS);
 
-    prefs.notebook = WID (xml, "ka_notebook");
-    prefs.dialog = WID (xml, "krb5_preferences_dialog");
+    prefs.notebook = WID (prefs.builder, "ka_notebook");
+    prefs.dialog = WID (prefs.builder, "krb5_preferences_dialog");
 }
 
 void
@@ -531,6 +530,8 @@ ka_preferences_window_destroy ()
 
     for (i = 0; i < prefs.n_bindings; i++)
         g_object_unref (prefs.bindings[i]);
+
+    g_object_unref (prefs.builder);
 }
 
 /*

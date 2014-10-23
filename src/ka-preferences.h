@@ -9,7 +9,7 @@
 
 G_BEGIN_DECLS
 
-void ka_preferences_window_create (KaApplet *applet, GtkBuilder *xml);
+void ka_preferences_window_create (KaApplet *applet);
 void ka_preferences_window_destroy (void);
 void ka_preferences_window_show (KaApplet *applet);
 

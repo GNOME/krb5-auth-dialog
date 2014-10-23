@@ -284,7 +284,7 @@ ka_applet_startup (GApplication *application)
 
     self->priv->startup_ccache = ka_kerberos_init (self);
     ka_main_window_create (self, self->priv->uixml);
-    ka_preferences_window_create (self, self->priv->uixml);
+    ka_preferences_window_create (self);
 
     ka_applet_app_menu_create(self);
 }

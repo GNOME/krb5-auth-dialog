@@ -76,7 +76,6 @@ struct _KaAppletClass {
 G_DEFINE_TYPE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
 
 struct _KaAppletPrivate {
-    GtkBuilder *uixml;
     GtkStatusIcon *tray_icon;   /* the tray icon */
     GtkWidget *context_menu;    /* the tray icon's context menu */
     const char *icons[3];       /* for invalid, expiring and valid tickts */
@@ -283,7 +282,7 @@ ka_applet_startup (GApplication *application)
     G_APPLICATION_CLASS (ka_applet_parent_class)->startup (application);
 
     self->priv->startup_ccache = ka_kerberos_init (self);
-    ka_main_window_create (self, self->priv->uixml);
+    ka_main_window_create (self);
     ka_preferences_window_create (self);
 
     ka_applet_app_menu_create(self);
@@ -415,10 +414,6 @@ ka_applet_dispose (GObject *object)
     if (applet->priv->pwdialog) {
         gtk_widget_destroy (GTK_WIDGET(applet->priv->pwdialog));
         applet->priv->pwdialog = NULL;
-    }
-    if (applet->priv->uixml) {
-        g_object_unref (applet->priv->uixml);
-        applet->priv->uixml = NULL;
     }
     if (applet->priv->loader) {
         g_object_unref (applet->priv->loader);
@@ -1179,8 +1174,6 @@ KaApplet *
 ka_applet_create ()
 {
     KaApplet *applet = ka_applet_new ();
-    GError *error = NULL;
-    gboolean ret;
 
     if (!(ka_applet_setup_icons (applet)))
         g_error ("Failure to setup icons");
@@ -1191,17 +1184,6 @@ ka_applet_create ()
 
     ka_ns_check_persistence(applet);
     ka_applet_create_tray_icon (applet);
-
-    applet->priv->uixml = gtk_builder_new ();
-    ret = gtk_builder_add_from_file (applet->priv->uixml,
-                                     KA_DATA_DIR G_DIR_SEPARATOR_S
-                                     PACKAGE ".ui", &error);
-    if (!ret) {
-        g_assert (error);
-        g_assert (error->message);
-        g_error ("Failed to load UI XML: %s", error->message);
-    }
-    gtk_builder_connect_signals (applet->priv->uixml, NULL);
 
     applet->priv->pwdialog = ka_pwdialog_new ();
     g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);

@@ -62,7 +62,6 @@ krb5_auth_dialog_SOURCES =	\
 
 krb5_auth_dialog_CPPFLAGS = \
 	-I$(top_srcdir)/secmem \
-	-DKA_DATA_DIR=\""$(pkgdatadir)"\" \
 	-DDATA_DIR=\""$(datadir)"\" \
 	-DLOCALE_DIR=\""$(localedir)/"\" \
 	-DBIN_DIR=\""$(bindir)/"\" \
@@ -97,13 +96,7 @@ AM_CPPFLAGS = \
 	-DG_LOG_DOMAIN="\"KrbAuthDialog\"" \
 	$(NULL)
 
-pkgdatadir = $(datadir)/krb5-auth-dialog
-pkgdata_DATA = \
-	krb5-auth-dialog.ui \
-	$(NULL)
-
 EXTRA_DIST = \
-	$(pkgdata_DATA) \
 	$(schema_in_files) \
 	$(autostart_in_files) \
 	$(service_in_files) \
@@ -112,6 +105,7 @@ EXTRA_DIST = \
 	krb5-auth-dialog.1.in \
         krb5-auth-dialog.gresource.xml \
 	resources/ui/app-menu.ui \
+	resources/ui/ka-main-window.ui \
 	resources/ui/ka-preferences.ui \
 	resources/ui/ka-pwdialog.ui \
 	$(NULL)

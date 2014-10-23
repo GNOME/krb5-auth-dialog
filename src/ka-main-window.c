@@ -45,10 +45,11 @@ ccache_changed_cb (KaApplet* applet,
 
 
 GtkApplicationWindow *
-ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
+ka_main_window_create (KaApplet *applet)
 {
     GtkCellRenderer *text_renderer, *toggle_renderer;
     GtkTreeView *tickets_view;
+    GtkBuilder *builder;
 
     tickets = gtk_list_store_new (N_COLUMNS,
                                   G_TYPE_STRING,
@@ -57,13 +58,15 @@ ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
                                   G_TYPE_BOOLEAN,
                                   G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
+    builder = gtk_builder_new_from_resource ("/org/gnome/krb5-auth-dialog/ui/ka-main-window.ui");
     main_window =
-        GTK_APPLICATION_WINDOW (gtk_builder_get_object (xml,
+        GTK_APPLICATION_WINDOW (gtk_builder_get_object (builder,
                                                         "krb5_main_window"));
+    gtk_builder_connect_signals (builder, NULL);
     g_object_set(main_window, "application", applet, NULL);
 
     tickets_view =
-        GTK_TREE_VIEW (gtk_builder_get_object (xml, "krb5_tickets_treeview"));
+        GTK_TREE_VIEW (gtk_builder_get_object (builder, "krb5_tickets_treeview"));
     gtk_tree_view_set_model (GTK_TREE_VIEW (tickets_view),
                              GTK_TREE_MODEL (tickets));
 
@@ -114,6 +117,7 @@ ka_main_window_create (KaApplet *applet, GtkBuilder *xml)
                       G_CALLBACK(ccache_changed_cb),
                       NULL);
 
+    g_object_unref (builder);
     return main_window;
 }
 

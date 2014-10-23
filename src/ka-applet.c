@@ -1198,7 +1198,7 @@ ka_applet_create ()
     }
     gtk_builder_connect_signals (applet->priv->uixml, NULL);
 
-    applet->priv->pwdialog = ka_pwdialog_create ();
+    applet->priv->pwdialog = ka_pwdialog_new ();
     g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
 
     applet->priv->settings = ka_settings_init (applet);

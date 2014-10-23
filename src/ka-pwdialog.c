@@ -124,11 +124,47 @@ ka_pwdialog_class_init (KaPwDialogClass * klass)
     gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, entry_hbox);
 }
 
-static KaPwDialog *
+
+static void add_password_entry (KaPwDialogPrivate *priv)
+{
+    KaEntryBuffer *buffer = ka_entry_buffer_new ();
+
+    priv->pw_entry =
+        GTK_WIDGET (gtk_entry_new_with_buffer (GTK_ENTRY_BUFFER (buffer)));
+    gtk_entry_set_visibility (GTK_ENTRY (priv->pw_entry), FALSE);
+    g_object_unref (buffer);
+
+    gtk_container_add (GTK_CONTAINER (priv->entry_hbox), priv->pw_entry);
+    gtk_entry_set_activates_default (GTK_ENTRY (priv->pw_entry), TRUE);
+    gtk_widget_show (priv->pw_entry);
+}
+
+
+static GtkWidget *
+ka_error_dialog_new (void)
+{
+    GtkWidget *dialog =
+        gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+                                GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
+                                _("%s Error"), KA_NAME);
+
+    gtk_window_set_title (GTK_WINDOW (dialog), _(KA_NAME));
+    gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
+    return dialog;
+}
+
+
+KaPwDialog *
 ka_pwdialog_new (void)
 {
-    return g_object_new (KA_TYPE_PWDIALOG, NULL);
+    KaPwDialog *pwdialog = g_object_new (KA_TYPE_PWDIALOG, NULL);
+    KaPwDialogPrivate *priv = pwdialog->priv;
+
+    priv->error_dialog = ka_error_dialog_new ();
+    add_password_entry (priv);
+    return pwdialog;
 }
+
 
 static GdkGrabStatus
 for_each_keyboard (GdkWindow *window, GdkEvent *event,
@@ -372,40 +408,4 @@ ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
 
     g_free (wrong_markup);
     g_free (prompt);
-}
-
-
-static GtkWidget *
-ka_error_dialog_new (void)
-{
-    GtkWidget *dialog =
-        gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-                                GTK_MESSAGE_ERROR, GTK_BUTTONS_OK,
-                                _("%s Error"), KA_NAME);
-
-    gtk_window_set_title (GTK_WINDOW (dialog), _(KA_NAME));
-    gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
-    return dialog;
-}
-
-
-KaPwDialog *
-ka_pwdialog_create (void)
-{
-    KaPwDialog *pwdialog = ka_pwdialog_new ();
-    KaEntryBuffer *buffer = ka_entry_buffer_new ();
-    KaPwDialogPrivate *priv = pwdialog->priv;
-
-    priv->error_dialog = ka_error_dialog_new ();
-
-    priv->pw_entry =
-        GTK_WIDGET (gtk_entry_new_with_buffer (GTK_ENTRY_BUFFER (buffer)));
-    gtk_entry_set_visibility (GTK_ENTRY (priv->pw_entry), FALSE);
-    g_object_unref (buffer);
-
-    gtk_container_add (GTK_CONTAINER (priv->entry_hbox), priv->pw_entry);
-    gtk_entry_set_activates_default (GTK_ENTRY (priv->pw_entry), TRUE);
-    gtk_widget_show (priv->pw_entry);
-
-    return pwdialog;
 }

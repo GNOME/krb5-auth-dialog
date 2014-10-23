@@ -962,30 +962,27 @@ ka_applet_create_context_menu (KaApplet *applet)
 {
     GtkWidget *menu;
     GtkWidget *menu_item;
-    GtkWidget *image;
 
     menu = gtk_menu_new ();
 
     /* kdestroy */
     menu_item =
-        gtk_image_menu_item_new_with_mnemonic (_("Remove Credentials _Cache"));
+        gtk_menu_item_new_with_mnemonic (_("Remove Credentials _Cache"));
     g_signal_connect (G_OBJECT (menu_item), "activate",
                       G_CALLBACK (ka_applet_tray_icon_destroy_ccache_cb),
                       applet);
-    image = gtk_image_new_from_stock (GTK_STOCK_CANCEL, GTK_ICON_SIZE_MENU);
-    gtk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (menu_item), image);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
     ka_applet_tray_icon_menu_add_separator_item (menu);
 
     /* Ticket dialog */
-    menu_item = gtk_image_menu_item_new_with_mnemonic (_("_List Tickets"));
+    menu_item = gtk_menu_item_new_with_mnemonic (_("_List Tickets"));
     g_signal_connect (G_OBJECT (menu_item), "activate",
                       G_CALLBACK (ka_applet_tray_icon_show_tickets_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
 
     /* Help item */
-    menu_item = gtk_image_menu_item_new_from_stock (GTK_STOCK_HELP, NULL);
+    menu_item = gtk_menu_item_new_with_mnemonic (_("_Help"));
     g_signal_connect (G_OBJECT (menu_item), "activate",
                       G_CALLBACK (ka_applet_tray_icon_show_help_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);
@@ -993,7 +990,7 @@ ka_applet_create_context_menu (KaApplet *applet)
     ka_applet_tray_icon_menu_add_separator_item (menu);
 
     /* Quit */
-    menu_item = gtk_image_menu_item_new_from_stock (GTK_STOCK_QUIT, NULL);
+    menu_item = gtk_menu_item_new_with_mnemonic (_("_Quit"));
     g_signal_connect (G_OBJECT (menu_item), "activate",
                       G_CALLBACK (ka_applet_tray_icon_quit_cb), applet);
     gtk_menu_shell_append (GTK_MENU_SHELL (menu), menu_item);

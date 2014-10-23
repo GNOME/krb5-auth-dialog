@@ -72,6 +72,39 @@ ka_pwdialog_finalize (GObject *object)
     parent_class->finalize (object);
 }
 
+
+static GObject *
+ka_pwdialog_constructor (GType type,
+                         guint n_construct_properties,
+                         GObjectConstructParam *construct_params)
+{
+    GObject *object;
+    guint idx;
+    GParamSpec *pspec;
+    GValue *value;
+
+    for (idx = 0; idx < n_construct_properties; idx++)
+    {
+        pspec = construct_params[idx].pspec;
+        if (g_strcmp0 (pspec->name, "use-header-bar") != 0)
+            continue;
+
+        /* GtkDialog uses "-1" to imply an unset value for this property */
+        value = construct_params[idx].value;
+        if (g_value_get_int (value) == -1)
+            g_value_set_int (value, 1);
+
+        break;
+    }
+
+    object = G_OBJECT_CLASS (ka_pwdialog_parent_class)->constructor (type,
+                                                                     n_construct_properties,
+                                                                     construct_params);
+
+    return object;
+}
+
+
 static void
 ka_pwdialog_class_init (KaPwDialogClass * klass)
 {
@@ -79,6 +112,7 @@ ka_pwdialog_class_init (KaPwDialogClass * klass)
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
     object_class->finalize = ka_pwdialog_finalize;
+    object_class->constructor = ka_pwdialog_constructor;
 
     /* Bind class to template
      */

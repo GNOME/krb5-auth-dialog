@@ -6,7 +6,7 @@
     <property name="step_increment">1</property>
     <property name="page_increment">10</property>
   </object>
-  <object class="GtkDialog" id="krb5_preferences_dialog">
+  <template class="KaPreferences">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="type_hint">dialog</property>
@@ -45,7 +45,7 @@
           </packing>
         </child>
         <child>
-          <object class="GtkNotebook" id="ka_notebook">
+          <object class="GtkNotebook" id="notebook">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <child>
@@ -787,5 +787,5 @@
     <action-widgets>
       <action-widget response="0">button1</action-widget>
     </action-widgets>
-  </object>
+  </template>
 </interface>

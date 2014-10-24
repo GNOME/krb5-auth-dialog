@@ -82,6 +82,7 @@ struct _KaAppletPrivate {
     gboolean ns_persistence;    /* does the notification server support persistence */
 
     KaPwDialog *pwdialog;       /* the password dialog */
+    KaPreferences *prefs;       /* the prefs dialog */
     int pw_prompt_secs;         /* when to start sending notifications */
     KaPluginLoader *loader;     /* Plugin loader */
 
@@ -202,7 +203,7 @@ action_preferences (GSimpleAction *action G_GNUC_UNUSED,
 {
     KaApplet *self = userdata;
 
-    ka_preferences_window_show (self);
+    ka_preferences_run (self->priv->prefs);
 }
 
 static void
@@ -283,7 +284,7 @@ ka_applet_startup (GApplication *application)
 
     self->priv->startup_ccache = ka_kerberos_init (self);
     ka_main_window_create (self);
-    ka_preferences_window_create (self);
+    self->priv->prefs = ka_preferences_new (self);
 
     ka_applet_app_menu_create(self);
 }
@@ -1164,8 +1165,10 @@ ka_applet_destroy (KaApplet* self)
                                       GTK_WINDOW (first->data));
     }
 
+    gtk_widget_destroy (GTK_WIDGET(self->priv->prefs));
+    self->priv->prefs = NULL;
+
     ka_kerberos_destroy ();
-    ka_preferences_window_destroy ();
 }
 
 

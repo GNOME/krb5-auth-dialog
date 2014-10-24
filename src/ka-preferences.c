@@ -331,7 +331,7 @@ ka_preferences_smartcard_toggled (GtkToggleButton *toggle,
         if (old_path && strlen(old_path))
             g_object_set (self->priv->applet, KA_PROP_NAME_PK_USERID, old_path, NULL);
         else
-            g_object_set (self->priv->applet, KA_PROP_NAME_PK_USERID, old_path, "", NULL);
+            g_object_set (self->priv->applet, KA_PROP_NAME_PK_USERID, "", NULL);
     }
 }
 

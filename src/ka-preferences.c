@@ -445,7 +445,8 @@ ka_preferences_setup_forwardable_toggle (KaPreferences *self)
                                       KA_PROP_NAME_TGT_FORWARDABLE,
                                       self->priv->forwardable_toggle,
                                       "active",
-                                      G_BINDING_BIDIRECTIONAL);
+                                      G_BINDING_BIDIRECTIONAL |
+                                      G_BINDING_SYNC_CREATE);
     self->priv->bindings[self->priv->n_bindings] = binding;
     self->priv->n_bindings++;
 }
@@ -459,7 +460,8 @@ ka_preferences_setup_proxiable_toggle (KaPreferences *self)
                                       KA_PROP_NAME_TGT_PROXIABLE,
                                       self->priv->proxiable_toggle,
                                       "active",
-                                      G_BINDING_BIDIRECTIONAL);
+                                      G_BINDING_BIDIRECTIONAL |
+                                      G_BINDING_SYNC_CREATE);
     self->priv->bindings[self->priv->n_bindings] = binding;
     self->priv->n_bindings++;
 }
@@ -473,7 +475,8 @@ ka_preferences_setup_renewable_toggle (KaPreferences *self)
                                       KA_PROP_NAME_TGT_RENEWABLE,
                                       self->priv->renewable_toggle,
                                       "active",
-                                      G_BINDING_BIDIRECTIONAL);
+                                      G_BINDING_BIDIRECTIONAL |
+                                      G_BINDING_SYNC_CREATE);
     self->priv->bindings[self->priv->n_bindings] = binding;
     self->priv->n_bindings++;
 }

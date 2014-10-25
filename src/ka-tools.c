@@ -75,7 +75,7 @@ ka_show_about (KaApplet *applet)
                            "logo-icon-name", "krb-valid-ticket",
                            "copyright",
                            "Copyright (C) 2004,2005,2006 Red Hat, Inc.,\n"
-                           "2008-2011 Guido Günther",
+                           "2008-2011,2014 Guido Günther",
                            "website-label", PACKAGE " website",
                            "website",
                            "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",

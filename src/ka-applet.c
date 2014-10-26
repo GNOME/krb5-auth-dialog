@@ -605,11 +605,13 @@ ka_applet_select_icon (KaApplet *applet, int remaining)
 static gboolean
 ka_tray_icon_is_embedded (KaApplet *self)
 {
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
     if (self->priv->tray_icon
         && gtk_status_icon_is_embedded (self->priv->tray_icon))
         return TRUE;
     else
         return FALSE;
+G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
@@ -802,8 +804,10 @@ static void
 ka_update_tray_icon (KaApplet *self, const char *icon, const char *tooltip)
 {
     if (self->priv->tray_icon) {
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
         gtk_status_icon_set_from_icon_name (self->priv->tray_icon, icon);
         gtk_status_icon_set_tooltip_text (self->priv->tray_icon, tooltip);
+G_GNUC_END_IGNORE_DEPRECATIONS
     }
 }
 
@@ -935,8 +939,10 @@ ka_applet_tray_icon_show_help_cb (GtkMenuItem *menuitem G_GNUC_UNUSED,
 {
     KaApplet *applet = KA_APPLET (user_data);
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
     ka_show_help (gtk_status_icon_get_screen (applet->priv->tray_icon), NULL,
                   NULL);
+G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
@@ -1012,9 +1018,11 @@ ka_tray_icon_on_menu (GtkStatusIcon *status_icon G_GNUC_UNUSED,
     KaApplet *applet = KA_APPLET (user_data);
 
     KA_DEBUG ("Trayicon right clicked: %d", applet->priv->pw_prompt_secs);
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
     gtk_menu_popup (GTK_MENU (applet->priv->context_menu), NULL, NULL,
                     gtk_status_icon_position_menu, applet->priv->tray_icon,
                     button, activate_time);
+G_GNUC_END_IGNORE_DEPRECATIONS
 }
 
 
@@ -1038,17 +1046,19 @@ ka_applet_create_tray_icon (KaApplet *self)
     if (self->priv->ns_persistence)
         return FALSE;
 
+G_GNUC_BEGIN_IGNORE_DEPRECATIONS
     tray_icon = self->priv->tray_icon = gtk_status_icon_new ();
+    gtk_status_icon_set_from_icon_name (tray_icon,
+                                        self->priv->icons[exp_icon]);
+    gtk_status_icon_set_tooltip_text (tray_icon, PACKAGE);
+    gtk_status_icon_set_title (tray_icon, KA_NAME);
+G_GNUC_END_IGNORE_DEPRECATIONS
 
     g_signal_connect (G_OBJECT (tray_icon), "activate",
                       G_CALLBACK (ka_tray_icon_on_click), self);
     g_signal_connect (G_OBJECT (tray_icon),
                       "popup-menu",
                       G_CALLBACK (ka_tray_icon_on_menu), self);
-    gtk_status_icon_set_from_icon_name (tray_icon,
-                                        self->priv->icons[exp_icon]);
-    gtk_status_icon_set_tooltip_text (tray_icon, PACKAGE);
-    gtk_status_icon_set_title (tray_icon, KA_NAME);
     return TRUE;
 }
 

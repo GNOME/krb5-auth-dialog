@@ -32,6 +32,8 @@
 #include "ka-closures.h"
 #include <libnotify/notify.h>
 
+#include <signal.h>
+
 #define NOTIFY_SECONDS 300
 
 enum ka_icon {
@@ -236,6 +238,30 @@ action_quit (GSimpleAction *action G_GNUC_UNUSED,
 
     ka_applet_destroy (self);
 }
+
+
+KaApplet *sigapplet;
+static void
+signal_handler (int signum)
+{
+    g_message ("Caught signal %d", signum);
+    if (sigapplet)
+        ka_applet_destroy (sigapplet);
+}
+
+
+static void
+setup_signal_handlers (KaApplet *applet)
+{
+    struct sigaction sa;
+
+    memset (&sa, 0, sizeof(sa));
+    sa.sa_handler = signal_handler;
+    sigapplet = applet;
+    sigaction(SIGINT, &sa, NULL);
+    sigaction(SIGTERM, &sa, NULL);
+}
+
 
 static GActionEntry app_entries[] = {
     { "preferences", action_preferences, NULL, NULL, NULL, {0} },
@@ -1229,6 +1255,7 @@ main (int argc, char *argv[])
     if (!applet)
         return 1;
 
+    setup_signal_handlers(applet);
     ret = g_application_run (G_APPLICATION(applet), argc, argv);
     g_object_unref (applet);
     return ret;

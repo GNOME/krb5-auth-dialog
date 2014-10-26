@@ -319,7 +319,7 @@ ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
 
     ret = krb5_cc_start_seq_get (kcontext, ccache, &cursor);
     if (ret) {
-        ka_log_error_message ("krb5_cc_start_seq_get", kcontext, ret);
+        ka_log_error_message_at_level (G_LOG_LEVEL_INFO, "krb5_cc_start_seq_get", kcontext, ret);
 
         /* if the file doesn't exist, it's not an error if we can't
          * parse it */

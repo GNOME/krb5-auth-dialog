@@ -1,4 +1,15 @@
 ==============
+Version 3.15.1
+==============
+* Make dialog layouts consistent regarding header bars
+* Fix wrong ticket properties in prefs
+* Remove notifiations in SIGTERM and SIGQUIT
+* Fix pkinit configuration
+* Use GResource
+* UI translations:
+	Мирослав Николић (sr) (sr@latin)
+
+==============
 Version 3.14.0
 ==============
 * Fix empty principal name (Debian Bug #762906)

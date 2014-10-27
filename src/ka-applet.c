@@ -754,34 +754,22 @@ ka_send_event_notification (KaApplet *self,
         notify_notification_update (notification, summary, message, icon);
     } else {
         notification = self->priv->notification =
-#if HAVE_NOTIFY_NOTIFICATION_NEW_WITH_STATUS_ICON
-            notify_notification_new_with_status_icon (summary,
-                                                      message,
-                                                      icon,
-                                                      self->priv->tray_icon);
-#else
             notify_notification_new (summary, message, icon);
-#endif
         notify_notification_set_urgency (notification, NOTIFY_URGENCY_NORMAL);
     }
 
-#if HAVE_NOTIFY_NOTIFICATION_SET_HINT
     notify_notification_set_hint (notification,
                                   "desktop-entry",
                                   g_variant_new_string (PACKAGE));
-#endif
-
     if (self->priv->ns_persistence) {
         hint = "resident";
         timeout = NOTIFY_EXPIRES_NEVER;
 
         notify_notification_set_timeout (notification, timeout);
         notify_notification_clear_hints (notification);
-#if HAVE_NOTIFY_NOTIFICATION_SET_HINT
         notify_notification_set_hint (notification,
                                       hint,
                                       g_variant_new_boolean (TRUE));
-#endif
     }
 
     notify_notification_clear_actions(notification);

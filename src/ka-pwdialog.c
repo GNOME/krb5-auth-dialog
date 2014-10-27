@@ -157,11 +157,14 @@ ka_error_dialog_new (void)
 KaPwDialog *
 ka_pwdialog_new (void)
 {
-    KaPwDialog *pwdialog = g_object_new (KA_TYPE_PWDIALOG, NULL);
-    KaPwDialogPrivate *priv = pwdialog->priv;
+    KaPwDialog *pwdialog;
+    gboolean use_header;
 
-    priv->error_dialog = ka_error_dialog_new ();
-    add_password_entry (priv);
+    g_object_get (gtk_settings_get_default (), "gtk-dialogs-use-header", &use_header, NULL);
+    pwdialog = g_object_new (KA_TYPE_PWDIALOG, "use-header-bar", use_header, NULL);
+
+    pwdialog->priv->error_dialog = ka_error_dialog_new ();
+    add_password_entry (pwdialog->priv);
     return pwdialog;
 }
 

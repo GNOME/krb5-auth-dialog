@@ -625,8 +625,14 @@ ka_preferences_class_init (KaPreferencesClass *klass)
 KaPreferences*
 ka_preferences_new (KaApplet *applet)
 {
-    KaPreferences *self = g_object_new (KA_TYPE_PREFERENCES,
-                                        "applet", applet, NULL);
+    KaPreferences *self;
+    gboolean use_header;
+
+    g_object_get (gtk_settings_get_default (), "gtk-dialogs-use-header", &use_header, NULL);
+    self = g_object_new (KA_TYPE_PREFERENCES,
+                         "applet", applet,
+                         "use-header-bar", use_header,
+                         NULL);
     return self;
 }
 

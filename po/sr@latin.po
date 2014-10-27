@@ -1,14 +1,14 @@
 # Serbian translation for krb5-auth-dialog.
 # Copyright (C) 2013 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2013—2014.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5"
 "-auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-10-06 16:24+0000\n"
-"PO-Revision-Date: 2013-10-13 21:48+0200\n"
+"POT-Creation-Date: 2014-10-23 17:47+0000\n"
+"PO-Revision-Date: 2014-10-27 05:48+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -27,11 +27,13 @@ msgstr "_Postavke"
 msgid "_About"
 msgstr "_O programu"
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#. Help item
+#: ../src/krb5-auth-dialog.ui.h:3 ../src/ka-applet.c:985
 msgid "_Help"
 msgstr "Po_moć"
 
-#: ../src/krb5-auth-dialog.ui.h:4
+#. Quit
+#: ../src/krb5-auth-dialog.ui.h:4 ../src/ka-applet.c:993
 msgid "_Quit"
 msgstr "_Izađi"
 
@@ -163,24 +165,28 @@ msgstr "Šalje obaveštenje o isteku kupona onoliko minuta pre konačnog isteka"
 msgid "minutes before ticket expiry"
 msgstr "minuta pre isteka kupona"
 
-#: ../src/ka-kerberos.c:177
+#: ../src/ka-kerberos.c:176
 msgid "unknown error"
 msgstr "nepoznata greška"
 
-#: ../src/ka-kerberos.c:319
+#: ../src/ka-kerberos.c:318
 msgid "Your ticket cache is currently empty"
 msgstr "Ostava vašeg kupona je trenutno prazna"
 
-#: ../src/ka-kerberos.c:350
+#: ../src/ka-kerberos.c:349
 msgid "Expired"
 msgstr "Isteklo"
 
-#: ../src/ka-pwdialog.c:230
+#: ../src/ka-kerberos.c:1038
+msgid " (No network connection)"
+msgstr " (Nema mrežne veze)"
+
+#: ../src/ka-pwdialog.c:229
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr "Ne mogu da nabavim kupon kerberosa: „%s“"
 
-#: ../src/ka-pwdialog.c:269 ../src/ka-applet.c:572
+#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:576
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -189,24 +195,24 @@ msgstr[1] "Vaša punomoćstva ističu za %d minuta"
 msgstr[2] "Vaša punomoćstva ističu za %d minuta"
 msgstr[3] "Vaša punomoćstva ističu za jedan minut"
 
-#: ../src/ka-pwdialog.c:274 ../src/ka-applet.c:577
+#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:581
 msgid "Your credentials have expired"
 msgstr "Vaša punomoćstva su istekla"
 
-#: ../src/ka-pwdialog.c:297
+#: ../src/ka-pwdialog.c:296
 msgid "Please enter your Kerberos password:"
 msgstr "Unesite vašu lozinku Kerberosa:"
 
-#: ../src/ka-pwdialog.c:310
+#: ../src/ka-pwdialog.c:309
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Unesite lozinku za „%s“:"
 
-#: ../src/ka-pwdialog.c:328
+#: ../src/ka-pwdialog.c:327
 msgid "The password you entered is invalid"
 msgstr "Lozinka koju ste uneli je neispravna"
 
-#: ../src/ka-pwdialog.c:344
+#: ../src/ka-pwdialog.c:343
 #, c-format
 msgid "%s Error"
 msgstr "%s greška"
@@ -1517,61 +1523,61 @@ msgstr "Loš čarobni broj za GSSAPI IUB"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Loš čarobni broj za GSSAPI RED"
 
-#: ../src/ka-applet.c:566
+#: ../src/ka-applet.c:570
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vaša punomoćstva ističu za %.2d:%.2d"
 
-#: ../src/ka-applet.c:759
+#: ../src/ka-applet.c:763
 msgid "List Tickets"
 msgstr "Ispiši kupone"
 
-#: ../src/ka-applet.c:769
+#: ../src/ka-applet.c:773
 msgid "Get Ticket"
 msgstr "Dobavi kupon"
 
-#: ../src/ka-applet.c:778
+#: ../src/ka-applet.c:782
 msgid "Don't show me this again"
 msgstr "Ne prikazuj mi više ovo"
 
-#: ../src/ka-applet.c:785
+#: ../src/ka-applet.c:789
 msgid "Remove Credentials Cache"
 msgstr "Ukloni ostavu punomoćstva"
 
-#: ../src/ka-applet.c:845
+#: ../src/ka-applet.c:849
 msgid "You have valid Kerberos credentials."
 msgstr "Imate ispravna punomoćstva Kerberosa."
 
-#: ../src/ka-applet.c:847
+#: ../src/ka-applet.c:851
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Osvežili ste vaša punomoćstva Kerberosa."
 
-#: ../src/ka-applet.c:850
+#: ../src/ka-applet.c:854
 msgid "Network credentials valid"
 msgstr "Punomoćstva mreže su ispravna"
 
-#: ../src/ka-applet.c:869
+#: ../src/ka-applet.c:873
 msgid "Network credentials expiring"
 msgstr "Punomoćstva mreže ističu"
 
-#: ../src/ka-applet.c:886
+#: ../src/ka-applet.c:890
 msgid "Network credentials expired"
 msgstr "Punomoćstva mreže su istekla"
 
-#: ../src/ka-applet.c:887
+#: ../src/ka-applet.c:891
 msgid "Your Kerberos credentials have expired."
 msgstr "Vaša punomoćstva Kerberosa su istekla."
 
-#: ../src/ka-applet.c:967
+#: ../src/ka-applet.c:970
 msgid "Remove Credentials _Cache"
 msgstr "Ukloni _ostavu punomoćstva"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:978
+#: ../src/ka-applet.c:979
 msgid "_List Tickets"
 msgstr "_Ispiši kupone"
 
-#: ../src/ka-tools.c:45
+#: ../src/ka-tools.c:44
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1581,53 +1587,61 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:85
+#: ../src/ka-tools.c:84
 msgid "translator-credits"
 msgstr ""
 "  Miroslav Nikolić\n"
 "\n"
 "  http://prevod.org — prevod na srpski jezik"
 
-#: ../src/ka-main-window.c:75
+#: ../src/ka-main-window.c:74
 msgid "Principal"
 msgstr "Glavnik"
 
-#: ../src/ka-main-window.c:81
+#: ../src/ka-main-window.c:80
 msgid "Start Time"
 msgstr "Vreme početka"
 
-#: ../src/ka-main-window.c:87
+#: ../src/ka-main-window.c:86
 msgid "End Time"
 msgstr "Vreme završetka"
 
 #. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:94
+#: ../src/ka-main-window.c:93
 msgid "Fwd"
 msgstr "Prosled."
 
 #. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:101
+#: ../src/ka-main-window.c:100
 msgid "Proxy"
 msgstr "Posred."
 
 #. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:108
+#: ../src/ka-main-window.c:107
 msgid "Renew"
 msgstr "Obnov."
 
-#: ../src/ka-main-window.c:137
+#: ../src/ka-main-window.c:136
 msgid "Error displaying service ticket information"
 msgstr "Greška prikazivanja podataka kupona usluge"
 
-#: ../src/ka-preferences.c:297
+#: ../src/ka-preferences.c:296
 msgid "Choose Certificate"
 msgstr "Izaberite uverenje"
 
-#: ../src/ka-preferences.c:313
+#: ../src/ka-preferences.c:299
+msgid "_Cancel"
+msgstr "Ot_kaži"
+
+#: ../src/ka-preferences.c:300
+msgid "_Open"
+msgstr "Ot_vori"
+
+#: ../src/ka-preferences.c:312
 msgid "X509 Certificates"
 msgstr "X.509 uverenje"
 
-#: ../src/ka-preferences.c:317
+#: ../src/ka-preferences.c:316
 msgid "all files"
 msgstr "sve datoteke"
 

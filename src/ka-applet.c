@@ -92,9 +92,10 @@ struct _KaAppletPrivate {
     gboolean startup_ccache;    /* ccache found on startup */
     gboolean auto_run;          /* only start with valid ccache */
 
-    /* GSettings options */
     NotifyNotification *notification;   /* notification messages */
     char *krb_msg;              /* Additional banner delivered by Kerberos */
+
+    /* GSettings options */
     const char *notify_key;     /* name of disable notification setting key */
     char *principal;            /* the principal to request */
     gboolean renewable;         /* credentials renewable? */

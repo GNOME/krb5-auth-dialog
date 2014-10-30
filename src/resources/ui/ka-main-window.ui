@@ -16,6 +16,7 @@
       <object class="GtkGrid" id="grid1">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
+        <property name="border_width">5</property>
         <child>
           <object class="GtkTreeView" id="krb5_tickets_treeview">
             <property name="visible">True</property>

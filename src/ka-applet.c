@@ -56,8 +56,9 @@ enum {
 
 
 enum {
-    KA_DEBUG_NO_APP_MENU = 1,   /* Disable gtk-shell-shows-app-menu gtk setting */
-    KA_DEBUG_NO_HEADER_BAR = 2, /* Disable header-bar setting */
+    KA_DEBUG_NO_APP_MENU    = 1,  /* Disable gtk-shell-shows-app-menu gtk setting */
+    KA_DEBUG_NO_HEADER_BAR  = 2,  /* Disable header-bar setting */
+    KA_DEBUG_NO_PERSISTENCE = 4,  /* notification system does not support persistence */
 };
 
 
@@ -295,6 +296,8 @@ ka_applet_handle_debug(KaApplet *self)
                           "gtk-dialogs-use-header", FALSE,
                           NULL);
             self->priv->debug_flags |= KA_DEBUG_NO_HEADER_BAR;
+        } else if (!g_strcmp0(*opt, "no-persistence")) {
+            self->priv->debug_flags |= KA_DEBUG_NO_PERSISTENCE;
         } else {
             g_warning ("Unhandled debug options %s", *opt);
         }
@@ -1177,6 +1180,10 @@ ka_ns_check_persistence (KaApplet *self)
     gint    seconds = 5;
 
     self->priv->ns_persistence = FALSE;
+
+    if (self->priv->debug_flags & KA_DEBUG_NO_PERSISTENCE)
+        return;
+
     do {
         caps = notify_get_server_caps ();
         if (caps == NULL)

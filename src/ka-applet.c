@@ -55,6 +55,11 @@ enum {
 };
 
 
+enum {
+    KA_DEBUG_NO_APP_MENU = 1,   /* Disable gtk-shell-shows-app-menu gtk setting */
+};
+
+
 const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
     "krb-tgt-acquired",
     "krb-tgt-renewed",
@@ -88,9 +93,10 @@ struct _KaAppletPrivate {
     int pw_prompt_secs;         /* when to start sending notifications */
     KaPluginLoader *loader;     /* Plugin loader */
 
-    /* command line handling */
+    /* command line and env handling */
     gboolean startup_ccache;    /* ccache found on startup */
     gboolean auto_run;          /* only start with valid ccache */
+    gint debug_flags;           /* Debug options from environment */
 
     NotifyNotification *notification;   /* notification messages */
     char *krb_msg;              /* Additional banner delivered by Kerberos */
@@ -264,18 +270,37 @@ setup_signal_handlers (KaApplet *applet)
 }
 
 
-static GActionEntry app_entries[] = {
-    { "preferences", action_preferences, NULL, NULL, NULL, {0} },
-    { "about", action_about, NULL, NULL, NULL, {0} },
-    { "help", action_help, NULL, NULL, NULL, {0} },
-    { "quit", action_quit, NULL, NULL, NULL, {0} },
-};
+static void
+ka_applet_handle_debug(KaApplet *self)
+{
+    const gchar* debug;
+    gchar **debug_opts, **opt;
+
+    debug = g_getenv ("KRB5_AUTH_DIALOG_DEBUG");
+    if (!debug)
+        return;
+
+    debug_opts = g_strsplit(debug, ",", -1);
+    for (opt = debug_opts; *opt != NULL; opt++) {
+        if (!g_strcmp0(*opt, "no-app-menu")) {
+            KA_DEBUG ("Disabling app menu Gtk setting as requested...");
+            g_object_set (gtk_settings_get_default (),
+                          "gtk-shell-shows-app-menu", FALSE,
+                          NULL);
+            self->priv->debug_flags |= KA_DEBUG_NO_APP_MENU;
+        } else {
+            g_warning ("Unhandled debug options %s", *opt);
+        }
+    }
+
+    g_strfreev (debug_opts);
+}
+
 
 static void
 ka_applet_app_menu_create(KaApplet *self)
 
 {
-    const gchar *debug_no_app_menu;
     GMenuModel *app_menu;
     GtkBuilder *builder;
 
@@ -290,13 +315,6 @@ ka_applet_app_menu_create(KaApplet *self)
     gtk_application_set_app_menu (GTK_APPLICATION(self),
                                   app_menu);
 
-    debug_no_app_menu = g_getenv ("KRB5_AUTH_DIALOG_DEBUG_NO_APP_MENU");
-    if (debug_no_app_menu) {
-        KA_DEBUG ("Disabling app menu GtkSetting as requested...");
-        g_object_set (gtk_settings_get_default (),
-                      "gtk-shell-shows-app-menu", FALSE,
-                      NULL);
-    }
     g_object_unref (builder);
 }
 
@@ -1202,6 +1220,8 @@ KaApplet *
 ka_applet_create ()
 {
     KaApplet *applet = ka_applet_new ();
+
+    ka_applet_handle_debug(applet);
 
     if (!(ka_applet_setup_icons (applet)))
         g_error ("Failure to setup icons");

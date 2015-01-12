@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Jorge González <jorgegonz@svn.gnome.org>, 2009, 2010.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013, 2014.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013, 2014, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-17 21:38+0000\n"
-"PO-Revision-Date: 2014-06-20 12:12+0200\n"
+"POT-Creation-Date: 2014-10-23 17:47+0000\n"
+"PO-Revision-Date: 2015-01-12 19:04+0100\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -29,11 +29,13 @@ msgstr "Prefere_ncias"
 msgid "_About"
 msgstr "Acerca _de"
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#. Help item
+#: ../src/krb5-auth-dialog.ui.h:3 ../src/ka-applet.c:985
 msgid "_Help"
 msgstr "_Ayuda"
 
-#: ../src/krb5-auth-dialog.ui.h:4
+#. Quit
+#: ../src/krb5-auth-dialog.ui.h:4 ../src/ka-applet.c:993
 msgid "_Quit"
 msgstr "_Salir"
 
@@ -178,8 +180,7 @@ msgstr "Su caché de tiques está vacía actualmente"
 msgid "Expired"
 msgstr "Caducado"
 
-#: ../src/ka-kerberos.c:1032
-#| msgid "Network Authentication"
+#: ../src/ka-kerberos.c:1038
 msgid " (No network connection)"
 msgstr "(Sin conexión de red)"
 
@@ -1589,12 +1590,12 @@ msgstr "Las credenciales de red han caducado"
 msgid "Your Kerberos credentials have expired."
 msgstr "Sus credenciales de Kerberos han caducado."
 
-#: ../src/ka-applet.c:971
+#: ../src/ka-applet.c:970
 msgid "Remove Credentials _Cache"
 msgstr "Quitar la _caché de credenciales"
 
 #. Ticket dialog
-#: ../src/ka-applet.c:982
+#: ../src/ka-applet.c:979
 msgid "_List Tickets"
 msgstr "_Listar tiques"
 
@@ -1648,6 +1649,14 @@ msgstr "Error al mostrar la información del tique de servicio"
 #: ../src/ka-preferences.c:296
 msgid "Choose Certificate"
 msgstr "Elija un certificado"
+
+#: ../src/ka-preferences.c:299
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#: ../src/ka-preferences.c:300
+msgid "_Open"
+msgstr "_Abrir"
 
 #: ../src/ka-preferences.c:312
 msgid "X509 Certificates"

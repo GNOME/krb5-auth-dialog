@@ -1,4 +1,17 @@
 ==============
+Version 3.15.4
+==============
+* Use GtkGrid instead of deprecated GtkVBox
+* minor debug cleanups
+* slightly improve ticket list view
+* UI translations:
+	Daniel Mustieles (es)
+	Daniel Șerbănescu (ro)
+	Zdeněk Hataš (cs)
+* Doc translations:
+	Marek Černocký (cs)
+
+==============
 Version 3.15.1
 ==============
 * Make dialog layouts consistent regarding header bars

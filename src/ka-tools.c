@@ -30,7 +30,7 @@ ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
   if (chapter)
 	section = chapter;
 
-  url = g_strdup_printf("ghelp:krb5-auth-dialog%s", section);
+  url = g_strdup_printf("help:krb5-auth-dialog%s", section);
 
   gtk_show_uri (screen, url, gtk_get_current_event_time (), &error);
 

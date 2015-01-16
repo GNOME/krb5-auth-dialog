@@ -1,12 +1,12 @@
+@YELP_HELP_RULES@
 NULL=
 
-include $(top_srcdir)/gnome-doc-utils.make
-dist-hook: doc-dist-hook
-
-DOC_MODULE = krb5-auth-dialog
-DOC_ENTITIES = legal.xml
-DOC_INCLUDES =
-DOC_FIGURES = \
+HELP_ID = krb5-auth-dialog
+HELP_FILES = \
+	index.docbook \
+	legal.xml \
+	$(NULL)
+HELP_MEDIA = \
 	figures/ka-valid.png \
 	figures/ka-expired.png \
 	figures/ka-expiring.png \
@@ -15,5 +15,5 @@ DOC_FIGURES = \
 	figures/trayicon-expiring.png \
 	$(NULL)
 
-DOC_LINGUAS = cs de el es sl sv \
+HELP_LINGUAS = cs de el es sl sv \
 	$(NULL)

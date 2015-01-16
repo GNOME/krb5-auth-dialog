@@ -6,17 +6,13 @@ EXTRA_DIST = \
 	krb5-auth-dialog.spec \
 	MAINTAINERS           \
 	CodingStyle           \
-	gnome-doc-utils.make  \
 	$(NULL)
 
 DISTCLEANFILES = \
 	intltool-extract \
 	intltool-merge \
 	intltool-update \
-	gnome-doc-utils.make \
 	$(NULL)
-
-DISTCHECK_CONFIGURE_FLAGS = --disable-scrollkeeper
 
 dist-hook:
 	@if test -d "$(srcdir)/.git"; \

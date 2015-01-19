@@ -1,13 +1,13 @@
 # Czech translation of krb5-auth-dialog.
 # Copyright (C) 2009 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
-# Marek Černocký <marek@manet.cz>, 2009, 2013.
+# Marek Černocký <marek@manet.cz>, 2009, 2013, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog gnome-2-28\n"
-"POT-Creation-Date: 2013-03-30 19:02+0000\n"
-"PO-Revision-Date: 2013-03-30 20:15+0100\n"
+"POT-Creation-Date: 2015-01-16 19:08+0000\n"
+"PO-Revision-Date: 2015-01-19 01:54+0100\n"
 "Last-Translator: Marek Černocký <marek@manet.cz>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -19,60 +19,114 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Gtranslator 2.91.6\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:174(None)
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+#| msgid "translator-credits"
+msgctxt "_"
+msgid "translator-credits"
+msgstr "Marek Černocký <marek@manet.cz>"
+
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:174
+#| msgid ""
+#| "@@image: 'figures/trayicon-valid.png'; "
+#| "md5=78989c41fd36e23c0a97b87a2cc440e4"
+msgctxt "_"
 msgid ""
-"@@image: 'figures/trayicon-valid.png'; md5=78989c41fd36e23c0a97b87a2cc440e4"
+"external ref='figures/trayicon-valid.png' "
+"md5='78989c41fd36e23c0a97b87a2cc440e4'"
 msgstr ""
-"@@image: 'figures/trayicon-valid.png'; md5=78989c41fd36e23c0a97b87a2cc440e4"
+"external ref='figures/trayicon-valid.png' "
+"md5='78989c41fd36e23c0a97b87a2cc440e4'"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:189(None)
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:189
+#| msgid ""
+#| "@@image: 'figures/trayicon-expiring.png'; "
+#| "md5=cb1dbed310e568e7cb4684bac85c6969"
+msgctxt "_"
 msgid ""
-"@@image: 'figures/trayicon-expiring.png'; "
-"md5=cb1dbed310e568e7cb4684bac85c6969"
+"external ref='figures/trayicon-expiring.png' "
+"md5='cb1dbed310e568e7cb4684bac85c6969'"
 msgstr ""
-"@@image: 'figures/trayicon-expiring.png'; "
-"md5=cb1dbed310e568e7cb4684bac85c6969"
+"external ref='figures/trayicon-expiring.png' "
+"md5='cb1dbed310e568e7cb4684bac85c6969'"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:204(None)
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:204
+#| msgid ""
+#| "@@image: 'figures/trayicon-expired.png'; "
+#| "md5=40c03749e8e3773a0e931232a89e3fe2"
+msgctxt "_"
 msgid ""
-"@@image: 'figures/trayicon-expired.png'; md5=40c03749e8e3773a0e931232a89e3fe2"
+"external ref='figures/trayicon-expired.png' "
+"md5='40c03749e8e3773a0e931232a89e3fe2'"
 msgstr ""
-"@@image: 'figures/trayicon-expired.png'; md5=40c03749e8e3773a0e931232a89e3fe2"
+"external ref='figures/trayicon-expired.png' "
+"md5='40c03749e8e3773a0e931232a89e3fe2'"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:226(None)
-msgid "@@image: 'figures/ka-valid.png'; md5=143d137c326eeba1ec48cba8f5805cc1"
-msgstr "@@image: 'figures/ka-valid.png'; md5=143d137c326eeba1ec48cba8f5805cc1"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:241(None)
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:226
+#| msgid ""
+#| "@@image: 'figures/ka-valid.png'; md5=143d137c326eeba1ec48cba8f5805cc1"
+msgctxt "_"
 msgid ""
-"@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
+"external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
 msgstr ""
-"@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
+"external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:256(None)
-msgid "@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:241
+#| msgid ""
+#| "@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
+msgctxt "_"
+msgid ""
+"external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
 msgstr ""
-"@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
+"external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
 
-#: C/krb5-auth-dialog.xml:39(title)
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:256
+#| msgid ""
+#| "@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
+msgctxt "_"
+msgid ""
+"external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
+msgstr ""
+"external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
+
+#. (itstool) path: articleinfo/title
+#: C/index.docbook:39
 msgid ""
 "<application>Kerberos Network Authentication Dialog</application> Manual"
 msgstr ""
 "Příručka k apletu <application>Dialog síťového ověření Kerberos</application>"
 
-#: C/krb5-auth-dialog.xml:41(para)
+#. (itstool) path: abstract/para
+#: C/index.docbook:41
 msgid ""
 "Kerberos Network Authentication Dialog is a small helper that monitors and "
 "refreshes your Kerberos ticket."
@@ -80,15 +134,18 @@ msgstr ""
 "Dialog síťového ověření Kerberos je malý pomocník, který sleduje a obnovuje "
 "vaše lístky Kerberos."
 
-#: C/krb5-auth-dialog.xml:46(year)
-msgid "2009"
-msgstr "2009"
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:45
+msgid "<year>2009</year> <holder>Guido Günther</holder>"
+msgstr "<year>2009</year> <holder>Guido Günther</holder>"
 
-#: C/krb5-auth-dialog.xml:47(holder) C/krb5-auth-dialog.xml:62(publishername)
+#. (itstool) path: publisher/publishername
+#: C/index.docbook:62
 msgid "Guido Günther"
 msgstr "Guido Günther"
 
-#: C/krb5-auth-dialog.xml:2(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:2
 msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
@@ -104,7 +161,8 @@ msgstr ""
 "jménem <ulink type=\"help\" url=\"ghelp:fdl\">GNU Free Documentation "
 "License</ulink> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."
 
-#: C/krb5-auth-dialog.xml:12(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:12 C/legal.xml:12
 msgid ""
 "This manual is part of a collection of GNOME manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
@@ -115,7 +173,8 @@ msgstr ""
 "licencí GNU FDL. Pokud chcete tento dokument šířit odděleně od kolekce, "
 "musíte přiložit kopii licence dle popisu v sekci 6 dané licence."
 
-#: C/krb5-auth-dialog.xml:19(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:19 C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
 "services are claimed as trademarks. Where those names appear in any GNOME "
@@ -126,10 +185,11 @@ msgstr ""
 "Mnoho názvů použitých firmami k zviditelnění produktů nebo služeb jsou "
 "ochranné známky. Na místech, kde jsou tyto názvy v dokumentaci použity a "
 "členové Dokumentačního projektu GNOME jsou si vědomi skutečnosti, že se "
-"jedná o ochrannou známku, je takovýto název psán velkými písmeny celý nebo "
-"s velkým písmenem na začátku."
+"jedná o ochrannou známku, je takovýto název psán velkými písmeny celý nebo s "
+"velkým písmenem na začátku."
 
-#: C/krb5-auth-dialog.xml:35(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:35 C/legal.xml:35
 msgid ""
 "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
 "EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
@@ -154,7 +214,8 @@ msgstr ""
 "LICENCE. BEZ TOHOTO PROHLÁŠENÍ NENÍ, PODLE TÉTO DOHODY, POVOLENO UŽÍVÁNÍ ANI "
 "ÚPRAVY TOHOTO DOKUMENTU; DÁLE"
 
-#: C/krb5-auth-dialog.xml:55(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:55 C/legal.xml:55
 msgid ""
 "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
 "NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
@@ -178,52 +239,52 @@ msgstr ""
 "K POUŽÍVÁNÍ TOHOTO DOKUMENTU NEBO UPRAVENÝCH VERZÍ DOKUMENTU, I KDYŽ BY "
 "TAKOVÁTO STRANA BYLA INFORMOVANÁ O MOŽNOSTI TAKOVÉHOTO POŠKOZENÍ."
 
-#: C/krb5-auth-dialog.xml:28(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:28 C/legal.xml:28
+#| msgid ""
+#| "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE "
+#| "TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER "
+#| "UNDERSTANDING THAT: <placeholder-1/>"
 msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<placeholder-1/>"
+"<_:orderedlist-1/>"
 msgstr ""
 "DOKUMENT A JEHO UPRAVENÉ VERZE JSOU ŠÍŘENY V SOULADU SE ZNĚNÍM LICENCE GNU "
-"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <placeholder-1/>"
+"FREE DOCUMENTATION LICENSE S NÁSLEDUJÍCÍM USTANOVENÍM: <_:orderedlist-1/>"
 
-#: C/krb5-auth-dialog.xml:69(firstname)
-msgid "Jonathan"
-msgstr "Jonathan"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:68
+msgid ""
+"<firstname>Jonathan</firstname> <surname>Blandford</surname> "
+"<email>rjb@redhat.com</email>"
+msgstr ""
+"<firstname>Jonathan</firstname> <surname>Blandford</surname> "
+"<email>rjb@redhat.com</email>"
 
-#: C/krb5-auth-dialog.xml:70(surname)
-msgid "Blandford"
-msgstr "Blandford"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:73
+#| msgid "Guido Günther <email>agx@sigxcpu.org</email>"
+msgid ""
+"<firstname>Guido</firstname> <surname>Günther</surname> <email>agx@sigxcpu."
+"org</email>"
+msgstr ""
+"<firstname>Guido</firstname> <surname>Günther</surname> <email>agx@sigxcpu."
+"org</email>"
 
-#: C/krb5-auth-dialog.xml:71(email)
-msgid "rjb@redhat.com"
-msgstr "rjb@redhat.com"
-
-#: C/krb5-auth-dialog.xml:74(firstname)
-msgid "Guido"
-msgstr "Guido"
-
-#: C/krb5-auth-dialog.xml:75(surname)
-msgid "Günther"
-msgstr "Günther"
-
-#: C/krb5-auth-dialog.xml:76(email)
-msgid "agx@sigxcpu.org"
-msgstr "agx@sigxcpu.org"
-
-#: C/krb5-auth-dialog.xml:103(revnumber)
-msgid "2.0"
-msgstr "2.0"
-
-#: C/krb5-auth-dialog.xml:104(date)
-msgid "May 2009"
-msgstr "Květen 2009"
-
-#: C/krb5-auth-dialog.xml:106(para)
+#. (itstool) path: revdescription/para
+#: C/index.docbook:106
 msgid "Guido Günther <email>agx@sigxcpu.org</email>"
 msgstr "Guido Günther <email>agx@sigxcpu.org</email>"
 
-#: C/krb5-auth-dialog.xml:112(releaseinfo)
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:102
+msgid "<revnumber>2.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
+msgstr ""
+"<revnumber>2.0</revnumber> <date>květen 2009</date> <_:revdescription-1/>"
+
+#. (itstool) path: articleinfo/releaseinfo
+#: C/index.docbook:112
 msgid ""
 "This manual describes how to use the Kerberos Network Authentication Dialog "
 "to manage your Kerberos tickets."
@@ -231,11 +292,13 @@ msgstr ""
 "Tato příručka popisuje jak používat Dialog síťového ověření Kerberos ke "
 "správě svých lístků Kerberos."
 
-#: C/krb5-auth-dialog.xml:116(title)
+#. (itstool) path: legalnotice/title
+#: C/index.docbook:116
 msgid "Feedback"
 msgstr "Ohlasy"
 
-#: C/krb5-auth-dialog.xml:117(para)
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:117
 msgid ""
 "To report a bug or make a suggestion regarding this package or this manual, "
 "use <ulink url=\"http://bugzilla.gnome.org\" type=\"http\">GNOME's Bugzilla</"
@@ -245,23 +308,25 @@ msgstr ""
 "balíčku nebo této příručce, použijte stránky <ulink url=\"http://bugzilla."
 "gnome.org\" type=\"http\">GNOME's Bugzilla</ulink>."
 
-#: C/krb5-auth-dialog.xml:129(title)
+#. (itstool) path: section/title
+#: C/index.docbook:129
 msgid "Introduction"
 msgstr "Úvod"
 
-#: C/krb5-auth-dialog.xml:0(application)
-msgid "Kerberos Network Authentication Dialog"
-msgstr "Dialog síťového ověření Kerberos"
+#. (itstool) path: section/indexterm
+#: C/index.docbook:130
+#| msgid ""
+#| "<application>Kerberos Network Authentication Dialog</application> Manual"
+msgid ""
+"<primary><application>Kerberos Network Authentication Dialog</application></"
+"primary> <secondary>Manual</secondary> <tertiary>krb5-auth-dialog</tertiary>"
+msgstr ""
+"<primary><application>Dialog síťového ověření Kerberos</application></"
+"primary> <secondary>Příručka</secondary> <tertiary>krb5-auth-dialog</"
+"tertiary>"
 
-#: C/krb5-auth-dialog.xml:132(secondary)
-msgid "Manual"
-msgstr "Příručka"
-
-#: C/krb5-auth-dialog.xml:133(tertiary)
-msgid "krb5-auth-dialog"
-msgstr "krb5-auth-dialog"
-
-#: C/krb5-auth-dialog.xml:136(para)
+#. (itstool) path: section/para
+#: C/index.docbook:136
 msgid ""
 "Kerberos Network Authentication Dialog is an applet for the "
 "<systemitem>GNOME desktop</systemitem> that monitors and refreshes your "
@@ -271,7 +336,8 @@ msgstr ""
 "GNOME</systemitem>, který sleduje a obnovuje lístky Kerberos. Rovněž "
 "připomíná, kdy lístkům končí platnost."
 
-#: C/krb5-auth-dialog.xml:141(para)
+#. (itstool) path: section/para
+#: C/index.docbook:141
 msgid ""
 "Once you have acquired a Kerberos ticket - be it via GDM or via the applet "
 "itself - the applet will handle the ticket's renewal until it expires. It "
@@ -283,11 +349,13 @@ msgstr ""
 "jej také použít ke zrušení (vyprázdnění) mezipaměti pověření, abyste mohli "
 "získat lístek s jinými vlastnostmi nebo se přepnout na jiný principal."
 
-#: C/krb5-auth-dialog.xml:146(title)
+#. (itstool) path: section/title
+#: C/index.docbook:146
 msgid "Usage"
 msgstr "Použití"
 
-#: C/krb5-auth-dialog.xml:147(para)
+#. (itstool) path: section/para
+#: C/index.docbook:147
 msgid ""
 "<application>Kerberos Network Authentication Dialog</application> is usually "
 "started in GNOME startup, but you can manually start <application>Kerberos "
@@ -296,26 +364,32 @@ msgstr ""
 "<application>Dialog síťového ověření Kerberos</application> se obvykle "
 "spouští současně s náběhem GNOME, ale můžete jej spustit i ručně a to takto:"
 
-#: C/krb5-auth-dialog.xml:153(term)
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:153
 msgid "Command line"
 msgstr "Příkazový řádek"
 
-#: C/krb5-auth-dialog.xml:155(para)
+#. (itstool) path: listitem/para
+#: C/index.docbook:155
 msgid ""
 "Type <command>krb5-auth-dialog</command>, then press <keycap>Return</keycap>:"
 msgstr ""
 "Napište <command>krb5-auth-dialog</command> a zmáčkněte <keycap>Enter</"
 "keycap>:"
 
-#: C/krb5-auth-dialog.xml:162(para)
+#. (itstool) path: section/para
+#: C/index.docbook:162
 msgid "The tray icon will indicate one of three states:"
 msgstr "Ikona na systémovém panelu bude signalizovat jeden ze tří stavů:"
 
-#: C/krb5-auth-dialog.xml:167(title) C/krb5-auth-dialog.xml:170(title)
+#. (itstool) path: section/title
+#. (itstool) path: figure/title
+#: C/index.docbook:167 C/index.docbook:170
 msgid "Valid Kerberos ticket"
 msgstr "Platný lístek Kerberos"
 
-#: C/krb5-auth-dialog.xml:168(para)
+#. (itstool) path: section/para
+#: C/index.docbook:168
 msgid ""
 "You have a valid Kerberos ticket that can be used to authenticate to network "
 "services."
@@ -323,11 +397,14 @@ msgstr ""
 "Máte platný lístek Kerberos, který můžete použít k ověření vůči síťovým "
 "službám."
 
-#: C/krb5-auth-dialog.xml:182(title) C/krb5-auth-dialog.xml:185(title)
+#. (itstool) path: section/title
+#. (itstool) path: figure/title
+#: C/index.docbook:182 C/index.docbook:185
 msgid "Kerberos ticket expiring"
 msgstr "Lístku Kerberos brzy vyprší platnost"
 
-#: C/krb5-auth-dialog.xml:183(para)
+#. (itstool) path: section/para
+#: C/index.docbook:183
 msgid ""
 "The Kerberos ticket is about to expire but it can still be used to "
 "authenticate to network services."
@@ -335,11 +412,14 @@ msgstr ""
 "Platnost lístku Kerberos brzy vyprší, ale zatím jej stále můžete použít k "
 "ověření vůči síťovým službám."
 
-#: C/krb5-auth-dialog.xml:196(title) C/krb5-auth-dialog.xml:200(title)
+#. (itstool) path: section/title
+#. (itstool) path: figure/title
+#: C/index.docbook:196 C/index.docbook:200
 msgid "Kerberos ticket expired"
 msgstr "Lístku Kerberos vypršela platnost"
 
-#: C/krb5-auth-dialog.xml:197(para)
+#. (itstool) path: section/para
+#: C/index.docbook:197
 msgid ""
 "Your Kerberos became invalid (e.g. expired). It can no longer be used to "
 "authenticate to network services. This is not a problem if the application "
@@ -353,11 +433,13 @@ msgstr ""
 "<application>Dialog síťového ověření Kerberos</application>. V případě, že "
 "to neumí, stačí když kliknete na aplet a znovu zadáte heslo."
 
-#: C/krb5-auth-dialog.xml:213(title)
+#. (itstool) path: section/title
+#: C/index.docbook:213
 msgid "Notification Messages"
 msgstr "Oznamovací zprávy"
 
-#: C/krb5-auth-dialog.xml:214(para)
+#. (itstool) path: section/para
+#: C/index.docbook:214
 msgid ""
 "When Kerberos Network Authentication Dialog has started, the following "
 "notifications may be displayed."
@@ -365,11 +447,13 @@ msgstr ""
 "Až se Dialog síťového ověření Kerberos spustí, mohou se zobrazit následující "
 "oznámení."
 
-#: C/krb5-auth-dialog.xml:219(title)
+#. (itstool) path: section/title
+#: C/index.docbook:219
 msgid "Kerberos credentials valid"
 msgstr "Pověření Kerberos jsou platná"
 
-#: C/krb5-auth-dialog.xml:220(para)
+#. (itstool) path: section/para
+#: C/index.docbook:220
 msgid ""
 "You just acquired a valid Kerberos ticket that can be used to authenticate "
 "to network services."
@@ -377,15 +461,18 @@ msgstr ""
 "Právě jste získali platný lístek Kerberos, který lze použít k ověření vůči "
 "síťovým službám."
 
-#: C/krb5-auth-dialog.xml:222(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:222
 msgid "Notification when Kerberos credentials become valid"
 msgstr "Oznámení, když pověření Kerberos nabude platnosti"
 
-#: C/krb5-auth-dialog.xml:234(title)
+#. (itstool) path: section/title
+#: C/index.docbook:234
 msgid "Kerberos credentials expiring"
 msgstr "Pověřením kerberos brzy skončí platnost"
 
-#: C/krb5-auth-dialog.xml:235(para)
+#. (itstool) path: section/para
+#: C/index.docbook:235
 msgid ""
 "Your Kerberos credentials are about to expire. You can left click on the "
 "tray applet to refresh them."
@@ -393,15 +480,18 @@ msgstr ""
 "Vašim pověřením Kerberos brzy vyprší platnost. Stačí, když kliknete na aplet "
 "v systémovém panelu a pověření se obnoví."
 
-#: C/krb5-auth-dialog.xml:237(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:237
 msgid "Notification when Kerberos credentials expiring"
 msgstr "Oznámení, když se pověřením Kerberos blíží vypršení platnosti"
 
-#: C/krb5-auth-dialog.xml:249(title)
+#. (itstool) path: section/title
+#: C/index.docbook:249
 msgid "Kerberos credentials expired"
 msgstr "Pověřením kerberos skončila platnost"
 
-#: C/krb5-auth-dialog.xml:250(para)
+#. (itstool) path: section/para
+#: C/index.docbook:250
 msgid ""
 "Your Kerberos credentials just expired. They can no longer be used to "
 "authenticate to network services."
@@ -409,31 +499,39 @@ msgstr ""
 "Vašim pověřením Kerberos právě vypršela platnost. Nelze je nadále použít k "
 "ověření vůči síťovým službám."
 
-#: C/krb5-auth-dialog.xml:252(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:252
 msgid "Notification when Kerberos credentials expired"
 msgstr "Oznámení, když pověřením Kerberos vyprší platnost"
 
-#: C/krb5-auth-dialog.xml:265(title)
+#. (itstool) path: section/title
+#: C/index.docbook:265
 msgid "Preferences"
 msgstr "Předvolby"
 
-#: C/krb5-auth-dialog.xml:269(title)
+#. (itstool) path: table/title
+#: C/index.docbook:269
 msgid "Kerberos Principal Preferences"
 msgstr "Předvolby principalu Kerberos"
 
-#: C/krb5-auth-dialog.xml:274(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:274
 msgid "Dialog Element"
 msgstr "Prvek dialogového okna"
 
-#: C/krb5-auth-dialog.xml:277(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:277
 msgid "Description"
 msgstr "Popis"
 
-#: C/krb5-auth-dialog.xml:285(guilabel)
-msgid "Kerberos Principal"
-msgstr "Principal Kerberos"
+#. (itstool) path: entry/para
+#: C/index.docbook:284
+#| msgid "Kerberos Principal"
+msgid "<guilabel>Kerberos Principal</guilabel>"
+msgstr "<guilabel>Principal Kerberos</guilabel>"
 
-#: C/krb5-auth-dialog.xml:289(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:289
 msgid ""
 "The Kerberos principal to use. Leave blank to use you current username. If "
 "you change this setting you have to destroy the credential cache before "
@@ -443,11 +541,13 @@ msgstr ""
 "aktuální uživatelské jméno. Pokud toto nastavení změníte, musíte vyprázdnit "
 "mezipaměť pověření, aby se nové nastavení projevilo."
 
-#: C/krb5-auth-dialog.xml:296(guilabel)
-msgid "PKINIT Userid"
-msgstr "ID uživatele PKINIT"
+#. (itstool) path: entry/para
+#: C/index.docbook:295
+msgid "<guilabel>PKINIT Userid</guilabel>"
+msgstr "<guilabel>Identifikátor PKINIT</guilabel>"
 
-#: C/krb5-auth-dialog.xml:300(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:300
 msgid ""
 "The principals public/private/certificate identifier. Leave empty if not "
 "using PKINIT. To enable using a security token add the path to the pkcs11 "
@@ -458,11 +558,13 @@ msgstr ""
 "tokenu, přidejte sem cestu ke knihovně pkcs11, např. „PKCS11:/usr/lib/opensc/"
 "opensc-pkcs11.so“"
 
-#: C/krb5-auth-dialog.xml:306(guilabel)
-msgid "PKINIT anchors"
-msgstr "Pevné body důvěry PKINIT"
+#. (itstool) path: entry/para
+#: C/index.docbook:305
+msgid "<guilabel>PKINIT anchors</guilabel>"
+msgstr "<guilabel>Pevné body důvěry PKINIT</guilabel>"
 
-#: C/krb5-auth-dialog.xml:310(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:310
 msgid ""
 "Path to CA certificates used as trust anchors for pkinit. You only need to "
 "set this if it hasn't been set up globally in <filename>/etc/krb5.conf</"
@@ -472,11 +574,13 @@ msgstr ""
 "potřeba nastavit jen v případě, že tak nebylo učiněno globálně v <filename>/"
 "etc/krb5.conf</filename>"
 
-#: C/krb5-auth-dialog.xml:316(guilabel)
-msgid "forwardable"
-msgstr "přenositelný"
+#. (itstool) path: entry/para
+#: C/index.docbook:315
+msgid "<guilabel>forwardable</guilabel>"
+msgstr "<guilabel>přenositelný</guilabel>"
 
-#: C/krb5-auth-dialog.xml:320(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:320
 msgid ""
 "Whether the requested Kerberos ticket should be forwardable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
@@ -486,11 +590,13 @@ msgstr ""
 "nastavení vyžaduje, abyste se znovu autentizovali kliknutím levým tlačítkem "
 "na ikonu na systémovém panelu a zadáním svého hesla."
 
-#: C/krb5-auth-dialog.xml:326(guilabel)
-msgid "renewable"
-msgstr "obnovitelný"
+#. (itstool) path: entry/para
+#: C/index.docbook:325
+msgid "<guilabel>renewable</guilabel>"
+msgstr "<guilabel>obnovitelný</guilabel>"
 
-#: C/krb5-auth-dialog.xml:330(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:330
 msgid ""
 "Whether the requested Kerberos ticket should be renewable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
@@ -500,11 +606,13 @@ msgstr ""
 "nastavení vyžaduje, abyste se znovu autentizovali kliknutím levým tlačítkem "
 "na ikonu na systémovém panelu a zadáním svého hesla."
 
-#: C/krb5-auth-dialog.xml:336(guilabel)
-msgid "proxiable"
-msgstr "delegovatelný"
+#. (itstool) path: entry/para
+#: C/index.docbook:335
+msgid "<guilabel>proxiable</guilabel>"
+msgstr "<guilabel>delegovatelný</guilabel>"
 
-#: C/krb5-auth-dialog.xml:340(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:340
 msgid ""
 "Whether the requested Kerberos ticket should be proxiable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
@@ -514,11 +622,14 @@ msgstr ""
 "nastavení vyžaduje, abyste se znovu autentizovali kliknutím levým tlačítkem "
 "na ikonu na systémovém panelu a zadáním svého hesla."
 
-#: C/krb5-auth-dialog.xml:346(guilabel)
-msgid "Warn .. minutes before expiry"
-msgstr "Upozornit ‥ minut před koncem platnosti"
+#. (itstool) path: entry/para
+#: C/index.docbook:345
+#| msgid "Warn .. minutes before expiry"
+msgid "<guilabel>Warn .. minutes before expiry</guilabel>"
+msgstr "<guilabel>Upozornit ‥ minut před koncem platnosti</guilabel>"
 
-#: C/krb5-auth-dialog.xml:350(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:350
 msgid ""
 "Notifications that your credentials are about to expire will be sent that "
 "many minutes before expiry."
@@ -526,11 +637,13 @@ msgstr ""
 "Upozornění, že vašemu pověření brzy skončí platnost, bude zasláno tento "
 "počet minut před koncem platnosti."
 
-#: C/krb5-auth-dialog.xml:356(guilabel)
-msgid "Show tray icon"
-msgstr "Zobrazit ikonu na systémovém panelu"
+#. (itstool) path: entry/para
+#: C/index.docbook:355
+msgid "<guilabel>Show tray icon</guilabel>"
+msgstr "<guilabel>Zobrazovat ikonu na hlavní liště</guilabel>"
 
-#: C/krb5-auth-dialog.xml:360(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:360
 msgid ""
 "Whether to show the tray icon. Disabling the tray icon will also disable "
 "notifications, the password dialog will be brought up instead."
@@ -538,23 +651,102 @@ msgstr ""
 "Zda zobrazovat ikonu v systémovém panelu. Vypnutím ikony se rovněž zakážou "
 "oznamování, dialogové okno pro heslo se ale bude i tak objevovat."
 
-#: C/krb5-auth-dialog.xml:266(para)
+#. (itstool) path: section/para
+#: C/index.docbook:266
+#| msgid ""
+#| "You can set preferences by selecting \"Preferences\" from the applets "
+#| "context menu or by selecting \"Network Authentication\" in the "
+#| "<application>Control Center</application>. <table frame=\"topbot\" id="
+#| "\"tbl-principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" "
+#| "rowsep=\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/"
+#| "><placeholder-2/><placeholder-3/></tgroup></table>"
 msgid ""
 "You can set preferences by selecting \"Preferences\" from the applets "
 "context menu or by selecting \"Network Authentication\" in the "
-"<application>Control Center</application>. <table frame=\"topbot\" id=\"tbl-"
-"principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep="
-"\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/"
-"><placeholder-2/><placeholder-3/></tgroup></table>"
+"<application>Control Center</application>. <_:table-1/>"
 msgstr ""
 "Předvolby můžete nastavit výběrem položky „Předvolby“ v kontextové nabídce "
 "apletu nebo nebo výběrem „Síťové ověřování“ v <application>Ovládacím centru</"
-"application>. <table frame=\"topbot\" id=\"tbl-principal-prefs"
-"\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec "
-"colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/><placeholder-2/"
-"><placeholder-3/></tgroup></table>"
+"application>. <_:table-1/>"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2
-#: C/krb5-auth-dialog.xml:0(None)
-msgid "translator-credits"
-msgstr "Marek Černocký <marek@manet.cz>"
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "odkazem"
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
+#| msgid ""
+#| "Permission is granted to copy, distribute and/or modify this document "
+#| "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#| "or any later version published by the Free Software Foundation with no "
+#| "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#| "can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl"
+#| "\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
+msgstr ""
+"Je povoleno kopírovat, šířit a/nebo upravovat tento dokument za podmínek GNU "
+"Free Documentation License (GFDL) ve verzi 1.1 nebo v jakékoli další verzi "
+"vydané nadací Free Software Foundation; bez neměnných oddílů, bez textů "
+"předních desek a bez textů zadních desek. Kopii licence GFDL naleznete pod "
+"tímto <_:ulink-1/> nebo v souboru COPYING-DOCS dodávaném s touto příručkou."
+
+#~ msgid "2009"
+#~ msgstr "2009"
+
+#~ msgid "Jonathan"
+#~ msgstr "Jonathan"
+
+#~ msgid "Blandford"
+#~ msgstr "Blandford"
+
+#~ msgid "rjb@redhat.com"
+#~ msgstr "rjb@redhat.com"
+
+#~ msgid "Guido"
+#~ msgstr "Guido"
+
+#~ msgid "Günther"
+#~ msgstr "Günther"
+
+#~ msgid "agx@sigxcpu.org"
+#~ msgstr "agx@sigxcpu.org"
+
+#~ msgid "2.0"
+#~ msgstr "2.0"
+
+#~ msgid "May 2009"
+#~ msgstr "Květen 2009"
+
+#~ msgid "Kerberos Network Authentication Dialog"
+#~ msgstr "Dialog síťového ověření Kerberos"
+
+#~ msgid "Manual"
+#~ msgstr "Příručka"
+
+#~ msgid "krb5-auth-dialog"
+#~ msgstr "krb5-auth-dialog"
+
+#~ msgid "PKINIT Userid"
+#~ msgstr "ID uživatele PKINIT"
+
+#~ msgid "PKINIT anchors"
+#~ msgstr "Pevné body důvěry PKINIT"
+
+#~ msgid "forwardable"
+#~ msgstr "přenositelný"
+
+#~ msgid "renewable"
+#~ msgstr "obnovitelný"
+
+#~ msgid "proxiable"
+#~ msgstr "delegovatelný"
+
+#~ msgid "Show tray icon"
+#~ msgstr "Zobrazit ikonu na systémovém panelu"

@@ -6,8 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-02-15 22:01+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
+"auth-dialog&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2014-10-23 17:47+0000\n"
 "PO-Revision-Date: 2011-02-15 22:15+0100\n"
 "Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -17,60 +18,194 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../src/krb5-auth-dialog.xml.h:1
-#: ../src/krb5-auth-dialog.desktop.in.h:1
-#: ../cc-panel/gnome-ka-panel.desktop.in.h:1
+#: ../src/krb5-auth-dialog.ui.h:1
+msgid "Prefere_nces"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:2
+msgid "_About"
+msgstr "_Om"
+
+#. Help item
+#: ../src/krb5-auth-dialog.ui.h:3 ../src/ka-applet.c:985
+msgid "_Help"
+msgstr ""
+
+#. Quit
+#: ../src/krb5-auth-dialog.ui.h:4 ../src/ka-applet.c:993
+msgid "_Quit"
+msgstr "A_vsluta"
+
+#.
+#. * vim:ts:sts=4:sw=4:et:
+#.
+#: ../src/krb5-auth-dialog.ui.h:5 ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Authentication"
 msgstr "Kerberos-autentisering"
 
-#: ../src/krb5-auth-dialog.xml.h:2
-msgid "Service Tickets"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.xml.h:3
+#: ../src/krb5-auth-dialog.ui.h:6
 msgid "_Renew Ticket"
 msgstr ""
 
-#: ../src/ka-dialog.c:171
+#: ../src/krb5-auth-dialog.ui.h:7
+msgid "Service Tickets"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:8
+msgid "Kerberos User"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:9
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:10
+msgid "Kerberos principal:"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:11
+#, fuzzy
+#| msgid "Kerberos Authentication"
+msgid "Kerberos Ticket Options"
+msgstr "Kerberos-autentisering"
+
+#: ../src/krb5-auth-dialog.ui.h:12
+msgid "Requested Kerberos tickets should be:"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:13
+msgid "forwardable"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:14
+msgid "If checked, request forwardable tickets"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:15
+msgid "renewable"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:16
+msgid "If checked, request renewable tickets"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:17
+msgid "proxiable"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:18
+msgid "If checked, request proxiable tickets"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:19
+msgid "Kerberos"
+msgstr "Kerberos"
+
+#: ../src/krb5-auth-dialog.ui.h:20
+msgid "Userid"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:21
+msgid "Use Smartcard"
+msgstr "Använd smartkort"
+
+#: ../src/krb5-auth-dialog.ui.h:22
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:23
+msgid "Certificate and private key used for authentication"
+msgstr "Certifikat och privat nyckel som används för autentisering"
+
+#: ../src/krb5-auth-dialog.ui.h:24
+msgid "_Browse..."
+msgstr "_Bläddra..."
+
+#: ../src/krb5-auth-dialog.ui.h:25
+msgid "X509 trust anchors"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:26
+msgid "Certificate used to verify digital signatures."
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:27
+msgid ""
+"Configure the use of certificates and smartcards for your Kerberos network "
+"authentication."
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:28
+msgid "PKINIT"
+msgstr ""
+
+#: ../src/krb5-auth-dialog.ui.h:29
+msgid "Notifications"
+msgstr "Aviseringar"
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../src/krb5-auth-dialog.ui.h:31
+msgid "Warn"
+msgstr "Varna"
+
+#: ../src/krb5-auth-dialog.ui.h:32
+msgid ""
+"Send notification about ticket expiry that many minutes before it finally "
+"expires"
+msgstr ""
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../src/krb5-auth-dialog.ui.h:34
+msgid "minutes before ticket expiry"
+msgstr ""
+
+#: ../src/ka-kerberos.c:176
 msgid "unknown error"
 msgstr "okänt fel"
 
-#: ../src/ka-dialog.c:332
+#: ../src/ka-kerberos.c:318
+msgid "Your ticket cache is currently empty"
+msgstr ""
+
+#: ../src/ka-kerberos.c:349
 msgid "Expired"
 msgstr ""
 
-#: ../src/ka-pwdialog.c:175
+#: ../src/ka-kerberos.c:1038
+msgid " (No network connection)"
+msgstr ""
+
+#: ../src/ka-pwdialog.c:229
 #, c-format
 msgid "Couldn't acquire kerberos ticket: '%s'"
 msgstr ""
 
-#: ../src/ka-pwdialog.c:212
-#: ../src/ka-applet.c:359
+#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:576
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../src/ka-pwdialog.c:217
-#: ../src/ka-applet.c:364
+#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:581
 msgid "Your credentials have expired"
 msgstr ""
 
-#: ../src/ka-pwdialog.c:237
+#: ../src/ka-pwdialog.c:296
 msgid "Please enter your Kerberos password:"
 msgstr "Ange ditt Kerberos-lösenord:"
 
-#: ../src/ka-pwdialog.c:248
+#: ../src/ka-pwdialog.c:309
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Ange lösenordet för \"%s\":"
 
-#: ../src/ka-pwdialog.c:263
+#: ../src/ka-pwdialog.c:327
 msgid "The password you entered is invalid"
 msgstr "Lösenordet som du angav är ogiltigt"
 
-#: ../src/ka-pwdialog.c:279
+#: ../src/ka-pwdialog.c:343
 #, c-format
 msgid "%s Error"
 msgstr "%s fel"
@@ -360,8 +495,7 @@ msgstr "Tjänstenyckeln är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
-#: ../src/dummy-strings.c:66
-#: ../src/dummy-strings.c:122
+#: ../src/dummy-strings.c:66 ../src/dummy-strings.c:122
 msgid "Mutual authentication failed"
 msgstr ""
 
@@ -1347,8 +1481,7 @@ msgstr ""
 
 #. kv5m_err.et:kv5m:KV5M_SAM_KEY
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
-#: ../src/dummy-strings.c:264
-#: ../src/dummy-strings.c:265
+#: ../src/dummy-strings.c:264 ../src/dummy-strings.c:265
 msgid "Bad magic number for krb5_enc_sam_response_enc"
 msgstr ""
 
@@ -1382,71 +1515,61 @@ msgstr ""
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr ""
 
-#: ../src/ka-applet.c:353
+#: ../src/ka-applet.c:570
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr ""
 
-#: ../src/ka-applet.c:535
+#: ../src/ka-applet.c:763
 msgid "List Tickets"
 msgstr ""
 
-#: ../src/ka-applet.c:545
+#: ../src/ka-applet.c:773
 msgid "Get Ticket"
 msgstr ""
 
-#: ../src/ka-applet.c:554
+#: ../src/ka-applet.c:782
 msgid "Don't show me this again"
 msgstr "Visa inte detta igen"
 
-#: ../src/ka-applet.c:561
+#: ../src/ka-applet.c:789
 msgid "Remove Credentials Cache"
 msgstr ""
 
-#: ../src/ka-applet.c:609
+#: ../src/ka-applet.c:849
+msgid "You have valid Kerberos credentials."
+msgstr ""
+
+#: ../src/ka-applet.c:851
 msgid "You've refreshed your Kerberos credentials."
 msgstr ""
 
-#: ../src/ka-applet.c:611
+#: ../src/ka-applet.c:854
 msgid "Network credentials valid"
 msgstr ""
 
-#: ../src/ka-applet.c:630
+#: ../src/ka-applet.c:873
 msgid "Network credentials expiring"
 msgstr ""
 
-#: ../src/ka-applet.c:648
+#: ../src/ka-applet.c:890
 msgid "Network credentials expired"
 msgstr ""
 
-#: ../src/ka-applet.c:649
-msgid "Your Kerberos credentails have expired."
+#: ../src/ka-applet.c:891
+msgid "Your Kerberos credentials have expired."
 msgstr ""
 
-#: ../src/ka-applet.c:692
-#, c-format
-msgid "There was an error launching the preferences dialog: %s"
-msgstr ""
-
-#. Translators: add the translators of your language here
-#: ../src/ka-applet.c:739
-msgid "translator-credits"
-msgstr ""
-"Daniel Nylander <po@danielnylander.se>\n"
-"\n"
-"Skicka synpunkter på översättningen till\n"
-"<tp-sv@listor.tp-sv.se>."
-
-#: ../src/ka-applet.c:784
+#: ../src/ka-applet.c:970
 msgid "Remove Credentials _Cache"
 msgstr ""
 
 #. Ticket dialog
-#: ../src/ka-applet.c:794
+#: ../src/ka-applet.c:979
 msgid "_List Tickets"
 msgstr ""
 
-#: ../src/ka-tools.c:45
+#: ../src/ka-tools.c:44
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1455,264 +1578,183 @@ msgstr ""
 "Det uppstod ett fel vid visning av hjälp:\n"
 "%s"
 
-#: ../src/ka-tickets.c:54
+#. Translators: add the translators of your language here
+#: ../src/ka-tools.c:84
+msgid "translator-credits"
+msgstr ""
+"Daniel Nylander <po@danielnylander.se>\n"
+"\n"
+"Skicka synpunkter på översättningen till\n"
+"<tp-sv@listor.tp-sv.se>."
+
+#: ../src/ka-main-window.c:74
 msgid "Principal"
 msgstr ""
 
-#: ../src/ka-tickets.c:60
+#: ../src/ka-main-window.c:80
 msgid "Start Time"
 msgstr "Starttid"
 
-#: ../src/ka-tickets.c:66
+#: ../src/ka-main-window.c:86
 msgid "End Time"
 msgstr "Sluttid"
 
-#: ../src/ka-tickets.c:72
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:93
 msgid "Fwd"
 msgstr ""
 
-#: ../src/ka-tickets.c:78
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:100
 msgid "Proxy"
 msgstr ""
 
-#: ../src/ka-tickets.c:84
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:107
 msgid "Renew"
 msgstr ""
 
-#: ../src/ka-tickets.c:107
+#: ../src/ka-main-window.c:136
 msgid "Error displaying service ticket information"
 msgstr ""
+
+#: ../src/ka-preferences.c:296
+msgid "Choose Certificate"
+msgstr "Välj certifikat"
+
+#: ../src/ka-preferences.c:299
+msgid "_Cancel"
+msgstr ""
+
+#: ../src/ka-preferences.c:300
+msgid "_Open"
+msgstr ""
+
+#: ../src/ka-preferences.c:312
+msgid "X509 Certificates"
+msgstr "X509-certifikat"
+
+#: ../src/ka-preferences.c:316
+msgid "all files"
+msgstr "alla filer"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:1
-msgid "Enabled plugins"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:2
-msgid "Forwardable ticket"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:3
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:4
-msgid "List of plugins that should be loaded and activated on startup."
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
+msgid "The Kerberos principal to acquire the ticket for"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:5
-msgid "Notify user when ticket becomes valid"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:6
-msgid "Notify user when ticket has expired"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:7
-msgid "Notify user when ticket is about to expire"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:8
-msgid "PKINIT CA certificates"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:9
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:3
 msgid "PKINIT identifier"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:10
-msgid "PKINIT trust anchors"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:11
-msgid "Prompt minutes before expiry"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:12
-msgid "Proxiable ticket"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:13
-msgid "Renewable ticket"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:14
-msgid "Requested tickets should be forwardable"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:15
-msgid "Requested tickets should be proxiable"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:16
-msgid "Requested tickets should be renewable"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:17
-msgid "Start prompting/displaying notifications that many minutes before expiry"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:18
-msgid "The kerberos principal to acquire the ticket for"
-msgstr ""
-
-#: ../src/krb5-auth-dialog.schemas.in.h:19
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:4
 msgid "The principal's public/private/certificate identifier when using PKINIT"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:20
-msgid "ticket expired notification"
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:5
+msgid "PKINIT trust anchors"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:21
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:6
+msgid "PKINIT CA certificates"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:7
+msgid "Prompt minutes before expiry"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:8
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:9
+msgid "Forwardable ticket"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:10
+msgid "Requested tickets should be forwardable"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:11
+msgid "Renewable ticket"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:12
+msgid "Requested tickets should be renewable"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:13
+msgid "Proxiable ticket"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:14
+msgid "Requested tickets should be proxiable"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:15
+msgid "Configuration tickets"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
+msgid "Show configuration tickets"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
+msgid "valid ticket notification"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:18
+msgid "Notify user when ticket becomes valid"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:19
 msgid "ticket expiring notification"
 msgstr ""
 
-#: ../src/krb5-auth-dialog.schemas.in.h:22
-msgid "valid ticket notification"
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:20
+msgid "Notify user when ticket is about to expire"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:21
+msgid "ticket expired notification"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:22
+msgid "Notify user when ticket has expired"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:23
+msgid "Enabled plugins"
+msgstr ""
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:24
+msgid "List of plugins that should be loaded and activated on startup."
 msgstr ""
 
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr ""
-
-#. Translators: those are keywords for the example control-center panel
-#: ../cc-panel/gnome-ka-panel.desktop.in.h:3
-msgid "Kerberos;Authentication"
-msgstr "Kerberos;Autentisering"
-
-#: ../cc-panel/gnome-ka-panel.desktop.in.h:4
-msgid "Set your Kerberos network authentication preferences"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:1
-msgid "Applet"
-msgstr "Panelprogram"
-
-#: ../cc-panel/ka-panel.ui.h:2
-msgid "Certificate and private key used for authentication"
-msgstr "Certifikat och privat nyckel som används för autentisering"
-
-#: ../cc-panel/ka-panel.ui.h:3
-msgid "If checked, request forwardable tickets"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:4
-msgid "If checked, request proxiable tickets"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:5
-msgid "If checked, request renewable tickets"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:6
-msgid "If checked, use a security token (Smartcard) to authenticate."
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:7
-msgid "Kerberos"
-msgstr "Kerberos"
-
-#: ../cc-panel/ka-panel.ui.h:8
-msgid "Kerberos User"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:9
-msgid "Kerberos principal:"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:10
-msgid "Notifications"
-msgstr "Notifieringar"
-
-#: ../cc-panel/ka-panel.ui.h:11
-msgid "PKINIT:"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:12
-msgid "Requested Kerberos tickets should be:"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:13
-msgid "Send notification about ticket expiry that many minutes before it finally expires"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:14
-msgid "Ticket Options"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:15
-msgid "Use Smartcard"
-msgstr "Använd smartkort"
-
-#: ../cc-panel/ka-panel.ui.h:16
-msgid "Userid:"
-msgstr ""
-
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:18
-msgid "Warn"
-msgstr "Varna"
-
-#: ../cc-panel/ka-panel.ui.h:19
-msgid "X509 trust anchors:"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:20
-msgid "_Browse..."
-msgstr "_Bläddra..."
-
-#: ../cc-panel/ka-panel.ui.h:21
-msgid "forwardable"
-msgstr ""
-
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../cc-panel/ka-panel.ui.h:23
-msgid "minutes before expiry"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:24
-msgid "proxiable"
-msgstr ""
-
-#: ../cc-panel/ka-panel.ui.h:25
-msgid "renewable"
-msgstr ""
-
-#: ../cc-panel/cc-ka-panel.c:345
-msgid "Choose Certificate"
-msgstr "Välj certifikat"
-
-#: ../cc-panel/cc-ka-panel.c:361
-msgid "X509 Certificates"
-msgstr "X509-certifikat"
-
-#: ../cc-panel/cc-ka-panel.c:365
-msgid "all files"
-msgstr "alla filer"
-
-#~ msgid "Appearance"
-#~ msgstr "Utseende"
-#~ msgid "Width in chars"
-#~ msgstr "Bredd i tecken"
-#~ msgid "Text"
-#~ msgstr "Text"
-#~ msgid "_About"
-#~ msgstr "_Om"
-#~ msgid "_Quit"
-#~ msgstr "A_vsluta"
-#~ msgid "_Password:"
-#~ msgstr "_Lösenord:"
-#~ msgid "Protocol error"
-#~ msgstr "Protokollfel"
-#~ msgid "Can't send request"
-#~ msgstr "Kan inte skicka begäran"
-#~ msgid "Old password"
-#~ msgstr "Gammalt lösenord"
-#~ msgid "while trying to change password."
-#~ msgstr "vid försök att ändra lösenordet."
 

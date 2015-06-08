@@ -1,4 +1,4 @@
-/* Krb5 Auth Applet -- Acquire and release kerberos tickets
+/* Krb5 Auth Applet -- Acquire and release Kerberos tickets
  *
  * (C) 2010 Guido Guenther <agx@sigxcpu.org>
  *

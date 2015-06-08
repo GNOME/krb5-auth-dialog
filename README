@@ -1,4 +1,4 @@
-krb5-auth-dialog is a simple dialog that monitors kerberos tickets, and
+krb5-auth-dialog is a simple dialog that monitors Kerberos tickets, and
 pops up a dialog when they are about to expire.  Eventually, we expect
 it to be part of GNOME.
 
@@ -51,8 +51,8 @@ A Note on Translations
 Kerberos doesn't translate either its prompts or its error messages.
 As the prompt is very visible, we need to translate it externally.  To
 do this, the etpo binary in etpo/ can be used to extract the public
-strings that kerberos uses.  We are checking that in for now, until
-kerberos gets translated.
+strings that Kerberos uses.  We are checking that in for now, until
+Kerberos gets translated.
 
 If your language doesn't have a translation yet and you want to provide one do a
 

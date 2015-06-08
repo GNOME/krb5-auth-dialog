@@ -1,4 +1,4 @@
-/* Krb5 Auth Applet -- Acquire and release kerberos tickets
+/* Krb5 Auth Applet -- Acquire and release Kerberos tickets
  *
  * (C) 2009,2013 Guido Guenther <agx@sigxcpu.org>
  *
@@ -306,7 +306,7 @@ ka_pwdialog_error (KaPwDialog *self, const char *msg)
 
     gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
                                               _
-                                              ("Couldn't acquire kerberos ticket: '%s'"),
+                                              ("Couldn't acquire Kerberos ticket: '%s'"),
                                               _(msg));
     gtk_widget_show (GTK_WIDGET (dialog));
     gtk_dialog_run (GTK_DIALOG (dialog));

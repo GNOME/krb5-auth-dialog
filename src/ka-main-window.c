@@ -1,6 +1,6 @@
 /* -*- c-file-style: "linux"; c-basic-offset: 4; indent-tabs-mode: nil; -*- *
  *
- * Krb5 Auth Applet -- Acquire and release kerberos tickets
+ * Krb5 Auth Applet -- Acquire and release Kerberos tickets
  *
  * (C) 2009,2011,2013 Guido Guenther <agx@sigxcpu.org>
  *

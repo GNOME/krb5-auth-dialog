@@ -40,40 +40,6 @@ Plugins are currently disabled by default. Individual plugins can be enabled via
 
 Enable pam and dummy plugions:
 .
-
-You can set the principal that is used to acquire tickets via:
-gsettings set org.gnome.KrbAuthDialog principal "principal@YOUR.REALM"
-
-You can set the time of the first password prompt via:
-gsettings set org.gnome.KrbAuthDialog prompt-minutes 30
-
-You can set the principals pkinit identifier via:
-gsettings set org.gnome.KrbAuthDialog pk-userid "FILE:/path/to/user.pem,/path/to/user.key"
-
-or if you're using a smartcard:
-gsettings set org.gnome.KrbAuthDialog pk-userid "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"
-
-DBus API
-========
-You can request a ticket granting ticket via DBus:
-
- dbus-send --print-reply --type=method_call \
-              --dest=org.gnome.KrbAuthDialog \
-               /org/gnome/KrbAuthDialog \
-               org.gnome.KrbAuthDialog.acquireTgt \
-               string:'principal'
-
-If the sent principal doesn't match the one currently in the ticket cache the
-request fails. To request a TGT for the "default" principal use string:''.
-
-See examples/tgt-signals.py for information about sent DBus signals.
-
-
-Plugins
-=======
-Plugins are currently disabled by default. Individual plugins can be enabled via gsettings:
-
-Enable pam and dummy plugions:
 gsettings set org.gnome.KrbAuthDialog.plugins enabled "['pam', 'dummy']"
 
 To list currently enabled plugins:

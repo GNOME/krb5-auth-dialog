@@ -2,15 +2,15 @@
 # Copyright (C) 2010, 2011 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
 #
-# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2010 - 2014.
+# Zdeněk Hataš <zdenek.hatas@gmail.com>, 2010 - 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-10-23 17:47+0000\n"
-"PO-Revision-Date: 2014-11-03 15:49+0100\n"
+"POT-Creation-Date: 2015-06-10 16:57+0000\n"
+"PO-Revision-Date: 2015-06-19 15:15+0100\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
 "Language: cs\n"
@@ -20,120 +20,117 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: ../src/krb5-auth-dialog.ui.h:1
+#: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
 msgstr "_Předvolby"
 
-#: ../src/krb5-auth-dialog.ui.h:2
+#: ../src/resources/ui/app-menu.ui.h:2
 msgid "_About"
 msgstr "O _aplikaci"
 
-#. Help item
-#: ../src/krb5-auth-dialog.ui.h:3 ../src/ka-applet.c:985
+#: ../src/resources/ui/app-menu.ui.h:3
+#: ../src/resources/ui/tray-icon-menu.ui.h:3
 msgid "_Help"
 msgstr "Nápo_věda"
 
-#. Quit
-#: ../src/krb5-auth-dialog.ui.h:4 ../src/ka-applet.c:993
+#: ../src/resources/ui/app-menu.ui.h:4
+#: ../src/resources/ui/tray-icon-menu.ui.h:4
 msgid "_Quit"
 msgstr "U_končit"
 
-#.
-#. * vim:ts:sts=4:sw=4:et:
-#.
-#: ../src/krb5-auth-dialog.ui.h:5 ../src/krb5-auth-dialog.desktop.in.h:1
-msgid "Kerberos Authentication"
-msgstr "Autentizace Kerberos"
+#: ../src/resources/ui/tray-icon-menu.ui.h:1
+msgid "Remove Credentials _Cache"
+msgstr "Odstranit _mezipaměť s pověřeními"
 
-#: ../src/krb5-auth-dialog.ui.h:6
-msgid "_Renew Ticket"
-msgstr "_Obnovit lístek"
+#: ../src/resources/ui/tray-icon-menu.ui.h:2
+msgid "_List Tickets"
+msgstr "_Vypsat lístky"
 
-#: ../src/krb5-auth-dialog.ui.h:7
+#: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Service Tickets"
 msgstr "Lístky služeb"
 
-#: ../src/krb5-auth-dialog.ui.h:8
+#: ../src/resources/ui/ka-preferences.ui.h:1
 msgid "Kerberos User"
 msgstr "Uživatel"
 
-#: ../src/krb5-auth-dialog.ui.h:9
+#: ../src/resources/ui/ka-preferences.ui.h:2
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
 "Název vašeho účtu Kerberos. Ponechte prázdné, pokud chcete použít aktuální "
 "uživatelské jméno."
 
-#: ../src/krb5-auth-dialog.ui.h:10
+#: ../src/resources/ui/ka-preferences.ui.h:3
 msgid "Kerberos principal:"
 msgstr "Principal:"
 
-#: ../src/krb5-auth-dialog.ui.h:11
+#: ../src/resources/ui/ka-preferences.ui.h:4
 msgid "Kerberos Ticket Options"
 msgstr "Vlastnosti lístku Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:12
+#: ../src/resources/ui/ka-preferences.ui.h:5
 msgid "Requested Kerberos tickets should be:"
 msgstr "Požadované lístky Kerberos mohou být:"
 
-#: ../src/krb5-auth-dialog.ui.h:13
+#: ../src/resources/ui/ka-preferences.ui.h:6
 msgid "forwardable"
 msgstr "přenositelný"
 
-#: ../src/krb5-auth-dialog.ui.h:14
+#: ../src/resources/ui/ka-preferences.ui.h:7
 msgid "If checked, request forwardable tickets"
 msgstr "Je-li zaškrtnuto, požadovat přenositelné (forwardable) lístky"
 
-#: ../src/krb5-auth-dialog.ui.h:15
+#: ../src/resources/ui/ka-preferences.ui.h:8
 msgid "renewable"
 msgstr "obnovitelný"
 
-#: ../src/krb5-auth-dialog.ui.h:16
+#: ../src/resources/ui/ka-preferences.ui.h:9
 msgid "If checked, request renewable tickets"
 msgstr "Je-li zaškrtnuto, požadovat obnovitelné (renewable) lístky"
 
-#: ../src/krb5-auth-dialog.ui.h:17
+#: ../src/resources/ui/ka-preferences.ui.h:10
 msgid "proxiable"
 msgstr "delegovatelný"
 
-#: ../src/krb5-auth-dialog.ui.h:18
+#: ../src/resources/ui/ka-preferences.ui.h:11
 msgid "If checked, request proxiable tickets"
 msgstr "Je-li zaškrtnuto, požadovat delegovatelné (proxiable) lístky"
 
-#: ../src/krb5-auth-dialog.ui.h:19
+#: ../src/resources/ui/ka-preferences.ui.h:12
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:20
+#: ../src/resources/ui/ka-preferences.ui.h:13
 msgid "Userid"
 msgstr "ID uživatele"
 
-#: ../src/krb5-auth-dialog.ui.h:21
+#: ../src/resources/ui/ka-preferences.ui.h:14
 msgid "Use Smartcard"
 msgstr "Použít čipovou kartu"
 
-#: ../src/krb5-auth-dialog.ui.h:22
+#: ../src/resources/ui/ka-preferences.ui.h:15
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
 "Je-li zaškrtnuto, používat k ověřování bezpečnostní token (čipovou kartu)."
 
-#: ../src/krb5-auth-dialog.ui.h:23
+#: ../src/resources/ui/ka-preferences.ui.h:16
 msgid "Certificate and private key used for authentication"
 msgstr "Certifikát a soukromý klíč použitý k autentizaci"
 
-#: ../src/krb5-auth-dialog.ui.h:24
+#: ../src/resources/ui/ka-preferences.ui.h:17
 msgid "_Browse..."
 msgstr "_Procházet…"
 
-#: ../src/krb5-auth-dialog.ui.h:25
+#: ../src/resources/ui/ka-preferences.ui.h:18
 msgid "X509 trust anchors"
 msgstr "Pevné body důvěry X509"
 
-#: ../src/krb5-auth-dialog.ui.h:26
+#: ../src/resources/ui/ka-preferences.ui.h:19
 msgid "Certificate used to verify digital signatures."
 msgstr "Certifikát použitý pro ověření digitálních podpisů."
 
-#: ../src/krb5-auth-dialog.ui.h:27
+#: ../src/resources/ui/ka-preferences.ui.h:20
 msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
@@ -141,20 +138,20 @@ msgstr ""
 "Nastavit použití certifikátů a čipových karet při síťové autentizaci "
 "Kerberos."
 
-#: ../src/krb5-auth-dialog.ui.h:28
+#: ../src/resources/ui/ka-preferences.ui.h:21
 msgid "PKINIT"
 msgstr "PKINIT"
 
-#: ../src/krb5-auth-dialog.ui.h:29
+#: ../src/resources/ui/ka-preferences.ui.h:22
 msgid "Notifications"
 msgstr "Upozornění"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:31
+#: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Upozornit"
 
-#: ../src/krb5-auth-dialog.ui.h:32
+#: ../src/resources/ui/ka-preferences.ui.h:25
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
@@ -163,60 +160,22 @@ msgstr ""
 "vypršením platnosti"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:34
+#: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "minut před vypršením platnosti lístku"
 
-#: ../src/ka-kerberos.c:176
-msgid "unknown error"
-msgstr "neznámá chyba"
+#: ../src/resources/ui/ka-pwdialog.ui.h:1
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Autentizace Kerberos"
 
-#: ../src/ka-kerberos.c:318
-msgid "Your ticket cache is currently empty"
-msgstr "Mezipaměť vašich přihlašovacích údajů je prázdná"
+#: ../src/resources/ui/ka-pwdialog.ui.h:2 ../src/ka-preferences.c:372
+msgid "_Cancel"
+msgstr "_Zrušit"
 
-#: ../src/ka-kerberos.c:349
-msgid "Expired"
-msgstr "Platnost vypršela"
-
-#: ../src/ka-kerberos.c:1038
-msgid " (No network connection)"
-msgstr "(žádné připojení k síti)"
-
-#: ../src/ka-pwdialog.c:229
-#, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "Nelze získat lístek: '%s'"
-
-#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:576
-#, c-format
-msgid "Your credentials expire in %d minute"
-msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "Vaše pověření údaje vyprší za %d minutu"
-msgstr[1] "Vaše pověření vyprší za %d minuty"
-msgstr[2] "Vaše pověření vyprší za %d minut"
-
-#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:581
-msgid "Your credentials have expired"
-msgstr "Vaše pověření vypršelo"
-
-#: ../src/ka-pwdialog.c:296
-msgid "Please enter your Kerberos password:"
-msgstr "Vložte prosím své heslo Kerberos:"
-
-#: ../src/ka-pwdialog.c:309
-#, c-format
-msgid "Please enter the password for '%s':"
-msgstr "Vložte prosím své heslo pro „%s“:"
-
-#: ../src/ka-pwdialog.c:327
-msgid "The password you entered is invalid"
-msgstr "Vložené heslo není platné"
-
-#: ../src/ka-pwdialog.c:343
-#, c-format
-msgid "%s Error"
-msgstr "Chyba %s"
+#: ../src/resources/ui/ka-pwdialog.ui.h:3
+msgid "_Renew Ticket"
+msgstr "_Obnovit lístek"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -1523,59 +1482,149 @@ msgstr "Špatné magické číslo pro GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Špatné magické číslo pro GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:570
+#: ../src/ka-applet.c:654
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Vaše pověření vyprší za %.2d:%.2dh"
 
-#: ../src/ka-applet.c:763
+#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:348
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "Vaše pověření údaje vyprší za %d minutu"
+msgstr[1] "Vaše pověření vyprší za %d minuty"
+msgstr[2] "Vaše pověření vyprší za %d minut"
+
+#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
+msgid "Your credentials have expired"
+msgstr "Vaše pověření vypršelo"
+
+#: ../src/ka-applet.c:837
 msgid "List Tickets"
 msgstr "Lístky služeb"
 
-#: ../src/ka-applet.c:773
+#: ../src/ka-applet.c:847
 msgid "Get Ticket"
 msgstr "Získat lístek"
 
-#: ../src/ka-applet.c:782
+#: ../src/ka-applet.c:856
 msgid "Don't show me this again"
 msgstr "Znovu nezobrazovat"
 
-#: ../src/ka-applet.c:789
+#: ../src/ka-applet.c:863
 msgid "Remove Credentials Cache"
 msgstr "Odstranit mezipaměť s pověřeními"
 
-#: ../src/ka-applet.c:849
+#: ../src/ka-applet.c:925
 msgid "You have valid Kerberos credentials."
 msgstr "Vaše pověření Kerberos jsou platná."
 
-#: ../src/ka-applet.c:851
+#: ../src/ka-applet.c:927
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Aktualizovali jste svá pověření Kerberos."
 
-#: ../src/ka-applet.c:854
+#: ../src/ka-applet.c:930
 msgid "Network credentials valid"
 msgstr "Síťová pověření jsou platná"
 
-#: ../src/ka-applet.c:873
+#: ../src/ka-applet.c:949
 msgid "Network credentials expiring"
 msgstr "Blíží se konec platnosti síťových pověření"
 
-#: ../src/ka-applet.c:890
+#: ../src/ka-applet.c:966
 msgid "Network credentials expired"
 msgstr "Platnost síťových pověření vypršela"
 
-#: ../src/ka-applet.c:891
+#: ../src/ka-applet.c:967
 msgid "Your Kerberos credentials have expired."
 msgstr "Platnost vašich pověření Kerberos vypršela."
 
-#: ../src/ka-applet.c:970
-msgid "Remove Credentials _Cache"
-msgstr "Odstranit _mezipaměť s pověřeními"
+#: ../src/ka-kerberos.c:176
+msgid "unknown error"
+msgstr "neznámá chyba"
 
-#. Ticket dialog
-#: ../src/ka-applet.c:979
-msgid "_List Tickets"
-msgstr "_Vypsat lístky"
+#: ../src/ka-kerberos.c:329
+msgid "Your ticket cache is currently empty"
+msgstr "Mezipaměť vašich přihlašovacích údajů je prázdná"
+
+#: ../src/ka-kerberos.c:360
+msgid "Expired"
+msgstr "Platnost vypršela"
+
+#: ../src/ka-kerberos.c:1049
+msgid " (No network connection)"
+msgstr "(žádné připojení k síti)"
+
+#: ../src/ka-main-window.c:77
+msgid "Principal"
+msgstr "Principal"
+
+#: ../src/ka-main-window.c:83
+msgid "Start Time"
+msgstr "Začátek platnosti"
+
+#: ../src/ka-main-window.c:89
+msgid "End Time"
+msgstr "Konec platnosti"
+
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:96
+msgid "Fwd"
+msgstr "Předat"
+
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:103
+msgid "Proxy"
+msgstr "Proxy"
+
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:110
+msgid "Renew"
+msgstr "Obnovit"
+
+#: ../src/ka-main-window.c:140
+msgid "Error displaying service ticket information"
+msgstr "Chyba zobrazení informací o lístku služby"
+
+#: ../src/ka-preferences.c:369
+msgid "Choose Certificate"
+msgstr "Vyberte certifikát"
+
+#: ../src/ka-preferences.c:373
+msgid "_Open"
+msgstr "_Otevřít"
+
+#: ../src/ka-preferences.c:385
+msgid "X509 Certificates"
+msgstr "Certifikáty X.509"
+
+#: ../src/ka-preferences.c:389
+msgid "all files"
+msgstr "všechny soubory"
+
+#: ../src/ka-pwdialog.c:149
+#, c-format
+msgid "%s Error"
+msgstr "Chyba %s"
+
+#: ../src/ka-pwdialog.c:309
+#, c-format
+#| msgid "Couldn't acquire kerberos ticket: '%s'"
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "Nelze získat lístek Kerberos: „%s“"
+
+#: ../src/ka-pwdialog.c:376
+msgid "Please enter your Kerberos password:"
+msgstr "Vložte prosím své heslo Kerberos:"
+
+#: ../src/ka-pwdialog.c:389
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Vložte prosím své heslo pro „%s“:"
+
+#: ../src/ka-pwdialog.c:407
+msgid "The password you entered is invalid"
+msgstr "Vložené heslo není platné"
 
 #: ../src/ka-tools.c:44
 #, c-format
@@ -1590,61 +1639,6 @@ msgstr ""
 #: ../src/ka-tools.c:84
 msgid "translator-credits"
 msgstr "Zdeněk Hataš <zdenek.hatas@gmail.com>"
-
-#: ../src/ka-main-window.c:74
-msgid "Principal"
-msgstr "Principal"
-
-#: ../src/ka-main-window.c:80
-msgid "Start Time"
-msgstr "Začátek platnosti"
-
-#: ../src/ka-main-window.c:86
-msgid "End Time"
-msgstr "Konec platnosti"
-
-#. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:93
-msgid "Fwd"
-msgstr "Předat"
-
-#. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:100
-msgid "Proxy"
-msgstr "Proxy"
-
-#. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:107
-msgid "Renew"
-msgstr "Obnovit"
-
-#: ../src/ka-main-window.c:136
-msgid "Error displaying service ticket information"
-msgstr "Chyba zobrazení informací o lístku služby"
-
-#: ../src/ka-preferences.c:296
-msgid "Choose Certificate"
-msgstr "Vyberte certifikát"
-
-#: ../src/ka-preferences.c:299
-msgid "_Cancel"
-msgstr "_Zrušit"
-
-#: ../src/ka-preferences.c:300
-msgid "_Open"
-msgstr "_Otevřít"
-
-#: ../src/ka-preferences.c:312
-msgid "X509 Certificates"
-msgstr "Certifikáty X.509"
-
-#: ../src/ka-preferences.c:316
-msgid "all files"
-msgstr "všechny soubory"
-
-#: ../src/krb5-auth-dialog.desktop.in.h:2
-msgid "Kerberos Network Authentication Dialog"
-msgstr "Dialog síťové autentizace Kerberos"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
 msgid ""
@@ -1665,6 +1659,10 @@ msgid ""
 msgstr ""
 "To je užitečné, když se potřebujete autentizovat k serveru Kerberos (KDC) "
 "poté, co se přihlásíte k počítači (např. na mobilním zařízení)."
+
+#: ../src/krb5-auth-dialog.desktop.in.h:2
+msgid "Kerberos Network Authentication Dialog"
+msgstr "Dialog síťové autentizace Kerberos"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"

@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-12-19 14:30+0000\n"
-"PO-Revision-Date: 2014-01-25 15:24+0800\n"
-"Last-Translator: YunQiang Su <wzssyqa@gmail.com>\n"
+"POT-Creation-Date: 2015-11-11 12:39+0000\n"
+"PO-Revision-Date: 2015-11-12 12:56+0800\n"
+"Last-Translator: liushuyu <liushuyu_011@126.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
@@ -20,188 +20,155 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../src/krb5-auth-dialog.ui.h:1
+#: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
 msgstr "首选项(_N)"
 
-#: ../src/krb5-auth-dialog.ui.h:2
+#: ../src/resources/ui/app-menu.ui.h:2
 msgid "_About"
 msgstr "关于(_A)"
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#: ../src/resources/ui/app-menu.ui.h:3
+#: ../src/resources/ui/tray-icon-menu.ui.h:3
 msgid "_Help"
 msgstr "帮助(_H)"
 
-#: ../src/krb5-auth-dialog.ui.h:4
+#: ../src/resources/ui/app-menu.ui.h:4
+#: ../src/resources/ui/tray-icon-menu.ui.h:4
 msgid "_Quit"
 msgstr "退出(_Q)"
 
-#.
-#. * vim:ts:sts=4:sw=4:et:
-#.
-#: ../src/krb5-auth-dialog.ui.h:5 ../src/krb5-auth-dialog.desktop.in.h:1
-msgid "Kerberos Authentication"
-msgstr "Kerberos 认证"
+#: ../src/resources/ui/tray-icon-menu.ui.h:1
+msgid "Remove Credentials _Cache"
+msgstr "移除证书缓存(_C)"
 
-#: ../src/krb5-auth-dialog.ui.h:6
-msgid "_Renew Ticket"
-msgstr "更新票据(_R)"
+#: ../src/resources/ui/tray-icon-menu.ui.h:2
+msgid "_List Tickets"
+msgstr "列出票据(_L)"
 
-#: ../src/krb5-auth-dialog.ui.h:7
+#: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Service Tickets"
 msgstr "服务票据"
 
-#: ../src/krb5-auth-dialog.ui.h:8
+#: ../src/resources/ui/ka-preferences.ui.h:1
 msgid "Kerberos User"
 msgstr "Kerberos 用户"
 
-#: ../src/krb5-auth-dialog.ui.h:9
+#: ../src/resources/ui/ka-preferences.ui.h:2
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr "您的 Kerberos 帐号名。留空使用当前用户名。"
 
-#: ../src/krb5-auth-dialog.ui.h:10
+#: ../src/resources/ui/ka-preferences.ui.h:3
 msgid "Kerberos principal:"
 msgstr "Kerberos 委托方："
 
-#: ../src/krb5-auth-dialog.ui.h:11
+#: ../src/resources/ui/ka-preferences.ui.h:4
 msgid "Kerberos Ticket Options"
 msgstr "Kerberos 票据选项"
 
-#: ../src/krb5-auth-dialog.ui.h:12
+#: ../src/resources/ui/ka-preferences.ui.h:5
 msgid "Requested Kerberos tickets should be:"
 msgstr "请求的 Kerberos 票据应该："
 
-#: ../src/krb5-auth-dialog.ui.h:13
+#: ../src/resources/ui/ka-preferences.ui.h:6
 msgid "forwardable"
 msgstr "可转发的"
 
-#: ../src/krb5-auth-dialog.ui.h:14
+#: ../src/resources/ui/ka-preferences.ui.h:7
 msgid "If checked, request forwardable tickets"
 msgstr "如果选择，请求可转发的票据"
 
-#: ../src/krb5-auth-dialog.ui.h:15
+#: ../src/resources/ui/ka-preferences.ui.h:8
 msgid "renewable"
 msgstr "可更新的"
 
-#: ../src/krb5-auth-dialog.ui.h:16
+#: ../src/resources/ui/ka-preferences.ui.h:9
 msgid "If checked, request renewable tickets"
 msgstr "如果选择，请求可更新的票据"
 
-#: ../src/krb5-auth-dialog.ui.h:17
+#: ../src/resources/ui/ka-preferences.ui.h:10
 msgid "proxiable"
 msgstr "可代理的"
 
-#: ../src/krb5-auth-dialog.ui.h:18
+#: ../src/resources/ui/ka-preferences.ui.h:11
 msgid "If checked, request proxiable tickets"
 msgstr "如果选择，请求可代理的票据"
 
-#: ../src/krb5-auth-dialog.ui.h:19
+#: ../src/resources/ui/ka-preferences.ui.h:12
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:20
+#: ../src/resources/ui/ka-preferences.ui.h:13
 msgid "Userid"
 msgstr "用户标识"
 
-#: ../src/krb5-auth-dialog.ui.h:21
+#: ../src/resources/ui/ka-preferences.ui.h:14
 msgid "Use Smartcard"
 msgstr "使用智能卡"
 
-#: ../src/krb5-auth-dialog.ui.h:22
+#: ../src/resources/ui/ka-preferences.ui.h:15
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr "如果选择，使用加密令牌(智能卡)认证。"
 
-#: ../src/krb5-auth-dialog.ui.h:23
+#: ../src/resources/ui/ka-preferences.ui.h:16
 msgid "Certificate and private key used for authentication"
 msgstr "用于认证的证书和私钥"
 
-#: ../src/krb5-auth-dialog.ui.h:24
+#: ../src/resources/ui/ka-preferences.ui.h:17
 msgid "_Browse..."
 msgstr "浏览(_B)..."
 
-#: ../src/krb5-auth-dialog.ui.h:25
+#: ../src/resources/ui/ka-preferences.ui.h:18
 msgid "X509 trust anchors"
 msgstr "X509 信任标记"
 
-#: ../src/krb5-auth-dialog.ui.h:26
+#: ../src/resources/ui/ka-preferences.ui.h:19
 msgid "Certificate used to verify digital signatures."
 msgstr "用于校验数字签名的证书。"
 
-#: ../src/krb5-auth-dialog.ui.h:27
+#: ../src/resources/ui/ka-preferences.ui.h:20
 msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
 msgstr "为您的 Kerberos 网络认证配置证书和智能卡。"
 
-#: ../src/krb5-auth-dialog.ui.h:28
+#: ../src/resources/ui/ka-preferences.ui.h:21
 msgid "PKINIT"
 msgstr "PKINIT"
 
-#: ../src/krb5-auth-dialog.ui.h:29
+#: ../src/resources/ui/ka-preferences.ui.h:22
 msgid "Notifications"
 msgstr "通知"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:31
+#. Used in combination:
+#: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "警告"
 
-#: ../src/krb5-auth-dialog.ui.h:32
+#: ../src/resources/ui/ka-preferences.ui.h:25
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr "在票据最终过期前若干分钟发送票据过期通知"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:34
+#. Used in combination:
+#: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "分钟后票据过期"
 
-#: ../src/ka-kerberos.c:177
-msgid "unknown error"
-msgstr "未知错误"
+#: ../src/resources/ui/ka-pwdialog.ui.h:1
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Kerberos 认证"
 
-#: ../src/ka-kerberos.c:319
-msgid "Your ticket cache is currently empty"
-msgstr "您的票据缓存目前为空"
+#: ../src/resources/ui/ka-pwdialog.ui.h:2 ../src/ka-preferences.c:372
+msgid "_Cancel"
+msgstr "取消(_C)"
 
-#: ../src/ka-kerberos.c:350
-msgid "Expired"
-msgstr "已过期"
-
-#: ../src/ka-pwdialog.c:230
-#, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "无法获取 Kerberos 票据：'%s'"
-
-#: ../src/ka-pwdialog.c:269 ../src/ka-applet.c:572
-#, c-format
-msgid "Your credentials expire in %d minute"
-msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "您的证书于 %d 分钟后过期"
-
-#: ../src/ka-pwdialog.c:274 ../src/ka-applet.c:577
-msgid "Your credentials have expired"
-msgstr "您的证书已过期"
-
-#: ../src/ka-pwdialog.c:297
-msgid "Please enter your Kerberos password:"
-msgstr "请输入您的 Kerberos 密码："
-
-#: ../src/ka-pwdialog.c:310
-#, c-format
-msgid "Please enter the password for '%s':"
-msgstr "请输入 '%s' 的密码："
-
-#: ../src/ka-pwdialog.c:328
-msgid "The password you entered is invalid"
-msgstr "您输入的密码不正确"
-
-#: ../src/ka-pwdialog.c:344
-#, c-format
-msgid "%s Error"
-msgstr "%s 错误"
+#: ../src/resources/ui/ka-pwdialog.ui.h:3
+msgid "_Renew Ticket"
+msgstr "更新票据(_R)"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -1508,61 +1475,148 @@ msgstr "GSSAPI OID 的魔数有误"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "GSSAPI  QUEUE 的魔数有误"
 
-#: ../src/ka-applet.c:566
+#: ../src/ka-applet.c:654
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "您的证书将于 %.2d:%.2dh 后过期"
 
-#: ../src/ka-applet.c:759
+#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:348
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "您的证书于 %d 分钟后过期"
+
+#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
+msgid "Your credentials have expired"
+msgstr "您的证书已过期"
+
+#: ../src/ka-applet.c:837
 msgid "List Tickets"
 msgstr "列出票据"
 
-#: ../src/ka-applet.c:769
+#: ../src/ka-applet.c:847
 msgid "Get Ticket"
 msgstr "获取票据"
 
-#: ../src/ka-applet.c:778
+#: ../src/ka-applet.c:856
 msgid "Don't show me this again"
 msgstr "不再显示此信息"
 
-#: ../src/ka-applet.c:785
+#: ../src/ka-applet.c:863
 msgid "Remove Credentials Cache"
 msgstr "移除证书缓存"
 
-#: ../src/ka-applet.c:845
+#: ../src/ka-applet.c:925
 msgid "You have valid Kerberos credentials."
 msgstr "您的 Kerberos 证书有效。"
 
-#: ../src/ka-applet.c:847
+#: ../src/ka-applet.c:927
 msgid "You've refreshed your Kerberos credentials."
 msgstr "您已更新自己的 Kerberos 证书。"
 
-#: ../src/ka-applet.c:850
+#: ../src/ka-applet.c:930
 msgid "Network credentials valid"
 msgstr "网络证书有效"
 
-#: ../src/ka-applet.c:869
+#: ../src/ka-applet.c:949
 msgid "Network credentials expiring"
 msgstr "网络证书即将过期"
 
-#: ../src/ka-applet.c:886
+#: ../src/ka-applet.c:966
 msgid "Network credentials expired"
 msgstr "网络证书已过期"
 
-#: ../src/ka-applet.c:887
+#: ../src/ka-applet.c:967
 msgid "Your Kerberos credentials have expired."
 msgstr "您的 Kerberos 证书已过期。"
 
-#: ../src/ka-applet.c:967
-msgid "Remove Credentials _Cache"
-msgstr "移除证书缓存(_C)"
+#: ../src/ka-kerberos.c:176
+msgid "unknown error"
+msgstr "未知错误"
 
-#. Ticket dialog
-#: ../src/ka-applet.c:978
-msgid "_List Tickets"
-msgstr "列出票据(_L)"
+#: ../src/ka-kerberos.c:329
+msgid "Your ticket cache is currently empty"
+msgstr "您的票据缓存目前为空"
 
-#: ../src/ka-tools.c:45
+#: ../src/ka-kerberos.c:360
+msgid "Expired"
+msgstr "已过期"
+
+#: ../src/ka-kerberos.c:1049
+msgid " (No network connection)"
+msgstr "(无网络连接)"
+
+#: ../src/ka-main-window.c:77
+msgid "Principal"
+msgstr "委托方"
+
+#: ../src/ka-main-window.c:83
+msgid "Start Time"
+msgstr "开始时间"
+
+#: ../src/ka-main-window.c:89
+msgid "End Time"
+msgstr "结束时间"
+
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:96
+msgid "Fwd"
+msgstr "转发"
+
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:103
+msgid "Proxy"
+msgstr "代理"
+
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:110
+msgid "Renew"
+msgstr "更新"
+
+#: ../src/ka-main-window.c:140
+msgid "Error displaying service ticket information"
+msgstr "显示服务票据信息出错"
+
+#: ../src/ka-preferences.c:369
+msgid "Choose Certificate"
+msgstr "选择证书"
+
+#: ../src/ka-preferences.c:373
+msgid "_Open"
+msgstr "打开(_O)"
+
+#: ../src/ka-preferences.c:385
+msgid "X509 Certificates"
+msgstr "X509 证书"
+
+#: ../src/ka-preferences.c:389
+msgid "all files"
+msgstr "所有文件"
+
+#: ../src/ka-pwdialog.c:149
+#, c-format
+msgid "%s Error"
+msgstr "%s 错误"
+
+#: ../src/ka-pwdialog.c:309
+#, c-format
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "无法获取 Kerberos 票据：%s"
+
+#: ../src/ka-pwdialog.c:376
+msgid "Please enter your Kerberos password:"
+msgstr "请输入您的 Kerberos 密码："
+
+#: ../src/ka-pwdialog.c:389
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "请输入 '%s' 的密码："
+
+#: ../src/ka-pwdialog.c:407
+msgid "The password you entered is invalid"
+msgstr "您输入的密码不正确"
+
+#: ../src/ka-tools.c:44
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1572,58 +1626,11 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:85
+#: ../src/ka-tools.c:84
 msgid "translator-credits"
 msgstr ""
 "Wylmer Wang <wantinghard@gmail.com>, 2010, 2013\n"
 "Aron Xu <aronxu@gnome.org>, 2011"
-
-#: ../src/ka-main-window.c:75
-msgid "Principal"
-msgstr "委托方"
-
-#: ../src/ka-main-window.c:81
-msgid "Start Time"
-msgstr "开始时间"
-
-#: ../src/ka-main-window.c:87
-msgid "End Time"
-msgstr "结束时间"
-
-#. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:94
-msgid "Fwd"
-msgstr "转发"
-
-#. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:101
-msgid "Proxy"
-msgstr "代理"
-
-#. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:108
-msgid "Renew"
-msgstr "更新"
-
-#: ../src/ka-main-window.c:137
-msgid "Error displaying service ticket information"
-msgstr "显示服务票据信息出错"
-
-#: ../src/ka-preferences.c:297
-msgid "Choose Certificate"
-msgstr "选择证书"
-
-#: ../src/ka-preferences.c:313
-msgid "X509 Certificates"
-msgstr "X509 证书"
-
-#: ../src/ka-preferences.c:317
-msgid "all files"
-msgstr "所有文件"
-
-#: ../src/krb5-auth-dialog.desktop.in.h:2
-msgid "Kerberos Network Authentication Dialog"
-msgstr "Kerberos 网络认证对话框"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
 msgid ""
@@ -1633,14 +1640,18 @@ msgid ""
 "your ticket automatically if possible."
 msgstr ""
 "Kerberos 认证允许您列出当前的 Kerberos 票据，并请求新的票据(认证到 Kerberos "
-"服务器)。它也会在您的 Kerberos 证书将要过期时通知您，如果可能也会自动更新票据。"
+"服务器)。它也会在您的 Kerberos 证书将要过期时通知您，如果可能也会自动更新票"
+"据。"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:2
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
-msgstr ""
-"这有助于您在登录桌面后在 Kerberos 服务器(KDC)上认证(如在移动设备上)。"
+msgstr "这有助于您在登录桌面后在 Kerberos 服务器(KDC)上认证(如在移动设备上)。"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:2
+msgid "Kerberos Network Authentication Dialog"
+msgstr "Kerberos 网络认证对话框"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
@@ -1758,9 +1769,6 @@ msgstr "警告：在此系统上执行 q-agent setuid 是危险的\n"
 
 #~ msgid "Set your Kerberos network authentication preferences"
 #~ msgstr "设置您的 Kerberos 网络认证首选参数"
-
-#~ msgid "Network Authentication"
-#~ msgstr "网络认证"
 
 #~ msgid ""
 #~ "There was an error displaying %s:\n"

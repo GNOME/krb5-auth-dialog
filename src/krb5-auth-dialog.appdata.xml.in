@@ -20,4 +20,10 @@
   </screenshots>
   <url type="homepage">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
   <updatecontact>agx_at_sigxcpu.org</updatecontact>
+  <kudos>
+    <kudo>AppMenu</kudo>
+    <kudo>HiDpiIcon</kudo>
+    <kudo>ModernToolkit</kudo>
+    <kudo>Notifications</kudo>
+  </kudos>
 </application>

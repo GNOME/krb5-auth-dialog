@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-06-17 22:15+0000\n"
-"PO-Revision-Date: 2014-06-18 14:09+0200\n"
+"POT-Creation-Date: 2016-03-09 12:49+0000\n"
+"PO-Revision-Date: 2016-03-23 10:18+0200\n"
 "Last-Translator: Tom Tryfonidis <tomtryf@gmail.com>\n"
 "Language-Team: team@gnome.gr\n"
 "Language: el\n"
@@ -18,122 +18,121 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.6.5\n"
+"X-Generator: Poedit 1.8.7\n"
 "X-Project-Style: gnome\n"
 
-#: ../src/krb5-auth-dialog.ui.h:1
+#: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
 msgstr "Προ_τιμήσεις"
 
-#: ../src/krb5-auth-dialog.ui.h:2
+#: ../src/resources/ui/app-menu.ui.h:2
 msgid "_About"
 msgstr "_Περί"
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#: ../src/resources/ui/app-menu.ui.h:3
+#: ../src/resources/ui/tray-icon-menu.ui.h:3
 msgid "_Help"
 msgstr "_Βοήθεια"
 
-#: ../src/krb5-auth-dialog.ui.h:4
+#: ../src/resources/ui/app-menu.ui.h:4
+#: ../src/resources/ui/tray-icon-menu.ui.h:4
 msgid "_Quit"
 msgstr "Έ_ξοδος"
 
-#.
-#. * vim:ts:sts=4:sw=4:et:
-#.
-#: ../src/krb5-auth-dialog.ui.h:5 ../src/krb5-auth-dialog.desktop.in.h:1
-msgid "Kerberos Authentication"
-msgstr "Πιστοποίηση Kerberos"
+#: ../src/resources/ui/tray-icon-menu.ui.h:1
+msgid "Remove Credentials _Cache"
+msgstr "Αφαίρεση διαπιστευτηρίων _κρυφής μνήμης"
 
-#: ../src/krb5-auth-dialog.ui.h:6
-msgid "_Renew Ticket"
-msgstr "_Ανανέωση εισιτηρίου"
+#: ../src/resources/ui/tray-icon-menu.ui.h:2
+msgid "_List Tickets"
+msgstr "_Λίστα εισιτηρίων"
 
-#: ../src/krb5-auth-dialog.ui.h:7
+#: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Service Tickets"
 msgstr "Εισιτήρια υπηρεσίας"
 
-#: ../src/krb5-auth-dialog.ui.h:8
+#: ../src/resources/ui/ka-preferences.ui.h:1
 msgid "Kerberos User"
 msgstr "Χρήστης Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:9
+#: ../src/resources/ui/ka-preferences.ui.h:2
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
 "Το όνομα του λογαριασμού σας Kerberos. Αφήστε κενό για να χρησιμοποιήσετε το "
 "τρέχον όνομα χρήστη."
 
-#: ../src/krb5-auth-dialog.ui.h:10
+#: ../src/resources/ui/ka-preferences.ui.h:3
 msgid "Kerberos principal:"
 msgstr "Κύριο του Kerberos:"
 
-#: ../src/krb5-auth-dialog.ui.h:11
+#: ../src/resources/ui/ka-preferences.ui.h:4
 msgid "Kerberos Ticket Options"
 msgstr "Επιλογές εισιτηρίου του Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:12
+#: ../src/resources/ui/ka-preferences.ui.h:5
 msgid "Requested Kerberos tickets should be:"
 msgstr "Τα εισιτήρια του Kerberos που ζητήθηκαν πρέπει να είναι:"
 
-#: ../src/krb5-auth-dialog.ui.h:13
+#: ../src/resources/ui/ka-preferences.ui.h:6
 msgid "forwardable"
-msgstr "προωθήσιμα"
+msgstr "προωθήσιμο"
 
-#: ../src/krb5-auth-dialog.ui.h:14
+#: ../src/resources/ui/ka-preferences.ui.h:7
 msgid "If checked, request forwardable tickets"
 msgstr "Αν σημειωθεί, αίτηση προωθήσιμων εισιτηρίων"
 
-#: ../src/krb5-auth-dialog.ui.h:15
+#: ../src/resources/ui/ka-preferences.ui.h:8
 msgid "renewable"
 msgstr "ανανεώσιμο"
 
-#: ../src/krb5-auth-dialog.ui.h:16
+#: ../src/resources/ui/ka-preferences.ui.h:9
 msgid "If checked, request renewable tickets"
 msgstr "Αν σημειωθεί, αίτηση ανανεώσιμων εισιτηρίων"
 
-#: ../src/krb5-auth-dialog.ui.h:17
+#: ../src/resources/ui/ka-preferences.ui.h:10
 msgid "proxiable"
 msgstr "με μεσολάβηση"
 
-#: ../src/krb5-auth-dialog.ui.h:18
+#: ../src/resources/ui/ka-preferences.ui.h:11
 msgid "If checked, request proxiable tickets"
 msgstr "Αν σημειωθεί, αίτηση εισιτηρίων με μεσολάβηση"
 
-#: ../src/krb5-auth-dialog.ui.h:19
+#: ../src/resources/ui/ka-preferences.ui.h:12
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:20
+#: ../src/resources/ui/ka-preferences.ui.h:13
 msgid "Userid"
 msgstr "Αναγνωριστικό χρήστη"
 
-#: ../src/krb5-auth-dialog.ui.h:21
+#: ../src/resources/ui/ka-preferences.ui.h:14
 msgid "Use Smartcard"
 msgstr "Χρήση έξυπνης κάρτας"
 
-#: ../src/krb5-auth-dialog.ui.h:22
+#: ../src/resources/ui/ka-preferences.ui.h:15
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
 "Αν σημειωθεί, χρησιμοποιήστε ένα διακριτικό ασφάλειας (έξυπνη κάρτα) για "
 "πιστοποίηση."
 
-#: ../src/krb5-auth-dialog.ui.h:23
+#: ../src/resources/ui/ka-preferences.ui.h:16
 msgid "Certificate and private key used for authentication"
 msgstr "Χρησιμοποιούμενα πιστοποιητικό και ιδιωτικό κλειδί για πιστοποίηση"
 
-#: ../src/krb5-auth-dialog.ui.h:24
+#: ../src/resources/ui/ka-preferences.ui.h:17
 msgid "_Browse..."
 msgstr "_Περιήγηση..."
 
-#: ../src/krb5-auth-dialog.ui.h:25
+#: ../src/resources/ui/ka-preferences.ui.h:18
 msgid "X509 trust anchors"
 msgstr "έμπιστες άγκυρες X509"
 
-#: ../src/krb5-auth-dialog.ui.h:26
+#: ../src/resources/ui/ka-preferences.ui.h:19
 msgid "Certificate used to verify digital signatures."
 msgstr "Χρησιμοποιούμενο πιστοποιητικό για επιβεβαίωση ψηφιακών υπογραφών."
 
-#: ../src/krb5-auth-dialog.ui.h:27
+#: ../src/resources/ui/ka-preferences.ui.h:20
 msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
@@ -141,80 +140,43 @@ msgstr ""
 "Ρυθμίστε τη χρήση των πιστοποιητικών και έξυπνων καρτών για πιστοποίηση "
 "δικτύου Kerberos."
 
-#: ../src/krb5-auth-dialog.ui.h:28
+#: ../src/resources/ui/ka-preferences.ui.h:21
 msgid "PKINIT"
 msgstr "PKINIT"
 
-#: ../src/krb5-auth-dialog.ui.h:29
+#: ../src/resources/ui/ka-preferences.ui.h:22
 msgid "Notifications"
 msgstr "Ειδοποιήσεις"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:31
+#. Used in combination:
+#: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Προειδοποίηση"
 
-#: ../src/krb5-auth-dialog.ui.h:32
+#: ../src/resources/ui/ka-preferences.ui.h:25
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr ""
 "Αποστολή ειδοποίησης για λήξη εισιτηρίου μετά τόσα λεπτά, πριν τελικά λήξει"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:34
+#. Used in combination:
+#: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "λεπτά πριν τη λήξη του εισιτηρίου"
 
-#: ../src/ka-kerberos.c:176
-msgid "unknown error"
-msgstr "άγνωστο σφάλμα"
+#: ../src/resources/ui/ka-pwdialog.ui.h:1
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Πιστοποίηση Kerberos"
 
-#: ../src/ka-kerberos.c:318
-msgid "Your ticket cache is currently empty"
-msgstr "Η κρυφή μνήμη του εισιτηρίου είναι προς το παρόν κενή"
+#: ../src/resources/ui/ka-pwdialog.ui.h:2 ../src/ka-preferences.c:372
+msgid "_Cancel"
+msgstr "Ακύ_ρωση"
 
-#: ../src/ka-kerberos.c:349
-msgid "Expired"
-msgstr "Ληγμένο"
-
-#: ../src/ka-kerberos.c:1034
-msgid " (No network connection)"
-msgstr "Δεν υπάρχει σύνδεση δικτύου"
-
-#: ../src/ka-pwdialog.c:229
-#, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "Αδύνατη η λήψη εισιτηρίου kerberos: '%s'"
-
-#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:576
-#, c-format
-msgid "Your credentials expire in %d minute"
-msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "Τα διαπιστευτήρια λήγουν σε %d λεπτό"
-msgstr[1] "Τα διαπιστευτήρια λήγουν σε %d λεπτά"
-
-#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:581
-msgid "Your credentials have expired"
-msgstr "Τα διαπιστευτήρια έχουν λήξει"
-
-#: ../src/ka-pwdialog.c:296
-msgid "Please enter your Kerberos password:"
-msgstr "Παρακαλούμε, εισάγετε τον νέο σας κωδικό πρόσβασης Kerberos:"
-
-#: ../src/ka-pwdialog.c:309
-#, c-format
-msgid "Please enter the password for '%s':"
-msgstr "Παρακαλούμε, εισάγετε τον κωδικό πρόσβασης για το '%s':"
-
-#: ../src/ka-pwdialog.c:327
-msgid "The password you entered is invalid"
-msgstr "Ο κωδικός πρόσβασης που εισάγατε είναι άκυρος"
-
-#: ../src/ka-pwdialog.c:343
-#, c-format
-msgid "%s Error"
-msgstr "Σφάλμα %s"
+#: ../src/resources/ui/ka-pwdialog.ui.h:3
+msgid "_Renew Ticket"
+msgstr "_Ανανέωση εισιτηρίου"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -1536,59 +1498,147 @@ msgstr "Εσφαλμένος μαγικός αριθμός για GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Εσφαλμένος μαγικός αριθμός για GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:570
+#: ../src/ka-applet.c:654
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Τα διαπιστευτήρια λήγουν σε %.2d:%.2dh"
 
-#: ../src/ka-applet.c:763
+#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:348
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "Τα διαπιστευτήρια λήγουν σε %d λεπτό"
+msgstr[1] "Τα διαπιστευτήρια λήγουν σε %d λεπτά"
+
+#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
+msgid "Your credentials have expired"
+msgstr "Τα διαπιστευτήρια έχουν λήξει"
+
+#: ../src/ka-applet.c:837
 msgid "List Tickets"
 msgstr "Λίστα εισιτηρίων"
 
-#: ../src/ka-applet.c:773
+#: ../src/ka-applet.c:847
 msgid "Get Ticket"
 msgstr "Λήψη εισιτηρίου"
 
-#: ../src/ka-applet.c:782
+#: ../src/ka-applet.c:856
 msgid "Don't show me this again"
 msgstr "Να μην εμφανιστεί ξανά"
 
-#: ../src/ka-applet.c:789
+#: ../src/ka-applet.c:863
 msgid "Remove Credentials Cache"
 msgstr "Αφαίρεση κρυφής μνήμης διαπιστευτηρίων"
 
-#: ../src/ka-applet.c:849
+#: ../src/ka-applet.c:925
 msgid "You have valid Kerberos credentials."
 msgstr "Έχετε έγκυρα διαπιστευτήρια Kerberos."
 
-#: ../src/ka-applet.c:851
+#: ../src/ka-applet.c:927
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Έχετε ανανεώσει τα διαπιστευτήρια του Kerberos."
 
-#: ../src/ka-applet.c:854
+#: ../src/ka-applet.c:930
 msgid "Network credentials valid"
 msgstr "Έγκυρα διαπιστευτήρια δικτύου"
 
-#: ../src/ka-applet.c:873
+#: ../src/ka-applet.c:949
 msgid "Network credentials expiring"
 msgstr "Τα διαπιστευτήρια δικτύου λήγουν"
 
-#: ../src/ka-applet.c:890
+#: ../src/ka-applet.c:966
 msgid "Network credentials expired"
 msgstr "Τα διαπιστευτήρια δικτύου έληξαν"
 
-#: ../src/ka-applet.c:891
+#: ../src/ka-applet.c:967
 msgid "Your Kerberos credentials have expired."
 msgstr "Τα διαπιστευτήρια του Kerberos σας έχουν λήξει."
 
-#: ../src/ka-applet.c:971
-msgid "Remove Credentials _Cache"
-msgstr "Αφαίρεση διαπιστευτηρίων _κρυφής μνήμης"
+#: ../src/ka-kerberos.c:176
+msgid "unknown error"
+msgstr "άγνωστο σφάλμα"
 
-#. Ticket dialog
-#: ../src/ka-applet.c:982
-msgid "_List Tickets"
-msgstr "_Λίστα εισιτηρίων"
+#: ../src/ka-kerberos.c:329
+msgid "Your ticket cache is currently empty"
+msgstr "Η κρυφή μνήμη του εισιτηρίου είναι προς το παρόν κενή"
+
+#: ../src/ka-kerberos.c:360
+msgid "Expired"
+msgstr "Ληγμένο"
+
+#: ../src/ka-kerberos.c:1049
+msgid " (No network connection)"
+msgstr "Δεν υπάρχει σύνδεση δικτύου"
+
+#: ../src/ka-main-window.c:77
+msgid "Principal"
+msgstr "Κύριο"
+
+#: ../src/ka-main-window.c:83
+msgid "Start Time"
+msgstr "Χρόνος έναρξης"
+
+#: ../src/ka-main-window.c:89
+msgid "End Time"
+msgstr "Χρόνος λήξης"
+
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:96
+msgid "Fwd"
+msgstr "Προωθήσιμο"
+
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:103
+msgid "Proxy"
+msgstr "Διαμεσολαβητής"
+
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:110
+msgid "Renew"
+msgstr "Ανανεώσιμο"
+
+#: ../src/ka-main-window.c:140
+msgid "Error displaying service ticket information"
+msgstr "Σφάλμα εμφάνισης πληροφοριών εισιτηρίου υπηρεσίας"
+
+#: ../src/ka-preferences.c:369
+msgid "Choose Certificate"
+msgstr "Επιλέξτε πιστοποιητικό"
+
+#: ../src/ka-preferences.c:373
+msgid "_Open"
+msgstr "Άν_οιγμα"
+
+#: ../src/ka-preferences.c:385
+msgid "X509 Certificates"
+msgstr "Πιστοποιητικά X509"
+
+#: ../src/ka-preferences.c:389
+msgid "all files"
+msgstr "όλα τα αρχεία"
+
+#: ../src/ka-pwdialog.c:149
+#, c-format
+msgid "%s Error"
+msgstr "Σφάλμα %s"
+
+#: ../src/ka-pwdialog.c:309
+#, c-format
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "Αδύνατη η λήψη εισιτηρίου Kerberos: '%s'"
+
+#: ../src/ka-pwdialog.c:376
+msgid "Please enter your Kerberos password:"
+msgstr "Παρακαλούμε, εισάγετε τον νέο σας κωδικό πρόσβασης Kerberos:"
+
+#: ../src/ka-pwdialog.c:389
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Παρακαλούμε, εισάγετε τον κωδικό πρόσβασης για το '%s':"
+
+#: ../src/ka-pwdialog.c:407
+msgid "The password you entered is invalid"
+msgstr "Ο κωδικός πρόσβασης που εισάγατε είναι άκυρος"
 
 #: ../src/ka-tools.c:44
 #, c-format
@@ -1607,53 +1657,6 @@ msgstr ""
 " Δημήτρης Σπίγγος <dmtrs32@gmail.com>\n"
 " Μαρία Μαυρίδου <mavridou@gmail.com>\n"
 "Για περισσότερα δείτε: http://gnome.gr"
-
-#: ../src/ka-main-window.c:74
-msgid "Principal"
-msgstr "Κύριο"
-
-#: ../src/ka-main-window.c:80
-msgid "Start Time"
-msgstr "Χρόνος έναρξης"
-
-#: ../src/ka-main-window.c:86
-msgid "End Time"
-msgstr "Χρόνος λήξης"
-
-#. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:93
-msgid "Fwd"
-msgstr "Προωθήσιμο"
-
-#. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:100
-msgid "Proxy"
-msgstr "Διαμεσολαβητής"
-
-#. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:107
-msgid "Renew"
-msgstr "Ανανεώσιμο"
-
-#: ../src/ka-main-window.c:136
-msgid "Error displaying service ticket information"
-msgstr "Σφάλμα εμφάνισης πληροφοριών εισιτηρίου υπηρεσίας"
-
-#: ../src/ka-preferences.c:296
-msgid "Choose Certificate"
-msgstr "Επιλέξτε πιστοποιητικό"
-
-#: ../src/ka-preferences.c:312
-msgid "X509 Certificates"
-msgstr "Πιστοποιητικά X509"
-
-#: ../src/ka-preferences.c:316
-msgid "all files"
-msgstr "όλα τα αρχεία"
-
-#: ../src/krb5-auth-dialog.desktop.in.h:2
-msgid "Kerberos Network Authentication Dialog"
-msgstr "Διάλογος πιστοποίησης δικτύου Kerberos"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
 msgid ""
@@ -1676,6 +1679,10 @@ msgstr ""
 "Αυτό είναι χρήσιμο εάν χρειάζεστε πιστοποίηση σε έναν διακομιστή Kerberos "
 "(KDC) μετά την είσοδο σας στην επιφάνεια εργασίας (π.χ. σε μια κινητή "
 "συσκευή)."
+
+#: ../src/krb5-auth-dialog.desktop.in.h:2
+msgid "Kerberos Network Authentication Dialog"
+msgstr "Διάλογος πιστοποίησης δικτύου Kerberos"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"

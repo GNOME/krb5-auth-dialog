@@ -1,17 +1,18 @@
 # translation of krb5-auth-dialog.master.po to Español
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Jorge González <jorgegonz@svn.gnome.org>, 2009, 2010.
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013, 2014, 2015.
+# 
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013, 2014, 2015., 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-06-10 16:57+0000\n"
-"PO-Revision-Date: 2015-07-13 \n"
+"POT-Creation-Date: 2016-04-24 15:00+0000\n"
+"PO-Revision-Date: 2016-04-28 13:27+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
 "Language: \n"
@@ -147,7 +148,7 @@ msgstr "PKINIT"
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#. Used in combination: 'Warn x minutes before expiry'
+#. Used in combination:
 #: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Advertir"
@@ -160,7 +161,7 @@ msgstr ""
 "Enviar notificación acerca de la caducidad del tique esos minutos antes de "
 "que caduque"
 
-#. Used in combination: 'Warn x minutes before expiry'
+#. Used in combination:
 #: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "minutos antes de que caduque el tique"
@@ -1631,7 +1632,6 @@ msgstr "Error %s"
 
 #: ../src/ka-pwdialog.c:309
 #, c-format
-#| msgid "Couldn't acquire kerberos ticket: '%s'"
 msgid "Couldn't acquire Kerberos ticket: '%s'"
 msgstr "No se pudo obtener el tique de Kerberos: «%s»"
 
@@ -1687,6 +1687,11 @@ msgstr ""
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Diálogo de autenticación de red de Kerberos"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:3
+#| msgid "Kerberos;Authentication"
+msgid "kerberos;authentication;"
+msgstr "kerberos;autenticación;"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
@@ -1799,9 +1804,6 @@ msgstr "Advertencia: ejecutar q-agent setuid en este sistema es peligroso\n"
 
 #~ msgid "There was an error launching the preferences dialog: %s"
 #~ msgstr "Hubo un error al lanzar el diálogo de preferencias: %s"
-
-#~ msgid "Kerberos;Authentication"
-#~ msgstr "Kerberos;Autenticación"
 
 #~ msgid "Set your Kerberos network authentication preferences"
 #~ msgstr "Establezca sus preferencias de autenticación de red en Kerberos"

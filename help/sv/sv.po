@@ -1,345 +1,706 @@
-# Swedish translation of krb5-auth-dialog.
-# Copyright (C) 2009 krb5-auth-dialog's COPYRIGHT HOLDER
+# Swedish translation of krb5-auth-dialog-help
+# Copyright © 2009-2016 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # Daniel Nylander <po@danielnylander.se>, 2009.
-#
+# Josef Andersson <josef.andersson@fripost.org>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"POT-Creation-Date: 2009-06-15 16:08+0000\n"
-"PO-Revision-Date: 2009-06-17 08:09+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"POT-Creation-Date: 2016-03-06 12:44+0000\n"
+"PO-Revision-Date: 2016-05-25 20:45+0200\n"
+"Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 1.8.7.1\n"
 
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:174(None)
-msgid "@@image: 'figures/trayicon-valid.png'; md5=78989c41fd36e23c0a97b87a2cc440e4"
-msgstr "@@image: 'figures/trayicon-valid.png'; md5=78989c41fd36e23c0a97b87a2cc440e4"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:189(None)
-msgid "@@image: 'figures/trayicon-expiring.png'; md5=cb1dbed310e568e7cb4684bac85c6969"
-msgstr "@@image: 'figures/trayicon-expiring.png'; md5=cb1dbed310e568e7cb4684bac85c6969"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:204(None)
-msgid "@@image: 'figures/trayicon-expired.png'; md5=40c03749e8e3773a0e931232a89e3fe2"
-msgstr "@@image: 'figures/trayicon-expired.png'; md5=40c03749e8e3773a0e931232a89e3fe2"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:226(None)
-msgid "@@image: 'figures/ka-valid.png'; md5=143d137c326eeba1ec48cba8f5805cc1"
-msgstr "@@image: 'figures/ka-valid.png'; md5=143d137c326eeba1ec48cba8f5805cc1"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:241(None)
-msgid "@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
-msgstr "@@image: 'figures/ka-expiring.png'; md5=37bb5e8f591c8c7fdb6345b8793e76fb"
-
-#. When image changes, this message will be marked fuzzy or untranslated for you.
-#. It doesn't matter what you translate it to: it's not used at all.
-#: C/krb5-auth-dialog.xml:256(None)
-msgid "@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
-msgstr "@@image: 'figures/ka-expired.png'; md5=1e92acc36db8643c6c43473f54f8029f"
-
-#: C/krb5-auth-dialog.xml:39(title)
-msgid "<application>Kerberos Network Authentication Dialog</application> Manual"
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
 msgstr ""
+"Daniel Nylander <po@danielnylander.se>, 2009\n"
+"Josef Andersson <josef.andersson@fripost.org>, 2016"
 
-#: C/krb5-auth-dialog.xml:41(para)
-msgid "Kerberos Network Authentication Dialog is a small helper that monitors and refreshes your Kerberos ticket."
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:174
+msgctxt "_"
+msgid ""
+"external ref='figures/trayicon-valid.png' "
+"md5='78989c41fd36e23c0a97b87a2cc440e4'"
 msgstr ""
+"external ref='figures/trayicon-valid.png' "
+"md5='78989c41fd36e23c0a97b87a2cc440e4'"
 
-#: C/krb5-auth-dialog.xml:46(year)
-msgid "2009"
-msgstr "2009"
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:189
+msgctxt "_"
+msgid ""
+"external ref='figures/trayicon-expiring.png' "
+"md5='cb1dbed310e568e7cb4684bac85c6969'"
+msgstr ""
+"external ref='figures/trayicon-expiring.png' "
+"md5='cb1dbed310e568e7cb4684bac85c6969'"
 
-#: C/krb5-auth-dialog.xml:47(holder)
-#: C/krb5-auth-dialog.xml:62(publishername)
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:204
+msgctxt "_"
+msgid ""
+"external ref='figures/trayicon-expired.png' "
+"md5='40c03749e8e3773a0e931232a89e3fe2'"
+msgstr ""
+"external ref='figures/trayicon-expired.png' "
+"md5='40c03749e8e3773a0e931232a89e3fe2'"
+
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:226
+msgctxt "_"
+msgid ""
+"external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
+msgstr ""
+"external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
+
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:241
+msgctxt "_"
+msgid ""
+"external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
+msgstr ""
+"external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
+
+#. (itstool) path: imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:256
+msgctxt "_"
+msgid ""
+"external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
+msgstr ""
+"external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
+
+#. (itstool) path: articleinfo/title
+#: C/index.docbook:39
+msgid ""
+"<application>Kerberos Network Authentication Dialog</application> Manual"
+msgstr ""
+"<application>Nätverksautentiseringsdialog för Kerberos</application>-handbok"
+
+#. (itstool) path: abstract/para
+#: C/index.docbook:41
+msgid ""
+"Kerberos Network Authentication Dialog is a small helper that monitors and "
+"refreshes your Kerberos ticket."
+msgstr ""
+"Kerberos-nätverksautentiseringsdialog är ett litet hjälpverktyg som "
+"övervakar och uppdaterar din Kerberos-biljett"
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:45
+msgid "<year>2009</year> <holder>Guido Günther</holder>"
+msgstr "<year>2009</year> <holder>Guido Günther</holder>"
+
+#. (itstool) path: publisher/publishername
+#: C/index.docbook:62
 msgid "Guido Günther"
 msgstr "Guido Günther"
 
-#: C/krb5-auth-dialog.xml:2(para)
-msgid "Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any later version published by the Free Software Foundation with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or in the file COPYING-DOCS distributed with this manual."
-msgstr "Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller senare, utgivet av Free Software Foundation utan standardavsnitt och omslagstexter.  En kopia av GFDL finns att hämta på denna <ulink type=\"help\" url=\"ghelp:fdl\">länk</ulink> eller i filen COPYING-DOCS som medföljer denna handbok."
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
+"in the file COPYING-DOCS distributed with this manual."
+msgstr ""
+"Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges "
+"under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller "
+"senare, utgivet av Free Software Foundation utan standardavsnitt och "
+"omslagstexter. En kopia av GFDL finns att hämta på denna <ulink type=\"help"
+"\" url=\"ghelp:fdl\">länk</ulink> eller i filen COPYING-DOCS som medföljer "
+"denna handbok."
 
-#: C/krb5-auth-dialog.xml:12(para)
-msgid "This manual is part of a collection of GNOME manuals distributed under the GFDL. If you want to distribute this manual separately from the collection, you can do so by adding a copy of the license to the manual, as described in section 6 of the license."
-msgstr "Denna handbok utgör en av flera GNOME-handböcker som distribueras under villkoren i GFDL.  Om du vill distribuera denna handbok separat från övriga handböcker kan du göra detta genom att lägga till en kopia av licensavtalet i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:12 C/legal.xml:12
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Denna handbok utgör en av flera GNOME-handböcker som distribueras under "
+"villkoren i GFDL. Om du vill distribuera denna handbok separat från övriga "
+"handböcker kan du göra detta genom att lägga till en kopia av licensavtalet "
+"i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
 
-#: C/krb5-auth-dialog.xml:19(para)
-msgid "Many of the names used by companies to distinguish their products and services are claimed as trademarks. Where those names appear in any GNOME documentation, and the members of the GNOME Documentation Project are made aware of those trademarks, then the names are in capital letters or initial capital letters."
-msgstr "Flera namn på produkter och tjänster är registrerade varumärken. I de fall dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med versaler eller med inledande versal."
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:19 C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Flera namn på produkter och tjänster är registrerade varumärken. I de fall "
+"dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-"
+"dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med "
+"versaler eller med inledande versal."
 
-#: C/krb5-auth-dialog.xml:35(para)
-msgid "DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr "DOKUMENTET TILLHANDAHÅLLS I \"BEFINTLIGT SKICK\" UTAN NÅGRA SOM HELST GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST UNDER DENNA ANSVARSFRISKRIVNING;"
+#. (itstool) path: listitem/para
+#: C/index.docbook:35 C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"DOKUMENTET TILLHANDAHÅLLS I \"BEFINTLIGT SKICK\" UTAN NÅGRA SOM HELST "
+"GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE "
+"BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV "
+"DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST "
+"ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, "
+"EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET "
+"LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD "
+"VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT "
+"HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER "
+"NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR "
+"SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR "
+"EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV "
+"ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST "
+"UNDER DENNA ANSVARSFRISKRIVNING;"
 
-#: C/krb5-auth-dialog.xml:55(para)
-msgid "UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE POSSIBILITY OF SUCH DAMAGES."
-msgstr "UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA SKADOR."
+#. (itstool) path: listitem/para
+#: C/index.docbook:55 C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT "
+"OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA "
+"FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER "
+"ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET "
+"ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT "
+"NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER "
+"FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR "
+"BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA "
+"ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER "
+"RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV "
+"DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA "
+"SKADOR."
 
-#: C/krb5-auth-dialog.xml:28(para)
-msgid "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: <placeholder-1/>"
-msgstr "DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE FÖRUTSÄTTNINGAR: <placeholder-1/>"
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:28 C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER "
+"VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE "
+"FÖRUTSÄTTNINGAR: <_:orderedlist-1/>"
 
-#: C/krb5-auth-dialog.xml:69(firstname)
-msgid "Jonathan"
-msgstr "Jonathan"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:68
+msgid ""
+"<firstname>Jonathan</firstname> <surname>Blandford</surname> "
+"<email>rjb@redhat.com</email>"
+msgstr ""
+"<firstname>Jonathan</firstname> <surname>Blandford</surname> "
+"<email>rjb@redhat.com</email>"
 
-#: C/krb5-auth-dialog.xml:70(surname)
-msgid "Blandford"
-msgstr "Blandford"
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:73
+msgid ""
+"<firstname>Guido</firstname> <surname>Günther</surname> <email>agx@sigxcpu."
+"org</email>"
+msgstr ""
+"<firstname>Guido</firstname> <surname>Günther</surname> <email>agx@sigxcpu."
+"org</email>"
 
-#: C/krb5-auth-dialog.xml:71(email)
-msgid "rjb@redhat.com"
-msgstr "rjb@redhat.com"
-
-#: C/krb5-auth-dialog.xml:74(firstname)
-msgid "Guido"
-msgstr "Guido"
-
-#: C/krb5-auth-dialog.xml:75(surname)
-msgid "Günther"
-msgstr "Günther"
-
-#: C/krb5-auth-dialog.xml:76(email)
-msgid "agx@sigxcpu.org"
-msgstr "agx@sigxcpu.org"
-
-#: C/krb5-auth-dialog.xml:103(revnumber)
-msgid "2.0"
-msgstr "2.0"
-
-#: C/krb5-auth-dialog.xml:104(date)
-msgid "May 2009"
-msgstr "Maj 2009"
-
-#: C/krb5-auth-dialog.xml:106(para)
+#. (itstool) path: revdescription/para
+#: C/index.docbook:106
 msgid "Guido Günther <email>agx@sigxcpu.org</email>"
 msgstr "Guido Günther <email>agx@sigxcpu.org</email>"
 
-#: C/krb5-auth-dialog.xml:112(releaseinfo)
-msgid "This manual describes how to use the Kerberos Network Authentication Dialog to manage your Kerberos tickets."
-msgstr ""
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:102
+msgid "<revnumber>2.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
+msgstr "<revnumber>2.0</revnumber> <date>Maj 2009</date> <_:revdescription-1/>"
 
-#: C/krb5-auth-dialog.xml:116(title)
+#. (itstool) path: articleinfo/releaseinfo
+#: C/index.docbook:112
+msgid ""
+"This manual describes how to use the Kerberos Network Authentication Dialog "
+"to manage your Kerberos tickets."
+msgstr ""
+"Handboken beskriver hur nätverksautentiseringsdialogen för Kerberos ska "
+"hantera dina Kerberos-biljetter."
+
+#. (itstool) path: legalnotice/title
+#: C/index.docbook:116
 msgid "Feedback"
 msgstr "Återkoppling"
 
-#: C/krb5-auth-dialog.xml:117(para)
-msgid "To report a bug or make a suggestion regarding this package or this manual, use <ulink url=\"http://bugzilla.gnome.org\" type=\"http\">GNOME's Bugzilla</ulink>."
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:117
+msgid ""
+"To report a bug or make a suggestion regarding this package or this manual, "
+"use <ulink url=\"http://bugzilla.gnome.org\" type=\"http\">GNOME's Bugzilla</"
+"ulink>."
 msgstr ""
+"För att rapportera ett fel eller för att ge ett förslag gällande detta paket "
+"eller denna handbok, använd <ulink url=\"http://bugzilla.gnome.org\" type="
+"\"http\">GNOME:s Bugzilla</ulink>."
 
-#: C/krb5-auth-dialog.xml:129(title)
+#. (itstool) path: section/title
+#: C/index.docbook:129
 msgid "Introduction"
 msgstr "Introduktion"
 
-#: C/krb5-auth-dialog.xml:0(application)
-msgid "Kerberos Network Authentication Dialog"
+#. (itstool) path: section/indexterm
+#: C/index.docbook:130
+msgid ""
+"<primary><application>Kerberos Network Authentication Dialog</application></"
+"primary> <secondary>Manual</secondary> <tertiary>krb5-auth-dialog</tertiary>"
 msgstr ""
+"<primary><application>Nätverksautentiseringsdialog för Kerberos</"
+"application></primary> <secondary>Handbok</secondary> <tertiary>krb5-auth-"
+"dialog</tertiary>"
 
-#: C/krb5-auth-dialog.xml:132(secondary)
-msgid "Manual"
-msgstr "Handbok"
-
-#: C/krb5-auth-dialog.xml:133(tertiary)
-msgid "krb5-auth-dialog"
-msgstr "krb5-auth-dialog"
-
-#: C/krb5-auth-dialog.xml:136(para)
-msgid "Kerberos Network Authentication Dialog is an applet for the <systemitem>GNOME desktop</systemitem> that monitors and refreshes your Kerberos ticket. It pops up reminders when the ticket is about to expire."
+#. (itstool) path: section/para
+#: C/index.docbook:136
+msgid ""
+"Kerberos Network Authentication Dialog is an applet for the "
+"<systemitem>GNOME desktop</systemitem> that monitors and refreshes your "
+"Kerberos ticket. It pops up reminders when the ticket is about to expire."
 msgstr ""
+"Kerberos-nätverksautentiseringsdialog är ett miniprogram för "
+"<systemitem>GNOME-skrivbordet</systemitem> som övervakar och uppdaterar din "
+"Kerberos-biljett. Den visar påminnelser när biljetten håller på att gå ut."
 
-#: C/krb5-auth-dialog.xml:141(para)
-msgid "Once you have acquired a Kerberos ticket - be it via GDM or via the applet itself - the applet will handle the ticket's renewal until it expires. It can also be used to destroy (remove) the credential cache, to acquire a ticket with different options or to switch to another principal."
+#. (itstool) path: section/para
+#: C/index.docbook:141
+msgid ""
+"Once you have acquired a Kerberos ticket - be it via GDM or via the applet "
+"itself - the applet will handle the ticket's renewal until it expires. It "
+"can also be used to destroy (remove) the credential cache, to acquire a "
+"ticket with different options or to switch to another principal."
 msgstr ""
+"När du har erhållit en Kerberos-biljett - må vara genom GDM eller via själva "
+"miniprogrammet - kommer miniprogrammet att hantera biljettens förnyelse "
+"tills den går ut. Det kan också användas till att förstöra (ta bort) cachen "
+"för autentiseringsuppgifter, för att kunna erhålla en biljett med andra "
+"alternativ eller för att byta till en annan principal."
 
-#: C/krb5-auth-dialog.xml:146(title)
+#. (itstool) path: section/title
+#: C/index.docbook:146
 msgid "Usage"
 msgstr "Användning"
 
-#: C/krb5-auth-dialog.xml:147(para)
-msgid "<application>Kerberos Network Authentication Dialog</application> is usually started in GNOME startup, but you can manually start <application>Kerberos Network Authentication Dialog</application> by doing:"
+#. (itstool) path: section/para
+#: C/index.docbook:147
+msgid ""
+"<application>Kerberos Network Authentication Dialog</application> is usually "
+"started in GNOME startup, but you can manually start <application>Kerberos "
+"Network Authentication Dialog</application> by doing:"
 msgstr ""
+"<application>Kerberos-nätverksautentiseringsdialog</application> startas "
+"vanligen vid GNOME-uppstart, men du kan manuellt starta "
+"<application>Kerberos-nätverksautentiseringsdialog</application> genom att "
+"utföra:"
 
-#: C/krb5-auth-dialog.xml:153(term)
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:153
 msgid "Command line"
 msgstr "Kommandorad"
 
-#: C/krb5-auth-dialog.xml:155(para)
-msgid "Type <command>krb5-auth-dialog --always</command>, then press <keycap>Return</keycap>:"
-msgstr "Skriv <command>krb5-auth-dialog --always</command> och tryck sedan på <keycap>Return</keycap>:"
-
-#: C/krb5-auth-dialog.xml:162(para)
-msgid "The tray icon will indicate one of tree states:"
+#. (itstool) path: listitem/para
+#: C/index.docbook:155
+msgid ""
+"Type <command>krb5-auth-dialog</command>, then press <keycap>Return</keycap>:"
 msgstr ""
+"Skriv <command>krb5-auth-dialog</command> och tryck sedan ned <keycap>Retur</"
+"keycap>:"
 
-#: C/krb5-auth-dialog.xml:167(title)
-#: C/krb5-auth-dialog.xml:170(title)
+#. (itstool) path: section/para
+#: C/index.docbook:162
+msgid "The tray icon will indicate one of three states:"
+msgstr "Ikonen i aktivitetsfältet kommer att visa ett av tre tillstånd:"
+
+#. (itstool) path: section/title
+#. (itstool) path: figure/title
+#: C/index.docbook:167 C/index.docbook:170
 msgid "Valid Kerberos ticket"
-msgstr ""
+msgstr "Giltig Kerberos-biljett"
 
-#: C/krb5-auth-dialog.xml:168(para)
-msgid "You have a valid Kerberos ticket that can be used to authenticate to network services."
+#. (itstool) path: section/para
+#: C/index.docbook:168
+msgid ""
+"You have a valid Kerberos ticket that can be used to authenticate to network "
+"services."
 msgstr ""
+"Du har en giltig Kerberos-biljett som kan användas för att autentisera mot "
+"nätverkstjänster."
 
-#: C/krb5-auth-dialog.xml:182(title)
-#: C/krb5-auth-dialog.xml:185(title)
+#. (itstool) path: section/title
+#. (itstool) path: figure/title
+#: C/index.docbook:182 C/index.docbook:185
 msgid "Kerberos ticket expiring"
-msgstr ""
+msgstr "Kerberos-biljett förfaller"
 
-#: C/krb5-auth-dialog.xml:183(para)
-msgid "The Kerberos ticket is about to expire but it can still be used to authenticate to network services."
+#. (itstool) path: section/para
+#: C/index.docbook:183
+msgid ""
+"The Kerberos ticket is about to expire but it can still be used to "
+"authenticate to network services."
 msgstr ""
+"Kerberos-biljetten är på väg att förfalla men kan fortfarande användas för "
+"att autentisera mot nätverkstjänster."
 
-#: C/krb5-auth-dialog.xml:196(title)
-#: C/krb5-auth-dialog.xml:200(title)
+#. (itstool) path: section/title
+#. (itstool) path: figure/title
+#: C/index.docbook:196 C/index.docbook:200
 msgid "Kerberos ticket expired"
-msgstr ""
+msgstr "Kerberos-biljett har förfallit"
 
-#: C/krb5-auth-dialog.xml:197(para)
-msgid "Your Kerberos became invalid (e.g. expired). It can no longer be used to authenticate to network services. This is not a problem if the application that requires Kerberos knows how to request a new ticket via <application>Kerberos Network Authentication Dialog</application>. In case it doesn't you can just left click on the applet an reenter your password."
+#. (itstool) path: section/para
+#: C/index.docbook:197
+msgid ""
+"Your Kerberos became invalid (e.g. expired). It can no longer be used to "
+"authenticate to network services. This is not a problem if the application "
+"that requires Kerberos knows how to request a new ticket via "
+"<application>Kerberos Network Authentication Dialog</application>. In case "
+"it doesn't you can just left click on the applet an reenter your password."
 msgstr ""
+"Din Kerberos blev ogiltig (till exempel, förföll). Den kan inte längre "
+"användas för att autentisera mot nätverkstjänster. Detta är inte ett problem "
+"om programmet som kräver Kerberos vet hur det ska begära en ny biljett via "
+"<application>Kerberos-nätverksautentiseringsdialog</application>. Om det "
+"inte vet det kan du vänsterklicka på miniprogrammet för att åter skriva in "
+"ditt lösenord."
 
-#: C/krb5-auth-dialog.xml:213(title)
+#. (itstool) path: section/title
+#: C/index.docbook:213
 msgid "Notification Messages"
-msgstr ""
+msgstr "Aviseringsmeddelanden"
 
-#: C/krb5-auth-dialog.xml:214(para)
-msgid "When Kerberos Network Authentication Dialog has started, the following notifications may be displayed."
+#. (itstool) path: section/para
+#: C/index.docbook:214
+msgid ""
+"When Kerberos Network Authentication Dialog has started, the following "
+"notifications may be displayed."
 msgstr ""
+"När Kerberos-nätverksautentiseringsdialog har startat kan följande "
+"aviseringar visas."
 
-#: C/krb5-auth-dialog.xml:219(title)
+#. (itstool) path: section/title
+#: C/index.docbook:219
 msgid "Kerberos credentials valid"
-msgstr ""
+msgstr "Giltiga Kerberos-autentiseringsuppgifter"
 
-#: C/krb5-auth-dialog.xml:220(para)
-msgid "You just acquired a valid Kerberos ticket that can be used to authenticate to network services."
+#. (itstool) path: section/para
+#: C/index.docbook:220
+msgid ""
+"You just acquired a valid Kerberos ticket that can be used to authenticate "
+"to network services."
 msgstr ""
+"Du har just begärt en giltig Kerberos-biljett som kan användas för att "
+"autentisera mot nätverkstjänster."
 
-#: C/krb5-auth-dialog.xml:222(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:222
 msgid "Notification when Kerberos credentials become valid"
-msgstr ""
+msgstr "Avisering när Kerberos-autentiseringsuppgifter blir giltiga"
 
-#: C/krb5-auth-dialog.xml:234(title)
+#. (itstool) path: section/title
+#: C/index.docbook:234
 msgid "Kerberos credentials expiring"
-msgstr ""
+msgstr "Kerberos-autentiseringsuppgifter förfaller"
 
-#: C/krb5-auth-dialog.xml:235(para)
-msgid "Your Kerberos credentials are about to expire. You can left click on the tray applet to refresh them."
+#. (itstool) path: section/para
+#: C/index.docbook:235
+msgid ""
+"Your Kerberos credentials are about to expire. You can left click on the "
+"tray applet to refresh them."
 msgstr ""
+"Dina Kerberos-autentiseringsuppgifter är på väg att förfalla. Du kan "
+"vänsterklicka på miniprogrammet i aktivitetsfältet för att uppdatera dem."
 
-#: C/krb5-auth-dialog.xml:237(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:237
 msgid "Notification when Kerberos credentials expiring"
-msgstr ""
+msgstr "Avisering när Kerberos-autentiseringsuppgifter förfaller"
 
-#: C/krb5-auth-dialog.xml:249(title)
+#. (itstool) path: section/title
+#: C/index.docbook:249
 msgid "Kerberos credentials expired"
-msgstr ""
+msgstr "Kerberos-autentiseringsuppgifter har förfallit"
 
-#: C/krb5-auth-dialog.xml:250(para)
-msgid "Your Kerberos credentials just expired. They can no longer be used to authenticate to network services."
+#. (itstool) path: section/para
+#: C/index.docbook:250
+msgid ""
+"Your Kerberos credentials just expired. They can no longer be used to "
+"authenticate to network services."
 msgstr ""
+"Dina Kerberos-autentiseringsuppgifter förföll nyss. De kan inte längre "
+"användas för att autentisera mot nätverkstjänster."
 
-#: C/krb5-auth-dialog.xml:252(title)
+#. (itstool) path: figure/title
+#: C/index.docbook:252
 msgid "Notification when Kerberos credentials expired"
-msgstr ""
+msgstr "Avisering när Kerberos-autentiseringsuppgifter förfallit"
 
-#: C/krb5-auth-dialog.xml:265(title)
+#. (itstool) path: section/title
+#: C/index.docbook:265
 msgid "Preferences"
-msgstr ""
+msgstr "Inställningar"
 
-#: C/krb5-auth-dialog.xml:269(title)
+#. (itstool) path: table/title
+#: C/index.docbook:269
 msgid "Kerberos Principal Preferences"
-msgstr ""
+msgstr "Inställningar för Kerberos-principal"
 
-#: C/krb5-auth-dialog.xml:274(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:274
 msgid "Dialog Element"
-msgstr ""
+msgstr "Dialogelement"
 
-#: C/krb5-auth-dialog.xml:277(para)
+#. (itstool) path: entry/para
+#: C/index.docbook:277
 msgid "Description"
+msgstr "Beskrivning"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:284
+msgid "<guilabel>Kerberos Principal</guilabel>"
+msgstr "<guilabel>Kerberos-principal</guilabel>"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:289
+msgid ""
+"The Kerberos principal to use. Leave blank to use you current username. If "
+"you change this setting you have to destroy the credential cache before "
+"these setting takes effect."
 msgstr ""
+"Kerberos-principal att använda. Lämna tomt för att använda ditt aktuella "
+"användarnamn. Om du ändrar denna inställning måste du tömma cachen för "
+"autentiseringsuppgifter innan inställningarna ger effekt."
 
-#: C/krb5-auth-dialog.xml:285(guilabel)
-msgid "Kerberos Principal"
+#. (itstool) path: entry/para
+#: C/index.docbook:295
+msgid "<guilabel>PKINIT Userid</guilabel>"
+msgstr "<guilabel>PKINIT-användarID</guilabel>"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:300
+msgid ""
+"The principals public/private/certificate identifier. Leave empty if not "
+"using PKINIT. To enable using a security token add the path to the pkcs11 "
+"Library here, e.g. \"PKCS11:/usr/lib/opensc/opensc-pkcs11.so\""
 msgstr ""
+"Principalens offentlig/privat/certifikatidentifierare. Lämna tomt om du inte "
+"använder PKINIT. För att aktivera användning av en säkerhetstoken, lägg till "
+"en sökväg till pkcs11-biblioteket här, till exempel \"PKCS11:/usr/lib/opensc/"
+"opensc-pkcs11.so\""
 
-#: C/krb5-auth-dialog.xml:289(para)
-msgid "The Kerberos principal to use. Leave blanc to use you current username. If you change this setting you have to destroy the credential cache before these setting takes effect."
+#. (itstool) path: entry/para
+#: C/index.docbook:305
+msgid "<guilabel>PKINIT anchors</guilabel>"
+msgstr "<guilabel>PKINIT-ankare</guilabel>"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:310
+msgid ""
+"Path to CA certificates used as trust anchors for pkinit. You only need to "
+"set this if it hasn't been set up globally in <filename>/etc/krb5.conf</"
+"filename>"
 msgstr ""
+"Sökväg till CA-certifikat att använda som förtroendeankare för pkinit. Du "
+"behöver bara ställa in detta om det inte angetts globalt i <filename>/etc/"
+"krb5.conf</filename>"
 
-#: C/krb5-auth-dialog.xml:296(guilabel)
-msgid "PKINIT Userid"
+#. (itstool) path: entry/para
+#: C/index.docbook:315
+msgid "<guilabel>forwardable</guilabel>"
+msgstr "<guilabel>vidarebefordringsbar</guilabel>"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:320
+msgid ""
+"Whether the requested Kerberos ticket should be forwardable. Changing this "
+"setting requires to you to reauthenticate by left clicking on the tray icon "
+"and entering your password."
 msgstr ""
+"Huruvida den begärda Kerberos-biljetten ska vara vidarebefordringsbar. Att "
+"ändra denna inställning kräver att du återautentiserar genom att klicka på "
+"ikonen i aktivitetsfältet och anger ditt lösenord."
 
-#: C/krb5-auth-dialog.xml:300(para)
-msgid "The principals public/private/certificate identifier. Leave empty if not using PKINIT. To enable using a security token add the path to the pkcs11 Library here, e.g. \"PKCS11:/usr/lib/opensc/opensc-pkcs11.so\""
+#. (itstool) path: entry/para
+#: C/index.docbook:325
+msgid "<guilabel>renewable</guilabel>"
+msgstr "<guilabel>förnyelsebar</guilabel>"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:330
+msgid ""
+"Whether the requested Kerberos ticket should be renewable. Changing this "
+"setting requires to you to reauthenticate by left clicking on the tray icon "
+"and entering your password."
 msgstr ""
+"Huruvida den begärda Kerberos-biljetten ska vara förnyelsebar. Att ändra "
+"denna inställning kräver att du återautentiserar genom att klicka på ikonen "
+"i aktivitetsfältet och anger ditt lösenord."
 
-#: C/krb5-auth-dialog.xml:306(guilabel)
-msgid "PKINIT anchors"
+#. (itstool) path: entry/para
+#: C/index.docbook:335
+msgid "<guilabel>proxiable</guilabel>"
+msgstr "<guilabel>proxybar</guilabel>"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:340
+msgid ""
+"Whether the requested Kerberos ticket should be proxiable. Changing this "
+"setting requires to you to reauthenticate by left clicking on the tray icon "
+"and entering your password."
 msgstr ""
+"Huruvida den begärda Kerberos-biljetten ska vara proxybar. Att ändra denna "
+"inställning kräver att du återautentiserar genom att klicka på ikonen i "
+"aktivitetsfältet och anger ditt lösenord."
 
-#: C/krb5-auth-dialog.xml:310(para)
-msgid "Path to CA certificates used as trust anchors for pkinit. You only need to set this if it hasn't been set up globally in <filename>/etc/krb5.conf</filename>"
+# https://bugzilla.gnome.org/show_bug.cgi?id=766879
+#. (itstool) path: entry/para
+#: C/index.docbook:345
+msgid "<guilabel>Warn .. minutes before expiry</guilabel>"
+msgstr "<guilabel>Varna .. minuter innan förfall</guilabel>"
+
+#. (itstool) path: entry/para
+#: C/index.docbook:350
+msgid ""
+"Notifications that your credentials are about to expire will be sent that "
+"many minutes before expiry."
 msgstr ""
+"Aviseringar om att dina autentiseringsuppgifter kommer att förfalla kommer "
+"att skickas ut så här många minuter innan de förfaller."
 
-#: C/krb5-auth-dialog.xml:316(guilabel)
-msgid "forwardable"
+# https://bugzilla.gnome.org/show_bug.cgi?id=766879
+#. (itstool) path: entry/para
+#: C/index.docbook:355
+msgid "<guilabel>Show tray icon</guilabel>"
+msgstr "<guilabel>Visa ikon i aktivitetsfältet</guilabel>"
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=766879
+#. (itstool) path: entry/para
+#: C/index.docbook:360
+msgid ""
+"Whether to show the tray icon. Disabling the tray icon will also disable "
+"notifications, the password dialog will be brought up instead."
 msgstr ""
+"Huruvida en ikon i aktivitetsfältet ska visas. Att inaktivera ikonen i "
+"aktivitetsfältet kommer också att inaktivera aviseringar och "
+"lösenordsdialogen kommer att visas istället."
 
-#: C/krb5-auth-dialog.xml:320(para)
-msgid "Whether the requested Kerberos ticket should be forwardable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password."
+#. (itstool) path: section/para
+#: C/index.docbook:266
+msgid ""
+"You can set preferences by selecting \"Preferences\" from the applets "
+"context menu or by selecting \"Network Authentication\" in the "
+"<application>Control Center</application>. <_:table-1/>"
 msgstr ""
+"Du kan ange inställningar genom att välja ”Inställningar” från "
+"miniprogrammets snabbmeny eller genom att välja ”Nätverksautentisering” i "
+"<application>Kontrollpanelen</application>. <_:table-1/>"
 
-#: C/krb5-auth-dialog.xml:326(guilabel)
-msgid "renewable"
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "länk"
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
 msgstr ""
+"Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges "
+"under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller "
+"senare, utgivet av Free Software Foundation utan standardavsnitt och "
+"omslagstexter. En kopia av GFDL finns att hämta på denna <_:ulink-1/> eller "
+"i filen COPYING-DOCS som medföljer denna handbok."
 
-#: C/krb5-auth-dialog.xml:330(para)
-msgid "Whether the requested Kerberos ticket should be renewable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password."
-msgstr ""
+#~ msgid "2009"
+#~ msgstr "2009"
 
-#: C/krb5-auth-dialog.xml:336(guilabel)
-msgid "proxiable"
-msgstr ""
+#~ msgid "Jonathan"
+#~ msgstr "Jonathan"
 
-#: C/krb5-auth-dialog.xml:340(para)
-msgid "Whether the requested Kerberos ticket should be proxiable. Changing this setting requires to you to reauthenticate by left clicking on the tray icon and entering your password."
-msgstr ""
+#~ msgid "Blandford"
+#~ msgstr "Blandford"
 
-#: C/krb5-auth-dialog.xml:346(guilabel)
-msgid "Warn .. minutes before expiry"
-msgstr ""
+#~ msgid "rjb@redhat.com"
+#~ msgstr "rjb@redhat.com"
 
-#: C/krb5-auth-dialog.xml:350(para)
-msgid "Notifications that your credentials are about to expire will be sent that many minutes before expiry."
-msgstr ""
+#~ msgid "Guido"
+#~ msgstr "Guido"
 
-#: C/krb5-auth-dialog.xml:356(guilabel)
-msgid "Show tray icon"
-msgstr ""
+#~ msgid "Günther"
+#~ msgstr "Günther"
 
-#: C/krb5-auth-dialog.xml:360(para)
-msgid "Whether to show the tray icon. Disabling the tray icon will also disable notifications, the password dialog will be brought up instead."
-msgstr ""
+#~ msgid "agx@sigxcpu.org"
+#~ msgstr "agx@sigxcpu.org"
 
-#: C/krb5-auth-dialog.xml:266(para)
-msgid "You can set preferences by selecting \"Preferences\" from the applets context menu or by selecting \"Network Authentication\" in the <application>Control Center</application>. <table frame=\"topbot\" id=\"tbl-principal-prefs\"><placeholder-1/><tgroup cols=\"2\" colsep=\"1\" rowsep=\"1\"><colspec colwidth=\"19.21*\"/><colspec colwidth=\"46.79*\"/><placeholder-2/><placeholder-3/></tgroup></table>"
-msgstr ""
+#~ msgid "2.0"
+#~ msgstr "2.0"
 
-#. Put one translator per line, in the form of NAME <EMAIL>, YEAR1, YEAR2.
-#: C/krb5-auth-dialog.xml:0(None)
-msgid "translator-credits"
-msgstr "Daniel Nylander <po@danielnylander.se>, 2009"
+#~ msgid "May 2009"
+#~ msgstr "Maj 2009"
 
+#~ msgid "Manual"
+#~ msgstr "Handbok"
+
+#~ msgid "krb5-auth-dialog"
+#~ msgstr "krb5-auth-dialog"

@@ -1,4 +1,32 @@
 ==============
+Version 3.20.0
+==============
+* Use yelp-tools instead of gtk-doc-utils
+* Remove some deprecated macros
+* UI translations:
+	Balázs Meskó (hu)
+	Balázs Úr (hu)
+	Daniel Mustieles (es)
+	Josef Andersson (sv)
+	liushuyu (zh_CN)
+	Mario Blättermann (de)
+	Necdet Yücel (tr)
+	Pedro Albuquerque (pt)
+	Piotr Drąg (pl)
+	Rafael Fontenelle (pt_BR)
+	Samir Ribic (bs)
+	Tiago Santos (pt)
+	Tom Tryfonidis (el)
+	Zdeněk Hataš (cs)
+	Мирослав Николић (sr) (sr@latin)
+* Doc translations:
+	Daniel Mustieles (es)
+	Josef Andersson (sv)
+	Marek Černocký (cs)
+	Mario Blättermann (de)
+	Γιάννης Κουτσούκος (el)
+
+==============
 Version 3.15.4
 ==============
 * Use GtkGrid instead of deprecated GtkVBox

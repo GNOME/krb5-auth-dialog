@@ -19,8 +19,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-06-10 16:57+0000\n"
-"PO-Revision-Date: 2016-01-04 19:59+0100\n"
+"POT-Creation-Date: 2016-04-24 15:00+0000\n"
+"PO-Revision-Date: 2016-08-04 13:09+0200\n"
 "Last-Translator: Mario Blättermann <mario.blaettermann@gmail.com>\n"
 "Language-Team: Deutsch <gnome-de@gnome.org>\n"
 "Language: de\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.6\n"
+"X-Generator: Poedit 1.8.8\n"
 
 #: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
@@ -157,7 +157,7 @@ msgstr "PKINIT"
 msgid "Notifications"
 msgstr "Benachrichtigungen"
 
-#. Used in combination: 'Warn x minutes before expiry'
+#. Used in combination:
 #: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Warnen"
@@ -170,7 +170,7 @@ msgstr ""
 "So viele Minuten vor endgültigem Ablauf des Tickets eine Benachrichtigung "
 "senden"
 
-#. Used in combination: 'Warn x minutes before expiry'
+#. Used in combination:
 #: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "Minuten vor Ablauf des Tickets"
@@ -1721,6 +1721,10 @@ msgstr ""
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Kerberos Netzwerkanmeldungsdialog"
 
+#: ../src/krb5-auth-dialog.desktop.in.h:3
+msgid "kerberos;authentication;"
+msgstr "Kerberos;Legitimierung;"
+
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
 msgstr "Kerberos-Principal"
@@ -1827,4 +1831,3 @@ msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr ""
 "Warnung: q-agent mit Admistratorrechten auszuführen ist auf diesem System "
 "gefährlich\n"
-

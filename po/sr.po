@@ -1,14 +1,14 @@
 # Serbian translation for krb5-auth-dialog.
 # Copyright (C) 2013 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
-# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2015.
+# Мирослав Николић <miroslavnikolic@rocketmail.com>, 2013—2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5"
 "-auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-06-10 16:57+0000\n"
-"PO-Revision-Date: 2015-12-30 12:23+0200\n"
+"POT-Creation-Date: 2016-04-24 15:00+0000\n"
+"PO-Revision-Date: 2016-08-20 23:07+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -146,7 +146,7 @@ msgstr "ПКИНИТ"
 msgid "Notifications"
 msgstr "Обавештења"
 
-#. Used in combination: 'Warn x minutes before expiry'
+#. Used in combination:
 #: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Упозори"
@@ -157,7 +157,7 @@ msgid ""
 "expires"
 msgstr "Шаље обавештење о истеку купона онолико минута пре коначног истека"
 
-#. Used in combination: 'Warn x minutes before expiry'
+#. Used in combination:
 #: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "минута пре истека купона"
@@ -1609,7 +1609,6 @@ msgstr "%s грешка"
 
 #: ../src/ka-pwdialog.c:309
 #, c-format
-#| msgid "Couldn't acquire kerberos ticket: '%s'"
 msgid "Couldn't acquire Kerberos ticket: '%s'"
 msgstr "Не могу да набавим купон Кербероса: „%s“"
 
@@ -1666,6 +1665,11 @@ msgstr ""
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Прозорче мрежног потврђивања идентитета Кербероса"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:3
+#| msgid "Kerberos Authentication"
+msgid "kerberos;authentication;"
+msgstr "керберос;потврда идентитета;"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"

@@ -1,27 +1,23 @@
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-# Aviary.pl
-# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
-# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
-# gnomepl@aviary.pl
-# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Polish translation for krb5-auth-dialog.
+# Copyright © 2015-2016 the krb5-auth-dialog authors.
+# This file is distributed under the same license as the krb5-auth-dialog package.
 # Piotr Drąg <piotrdrag@gmail.com>, 2015-2016.
-# Aviary.pl <gnomepl@aviary.pl>, 2015-2016.
+# Aviary.pl <community-poland@mozilla.org>, 2015-2016.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-04-25 19:47+0200\n"
-"PO-Revision-Date: 2016-04-25 19:48+0200\n"
+"POT-Creation-Date: 2016-08-21 15:18+0200\n"
+"PO-Revision-Date: 2016-08-21 15:19+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
-"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Poedit-Language: Polish\n"
-"X-Poedit-Country: Poland\n"
 
 #: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
@@ -29,7 +25,7 @@ msgstr "Prefere_ncje"
 
 #: ../src/resources/ui/app-menu.ui.h:2
 msgid "_About"
-msgstr "_O programie"
+msgstr "_O programie"
 
 #: ../src/resources/ui/app-menu.ui.h:3
 #: ../src/resources/ui/tray-icon-menu.ui.h:3
@@ -118,7 +114,7 @@ msgstr "Używa tokena zabezpieczeń (kartę smartcard) do uwierzytelniania."
 
 #: ../src/resources/ui/ka-preferences.ui.h:16
 msgid "Certificate and private key used for authentication"
-msgstr "Certyfikat i klucz prywatny używane do uwierzytelniania"
+msgstr "Certyfikat i klucz prywatny używane do uwierzytelniania"
 
 #: ../src/resources/ui/ka-preferences.ui.h:17
 msgid "_Browse..."
@@ -137,7 +133,7 @@ msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
 msgstr ""
-"Konfiguruje użycie certyfikatów i kart smartcard do uwierzytelniania w sieci "
+"Konfiguruje użycie certyfikatów i kart smartcard do uwierzytelniania w sieci "
 "Kerberos."
 
 #: ../src/resources/ui/ka-preferences.ui.h:21
@@ -158,7 +154,7 @@ msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr ""
-"Wysyła powiadomienie o wygaśnięciu biletu na podaną liczbę minut przed jego "
+"Wysyła powiadomienie o wygaśnięciu biletu na podaną liczbę minut przed jego "
 "ostatecznym wygaśnięciem"
 
 #. Used in combination:
@@ -190,7 +186,7 @@ msgstr "Wywołanie ASN.1 do systemowej biblioteki czasu się nie powiodło"
 #. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
 #: ../src/dummy-strings.c:11
 msgid "ASN.1 structure is missing a required field"
-msgstr "W strukturze ASN.1 brakuje wymaganego pola"
+msgstr "W strukturze ASN.1 brakuje wymaganego pola"
 
 #. asn1_err.et:asn1:ASN1_MISSING_FIELD
 #: ../src/dummy-strings.c:12
@@ -235,7 +231,7 @@ msgstr "Błąd przetwarzania ASN.1"
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:20
 msgid "ASN.1 bad return from gmtime"
-msgstr "Błędny zwrot ASN.1 z gmtime"
+msgstr "Błędny zwrot ASN.1 z gmtime"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: ../src/dummy-strings.c:21
@@ -245,7 +241,7 @@ msgstr "Nieskonstruowane nieskończone kodowanie ASN.1"
 #. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
 #: ../src/dummy-strings.c:22
 msgid "ASN.1 missing expected EOC"
-msgstr "Brak oczekiwanego EOC w ASN.1"
+msgstr "Brak oczekiwanego EOC w ASN.1"
 
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: ../src/dummy-strings.c:23
@@ -255,12 +251,12 @@ msgstr "Brak błędu"
 #. krb5_err.et:krb5:KRB5KDC_ERR_NONE
 #: ../src/dummy-strings.c:24
 msgid "Client's entry in database has expired"
-msgstr "Wpis klienta w bazie danych wygasł"
+msgstr "Wpis klienta w bazie danych wygasł"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
 #: ../src/dummy-strings.c:25
 msgid "Server's entry in database has expired"
-msgstr "Wpis serwera w bazie danych wygasł"
+msgstr "Wpis serwera w bazie danych wygasł"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
 #: ../src/dummy-strings.c:26
@@ -270,27 +266,27 @@ msgstr "Zażądano nieobsługiwanej wersji protokołu"
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
 #: ../src/dummy-strings.c:27
 msgid "Client's key is encrypted in an old master key"
-msgstr "Klucz klienta jest zaszyfrowany w poprzednim głównym kluczu"
+msgstr "Klucz klienta jest zaszyfrowany w poprzednim głównym kluczu"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:28
 msgid "Server's key is encrypted in an old master key"
-msgstr "Klucz serwera jest zaszyfrowany w poprzednim głównym kluczu"
+msgstr "Klucz serwera jest zaszyfrowany w poprzednim głównym kluczu"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:29
 msgid "Client not found in Kerberos database"
-msgstr "Nie odnaleziono klienta w bazie danych Kerberos"
+msgstr "Nie odnaleziono klienta w bazie danych Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:30
 msgid "Server not found in Kerberos database"
-msgstr "Nie odnaleziono serwera w bazie danych Kerberos"
+msgstr "Nie odnaleziono serwera w bazie danych Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:31
 msgid "Principal has multiple entries in Kerberos database"
-msgstr "Naczelnik posiada wiele wpisów w bazie danych Kerberos"
+msgstr "Naczelnik posiada wiele wpisów w bazie danych Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
 #: ../src/dummy-strings.c:32
@@ -380,7 +376,7 @@ msgstr "Wymagane jest dodatkowe uprzednie uwierzytelnienie"
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
 #: ../src/dummy-strings.c:49
 msgid "Requested server and ticket don't match"
-msgstr "Żądany serwer i bilet się nie zgadzają"
+msgstr "Żądany serwer i bilet się nie zgadzają"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: ../src/dummy-strings.c:50
@@ -445,7 +441,7 @@ msgstr "Zmodyfikowano potok komunikatów"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
 #: ../src/dummy-strings.c:62
 msgid "Message out of order"
-msgstr "Komunikaty nie są w kolejności"
+msgstr "Komunikaty nie są w kolejności"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
 #: ../src/dummy-strings.c:63
@@ -481,12 +477,12 @@ msgstr "Wymagana jest alternatywna metoda uwierzytelniania"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
 #: ../src/dummy-strings.c:69
 msgid "Incorrect sequence number in message"
-msgstr "Niepoprawny numer sekwencji w komunikacie"
+msgstr "Niepoprawny numer sekwencji w komunikacie"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
 #: ../src/dummy-strings.c:70
 msgid "Inappropriate type of checksum in message"
-msgstr "Nieodpowiedni typ sumy kontrolnej w komunikacie"
+msgstr "Nieodpowiedni typ sumy kontrolnej w komunikacie"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
 #: ../src/dummy-strings.c:71
@@ -576,7 +572,7 @@ msgstr "Niespójny cel klucza"
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
 #: ../src/dummy-strings.c:88
 msgid "Digest in certificate not accepted"
-msgstr "Nie przyjęto „digest” w certyfikacie"
+msgstr "Nie przyjęto „digest” w certyfikacie"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: ../src/dummy-strings.c:89
@@ -586,7 +582,7 @@ msgstr "Należy dołączyć sumę kontrolną"
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: ../src/dummy-strings.c:90
 msgid "Digest in signed-data not accepted"
-msgstr "Nie przyjęto „digest” w „signed-data”"
+msgstr "Nie przyjęto „digest” w „signed-data”"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: ../src/dummy-strings.c:91
@@ -621,7 +617,7 @@ msgstr "Przerwano odczyt hasła"
 #. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
 #: ../src/dummy-strings.c:97
 msgid "Illegal character in component name"
-msgstr "Niedozwolony znak w nazwie składnika"
+msgstr "Niedozwolony znak w nazwie składnika"
 
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
 #: ../src/dummy-strings.c:98
@@ -676,7 +672,7 @@ msgstr "Żądanie nie dostarczyło biletu"
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
 #: ../src/dummy-strings.c:108
 msgid "Wrong principal in request"
-msgstr "Błędny naczelnik w żądaniu"
+msgstr "Błędny naczelnik w żądaniu"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
 #: ../src/dummy-strings.c:109
@@ -686,7 +682,7 @@ msgstr "Bilet ma ustawioną nieprawidłową flagę"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: ../src/dummy-strings.c:110
 msgid "Requested principal and ticket don't match"
-msgstr "Żądany naczelnik i bilet się nie zgadzają"
+msgstr "Żądany naczelnik i bilet się nie zgadzają"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: ../src/dummy-strings.c:111
@@ -696,12 +692,12 @@ msgstr "Odpowiedź KDC nie pasuje do oczekiwań"
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
 #: ../src/dummy-strings.c:112
 msgid "Clock skew too great in KDC reply"
-msgstr "Odchylenie zegara w odpowiedzi KDC jest za duże"
+msgstr "Odchylenie zegara w odpowiedzi KDC jest za duże"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: ../src/dummy-strings.c:113
 msgid "Client/server realm mismatch in initial ticket request"
-msgstr "Obszar klienta/serwera w początkowym żądaniu biletu się nie zgadza"
+msgstr "Obszar klienta/serwera w początkowym żądaniu biletu się nie zgadza"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: ../src/dummy-strings.c:114
@@ -716,7 +712,7 @@ msgstr "Program nie obsługuje typu klucza"
 #. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
 #: ../src/dummy-strings.c:116
 msgid "Requested encryption type not used in message"
-msgstr "Żądany typ szyfrowania nie jest użyty w komunikacie"
+msgstr "Żądany typ szyfrowania nie jest użyty w komunikacie"
 
 #. krb5_err.et:krb5:KRB5_WRONG_ETYPE
 #: ../src/dummy-strings.c:117
@@ -736,7 +732,7 @@ msgstr "Nieznana usługa Kerberos"
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
-msgstr "Nie można skontaktować się z żadnym KDC dla żądanego obszaru"
+msgstr "Nie można skontaktować się z żadnym KDC dla żądanego obszaru"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
@@ -786,7 +782,7 @@ msgstr "Błąd przetwarzania/formatu nazwy bufora powtórki"
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: ../src/dummy-strings.c:131
 msgid "End-of-file on replay cache I/O"
-msgstr "Koniec pliku w wejściu/wyjściu bufora powtórki"
+msgstr "Koniec pliku w wejściu/wyjściu bufora powtórki"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: ../src/dummy-strings.c:132
@@ -797,12 +793,12 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: ../src/dummy-strings.c:133
 msgid "Permission denied in replay cache code"
-msgstr "Odmowa uprawnień w kodzie bufora powtórki"
+msgstr "Odmowa uprawnień w kodzie bufora powtórki"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
 #: ../src/dummy-strings.c:134
 msgid "I/O error in replay cache i/o code"
-msgstr "Błąd wejścia/wyjścia w kodzie wejścia/wyjścia bufora powtórki"
+msgstr "Błąd wejścia/wyjścia w kodzie wejścia/wyjścia bufora powtórki"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: ../src/dummy-strings.c:135
@@ -812,7 +808,7 @@ msgstr "Ogólny, nieznany błąd RC lub wejścia/wyjścia"
 #. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
 #: ../src/dummy-strings.c:136
 msgid "Insufficient system space to store replay information"
-msgstr "Brak miejsca w systemie do przechowania informacji o powtórce"
+msgstr "Brak miejsca w systemie do przechowania informacji o powtórce"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
 #: ../src/dummy-strings.c:137
@@ -897,12 +893,12 @@ msgstr "Błędny typ szyfrowania"
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
 #: ../src/dummy-strings.c:153
 msgid "Key size is incompatible with encryption type"
-msgstr "Rozmiar klucza jest niezgodny z typem szyfrowania"
+msgstr "Rozmiar klucza jest niezgodny z typem szyfrowania"
 
 #. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
 #: ../src/dummy-strings.c:154
 msgid "Message size is incompatible with encryption type"
-msgstr "Rozmiar komunikatu jest niezgodny z typem szyfrowania"
+msgstr "Rozmiar komunikatu jest niezgodny z typem szyfrowania"
 
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
 #: ../src/dummy-strings.c:155
@@ -950,13 +946,13 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: ../src/dummy-strings.c:163
 msgid "Bad format in credentials cache"
-msgstr "Błędny format w buforze danych uwierzytelniających"
+msgstr "Błędny format w buforze danych uwierzytelniających"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
 #: ../src/dummy-strings.c:164
 msgid "No credentials found with supported encryption types"
 msgstr ""
-"Nie odnaleziono danych uwierzytelniających z obsługiwanymi typami szyfrowania"
+"Nie odnaleziono danych uwierzytelniających z obsługiwanymi typami szyfrowania"
 
 #. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
 #: ../src/dummy-strings.c:165
@@ -966,7 +962,7 @@ msgstr "Nieprawidłowe połączenie opcji KDC (wewnętrzny błąd biblioteki)"
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
 #: ../src/dummy-strings.c:166
 msgid "Request missing second ticket"
-msgstr "Brak drugiego biletu w żądaniu"
+msgstr "Brak drugiego biletu w żądaniu"
 
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
 #: ../src/dummy-strings.c:167
@@ -1056,7 +1052,7 @@ msgstr "Błąd: odpowiedź początkowego biletu wygląda na wersję 4"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
 #: ../src/dummy-strings.c:184
 msgid "Cannot resolve network address for KDC in requested realm"
-msgstr "Nie można rozwiązać adresu sieciowego dla KDC w żądanym obszarze"
+msgstr "Nie można rozwiązać adresu sieciowego dla KDC w żądanym obszarze"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: ../src/dummy-strings.c:185
@@ -1072,7 +1068,7 @@ msgstr ""
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: ../src/dummy-strings.c:187
 msgid "Looping detected inside krb5_get_in_tkt"
-msgstr "Wykryto pętlę w „krb5_get_in_tkt”"
+msgstr "Wykryto pętlę w „krb5_get_in_tkt”"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: ../src/dummy-strings.c:188
@@ -1082,22 +1078,22 @@ msgstr "Plik konfiguracji nie określa domyślnego obszaru"
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
 #: ../src/dummy-strings.c:189
 msgid "Bad SAM flags in obtain_sam_padata"
-msgstr "Błędne flagi SAM w „obtain_sam_padata”"
+msgstr "Błędne flagi SAM w „obtain_sam_padata”"
 
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
 #: ../src/dummy-strings.c:190
 msgid "Invalid encryption type in SAM challenge"
-msgstr "Nieprawidłowy typ szyfrowania w wyzwaniu SAM"
+msgstr "Nieprawidłowy typ szyfrowania w wyzwaniu SAM"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
 #: ../src/dummy-strings.c:191
 msgid "Missing checksum in SAM challenge"
-msgstr "Brak sumy kontrolnej w wyzwaniu SAM"
+msgstr "Brak sumy kontrolnej w wyzwaniu SAM"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
 #: ../src/dummy-strings.c:192
 msgid "Bad checksum in SAM challenge"
-msgstr "Błędna suma kontrolna w wyzwaniu SAM"
+msgstr "Błędna suma kontrolna w wyzwaniu SAM"
 
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
 #: ../src/dummy-strings.c:193
@@ -1107,7 +1103,7 @@ msgstr "Nazwa tablicy kluczy jest za długa"
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
 #: ../src/dummy-strings.c:194
 msgid "Key version number for principal in key table is incorrect"
-msgstr "Niepoprawny numer wersji klucza dla naczelnika w tablicy kluczy"
+msgstr "Niepoprawny numer wersji klucza dla naczelnika w tablicy kluczy"
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: ../src/dummy-strings.c:195
@@ -1132,7 +1128,7 @@ msgstr "Zmiana hasła się nie powiodła"
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: ../src/dummy-strings.c:199
 msgid "Bad format in keytab"
-msgstr "Błędny format w tablicy kluczy"
+msgstr "Błędny format w tablicy kluczy"
 
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
 #: ../src/dummy-strings.c:200
@@ -1177,7 +1173,7 @@ msgstr "Nie można ustalić obszaru dla numerycznego adresu komputera"
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
 #: ../src/dummy-strings.c:208
 msgid "Invalid key generation parameters from KDC"
-msgstr "Nieprawidłowe parametry tworzenia klucza z KDC"
+msgstr "Nieprawidłowe parametry tworzenia klucza z KDC"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: ../src/dummy-strings.c:209
@@ -1592,7 +1588,7 @@ msgstr "Odnaw."
 
 #: ../src/ka-main-window.c:140
 msgid "Error displaying service ticket information"
-msgstr "Błąd podczas wyświetlania informacji o bilecie usługi"
+msgstr "Błąd podczas wyświetlania informacji o bilecie usługi"
 
 #: ../src/ka-preferences.c:369
 msgid "Choose Certificate"
@@ -1647,7 +1643,7 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Piotr Drąg <piotrdrag@gmail.com>, 2015-2016\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2015-2016"
+"Aviary.pl <community-poland@mozilla.org>, 2015-2016"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
 msgid ""
@@ -1657,21 +1653,21 @@ msgid ""
 "your ticket automatically if possible."
 msgstr ""
 "Uwierzytelnianie Kerberos umożliwia wyświetlanie listy obecnych biletów "
-"Kerberos oraz żądanie nowych (uwierzytelniając w serwerze Kerberos). "
-"Powiadamia także o wygaśnięciu danych uwierzytelniających Kerberos i "
-"automatycznie odnawia bilet."
+"Kerberos oraz żądanie nowych (uwierzytelniając w serwerze Kerberos). "
+"Powiadamia także o wygaśnięciu danych uwierzytelniających Kerberos "
+"i automatycznie odnawia bilet."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:2
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
-"Jest to przydatne do uwierzytelniania w serwerze Kerberos (KDC) po "
+"Jest to przydatne do uwierzytelniania w serwerze Kerberos (KDC) po "
 "zalogowaniu na komputerze (np. na telefonie komórkowym)."
 
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
-msgstr "Okno dialogowe uwierzytelnienia w sieci Kerberos"
+msgstr "Okno dialogowe uwierzytelnienia w sieci Kerberos"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:3
 msgid "kerberos;authentication;"
@@ -1748,7 +1744,7 @@ msgstr "Wyświetlanie biletów konfiguracji"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
 msgid "valid ticket notification"
-msgstr "Powiadomienie o ważnym bilecie"
+msgstr "Powiadomienie o ważnym bilecie"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:18
 msgid "Notify user when ticket becomes valid"
@@ -1756,7 +1752,7 @@ msgstr "Powiadamianie użytkownika, kiedy bilet staje się ważny"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:19
 msgid "ticket expiring notification"
-msgstr "Powiadomienie o wygasającym bilecie"
+msgstr "Powiadomienie o wygasającym bilecie"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:20
 msgid "Notify user when ticket is about to expire"
@@ -1764,7 +1760,7 @@ msgstr "Powiadamianie użytkownika, kiedy bilet ma niedługo wygasnąć"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:21
 msgid "ticket expired notification"
-msgstr "Powiadomienie o wygaśnięciu biletu"
+msgstr "Powiadomienie o wygaśnięciu biletu"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:22
 msgid "Notify user when ticket has expired"
@@ -1776,11 +1772,11 @@ msgstr "Włączone wtyczki"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:24
 msgid "List of plugins that should be loaded and activated on startup."
-msgstr "Lista wtyczek wczytywanych i włączanych podczas uruchamiania."
+msgstr "Lista wtyczek wczytywanych i włączanych podczas uruchamiania."
 
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr ""
-"Ostrzeżenie: uruchomienie q-agent za pomocą setuid w tym systemie jest "
+"Ostrzeżenie: uruchomienie q-agent za pomocą setuid w tym systemie jest "
 "niebezpieczne\n"

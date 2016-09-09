@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-21 15:18+0200\n"
-"PO-Revision-Date: 2016-08-21 15:19+0200\n"
+"POT-Creation-Date: 2016-09-09 04:13+0200\n"
+"PO-Revision-Date: 2016-09-09 04:14+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -286,12 +286,12 @@ msgstr "Nie odnaleziono serwera w bazie danych Kerberos"
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:31
 msgid "Principal has multiple entries in Kerberos database"
-msgstr "Naczelnik posiada wiele wpisów w bazie danych Kerberos"
+msgstr "Naczelnik ma wiele wpisów w bazie danych Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
 #: ../src/dummy-strings.c:32
 msgid "Client or server has a null key"
-msgstr "Klient lub serwer posiada pusty klucz"
+msgstr "Klient lub serwer ma pusty klucz"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
 #: ../src/dummy-strings.c:33
@@ -747,7 +747,7 @@ msgstr "Typ bufora powtórki jest już zarejestrowany"
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
 #: ../src/dummy-strings.c:124
 msgid "No more memory to allocate (in replay cache code)"
-msgstr "Brak pamięci do przydzielenia (w kodzie bufora powtórki)"
+msgstr "Brak pamięci do przydzielenia (w kodzie bufora powtórki)"
 
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
 #: ../src/dummy-strings.c:125
@@ -788,7 +788,7 @@ msgstr "Koniec pliku w wejściu/wyjściu bufora powtórki"
 #: ../src/dummy-strings.c:132
 msgid "No more memory to allocate (in replay cache I/O code)"
 msgstr ""
-"Brak pamięci do przydzielenia (w kodzie wejścia/wyjścia bufora powtórki)"
+"Brak pamięci do przydzielenia (w kodzie wejścia/wyjścia bufora powtórki)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: ../src/dummy-strings.c:133
@@ -878,7 +878,7 @@ msgstr "Nie można odnaleźć biletu dla żądanego obszaru"
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: ../src/dummy-strings.c:150
 msgid "DES key has bad parity"
-msgstr "Klucz DES posiada błędną parzystość"
+msgstr "Klucz DES ma błędną parzystość"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
 #: ../src/dummy-strings.c:151
@@ -941,7 +941,7 @@ msgstr "Błąd podczas zapisywania do bufora danych uwierzytelniających"
 #: ../src/dummy-strings.c:162
 msgid "No more memory to allocate (in credentials cache code)"
 msgstr ""
-"Brak pamięci do przydzielenia (w kodzie bufora danych uwierzytelniających)"
+"Brak pamięci do przydzielenia (w kodzie bufora danych uwierzytelniających)"
 
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: ../src/dummy-strings.c:163

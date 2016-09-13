@@ -4,14 +4,14 @@
 # 
 # Jorge González <jorgegonz@svn.gnome.org>, 2009, 2010.
 # 
-# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013, 2014, 2015., 2016.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2009, 2011, 2012, 2013, 2014, 2015, 2016.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-24 15:00+0000\n"
+"POT-Creation-Date: 2016-07-23 20:44+0000\n"
 "PO-Revision-Date: 2016-04-28 13:27+0200\n"
 "Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
 "Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
@@ -1689,7 +1689,6 @@ msgid "Kerberos Network Authentication Dialog"
 msgstr "Diálogo de autenticación de red de Kerberos"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:3
-#| msgid "Kerberos;Authentication"
 msgid "kerberos;authentication;"
 msgstr "kerberos;autenticación;"
 

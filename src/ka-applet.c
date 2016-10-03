@@ -209,7 +209,7 @@ GtkWindow *ka_applet_last_focused_window (KaApplet *self)
 
 
 static void
-action_remove_credentails_cache (GSimpleAction *action G_GNUC_UNUSED,
+action_remove_credentials_cache (GSimpleAction *action G_GNUC_UNUSED,
                                  GVariant *parameter G_GNUC_UNUSED,
                                  gpointer userdata)
 {
@@ -983,7 +983,7 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
 
 
 static GActionEntry trayicon_entries[] = {
-    { "remove_credentials_cache", action_remove_credentails_cache, NULL, NULL, NULL, {0} },
+    { "remove_credentials_cache", action_remove_credentials_cache, NULL, NULL, NULL, {0} },
     { "list_tickets", action_list_tickets, NULL, NULL, NULL, {0} },
     { "preferences", action_preferences, NULL, NULL, NULL, {0} },
     { "about", action_about, NULL, NULL, NULL, {0} },

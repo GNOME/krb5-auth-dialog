@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-24 15:00+0000\n"
+"POT-Creation-Date: 2016-10-04 06:17+0000\n"
 "PO-Revision-Date: 2016-06-30 14:50+0100\n"
 "Last-Translator: Zdeněk Hataš <zdenek.hatas@gmail.com>\n"
 "Language-Team: Czech <gnome-cs-list@gnome.org>\n"
@@ -1659,12 +1659,15 @@ msgstr ""
 "To je užitečné, když se potřebujete autentizovat k serveru Kerberos (KDC) "
 "poté, co se přihlásíte k počítači (např. na mobilním zařízení)."
 
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
+msgid "Kerberos authentication dialog"
+msgstr "Dialogové okno autentizace Kerberos"
+
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Dialog síťové autentizace Kerberos"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:3
-#| msgid "Kerberos Authentication"
 msgid "kerberos;authentication;"
 msgstr "kerberos;autentizace;ověřování;"
 

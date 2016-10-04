@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Guido Günther <agx@sigxcpu.org> -->
-<application>
-  <id type="desktop">krb5-auth-dialog.desktop</id>
-  <licence>CC0</licence>
+<component type="desktop">
+  <id>krb5-auth-dialog.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Kerberos Authentication Dialog</name>
+  <summary>Request, renew and view Kerberos Tickets</summary>
   <description>
     <_p>
       Kerberos Authentication allows you to list your current Kerberos tickets,
@@ -16,14 +18,21 @@
     </_p>
   </description>
   <screenshots>
-    <screenshot type="default" width="330" height="176">http://honk.sigxcpu.org/con/images/krb5-auth-dialog-pkinit.png</screenshot>
+    <screenshot type="default" height="176" width="330">
+      <image>http://honk.sigxcpu.org/con/images/krb5-auth-dialog-pkinit.png</image>
+      <_caption>Kerberos authentication dialog</_caption>
+    </screenshot>
   </screenshots>
   <url type="homepage">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
-  <updatecontact>agx_at_sigxcpu.org</updatecontact>
+  <update_contact>agx_at_sigxcpu.org</update_contact>
   <kudos>
     <kudo>AppMenu</kudo>
     <kudo>HiDpiIcon</kudo>
     <kudo>ModernToolkit</kudo>
     <kudo>Notifications</kudo>
   </kudos>
-</application>
+  <project_license>GPL-2.0+</project_license>
+  <developer_name>Guido Günther</developer_name>
+  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog</url>
+  <url type="help">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
+</component>

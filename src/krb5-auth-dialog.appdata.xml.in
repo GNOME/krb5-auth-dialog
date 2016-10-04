@@ -3,8 +3,8 @@
 <component type="desktop">
   <id>krb5-auth-dialog.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <name>Kerberos Authentication Dialog</name>
-  <summary>Request, renew and view Kerberos Tickets</summary>
+  <_name>Kerberos Authentication Dialog</_name>
+  <_summary>Request, renew and view Kerberos tickets</_summary>
   <description>
     <_p>
       Kerberos Authentication allows you to list your current Kerberos tickets,

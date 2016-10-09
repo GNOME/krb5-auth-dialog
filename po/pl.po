@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-09 04:13+0200\n"
-"PO-Revision-Date: 2016-09-09 04:14+0200\n"
+"POT-Creation-Date: 2016-10-09 08:34+0200\n"
+"PO-Revision-Date: 2016-10-09 08:35+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -1646,6 +1646,14 @@ msgstr ""
 "Aviary.pl <community-poland@mozilla.org>, 2015-2016"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+msgid "Kerberos Authentication Dialog"
+msgstr "Uwierzytelnianie w sieci Kerberos"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Żądanie, odnawianie i wyświetlanie biletów sieci Kerberos"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
@@ -1657,7 +1665,7 @@ msgstr ""
 "Powiadamia także o wygaśnięciu danych uwierzytelniających Kerberos "
 "i automatycznie odnawia bilet."
 
-#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:4
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
@@ -1665,9 +1673,13 @@ msgstr ""
 "Jest to przydatne do uwierzytelniania w serwerze Kerberos (KDC) po "
 "zalogowaniu na komputerze (np. na telefonie komórkowym)."
 
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:5
+msgid "Kerberos authentication dialog"
+msgstr "Okno uwierzytelniania w sieci Kerberos"
+
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
-msgstr "Okno dialogowe uwierzytelnienia w sieci Kerberos"
+msgstr "Okno uwierzytelniania w sieci Kerberos"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:3
 msgid "kerberos;authentication;"

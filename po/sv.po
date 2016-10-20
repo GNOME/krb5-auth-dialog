@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-04-24 15:00+0000\n"
-"PO-Revision-Date: 2016-05-25 15:36+0200\n"
-"Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
+"POT-Creation-Date: 2016-10-04 19:47+0000\n"
+"PO-Revision-Date: 2016-10-20 23:48+0200\n"
+"Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.7.1\n"
+"X-Generator: Poedit 1.8.9\n"
 "X-Project-Style: gnome\n"
 
 # Översättaranteckningar:
@@ -1650,6 +1650,14 @@ msgstr ""
 "<tp-sv@listor.tp-sv.se>."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+msgid "Kerberos Authentication Dialog"
+msgstr "Kerberos-autentiseringsdialog"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Begär, förnya och visa Kerberos-biljetter"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
@@ -1661,13 +1669,17 @@ msgstr ""
 "också när dina Kerberos-autentiseringsuppgifter är på väg att gå ut och "
 "förnyar din biljett automatiskt om möjligt."
 
-#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:4
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
 "Detta är användbart om du behöver autentisera mot en Kerberos-server (KDC) "
 "efter att du loggat in till skrivbordet (t.ex. på en mobil enhet)."
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:5
+msgid "Kerberos authentication dialog"
+msgstr "Kerberos-autentiseringsdialog"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"

@@ -1,7 +1,7 @@
 # Danish translation for krb5-auth-dialog.
-# Copyright (C) 2011 krb5-auth-dialog og nedenstående oversættere.
+# Copyright (C) 2016 krb5-auth-dialog og nedenstående oversættere.
 # This file is distributed under the same license as the krb5-auth-dialog package.
-# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011, 2013, 2016.
 #
 # checksum -> kontrolsum
 # credentials -> akkreditiver
@@ -14,9 +14,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-09-13 22:12+0200\n"
-"PO-Revision-Date: 2013-09-11 19:00+0000\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
+"auth-dialog&keywords=I18N+L10N&component=general\n"
+"POT-Creation-Date: 2016-10-04 19:47+0000\n"
+"PO-Revision-Date: 2016-12-04 19:00+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -25,119 +26,118 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../src/krb5-auth-dialog.ui.h:1
+#: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
 msgstr "_Indstillinger"
 
-#: ../src/krb5-auth-dialog.ui.h:2
+#: ../src/resources/ui/app-menu.ui.h:2
 msgid "_About"
 msgstr "_Om"
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#: ../src/resources/ui/app-menu.ui.h:3
+#: ../src/resources/ui/tray-icon-menu.ui.h:3
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../src/krb5-auth-dialog.ui.h:4
+#: ../src/resources/ui/app-menu.ui.h:4
+#: ../src/resources/ui/tray-icon-menu.ui.h:4
 msgid "_Quit"
 msgstr "_Afslut"
 
-#.
-#. * vim:ts:sts=4:sw=4:et:
-#.
-#: ../src/krb5-auth-dialog.ui.h:5 ../src/krb5-auth-dialog.desktop.in.h:1
-msgid "Kerberos Authentication"
-msgstr "Kerberosgodkendelse"
+#: ../src/resources/ui/tray-icon-menu.ui.h:1
+msgid "Remove Credentials _Cache"
+msgstr "Fjern akkreditiv_mellemlager"
 
-#: ../src/krb5-auth-dialog.ui.h:6
-msgid "_Renew Ticket"
-msgstr "_Forny billet"
+#: ../src/resources/ui/tray-icon-menu.ui.h:2
+msgid "_List Tickets"
+msgstr "_Vis billetter"
 
-#: ../src/krb5-auth-dialog.ui.h:7
+#: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Service Tickets"
 msgstr "Tjenestebilletter"
 
-#: ../src/krb5-auth-dialog.ui.h:8
+#: ../src/resources/ui/ka-preferences.ui.h:1
 msgid "Kerberos User"
 msgstr "Kerberosbruger"
 
 # eller "nuværende brugernavn." 
-#: ../src/krb5-auth-dialog.ui.h:9
+#: ../src/resources/ui/ka-preferences.ui.h:2
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
 "Navnet på din Kerberoskonto. Efterlad tom for at bruge dit aktuelle "
 "brugernavn."
 
-#: ../src/krb5-auth-dialog.ui.h:10
+#: ../src/resources/ui/ka-preferences.ui.h:3
 msgid "Kerberos principal:"
 msgstr "Kerberoshoved:"
 
 # Billetindstillinger for Kerberos - måske
-#: ../src/krb5-auth-dialog.ui.h:11
+#: ../src/resources/ui/ka-preferences.ui.h:4
 msgid "Kerberos Ticket Options"
 msgstr "Kerberos' billetindstillinger"
 
-#: ../src/krb5-auth-dialog.ui.h:12
+#: ../src/resources/ui/ka-preferences.ui.h:5
 msgid "Requested Kerberos tickets should be:"
 msgstr "De anmodne Kerberosbilletter skal være:"
 
-#: ../src/krb5-auth-dialog.ui.h:13
+#: ../src/resources/ui/ka-preferences.ui.h:6
 msgid "forwardable"
 msgstr "kan videresendes"
 
-#: ../src/krb5-auth-dialog.ui.h:14
+#: ../src/resources/ui/ka-preferences.ui.h:7
 msgid "If checked, request forwardable tickets"
 msgstr "Hvis afkrydset: Anmod om billetter som kan videresendes"
 
-#: ../src/krb5-auth-dialog.ui.h:15
+#: ../src/resources/ui/ka-preferences.ui.h:8
 msgid "renewable"
 msgstr "kan fornyes"
 
-#: ../src/krb5-auth-dialog.ui.h:16
+#: ../src/resources/ui/ka-preferences.ui.h:9
 msgid "If checked, request renewable tickets"
 msgstr "Hvis afkrydset: Anmod om billetter som kan fornyes"
 
-#: ../src/krb5-auth-dialog.ui.h:17
+#: ../src/resources/ui/ka-preferences.ui.h:10
 msgid "proxiable"
 msgstr "tillader proxies"
 
-#: ../src/krb5-auth-dialog.ui.h:18
+#: ../src/resources/ui/ka-preferences.ui.h:11
 msgid "If checked, request proxiable tickets"
 msgstr "Hvis afkrydset: Anmod om billetter som tillader proxy"
 
-#: ../src/krb5-auth-dialog.ui.h:19
+#: ../src/resources/ui/ka-preferences.ui.h:12
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:20
+#: ../src/resources/ui/ka-preferences.ui.h:13
 msgid "Userid"
 msgstr "Bruger-id"
 
-#: ../src/krb5-auth-dialog.ui.h:21
+#: ../src/resources/ui/ka-preferences.ui.h:14
 msgid "Use Smartcard"
 msgstr "Brug smartcard"
 
-#: ../src/krb5-auth-dialog.ui.h:22
+#: ../src/resources/ui/ka-preferences.ui.h:15
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr "Hvis afkrydset: Brug et sikkerhedssymbol (Smartcard) til godkendelsen."
 
-#: ../src/krb5-auth-dialog.ui.h:23
+#: ../src/resources/ui/ka-preferences.ui.h:16
 msgid "Certificate and private key used for authentication"
 msgstr "Certifikat og privat nøgle brugt for godkendelse"
 
-#: ../src/krb5-auth-dialog.ui.h:24
+#: ../src/resources/ui/ka-preferences.ui.h:17
 msgid "_Browse..."
 msgstr "_Gennemse..."
 
-#: ../src/krb5-auth-dialog.ui.h:25
+#: ../src/resources/ui/ka-preferences.ui.h:18
 msgid "X509 trust anchors"
 msgstr "X509-troværdighedsankre"
 
-#: ../src/krb5-auth-dialog.ui.h:26
+#: ../src/resources/ui/ka-preferences.ui.h:19
 msgid "Certificate used to verify digital signatures."
 msgstr "Certifikat brugt til at verificere digitale underskrifter."
 
-#: ../src/krb5-auth-dialog.ui.h:27
+#: ../src/resources/ui/ka-preferences.ui.h:20
 msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
@@ -145,76 +145,42 @@ msgstr ""
 "Konfigurer brugen af certifikater og smartkort for Kerberos' "
 "netværksgodkendelse."
 
-#: ../src/krb5-auth-dialog.ui.h:28
+#: ../src/resources/ui/ka-preferences.ui.h:21
 msgid "PKINIT"
 msgstr "PKINIT"
 
-#: ../src/krb5-auth-dialog.ui.h:29
+#: ../src/resources/ui/ka-preferences.ui.h:22
 msgid "Notifications"
 msgstr "Påmindelser"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:31
+#. Used in combination:
+#: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Advar"
 
-#: ../src/krb5-auth-dialog.ui.h:32
+#: ../src/resources/ui/ka-preferences.ui.h:25
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
 msgstr "Send påmindelse om billetudløb med dette antal minutter før udløb"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:34
+#. Used in combination:
+#: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "minutter før billetudløb"
 
-#: ../src/ka-kerberos.c:177
-msgid "unknown error"
-msgstr "ukendt fejl"
+#: ../src/resources/ui/ka-pwdialog.ui.h:1
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Kerberosgodkendelse"
 
-# er i øjeblikket tomt 
-#: ../src/ka-kerberos.c:317
-msgid "Your ticket cache is currently empty"
-msgstr "Dit billetmellemlager er aktuelt tomt"
+#: ../src/resources/ui/ka-pwdialog.ui.h:2 ../src/ka-preferences.c:372
+msgid "_Cancel"
+msgstr "_Afbryd"
 
-#: ../src/ka-kerberos.c:348
-msgid "Expired"
-msgstr "Udløbet"
-
-#: ../src/ka-pwdialog.c:230
-#, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "Kunne ikke indhente kerberosbillet: '%s'"
-
-#: ../src/ka-pwdialog.c:269 ../src/ka-applet.c:572
-#, c-format
-msgid "Your credentials expire in %d minute"
-msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "Dine akkreditiver udløber om %d minut"
-msgstr[1] "Dine akkreditiver udløber om %d minutter"
-
-#: ../src/ka-pwdialog.c:274 ../src/ka-applet.c:577
-msgid "Your credentials have expired"
-msgstr "Dine akkreditiver er udløbet"
-
-#: ../src/ka-pwdialog.c:297
-msgid "Please enter your Kerberos password:"
-msgstr "Indtast venligst din adgangskode til Kerberos:"
-
-#: ../src/ka-pwdialog.c:310
-#, c-format
-msgid "Please enter the password for '%s':"
-msgstr "Indtast venligst adgangskoden for '%s':"
-
-#: ../src/ka-pwdialog.c:328
-msgid "The password you entered is invalid"
-msgstr "Adgangskoden du indtastede er ugyldig"
-
-#: ../src/ka-pwdialog.c:344
-#, c-format
-msgid "%s Error"
-msgstr "%s-fejl"
+#: ../src/resources/ui/ka-pwdialog.ui.h:3
+msgid "_Renew Ticket"
+msgstr "_Forny billet"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -1534,61 +1500,150 @@ msgstr "Ugyldigt magital for GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Ugyldigt magital for GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:566
+#: ../src/ka-applet.c:654
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Dine akkreditiver udløber om %.2d:%.2dh"
 
-#: ../src/ka-applet.c:759
+#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:348
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "Dine akkreditiver udløber om %d minut"
+msgstr[1] "Dine akkreditiver udløber om %d minutter"
+
+#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
+msgid "Your credentials have expired"
+msgstr "Dine akkreditiver er udløbet"
+
+#: ../src/ka-applet.c:837
 msgid "List Tickets"
 msgstr "Vis billetter"
 
-#: ../src/ka-applet.c:769
+#: ../src/ka-applet.c:847
 msgid "Get Ticket"
 msgstr "Hent billet"
 
-#: ../src/ka-applet.c:778
+#: ../src/ka-applet.c:856
 msgid "Don't show me this again"
 msgstr "Vis mig ikke dette igen"
 
-#: ../src/ka-applet.c:785
+#: ../src/ka-applet.c:863
 msgid "Remove Credentials Cache"
 msgstr "Fjern akkreditivmellemlager"
 
-#: ../src/ka-applet.c:845
+#: ../src/ka-applet.c:925
 msgid "You have valid Kerberos credentials."
 msgstr "Du har gyldige Kerberosakkreditiver."
 
-#: ../src/ka-applet.c:847
+#: ../src/ka-applet.c:927
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Du har opdateret dine Kerberosakkreditiver."
 
-#: ../src/ka-applet.c:850
+#: ../src/ka-applet.c:930
 msgid "Network credentials valid"
 msgstr "Netværksakkreditiver er gyldige"
 
-#: ../src/ka-applet.c:869
+#: ../src/ka-applet.c:949
 msgid "Network credentials expiring"
 msgstr "Netværksakkreditiver udløber"
 
-#: ../src/ka-applet.c:886
+#: ../src/ka-applet.c:966
 msgid "Network credentials expired"
 msgstr "Netværksakkreditiver er udløbet"
 
-#: ../src/ka-applet.c:887
+#: ../src/ka-applet.c:967
 msgid "Your Kerberos credentials have expired."
 msgstr "Dine Kerberosakkreditiver er udløbet."
 
-#: ../src/ka-applet.c:967
-msgid "Remove Credentials _Cache"
-msgstr "Fjern akkreditiv_mellemlager"
+#: ../src/ka-kerberos.c:176
+msgid "unknown error"
+msgstr "ukendt fejl"
 
-#. Ticket dialog
-#: ../src/ka-applet.c:978
-msgid "_List Tickets"
-msgstr "_Vis billetter"
+# er i øjeblikket tomt 
+#: ../src/ka-kerberos.c:329
+msgid "Your ticket cache is currently empty"
+msgstr "Dit billetmellemlager er aktuelt tomt"
 
-#: ../src/ka-tools.c:45
+#: ../src/ka-kerberos.c:360
+msgid "Expired"
+msgstr "Udløbet"
+
+#: ../src/ka-kerberos.c:1049
+msgid " (No network connection)"
+msgstr " (Ingen netværksforbindelse)"
+
+#: ../src/ka-main-window.c:77
+msgid "Principal"
+msgstr "Hoved"
+
+#: ../src/ka-main-window.c:83
+msgid "Start Time"
+msgstr "Starttidspunkt"
+
+#: ../src/ka-main-window.c:89
+msgid "End Time"
+msgstr "Sluttidspunkt"
+
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:96
+msgid "Fwd"
+msgstr "Videresend"
+
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:103
+msgid "Proxy"
+msgstr "Proxy"
+
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:110
+msgid "Renew"
+msgstr "Forny"
+
+#: ../src/ka-main-window.c:140
+msgid "Error displaying service ticket information"
+msgstr "Der opstod en fejl ved visning af tjenestebilletinformationen"
+
+#: ../src/ka-preferences.c:369
+msgid "Choose Certificate"
+msgstr "Vælg certifikat"
+
+#: ../src/ka-preferences.c:373
+msgid "_Open"
+msgstr "_Åbn"
+
+#: ../src/ka-preferences.c:385
+msgid "X509 Certificates"
+msgstr "X509-certifikater"
+
+#: ../src/ka-preferences.c:389
+msgid "all files"
+msgstr "alle filer"
+
+#: ../src/ka-pwdialog.c:149
+#, c-format
+msgid "%s Error"
+msgstr "%s-fejl"
+
+#: ../src/ka-pwdialog.c:309
+#, c-format
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "Kunne ikke indhente Kerberosbillet: '%s'"
+
+#: ../src/ka-pwdialog.c:376
+msgid "Please enter your Kerberos password:"
+msgstr "Indtast venligst din adgangskode til Kerberos:"
+
+#: ../src/ka-pwdialog.c:389
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Indtast venligst adgangskoden for '%s':"
+
+#: ../src/ka-pwdialog.c:407
+msgid "The password you entered is invalid"
+msgstr "Adgangskoden du indtastede er ugyldig"
+
+#: ../src/ka-tools.c:44
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1598,60 +1653,53 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:85
+#: ../src/ka-tools.c:84
 msgid "translator-credits"
 msgstr ""
-"Joe Hansen, 2011, 2013.\n"
+"Joe Hansen, 2011, 2013, 2016.\n"
 "\n"
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../src/ka-main-window.c:75
-msgid "Principal"
-msgstr "Hoved"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+msgid "Kerberos Authentication Dialog"
+msgstr "Godkendelsesdialog for Kerberos"
 
-#: ../src/ka-main-window.c:81
-msgid "Start Time"
-msgstr "Starttidspunkt"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Vis, forny eller anmod om Kerberosbilletter"
 
-#: ../src/ka-main-window.c:87
-msgid "End Time"
-msgstr "Sluttidspunkt"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"Kerberos Authentication giver dig mulighed for at vise dine nuværende "
+"Kerberosbilletter og at anmode om en ny billet (godkende på Kerberosserveren). "
+"Programmet påminder dig også, når dine Kerberosakkreditiver er ved at udløbe "
+"og fornyer din billet automatisk om muligt."
 
-#. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:94
-msgid "Fwd"
-msgstr "Videresend"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:4
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+"Dette er nyttigt, hvis du har brug for at godkende på en Kerberos Server (KDC) "
+"efter dit logind til skrivebordet (f.eks. på en mobil enhed)."
 
-#. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:101
-msgid "Proxy"
-msgstr "Proxy"
-
-#. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:108
-msgid "Renew"
-msgstr "Forny"
-
-#: ../src/ka-main-window.c:137
-msgid "Error displaying service ticket information"
-msgstr "Der opstod en fejl ved visning af tjenestebilletinformationen"
-
-#: ../src/ka-preferences.c:297
-msgid "Choose Certificate"
-msgstr "Vælg certifikat"
-
-#: ../src/ka-preferences.c:313
-msgid "X509 Certificates"
-msgstr "X509-certifikater"
-
-#: ../src/ka-preferences.c:317
-msgid "all files"
-msgstr "alle filer"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:5
+msgid "Kerberos authentication dialog"
+msgstr "Godkendelsesdialog til Kerberos"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
-msgstr "Godkendelsesdialog for Kerberosnetværk"
+msgstr "Godkendelsesdialog til Kerberosnetværk"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:3
+msgid "kerberos;authentication;"
+msgstr "kerberos;godkendelse;autentifikation"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"

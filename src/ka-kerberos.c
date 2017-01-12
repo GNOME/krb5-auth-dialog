@@ -41,11 +41,14 @@
 #include "ka-main-window.h"
 
 #ifdef ENABLE_NETWORK_MANAGER
-#include <nm-client.h>
-
-#if !defined(NM_CHECK_VERSION)
-#define NM_CHECK_VERSION(x,y,z) 0
-#endif
+#  ifdef HAVE_LIBNM
+#    include <NetworkManager.h>
+#  else
+#    include <nm-client.h>
+#    if !defined(NM_CHECK_VERSION)
+#      define NM_CHECK_VERSION(x,y,z) 0
+#    endif
+#  endif
 #endif
 
 #ifdef HAVE_HX509_ERR_H
@@ -1094,16 +1097,28 @@ static gboolean
 ka_nm_init (void)
 {
 #ifdef ENABLE_NETWORK_MANAGER
+#ifdef HAVE_LIBNM
+    GError *error = NULL;
+
+    nm_client = nm_client_new (NULL, &error);
+    if (!nm_client) {
+        g_warning ("Could not initialize nm-client: %s", error->message);
+        g_error_free (error);
+        return FALSE;
+    }
+#else
     nm_client = nm_client_new ();
     if (!nm_client) {
         g_warning ("Could not initialize nm-client");
-    } else {
-        g_signal_connect (nm_client, "notify::state",
-                          G_CALLBACK (ka_nm_client_state_changed_cb),
-                          &is_online);
-        /* Set initial state */
-        ka_nm_client_state_changed_cb (nm_client, NULL, &is_online);
+        return FALSE;
     }
+#endif
+
+    g_signal_connect (nm_client, "notify::state",
+                      G_CALLBACK (ka_nm_client_state_changed_cb),
+                      &is_online);
+    /* Set initial state */
+    ka_nm_client_state_changed_cb (nm_client, NULL, &is_online);
 #endif /* ENABLE_NETWORK_MANAGER */
     return TRUE;
 }

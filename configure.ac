@@ -146,8 +146,12 @@ AC_ARG_ENABLE([network-manager],
 AC_MSG_RESULT([$enable_network_manager])
 
 if test "x$enable_network_manager" != "xno"; then
-	PKG_CHECK_MODULES([NETWORK_MANAGER],[libnm-glib >= 0.7.999],
-		[enable_network_manager=yes],[enable_network_manager=no])
+	PKG_CHECK_MODULES([NETWORK_MANAGER],[libnm],
+		AC_DEFINE([HAVE_LIBNM],[1],[Define if libnm is available])
+		[enable_network_manager=yes],
+		PKG_CHECK_MODULES([NETWORK_MANAGER],[libnm-glib >= 0.7.999],
+			[enable_network_manager=yes],
+			[enable_network_manager=no]))
 	AC_SUBST([NETWORK_MANAGER_CFLAGS])
 	AC_SUBST([NETWORK_MANAGER_LIBS])
 fi

@@ -323,7 +323,7 @@ ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
 
         /* if the file doesn't exist, it's not an error if we can't
          * parse it */
-        if (!g_file_test (ka_ccache_filename (), G_FILE_TEST_EXISTS))
+        if (!g_file_test (ka_ccache_filename (), G_FILE_TEST_EXISTS)) {
             gtk_list_store_append (tickets, &iter);
             gtk_list_store_set (tickets, &iter,
                                 PRINCIPAL_COLUMN, _("Your ticket cache is currently empty"),
@@ -331,6 +331,7 @@ ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
                                 RENEWABLE_COLUMN, FALSE,
                                 PROXIABLE_COLUMN, FALSE, -1);
             retval = TRUE;
+        }
         goto out;
     }
 

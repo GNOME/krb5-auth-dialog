@@ -1,15 +1,17 @@
 # Swedish translation for krb5-auth-dialog.
-# Copyright © 2009-2016 Free Software Foundation, Inc.
+# Copyright © 2009-2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # Daniel Nylander <po@danielnylander.se>, 2009, 2011.
 # Josef Andersson <josef.andersson@fripost.org>, 2016.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-10-04 19:47+0000\n"
-"PO-Revision-Date: 2016-10-20 23:48+0200\n"
+"POT-Creation-Date: 2016-10-20 21:49+0000\n"
+"PO-Revision-Date: 2017-02-01 19:05+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -17,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Project-Style: gnome\n"
 
 # Översättaranteckningar:
@@ -1502,7 +1504,7 @@ msgstr[1] "Dina autentiseringsuppgifter går ut om %d minuter"
 
 #: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
 msgid "Your credentials have expired"
-msgstr "Din autentiseringsuppgifter har förfallit"
+msgstr "Dina autentiseringsuppgifter har förfallit"
 
 #: ../src/ka-applet.c:837
 msgid "List Tickets"
@@ -1538,7 +1540,7 @@ msgstr "Nätverksautentiseringsuppgifter förfaller"
 
 #: ../src/ka-applet.c:966
 msgid "Network credentials expired"
-msgstr "Nätverkautentiseringsuppgifters har förfallit"
+msgstr "Nätverksautentiseringsuppgifter har förfallit"
 
 #: ../src/ka-applet.c:967
 msgid "Your Kerberos credentials have expired."

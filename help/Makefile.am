@@ -15,5 +15,5 @@ HELP_MEDIA = \
 	figures/trayicon-expiring.png \
 	$(NULL)
 
-HELP_LINGUAS = cs de el es sl sv \
+HELP_LINGUAS = cs de el es pl sl sv \
 	$(NULL)

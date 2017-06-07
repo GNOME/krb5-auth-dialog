@@ -168,57 +168,24 @@ ka_pwdialog_new (void)
     return pwdialog;
 }
 
-
-static GdkGrabStatus
-for_each_keyboard (GdkWindow *window, GdkEvent *event,
-                   GdkGrabStatus (*func)(GdkDevice*,
-                                         GdkWindow*,
-                                         GdkEvent*))
-{
-    GdkDisplay *display;
-    GdkDeviceManager *device_manager;
-    GdkDevice *device;
-    GList *devices, *dev;
-    GdkGrabStatus ret = GDK_GRAB_SUCCESS;
-
-    display = gdk_window_get_display (window);
-    device_manager = gdk_display_get_device_manager (display);
-    devices = gdk_device_manager_list_devices (device_manager,
-                                               GDK_DEVICE_TYPE_MASTER);
-
-    for (dev = devices; dev; dev = dev->next) {
-        device = dev->data;
-        if (gdk_device_get_source (device) != GDK_SOURCE_KEYBOARD)
-            continue;
-        ret = (*func)(device, window, event);
-    }
-
-    g_list_free (devices);
-    return ret;
-}
-
-static GdkGrabStatus
-grab_keyboard_func (GdkDevice *device, GdkWindow *window, GdkEvent *event)
-{
-    return gdk_device_grab (device,
-                            window,
-                            GDK_OWNERSHIP_WINDOW,
-                            FALSE,
-                            GDK_ALL_EVENTS_MASK,
-                            NULL,
-                            gdk_event_get_time (event));
-}
-
 static gboolean
 grab_keyboard (GtkWidget *win, GdkEvent * event, gpointer data)
 {
     KaPwDialog *pwdialog = KA_PWDIALOG (data);
     GdkGrabStatus status;
+    GdkWindow *window = gtk_widget_get_window(win);
 
+    gtk_grab_add(win);
     if (!pwdialog->priv->grabbed) {
-        status = for_each_keyboard(gtk_widget_get_window (win),
-                                   event,
-                                   &grab_keyboard_func);
+        status = gdk_seat_grab (gdk_display_get_default_seat(
+                                    gdk_window_get_display (window)),
+                                window,
+                                GDK_SEAT_CAPABILITY_ALL,
+                                TRUE,
+                                NULL,
+                                event,
+                                NULL,
+                                NULL);
 
         if (status == GDK_GRAB_SUCCESS)
             pwdialog->priv->grabbed = TRUE;
@@ -228,26 +195,19 @@ grab_keyboard (GtkWidget *win, GdkEvent * event, gpointer data)
     return FALSE;
 }
 
-static GdkGrabStatus
-ungrab_keyboard_func (GdkDevice *device,
-                      GdkWindow *window G_GNUC_UNUSED,
-                      GdkEvent *event)
-{
-    gdk_device_ungrab (device,
-                       gdk_event_get_time (event));
-    return 0;
-}
 
 static gboolean
-ungrab_keyboard (GtkWidget *win G_GNUC_UNUSED,
-                 GdkEvent * event, gpointer data)
+ungrab_keyboard (GtkWidget *win,
+                 GdkEvent *event G_GNUC_UNUSED, gpointer data)
 {
     KaPwDialog *pwdialog = KA_PWDIALOG (data);
+    GdkWindow *window = gtk_widget_get_window(win);
 
     if (pwdialog->priv->grabbed) {
-        for_each_keyboard(gtk_widget_get_window (win),
-                          event,
-                          &ungrab_keyboard_func);
+        gtk_grab_remove (win);
+        gdk_seat_ungrab (gdk_display_get_default_seat(
+                             gdk_window_get_display (window)));
+
         pwdialog->priv->grabbed = FALSE;
     }
     return FALSE;

@@ -36,5 +36,8 @@ intltool-extract.in
 intltool-merge.in
 intltool-update.in
 gnome-doc-utils.make
+help/*/index.docbook
+help/*/*.stamp
+help/*/legal.xml
 src/resources.c
 src/krb5-auth-dialog.appdata.xml

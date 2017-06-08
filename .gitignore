@@ -3,6 +3,7 @@
 *.lo
 *.mo
 *~
+\#*#
 autom4te.cache/
 .deps/
 .libs/

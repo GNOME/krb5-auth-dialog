@@ -21,7 +21,7 @@
 #include "ka-tools.h"
 
 void
-ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
+ka_show_help (GtkWindow* window, const char* chapter)
 {
   GError *error = NULL;
   const char *section = "";
@@ -32,8 +32,7 @@ ka_show_help (GdkScreen* screen, const char* chapter, GtkWindow* window)
 
   url = g_strdup_printf("help:krb5-auth-dialog%s", section);
 
-  gtk_show_uri (screen, url, gtk_get_current_event_time (), &error);
-
+  gtk_show_uri_on_window (window, url, gtk_get_current_event_time (), &error);
   if (error) {
       GtkWidget *message_dialog;
 

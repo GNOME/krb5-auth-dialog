@@ -255,7 +255,7 @@ action_help (GSimpleAction *action G_GNUC_UNUSED,
     KaApplet *self = KA_APPLET(userdata);
     GtkWindow *window = ka_applet_last_focused_window (self);
 
-    ka_show_help (gtk_window_get_screen (window), NULL, NULL);
+    ka_show_help (window, NULL);
 }
 
 static void

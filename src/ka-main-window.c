@@ -30,6 +30,7 @@
 #include "ka-preferences.h"
 
 static GtkListStore *tickets;
+static GtkButton *ticket_btn;
 static GtkApplicationWindow *main_window;
 
 static void
@@ -41,6 +42,26 @@ ccache_changed_cb (KaApplet* applet,
     KA_DEBUG("Refreshing ticket list");
     g_object_get(applet, KA_PROP_NAME_CONF_TICKETS, &conf_tickets, NULL);
     ka_get_service_tickets (tickets, !conf_tickets);
+}
+
+
+static void
+enable_ticket_button_cb (gpointer* applet G_GNUC_UNUSED,
+                         gchar *princ G_GNUC_UNUSED,
+                         guint when G_GNUC_UNUSED,
+                         gpointer user_data)
+{
+    gboolean enable = GPOINTER_TO_UINT(user_data);
+    KA_DEBUG ("Sensitive: %u", enable);
+    gtk_widget_set_sensitive(GTK_WIDGET(ticket_btn), enable);
+}
+
+
+static void
+ticket_btn_clicked(GtkButton* btn G_GNUC_UNUSED, gpointer user_data)
+{
+    KaApplet *applet = KA_APPLET(user_data);
+    ka_grab_credentials (applet);
 }
 
 
@@ -117,6 +138,17 @@ ka_main_window_create (KaApplet *applet)
                       G_CALLBACK(ccache_changed_cb),
                       NULL);
 
+    ticket_btn =
+        GTK_BUTTON (gtk_builder_get_object (builder, "get_ticket_btn"));
+    g_signal_connect(ticket_btn, "clicked", G_CALLBACK(ticket_btn_clicked), applet);
+
+    g_signal_connect (applet, "krb-tgt-acquired",
+                      G_CALLBACK (enable_ticket_button_cb),
+                      GUINT_TO_POINTER(FALSE));
+
+    g_signal_connect (applet, "krb-tgt-expired",
+                      G_CALLBACK (enable_ticket_button_cb),
+                      GUINT_TO_POINTER(TRUE));
     g_object_unref (builder);
     return main_window;
 }

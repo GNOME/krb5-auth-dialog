@@ -1195,8 +1195,10 @@ ka_applet_destroy (KaApplet* self)
     gtk_widget_destroy (GTK_WIDGET(self->priv->prefs));
     self->priv->prefs = NULL;
 
-    gtk_widget_destroy (GTK_WIDGET(self->priv->context_menu));
-    self->priv->context_menu = NULL;
+    if (self->priv->context_menu) {
+        gtk_widget_destroy (GTK_WIDGET(self->priv->context_menu));
+        self->priv->context_menu = NULL;
+    }
 
     ka_kerberos_destroy ();
 }

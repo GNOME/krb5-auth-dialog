@@ -1108,7 +1108,7 @@ ka_kerberos_init (KaApplet *applet)
     gboolean ret;
 
     ka_secmem_init ();
-    ret = ka_krb5_context_init (applet);
+    ret = ka_krb5_context_init ();
     ka_nm_init ();
     g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
                            (GSourceFunc) credentials_expiring, applet);

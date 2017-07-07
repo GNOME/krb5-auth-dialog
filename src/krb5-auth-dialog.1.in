@@ -17,8 +17,11 @@ credentials, prompting the user for whatever information is necessary.
 
 .TP
 \fB--auto\fR
-If this option is specified, \fBkrb5-auth-dialog\fR will exit if it finds that the
-user has no Kerberos credentials.
+If this option is specified, \fkrb5-auth-dialog\f will start only if it
+finds that the user has Kerberos credentials. This may be used to
+ensure that only users who actually use Kerberos see the program.
+Note that in some settings, users may authenticate to Kerberos at a
+later time even if they do not have Kerberos credentials initially.
 
 .SH "SEE ALSO"
 .BR krb5.conf (5)

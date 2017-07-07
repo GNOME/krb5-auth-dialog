@@ -218,6 +218,9 @@ credentials_expiring_real (KaApplet *applet)
     krb5_timestamp now;
     gboolean retval = FALSE;
 
+    if (!kcontext_valid)
+        return retval;
+
     memset (&my_creds, 0, sizeof (my_creds));
     ka_applet_set_tgt_renewable (applet, FALSE);
     if (!ka_get_tgt_from_ccache (kcontext, &my_creds)) {
@@ -938,8 +941,8 @@ static gboolean
 ka_krb5_context_free ()
 {
     if (kcontext_valid) {
-        krb5_free_context (kcontext);
         kcontext_valid = FALSE;
+        krb5_free_context (kcontext);
     }
     return TRUE;
 }

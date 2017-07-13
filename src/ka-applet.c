@@ -360,13 +360,17 @@ static void
 ka_applet_startup (GApplication *application)
 {
     KaApplet *self = KA_APPLET (application);
+    GtkWindow *main_window;
 
     KA_DEBUG ("Primary application");
 
     G_APPLICATION_CLASS (ka_applet_parent_class)->startup (application);
 
     self->priv->startup_ccache = ka_kerberos_init (self);
-    ka_main_window_create (self);
+    main_window = GTK_WINDOW(ka_main_window_create (self));
+    gtk_window_set_transient_for(GTK_WINDOW(self->priv->pwdialog),
+                                 main_window);
+
     self->priv->prefs = ka_preferences_new (self);
 
     ka_applet_app_menu_create(self);

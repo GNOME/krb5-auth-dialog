@@ -522,7 +522,7 @@ credentials_expiring (gpointer *data)
 
     KA_DEBUG ("Checking expiry <%ds", ka_applet_get_pw_prompt_secs (applet));
     if (credentials_expiring_real (applet) && is_online) {
-        KA_DEBUG ("Expiry @ %ld", creds_expiry);
+        KA_DEBUG ("Expiry @ %ld", (long int)creds_expiry);
 
         if (!ka_renew_credentials (applet))
             KA_DEBUG ("Credentials renewed");

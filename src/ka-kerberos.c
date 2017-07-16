@@ -466,7 +466,7 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
             goto cleanup;
         if (password_len + 1 > prompts[i].reply->length) {
             g_warning ("Password too long %d/%zd", password_len + 1,
-                       prompts[i].reply->length);
+                       (size_t)prompts[i].reply->length);
             goto cleanup;
         }
 

@@ -1,4 +1,26 @@
 ==============
+Version 3.26.1
+==============
+* Update for newer GTK
+* Bugfixes
+* UI translations:
+	Anders Jonsson (sv)
+	Balázs Meskó (hu)
+	Christian Kirbach (de)
+	Claude Paroz (fr)
+	Daniel Mustieles (es)
+	Gábor Kelemen (hu)
+	Joe Hansen (da)
+	Mario Blättermann (de)
+	Piotr Drąg (pl)
+	Rafael Fontenelle (pt_BR)
+	Zdeněk Hataš (cs)
+	Мирослав Николић (sr) (sr@latin)
+
+* Doc translations:
+	Piotr Drąg (pl)
+
+==============
 Version 3.20.0
 ==============
 * Use yelp-tools instead of gtk-doc-utils

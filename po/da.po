@@ -14,9 +14,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2016-10-04 19:47+0000\n"
+"POT-Creation-Date: 2017-06-28 17:55+0000\n"
 "PO-Revision-Date: 2016-12-04 19:00+0000\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
@@ -127,7 +127,7 @@ msgstr "Certifikat og privat nøgle brugt for godkendelse"
 
 #: ../src/resources/ui/ka-preferences.ui.h:17
 msgid "_Browse..."
-msgstr "_Gennemse..."
+msgstr "_Gennemse …"
 
 #: ../src/resources/ui/ka-preferences.ui.h:18
 msgid "X509 trust anchors"
@@ -1500,19 +1500,20 @@ msgstr "Ugyldigt magital for GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Ugyldigt magital for GSSAPI QUEUE"
 
+#. Translators: First number is hours, second number is minutes
 #: ../src/ka-applet.c:654
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Dine akkreditiver udløber om %.2d:%.2dh"
 
-#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:348
+#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:308
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Dine akkreditiver udløber om %d minut"
 msgstr[1] "Dine akkreditiver udløber om %d minutter"
 
-#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
+#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:313
 msgid "Your credentials have expired"
 msgstr "Dine akkreditiver er udløbet"
 
@@ -1556,20 +1557,20 @@ msgstr "Netværksakkreditiver er udløbet"
 msgid "Your Kerberos credentials have expired."
 msgstr "Dine Kerberosakkreditiver er udløbet."
 
-#: ../src/ka-kerberos.c:176
+#: ../src/ka-kerberos.c:172
 msgid "unknown error"
 msgstr "ukendt fejl"
 
 # er i øjeblikket tomt 
-#: ../src/ka-kerberos.c:329
+#: ../src/ka-kerberos.c:325
 msgid "Your ticket cache is currently empty"
 msgstr "Dit billetmellemlager er aktuelt tomt"
 
-#: ../src/ka-kerberos.c:360
+#: ../src/ka-kerberos.c:357
 msgid "Expired"
 msgstr "Udløbet"
 
-#: ../src/ka-kerberos.c:1049
+#: ../src/ka-kerberos.c:1040
 msgid " (No network connection)"
 msgstr " (Ingen netværksforbindelse)"
 
@@ -1625,25 +1626,25 @@ msgstr "alle filer"
 msgid "%s Error"
 msgstr "%s-fejl"
 
-#: ../src/ka-pwdialog.c:309
+#: ../src/ka-pwdialog.c:269
 #, c-format
 msgid "Couldn't acquire Kerberos ticket: '%s'"
 msgstr "Kunne ikke indhente Kerberosbillet: '%s'"
 
-#: ../src/ka-pwdialog.c:376
+#: ../src/ka-pwdialog.c:336
 msgid "Please enter your Kerberos password:"
 msgstr "Indtast venligst din adgangskode til Kerberos:"
 
-#: ../src/ka-pwdialog.c:389
+#: ../src/ka-pwdialog.c:349
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Indtast venligst adgangskoden for '%s':"
 
-#: ../src/ka-pwdialog.c:407
+#: ../src/ka-pwdialog.c:367
 msgid "The password you entered is invalid"
 msgstr "Adgangskoden du indtastede er ugyldig"
 
-#: ../src/ka-tools.c:44
+#: ../src/ka-tools.c:43
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1653,7 +1654,7 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:84
+#: ../src/ka-tools.c:83
 msgid "translator-credits"
 msgstr ""
 "Joe Hansen, 2011, 2013, 2016.\n"
@@ -1677,17 +1678,18 @@ msgid ""
 "your ticket automatically if possible."
 msgstr ""
 "Kerberos Authentication giver dig mulighed for at vise dine nuværende "
-"Kerberosbilletter og at anmode om en ny billet (godkende på Kerberosserveren). "
-"Programmet påminder dig også, når dine Kerberosakkreditiver er ved at udløbe "
-"og fornyer din billet automatisk om muligt."
+"Kerberosbilletter og at anmode om en ny billet (godkende på "
+"Kerberosserveren). Programmet påminder dig også, når dine "
+"Kerberosakkreditiver er ved at udløbe og fornyer din billet automatisk om "
+"muligt."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:4
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
-"Dette er nyttigt, hvis du har brug for at godkende på en Kerberos Server (KDC) "
-"efter dit logind til skrivebordet (f.eks. på en mobil enhed)."
+"Dette er nyttigt, hvis du har brug for at godkende på en Kerberos Server "
+"(KDC) efter dit logind til skrivebordet (f.eks. på en mobil enhed)."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:5
 msgid "Kerberos authentication dialog"

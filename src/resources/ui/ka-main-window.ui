@@ -21,6 +21,8 @@
           <object class="GtkTreeView" id="krb5_tickets_treeview">
             <property name="visible">True</property>
             <property name="can_focus">True</property>
+            <property name="vexpand">True</property>
+            <property name="hexpand">True</property>
             <child internal-child="selection">
               <object class="GtkTreeSelection" id="treeview-selection"/>
             </child>

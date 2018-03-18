@@ -5,6 +5,7 @@
 [type: gettext/glade]src/resources/ui/ka-pwdialog.ui
 src/dummy-strings.c
 src/ka-applet.c
+src/ka-applet-priv.h
 src/ka-kerberos.c
 src/ka-main-window.c
 src/ka-preferences.c

@@ -1,23 +1,23 @@
 #
 # Simge Sezgin <simgeszgn@gmail.com>, 2015.
 # İşbaran Akçayır <isbaran@gmail.com>, 2015.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018.
 #
-
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-gialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
+"Report-Msgid-Bugs-To: https://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
 "auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2015-09-19 22:32+0000\n"
-"PO-Revision-Date: 2015-03-03 09:39+0000\n"
-"Last-Translator: İşbaran Akçayır <isbaran@gmail.com>\n"
+"POT-Creation-Date: 2017-06-28 17:55+0000\n"
+"PO-Revision-Date: 2018-03-14 12:36+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 2.5.1.1\n"
+"X-Generator: Gtranslator 2.91.7\n"
 "X-POOTLE-MTIME: 1425375592.000000\n"
 
 #: ../src/resources/ui/app-menu.ui.h:1
@@ -40,7 +40,7 @@ msgstr "_Kapat"
 
 #: ../src/resources/ui/tray-icon-menu.ui.h:1
 msgid "Remove Credentials _Cache"
-msgstr "Kimlik Bilgisi _Ön Beleğini Sil"
+msgstr "Kimlik Bilgisi _Ön Belleğini Sil"
 
 #: ../src/resources/ui/tray-icon-menu.ui.h:2
 msgid "_List Tickets"
@@ -58,7 +58,7 @@ msgstr "Kerberos Kullanıcısı"
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
-"Kerberos hesap adınız. Mevcut kullanıcı adınızı kullanmak istiyorsanız boş "
+"Kerberos hesap adınız. Geçerli kullanıcı adınızı kullanmak istiyorsanız boş "
 "bırakın."
 
 #: ../src/resources/ui/ka-preferences.ui.h:3
@@ -71,7 +71,7 @@ msgstr "Kerberos Bilet Seçenekleri"
 
 #: ../src/resources/ui/ka-preferences.ui.h:5
 msgid "Requested Kerberos tickets should be:"
-msgstr "Talep edilen Kerberos biletleri şu şekilde olmalıdır:"
+msgstr "İstenen Kerberos biletleri şu şekilde olmalıdır:"
 
 #: ../src/resources/ui/ka-preferences.ui.h:6
 msgid "forwardable"
@@ -107,12 +107,12 @@ msgstr "Kullanıcı Kimliği"
 
 #: ../src/resources/ui/ka-preferences.ui.h:14
 msgid "Use Smartcard"
-msgstr "Smartcard Kullan"
+msgstr "Akıllı Kart Kullan"
 
 #: ../src/resources/ui/ka-preferences.ui.h:15
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
-"Eğer seçilirse, kimlik doğrulamak için bir güvenlik jetonu (Smartcard) "
+"Eğer seçilirse, kimlik doğrulamak için bir güvenlik jetonu (Akıllı Kart) "
 "kullanın."
 
 #: ../src/resources/ui/ka-preferences.ui.h:16
@@ -263,7 +263,7 @@ msgstr "Veritabanındaki sunucu girdisinin süresi doldu"
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
 #: ../src/dummy-strings.c:26
 msgid "Requested protocol version not supported"
-msgstr "Talep edilem protokol sürümü desteklenmiyor"
+msgstr "İstenen protokol sürümü desteklenmiyor"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
 #: ../src/dummy-strings.c:27
@@ -303,17 +303,17 @@ msgstr "Bilet ileri tarih için uygun değildir"
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
 #: ../src/dummy-strings.c:34
 msgid "Requested effective lifetime is negative or too short"
-msgstr "Talep edilen etkili ömür negatif ya da çok kısadır"
+msgstr "İstenen etkili ömür negatif ya da çok kısadır"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
 #: ../src/dummy-strings.c:35
 msgid "KDC policy rejects request"
-msgstr "KDC kuralı talebi reddeder"
+msgstr "KDC kuralı isteği reddediyor"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
 #: ../src/dummy-strings.c:36
 msgid "KDC can't fulfill requested option"
-msgstr "KDC talep edilen seçeneği yerine getiremez"
+msgstr "KDC istenen seçeneği yerine getiremiyor"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
 #: ../src/dummy-strings.c:37
@@ -353,12 +353,12 @@ msgstr "TGT iptal edildi"
 #. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
 #: ../src/dummy-strings.c:44
 msgid "Client not yet valid - try again later"
-msgstr "İstemci henüz geçerli değil - daha sonra tekrar deneyin"
+msgstr "İstemci henüz geçerli değil - daha sonra yeniden deneyin"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
 #: ../src/dummy-strings.c:45
 msgid "Server not yet valid - try again later"
-msgstr "Sunucu henüz geçerli değil - daha sonra tekrar deneyin"
+msgstr "Sunucu henüz geçerli değil - daha sonra yeniden deneyin"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
 #: ../src/dummy-strings.c:46
@@ -378,12 +378,12 @@ msgstr "Ek ön kimlik doğrulama gerekli"
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
 #: ../src/dummy-strings.c:49
 msgid "Requested server and ticket don't match"
-msgstr "Talep edilen sunucu ve bilet uyuşmuyor"
+msgstr "İstenen sunucu ve bilet uyuşmuyor"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: ../src/dummy-strings.c:50
 msgid "A service is not available that is required to process the request"
-msgstr "Talebi işlemek için gerekli olan servis kullanılabilir değil"
+msgstr "İsteği işlemek için gerekli olan servis kullanılabilir değil"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
 #: ../src/dummy-strings.c:51
@@ -418,7 +418,7 @@ msgstr "Bilet/doğrulayıcı eşleşmez"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: ../src/dummy-strings.c:57
 msgid "Clock skew too great"
-msgstr "Saat sapması çok fazla"
+msgstr "Saat sapması çok büyük"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
 #: ../src/dummy-strings.c:58
@@ -494,7 +494,7 @@ msgstr "Kural transit yolu reddeder"
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:72
 msgid "Response too big for UDP, retry with TCP"
-msgstr "UDP için çok büyük cevap, TCP ile tekrar deneyin"
+msgstr "UDP için çok büyük yanıt, TCP ile yeniden deneyin"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
 #: ../src/dummy-strings.c:73
@@ -559,7 +559,7 @@ msgstr "İptal etme durumu kullanılamaz"
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
 #: ../src/dummy-strings.c:85
 msgid "Client name mismatch"
-msgstr "İstemci ismi uyuşmazlığı"
+msgstr "İstemci adı uyuşmazlığı"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
 #: ../src/dummy-strings.c:86
@@ -579,7 +579,7 @@ msgstr "Sertifikadaki özet kabul edilemez"
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: ../src/dummy-strings.c:89
 msgid "Checksum must be included"
-msgstr "Sağlama toplamı dahil edilmeli"
+msgstr "Sağlama toplamı içerilmeli"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: ../src/dummy-strings.c:90
@@ -734,12 +734,12 @@ msgstr "Bilinmeyen Kerberos servisi"
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
-msgstr "Talep edilen realm için herhangi bir KDC ile iletişim kurulamıyor"
+msgstr "İstenen realm için herhangi bir KDC ile iletişim kurulamıyor"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
 msgid "No local name found for principal name"
-msgstr "Yetkili ismi için yerel bir isim bulunamadı"
+msgstr "Yetkili adı için yerel bir ad bulunamadı"
 
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: ../src/dummy-strings.c:123
@@ -749,7 +749,7 @@ msgstr "Tekrar ön bellek türü zaten kayıtlı"
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
 #: ../src/dummy-strings.c:124
 msgid "No more memory to allocate (in replay cache code)"
-msgstr "Tahsis edilecek daha fazla bellek yok (ön bellek kodu tekrarında)"
+msgstr "Ayrılacak daha çok bellek yok (ön bellek kodu tekrarında)"
 
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
 #: ../src/dummy-strings.c:125
@@ -774,12 +774,12 @@ msgstr "Tekrar I/O işlemi başarısız oldu XXX"
 #. krb5_err.et:krb5:KRB5_RC_IO
 #: ../src/dummy-strings.c:129
 msgid "Replay cache type does not support non-volatile storage"
-msgstr "Yeniden oynatma ön bellek tipi geçici olmayan depolamayı desteklemiyor"
+msgstr "Yeniden oynatma ön bellek türü geçici olmayan depolamayı desteklemiyor"
 
 #. krb5_err.et:krb5:KRB5_RC_NOIO
 #: ../src/dummy-strings.c:130
 msgid "Replay cache name parse/format error"
-msgstr "Yeniden oynatma ön bellek ismi ayrıştırma/biçimleme hatası"
+msgstr "Yeniden oynatma ön bellek adı ayrıştırma/biçimleme hatası"
 
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: ../src/dummy-strings.c:131
@@ -789,7 +789,7 @@ msgstr "Yeniden oynatma ön belleği I/O'da dosya sonu"
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: ../src/dummy-strings.c:132
 msgid "No more memory to allocate (in replay cache I/O code)"
-msgstr "Tahsis edilecek daha fazla bellek yok (I/O kod ön bellek tekrarında)"
+msgstr "Ayrılacak daha çok bellek yok (I/O kod ön bellek tekrarında)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: ../src/dummy-strings.c:133
@@ -874,7 +874,7 @@ msgstr "Anahtar tablosuna yazarken hata"
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: ../src/dummy-strings.c:149
 msgid "Cannot find ticket for requested realm"
-msgstr "Talep edilen realm için bilet bulunamıyor"
+msgstr "İstenen realm için bilet bulunamıyor"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: ../src/dummy-strings.c:150
@@ -939,8 +939,7 @@ msgstr "Kimlik bilgileri ön belleğe yazarken hata"
 #. krb5_err.et:krb5:KRB5_CC_WRITE
 #: ../src/dummy-strings.c:162
 msgid "No more memory to allocate (in credentials cache code)"
-msgstr ""
-"Tahsis edilecek daha fazla bellek yok (kimlik bilgileri ön bellek kodunda)"
+msgstr "Ayrılacak daha çok bellek yok (kimlik bilgileri ön bellek kodunda)"
 
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: ../src/dummy-strings.c:163
@@ -1040,7 +1039,7 @@ msgstr "İstemci için alana karar verilemiyor"
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
 #: ../src/dummy-strings.c:182
 msgid "Conversion to service principal undefined for name type"
-msgstr "Servis yetkilisine dönüştürme İsim türü için tanımlanmamış"
+msgstr "Servis yetkilisine dönüştürme, ad türü için tanımlanmamış"
 
 #. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
 #: ../src/dummy-strings.c:183
@@ -1050,7 +1049,7 @@ msgstr "Başlangıç Bilet yanıtı Sürüm 4 hatası olarak görünüyor"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
 #: ../src/dummy-strings.c:184
 msgid "Cannot resolve network address for KDC in requested realm"
-msgstr "Talep edilen realm'de KDC için ağ adresi çözülemiyor"
+msgstr "İstenen realm'de KDC için ağ adresi çözülemiyor"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: ../src/dummy-strings.c:185
@@ -1060,7 +1059,7 @@ msgstr "İstenilen bilet iletilebilir biletler alamaz"
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
 #: ../src/dummy-strings.c:186
 msgid "Bad principal name while trying to forward credentials"
-msgstr "Kimlik bilgileri iletilirken kötü yetkili ismi"
+msgstr "Kimlik bilgileri iletilirken kötü yetkili adı"
 
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: ../src/dummy-strings.c:187
@@ -1140,7 +1139,7 @@ msgstr "Desteklenen şifreleme türü yok (config dosya hatası?)"
 #. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:202
 msgid "Program called an obsolete, deleted function"
-msgstr "Program artık kullanılmayan, silinmiş bir fonksiyon çağırdı"
+msgstr "Program artık kullanılmayan, silinmiş bir işlev çağırdı"
 
 #. krb5_err.et:krb5:KRB5_OBSOLETE_FN
 #: ../src/dummy-strings.c:203
@@ -1175,7 +1174,7 @@ msgstr "KDC'den geçersiz anahtar üretim parametreleri"
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: ../src/dummy-strings.c:209
 msgid "service not available"
-msgstr "servis mevcut değil"
+msgstr "servis kullanılabilir değil"
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: ../src/dummy-strings.c:210
@@ -1483,18 +1482,19 @@ msgstr "GSSAPI OID için kötü sihirli sayı"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "GSSAPI QUEUE için kötü sihirli sayı"
 
+#. Translators: First number is hours, second number is minutes
 #: ../src/ka-applet.c:654
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Kimlik bilgilerinizin %.2d:%.2dh tarihinde süresi dolacak"
 
-#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:348
+#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:308
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Kimlik bilgilerinizin %d dakika içinde süresi dolacak"
 
-#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
+#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:313
 msgid "Your credentials have expired"
 msgstr "Kimlik bilgilerinizin süresi doldu"
 
@@ -1508,7 +1508,7 @@ msgstr "Bilet Al"
 
 #: ../src/ka-applet.c:856
 msgid "Don't show me this again"
-msgstr "Bunu bana tekrar gösterme"
+msgstr "Bunu bana yeniden gösterme"
 
 #: ../src/ka-applet.c:863
 msgid "Remove Credentials Cache"
@@ -1538,19 +1538,19 @@ msgstr "Ağ kimlik bilgilerinin süresi doldu"
 msgid "Your Kerberos credentials have expired."
 msgstr "Kerberos kimlik bilgilerinizin süresi doldu."
 
-#: ../src/ka-kerberos.c:176
+#: ../src/ka-kerberos.c:172
 msgid "unknown error"
 msgstr "bilinmeyen hata"
 
-#: ../src/ka-kerberos.c:329
+#: ../src/ka-kerberos.c:325
 msgid "Your ticket cache is currently empty"
 msgstr "Bilet ön belleğiniz şu anda boş"
 
-#: ../src/ka-kerberos.c:360
+#: ../src/ka-kerberos.c:357
 msgid "Expired"
 msgstr "Süresi Dolmuş"
 
-#: ../src/ka-kerberos.c:1049
+#: ../src/ka-kerberos.c:1040
 msgid " (No network connection)"
 msgstr " (Ağ bağlantısı yok)"
 
@@ -1606,26 +1606,25 @@ msgstr "tüm dosyalar"
 msgid "%s Error"
 msgstr "%s Hata"
 
-#: ../src/ka-pwdialog.c:309
+#: ../src/ka-pwdialog.c:269
 #, c-format
-#| msgid "Couldn't acquire kerberos ticket: '%s'"
 msgid "Couldn't acquire Kerberos ticket: '%s'"
 msgstr "Kerberos bileti edinilemedi: '%s'"
 
-#: ../src/ka-pwdialog.c:376
+#: ../src/ka-pwdialog.c:336
 msgid "Please enter your Kerberos password:"
 msgstr "Lütfen Kerberos parolanızı girin:"
 
-#: ../src/ka-pwdialog.c:389
+#: ../src/ka-pwdialog.c:349
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Lütfen '%s' için parola girin:"
 
-#: ../src/ka-pwdialog.c:407
+#: ../src/ka-pwdialog.c:367
 msgid "The password you entered is invalid"
 msgstr "Girilen parola geçersiz"
 
-#: ../src/ka-tools.c:44
+#: ../src/ka-tools.c:43
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1635,33 +1634,53 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:84
+#: ../src/ka-tools.c:83
 msgid "translator-credits"
 msgstr "Simge Sezgin <simgeszgn@gmail.com>"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+#| msgid "Kerberos Network Authentication Dialog"
+msgid "Kerberos Authentication Dialog"
+msgstr "Kerberos Kimlik Doğrulama Penceresi"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#| msgid "Requested Kerberos tickets should be:"
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Kerberos biletleri iste, yenile ve görüntüle"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
 "notifies you when your Kerberos credentials are about to expire and renews "
 "your ticket automatically if possible."
 msgstr ""
-"Kerberos Kimlik Doğrulama mevcut Kerberos biletlerinizi listelemenizi, ve "
+"Kerberos Kimlik Doğrulama var olan Kerberos biletlerinizi listelemenizi, ve "
 "yeni bir bilet istemenizi sağlar (Kerberos Sunucusundan kimlik doğrulama). "
 "Ayrıca Kerberos kimlik bilgilerinizin süresi dolmaya yaklaştığında sizi "
 "uyarır ve biletlerinizi eğer mümkünse otomatik olarak yeniler."
 
-#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:4
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
-"Masaüstüne girişinizden sonra (örneğin bir mobil cihazda) bir Kerberos "
-"Sunucusuna (KDC) kimlik doğrulama yapmanız gerekirse bu kullanışlıdır."
+"Masaüstüne girişinizden sonra (örneğin mobil agıtta) Kerberos Sunucusuna "
+"(KDC) kimlik doğrulama yapmanız gerekirse bu kullanışlıdır."
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:5
+#| msgid "Kerberos Authentication"
+msgid "Kerberos authentication dialog"
+msgstr "Kerberos kimlik doğrulama penceresi"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Kerberos Ağ Kimlik Doğrulama Penceresi"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:3
+#| msgid "Kerberos Authentication"
+msgid "kerberos;authentication;"
+msgstr "kerberos;kimlik doğrulama;yetkilendirme;"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
@@ -1703,7 +1722,7 @@ msgstr "Yönlendirilebilen bilet"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:10
 msgid "Requested tickets should be forwardable"
-msgstr "Talep edilen biletler yönlendirilebilir olmalıdır"
+msgstr "İstenen biletler yönlendirilebilir olmalıdır"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:11
 msgid "Renewable ticket"
@@ -1711,7 +1730,7 @@ msgstr "Yenilenebilir bilet"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:12
 msgid "Requested tickets should be renewable"
-msgstr "Talep edilen biletler yenilenebilir olmalıdır"
+msgstr "İstenen biletler yenilenebilir olmalıdır"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:13
 msgid "Proxiable ticket"

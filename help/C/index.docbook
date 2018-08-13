@@ -116,8 +116,8 @@
    <title>Feedback</title>
    <para>To report a bug or make a suggestion regarding this package or
     this manual, use
-    <ulink url="http://bugzilla.gnome.org"
-     type="http">GNOME's Bugzilla</ulink>.
+    <ulink url="https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues/"
+     type="http">GNOME Gitlab</ulink>.
    </para>
    <!-- Translators may also add here feedback address for translations -->
   </legalnotice>

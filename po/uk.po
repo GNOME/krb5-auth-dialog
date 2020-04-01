@@ -1,80 +1,193 @@
 # Ukrainian translation of krb5-auth-dialog.
-# Copyright (C) 2009 krb5-auth-dialog's COPYRIGHT HOLDER
+# Copyright (C) 2020 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
-# wanderlust <wanderlust@ukr.net>, 2009.
 #
+# wanderlust <wanderlust@ukr.net>, 2009.
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2009.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
-"auth-dialog&component=general\n"
-"POT-Creation-Date: 2010-10-05 13:11+0000\n"
-"PO-Revision-Date: 2010-10-13 15:19+0300\n"
-"Last-Translator: Maxim Dziumanenko <dziumanenko@gmail.com>\n"
-"Language-Team: ukrainian <Ukrainian <uk@li.org>>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues\n"
+"POT-Creation-Date: 2019-10-17 16:37+0000\n"
+"PO-Revision-Date: 2020-04-01 11:50+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.07.70\n"
 
-#: ../src/krb5-auth-dialog.xml.h:1 ../src/krb5-auth-dialog.desktop.in.h:2
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:1
-msgid "Network Authentication"
-msgstr "Мережева аутентифікація"
+#: ../src/resources/ui/app-menu.ui.h:1
+msgid "Prefere_nces"
+msgstr "Н_алаштування"
 
-#: ../src/krb5-auth-dialog.xml.h:2
+#: ../src/resources/ui/app-menu.ui.h:2
+msgid "_About"
+msgstr "_Про програму"
+
+#: ../src/resources/ui/app-menu.ui.h:3
+#: ../src/resources/ui/tray-icon-menu.ui.h:3
+msgid "_Help"
+msgstr "_Довідка"
+
+#: ../src/resources/ui/app-menu.ui.h:4
+#: ../src/resources/ui/tray-icon-menu.ui.h:4
+msgid "_Quit"
+msgstr "Ви_йти"
+
+#: ../src/resources/ui/tray-icon-menu.ui.h:1
+msgid "Remove Credentials _Cache"
+msgstr "Очистити _кеш мандатів"
+
+#: ../src/resources/ui/tray-icon-menu.ui.h:2
+msgid "_List Tickets"
+msgstr "_Список квитів"
+
+#: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Service Tickets"
 msgstr "Квиток на сервіс"
 
-#: ../src/krb5-auth-dialog.xml.h:3
+#: ../src/resources/ui/ka-main-window.ui.h:2 ../src/ka-applet.c:851
+msgid "Get Ticket"
+msgstr "Отримати _квиток"
+
+#: ../src/resources/ui/ka-preferences.ui.h:1
+msgid "Kerberos User"
+msgstr "Користувач Kerberos"
+
+#: ../src/resources/ui/ka-preferences.ui.h:2
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+"Назва вашого облікового запису Kerberos. Не заповнюйте, якщо слід"
+" використовувати ваше поточне ім'я користувача."
+
+#: ../src/resources/ui/ka-preferences.ui.h:3
+msgid "Kerberos principal:"
+msgstr "Адміністратор доступу Kerberos:"
+
+#: ../src/resources/ui/ka-preferences.ui.h:4
+#| msgid "Ticket Options"
+msgid "Kerberos Ticket Options"
+msgstr "Параметри квитків Kerberos"
+
+#: ../src/resources/ui/ka-preferences.ui.h:5
+msgid "Requested Kerberos tickets should be:"
+msgstr "Обрані квитки Kerberos повинні бути:"
+
+#: ../src/resources/ui/ka-preferences.ui.h:6
+msgid "forwardable"
+msgstr "перенаправлення"
+
+#: ../src/resources/ui/ka-preferences.ui.h:7
+msgid "If checked, request forwardable tickets"
+msgstr "При виборі, вимагає квитки перенаправлення"
+
+#: ../src/resources/ui/ka-preferences.ui.h:8
+msgid "renewable"
+msgstr "можливість поновлення"
+
+#: ../src/resources/ui/ka-preferences.ui.h:9
+msgid "If checked, request renewable tickets"
+msgstr "При виборі, вимагає квитки поновлення"
+
+#: ../src/resources/ui/ka-preferences.ui.h:10
+msgid "proxiable"
+msgstr "передача через проксі"
+
+#: ../src/resources/ui/ka-preferences.ui.h:11
+msgid "If checked, request proxiable tickets"
+msgstr "При виборі, вимагає квитки, які передаються через проксі"
+
+#: ../src/resources/ui/ka-preferences.ui.h:12
+msgid "Kerberos"
+msgstr "Kerberos"
+
+#: ../src/resources/ui/ka-preferences.ui.h:13
+#| msgid "Userid:"
+msgid "Userid"
+msgstr "Ід.користувача"
+
+#: ../src/resources/ui/ka-preferences.ui.h:14
+msgid "Use Smartcard"
+msgstr "Використовувати смарткартку"
+
+#: ../src/resources/ui/ka-preferences.ui.h:15
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+"Якщо відмічено, використовувати пристрій безпеки (смарткартку) для "
+"автентифікації."
+
+#: ../src/resources/ui/ka-preferences.ui.h:16
+msgid "Certificate and private key used for authentication"
+msgstr "Сертифікат та приватний ключ використовуються для автентифікації"
+
+#: ../src/resources/ui/ka-preferences.ui.h:17
+msgid "_Browse..."
+msgstr "_Огляд..."
+
+#: ../src/resources/ui/ka-preferences.ui.h:18
+#| msgid "X509 trust anchors:"
+msgid "X509 trust anchors"
+msgstr "Довірчі прив'язки X509"
+
+#: ../src/resources/ui/ka-preferences.ui.h:19
+msgid "Certificate used to verify digital signatures."
+msgstr "Сертифікат, який буде використано для перевірки цифрових підписів."
+
+#: ../src/resources/ui/ka-preferences.ui.h:20
+msgid ""
+"Configure the use of certificates and smartcards for your Kerberos network "
+"authentication."
+msgstr ""
+"Налаштуйте використання сертифікатів та смарткарток для вашого розпізнавання"
+" у мережі за допомогою Kerberos."
+
+#: ../src/resources/ui/ka-preferences.ui.h:21
+#| msgid "PKINIT:"
+msgid "PKINIT"
+msgstr "PKINIT"
+
+#: ../src/resources/ui/ka-preferences.ui.h:22
+msgid "Notifications"
+msgstr "Повідомлення"
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../src/resources/ui/ka-preferences.ui.h:24
+msgid "Warn"
+msgstr "Попередження"
+
+#: ../src/resources/ui/ka-preferences.ui.h:25
+msgid ""
+"Send notification about ticket expiry that many minutes before it finally "
+"expires"
+msgstr ""
+"Надіслати повідомлення про завершення терміну дії квитка до часу його "
+"завершення"
+
+#. Used in combination: 'Warn x minutes before expiry'
+#: ../src/resources/ui/ka-preferences.ui.h:27
+#| msgid "minutes before expiry"
+msgid "minutes before ticket expiry"
+msgstr "хвилин до закінчення строку дії квитка"
+
+#: ../src/resources/ui/ka-pwdialog.ui.h:1 ../src/ka-applet-priv.h:34
+#: ../src/krb5-auth-dialog.desktop.in.h:1
+#| msgid "Kerberos Authentication Configuration"
+msgid "Kerberos Authentication"
+msgstr "Розпізнавання Kerberos"
+
+#: ../src/resources/ui/ka-pwdialog.ui.h:2 ../src/ka-preferences.c:372
+msgid "_Cancel"
+msgstr "_Скасувати"
+
+#: ../src/resources/ui/ka-pwdialog.ui.h:3
 msgid "_Renew Ticket"
 msgstr "Оновити _квиток"
-
-#: ../src/ka-dialog.c:172
-msgid "unknown error"
-msgstr "невідома помилка"
-
-#: ../src/ka-dialog.c:333
-msgid "Expired"
-msgstr "Вийшов термін"
-
-#: ../src/ka-pwdialog.c:174
-#, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "Неможливо отримати квиток kerberos: '%s'"
-
-#: ../src/ka-pwdialog.c:211 ../src/ka-applet.c:375
-#, c-format
-msgid "Your credentials expire in %d minute"
-msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "Термін дії Вашого мандату закінчиться через %d хвилину"
-msgstr[1] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
-msgstr[2] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
-
-#: ../src/ka-pwdialog.c:216 ../src/ka-applet.c:380
-msgid "Your credentials have expired"
-msgstr "Термін дії Вашого мандату закінчився"
-
-#: ../src/ka-pwdialog.c:237
-msgid "Please enter your Kerberos password:"
-msgstr "Введіть Ваш пароль Kerberos:"
-
-#: ../src/ka-pwdialog.c:248
-#, c-format
-msgid "Please enter the password for '%s':"
-msgstr "Будь-ласка, введіть пароль для '%s':"
-
-#: ../src/ka-pwdialog.c:268
-msgid "The password you entered is invalid"
-msgstr "Введений Вами пароль невірний"
-
-#: ../src/ka-pwdialog.c:284
-#, c-format
-msgid "%s Error"
-msgstr "Помилка %s"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -132,7 +245,7 @@ msgstr "Помилка при аналізі ASN.1"
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:20
 msgid "ASN.1 bad return from gmtime"
-msgstr "Неправильнйи результат ASN.1 від gmtime"
+msgstr "Неправильний результат ASN.1 від gmtime"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: ../src/dummy-strings.c:21
@@ -1397,71 +1510,153 @@ msgstr "Погане магічне число для GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Погане магічне число для GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:369
+#. Translators: First number is hours, second number is minutes
+#: ../src/ka-applet.c:658
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Термін дії Ваших мандатів завершиться через %.2d:%.2d годин"
 
-#: ../src/ka-applet.c:500
+#: ../src/ka-applet.c:664 ../src/ka-pwdialog.c:308
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "Термін дії Вашого мандату закінчиться через %d хвилину"
+msgstr[1] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
+msgstr[2] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
+
+#: ../src/ka-applet.c:669 ../src/ka-pwdialog.c:313
+msgid "Your credentials have expired"
+msgstr "Термін дії Вашого мандату закінчився"
+
+#: ../src/ka-applet.c:841
+#| msgid "_List Tickets"
+msgid "List Tickets"
+msgstr "Список квитів"
+
+#: ../src/ka-applet.c:860
 msgid "Don't show me this again"
 msgstr "Не показувати знову"
 
-#: ../src/ka-applet.c:507
-#| msgid "_Renew Ticket"
-msgid "Get Ticket"
-msgstr "Отримати _квиток"
+#: ../src/ka-applet.c:867
+#| msgid "Remove Credentials _Cache"
+msgid "Remove Credentials Cache"
+msgstr "Очистити кеш мандатів"
 
-#: ../src/ka-applet.c:551
-msgid "Network credentials valid"
-msgstr "Дючі мережеві мандати"
+#: ../src/ka-applet.c:929
+#| msgid "You've refreshed your Kerberos credentials."
+msgid "You have valid Kerberos credentials."
+msgstr "У вас є чинні мандати Kerberos."
 
-#: ../src/ka-applet.c:552
+#: ../src/ka-applet.c:931
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Ви оновили власні мандати Kerberos."
 
-#: ../src/ka-applet.c:568
+#: ../src/ka-applet.c:934
+msgid "Network credentials valid"
+msgstr "Чинні мережеві мандати"
+
+#: ../src/ka-applet.c:953
 msgid "Network credentials expiring"
 msgstr "Термін дії мережевих мандатів закінчується"
 
-#: ../src/ka-applet.c:586
+#: ../src/ka-applet.c:970
 msgid "Network credentials expired"
 msgstr "Термін дії мережевих мандатів закінчився"
 
-#: ../src/ka-applet.c:587
-msgid "Your Kerberos credentails have expired."
-msgstr "Термін дії Ваших мандатів Kerberos закінчився."
+#: ../src/ka-applet.c:971
+#| msgid "Your Kerberos credentails have expired."
+msgid "Your Kerberos credentials have expired."
+msgstr "Строк дії ваших мандатів Kerberos вичерпано."
 
-#: ../src/ka-applet.c:631
+#: ../src/ka-kerberos.c:172
+msgid "unknown error"
+msgstr "невідома помилка"
+
+#: ../src/ka-kerberos.c:325
+msgid "Your ticket cache is currently empty"
+msgstr "Ваш кеш квитків зараз є порожнім"
+
+#: ../src/ka-kerberos.c:359
+msgid "Expired"
+msgstr "Вийшов термін"
+
+#: ../src/ka-kerberos.c:1042
+#| msgid "Network Authentication"
+msgid " (No network connection)"
+msgstr "  (Немає з'єднання із мережею)"
+
+#: ../src/ka-main-window.c:98
+msgid "Principal"
+msgstr "Голова"
+
+#: ../src/ka-main-window.c:104
+msgid "Start Time"
+msgstr "Час початку"
+
+#: ../src/ka-main-window.c:110
+msgid "End Time"
+msgstr "Час закінчення"
+
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:117
+msgid "Fwd"
+msgstr "Пересланий"
+
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:124
+msgid "Proxy"
+msgstr "Проксі"
+
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:131
+msgid "Renew"
+msgstr "Оновити"
+
+#: ../src/ka-main-window.c:172
+msgid "Error displaying service ticket information"
+msgstr "Помилка при показі інформації про квиток"
+
+#: ../src/ka-preferences.c:369
+msgid "Choose Certificate"
+msgstr "Оберіть сертифікат"
+
+#: ../src/ka-preferences.c:373
+msgid "_Open"
+msgstr "_Відкрити"
+
+#: ../src/ka-preferences.c:385
+msgid "X509 Certificates"
+msgstr "Сертифікат X509"
+
+#: ../src/ka-preferences.c:389
+msgid "all files"
+msgstr "усі файли"
+
+#: ../src/ka-pwdialog.c:149
 #, c-format
-msgid "There was an error launching the preferences dialog: %s"
-msgstr "Під час запуску діалогу параметрів виникла помилка: %s"
+msgid "%s Error"
+msgstr "Помилка %s"
 
-#: ../src/ka-applet.c:671
+#: ../src/ka-pwdialog.c:269
 #, c-format
-msgid ""
-"There was an error displaying %s:\n"
-"%s"
-msgstr ""
-"При показі %s виникла помилка:\n"
-"%s"
+#| msgid "Couldn't acquire kerberos ticket: '%s'"
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "Неможливо отримати квиток Kerberos: «%s»"
 
-#. Translators: add the translators of your language here
-#: ../src/ka-applet.c:708
-msgid "translator-credits"
-msgstr "Максим Дзюманенко <dziumanenko@gmail.com>"
-"wanderlust <wanderlust@ukr.net>"
+#: ../src/ka-pwdialog.c:336
+msgid "Please enter your Kerberos password:"
+msgstr "Введіть Ваш пароль Kerberos:"
 
-#: ../src/ka-applet.c:753
-msgid "Remove Credentials _Cache"
-msgstr "Очистити _кеш мандатів"
+#: ../src/ka-pwdialog.c:349
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Будь ласка, введіть пароль для '%s':"
 
-#. Ticket dialog
-#: ../src/ka-applet.c:763
-#| msgid "Service Tickets"
-msgid "_List Tickets"
-msgstr "_Список квитів"
+#: ../src/ka-pwdialog.c:367
+msgid "The password you entered is invalid"
+msgstr "Введений Вами пароль невірний"
 
-#: ../src/ka-tools.c:45
+#: ../src/ka-tools.c:43
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1470,270 +1665,160 @@ msgstr ""
 "При показі довідки виникла помилка:\n"
 "%s"
 
-#: ../src/ka-tickets.c:54
-msgid "Principal"
-msgstr "Голова"
+#. Translators: add the translators of your language here
+#: ../src/ka-tools.c:83
+msgid "translator-credits"
+msgstr ""
+"Максим Дзюманенко <dziumanenko@gmail.com>wanderlust <wanderlust@ukr.net>"
 
-#: ../src/ka-tickets.c:60
-msgid "Start Time"
-msgstr "Час початку"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+#| msgid "Kerberos Network Authentication Dialog"
+msgid "Kerberos Authentication Dialog"
+msgstr "Діалогове вікно аутентифікації Kerberos"
 
-#: ../src/ka-tickets.c:66
-msgid "End Time"
-msgstr "Час закінчення"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#| msgid "Requested Kerberos tickets should be:"
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Запит, оновлення та перегляд квитків Kerberos"
 
-#: ../src/ka-tickets.c:72
-msgid "Fwd"
-msgstr "Пересланий"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"«Розпізнавання Kerberos» надає вам змогу створити список ваших поточних"
+" квитків Kerberos і надсилати запит щодо нових квитків (проходити"
+" розпізнавання на сервері Kerberos). Крім того, програма здатна сповіщати вас"
+" про наближення завершення строку дії ваших мандатів Kerberos і оновлювати"
+" ваш квиток автоматично, якщо це можливо."
 
-#: ../src/ka-tickets.c:78
-msgid "Proxy"
-msgstr "Проксі"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:4
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+"Це корисно, якщо ви хочете пройти розпізнавання на сервері Kerberos (KDC)"
+" після входу до робочого середовища (наприклад, на мобільному пристрої)."
 
-#: ../src/ka-tickets.c:84
-msgid "Renew"
-msgstr "Оновити"
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:5
+#| msgid "Kerberos Network Authentication Dialog"
+msgid "Kerberos authentication dialog"
+msgstr "Діалогове вікно розпізнавання Kerberos"
 
-#: ../src/ka-tickets.c:107
-msgid "Error displaying service ticket information"
-msgstr "Помилка при показі інформації про квиток"
-
-#: ../src/krb5-auth-dialog.desktop.in.h:1
+#: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Діалогове вікно мережевої аутентифікації Kerberos"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:1
-msgid "Enabled plugins"
-msgstr "Увімкнені модулі"
+#: ../src/krb5-auth-dialog.desktop.in.h:3
+#| msgid "Preauthentication failed"
+msgid "kerberos;authentication;"
+msgstr ""
+"kerberos;authentication;керберос;цербер;аутентифікація;автентифікація;розпізна"
+"вання;"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:2
-msgid "Forwardable ticket"
-msgstr "Квиток перенаправлення"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:3
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
 msgstr "Адміністратор доступу Kerberos"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:4
-msgid "List of plugins that should be loaded and activated on startup."
-msgstr "Список модулів, які завантажуються при старті."
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
+#| msgid "The kerberos principal to acquire the ticket for"
+msgid "The Kerberos principal to acquire the ticket for"
+msgstr "Адміністратор доступу Kerberos отримує квиток для"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:5
-msgid "Notify user when ticket becomes valid"
-msgstr "Попереджувати користувача, коли квиток стане чинним"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:6
-msgid "Notify user when ticket has expired"
-msgstr "Попереджувати користувача, коли завершився термін дії квитка"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:7
-msgid "Notify user when ticket is about to expire"
-msgstr "Попереджувати користувача, коли завершується термін дії квитка"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:8
-msgid "PKINIT CA certificates"
-msgstr "Сертифікати PKINIT CA"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:9
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:3
 msgid "PKINIT identifier"
 msgstr "Ідентифікатор PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:10
-msgid "PKINIT trust anchors"
-msgstr "Довірчі прив'язки PKINIT"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:11
-msgid "Prompt minutes before expiry"
-msgstr "Показувати час до завершення"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:12
-msgid "Proxiable ticket"
-msgstr "Квиток може передаватися через проксі"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:13
-msgid "Renewable ticket"
-msgstr "Квиток може відновлюватися"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:14
-msgid "Requested tickets should be forwardable"
-msgstr "Задані квитки повинні перенаправлятися"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:15
-msgid "Requested tickets should be proxiable"
-msgstr "Задані квитки повинні передаватися через проксі"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:16
-msgid "Requested tickets should be renewable"
-msgstr "Задані квитки повинні відновлюватися"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:17
-msgid "Show a trayicon in the status area of the panel"
-msgstr "Показувати значок на панелі у області статусу"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:18
-msgid "Show trayicon"
-msgstr "Показувати значок"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:19
-msgid ""
-"Start prompting/displaying notifications that many minutes before expiry"
-msgstr "Запустити повідомлення запиту/відображення про час завершення"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:20
-msgid "The kerberos principal to acquire the ticket for"
-msgstr "Адміністратор доступу Kerberos отримує квиток для"
-
-#: ../src/krb5-auth-dialog.schemas.in.h:21
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:4
 msgid "The principal's public/private/certificate identifier when using PKINIT"
 msgstr ""
 "Загально доступний або ж приватний Ідентифікатор чи ідентифікатор "
 "сертифікату адміністратора доступу при використанні PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:22
-msgid "ticket expired notification"
-msgstr "Повідомлення про закінчений терміну дії квитка"
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:5
+msgid "PKINIT trust anchors"
+msgstr "Довірчі прив'язки PKINIT"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:23
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:6
+msgid "PKINIT CA certificates"
+msgstr "Сертифікати PKINIT CA"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:7
+msgid "Prompt minutes before expiry"
+msgstr "Показувати час до завершення"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:8
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr "Запустити повідомлення запиту/показу про час завершення"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:9
+msgid "Forwardable ticket"
+msgstr "Квиток перенаправлення"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:10
+msgid "Requested tickets should be forwardable"
+msgstr "Задані квитки повинні перенаправлятися"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:11
+msgid "Renewable ticket"
+msgstr "Квиток може відновлюватися"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:12
+msgid "Requested tickets should be renewable"
+msgstr "Задані квитки повинні відновлюватися"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:13
+msgid "Proxiable ticket"
+msgstr "Квиток може передаватися через проксі"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:14
+msgid "Requested tickets should be proxiable"
+msgstr "Задані квитки повинні передаватися через проксі"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:15
+msgid "Configuration tickets"
+msgstr "Квитки налаштування"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
+msgid "Show configuration tickets"
+msgstr "Показати квитки налаштування"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
+msgid "valid ticket notification"
+msgstr "Повідомлення про дійсність квитка"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:18
+msgid "Notify user when ticket becomes valid"
+msgstr "Попереджувати користувача, коли квиток стане чинним"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:19
 msgid "ticket expiring notification"
 msgstr "Повідомлення про закінчення терміну дії квитка"
 
-#: ../src/krb5-auth-dialog.schemas.in.h:24
-msgid "valid ticket notification"
-msgstr "Повідомлення про дійсність квитка"
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:20
+msgid "Notify user when ticket is about to expire"
+msgstr "Попереджувати користувача, коли завершується термін дії квитка"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:21
+msgid "ticket expired notification"
+msgstr "Повідомлення про закінчений терміну дії квитка"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:22
+msgid "Notify user when ticket has expired"
+msgstr "Попереджувати користувача, коли завершився термін дії квитка"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:23
+msgid "Enabled plugins"
+msgstr "Увімкнені модулі"
+
+#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:24
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr "Список модулів, які завантажуються при старті."
 
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
 msgstr "Увага: використання на цій системі q-agent з setuid є небезпечним\n"
-
-#: ../preferences/ka-preferences.c:345
-msgid "Choose Certificate"
-msgstr "Оберіть сертифікат"
-
-#: ../preferences/ka-preferences.c:361
-msgid "X509 Certificates"
-msgstr "Сертифікат X509"
-
-#: ../preferences/ka-preferences.c:365
-msgid "all files"
-msgstr "усі файли"
-
-#: ../preferences/krb5-auth-dialog-preferences.desktop.in.h:2
-msgid "Set your Kerberos network authentication preferences"
-msgstr "Налаштувати мережеву аутентифікацію Kerberos"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:1
-msgid "Appearance"
-msgstr "Параметри вигляду"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:2
-msgid "Applet"
-msgstr "Аплет"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:3
-msgid "Certificate and private key used for authentication"
-msgstr "Сертифікат та приватний ключ використовуються для автентифікації"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:4
-msgid "If checked, display the tray icon in the status bar"
-msgstr "При виборі, показує піктограму у панелі статусу"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:5
-msgid "If checked, request forwardable tickets"
-msgstr "При виборі, вимагає квитки перенаправлення"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:6
-msgid "If checked, request proxiable tickets"
-msgstr "При виборі, вимагає квитки, які передаються через проксі"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:7
-msgid "If checked, request renewable tickets"
-msgstr "При виборі, вимагає квитки поновлення"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:8
-msgid "If checked, use a security token (Smartcard) to authenticate."
-msgstr ""
-"Якщо відмічено, використовувати пристрій безпеки (смарткартку) для "
-"автентифікації."
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:9
-msgid "Kerberos"
-msgstr "Kerberos"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:10
-msgid "Kerberos Authentication Configuration"
-msgstr "Налаштування аутентифікації Kerberos"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:11
-msgid "Kerberos User"
-msgstr "Користувач Kerberos"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:12
-msgid "Kerberos principal:"
-msgstr "Адміністратор доступу Kerberos:"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:13
-msgid "Notifications"
-msgstr "Повідомлення"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:14
-msgid "PKINIT:"
-msgstr "PKINIT:"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:15
-msgid "Requested Kerberos tickets should be:"
-msgstr "Обрані квитки Kerberos повинні бути:"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:16
-msgid ""
-"Send notification about ticket expiry that many minutes before it finally "
-"expires"
-msgstr ""
-"Надіслати повідомлення про завершення терміну дії квитка до часу його "
-"завершення"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:17
-msgid "Show tray icon"
-msgstr "Показувати значок"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:18
-msgid "Ticket Options"
-msgstr "Параметри квитка"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:19
-msgid "Use Smartcard"
-msgstr "Використовувати смарткартку"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:20
-msgid "Userid:"
-msgstr "Ід.користувача:"
-
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:22
-msgid "Warn"
-msgstr "Попередження"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:23
-msgid "X509 trust anchors:"
-msgstr "Довірчі прив'язки X509:"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:24
-msgid "_Browse..."
-msgstr "_Огляд..."
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:25
-msgid "forwardable"
-msgstr "перенаправлення"
-
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:27
-msgid "minutes before expiry"
-msgstr "хвилин до закінчення терміну дії"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:28
-msgid "proxiable"
-msgstr "передача через проксі"
-
-#: ../preferences/krb5-auth-dialog-preferences.xml.h:29
-msgid "renewable"
-msgstr "можливість поновлення"

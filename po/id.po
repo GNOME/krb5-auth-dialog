@@ -8,16 +8,16 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2018-02-08 00:09+0000\n"
-"PO-Revision-Date: 2018-02-18 08:16+0700\n"
+"POT-Creation-Date: 2020-04-01 08:54+0000\n"
+"PO-Revision-Date: 2020-04-13 17:26+0700\n"
+"Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"Last-Translator: Andika Triwidada <atriwidada@gnome.org>\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.3\n"
 
 #: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
@@ -150,7 +150,7 @@ msgstr "PKINIT"
 msgid "Notifications"
 msgstr "Notifikasi"
 
-#. Used in combination:
+#. Used in combination: 'Warn x minutes before expiry'
 #: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Peringatkan"
@@ -163,12 +163,12 @@ msgstr ""
 "Kirim pemberitahuan tentang kedaluwarsanya tiket sekian menit sebelum itu "
 "akhirnya kedaluwarsa"
 
-#. Used in combination:
+#. Used in combination: 'Warn x minutes before expiry'
 #: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "menit sebelum tiket kedaluwarsa"
 
-#: ../src/resources/ui/ka-pwdialog.ui.h:1
+#: ../src/resources/ui/ka-pwdialog.ui.h:1 ../src/ka-applet-priv.h:34
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Authentication"
 msgstr "Otentikasi Kerberos"
@@ -292,57 +292,57 @@ msgstr "Server tak ditemukan dalam basis data Kerberos"
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:31
 msgid "Principal has multiple entries in Kerberos database"
-msgstr ""
+msgstr "Prinsipal memiliki beberapa entri dalam basis data Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
 #: ../src/dummy-strings.c:32
 msgid "Client or server has a null key"
-msgstr ""
+msgstr "Klien atau server memiliki kunci null"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
 #: ../src/dummy-strings.c:33
 msgid "Ticket is ineligible for postdating"
-msgstr ""
+msgstr "Tiket tidak memenuhi syarat untuk postdating"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
 #: ../src/dummy-strings.c:34
 msgid "Requested effective lifetime is negative or too short"
-msgstr ""
+msgstr "Umur efektif yang diminta negatif atau terlalu pendek"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
 #: ../src/dummy-strings.c:35
 msgid "KDC policy rejects request"
-msgstr ""
+msgstr "Kebijakan KDC menolak permintaan"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
 #: ../src/dummy-strings.c:36
 msgid "KDC can't fulfill requested option"
-msgstr ""
+msgstr "KDC tidak dapat memenuhi permintaan opsi"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
 #: ../src/dummy-strings.c:37
 msgid "KDC has no support for encryption type"
-msgstr ""
+msgstr "KDC tidak memiliki dukungan untuk tipe enkripsi"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:38
 msgid "KDC has no support for checksum type"
-msgstr ""
+msgstr "KDC tidak memiliki dukungan untuk tipe checksum"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:39
 msgid "KDC has no support for padata type"
-msgstr ""
+msgstr "KDC tidak memiliki dukungan untuk tipe padata"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
 #: ../src/dummy-strings.c:40
 msgid "KDC has no support for transited type"
-msgstr ""
+msgstr "KDC tidak memiliki dukungan untuk tipe transit"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
 #: ../src/dummy-strings.c:41
 msgid "Clients credentials have been revoked"
-msgstr ""
+msgstr "Kredensial klien telah dicabut"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
 #: ../src/dummy-strings.c:42
@@ -357,17 +357,17 @@ msgstr "TGT telah dicabut"
 #. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
 #: ../src/dummy-strings.c:44
 msgid "Client not yet valid - try again later"
-msgstr "Klien belum valid. Coba lagi nanti."
+msgstr "Klien belum valid - coba lagi nanti"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
 #: ../src/dummy-strings.c:45
 msgid "Server not yet valid - try again later"
-msgstr "Server belum valid. Coba lagi nanti."
+msgstr "Server belum valid - coba lagi nanti"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
 #: ../src/dummy-strings.c:46
 msgid "Password has expired"
-msgstr "Sandi telah kedaluwarsa."
+msgstr "Sandi telah kedaluwarsa"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
 #: ../src/dummy-strings.c:47
@@ -386,17 +386,13 @@ msgstr "Server yang diminta dan tiket tidak cocok"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: ../src/dummy-strings.c:50
-#, fuzzy
 msgid "A service is not available that is required to process the request"
-msgstr ""
-"Tak bisa memroses permintaan karena tak ada otentikasi tertundah yang "
-"diperlukan."
+msgstr "Layanan tidak tersedia yang diperlukan untuk memroses permintaan"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
 #: ../src/dummy-strings.c:51
-#, fuzzy
 msgid "Decrypt integrity check failed"
-msgstr "Memeriksa integritas data pada diska"
+msgstr "Pemeriksaan integritas dekripsi gagal"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
 #: ../src/dummy-strings.c:52
@@ -491,42 +487,38 @@ msgstr "Nomor urut salah dalam pesan"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
 #: ../src/dummy-strings.c:70
-#, fuzzy
 msgid "Inappropriate type of checksum in message"
-msgstr "Jenis checksum yang dipakai untuk image"
+msgstr "Jenis checksum yang dipakai dalam pesan tidak pantas"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
 #: ../src/dummy-strings.c:71
 msgid "Policy rejects transited path"
-msgstr ""
+msgstr "Kebijakan menolak jalur transit"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: ../src/dummy-strings.c:72
 msgid "Response too big for UDP, retry with TCP"
-msgstr ""
+msgstr "Respon terlalu besar untuk UDP, coba lagi dengan TCP"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
 #: ../src/dummy-strings.c:73
 msgid "Generic error (see e-text)"
-msgstr ""
+msgstr "Kesalahan generik (lihat e-text)"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
 #: ../src/dummy-strings.c:74
-#, fuzzy
 msgid "Field is too long for this implementation"
-msgstr "Keterangan terlalu panjang"
+msgstr "Ruas terlalu panjang untuk implementasi ini"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
 #: ../src/dummy-strings.c:75
-#, fuzzy
 msgid "Client not trusted"
-msgstr "Klien"
+msgstr "Klien tidak dipercaya"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
 #: ../src/dummy-strings.c:76
-#, fuzzy
 msgid "KDC not trusted"
-msgstr "Dipercaya"
+msgstr "KDC tidak dipercaya"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
 #: ../src/dummy-strings.c:77
@@ -535,87 +527,73 @@ msgstr "Tanda tangan tidak sah"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
 #: ../src/dummy-strings.c:78
-#, fuzzy
 msgid "Key parameters not accepted"
-msgstr "Parameter koneksi yang diterima"
+msgstr "Parameter kunci tidak diterima"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
 #: ../src/dummy-strings.c:79
-#, fuzzy
 msgid "Certificate mismatch"
-msgstr "Nama host sertifikat tidak cocok"
+msgstr "Ketidakcocokan sertifikat"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
 #: ../src/dummy-strings.c:80
-#, fuzzy
 msgid "Can't verify certificate"
-msgstr "Gagal verifikasi sertifikat server: %s\n"
+msgstr "Tidak dapat memverifikasi sertifikat"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
 #: ../src/dummy-strings.c:81
-#, fuzzy
 msgid "Invalid certificate"
-msgstr "Sertifikat tidak valid."
+msgstr "Sertifikat tidak valid"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
 #: ../src/dummy-strings.c:82
-#, fuzzy
 msgid "Revoked certificate"
-msgstr "sertifikat dicabut"
+msgstr "Sertifikat dicabut"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
 #: ../src/dummy-strings.c:83
-#, fuzzy
 msgid "Revocation status unknown"
-msgstr "Status tak diketahui (hilang)"
+msgstr "Status pencabutan tidak diketahui"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
 #: ../src/dummy-strings.c:84
-#, fuzzy
 msgid "Revocation status unavailable"
-msgstr "tidak tersedia"
+msgstr "Status pencabutan tidak tersedia"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
 #: ../src/dummy-strings.c:85
-#, fuzzy
 msgid "Client name mismatch"
-msgstr "Klien"
+msgstr "Ketidakcocokan nama klien"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
 #: ../src/dummy-strings.c:86
-#, fuzzy
 msgid "KDC name mismatch"
-msgstr "Tipe Tidak Cocok"
+msgstr "Ketidakcocokan nama KDC"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
 #: ../src/dummy-strings.c:87
-#, fuzzy
 msgid "Inconsistent key purpose"
-msgstr "Kegunaan"
+msgstr "Tujuan kunci tidak konsisten"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
 #: ../src/dummy-strings.c:88
-#, fuzzy
 msgid "Digest in certificate not accepted"
-msgstr "diterima"
+msgstr "Digest dalam sertifikat tidak diterima"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: ../src/dummy-strings.c:89
-#, fuzzy
 msgid "Checksum must be included"
-msgstr "Checksum"
+msgstr "Checksum harus disertakan"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: ../src/dummy-strings.c:90
-#, fuzzy
 msgid "Digest in signed-data not accepted"
-msgstr "Tidak bisa membuat data yang ditandatangani CMS"
+msgstr "Digest dalam data yang ditandatangani tidak diterima"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: ../src/dummy-strings.c:91
-#, fuzzy
 msgid "Public key encryption not supported"
-msgstr "Buat pasangan kunci enkripsi private dan public."
+msgstr "Enkripsi kunci publik tidak didukung"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
 #: ../src/dummy-strings.c:92
@@ -625,665 +603,615 @@ msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
 #. krb5_err.et:krb5:KRB5_ERR_RCSID
 #: ../src/dummy-strings.c:93
 msgid "Invalid flag for file lock mode"
-msgstr ""
+msgstr "Flag tidak valid untuk mode penguncian berkas"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
 #: ../src/dummy-strings.c:94
-#, fuzzy
 msgid "Cannot read password"
-msgstr "tak bisa membaca pengguna/sandi dari berkas auth proksi HTTP"
+msgstr "Tidak dapat membaca sandi"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
 #: ../src/dummy-strings.c:95
-#, fuzzy
 msgid "Password mismatch"
-msgstr "Tipe Tidak Cocok"
+msgstr "Kata sandi tidak sesuai"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
 #: ../src/dummy-strings.c:96
-#, fuzzy
 msgid "Password read interrupted"
-msgstr "Sambungan diinterupsi"
+msgstr "Pembacaan sandi terinterupsi"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
 #: ../src/dummy-strings.c:97
-#, fuzzy
 msgid "Illegal character in component name"
-msgstr "Nama folder baru ilegal."
+msgstr "Karakter ilegal dalam nama komponen"
 
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
 #: ../src/dummy-strings.c:98
-#, fuzzy
 msgid "Malformed representation of principal"
-msgstr "_Pokok:"
+msgstr "Representasi salah bentuk dari prinsipal"
 
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
 #: ../src/dummy-strings.c:99
 msgid "Can't open/find Kerberos configuration file"
-msgstr ""
+msgstr "Tidak dapat membuka/menemukan berkas konfigurasi Kerberos"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
 #: ../src/dummy-strings.c:100
 msgid "Improper format of Kerberos configuration file"
-msgstr ""
+msgstr "Format berkas konfigurasi Kerberos yang tidak benar"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
 #: ../src/dummy-strings.c:101
 msgid "Insufficient space to return complete information"
-msgstr ""
+msgstr "Tidak cukup ruang untuk mengembalikan informasi lengkap"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
 #: ../src/dummy-strings.c:102
 msgid "Invalid message type specified for encoding"
-msgstr ""
+msgstr "Tipe pesan yang dinyatakan tidak valid untuk pengkodean"
 
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
 #: ../src/dummy-strings.c:103
-#, fuzzy
 msgid "Credential cache name malformed"
-msgstr "Tidak bisa membuat tembolok kredensial: %k"
+msgstr "Nama singgahan kredensial salah bentuk"
 
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
 #: ../src/dummy-strings.c:104
-#, fuzzy
 msgid "Unknown credential cache type"
-msgstr "Tidak bisa membuat tembolok kredensial: %k"
+msgstr "Jenis singgahan kredensial tidak diketahui"
 
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:105
-#, fuzzy
 msgid "Matching credential not found"
-msgstr "Tak ada halaman bantuan."
+msgstr "Kredensial yang cocok tidak ditemukan"
 
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
 #: ../src/dummy-strings.c:106
-#, fuzzy
 msgid "End of credential cache reached"
-msgstr "Tidak bisa membuat tembolok kredensial: %k"
+msgstr "Akhir singgahan kredensial tercapai"
 
 #. krb5_err.et:krb5:KRB5_CC_END
 #: ../src/dummy-strings.c:107
-#, fuzzy
 msgid "Request did not supply a ticket"
-msgstr "Anda tidak mengisi nama pengguna bagi akun tersebut."
+msgstr "Permintaan tidak menyediakan tiket"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
 #: ../src/dummy-strings.c:108
-#, fuzzy
 msgid "Wrong principal in request"
-msgstr "_Pokok:"
+msgstr "Prinsipal yang salah dalam permintaan"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
 #: ../src/dummy-strings.c:109
 msgid "Ticket has invalid flag set"
-msgstr ""
+msgstr "Tiket memiliki flag yang ditata yang tidak valid"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: ../src/dummy-strings.c:110
 msgid "Requested principal and ticket don't match"
-msgstr ""
+msgstr "Prinsipal dan tiket yang diminta tidak cocok"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: ../src/dummy-strings.c:111
 msgid "KDC reply did not match expectations"
-msgstr ""
+msgstr "Balasan KDC tidak sesuai harapan"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
 #: ../src/dummy-strings.c:112
 msgid "Clock skew too great in KDC reply"
-msgstr ""
+msgstr "Pergeseran jam terlalu besar di balasan KDC"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: ../src/dummy-strings.c:113
 msgid "Client/server realm mismatch in initial ticket request"
-msgstr ""
+msgstr "Ketidakcocokan realm klien/server dalam permintaan tiket awal"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: ../src/dummy-strings.c:114
 msgid "Program lacks support for encryption type"
-msgstr ""
+msgstr "Program kekurangan dukungan untuk jenis enkripsi"
 
 #. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:115
 msgid "Program lacks support for key type"
-msgstr ""
+msgstr "Program kekurangan dukungan untuk jenis kunci"
 
 #. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
 #: ../src/dummy-strings.c:116
 msgid "Requested encryption type not used in message"
-msgstr ""
+msgstr "Jenis enkripsi yang diminta tidak digunakan dalam pesan"
 
 #. krb5_err.et:krb5:KRB5_WRONG_ETYPE
 #: ../src/dummy-strings.c:117
 msgid "Program lacks support for checksum type"
-msgstr ""
+msgstr "Program kekurangan dukungan untuk jenis checksum"
 
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
 #: ../src/dummy-strings.c:118
 msgid "Cannot find KDC for requested realm"
-msgstr ""
+msgstr "Tidak dapat menemukan KDC untuk realm yang diminta"
 
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: ../src/dummy-strings.c:119
-#, fuzzy
 msgid "Kerberos service unknown"
-msgstr "Kerberos"
+msgstr "Layanan Kerberos tidak diketahui"
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: ../src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
-msgstr ""
+msgstr "Tidak dapat menghubungi KDC manapun untuk realm yang diminta"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: ../src/dummy-strings.c:121
-#, fuzzy
 msgid "No local name found for principal name"
-msgstr "Tak ditemukan tag bernama demikian"
+msgstr "Tidak ada nama lokal yang ditemukan untuk nama prinsipal"
 
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: ../src/dummy-strings.c:123
 msgid "Replay cache type is already registered"
-msgstr ""
+msgstr "Tipe singgahan replay sudah terdaftar"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
 #: ../src/dummy-strings.c:124
 msgid "No more memory to allocate (in replay cache code)"
-msgstr ""
+msgstr "Tidak ada lagi memori yang dialokasikan (dalam kode singgahan replay)"
 
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
 #: ../src/dummy-strings.c:125
-#, fuzzy
 msgid "Replay cache type is unknown"
-msgstr "Tipe hyperlink tak dikenal"
+msgstr "Tipe singgahan replay tak dikenal"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
 #: ../src/dummy-strings.c:126
-#, fuzzy
 msgid "Generic unknown RC error"
-msgstr "Galat umum libmtp"
+msgstr "Galat umum RC tak dikenal"
 
 #. krb5_err.et:krb5:KRB5_RC_UNKNOWN
 #: ../src/dummy-strings.c:127
-#, fuzzy
 msgid "Message is a replay"
-msgstr "Catat antrian putar ulang IMAP"
+msgstr "Pesan adalah replay"
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: ../src/dummy-strings.c:128
 msgid "Replay I/O operation failed XXX"
-msgstr ""
+msgstr "Operasi I/O replay gagal XXX"
 
 #. krb5_err.et:krb5:KRB5_RC_IO
 #: ../src/dummy-strings.c:129
 msgid "Replay cache type does not support non-volatile storage"
-msgstr ""
+msgstr "Tipe singgahan replay tidak mendukung penyimpanan non-volatile"
 
 #. krb5_err.et:krb5:KRB5_RC_NOIO
 #: ../src/dummy-strings.c:130
 msgid "Replay cache name parse/format error"
-msgstr ""
+msgstr "Galat mengurai/format nama singgahan replay"
 
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: ../src/dummy-strings.c:131
 msgid "End-of-file on replay cache I/O"
-msgstr ""
+msgstr "Akhir-berkas pada I/O singgahan replay"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: ../src/dummy-strings.c:132
 msgid "No more memory to allocate (in replay cache I/O code)"
 msgstr ""
+"Tidak ada lagi memori untuk dialokasikan (dalam kode I/P singgahan replay)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: ../src/dummy-strings.c:133
 msgid "Permission denied in replay cache code"
-msgstr ""
+msgstr "Izin ditolak dalam kode singgahan replay"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
 #: ../src/dummy-strings.c:134
 msgid "I/O error in replay cache i/o code"
-msgstr ""
+msgstr "Galat I/O dalam kode i/o singgahan replay"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: ../src/dummy-strings.c:135
 msgid "Generic unknown RC/IO error"
-msgstr ""
+msgstr "Galat RC/IO generik yang tidak diketahui"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
 #: ../src/dummy-strings.c:136
 msgid "Insufficient system space to store replay information"
-msgstr ""
+msgstr "Ruang sistem tidak mencukupi untuk menyimpan informasi replay"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
 #: ../src/dummy-strings.c:137
 msgid "Can't open/find realm translation file"
-msgstr ""
+msgstr "Tidak dapat membuka/menemukan berkas terjemahan realm"
 
 #. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
 #: ../src/dummy-strings.c:138
 msgid "Improper format of realm translation file"
-msgstr ""
+msgstr "Format berkas terjemahan realm yang tidak benar"
 
 #. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
 #: ../src/dummy-strings.c:139
 msgid "Can't open/find lname translation database"
-msgstr ""
+msgstr "Tidak dapat membuka/menemukan basis data terjemahan lname"
 
 #. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
 #: ../src/dummy-strings.c:140
-#, fuzzy
 msgid "No translation available for requested principal"
-msgstr "Tidak tersedia gambar mini. Dimintakan pembuatan."
+msgstr "Tidak ada terjemahan yang tersedia untuk prinsipal yang diminta"
 
 #. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
 #: ../src/dummy-strings.c:141
 msgid "Improper format of translation database entry"
-msgstr ""
+msgstr "Format entri basis data terjemahan yang tidak benar"
 
 #. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
 #: ../src/dummy-strings.c:142
-#, fuzzy
 msgid "Cryptosystem internal error"
-msgstr "Galat internal: Galat Tak Dikenal"
+msgstr "Galat internal cryptosystem"
 
 #. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
 #: ../src/dummy-strings.c:143
-#, fuzzy
 msgid "Key table name malformed"
-msgstr "Nama tabel \"%s\" salah bentuk"
+msgstr "Nama tabel kunci salah bentuk"
 
 #. krb5_err.et:krb5:KRB5_KT_BADNAME
 #: ../src/dummy-strings.c:144
-#, fuzzy
 msgid "Unknown Key table type"
-msgstr "Tipe tak dikenal"
+msgstr "Jenis tabel kunci tidak diketahui"
 
 #. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
 #: ../src/dummy-strings.c:145
-#, fuzzy
 msgid "Key table entry not found"
-msgstr "Tabel tak ditemukan"
+msgstr "Entri tabel kunci tidak ditemukan"
 
 #. krb5_err.et:krb5:KRB5_KT_NOTFOUND
 #: ../src/dummy-strings.c:146
-#, fuzzy
 msgid "End of key table reached"
-msgstr "Akhir berkas telah tercapai!"
+msgstr "Akhir tabel kunci tercapai"
 
 #. krb5_err.et:krb5:KRB5_KT_END
 #: ../src/dummy-strings.c:147
 msgid "Cannot write to specified key table"
-msgstr ""
+msgstr "Tidak dapat menulis ke tabel kunci yang dinyatakan"
 
 #. krb5_err.et:krb5:KRB5_KT_NOWRITE
 #: ../src/dummy-strings.c:148
-#, fuzzy
 msgid "Error writing to key table"
-msgstr "Galat saat menulis ke: \"%s\""
+msgstr "Galat menulis ke tabel kunci"
 
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: ../src/dummy-strings.c:149
 msgid "Cannot find ticket for requested realm"
-msgstr ""
+msgstr "Tidak dapat menemukan tiket untuk realm yang diminta"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: ../src/dummy-strings.c:150
 msgid "DES key has bad parity"
-msgstr ""
+msgstr "Kunci DES memiliki paritas buruk"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
 #: ../src/dummy-strings.c:151
-#, fuzzy
 msgid "DES key is a weak key"
-msgstr "Lemahkan kunci:"
+msgstr "Kunci DES adalah kunci yang lemah"
 
 #. krb5_err.et:krb5:KRB5DES_WEAK_KEY
 #: ../src/dummy-strings.c:152
-#, fuzzy
 msgid "Bad encryption type"
-msgstr "_Tipe Penyandian:"
+msgstr "Jenis enkripsi yang buruk"
 
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
 #: ../src/dummy-strings.c:153
-#, fuzzy
 msgid "Key size is incompatible with encryption type"
-msgstr "Tipe enkripsi ESP %s kunci 0x%s\n"
+msgstr "Ukuran kunci tidak kompatibel dengan jenis enkripsi"
 
 #. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
 #: ../src/dummy-strings.c:154
 msgid "Message size is incompatible with encryption type"
-msgstr ""
+msgstr "Ukuran pesan tidak kompatibel dengan jenis enkripsi"
 
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
 #: ../src/dummy-strings.c:155
 msgid "Credentials cache type is already registered."
-msgstr ""
+msgstr "Jenis singgahan kredensial sudah terdaftar."
 
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
 #: ../src/dummy-strings.c:156
-#, fuzzy
 msgid "Key table type is already registered."
-msgstr "Kunci metadata '%s' sudah terdaftar dalam format lain"
+msgstr "Jenis tabel kunci sudah terdaftar."
 
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
 #: ../src/dummy-strings.c:157
 msgid "Credentials cache I/O operation failed XXX"
-msgstr ""
+msgstr "Operasi I/O singgahan kredensial gagal XXX"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
 #: ../src/dummy-strings.c:158
-#, fuzzy
 msgid "Credentials cache permissions incorrect"
-msgstr "Tidak bisa menginisialisasi tembolok kredensial: %k"
+msgstr "Izin singgahan kredensial salah"
 
 #. krb5_err.et:krb5:KRB5_FCC_PERM
 #: ../src/dummy-strings.c:159
-#, fuzzy
 msgid "No credentials cache found"
-msgstr "Tidak bisa menginisialisasi tembolok kredensial: %k"
+msgstr "Tidak ditemukan singgahan kredensial"
 
 #. krb5_err.et:krb5:KRB5_FCC_NOFILE
 #: ../src/dummy-strings.c:160
-#, fuzzy
 msgid "Internal credentials cache error"
-msgstr "Tidak bisa menginisialisasi tembolok kredensial: %k"
+msgstr "Galat singgahan kredensial internal"
 
 #. krb5_err.et:krb5:KRB5_FCC_INTERNAL
 #: ../src/dummy-strings.c:161
-#, fuzzy
 msgid "Error writing to credentials cache"
-msgstr "Galat saat menulis ke stream singgahan"
+msgstr "Galat menulis ke singgahan kredensial"
 
 #. krb5_err.et:krb5:KRB5_CC_WRITE
 #: ../src/dummy-strings.c:162
 msgid "No more memory to allocate (in credentials cache code)"
 msgstr ""
+"Tidak ada lagi memori untuk dialokasikan (dalam kode singgahan kredensial)"
 
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: ../src/dummy-strings.c:163
-#, fuzzy
 msgid "Bad format in credentials cache"
-msgstr "Tidak bisa menginisialisasi tembolok kredensial: %k"
+msgstr "Format buruk di singgahan kredensial"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
 #: ../src/dummy-strings.c:164
 msgid "No credentials found with supported encryption types"
 msgstr ""
+"Tidak ada kredensial yang ditemukan dengan jenis enkripsi yang didukung"
 
 #. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
 #: ../src/dummy-strings.c:165
 msgid "Invalid KDC option combination (library internal error)"
-msgstr ""
+msgstr "Kombinasi opsi KDC tidak valid (galat internal pustaka)"
 
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
 #: ../src/dummy-strings.c:166
-#, fuzzy
 msgid "Request missing second ticket"
-msgstr "Permintaan kekurangan satu parameter yang diperlukan."
+msgstr "Permintaan kekurangan tiket kedua"
 
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
 #: ../src/dummy-strings.c:167
 msgid "No credentials supplied to library routine"
-msgstr ""
+msgstr "Tidak ada kredensial yang disediakan untuk rutin pustaka"
 
 #. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
 #: ../src/dummy-strings.c:168
-#, fuzzy
 msgid "Bad sendauth version was sent"
-msgstr "Spesifikasi bersi buruk '%s'"
+msgstr "Versi sendauth buruk dikirim"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
 #: ../src/dummy-strings.c:169
 msgid "Bad application version was sent (via sendauth)"
-msgstr ""
+msgstr "Versi aplikasi yang buruk dikirim (melalui sendauth)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
 #: ../src/dummy-strings.c:170
 msgid "Bad response (during sendauth exchange)"
-msgstr ""
+msgstr "Respons buruk (selama pertukaran sendauth)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
 #: ../src/dummy-strings.c:171
 msgid "Server rejected authentication (during sendauth exchange)"
-msgstr ""
+msgstr "Autentikasi ditolak server (selama pertukaran sendauth)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
 #: ../src/dummy-strings.c:172
-#, fuzzy
 msgid "Unsupported preauthentication type"
-msgstr "Tipe GnmValue (%d) yang tak didukung"
+msgstr "Jenis preauthentication yang tidak didukung"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
 #: ../src/dummy-strings.c:173
-#, fuzzy
 msgid "Required preauthentication key not supplied"
-msgstr "Perlu sandi kunci privat."
+msgstr "Kunci preauthentication yang diperlukan tidak disediakan"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
 #: ../src/dummy-strings.c:174
-#, fuzzy
 msgid "Generic preauthentication failure"
-msgstr "Kegagalan"
+msgstr "Kegagalan preauthentication generik"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
 #: ../src/dummy-strings.c:175
 msgid "Unsupported replay cache format version number"
-msgstr ""
+msgstr "Nomor versi format singgahan replay tidak didukung"
 
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
 #: ../src/dummy-strings.c:176
 msgid "Unsupported credentials cache format version number"
-msgstr ""
+msgstr "Nomor versi format singgahan kredensial yang tidak didukung"
 
 #. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
 #: ../src/dummy-strings.c:177
 msgid "Unsupported key table format version number"
-msgstr ""
+msgstr "Nomor versi format tabel kunci yang tidak didukung"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: ../src/dummy-strings.c:178
-#, fuzzy
 msgid "Program lacks support for address type"
-msgstr "Proksi SOCSKv5 tidak mendukung jenis alamat yang diberikan."
+msgstr "Program kekurangan dukungan untuk jenis alamat"
 
 #. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
 #: ../src/dummy-strings.c:179
 msgid "Message replay detection requires rcache parameter"
-msgstr ""
+msgstr "Deteksi replay pesan memerlukan parameter rcache"
 
 #. krb5_err.et:krb5:KRB5_RC_REQUIRED
 #: ../src/dummy-strings.c:180
-#, fuzzy
 msgid "Hostname cannot be canonicalized"
-msgstr "Tidak bisa mengurai nama host proksi"
+msgstr "Hostname tidak dapat dikanonisasi"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
 #: ../src/dummy-strings.c:181
-#, fuzzy
 msgid "Cannot determine realm for host"
-msgstr "URL host tak boleh kosong"
+msgstr "Tidak dapat menentukan realm untuk host"
 
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
 #: ../src/dummy-strings.c:182
 msgid "Conversion to service principal undefined for name type"
-msgstr ""
+msgstr "Konversi ke layanan prinsipal tidak terdefinisi untuk jenis nama"
 
 #. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
 #: ../src/dummy-strings.c:183
 msgid "Initial Ticket response appears to be Version 4 error"
-msgstr ""
+msgstr "Respons tiket awal tampaknya galat versi 4"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
 #: ../src/dummy-strings.c:184
 msgid "Cannot resolve network address for KDC in requested realm"
-msgstr ""
+msgstr "Tidak dapat mengurai alamat jaringan untuk KDC di realm yang diminta"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: ../src/dummy-strings.c:185
 msgid "Requesting ticket can't get forwardable tickets"
-msgstr ""
+msgstr "Tiket yang meminta tidak bisa mendapatkan tiket forwardable"
 
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
 #: ../src/dummy-strings.c:186
 msgid "Bad principal name while trying to forward credentials"
-msgstr ""
+msgstr "Nama prinsipal buruk saat mencoba untuk meneruskan kredensial"
 
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: ../src/dummy-strings.c:187
 msgid "Looping detected inside krb5_get_in_tkt"
-msgstr ""
+msgstr "Looping terdeteksi di dalam krb5_get_in_tkt"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: ../src/dummy-strings.c:188
 msgid "Configuration file does not specify default realm"
-msgstr ""
+msgstr "Berkas konfigurasi tidak menentukan realm default"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
 #: ../src/dummy-strings.c:189
 msgid "Bad SAM flags in obtain_sam_padata"
-msgstr ""
+msgstr "Flag SAM buruk di obtain_sam_padata"
 
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
 #: ../src/dummy-strings.c:190
 msgid "Invalid encryption type in SAM challenge"
-msgstr ""
+msgstr "Jenis enkripsi tidak valid dalam SAM challenge"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
 #: ../src/dummy-strings.c:191
 msgid "Missing checksum in SAM challenge"
-msgstr ""
+msgstr "Checksum hilang di SAM challenge"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
 #: ../src/dummy-strings.c:192
 msgid "Bad checksum in SAM challenge"
-msgstr ""
+msgstr "Checksum buruk di SAM challenge"
 
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
 #: ../src/dummy-strings.c:193
-#, fuzzy
 msgid "Keytab name too long"
-msgstr "Nama baru terlalu panjang"
+msgstr "Nama keytab terlalu panjang"
 
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
 #: ../src/dummy-strings.c:194
 msgid "Key version number for principal in key table is incorrect"
-msgstr ""
+msgstr "Nomor versi utama untuk prinsipal dalam tabel kunci tidak benar"
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: ../src/dummy-strings.c:195
-#, fuzzy
 msgid "This application has expired"
-msgstr "Sertifikat telah kedaluwarsa."
+msgstr "Aplikasi ini telah kedaluwarsa"
 
 #. krb5_err.et:krb5:KRB5_APPL_EXPIRED
 #: ../src/dummy-strings.c:196
-#, fuzzy
 msgid "This Krb5 library has expired"
-msgstr "Sertifikat telah kedaluwarsa."
+msgstr "Pustaka Krb5 ini telah kedaluwarsa"
 
 #. krb5_err.et:krb5:KRB5_LIB_EXPIRED
 #: ../src/dummy-strings.c:197
 msgid "New password cannot be zero length"
-msgstr ""
+msgstr "Sandi baru tidak boleh panjang nol"
 
 #. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
 #: ../src/dummy-strings.c:198
-#, fuzzy
 msgid "Password change failed"
-msgstr "Ubah _Sandi…"
+msgstr "Perubahan sandi gagal"
 
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: ../src/dummy-strings.c:199
-#, fuzzy
 msgid "Bad format in keytab"
-msgstr "pyblioconvert: kesalahan: format konversi yang buruk"
+msgstr "Format yang buruk di keytab"
 
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
 #: ../src/dummy-strings.c:200
-#, fuzzy
 msgid "Encryption type not permitted"
-msgstr "_Tipe Penyandian:"
+msgstr "Jenis enkripsi tidak diizinkan"
 
 #. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
 #: ../src/dummy-strings.c:201
 msgid "No supported encryption types (config file error?)"
-msgstr ""
+msgstr "Tidak ada jenis enkripsi yang didukung (kesalahan berkas config?)"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
 #: ../src/dummy-strings.c:202
 msgid "Program called an obsolete, deleted function"
-msgstr ""
+msgstr "Program memanggil fungsi yang tidak dipakai lagi yang dihapus"
 
 #. krb5_err.et:krb5:KRB5_OBSOLETE_FN
 #: ../src/dummy-strings.c:203
-#, fuzzy
 msgid "unknown getaddrinfo failure"
-msgstr "Kegagalan yang tak dikenal"
+msgstr "kegagalan getaddrinfo yang tidak dikenal"
 
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: ../src/dummy-strings.c:204
 msgid "no data available for host/domain name"
-msgstr ""
+msgstr "tidak ada data yang tersedia untuk host/nama domain"
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
 #: ../src/dummy-strings.c:205
-#, fuzzy
 msgid "host/domain name not found"
-msgstr "Nama Domain"
+msgstr "host/nama domain tidak ditemukan"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: ../src/dummy-strings.c:206
-#, fuzzy
 msgid "service name unknown"
-msgstr "nama pengaturan tidak dikenal"
+msgstr "nama layanan tidak diketahui"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: ../src/dummy-strings.c:207
 msgid "Cannot determine realm for numeric host address"
-msgstr ""
+msgstr "Tidak dapat menentukan realm untuk alamat host numerik"
 
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
 #: ../src/dummy-strings.c:208
 msgid "Invalid key generation parameters from KDC"
-msgstr ""
+msgstr "Parameter generasi kunci tidak valid dari KDC"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: ../src/dummy-strings.c:209
-#, fuzzy
 msgid "service not available"
-msgstr "Layanan tidak tersedia"
+msgstr "layanan tidak tersedia"
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: ../src/dummy-strings.c:210
 msgid "Ccache function not supported: read-only ccache type"
-msgstr ""
+msgstr "Fungsi Ccache tidak didukung: tipe ccache hanya-baca"
 
 #. krb5_err.et:krb5:KRB5_CC_READONLY
 #: ../src/dummy-strings.c:211
-#, fuzzy
 msgid "Ccache function not supported: not implemented"
-msgstr "Fungsi ini tidak diterapkan untuk widget kelas '%s'"
+msgstr "Fungsi Ccache tidak didukung: tidak diimplementasikan"
 
 #. krb5_err.et:krb5:KRB5_CC_NOSUPP
 #: ../src/dummy-strings.c:212
 msgid "Invalid format of Kerberos lifetime or clock skew string"
-msgstr ""
+msgstr "Format umur hidup Kerberos atau string kemelesetan jam tidak valid"
 
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
 #: ../src/dummy-strings.c:213
-#, fuzzy
 msgid "Supplied data not handled by this plugin"
-msgstr "Data kalibrasi dari pabrik yang disediakan oleh vendor"
+msgstr "Data yang disediakan tidak ditangani oleh plugin ini"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: ../src/dummy-strings.c:214
-#, fuzzy
 msgid "Plugin does not support the operaton"
-msgstr "plugin tidak mendukung kapabilitas impor"
+msgstr "Plugin tidak mendukung operasi"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
 #: ../src/dummy-strings.c:215
 msgid "Kerberos V5 magic number table"
-msgstr ""
+msgstr "Tabel nomor magic Kerberos V5"
 
 #. kv5m_err.et:kv5m:KV5M_NONE
 #: ../src/dummy-strings.c:216
@@ -1578,18 +1506,16 @@ msgid "Your credentials have expired"
 msgstr "Kredensial Anda telah kedaluwarsa"
 
 #: ../src/ka-applet.c:841
-#, fuzzy
 msgid "List Tickets"
-msgstr "_Daftar:"
+msgstr "Daftar Tiket"
 
 #: ../src/ka-applet.c:860
 msgid "Don't show me this again"
 msgstr "Jangan tunjukkan ini ke saya lagi"
 
 #: ../src/ka-applet.c:867
-#, fuzzy
 msgid "Remove Credentials Cache"
-msgstr "Tidak bisa menginisialisasi tembolok kredensial: %k"
+msgstr "Buang Singgahan Kredensial"
 
 #: ../src/ka-applet.c:929
 msgid "You have valid Kerberos credentials."
@@ -1609,7 +1535,7 @@ msgstr "Kredensial jaringan akan kedaluwarsa"
 
 #: ../src/ka-applet.c:970
 msgid "Network credentials expired"
-msgstr "Kredensial jaringan kedaluwarsa."
+msgstr "Kredensial jaringan kedaluwarsa"
 
 #: ../src/ka-applet.c:971
 msgid "Your Kerberos credentials have expired."
@@ -1628,14 +1554,12 @@ msgid "Expired"
 msgstr "Kedaluwarsa"
 
 #: ../src/ka-kerberos.c:1042
-#, fuzzy
 msgid " (No network connection)"
-msgstr "Tak ada sambungan jaringan"
+msgstr " (Tak ada koneksi jaringan)"
 
 #: ../src/ka-main-window.c:98
-#, fuzzy
 msgid "Principal"
-msgstr "_Pokok:"
+msgstr "Prinsipal"
 
 #: ../src/ka-main-window.c:104
 msgid "Start Time"
@@ -1688,34 +1612,34 @@ msgstr "Galat %s"
 #: ../src/ka-pwdialog.c:269
 #, c-format
 msgid "Couldn't acquire Kerberos ticket: '%s'"
-msgstr ""
+msgstr "Tidak bisa memperoleh tiket Kerberos: '%s'"
 
 #: ../src/ka-pwdialog.c:336
-#, fuzzy
 msgid "Please enter your Kerberos password:"
-msgstr "Harap masukkan sandi Anda di bawah."
+msgstr "Silakan masukkan sandi Kerberos Anda:"
 
 #: ../src/ka-pwdialog.c:349
-#, fuzzy, c-format
+#, c-format
 msgid "Please enter the password for '%s':"
-msgstr "Masukkan sandi untuk akun \"%s\"."
+msgstr "Harap masukkan kata sandi untuk '%s':"
 
 #: ../src/ka-pwdialog.c:367
-#, fuzzy
 msgid "The password you entered is invalid"
-msgstr "Sandi yang diberikan salah"
+msgstr "Sandi yang Anda masukkan tidak valid"
 
 #: ../src/ka-tools.c:43
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "There was an error displaying help:\n"
 "%s"
-msgstr "Terjadi galat sewaktu membuka bantuan: %s"
+msgstr ""
+"Terjadi galat sewaktu menampilkan bantuan:\n"
+"%s"
 
 #. Translators: add the translators of your language here
 #: ../src/ka-tools.c:83
 msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2018"
+msgstr "Andika Triwidada <andika@gmail.com>, 2018, 2020"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
 msgid "Kerberos Authentication Dialog"
@@ -1723,21 +1647,29 @@ msgstr "Dialog Otentikasi Kerberos"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:2
 msgid "Request, renew and view Kerberos tickets"
-msgstr ""
+msgstr "Meminta, memperbarui, dan melihat tiket Kerberos"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:3
+#, fuzzy
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
 "notifies you when your Kerberos credentials are about to expire and renews "
 "your ticket automatically if possible."
 msgstr ""
+"Otentikasi Kerberos memungkinkan Anda untuk daftar tiket Kerberos saat ini, "
+"dan meminta tiket baru (mengotentikasi ke Kerberos server). Hal ini juga "
+"memberi tahu Anda ketika kredensial Kerberos Anda akan kedaluwarsa dan "
+"memperbaharui tiket Anda secara otomatis jika memungkinkan."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:4
+#, fuzzy
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
+"Hal ini berguna jika Anda perlu untuk mengotentikasi ke Kerberos server "
+"(KDC) setelah Anda login ke desktop (misalnya pada perangkat mobile)."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:5
 msgid "Kerberos authentication dialog"
@@ -1756,16 +1688,18 @@ msgid "Kerberos principal"
 msgstr "Principal Kerberos"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
+#, fuzzy
 msgid "The Kerberos principal to acquire the ticket for"
-msgstr ""
+msgstr "Prinsipal Kerberos untuk mendapatkan tiket"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:3
 msgid "PKINIT identifier"
 msgstr "identifier PKINIT"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:4
+#, fuzzy
 msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr ""
+msgstr "Pengenal publik/privat/sertifikat prinsipal saat menggunakan PKINIT"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:5
 msgid "PKINIT trust anchors"
@@ -1776,14 +1710,16 @@ msgid "PKINIT CA certificates"
 msgstr "Sertifikat CA PKINIT"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:7
-#, fuzzy
 msgid "Prompt minutes before expiry"
-msgstr "15 menit sebelumnya"
+msgstr "Menit menyapa sebelum kedaluwarsa"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:8
+#, fuzzy
 msgid ""
 "Start prompting/displaying notifications that many minutes before expiry"
 msgstr ""
+"Mulai mendorong/menampilkan pemberitahuan bahwa banyak menit sebelum "
+"kedaluwarsa"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:9
 msgid "Forwardable ticket"
@@ -1847,9 +1783,9 @@ msgstr "Pengaya yang difungsikan"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:24
 msgid "List of plugins that should be loaded and activated on startup."
-msgstr ""
+msgstr "Daftar plugin yang harus dimuat dan diaktifkan pada saat awal mula."
 
 #: ../secmem/util.c:106
 #, c-format
 msgid "Warning: running q-agent setuid on this system is dangerous\n"
-msgstr ""
+msgstr "Peringatan: menjalankan q-agent setuid pada sistem ini berbahaya\n"

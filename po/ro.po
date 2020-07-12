@@ -7,28 +7,28 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-"
-"auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2014-11-01 21:15+0000\n"
-"PO-Revision-Date: 2013-02-10 20:29+0200\n"
-"Last-Translator: Daniel Șerbănescu <daniel [at] serbanescu [dot] dk>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
+"issues\n"
+"POT-Creation-Date: 2020-04-01 08:54+0000\n"
+"PO-Revision-Date: 2020-07-12 15:01+0300\n"
+"Last-Translator: Florentina Mușat <florentina.musat.28@gmail.com>\n"
 "Language-Team: Gnome Romanian Translation Team\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);;\n"
-"X-Generator: Virtaal 0.7.1\n"
+"20)) ? 1 : 2);\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Project-Style: gnome\n"
 
 #: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
-msgstr ""
+msgstr "Preferi_nțe"
 
 #: ../src/resources/ui/app-menu.ui.h:2
 msgid "_About"
-msgstr ""
+msgstr "_Despre"
 
 #: ../src/resources/ui/app-menu.ui.h:3
 #: ../src/resources/ui/tray-icon-menu.ui.h:3
@@ -38,7 +38,7 @@ msgstr "_Ajutor"
 #: ../src/resources/ui/app-menu.ui.h:4
 #: ../src/resources/ui/tray-icon-menu.ui.h:4
 msgid "_Quit"
-msgstr ""
+msgstr "_Ieșire"
 
 #: ../src/resources/ui/tray-icon-menu.ui.h:1
 msgid "Remove Credentials _Cache"
@@ -51,6 +51,10 @@ msgstr "_Enumeră tichetele"
 #: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Service Tickets"
 msgstr "Tichete de suport"
+
+#: ../src/resources/ui/ka-main-window.ui.h:2 ../src/ka-applet.c:851
+msgid "Get Ticket"
+msgstr "Obține tichet"
 
 #: ../src/resources/ui/ka-preferences.ui.h:1
 msgid "Kerberos User"
@@ -166,14 +170,14 @@ msgstr ""
 msgid "minutes before ticket expiry"
 msgstr "minute înainte ca tichetul să expire"
 
-#: ../src/resources/ui/ka-pwdialog.ui.h:1
+#: ../src/resources/ui/ka-pwdialog.ui.h:1 ../src/ka-applet-priv.h:34
 #: ../src/krb5-auth-dialog.desktop.in.h:1
 msgid "Kerberos Authentication"
 msgstr "Autentificare Kerberos"
 
 #: ../src/resources/ui/ka-pwdialog.ui.h:2 ../src/ka-preferences.c:372
 msgid "_Cancel"
-msgstr ""
+msgstr "_Anulează"
 
 #: ../src/resources/ui/ka-pwdialog.ui.h:3
 msgid "_Renew Ticket"
@@ -230,7 +234,7 @@ msgstr "Codarea ASN.1 este formatată nepotrivit"
 #. asn1_err.et:asn1:ASN1_BAD_FORMAT
 #: ../src/dummy-strings.c:19
 msgid "ASN.1 parse error"
-msgstr "Eroare de analizare ASN.1 "
+msgstr "Eroare de parsare ASN.1"
 
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: ../src/dummy-strings.c:20
@@ -280,7 +284,7 @@ msgstr "Cheia serverului este criptată într-o cheie principală veche"
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
 #: ../src/dummy-strings.c:29
 msgid "Client not found in Kerberos database"
-msgstr "Clientul nu s-a găsit în baza de date Kerberos "
+msgstr "Clientul nu a fost găsit în baza de date Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
 #: ../src/dummy-strings.c:30
@@ -1008,7 +1012,7 @@ msgstr "Eșuare generică de preautentificare"
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
 #: ../src/dummy-strings.c:175
 msgid "Unsupported replay cache format version number"
-msgstr "Număr de versiune a formatului pentru cache-ul de reluare nesuportat "
+msgstr "Număr de versiune de format cache de redare nesuportat"
 
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
 #: ../src/dummy-strings.c:176
@@ -1491,12 +1495,13 @@ msgstr "Număr magic nepotrivit pentru GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Număr magic nepotrivit pentru GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:654
+#. Translators: First number is hours, second number is minutes
+#: ../src/ka-applet.c:658
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Certificările dumneavoastră vor expira în %.2d:%.2dh"
 
-#: ../src/ka-applet.c:660 ../src/ka-pwdialog.c:348
+#: ../src/ka-applet.c:664 ../src/ka-pwdialog.c:308
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -1504,96 +1509,90 @@ msgstr[0] "Certificările dumneavoastră vor expira în %d minut"
 msgstr[1] "Certificările dumneavoastră vor expira în %d minute"
 msgstr[2] "Certificările dumneavoastră vor expira în %d de minute"
 
-#: ../src/ka-applet.c:665 ../src/ka-pwdialog.c:353
+#: ../src/ka-applet.c:669 ../src/ka-pwdialog.c:313
 msgid "Your credentials have expired"
 msgstr "Certificările dumneavoastră au expirat"
 
-#: ../src/ka-applet.c:837
+#: ../src/ka-applet.c:841
 msgid "List Tickets"
 msgstr "Enumeră tichetele"
 
-#: ../src/ka-applet.c:847
-msgid "Get Ticket"
-msgstr "Obține tichet"
-
-#: ../src/ka-applet.c:856
+#: ../src/ka-applet.c:860
 msgid "Don't show me this again"
 msgstr "Nu mai arăta din nou"
 
-#: ../src/ka-applet.c:863
+#: ../src/ka-applet.c:867
 msgid "Remove Credentials Cache"
 msgstr "Elimină cache de certificări"
 
-#: ../src/ka-applet.c:925
+#: ../src/ka-applet.c:929
 msgid "You have valid Kerberos credentials."
 msgstr "Dețineți certificări Kerberos valide."
 
-#: ../src/ka-applet.c:927
+#: ../src/ka-applet.c:931
 msgid "You've refreshed your Kerberos credentials."
 msgstr "V-ați actualizat certificările Kerberos."
 
-#: ../src/ka-applet.c:930
+#: ../src/ka-applet.c:934
 msgid "Network credentials valid"
 msgstr "Certificări de rețea valide"
 
-#: ../src/ka-applet.c:949
+#: ../src/ka-applet.c:953
 msgid "Network credentials expiring"
 msgstr "Certificări de rețea în curs de expirare"
 
-#: ../src/ka-applet.c:966
+#: ../src/ka-applet.c:970
 msgid "Network credentials expired"
 msgstr "Certificările de rețea au expirat"
 
-#: ../src/ka-applet.c:967
+#: ../src/ka-applet.c:971
 msgid "Your Kerberos credentials have expired."
 msgstr "Certificările dumneavoastră Kerberos au expirat."
 
-#: ../src/ka-kerberos.c:176
+#: ../src/ka-kerberos.c:172
 msgid "unknown error"
 msgstr "eroare necunoscută"
 
-#: ../src/ka-kerberos.c:329
+#: ../src/ka-kerberos.c:325
 msgid "Your ticket cache is currently empty"
-msgstr ""
+msgstr "Cache-ul de bilet este gol în mod curent"
 
-#: ../src/ka-kerberos.c:360
+#: ../src/ka-kerberos.c:359
 msgid "Expired"
 msgstr "Expirat"
 
-#: ../src/ka-kerberos.c:1049
-#, fuzzy
-#| msgid "Network Authentication"
+#: ../src/ka-kerberos.c:1042
 msgid " (No network connection)"
-msgstr "Autentificare la rețea"
+msgstr " (Nu există o conexiune de rețea)"
 
-#: ../src/ka-main-window.c:77
+#: ../src/ka-main-window.c:98
 msgid "Principal"
 msgstr "Principal"
 
-#: ../src/ka-main-window.c:83
+#: ../src/ka-main-window.c:104
 msgid "Start Time"
 msgstr "Oră de pornire"
 
-#: ../src/ka-main-window.c:89
+#: ../src/ka-main-window.c:110
 msgid "End Time"
 msgstr "Oră de finalizare"
 
 #. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:96
+#: ../src/ka-main-window.c:117
 msgid "Fwd"
 msgstr "Fwd"
 
 #. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:103
+#: ../src/ka-main-window.c:124
 msgid "Proxy"
 msgstr "Proxy"
 
 #. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:110
+#: ../src/ka-main-window.c:131
 msgid "Renew"
 msgstr "Reînnoiește"
 
-#: ../src/ka-main-window.c:140
+#: ../src/ka-main-window.c:172
 msgid "Error displaying service ticket information"
 msgstr "Eroare la afișarea informațiilor tichetului de serviciu"
 
@@ -1603,7 +1602,7 @@ msgstr "Alegeți un certificat"
 
 #: ../src/ka-preferences.c:373
 msgid "_Open"
-msgstr ""
+msgstr "_Deschide"
 
 #: ../src/ka-preferences.c:385
 msgid "X509 Certificates"
@@ -1618,25 +1617,25 @@ msgstr "toate fișierele"
 msgid "%s Error"
 msgstr "Eroare %s"
 
-#: ../src/ka-pwdialog.c:309
+#: ../src/ka-pwdialog.c:269
 #, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "Nu s-a putut obține tichetul kerberos: „%s”"
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "Nu s-a putut obține biletul Kerberos: „%s”"
 
-#: ../src/ka-pwdialog.c:376
+#: ../src/ka-pwdialog.c:336
 msgid "Please enter your Kerberos password:"
 msgstr "Introduceți parola dumneavoastră Kerberos:"
 
-#: ../src/ka-pwdialog.c:389
+#: ../src/ka-pwdialog.c:349
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Introduceți parola pentru „%s”:"
 
-#: ../src/ka-pwdialog.c:407
+#: ../src/ka-pwdialog.c:367
 msgid "The password you entered is invalid"
 msgstr "Parola introdusă nu este validă"
 
-#: ../src/ka-tools.c:44
+#: ../src/ka-tools.c:43
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1646,37 +1645,59 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:84
+#: ../src/ka-tools.c:83
 msgid "translator-credits"
-msgstr "Florentina Mușat <kuchiki14@yahoo.com>"
+msgstr ""
+"Florentina Mușat <florentina [dot] musat [dot] 28 [at] gmail [dot] com>, 2020"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+msgid "Kerberos Authentication Dialog"
+msgstr "Dialog de autentificare Kerberos"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Cere, reînnoiește și vizualizează bilete Kerberos"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
 "notifies you when your Kerberos credentials are about to expire and renews "
 "your ticket automatically if possible."
 msgstr ""
+"Autentificare Kerberos vă permite să listați biletele Kerberos curente, și "
+"să cereți un bilet nou (autentificare la serverul Kerberos). Înștiințează, "
+"de asemenea, și când certificările Kerberos sunt pe cale să expire și vă "
+"reînnoiește biletul automat dacă este posibil."
 
-#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:4
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
+"Acest lucru este util dacă aveți nevoie să vă autentificați la un server "
+"Kerberos (KDC) după autentificarea pe desktop (de ex. pe un dispozitiv "
+"mobil)."
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:5
+msgid "Kerberos authentication dialog"
+msgstr "Dialog de autentificare Kerberos"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:2
 msgid "Kerberos Network Authentication Dialog"
-msgstr "Dialog kerberos pentru autentificare la rețea "
+msgstr "Dialog de autentificare de rețea Kerberos"
+
+#: ../src/krb5-auth-dialog.desktop.in.h:3
+msgid "kerberos;authentication;"
+msgstr "kerberos;authentication;autentificare;"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
 msgstr "Principal Kerberos"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
-#, fuzzy
-#| msgid "The kerberos principal to acquire the ticket for"
 msgid "The Kerberos principal to acquire the ticket for"
-msgstr "Principalul kerberos de obținere a tichetului pentru"
+msgstr "Principalul Kerberos pentru care să se obțină biletul"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:3
 msgid "PKINIT identifier"
@@ -1732,11 +1753,11 @@ msgstr "Tichetele cerute ar trebui să fie delegabile (proxiable)"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:15
 msgid "Configuration tickets"
-msgstr ""
+msgstr "Bilete de configurare"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
 msgid "Show configuration tickets"
-msgstr ""
+msgstr "Arată biletele de configurare"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
 msgid "valid ticket notification"

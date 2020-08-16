@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2020-04-01 08:54+0000\n"
-"PO-Revision-Date: 2020-04-13 17:26+0700\n"
+"POT-Creation-Date: 2020-07-12 12:02+0000\n"
+"PO-Revision-Date: 2020-08-16 18:55+0700\n"
 "Last-Translator: Andika Triwidada <andika@gmail.com>\n"
 "Language-Team: Indonesian <gnome-l10n-id@googlegroups.com>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.4.1\n"
 
 #: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
@@ -1639,7 +1639,7 @@ msgstr ""
 #. Translators: add the translators of your language here
 #: ../src/ka-tools.c:83
 msgid "translator-credits"
-msgstr "Andika Triwidada <andika@gmail.com>, 2018, 2020"
+msgstr "Andika Triwidada <andika@gmail.com>, 2018, 2020."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
 msgid "Kerberos Authentication Dialog"
@@ -1650,25 +1650,23 @@ msgid "Request, renew and view Kerberos tickets"
 msgstr "Meminta, memperbarui, dan melihat tiket Kerberos"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:3
-#, fuzzy
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
 "notifies you when your Kerberos credentials are about to expire and renews "
 "your ticket automatically if possible."
 msgstr ""
-"Otentikasi Kerberos memungkinkan Anda untuk daftar tiket Kerberos saat ini, "
-"dan meminta tiket baru (mengotentikasi ke Kerberos server). Hal ini juga "
-"memberi tahu Anda ketika kredensial Kerberos Anda akan kedaluwarsa dan "
+"Otentikasi Kerberos memungkinkan Anda untuk membuat daftar tiket Kerberos "
+"saat ini, dan meminta tiket baru (mengotentikasi ke Server Kerberos). Ini "
+"juga memberi tahu Anda ketika kredensial Kerberos Anda akan kedaluwarsa dan "
 "memperbaharui tiket Anda secara otomatis jika memungkinkan."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:4
-#, fuzzy
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
-"Hal ini berguna jika Anda perlu untuk mengotentikasi ke Kerberos server "
+"Hal ini berguna jika Anda perlu untuk mengotentikasi ke Server Kerberos "
 "(KDC) setelah Anda login ke desktop (misalnya pada perangkat mobile)."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:5
@@ -1688,16 +1686,14 @@ msgid "Kerberos principal"
 msgstr "Principal Kerberos"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
-#, fuzzy
 msgid "The Kerberos principal to acquire the ticket for"
-msgstr "Prinsipal Kerberos untuk mendapatkan tiket"
+msgstr "Prinsipal Kerberos yang akan dimintakan tiket"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:3
 msgid "PKINIT identifier"
 msgstr "identifier PKINIT"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:4
-#, fuzzy
 msgid "The principal's public/private/certificate identifier when using PKINIT"
 msgstr "Pengenal publik/privat/sertifikat prinsipal saat menggunakan PKINIT"
 
@@ -1714,12 +1710,10 @@ msgid "Prompt minutes before expiry"
 msgstr "Menit menyapa sebelum kedaluwarsa"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:8
-#, fuzzy
 msgid ""
 "Start prompting/displaying notifications that many minutes before expiry"
 msgstr ""
-"Mulai mendorong/menampilkan pemberitahuan bahwa banyak menit sebelum "
-"kedaluwarsa"
+"Mulai mendorong/menampilkan pemberitahuan berapa menit sebelum kedaluwarsa"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:9
 msgid "Forwardable ticket"

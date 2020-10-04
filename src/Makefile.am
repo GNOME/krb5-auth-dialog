@@ -26,7 +26,7 @@ $(service_DATA): $(service_in_files) Makefile
 	sed -e "s|\@BINDIR\@|$(bindir)|" $< > $@
 
 @INTLTOOL_XML_RULE@
-appdatadir       = $(datadir)/appdata
+appdatadir       = $(datadir)/metainfo
 appdata_in_files = krb5-auth-dialog.appdata.xml.in
 appdata_DATA     = $(appdata_in_files:.xml.in=.xml)
 

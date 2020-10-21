@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues\n"
-"POT-Creation-Date: 2019-10-17 16:37+0000\n"
-"PO-Revision-Date: 2020-04-01 11:50+0300\n"
+"POT-Creation-Date: 2020-07-12 12:02+0000\n"
+"PO-Revision-Date: 2020-10-21 08:42+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
 "=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.07.70\n"
+"X-Generator: Lokalize 20.11.70\n"
 
 #: ../src/resources/ui/app-menu.ui.h:1
 msgid "Prefere_nces"
@@ -45,7 +45,7 @@ msgstr "Очистити _кеш мандатів"
 
 #: ../src/resources/ui/tray-icon-menu.ui.h:2
 msgid "_List Tickets"
-msgstr "_Список квитів"
+msgstr "_Список квитків"
 
 #: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Service Tickets"
@@ -63,15 +63,14 @@ msgstr "Користувач Kerberos"
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
-"Назва вашого облікового запису Kerberos. Не заповнюйте, якщо слід"
-" використовувати ваше поточне ім'я користувача."
+"Назва вашого облікового запису Kerberos. Не заповнюйте, якщо слід "
+"використовувати ваше поточне ім'я користувача."
 
 #: ../src/resources/ui/ka-preferences.ui.h:3
 msgid "Kerberos principal:"
 msgstr "Адміністратор доступу Kerberos:"
 
 #: ../src/resources/ui/ka-preferences.ui.h:4
-#| msgid "Ticket Options"
 msgid "Kerberos Ticket Options"
 msgstr "Параметри квитків Kerberos"
 
@@ -108,7 +107,6 @@ msgid "Kerberos"
 msgstr "Kerberos"
 
 #: ../src/resources/ui/ka-preferences.ui.h:13
-#| msgid "Userid:"
 msgid "Userid"
 msgstr "Ід.користувача"
 
@@ -131,7 +129,6 @@ msgid "_Browse..."
 msgstr "_Огляд..."
 
 #: ../src/resources/ui/ka-preferences.ui.h:18
-#| msgid "X509 trust anchors:"
 msgid "X509 trust anchors"
 msgstr "Довірчі прив'язки X509"
 
@@ -144,11 +141,10 @@ msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
 msgstr ""
-"Налаштуйте використання сертифікатів та смарткарток для вашого розпізнавання"
-" у мережі за допомогою Kerberos."
+"Налаштуйте використання сертифікатів та смарткарток для вашого розпізнавання "
+"у мережі за допомогою Kerberos."
 
 #: ../src/resources/ui/ka-preferences.ui.h:21
-#| msgid "PKINIT:"
 msgid "PKINIT"
 msgstr "PKINIT"
 
@@ -171,13 +167,11 @@ msgstr ""
 
 #. Used in combination: 'Warn x minutes before expiry'
 #: ../src/resources/ui/ka-preferences.ui.h:27
-#| msgid "minutes before expiry"
 msgid "minutes before ticket expiry"
 msgstr "хвилин до закінчення строку дії квитка"
 
 #: ../src/resources/ui/ka-pwdialog.ui.h:1 ../src/ka-applet-priv.h:34
 #: ../src/krb5-auth-dialog.desktop.in.h:1
-#| msgid "Kerberos Authentication Configuration"
 msgid "Kerberos Authentication"
 msgstr "Розпізнавання Kerberos"
 
@@ -1529,21 +1523,18 @@ msgid "Your credentials have expired"
 msgstr "Термін дії Вашого мандату закінчився"
 
 #: ../src/ka-applet.c:841
-#| msgid "_List Tickets"
 msgid "List Tickets"
-msgstr "Список квитів"
+msgstr "Список квитків"
 
 #: ../src/ka-applet.c:860
 msgid "Don't show me this again"
 msgstr "Не показувати знову"
 
 #: ../src/ka-applet.c:867
-#| msgid "Remove Credentials _Cache"
 msgid "Remove Credentials Cache"
 msgstr "Очистити кеш мандатів"
 
 #: ../src/ka-applet.c:929
-#| msgid "You've refreshed your Kerberos credentials."
 msgid "You have valid Kerberos credentials."
 msgstr "У вас є чинні мандати Kerberos."
 
@@ -1564,7 +1555,6 @@ msgid "Network credentials expired"
 msgstr "Термін дії мережевих мандатів закінчився"
 
 #: ../src/ka-applet.c:971
-#| msgid "Your Kerberos credentails have expired."
 msgid "Your Kerberos credentials have expired."
 msgstr "Строк дії ваших мандатів Kerberos вичерпано."
 
@@ -1581,7 +1571,6 @@ msgid "Expired"
 msgstr "Вийшов термін"
 
 #: ../src/ka-kerberos.c:1042
-#| msgid "Network Authentication"
 msgid " (No network connection)"
 msgstr "  (Немає з'єднання із мережею)"
 
@@ -1639,7 +1628,6 @@ msgstr "Помилка %s"
 
 #: ../src/ka-pwdialog.c:269
 #, c-format
-#| msgid "Couldn't acquire kerberos ticket: '%s'"
 msgid "Couldn't acquire Kerberos ticket: '%s'"
 msgstr "Неможливо отримати квиток Kerberos: «%s»"
 
@@ -1672,12 +1660,10 @@ msgstr ""
 "Максим Дзюманенко <dziumanenko@gmail.com>wanderlust <wanderlust@ukr.net>"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
-#| msgid "Kerberos Network Authentication Dialog"
 msgid "Kerberos Authentication Dialog"
 msgstr "Діалогове вікно аутентифікації Kerberos"
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:2
-#| msgid "Requested Kerberos tickets should be:"
 msgid "Request, renew and view Kerberos tickets"
 msgstr "Запит, оновлення та перегляд квитків Kerberos"
 
@@ -1688,22 +1674,21 @@ msgid ""
 "notifies you when your Kerberos credentials are about to expire and renews "
 "your ticket automatically if possible."
 msgstr ""
-"«Розпізнавання Kerberos» надає вам змогу створити список ваших поточних"
-" квитків Kerberos і надсилати запит щодо нових квитків (проходити"
-" розпізнавання на сервері Kerberos). Крім того, програма здатна сповіщати вас"
-" про наближення завершення строку дії ваших мандатів Kerberos і оновлювати"
-" ваш квиток автоматично, якщо це можливо."
+"«Розпізнавання Kerberos» надає вам змогу створити список ваших поточних "
+"квитків Kerberos і надсилати запит щодо нових квитків (проходити "
+"розпізнавання на сервері Kerberos). Крім того, програма здатна сповіщати вас "
+"про наближення завершення строку дії ваших мандатів Kerberos і оновлювати "
+"ваш квиток автоматично, якщо це можливо."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:4
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
-"Це корисно, якщо ви хочете пройти розпізнавання на сервері Kerberos (KDC)"
-" після входу до робочого середовища (наприклад, на мобільному пристрої)."
+"Це корисно, якщо ви хочете пройти розпізнавання на сервері Kerberos (KDC) "
+"після входу до робочого середовища (наприклад, на мобільному пристрої)."
 
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:5
-#| msgid "Kerberos Network Authentication Dialog"
 msgid "Kerberos authentication dialog"
 msgstr "Діалогове вікно розпізнавання Kerberos"
 
@@ -1712,18 +1697,16 @@ msgid "Kerberos Network Authentication Dialog"
 msgstr "Діалогове вікно мережевої аутентифікації Kerberos"
 
 #: ../src/krb5-auth-dialog.desktop.in.h:3
-#| msgid "Preauthentication failed"
 msgid "kerberos;authentication;"
 msgstr ""
-"kerberos;authentication;керберос;цербер;аутентифікація;автентифікація;розпізна"
-"вання;"
+"kerberos;authentication;керберос;цербер;аутентифікація;автентифікація;"
+"розпізнавання;"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
 msgstr "Адміністратор доступу Kerberos"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
-#| msgid "The kerberos principal to acquire the ticket for"
 msgid "The Kerberos principal to acquire the ticket for"
 msgstr "Адміністратор доступу Kerberos отримує квиток для"
 

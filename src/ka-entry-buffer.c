@@ -37,14 +37,14 @@ struct _KaEntryBufferClass {
   GtkEntryBufferClass parent_class;
 };
 
-G_DEFINE_TYPE (KaEntryBuffer, ka_entry_buffer, GTK_TYPE_ENTRY_BUFFER)
-
 struct _KaEntryBufferPrivate {
     gchar *password;
     gsize password_size;
     gsize password_bytes;
     guint password_chars;
 };
+
+G_DEFINE_TYPE_WITH_PRIVATE (KaEntryBuffer, ka_entry_buffer, GTK_TYPE_ENTRY_BUFFER)
 
 
 static const gchar *
@@ -194,8 +194,6 @@ ka_entry_buffer_class_init (KaEntryBufferClass *klass)
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
     GtkEntryBufferClass *eb_class = GTK_ENTRY_BUFFER_CLASS (klass);
 
-    g_type_class_add_private (klass, sizeof (KaEntryBufferPrivate));
-
     eb_class->get_text = ka_entry_buffer_pw_get_text;
     eb_class->get_length = ka_entry_buffer_pw_get_length;
     eb_class->insert_text = ka_entry_buffer_pw_insert_text;
@@ -208,9 +206,7 @@ ka_entry_buffer_class_init (KaEntryBufferClass *klass)
 static void
 ka_entry_buffer_init (KaEntryBuffer *self)
 {
-    self->priv = G_TYPE_INSTANCE_GET_PRIVATE(self,
-                                             KA_TYPE_ENTRY_BUFFER,
-                                             KaEntryBufferPrivate);
+    self->priv = ka_entry_buffer_get_instance_private (self);
     self->priv->password = NULL;
     self->priv->password_size = 0;
     self->priv->password_bytes = 0;

@@ -53,9 +53,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (KaPwDialog, ka_pwdialog, GTK_TYPE_DIALOG);
 static void
 ka_pwdialog_init (KaPwDialog *pwdialog)
 {
-    pwdialog->priv = G_TYPE_INSTANCE_GET_PRIVATE (pwdialog,
-                                                  KA_TYPE_PWDIALOG,
-                                                  KaPwDialogPrivate);
+    pwdialog->priv = ka_pwdialog_get_instance_private (pwdialog);
 
     gtk_widget_init_template (GTK_WIDGET (pwdialog));
 }

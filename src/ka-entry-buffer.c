@@ -123,8 +123,8 @@ ka_entry_buffer_pw_insert_text (GtkEntryBuffer *buffer,
     /* Actual text insertion */
     at = g_utf8_offset_to_pointer (pv->password,
                                    position) - pv->password;
-    g_memmove (pv->password + at + n_bytes, pv->password + at,
-               pv->password_bytes - at);
+    memmove (pv->password + at + n_bytes, pv->password + at,
+             pv->password_bytes - at);
     memcpy (pv->password + at, chars, n_bytes);
 
     /* Book keeping */
@@ -158,8 +158,8 @@ ka_entry_buffer_pw_delete_text (GtkEntryBuffer *buffer,
             g_utf8_offset_to_pointer (pv->password,
                                       position + n_chars) - pv->password;
 
-        g_memmove (pv->password + start, pv->password + end,
-                   pv->password_bytes + 1 - end);
+        memmove (pv->password + start, pv->password + end,
+                 pv->password_bytes + 1 - end);
         pv->password_chars -= n_chars;
         pv->password_bytes -= (end - start);
         gtk_entry_buffer_emit_deleted_text (GTK_ENTRY_BUFFER(self), position, n_chars);

@@ -575,10 +575,7 @@ ka_preferences_constructed (GObject *object)
 static void
 ka_preferences_init (KaPreferences *self)
 {
-    self->priv = G_TYPE_INSTANCE_GET_PRIVATE (self,
-                                              KA_TYPE_PREFERENCES,
-                                              KaPreferencesPrivate);
-
+    self->priv = ka_preferences_get_instance_private (self);
     gtk_widget_init_template (GTK_WIDGET (self));
 }
 

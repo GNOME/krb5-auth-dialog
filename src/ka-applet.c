@@ -1164,8 +1164,7 @@ ka_ns_check_persistence (KaApplet *self)
                 self->priv->ns_persistence = TRUE;
                 KA_DEBUG ("Notification server supports persistence.");
             }
-            g_list_foreach (caps, (GFunc) g_free, NULL);
-            g_list_free (caps);
+            g_list_free_full (caps, (GDestroyNotify)g_free);
         }
         /* During session start we have to wait until the shell is fully up
          * to reliably detect the persistence property (#642666) */

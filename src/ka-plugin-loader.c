@@ -34,6 +34,13 @@ struct _KaPluginLoaderPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (KaPluginLoader, ka_plugin_loader, G_TYPE_OBJECT)
 
 
+static void
+module_close (GModule *module, GObject *unused G_GNUC_UNUSED)
+{
+    g_module_close (module);
+}
+
+
 static KaPlugin*
 load_plugin (const char *path)
 {
@@ -77,7 +84,7 @@ load_plugin (const char *path)
 
 	plugin = (*plugin_create_func) ();
 	if (plugin) {
-		g_object_weak_ref (G_OBJECT (plugin), (GWeakNotify) g_module_close, module);
+		g_object_weak_ref (G_OBJECT (plugin), (GWeakNotify) module_close, module);
 		g_message ("Loaded plugin %s", ka_plugin_get_name (plugin));
 	} else
 		g_warning ("Could not load plugin %s: initialization failed", path);

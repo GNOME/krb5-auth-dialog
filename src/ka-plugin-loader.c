@@ -22,10 +22,7 @@
 
 #include <gmodule.h>
 
-G_DEFINE_TYPE (KaPluginLoader, ka_plugin_loader, G_TYPE_OBJECT)
 
-#define GET_PRIVATE(o) \
-  (G_TYPE_INSTANCE_GET_PRIVATE ((o), KA_TYPE_PLUGIN_LOADER, KaPluginLoaderPrivate))
 
 typedef struct _KaPluginLoaderPrivate KaPluginLoaderPrivate;
 
@@ -33,6 +30,15 @@ struct _KaPluginLoaderPrivate {
 	KaApplet *applet;
 	GSList *active_plugins;
 };
+
+G_DEFINE_TYPE_WITH_PRIVATE (KaPluginLoader, ka_plugin_loader, G_TYPE_OBJECT)
+
+
+static void
+module_close (GModule *module, GObject *unused G_GNUC_UNUSED)
+{
+    g_module_close (module);
+}
 
 
 static KaPlugin*
@@ -78,7 +84,7 @@ load_plugin (const char *path)
 
 	plugin = (*plugin_create_func) ();
 	if (plugin) {
-		g_object_weak_ref (G_OBJECT (plugin), (GWeakNotify) g_module_close, module);
+		g_object_weak_ref (G_OBJECT (plugin), (GWeakNotify) module_close, module);
 		g_message ("Loaded plugin %s", ka_plugin_get_name (plugin));
 	} else
 		g_warning ("Could not load plugin %s: initialization failed", path);
@@ -94,7 +100,7 @@ static void
 load_plugins (KaPluginLoader *self)
 {
 	int i;
-	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
+	KaPluginLoaderPrivate *priv = ka_plugin_loader_get_instance_private (self);
 	GSettings *settings;
 	char **plugins = NULL;
 
@@ -151,7 +157,7 @@ static void
 ka_plugin_loader_dispose(GObject *object)
 {
 	KaPluginLoader *self = KA_PLUGIN_LOADER(object);
-	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
+	KaPluginLoaderPrivate *priv = ka_plugin_loader_get_instance_private (self);
 	GObjectClass *parent_class = G_OBJECT_CLASS (ka_plugin_loader_parent_class);
 
 	/* We need to do this before dropping the ref on applet */
@@ -172,14 +178,14 @@ ka_plugin_loader_class_init (KaPluginLoaderClass *klass)
 	GObjectClass *object_class = G_OBJECT_CLASS(klass);
 
 	object_class->dispose = ka_plugin_loader_dispose;
-	g_type_class_add_private (klass, sizeof (KaPluginLoaderPrivate));
 }
 
 
 static void
 ka_plugin_loader_init (KaPluginLoader *self)
 {
-	KaPluginLoaderPrivate *priv = GET_PRIVATE (self);
+	KaPluginLoaderPrivate *priv = ka_plugin_loader_get_instance_private (self);
+
 	priv->active_plugins = NULL;
 }
 
@@ -198,7 +204,7 @@ ka_plugin_loader_create (KaApplet* applet)
 	KaPluginLoaderPrivate *priv;
 
 	loader = ka_plugin_loader_new();
-	priv = GET_PRIVATE (loader);
+	priv = ka_plugin_loader_get_instance_private (loader);
 	priv->applet = applet;
 	load_plugins (loader);
 

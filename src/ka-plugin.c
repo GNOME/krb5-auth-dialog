@@ -17,11 +17,6 @@
 
 #include "ka-plugin.h"
 
-G_DEFINE_TYPE (KaPlugin, ka_plugin, G_TYPE_OBJECT)
-
-#define GET_PRIVATE(o) \
-  (G_TYPE_INSTANCE_GET_PRIVATE ((o), KA_TYPE_PLUGIN, KaPluginPrivate))
-
 enum {
 	PROP_0,
 	PROP_NAME,
@@ -32,12 +27,13 @@ typedef struct _KaPluginPrivate KaPluginPrivate;
 struct _KaPluginPrivate {
 	char *name;
 };
+G_DEFINE_TYPE_WITH_PRIVATE (KaPlugin, ka_plugin, G_TYPE_OBJECT)
 
 const char*
 ka_plugin_get_name (KaPlugin *self)
 {
 	g_return_val_if_fail (KA_IS_PLUGIN (self), NULL);
-	KaPluginPrivate *priv = GET_PRIVATE (self);
+	KaPluginPrivate *priv = ka_plugin_get_instance_private (self);
 
 	return priv->name;
 }
@@ -47,7 +43,7 @@ static void
 set_property (GObject *object, guint prop_id,
               const GValue *value, GParamSpec *pspec)
 {
-	KaPluginPrivate *priv = GET_PRIVATE (object);
+	KaPluginPrivate *priv = ka_plugin_get_instance_private (KA_PLUGIN (object));
 
 	switch (prop_id) {
 	case PROP_NAME:
@@ -65,7 +61,7 @@ static void
 get_property (GObject *object, guint prop_id,
               GValue *value, GParamSpec *pspec)
 {
-	KaPluginPrivate *priv = GET_PRIVATE (object);
+	KaPluginPrivate *priv = ka_plugin_get_instance_private (KA_PLUGIN (object));
 
 	switch (prop_id) {
 	case PROP_NAME:
@@ -81,7 +77,7 @@ get_property (GObject *object, guint prop_id,
 static void
 finalize (GObject *object)
 {
-	KaPluginPrivate *priv = GET_PRIVATE (object);
+	KaPluginPrivate *priv = ka_plugin_get_instance_private (KA_PLUGIN (object));
 
 	g_free (priv->name);
 }
@@ -109,8 +105,6 @@ static void
 ka_plugin_class_init (KaPluginClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-	g_type_class_add_private (klass, sizeof (KaPluginPrivate));
 
 	object_class->get_property = get_property;
 	object_class->set_property = set_property;

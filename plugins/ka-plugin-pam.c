@@ -20,12 +20,6 @@
 
 #include <security/pam_appl.h>
 
-G_DEFINE_TYPE (KaPluginPam, ka_plugin_pam, KA_TYPE_PLUGIN)
-#define GET_PRIVATE(o) \
-  (G_TYPE_INSTANCE_GET_PRIVATE ((o), KA_TYPE_PLUGIN_PAM, KaPluginPamPrivate))
-
-typedef struct _KaPluginPamPrivate KaPluginPamPrivate;
-
 int ka_plugin_major_version = KA_PLUGIN_MAJOR_VERSION;
 int ka_plugin_minor_version = KA_PLUGIN_MINOR_VERSION;
 
@@ -35,9 +29,12 @@ ka_plugin_create (void)
     return KA_PLUGIN (ka_plugin_pam_new ());
 }
 
-struct _KaPluginPamPrivate {
+typedef struct _KaPluginPamPrivate {
     gulong handlers[2];
-};
+} KaPluginPamPrivate;
+
+G_DEFINE_TYPE (KaPluginPam, ka_plugin_pam, KA_TYPE_PLUGIN)
+
 
 static void
 ka_plugin_pam_finalize (GObject *object)
@@ -82,7 +79,7 @@ out:
 static void
 ka_plugin_pam_activate (KaPlugin *self, KaApplet *applet)
 {
-    KaPluginPamPrivate *priv = GET_PRIVATE (self);
+    KaPluginPamPrivate *priv = ka_plugin_pam_get_instance_private (KA_PLUGIN_PAM (self));
 
     priv->handlers[1] = g_signal_connect (applet,
                                           "krb-tgt-acquired",
@@ -96,7 +93,7 @@ ka_plugin_pam_activate (KaPlugin *self, KaApplet *applet)
 static void
 ka_plugin_pam_deactivate (KaPlugin *self, KaApplet *applet)
 {
-    KaPluginPamPrivate *priv = GET_PRIVATE (self);
+    KaPluginPamPrivate *priv = ka_plugin_pam_get_instance_private (KA_PLUGIN_PAM (self));
 
     g_signal_handler_disconnect (applet, priv->handlers[0]);
     g_signal_handler_disconnect (applet, priv->handlers[1]);
@@ -107,8 +104,6 @@ ka_plugin_pam_class_init (KaPluginPamClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
     KaPluginClass *plugin_class = KA_PLUGIN_CLASS (klass);
-
-    g_type_class_add_private (klass, sizeof (KaPluginPamPrivate));
 
     plugin_class->activate = ka_plugin_pam_activate;
     plugin_class->deactivate = ka_plugin_pam_deactivate;

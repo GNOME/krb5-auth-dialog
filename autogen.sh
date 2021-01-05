@@ -5,12 +5,11 @@ srcdir=`dirname $0`
 test -z "$srcdir" && srcdir=.
 REQUIRED_AUTOMAKE_VERSION=1.7
 REQUIRED_INTLTOOL_VERSION=0.35.0
-PKG_NAME=krb5-auth-dialog
 
 (test -f $srcdir/configure.ac \
   && test -f $srcdir/src/ka-kerberos.c) || {
     echo -n "**Error**: Directory "\`$srcdir\'" does not look like the"
-    echo " top-level $PKG_NAME directory"
+    echo " top-level krb5-auth-dialog directory"
     exit 1
 }
 

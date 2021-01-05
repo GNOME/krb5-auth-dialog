@@ -82,8 +82,6 @@ struct _KaAppletClass {
     guint signals[KA_SIGNAL_COUNT];
 };
 
-G_DEFINE_TYPE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
-
 struct _KaAppletPrivate {
     GtkStatusIcon *tray_icon;   /* the tray icon */
     GtkWidget *context_menu;    /* the tray icon's context menu */
@@ -117,6 +115,7 @@ struct _KaAppletPrivate {
     GSettings *settings;         /* GSettings client */
 };
 
+G_DEFINE_TYPE_WITH_PRIVATE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
 
 static void ka_close_notification (KaApplet *self);
 static gboolean is_initialized;
@@ -532,9 +531,7 @@ ka_applet_finalize (GObject *object)
 static void
 ka_applet_init (KaApplet *applet)
 {
-    applet->priv = G_TYPE_INSTANCE_GET_PRIVATE (applet,
-                                                KA_TYPE_APPLET,
-                                                KaAppletPrivate);
+    applet->priv = ka_applet_get_instance_private (applet);
 }
 
 static void
@@ -546,7 +543,6 @@ ka_applet_class_init (KaAppletClass *klass)
 
     object_class->dispose = ka_applet_dispose;
     object_class->finalize = ka_applet_finalize;
-    g_type_class_add_private (klass, sizeof (KaAppletPrivate));
 
     G_APPLICATION_CLASS (klass)->local_command_line =   \
         ka_applet_local_command_line;
@@ -1168,8 +1164,7 @@ ka_ns_check_persistence (KaApplet *self)
                 self->priv->ns_persistence = TRUE;
                 KA_DEBUG ("Notification server supports persistence.");
             }
-            g_list_foreach (caps, (GFunc) g_free, NULL);
-            g_list_free (caps);
+            g_list_free_full (caps, (GDestroyNotify)g_free);
         }
         /* During session start we have to wait until the shell is fully up
          * to reliably detect the persistence property (#642666) */

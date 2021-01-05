@@ -94,7 +94,7 @@ AC_CHECK_FUNCS([krb5_get_init_creds_opt_set_pkinit],
 AC_CHECK_FUNCS([krb5_get_init_creds_opt_set_pa],
 		[mit_pkinit=yes],[mit_pkinit=no])
 AC_MSG_CHECKING(if a krb5_principal->realm is a char*)
-AC_COMPILE_IFELSE([
+AC_COMPILE_IFELSE([AC_LANG_SOURCE([
 $ac_includes_default
 #include <krb5.h>
 #include <string.h>
@@ -103,12 +103,12 @@ main(int argc, char **argv)
 {
 	static krb5_principal foo;
 	return strlen(foo->realm);
-}],[AC_DEFINE(HAVE_KRB5_PRINCIPAL_REALM_AS_STRING,1,[Define if the realm of a krb5_principal is a char*])
+}])],[AC_DEFINE(HAVE_KRB5_PRINCIPAL_REALM_AS_STRING,1,[Define if the realm of a krb5_principal is a char*])
 AC_MSG_RESULT(yes)],
 AC_MSG_RESULT(no))
 
 AC_MSG_CHECKING(if a krb5_principal->realm is a krb5_data)
-AC_COMPILE_IFELSE([
+AC_COMPILE_IFELSE([AC_LANG_SOURCE([
 $ac_includes_default
 #include <krb5.h>
 int
@@ -118,7 +118,7 @@ main(int argc, char **argv)
 	static krb5_data bar;
 	foo->realm = bar;
 	return 0;
-}],[AC_DEFINE(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA,1,[Define if the realm of a krb5_principal is a krb5_data])
+}])],[AC_DEFINE(HAVE_KRB5_PRINCIPAL_REALM_AS_DATA,1,[Define if the realm of a krb5_principal is a krb5_data])
 AC_MSG_RESULT(yes)], AC_MSG_RESULT(no))
 
 dnl pkinit

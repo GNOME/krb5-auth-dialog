@@ -20,10 +20,6 @@
 #include <gmodule.h>
 #include <gio/gio.h>
 
-G_DEFINE_TYPE (KaPluginGnomeLock, ka_plugin_gnomelock, KA_TYPE_PLUGIN)
-#define GET_PRIVATE(o) \
-  (G_TYPE_INSTANCE_GET_PRIVATE ((o), KA_TYPE_PLUGIN_GNOMELOCK, KaPluginGnomeLockPrivate))
-
 int ka_plugin_major_version = KA_PLUGIN_MAJOR_VERSION;
 int ka_plugin_minor_version = KA_PLUGIN_MINOR_VERSION;
 
@@ -33,11 +29,11 @@ ka_plugin_create (void)
     return KA_PLUGIN (ka_plugin_gnomelock_new ());
 }
 
-typedef struct _KaPluginGnomeLockPrivate KaPluginGnomeLockPrivate;
-
-struct _KaPluginGnomeLockPrivate {
+typedef struct _KaPluginGnomeLockPrivate {
     gulong handler;
-};
+} KaPluginGnomeLockPrivate;
+
+G_DEFINE_TYPE_WITH_PRIVATE (KaPluginGnomeLock, ka_plugin_gnomelock, KA_TYPE_PLUGIN)
 
 static void
 event_cb (gpointer *applet, gchar *princ, guint when, gpointer user_data)
@@ -88,7 +84,8 @@ ka_plugin_gnomelock_finalize (GObject *object)
 static void
 ka_plugin_gnomelock_activate (KaPlugin *self, KaApplet *applet)
 {
-    KaPluginGnomeLockPrivate *priv = GET_PRIVATE (self);
+    KaPluginGnomeLockPrivate *priv =
+        ka_plugin_gnomelock_get_instance_private (KA_PLUGIN_GNOMELOCK (self));
 
     priv->handler = g_signal_connect (applet,
                                           "krb-tgt-expired",
@@ -99,7 +96,8 @@ static void
 ka_plugin_gnomelock_deactivate (KaPlugin *self, KaApplet *applet)
 {
     int i;
-    KaPluginGnomeLockPrivate *priv = GET_PRIVATE (self);
+    KaPluginGnomeLockPrivate *priv =
+        ka_plugin_gnomelock_get_instance_private (KA_PLUGIN_GNOMELOCK (self));
 
     g_signal_handler_disconnect (applet, priv->handler);
 }
@@ -109,8 +107,6 @@ ka_plugin_gnomelock_class_init (KaPluginGnomeLockClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
     KaPluginClass *plugin_class = KA_PLUGIN_CLASS (klass);
-
-    g_type_class_add_private (klass, sizeof (KaPluginGnomeLockPrivate));
 
     plugin_class->activate = ka_plugin_gnomelock_activate;
     plugin_class->deactivate = ka_plugin_gnomelock_deactivate;

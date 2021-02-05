@@ -30,7 +30,6 @@
 #include "ka-plugin-loader.h"
 #include "ka-preferences.h"
 #include "ka-closures.h"
-#include <libnotify/notify.h>
 
 #include <signal.h>
 
@@ -94,7 +93,6 @@ struct _KaAppletPrivate {
     gboolean auto_run;          /* only start with valid ccache */
     gint debug_flags;           /* Debug options from environment */
 
-    NotifyNotification *notification;   /* notification messages */
     char *krb_msg;              /* Additional banner delivered by Kerberos */
 
     /* GSettings options */
@@ -113,7 +111,6 @@ struct _KaAppletPrivate {
 
 G_DEFINE_TYPE_WITH_PRIVATE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
 
-static void ka_close_notification (KaApplet *self);
 static gboolean is_initialized;
 
 static void
@@ -300,11 +297,47 @@ ka_applet_handle_debug(KaApplet *self)
 }
 
 
+static void
+ka_list_tickets_action (GSimpleAction *action G_GNUC_UNUSED,
+                        GVariant *parameter G_GNUC_UNUSED,
+                        gpointer userdata)
+{
+    KaApplet *self = KA_APPLET (userdata);
+    KA_DEBUG ("Showing main window");
+    ka_main_window_show (self);
+}
+
+
+static void
+ka_remove_ccache_action (GSimpleAction *action G_GNUC_UNUSED,
+                         GVariant *parameter G_GNUC_UNUSED,
+                         gpointer userdata)
+{
+    KaApplet *self = KA_APPLET (userdata);
+    KA_DEBUG ("Removing ccache");
+    ka_destroy_ccache (self);
+}
+
+
+static void
+ka_acquire_tgt_action (GSimpleAction *action G_GNUC_UNUSED,
+                       GVariant *parameter G_GNUC_UNUSED,
+                       gpointer userdata)
+{
+    KaApplet *self = KA_APPLET (userdata);
+    KA_DEBUG ("Getting new tgt");
+    ka_grab_credentials (self);
+}
+
+
 static GActionEntry app_entries[] = {
     { "preferences", action_preferences, NULL, NULL, NULL, {0} },
     { "about", action_about, NULL, NULL, NULL, {0} },
     { "help", action_help, NULL, NULL, NULL, {0} },
     { "quit", action_quit, NULL, NULL, NULL, {0} },
+    { "list-tickets", ka_list_tickets_action, NULL, NULL, NULL, {0} },
+    { "acquire-ticket", ka_acquire_tgt_action , NULL, NULL, NULL, {0} },
+    { "remove-ccache", ka_remove_ccache_action , NULL, NULL, NULL, {0} },
 };
 
 
@@ -465,8 +498,6 @@ ka_applet_dispose (GObject *object)
 {
     KaApplet *applet = KA_APPLET (object);
     GObjectClass *parent_class = G_OBJECT_CLASS (ka_applet_parent_class);
-
-    ka_close_notification (applet);
 
     if (applet->priv->pwdialog) {
         gtk_widget_destroy (GTK_WIDGET(applet->priv->pwdialog));
@@ -656,131 +687,40 @@ ka_applet_select_icon (KaApplet *applet, int remaining)
 
 
 static void
-ka_show_notification (KaApplet *applet)
-{
-    GError *error = NULL;
-    gboolean ret;
-
-    ret = notify_notification_show (applet->priv->notification, &error);
-    if (!ret) {
-        g_assert (error);
-        g_assert (error->message);
-        g_warning ("Failed to show notification: %s", error->message);
-        g_clear_error (&error);
-    }
-}
-
-
-/* Callback to handle ticket related actions */
-static void
-ka_notify_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
-                            gchar *action,
-                            gpointer user_data)
-{
-    KaApplet *self = KA_APPLET (user_data);
-
-    g_return_if_fail (self != NULL);
-
-    if (strcmp (action, "ka-acquire-tgt") == 0) {
-        KA_DEBUG ("Getting new tgt");
-        ka_grab_credentials (self);
-    } else if (strcmp (action, "ka-remove-ccache") == 0) {
-        KA_DEBUG ("Removing ccache");
-        ka_destroy_ccache (self);
-    } else if (strcmp (action, "ka-list-tickets") == 0) {
-        KA_DEBUG ("Showing main window");
-        ka_main_window_show (self);
-    } else {
-        g_warning ("unkonwn action for callback");
-    }
-}
-
-
-static void
-ka_close_notification (KaApplet *self)
-{
-    GError *error = NULL;
-
-    if (self->priv->notification != NULL) {
-        if (!notify_notification_close (self->priv->notification, &error)) {
-            if (error)
-                g_warning ("Cannot close notification %s", error->message);
-            else
-                g_warning ("Cannot close notification");
-        }
-        g_object_unref (self->priv->notification);
-        g_clear_error (&error);
-        self->priv->notification = NULL;
-    }
-}
-
-static void
 ka_send_event_notification (KaApplet *self,
                             const char *summary,
                             const char *message,
-                            const char *icon,
+                            const char *iconname,
                             gboolean get_ticket_action)
 {
-    NotifyNotification *notification;
-    const char *hint;
-    gint timeout;
+    g_autoptr (GNotification) notification = NULL;
+    /* TODO: ka_appliet_select_icon ? */
+    g_autoptr (GIcon) icon = g_icon_new_for_string (iconname, NULL);
 
     g_return_if_fail (self != NULL);
     g_return_if_fail (summary != NULL);
     g_return_if_fail (message != NULL);
 
-    if (!notify_is_initted ())
-        notify_init (KA_NAME);
+    notification = g_notification_new (summary);
+    g_notification_set_body (notification, message);
+    g_notification_set_icon (notification, icon);
 
-    if (self->priv->notification) {
-        notification = self->priv->notification;
-        notify_notification_update (notification, summary, message, icon);
-    } else {
-        notification = self->priv->notification =
-            notify_notification_new (summary, message, icon);
-        notify_notification_set_urgency (notification, NOTIFY_URGENCY_NORMAL);
-    }
+    g_notification_add_button (notification,
+                               _("List Tickets"),
+                               "app.list-tickets");
 
-    notify_notification_set_hint (notification,
-                                  "desktop-entry",
-                                  g_variant_new_string (PACKAGE));
-    hint = "resident";
-    timeout = NOTIFY_EXPIRES_NEVER;
+    if (get_ticket_action)
+        g_notification_add_button (notification,
+                                   _("Get Ticket"),
+                                   "app.acquire-ticket");
+    else
+        g_notification_add_button (notification,
+                                   _("Remove Credentials Cache"),
+                                   "app.acquire-remove-ccache");
 
-    notify_notification_set_timeout (notification, timeout);
-    notify_notification_clear_hints (notification);
-    notify_notification_set_hint (notification,
-                                  hint,
-                                  g_variant_new_boolean (TRUE));
-
-    notify_notification_clear_actions(notification);
-
-    notify_notification_add_action (notification,
-                                        "ka-list-tickets",
-                                        _("List Tickets"),
-                                        (NotifyActionCallback)
-                                        ka_notify_ticket_action_cb,
-                                        self,
-                                        NULL);
-
-    if (get_ticket_action) {
-        notify_notification_add_action (notification,
-                                        "ka-acquire-tgt",
-                                        _("Get Ticket"),
-                                        (NotifyActionCallback)
-                                        ka_notify_ticket_action_cb,
-                                        self,
-                                        NULL);
-    } else {
-        notify_notification_add_action (notification,
-                                        "ka-remove-ccache",
-                                        _("Remove Credentials Cache"),
-                                        (NotifyActionCallback)
-                                        ka_notify_ticket_action_cb,
-                                        self,
-                                        NULL);
-    }
-    ka_show_notification (self);
+    g_application_send_notification (G_APPLICATION (self),
+                                     PACKAGE,
+                                     notification);
 }
 
 

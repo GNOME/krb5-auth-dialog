@@ -42,3 +42,4 @@ help/*/*.stamp
 help/*/legal.xml
 src/resources.c
 src/krb5-auth-dialog.appdata.xml
+_build/

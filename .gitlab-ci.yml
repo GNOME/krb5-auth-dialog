@@ -1,7 +1,5 @@
 variables:
     DEBIAN_DEPS:
-      autoconf
-      automake
       build-essential
       bison
       flex
@@ -13,6 +11,7 @@ variables:
       libgtk-3-dev
       libkrb5-dev
       libpam0g-dev
+      meson
       pkg-config
       yelp-tools
 
@@ -23,5 +22,5 @@ build-debian:
     - apt-get update
     - apt-get -y install $DEBIAN_DEPS
   script:
-    - ./autogen.sh
-    - make
+    - meson . _build
+    - ninja -C _build

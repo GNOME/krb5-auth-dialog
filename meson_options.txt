@@ -1,0 +1,23 @@
+option('check-interval',
+       type: 'integer', value: 30,
+       description: 'number of seconds to wait between checks of the Kerberos credential cache')
+
+option('minimum-lifetime',
+       type: 'integer', value: 30,
+       description: 'minimum amount of time (m) a credential will have to be valid before we will ask the user to get fresh credentials.')
+
+option('pkcs11',
+       type: 'string', value: '/usr/lib/opensc/opensc-pkcs11.so',
+       description: 'set path of PKCS11 smartcard helper')
+
+option('pam-plugin',
+       type: 'feature', value: 'auto',
+       description: 'wheter to build the pam plugin')
+
+option('pkinit',
+       type: 'feature', value: 'auto',
+       description: 'whether to enable pkinit support')
+
+option('etpo',
+       type: 'feature', value: 'disabled',
+       description: 'Build etpo parser')

@@ -448,8 +448,7 @@ ka_applet_dispose (GObject *object)
         applet->priv->loader = NULL;
     }
 
-    if (parent_class->dispose != NULL)
-        parent_class->dispose (object);
+    parent_class->dispose (object);
 }
 
 
@@ -465,8 +464,7 @@ ka_applet_finalize (GObject *object)
     g_free (applet->priv->krb_msg);
     /* no need to free applet->priv */
 
-    if (parent_class->finalize != NULL)
-        parent_class->finalize (object);
+    parent_class->finalize (object);
 }
 
 static void

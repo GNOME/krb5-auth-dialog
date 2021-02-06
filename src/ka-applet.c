@@ -562,7 +562,7 @@ static KaApplet *
 ka_applet_new (void)
 {
     return g_object_new (KA_TYPE_APPLET,
-                         "application-id", "org.gnome.KrbAuthDialog",
+                         "application-id", KA_APP_ID,
                          NULL);
 }
 
@@ -848,6 +848,7 @@ main (int argc, char *argv[])
     bind_textdomain_codeset (PACKAGE, "UTF-8");
     bindtextdomain (PACKAGE, LOCALE_DIR);
 
+    g_set_prgname (KA_APP_ID);
     g_set_application_name (KA_NAME);
 
     gtk_init (&argc, &argv);

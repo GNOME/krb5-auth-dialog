@@ -24,7 +24,9 @@
 #include "ka-applet-priv.h"
 #include "ka-kerberos.h"
 #include "ka-pwdialog.h"
-#include "ka-entry-buffer.h"
+
+#define GCR_API_SUBJECT_TO_CHANGE
+#include <gcr/gcr.h>
 
 struct _KaPwDialog {
     GtkDialog parent;
@@ -125,12 +127,11 @@ ka_pwdialog_class_init (KaPwDialogClass * klass)
 
 static void add_password_entry (KaPwDialogPrivate *priv)
 {
-    KaEntryBuffer *buffer = ka_entry_buffer_new ();
+    g_autoptr (GtkEntryBuffer) buffer = gcr_secure_entry_buffer_new ();
 
     priv->pw_entry =
-        GTK_WIDGET (gtk_entry_new_with_buffer (GTK_ENTRY_BUFFER (buffer)));
+        GTK_WIDGET (gtk_entry_new_with_buffer (buffer));
     gtk_entry_set_visibility (GTK_ENTRY (priv->pw_entry), FALSE);
-    g_object_unref (buffer);
 
     gtk_container_add (GTK_CONTAINER (priv->entry_hbox), priv->pw_entry);
     gtk_entry_set_activates_default (GTK_ENTRY (priv->pw_entry), TRUE);

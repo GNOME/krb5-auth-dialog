@@ -31,9 +31,6 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include "secmem-util.h"
-#include "memory.h"
-
 #include "ka-kerberos.h"
 #include "ka-applet-priv.h"
 #include "ka-pwdialog.h"
@@ -1031,20 +1028,6 @@ ka_grab_credentials (KaApplet *applet)
 
 
 static void
-ka_secmem_init (void)
-{
-    /* Initialize secure memory.  1 is too small, so the default size
-       will be used.  */
-    secmem_init (1);
-    secmem_set_flags (SECMEM_WARN);
-    drop_privs ();
-
-    if (atexit (secmem_term))
-        g_error ("Couln't register atexit handler");
-}
-
-
-static void
 ka_nm_init (void)
 {
     GNetworkMonitor *mon = g_network_monitor_get_default ();
@@ -1062,7 +1045,6 @@ ka_kerberos_init (KaApplet *applet)
 {
     gboolean ret;
 
-    ka_secmem_init ();
     ret = ka_krb5_context_init ();
     ka_nm_init ();
     g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,

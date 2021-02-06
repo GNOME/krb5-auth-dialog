@@ -8,6 +8,7 @@ variables:
       gnome-common
       intltool
       itstool
+      libgcr-3-dev
       libglib2.0-dev
       libgtk-3-dev
       libkrb5-dev

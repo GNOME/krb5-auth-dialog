@@ -13,4 +13,3 @@ src/ka-tools.c
 src/krb5-auth-dialog.appdata.xml.in
 src/krb5-auth-dialog.desktop.in
 src/org.gnome.KrbAuthDialog.gschema.xml
-secmem/util.c

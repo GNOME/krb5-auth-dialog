@@ -54,14 +54,11 @@ krb5_auth_dialog_SOURCES =	\
 	ka-preferences.h	\
 	ka-closures.h		\
 	ka-closures.c		\
-	ka-entry-buffer.h	\
-	ka-entry-buffer.c	\
 	dummy-strings.c		\
 	resources.c		\
 	$(NULL)
 
 krb5_auth_dialog_CPPFLAGS = \
-	-I$(top_srcdir)/secmem \
 	-DDATA_DIR=\""$(datadir)"\" \
 	-DLOCALE_DIR=\""$(localedir)/"\" \
 	-DBIN_DIR=\""$(bindir)/"\" \
@@ -70,6 +67,7 @@ krb5_auth_dialog_CPPFLAGS = \
 	$(NULL)
 
 krb5_auth_dialog_CFLAGS = \
+	$(GCR_CFLAGS) \
 	$(GMODULE_CFLAGS) \
 	$(GTK_CFLAGS) \
 	$(KRB5_CFLAGS) \
@@ -78,8 +76,7 @@ krb5_auth_dialog_CFLAGS = \
 	$(NULL)
 
 krb5_auth_dialog_LDADD = \
-	$(top_builddir)/secmem/libsecmem.a \
-	$(LIBCAP) \
+	$(GCR_LIBS) \
 	$(KRB5_LIBS) \
 	$(GIO_LIBS) \
 	$(GMODULE_LIBS) \
@@ -87,7 +84,6 @@ krb5_auth_dialog_LDADD = \
 	$(NULL)
 
 AM_CPPFLAGS = \
-	-I $(top_srcdir)/secmem/ \
 	$(DISABLE_DEPRECATED) \
 	-DG_LOG_DOMAIN="\"KrbAuthDialog\"" \
 	$(NULL)

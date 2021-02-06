@@ -4,12 +4,12 @@ bin_PROGRAMS = krb5-auth-dialog
 man_MANS = krb5-auth-dialog.1
 
 autostartdir = $(sysconfdir)/xdg/autostart
-autostart_in_files = krb5-auth-dialog.desktop.in
+autostart_in_files = org.gnome.KrbAuthDialog.desktop.in
 autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 desktopdir = $(datadir)/applications
-desktop_in_files = krb5-auth-dialog.desktop.in
+desktop_in_files = org.gnome.KrbAuthDialog.desktop.in
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 gsettings_SCHEMAS = org.gnome.KrbAuthDialog.gschema.xml

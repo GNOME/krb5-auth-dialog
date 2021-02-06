@@ -181,6 +181,7 @@ ka_applet_local_command_line (GApplication *application,
     return FALSE;
 }
 
+
 GtkWindow *ka_applet_last_focused_window (KaApplet *self)
 {
     GList *l = gtk_application_get_windows (GTK_APPLICATION(self));
@@ -257,17 +258,6 @@ setup_signal_handlers (KaApplet *applet)
 
 
 static void
-ka_list_tickets_action (GSimpleAction *action G_GNUC_UNUSED,
-                        GVariant *parameter G_GNUC_UNUSED,
-                        gpointer userdata)
-{
-    KaApplet *self = KA_APPLET (userdata);
-    KA_DEBUG ("Showing main window");
-    ka_main_window_show (self);
-}
-
-
-static void
 ka_remove_ccache_action (GSimpleAction *action G_GNUC_UNUSED,
                          GVariant *parameter G_GNUC_UNUSED,
                          gpointer userdata)
@@ -294,7 +284,6 @@ static GActionEntry app_entries[] = {
     { "about", action_about, NULL, NULL, NULL, {0} },
     { "help", action_help, NULL, NULL, NULL, {0} },
     { "quit", action_quit, NULL, NULL, NULL, {0} },
-    { "list-tickets", ka_list_tickets_action, NULL, NULL, NULL, {0} },
     { "acquire-ticket", ka_acquire_tgt_action , NULL, NULL, NULL, {0} },
     { "remove-ccache", ka_remove_ccache_action , NULL, NULL, NULL, {0} },
 };
@@ -487,6 +476,7 @@ ka_applet_class_init (KaAppletClass *klass)
         ka_applet_local_command_line;
     G_APPLICATION_CLASS (klass)->command_line = ka_applet_command_line;
     G_APPLICATION_CLASS (klass)->startup = ka_applet_startup;
+    G_APPLICATION_CLASS (klass)->activate = ka_applet_activate;
 
     object_class->set_property = ka_applet_set_property;
     object_class->get_property = ka_applet_get_property;
@@ -624,10 +614,6 @@ ka_send_event_notification (KaApplet *self,
     notification = g_notification_new (summary);
     g_notification_set_body (notification, message);
     g_notification_set_icon (notification, icon);
-
-    g_notification_add_button (notification,
-                               _("List Tickets"),
-                               "app.list-tickets");
 
     if (get_ticket_action)
         g_notification_add_button (notification,

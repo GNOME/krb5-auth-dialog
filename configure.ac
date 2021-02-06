@@ -28,10 +28,10 @@ KA_COMPILE_WARNINGS([maximum])
 YELP_HELP_INIT
 
 GTK_REQUIRED=3.14
-GLIB_REQUIRED=2.28
+GLIB_REQUIRED=2.32
 
 PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= $GTK_REQUIRED, glib-2.0 >= $GLIB_REQUIRED])
-PKG_CHECK_MODULES(GIO, [gio-2.0, gio-unix-2.0])
+PKG_CHECK_MODULES(GIO, [gio-2.0 >= $GLIB_REQUIRED, gio-unix-2.0])
 PKG_CHECK_MODULES(GMODULE, gmodule-2.0)
 
 dnl check for deprecated symbols:
@@ -136,28 +136,6 @@ CFLAGS="$savedCFLAGS"
 LIBS="$savedLIBS"
 
 
-dnl NetworkManager
-AC_MSG_CHECKING([whether to enable NetworkManager support])
-AC_ARG_ENABLE([network-manager],
-	AS_HELP_STRING([--enable-network-manager],[Whether to enable automatic network status with NetworkManager]),
-	[],[enable_network_manager=autodetect])
-AC_MSG_RESULT([$enable_network_manager])
-
-if test "x$enable_network_manager" != "xno"; then
-	PKG_CHECK_MODULES([NETWORK_MANAGER],[libnm],
-		AC_DEFINE([HAVE_LIBNM],[1],[Define if libnm is available])
-		[enable_network_manager=yes],
-		[enable_network_manager=no])
-	AC_SUBST([NETWORK_MANAGER_CFLAGS])
-	AC_SUBST([NETWORK_MANAGER_LIBS])
-fi
-
-if test "x$enable_network_manager" = "xyes"; then
-	AC_DEFINE([ENABLE_NETWORK_MANAGER],[1],[Define for NetworkManager support])
-fi
-AM_CONDITIONAL([ENABLE_NETWORK_MANAGER],[test "x$enable_network_manager" = "xyes"])
-
-
 dnl secmem
 dnl Checks for library functions.
 AC_CHECK_FUNCS(seteuid stpcpy mmap)
@@ -247,11 +225,6 @@ AC_MSG_NOTICE([])
 AC_MSG_NOTICE([         Kerberos: $KRB5_CFLAGS $KRB5_LIBS])
 AC_MSG_NOTICE([              GTK: $GTK_CFLAGS $GTK_LIBS])
 AC_MSG_NOTICE([         gio-unix: $GIO_UNIX_CFLAGS $GIO_UNIX_LIBS $GIO_CFLAGS $GIO_LIBS])
-if test "$enable_network_manager" = "yes" ; then
-AC_MSG_NOTICE([  Network Manager: $NETWORK_MANAGER_CFLAGS $NETWORK_MANAGER_LIBS])
-else
-AC_MSG_NOTICE([  Network Manager: no])
-fi
 AC_MSG_NOTICE([])
 AC_MSG_NOTICE([Miscellaneous])
 AC_MSG_NOTICE([])

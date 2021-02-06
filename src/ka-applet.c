@@ -668,24 +668,6 @@ ka_applet_tooltip_text (int remaining)
 }
 
 
-/* determine the current icon */
-static const char *
-ka_applet_select_icon (KaApplet *applet, int remaining)
-{
-    enum ka_icon status_icon = inv_icon;
-
-    if (remaining > 0) {
-        if (remaining < applet->priv->pw_prompt_secs &&
-            !applet->priv->renewable)
-            status_icon = exp_icon;
-        else
-            status_icon = val_icon;
-    }
-
-    return applet->priv->icons[status_icon];
-}
-
-
 static void
 ka_send_event_notification (KaApplet *self,
                             const char *summary,

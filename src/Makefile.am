@@ -73,14 +73,12 @@ krb5_auth_dialog_CFLAGS = \
 	$(GMODULE_CFLAGS) \
 	$(GTK_CFLAGS) \
 	$(KRB5_CFLAGS) \
-	$(NETWORK_MANAGER_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(AM_CFLAGS) \
 	$(NULL)
 
 krb5_auth_dialog_LDADD = \
 	$(top_builddir)/secmem/libsecmem.a \
-	$(NETWORK_MANAGER_LIBS) \
 	$(LIBCAP) \
 	$(KRB5_LIBS) \
 	$(GIO_LIBS) \

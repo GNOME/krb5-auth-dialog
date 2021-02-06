@@ -33,6 +33,6 @@
   </kudos>
   <project_license>GPL-2.0+</project_license>
   <developer_name>Guido Günther</developer_name>
-  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/issues</url>
   <url type="help">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
 </component>

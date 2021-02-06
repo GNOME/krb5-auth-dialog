@@ -166,10 +166,8 @@ ka_applet_local_command_line (GApplication *application,
     };
 
     KA_DEBUG ("Parsing local command line");
-#if GLIB_CHECK_VERSION(2, 40, 0)
     flags = g_application_get_flags(application);
     g_application_set_flags(application, flags | G_APPLICATION_HANDLES_COMMAND_LINE);
-#endif
 
     context = g_option_context_new ("- Kerberos 5 credential checking");
     g_option_context_add_main_entries (context, options, NULL);

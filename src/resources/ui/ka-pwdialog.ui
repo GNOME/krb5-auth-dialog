@@ -94,7 +94,16 @@
                             <property name="can_focus">False</property>
                             <property name="spacing">3</property>
                             <child>
-                              <placeholder/>
+                              <object class="GtkEntry" id="pw_entry">
+				<property name="visible">True</property>
+				<property name="can_focus">True</property>
+				<property name="activates-default">True</property>
+				<property name="visibility">False</property>
+				<property name="invisible-char">●</property>
+				<property name="input-purpose">password</property>
+				<property name="buffer">pw_entry_buffer</property>
+				<property name="has-focus">True</property>
+                              </object>
                             </child>
                           </object>
                           <packing>
@@ -147,4 +156,6 @@
       <action-widget response="-5">krb5_renew_button</action-widget>
     </action-widgets>
   </template>
+
+  <object class="GcrSecureEntryBuffer" id="pw_entry_buffer"/>
 </interface>

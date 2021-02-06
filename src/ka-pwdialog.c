@@ -42,7 +42,6 @@ struct _KaPwDialogPrivate {
     /* The password dialog */
     GtkWidget *status_label;    /* the wrong password/timeout label */
     GtkWidget *krb_label;       /* krb5 passwort prompt label */
-    GtkWidget *entry_hbox;      /* hbox for the pw entry */
     GtkWidget *pw_entry;        /* password entry field */
 
     gboolean persist;           /* don't hide the dialog when creds are still valid */
@@ -116,26 +115,13 @@ ka_pwdialog_class_init (KaPwDialogClass * klass)
 
     /* Bind class to template
      */
+    g_type_ensure (GCR_TYPE_SECURE_ENTRY_BUFFER);
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/krb5-auth-dialog/ui/ka-pwdialog.ui");
 
     gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, status_label);
     gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, krb_label);
-    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, entry_hbox);
-}
-
-
-static void add_password_entry (KaPwDialogPrivate *priv)
-{
-    g_autoptr (GtkEntryBuffer) buffer = gcr_secure_entry_buffer_new ();
-
-    priv->pw_entry =
-        GTK_WIDGET (gtk_entry_new_with_buffer (buffer));
-    gtk_entry_set_visibility (GTK_ENTRY (priv->pw_entry), FALSE);
-
-    gtk_container_add (GTK_CONTAINER (priv->entry_hbox), priv->pw_entry);
-    gtk_entry_set_activates_default (GTK_ENTRY (priv->pw_entry), TRUE);
-    gtk_widget_show (priv->pw_entry);
+    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, pw_entry);
 }
 
 
@@ -163,7 +149,6 @@ ka_pwdialog_new (void)
     pwdialog = g_object_new (KA_TYPE_PWDIALOG, "use-header-bar", use_header, NULL);
 
     pwdialog->priv->error_dialog = ka_error_dialog_new ();
-    add_password_entry (pwdialog->priv);
     return pwdialog;
 }
 

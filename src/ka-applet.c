@@ -56,7 +56,6 @@ enum {
 
 enum {
     KA_DEBUG_NO_APP_MENU    = 1,  /* Disable gtk-shell-shows-app-menu gtk setting */
-    KA_DEBUG_NO_HEADER_BAR  = 2,  /* Disable header-bar setting */
 };
 
 
@@ -280,12 +279,6 @@ ka_applet_handle_debug(KaApplet *self)
                           "gtk-shell-shows-app-menu", FALSE,
                           NULL);
             self->priv->debug_flags |= KA_DEBUG_NO_APP_MENU;
-        } else if (!g_strcmp0(*opt, "no-header-bar")) {
-            KA_DEBUG ("Disabling use-header-bar Gtk setting  as requested...");
-            g_object_set (gtk_settings_get_default (),
-                          "gtk-dialogs-use-header", FALSE,
-                          NULL);
-            self->priv->debug_flags |= KA_DEBUG_NO_HEADER_BAR;
         } else {
             g_warning ("Unhandled debug options %s", *opt);
         }

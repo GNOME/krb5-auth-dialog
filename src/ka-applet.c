@@ -54,11 +54,6 @@ enum {
 };
 
 
-enum {
-    KA_DEBUG_NO_APP_MENU    = 1,  /* Disable gtk-shell-shows-app-menu gtk setting */
-};
-
-
 const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
     "krb-tgt-acquired",
     "krb-tgt-renewed",
@@ -262,33 +257,6 @@ setup_signal_handlers (KaApplet *applet)
 
 
 static void
-ka_applet_handle_debug(KaApplet *self)
-{
-    const gchar* debug;
-    gchar **debug_opts, **opt;
-
-    debug = g_getenv ("KRB5_AUTH_DIALOG_DEBUG");
-    if (!debug)
-        return;
-
-    debug_opts = g_strsplit(debug, ",", -1);
-    for (opt = debug_opts; *opt != NULL; opt++) {
-        if (!g_strcmp0(*opt, "no-app-menu")) {
-            KA_DEBUG ("Disabling app menu Gtk setting as requested...");
-            g_object_set (gtk_settings_get_default (),
-                          "gtk-shell-shows-app-menu", FALSE,
-                          NULL);
-            self->priv->debug_flags |= KA_DEBUG_NO_APP_MENU;
-        } else {
-            g_warning ("Unhandled debug options %s", *opt);
-        }
-    }
-
-    g_strfreev (debug_opts);
-}
-
-
-static void
 ka_list_tickets_action (GSimpleAction *action G_GNUC_UNUSED,
                         GVariant *parameter G_GNUC_UNUSED,
                         gpointer userdata)
@@ -333,27 +301,6 @@ static GActionEntry app_entries[] = {
 
 
 static void
-ka_applet_app_menu_create(KaApplet *self)
-
-{
-    GMenuModel *app_menu;
-    GtkBuilder *builder;
-
-    builder = gtk_builder_new_from_resource ("/org/gnome/krb5-auth-dialog/ui/app-menu.ui");
-    app_menu = G_MENU_MODEL (gtk_builder_get_object (builder, "app-menu"));
-
-    g_action_map_add_action_entries (G_ACTION_MAP (self),
-                                     app_entries, G_N_ELEMENTS (app_entries),
-                                     self);
-
-    g_assert (app_menu != NULL);
-    gtk_application_set_app_menu (GTK_APPLICATION(self),
-                                  app_menu);
-
-    g_object_unref (builder);
-}
-
-static void
 ka_applet_startup (GApplication *application)
 {
     KaApplet *self = KA_APPLET (application);
@@ -370,7 +317,9 @@ ka_applet_startup (GApplication *application)
 
     self->priv->prefs = ka_preferences_new (self);
 
-    ka_applet_app_menu_create(self);
+    g_action_map_add_action_entries (G_ACTION_MAP (self),
+                                     app_entries, G_N_ELEMENTS (app_entries),
+                                     self);
 }
 
 static void
@@ -886,8 +835,6 @@ KaApplet *
 ka_applet_create ()
 {
     KaApplet *applet = ka_applet_new ();
-
-    ka_applet_handle_debug(applet);
 
     if (!(ka_applet_setup_icons (applet)))
         g_error ("Failure to setup icons");

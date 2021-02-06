@@ -96,7 +96,6 @@ EXTRA_DIST = \
 	org.gnome.KrbAuthDialog.gschema.xml \
 	krb5-auth-dialog.1.in \
         krb5-auth-dialog.gresource.xml \
-	resources/ui/app-menu.ui \
 	resources/ui/ka-main-window.ui \
 	resources/ui/ka-preferences.ui \
 	resources/ui/ka-pwdialog.ui \

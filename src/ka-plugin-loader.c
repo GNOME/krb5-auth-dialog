@@ -167,8 +167,7 @@ ka_plugin_loader_dispose(GObject *object)
 	if (priv->applet)
 		priv->applet = NULL;
 
-	if (parent_class->dispose != NULL)
-		parent_class->dispose (object);
+        parent_class->dispose (object);
 }
 
 

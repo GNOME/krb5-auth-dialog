@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright 2013 Guido Günther <agx@sigxcpu.org> -->
 <component type="desktop">
-  <id>krb5-auth-dialog.desktop</id>
+  <id>org.gnome.KrbAuthDialog.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
   <_name>Kerberos Authentication Dialog</_name>
   <_summary>Request, renew and view Kerberos tickets</_summary>
@@ -33,6 +33,6 @@
   </kudos>
   <project_license>GPL-2.0+</project_license>
   <developer_name>Guido Günther</developer_name>
-  <url type="bugtracker">https://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog</url>
+  <url type="bugtracker">https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/issues</url>
   <url type="help">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
 </component>

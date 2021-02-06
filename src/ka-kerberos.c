@@ -31,18 +31,11 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#include "secmem-util.h"
-#include "memory.h"
-
 #include "ka-kerberos.h"
 #include "ka-applet-priv.h"
 #include "ka-pwdialog.h"
 #include "ka-tools.h"
 #include "ka-main-window.h"
-
-#ifdef ENABLE_NETWORK_MANAGER
-# include <NetworkManager.h>
-#endif
 
 #ifdef HAVE_HX509_ERR_H
 #include <hx509_err.h>
@@ -62,10 +55,6 @@ static int grab_credentials (KaApplet *applet);
 static int ka_renew_credentials (KaApplet *applet);
 static gboolean ka_get_tgt_from_ccache (krb5_context context,
                                         krb5_creds *creds);
-
-#ifdef ENABLE_NETWORK_MANAGER
-NMClient *nm_client;
-#endif
 
 /* YAY for different Kerberos implementations */
 static int
@@ -483,36 +472,18 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
 }
 
 
-#ifdef ENABLE_NETWORK_MANAGER
 static void
-ka_nm_client_state_changed_cb (NMClient * client,
-                               GParamSpec *pspec G_GNUC_UNUSED, gpointer data)
+ka_network_available_changed_cb (GNetworkMonitor *mon,
+                                 GParamSpec *pspec G_GNUC_UNUSED,
+                                 gpointer data)
 {
-    NMState state;
     gboolean *online = (gboolean *) data;
 
-    state = nm_client_get_state (client);
-    switch (state) {
-    case NM_STATE_UNKNOWN:
-    case NM_STATE_ASLEEP:
-    case NM_STATE_CONNECTING:
-        KA_DEBUG ("Network state: %d", state);
-        /* do nothing */
-        break;
-    case NM_STATE_DISCONNECTING:
-    case NM_STATE_DISCONNECTED:
-        KA_DEBUG ("Network disconnected");
-        *online = FALSE;
-        break;
-    case NM_STATE_CONNECTED_LOCAL:
-    case NM_STATE_CONNECTED_SITE:
-    case NM_STATE_CONNECTED_GLOBAL:
-        KA_DEBUG ("Network connected");
-        *online = TRUE;
-        break;
-    }
+    /* TODO: better bind to a property */
+    *online = g_network_monitor_get_network_available (mon);
+    KA_DEBUG ("Network state: %sline", *online ? "on" : "off");
 }
-#endif
+
 
 /* credentials expiring timer */
 static gboolean
@@ -1057,50 +1028,15 @@ ka_grab_credentials (KaApplet *applet)
 
 
 static void
-ka_secmem_init (void)
-{
-    /* Initialize secure memory.  1 is too small, so the default size
-       will be used.  */
-    secmem_init (1);
-    secmem_set_flags (SECMEM_WARN);
-    drop_privs ();
-
-    if (atexit (secmem_term))
-        g_error ("Couln't register atexit handler");
-}
-
-
-static void
-ka_nm_shutdown (void)
-{
-#ifdef ENABLE_NETWORK_MANAGER
-    if (nm_client) {
-        g_object_unref (nm_client);
-        nm_client = NULL;
-    }
-#endif
-}
-
-
-static gboolean
 ka_nm_init (void)
 {
-#ifdef ENABLE_NETWORK_MANAGER
-    GError *error = NULL;
+    GNetworkMonitor *mon = g_network_monitor_get_default ();
 
-    nm_client = nm_client_new (NULL, &error);
-    if (!nm_client) {
-        g_warning ("Could not initialize nm-client: %s", error->message);
-        g_error_free (error);
-        return FALSE;
-    }
-    g_signal_connect (nm_client, "notify::state",
-                      G_CALLBACK (ka_nm_client_state_changed_cb),
+    g_signal_connect (mon, "notify::network-available",
+                      G_CALLBACK (ka_network_available_changed_cb),
                       &is_online);
     /* Set initial state */
-    ka_nm_client_state_changed_cb (nm_client, NULL, &is_online);
-#endif /* ENABLE_NETWORK_MANAGER */
-    return TRUE;
+    ka_network_available_changed_cb (mon, NULL, &is_online);
 }
 
 
@@ -1109,7 +1045,6 @@ ka_kerberos_init (KaApplet *applet)
 {
     gboolean ret;
 
-    ka_secmem_init ();
     ret = ka_krb5_context_init ();
     ka_nm_init ();
     g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
@@ -1123,8 +1058,6 @@ ka_kerberos_init (KaApplet *applet)
 gboolean
 ka_kerberos_destroy ()
 {
-    ka_nm_shutdown ();
-
     if (ccache_monitor)
         g_object_unref (ccache_monitor);
 

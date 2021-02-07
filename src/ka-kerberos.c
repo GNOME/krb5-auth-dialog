@@ -671,13 +671,21 @@ ccache_changed_cb (GFileMonitor *monitor G_GNUC_UNUSED,
     gchar *ccache_name = g_file_get_path (file);
 
     switch (event_type) {
-    case G_FILE_MONITOR_EVENT_DELETED:
-    case G_FILE_MONITOR_EVENT_CREATED:
     case G_FILE_MONITOR_EVENT_CHANGED:
+    case G_FILE_MONITOR_EVENT_CREATED:
+    case G_FILE_MONITOR_EVENT_DELETED:
+    case G_FILE_MONITOR_EVENT_MOVED:
+    case G_FILE_MONITOR_EVENT_RENAMED:
         KA_DEBUG ("%s changed", ccache_name);
         credentials_expiring ((gpointer) applet);
         g_signal_emit_by_name(applet, "krb-ccache-changed");
         break;
+    case G_FILE_MONITOR_EVENT_ATTRIBUTE_CHANGED:
+    case G_FILE_MONITOR_EVENT_CHANGES_DONE_HINT:
+    case G_FILE_MONITOR_EVENT_MOVED_IN:
+    case G_FILE_MONITOR_EVENT_MOVED_OUT:
+    case G_FILE_MONITOR_EVENT_PRE_UNMOUNT:
+    case G_FILE_MONITOR_EVENT_UNMOUNTED:
     default:
         KA_DEBUG ("%s unhandled event: %d", ccache_name, event_type);
     }

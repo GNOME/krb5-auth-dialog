@@ -192,7 +192,7 @@ ka_dbus_register (KaApplet *applet)
 
 
 void
-ka_dbus_disconnect ()
+ka_dbus_disconnect (void)
 {
     if (introspection_data) {
         g_dbus_node_info_unref (introspection_data);

@@ -249,7 +249,7 @@ credentials_expiring_real (KaApplet *applet)
 
 /* time in seconds the tgt will be still valid */
 int
-ka_tgt_valid_seconds ()
+ka_tgt_valid_seconds (void)
 {
     krb5_timestamp now;
 
@@ -641,7 +641,7 @@ ka_parse_name (KaApplet *applet, krb5_context krbcontext,
  * caller needs to free the returned result using g_free();
  */
 char *
-ka_unparse_name ()
+ka_unparse_name (void)
 {
     char *princ, *gprinc = NULL;
     krb5_error_code err;
@@ -886,7 +886,7 @@ ka_get_tgt_from_ccache (krb5_context context, krb5_creds *creds)
 }
 
 static gboolean
-ka_krb5_context_init ()
+ka_krb5_context_init (void)
 {
     krb5_error_code err;
     gboolean have_tgt = FALSE;
@@ -908,7 +908,7 @@ ka_krb5_context_init ()
 
 
 static gboolean
-ka_krb5_context_free ()
+ka_krb5_context_free (void)
 {
     if (kcontext_valid) {
         kcontext_valid = FALSE;
@@ -1056,7 +1056,7 @@ ka_kerberos_init (KaApplet *applet)
 
 
 gboolean
-ka_kerberos_destroy ()
+ka_kerberos_destroy (void)
 {
     if (ccache_monitor)
         g_object_unref (ccache_monitor);

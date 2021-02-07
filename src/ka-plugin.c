@@ -32,8 +32,10 @@ G_DEFINE_TYPE_WITH_PRIVATE (KaPlugin, ka_plugin, G_TYPE_OBJECT)
 const char*
 ka_plugin_get_name (KaPlugin *self)
 {
-	g_return_val_if_fail (KA_IS_PLUGIN (self), NULL);
 	KaPluginPrivate *priv = ka_plugin_get_instance_private (self);
+
+	g_return_val_if_fail (KA_IS_PLUGIN (self), NULL);
+	priv = ka_plugin_get_instance_private (self);
 
 	return priv->name;
 }

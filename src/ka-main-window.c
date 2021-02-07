@@ -179,7 +179,7 @@ ka_main_window_show (KaApplet *applet)
 }
 
 void
-ka_main_window_hide ()
+ka_main_window_hide (void)
 {
     KA_DEBUG("Hiding main window");
     gtk_widget_hide (GTK_WIDGET(main_window));

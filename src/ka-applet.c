@@ -816,7 +816,7 @@ ka_applet_destroy (KaApplet* self)
 
 
 KaApplet *
-ka_applet_create ()
+ka_applet_create (void)
 {
     KaApplet *applet = ka_applet_new ();
 

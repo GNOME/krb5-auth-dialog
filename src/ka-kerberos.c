@@ -741,7 +741,7 @@ grab_credentials (KaApplet *applet)
 
     g_object_get (applet, KA_PROP_NAME_PK_USERID, &pk_userid,
                   "pk-anchors", &pk_anchors, NULL);
-#if ENABLE_PKINIT && HAVE_HX509_ERR_H && HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PKINIT
+#if ENABLE_PKINIT && defined(HAVE_HX509_ERR_H) && HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PKINIT
     /* pk_userid set: try pkinit */
     if (pk_userid && strlen (pk_userid)) {
         retval = ka_auth_heimdal_pkinit (applet, &my_creds,

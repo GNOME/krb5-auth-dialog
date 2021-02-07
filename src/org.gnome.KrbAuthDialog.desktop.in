@@ -1,12 +1,12 @@
 [Desktop Entry]
-_Name=Kerberos Authentication
-_Comment=Kerberos Network Authentication Dialog
+Name=Kerberos Authentication
+Comment=Kerberos Network Authentication Dialog
 Exec=krb5-auth-dialog
 Terminal=false
 Type=Application
 Icon=krb-valid-ticket
 Categories=GNOME;GTK;Utility;Network;
-_Keywords=kerberos;authentication;
+Keywords=kerberos;authentication;
 X-GNOME-Bugzilla-Bugzilla=GNOME
 X-GNOME-Bugzilla-Product=krb5-auth-dialog
 X-GNOME-Bugzilla-Component=general

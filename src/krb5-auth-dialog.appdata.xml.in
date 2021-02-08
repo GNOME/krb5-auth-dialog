@@ -3,26 +3,61 @@
 <component type="desktop">
   <id>org.gnome.KrbAuthDialog.desktop</id>
   <metadata_license>CC0-1.0</metadata_license>
-  <_name>Kerberos Authentication Dialog</_name>
-  <_summary>Request, renew and view Kerberos tickets</_summary>
+  <name>Kerberos Authentication Dialog</name>
+  <summary>Request, renew and view Kerberos tickets</summary>
   <description>
-    <_p>
+    <p>
       Kerberos Authentication allows you to list your current Kerberos tickets,
       and to request a new ticket (authenticate to the Kerberos Server). It also
       notifies you when your Kerberos credentials are about to expire and renews
       your ticket automatically if possible.
-    </_p>
-    <_p>
+    </p>
+    <p>
       This is useful if you need to authenticate to a Kerberos Server (KDC)
       after your login to the desktop (e.g. on a mobile device).
-    </_p>
+    </p>
   </description>
   <screenshots>
     <screenshot type="default" height="176" width="330">
       <image>http://honk.sigxcpu.org/con/images/krb5-auth-dialog-pkinit.png</image>
-      <_caption>Kerberos authentication dialog</_caption>
+      <caption>Kerberos authentication dialog</caption>
     </screenshot>
   </screenshots>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <releases>
+    <release version="3.26.1" date="2017-11-11"/>
+  </releases>
+
   <url type="homepage">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
   <update_contact>agx_at_sigxcpu.org</update_contact>
   <kudos>
@@ -31,8 +66,10 @@
     <kudo>ModernToolkit</kudo>
     <kudo>Notifications</kudo>
   </kudos>
+  <project_group>GNOME</project_group>
   <project_license>GPL-2.0+</project_license>
   <developer_name>Guido Günther</developer_name>
+  <translation type="gettext">krb5-auth-dialog</translation>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/issues</url>
   <url type="help">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>
 </component>

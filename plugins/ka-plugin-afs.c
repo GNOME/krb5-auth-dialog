@@ -18,6 +18,9 @@
 #include "ka-plugin-afs.h"
 #include <gmodule.h>
 
+/* Plugin entry point */
+G_MODULE_EXPORT KaPlugin *ka_plugin_create (void);
+
 int ka_plugin_major_version = KA_PLUGIN_MAJOR_VERSION;
 int ka_plugin_minor_version = KA_PLUGIN_MINOR_VERSION;
 

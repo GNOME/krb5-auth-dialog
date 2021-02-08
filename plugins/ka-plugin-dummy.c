@@ -18,6 +18,9 @@
 #include "ka-plugin-dummy.h"
 #include <gmodule.h>
 
+/* Plugin entry point */
+G_MODULE_EXPORT KaPlugin *ka_plugin_create (void);
+
 int ka_plugin_major_version = KA_PLUGIN_MAJOR_VERSION;
 int ka_plugin_minor_version = KA_PLUGIN_MINOR_VERSION;
 
@@ -36,7 +39,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (KaPluginDummy, ka_plugin_dummy, KA_TYPE_PLUGIN)
 static void
 event_cb (gpointer *applet, gchar *princ, guint when, gpointer user_data)
 {
-    g_message ("%s %s @%d", user_data, princ, when);
+    g_message ("%s %s @%d", (gchar*)user_data, princ, when);
 }
 
 static void

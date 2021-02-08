@@ -20,6 +20,9 @@
 #include <gmodule.h>
 #include <gio/gio.h>
 
+/* Plugin entry point */
+G_MODULE_EXPORT KaPlugin *ka_plugin_create (void);
+
 int ka_plugin_major_version = KA_PLUGIN_MAJOR_VERSION;
 int ka_plugin_minor_version = KA_PLUGIN_MINOR_VERSION;
 
@@ -95,7 +98,6 @@ ka_plugin_gnomelock_activate (KaPlugin *self, KaApplet *applet)
 static void
 ka_plugin_gnomelock_deactivate (KaPlugin *self, KaApplet *applet)
 {
-    int i;
     KaPluginGnomeLockPrivate *priv =
         ka_plugin_gnomelock_get_instance_private (KA_PLUGIN_GNOMELOCK (self));
 

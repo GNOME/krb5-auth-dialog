@@ -1,3 +1,5 @@
+include: 'https://gitlab.gnome.org/GNOME/citemplates/raw/master/flatpak/flatpak_ci_initiative.yml'
+
 variables:
     DEBIAN_DEPS:
       build-essential
@@ -24,3 +26,15 @@ build-debian:
   script:
     - meson . _build
     - ninja -C _build
+
+flatpak:
+  image: registry.gitlab.gnome.org/gnome/gnome-runtime-images/gnome:master
+  stage: build
+  variables:
+    MANIFEST_PATH: 'org.gnome.KrbAuthDialog.json'
+    FLATPAK_MODULE: "org.gnome.KrbAuthDialog"
+    RUNTIME_REPO: "https://nightly.gnome.org/gnome-nightly.flatpakrepo"
+    APP_ID: "org.gnome.KrbAuthDialog"
+    BUNDLE: 'org.gnome.KrbAuthDialog.flatpak'
+  extends: .flatpak
+

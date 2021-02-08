@@ -1,0 +1,37 @@
+{
+    "app-id": "org.gnome.KrbAuthDialog",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "master",
+    "sdk": "org.gnome.Sdk",
+    "command": "krb5-auth-dialog",
+    "tags" : [
+      "Development",
+      "Nightly"
+    ],
+    "finish-args": [
+        "--share=network",
+        "--socket=wayland",
+        "--socket=x11",
+        "--filesystem=xdg-run/dconf",
+        "--filesystem=~/.config/dconf:ro",
+        "--talk-name=ca.desrt.dconf",
+        "--env=DCONF_USER_CONFIG_DIR=.config/dconf",
+        "--talk-name=org.freedesktop.Notifications"
+    ],
+    "modules": [
+        {
+            "name": "org.gnome.KrbAuthDialog",
+            "buildsystem": "meson",
+            "builddir": true,
+            "config-opts": [
+                "-Detpo=disabled"
+            ],
+            "sources": [
+                {
+                    "type": "dir",
+                    "path": "."
+                }
+            ]
+        }
+    ]
+}

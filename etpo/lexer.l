@@ -62,6 +62,8 @@ error_code|ec		{ yylval.sval = g_strdup(yytext);
 static GList *filenames = NULL, *filename = NULL;
 const char *currentfile = NULL;
 
+int yyerror(void);
+
 int
 yyerror(void)
 {

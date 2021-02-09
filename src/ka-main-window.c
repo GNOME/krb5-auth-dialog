@@ -69,6 +69,7 @@ GtkApplicationWindow *
 ka_main_window_create (KaApplet *applet)
 {
     GtkCellRenderer *text_renderer, *toggle_renderer;
+    GtkTreeViewColumn *column;
     GtkTreeView *tickets_view;
     GtkBuilder *builder;
 
@@ -92,6 +93,9 @@ ka_main_window_create (KaApplet *applet)
                              GTK_TREE_MODEL (tickets));
 
     text_renderer = gtk_cell_renderer_text_new ();
+    g_object_set (text_renderer,
+                  "ellipsize", PANGO_ELLIPSIZE_MIDDLE,
+                  NULL);
     toggle_renderer = gtk_cell_renderer_toggle_new ();
 
     gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
@@ -101,13 +105,13 @@ ka_main_window_create (KaApplet *applet)
                                                 PRINCIPAL_COLUMN,
                                                 NULL);
     gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
-                                                _("Start Time"),
+                                                _("Start"),
                                                 text_renderer,
                                                 "text",
                                                 START_TIME_COLUMN,
                                                 NULL);
     gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
-                                                _("End Time"),
+                                                _("End"),
                                                 text_renderer,
                                                 "markup",
                                                 END_TIME_COLUMN,
@@ -133,6 +137,11 @@ ka_main_window_create (KaApplet *applet)
                                                 "active",
                                                 RENEWABLE_COLUMN,
                                                 NULL);
+
+    for (int i = PRINCIPAL_COLUMN; i <= END_TIME_COLUMN; i++) {
+        column = gtk_tree_view_get_column(tickets_view, i);
+        g_object_set (column, "expand", TRUE, NULL);
+    }
 
     g_signal_connect (applet, "krb-ccache-changed",
                       G_CALLBACK(ccache_changed_cb),

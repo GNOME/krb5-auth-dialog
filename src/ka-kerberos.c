@@ -308,19 +308,11 @@ ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
     ret = krb5_cc_start_seq_get (kcontext, ccache, &cursor);
     if (ret == KRB5_FCC_NOFILE) {
         ka_log_error_message_at_level (G_LOG_LEVEL_INFO, "krb5_cc_start_seq_get", kcontext, ret);
-
-        gtk_list_store_append (tickets, &iter);
-        gtk_list_store_set (tickets, &iter,
-                            PRINCIPAL_COLUMN, _("Your ticket cache is currently empty"),
-                            FORWARDABLE_COLUMN, FALSE,
-                            RENEWABLE_COLUMN, FALSE,
-                            PROXIABLE_COLUMN, FALSE, -1);
         retval = TRUE;
         goto out;
     } else if (ret) {
         goto out;
     }
-
 
     while ((ret = krb5_cc_next_cred (kcontext, ccache, &cursor, &creds)) == 0) {
         gboolean renewable, proxiable, forwardable;

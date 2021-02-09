@@ -65,12 +65,36 @@ ticket_btn_clicked(GtkButton* btn G_GNUC_UNUSED, gpointer user_data)
 }
 
 
+static void
+on_row_inserted(GtkTreeModel *model,
+                GtkTreePath  *unused,
+                GtkTreeIter  *iter,
+                GtkStack     *stack)
+{
+    gtk_stack_set_visible_child_name(stack, "tickets");
+}
+
+
+static void
+on_row_deleted(GtkTreeModel *model,
+               GtkTreePath  *unused,
+               GtkStack     *stack)
+{
+    GtkTreeIter iter;
+
+    if (!gtk_tree_model_get_iter_first(model, &iter))
+        gtk_stack_set_visible_child_name(stack, "message");
+}
+
+
+
 GtkApplicationWindow *
 ka_main_window_create (KaApplet *applet)
 {
     GtkCellRenderer *text_renderer, *toggle_renderer;
     GtkTreeViewColumn *column;
     GtkTreeView *tickets_view;
+    GtkStack *stack;
     GtkBuilder *builder;
 
     tickets = gtk_list_store_new (N_COLUMNS,
@@ -142,6 +166,15 @@ ka_main_window_create (KaApplet *applet)
         column = gtk_tree_view_get_column(tickets_view, i);
         g_object_set (column, "expand", TRUE, NULL);
     }
+
+    stack = GTK_STACK (gtk_builder_get_object (builder, "stack"));
+    g_signal_connect(tickets, "row-inserted",
+                     G_CALLBACK(on_row_inserted),
+                     stack);
+    g_signal_connect(tickets, "row-deleted",
+                     G_CALLBACK(on_row_deleted),
+                     stack);
+    on_row_deleted(GTK_TREE_MODEL(tickets), NULL, stack);
 
     g_signal_connect (applet, "krb-ccache-changed",
                       G_CALLBACK(ccache_changed_cb),

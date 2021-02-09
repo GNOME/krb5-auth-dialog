@@ -665,54 +665,62 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkHBox" id="hbox10">
-                            <property name="visible">True</property>
+			  <object class="GtkBox">
+			    <property name="orientation">vertical</property>
+			    <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="spacing">6</property>
                             <child>
-                              <object class="GtkLabel" id="label15">
-                                <property name="visible">True</property>
-                                <property name="can_focus">False</property>
-                                <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">Warn</property>
+                              <object class="GtkHBox" id="hbox10">
+				<property name="visible">True</property>
+				<property name="can_focus">False</property>
+				<property name="spacing">6</property>
+				<child>
+				  <object class="GtkLabel" id="label15">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">False</property>
+                                    <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">Warn</property>
+				  </object>
+				  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">1</property>
+				  </packing>
+				</child>
+				<child>
+				  <object class="GtkSpinButton" id="prompt_mins_entry">
+                                    <property name="visible">True</property>
+                                    <property name="can_focus">True</property>
+                                    <property name="has_tooltip">True</property>
+                                    <property name="tooltip_markup" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
+                                    <property name="tooltip_text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
+                                    <property name="invisible_char">●</property>
+                                    <property name="invisible_char_set">True</property>
+                                    <property name="adjustment">adjustment1</property>
+                                    <property name="snap_to_ticks">True</property>
+                                    <property name="numeric">True</property>
+				  </object>
+				  <packing>
+                                    <property name="expand">False</property>
+                                    <property name="fill">False</property>
+                                    <property name="position">2</property>
+				  </packing>
+				</child>
                               </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">1</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkSpinButton" id="prompt_mins_entry">
-                                <property name="visible">True</property>
-                                <property name="can_focus">True</property>
-                                <property name="has_tooltip">True</property>
-                                <property name="tooltip_markup" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
-                                <property name="tooltip_text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
-                                <property name="invisible_char">●</property>
-                                <property name="invisible_char_set">True</property>
-                                <property name="adjustment">adjustment1</property>
-                                <property name="snap_to_ticks">True</property>
-                                <property name="numeric">True</property>
-                              </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">2</property>
-                              </packing>
-                            </child>
-                            <child>
-                              <object class="GtkLabel" id="label16">
+			    </child>
+			    <child>
+			      <object class="GtkLabel" id="label16">
                                 <property name="visible">True</property>
                                 <property name="can_focus">False</property>
                                 <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">minutes before ticket expiry</property>
-                              </object>
-                              <packing>
+			      </object>
+			      <packing>
                                 <property name="expand">False</property>
                                 <property name="fill">False</property>
                                 <property name="position">3</property>
-                              </packing>
-                            </child>
-                          </object>
+			      </packing>
+			    </child>
+			  </object>
                           <packing>
                             <property name="expand">False</property>
                             <property name="fill">True</property>

@@ -5,134 +5,129 @@
 # Copyright (C) 2009 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # Fran Diéguez <frandieguez@gnome.org>, 2010, 2011.
-# Fran Dieguez <frandieguez@gnome.org>, 2012, 2013, 2014.
+# Fran Dieguez <frandieguez@gnome.org>, 2012-2021.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog.po.master.gl\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-02-07 11:39+0100\n"
-"PO-Revision-Date: 2014-02-07 11:41+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
+"issues\n"
+"POT-Creation-Date: 2021-02-07 10:45+0000\n"
+"PO-Revision-Date: 2021-02-09 13:17+0100\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
-"Language-Team: gnome-l10n-gl@gnome.org\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Virtaal 0.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"X-Generator: Gtranslator 3.38.0\n"
 
-#: ../src/krb5-auth-dialog.ui.h:1
+#: ../src/resources/ui/ka-main-window.ui.h:1
 msgid "Prefere_nces"
 msgstr "Prefere_ncias"
 
-#: ../src/krb5-auth-dialog.ui.h:2
+#: ../src/resources/ui/ka-main-window.ui.h:2
 msgid "_About"
 msgstr "_Sobre"
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#: ../src/resources/ui/ka-main-window.ui.h:3
 msgid "_Help"
 msgstr "_Axuda"
 
-#: ../src/krb5-auth-dialog.ui.h:4
+#: ../src/resources/ui/ka-main-window.ui.h:4
 msgid "_Quit"
 msgstr "_Saír"
 
-#.
-#. * vim:ts:sts=4:sw=4:et:
-#.
-#: ../src/krb5-auth-dialog.ui.h:5 ../src/krb5-auth-dialog.desktop.in.h:1
-msgid "Kerberos Authentication"
-msgstr "Configuración de autenticación de Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:6
-msgid "_Renew Ticket"
-msgstr "_Anovar tícket"
-
-#: ../src/krb5-auth-dialog.ui.h:7
+#: ../src/resources/ui/ka-main-window.ui.h:5
 msgid "Service Tickets"
 msgstr "Tiquets de servicio"
 
-#: ../src/krb5-auth-dialog.ui.h:8
+#: ../src/resources/ui/ka-main-window.ui.h:6 ../src/ka-applet.c:620
+msgid "Get Ticket"
+msgstr "Obter tique"
+
+#: ../src/resources/ui/ka-preferences.ui.h:1
 msgid "Kerberos User"
 msgstr "Usuario de Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:9
+#: ../src/resources/ui/ka-preferences.ui.h:2
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
 "O nome da súa conta de Kerberos. Déixeo en branco para usar o seu nome de "
 "usuario actual."
 
-#: ../src/krb5-auth-dialog.ui.h:10
+#: ../src/resources/ui/ka-preferences.ui.h:3
 msgid "Kerberos principal:"
 msgstr "Principal de Kerberos:"
 
-#: ../src/krb5-auth-dialog.ui.h:11
+#: ../src/resources/ui/ka-preferences.ui.h:4
 msgid "Kerberos Ticket Options"
 msgstr "Opcións do tique de Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:12
+#: ../src/resources/ui/ka-preferences.ui.h:5
 msgid "Requested Kerberos tickets should be:"
 msgstr "Os tíckets solicitados a Kerberos deberían ser:"
 
-#: ../src/krb5-auth-dialog.ui.h:13
+#: ../src/resources/ui/ka-preferences.ui.h:6
 msgid "forwardable"
 msgstr "reenviábel"
 
-#: ../src/krb5-auth-dialog.ui.h:14
+#: ../src/resources/ui/ka-preferences.ui.h:7
 msgid "If checked, request forwardable tickets"
 msgstr "Se está seleccionado, pide tíckets reenviábeis"
 
-#: ../src/krb5-auth-dialog.ui.h:15
+#: ../src/resources/ui/ka-preferences.ui.h:8
 msgid "renewable"
 msgstr "renovábel"
 
-#: ../src/krb5-auth-dialog.ui.h:16
+#: ../src/resources/ui/ka-preferences.ui.h:9
 msgid "If checked, request renewable tickets"
 msgstr "Se está seleccionado pide tíckets anovábeis"
 
-#: ../src/krb5-auth-dialog.ui.h:17
+#: ../src/resources/ui/ka-preferences.ui.h:10
 msgid "proxiable"
 msgstr "vía proxy"
 
-#: ../src/krb5-auth-dialog.ui.h:18
+#: ../src/resources/ui/ka-preferences.ui.h:11
 msgid "If checked, request proxiable tickets"
 msgstr "Se está seleccionado, solicita tíckets utilizábeis vía proxy"
 
-#: ../src/krb5-auth-dialog.ui.h:19
+#: ../src/resources/ui/ka-preferences.ui.h:12
 msgid "Kerberos"
 msgstr "Kerberos"
 
-#: ../src/krb5-auth-dialog.ui.h:20
+#: ../src/resources/ui/ka-preferences.ui.h:13
 msgid "Userid"
 msgstr "Id de usuario"
 
-#: ../src/krb5-auth-dialog.ui.h:21
+#: ../src/resources/ui/ka-preferences.ui.h:14
 msgid "Use Smartcard"
 msgstr "Empregar Smartcard"
 
-#: ../src/krb5-auth-dialog.ui.h:22
+#: ../src/resources/ui/ka-preferences.ui.h:15
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
 "Se está activado emprega un token de seguranza (Smartcard) para autenticar."
 
-#: ../src/krb5-auth-dialog.ui.h:23
+#: ../src/resources/ui/ka-preferences.ui.h:16
 msgid "Certificate and private key used for authentication"
 msgstr "Certificado e chave privada empregada para a autenticación"
 
-#: ../src/krb5-auth-dialog.ui.h:24
+#: ../src/resources/ui/ka-preferences.ui.h:17
 msgid "_Browse..."
 msgstr "_Explorar..."
 
-#: ../src/krb5-auth-dialog.ui.h:25
+#: ../src/resources/ui/ka-preferences.ui.h:18
 msgid "X509 trust anchors"
 msgstr "Áncoras de confianza de X509"
 
-#: ../src/krb5-auth-dialog.ui.h:26
+#: ../src/resources/ui/ka-preferences.ui.h:19
 msgid "Certificate used to verify digital signatures."
 msgstr "Certificado usado para comprobar firmas dixitais."
 
-#: ../src/krb5-auth-dialog.ui.h:27
+#: ../src/resources/ui/ka-preferences.ui.h:20
 msgid ""
 "Configure the use of certificates and smartcards for your Kerberos network "
 "authentication."
@@ -140,20 +135,20 @@ msgstr ""
 "Configurar o uso do certificados e tarxeta intelixentes para a súa "
 "autenticación de rede de Kerberos."
 
-#: ../src/krb5-auth-dialog.ui.h:28
+#: ../src/resources/ui/ka-preferences.ui.h:21
 msgid "PKINIT"
 msgstr "PKINIT"
 
-#: ../src/krb5-auth-dialog.ui.h:29
+#: ../src/resources/ui/ka-preferences.ui.h:22
 msgid "Notifications"
 msgstr "Notificacións"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:31
+#: ../src/resources/ui/ka-preferences.ui.h:24
 msgid "Warn"
 msgstr "Advertir"
 
-#: ../src/krb5-auth-dialog.ui.h:32
+#: ../src/resources/ui/ka-preferences.ui.h:25
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
@@ -162,55 +157,22 @@ msgstr ""
 "caduque"
 
 #. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:34
+#: ../src/resources/ui/ka-preferences.ui.h:27
 msgid "minutes before ticket expiry"
 msgstr "minutos antes de que caduque o tique"
 
-#: ../src/ka-kerberos.c:176
-msgid "unknown error"
-msgstr "erro descoñecido"
+#: ../src/resources/ui/ka-pwdialog.ui.h:1 ../src/ka-applet-priv.h:34
+#: ../src/org.gnome.KrbAuthDialog.desktop.in.h:1
+msgid "Kerberos Authentication"
+msgstr "Configuración de autenticación de Kerberos"
 
-#: ../src/ka-kerberos.c:318
-msgid "Your ticket cache is currently empty"
-msgstr "A súa caché de tiques está baleira actualmente"
+#: ../src/resources/ui/ka-pwdialog.ui.h:2 ../src/ka-preferences.c:372
+msgid "_Cancel"
+msgstr "_Cancelar"
 
-#: ../src/ka-kerberos.c:349
-msgid "Expired"
-msgstr "Caducado"
-
-#: ../src/ka-pwdialog.c:229
-#, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "No se puido obter o tícket de Kerberos: '%s'"
-
-#: ../src/ka-pwdialog.c:268 ../src/ka-applet.c:571
-#, c-format
-msgid "Your credentials expire in %d minute"
-msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] "As súas credenciais caducan dentro de %d minuto"
-msgstr[1] "As súas credenciais caducan dentro de %d minutos"
-
-#: ../src/ka-pwdialog.c:273 ../src/ka-applet.c:576
-msgid "Your credentials have expired"
-msgstr "As súas credenciais caducaron"
-
-#: ../src/ka-pwdialog.c:296
-msgid "Please enter your Kerberos password:"
-msgstr "Introduza o seu contrasinal de Kerberos:"
-
-#: ../src/ka-pwdialog.c:309
-#, c-format
-msgid "Please enter the password for '%s':"
-msgstr "Introduza o contrasinal para '%s':"
-
-#: ../src/ka-pwdialog.c:327
-msgid "The password you entered is invalid"
-msgstr "O contrasinal que introduciu non é válido"
-
-#: ../src/ka-pwdialog.c:343
-#, c-format
-msgid "%s Error"
-msgstr "Erro %s"
+#: ../src/resources/ui/ka-pwdialog.ui.h:3
+msgid "_Renew Ticket"
+msgstr "_Anovar tícket"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -1527,61 +1489,140 @@ msgstr "Número máxico incorrecto para a estrutura GSSAPI OID"
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Número máxico incorrecto para GSSAPI QUEUE"
 
-#: ../src/ka-applet.c:565
+#. Translators: First number is hours, second number is minutes
+#: ../src/ka-applet.c:583
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "As súas credenciais caducan en %.2d:%.2dh"
 
-#: ../src/ka-applet.c:758
-msgid "List Tickets"
-msgstr "Listar tiques"
+#: ../src/ka-applet.c:589 ../src/ka-pwdialog.c:292
+#, c-format
+msgid "Your credentials expire in %d minute"
+msgid_plural "Your credentials expire in %d minutes"
+msgstr[0] "As súas credenciais caducan dentro de %d minuto"
+msgstr[1] "As súas credenciais caducan dentro de %d minutos"
 
-#: ../src/ka-applet.c:768
-msgid "Get Ticket"
-msgstr "Obter tique"
+#: ../src/ka-applet.c:594 ../src/ka-pwdialog.c:297
+msgid "Your credentials have expired"
+msgstr "As súas credenciais caducaron"
 
-#: ../src/ka-applet.c:777
-msgid "Don't show me this again"
-msgstr "Non mostrar esta mensaxe de novo"
-
-#: ../src/ka-applet.c:784
+#: ../src/ka-applet.c:624
 msgid "Remove Credentials Cache"
 msgstr "Quitar a caché de credenciais"
 
-#: ../src/ka-applet.c:844
+#: ../src/ka-applet.c:672
 msgid "You have valid Kerberos credentials."
 msgstr "As súas credenciais de Kerberos son válidas."
 
-#: ../src/ka-applet.c:846
+#: ../src/ka-applet.c:674
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Actualizou as súas credenciais Kerberos."
 
-#: ../src/ka-applet.c:849
+#: ../src/ka-applet.c:677
 msgid "Network credentials valid"
 msgstr "As credenciais de rede son válidas"
 
-#: ../src/ka-applet.c:868
+#: ../src/ka-applet.c:696
 msgid "Network credentials expiring"
 msgstr "As credenciais de rede van caducar"
 
-#: ../src/ka-applet.c:885
+#: ../src/ka-applet.c:713
 msgid "Network credentials expired"
 msgstr "As credenciais de rede caducaron"
 
-#: ../src/ka-applet.c:886
+#: ../src/ka-applet.c:714
 msgid "Your Kerberos credentials have expired."
 msgstr "As súas credenciais de Kerberos caducaron."
 
-#: ../src/ka-applet.c:966
-msgid "Remove Credentials _Cache"
-msgstr "Quitar a _caché de credenciais"
+#: ../src/ka-kerberos.c:161
+msgid "unknown error"
+msgstr "erro descoñecido"
 
-#. Ticket dialog
-#: ../src/ka-applet.c:977
-msgid "_List Tickets"
-msgstr "_Listar tiques"
+#: ../src/ka-kerberos.c:314
+msgid "Your ticket cache is currently empty"
+msgstr "A súa caché de tiques está baleira actualmente"
 
-#: ../src/ka-tools.c:44
+#: ../src/ka-kerberos.c:348
+msgid "Expired"
+msgstr "Caducado"
+
+#: ../src/ka-kerberos.c:1013
+#| msgid "Network Authentication"
+msgid " (No network connection)"
+msgstr " (Non hai conexión coa rede)"
+
+#: ../src/ka-main-window.c:98
+msgid "Principal"
+msgstr "Principal"
+
+#: ../src/ka-main-window.c:104
+msgid "Start Time"
+msgstr "Tempo de inicio"
+
+#: ../src/ka-main-window.c:110
+msgid "End Time"
+msgstr "Tempo de finalización"
+
+#. Translators: this is an abbreviation for forwardable
+#: ../src/ka-main-window.c:117
+msgid "Fwd"
+msgstr "Rnv"
+
+#. Translators: this is an abbreviation for proxiable
+#: ../src/ka-main-window.c:124
+msgid "Proxy"
+msgstr "Proxy"
+
+#. Translators: this is an abbreviation for renewable
+#: ../src/ka-main-window.c:131
+msgid "Renew"
+msgstr "Renovar"
+
+#: ../src/ka-main-window.c:172
+msgid "Error displaying service ticket information"
+msgstr "Produciuse un erro ao mostrar a información do tiquet de servizo"
+
+#: ../src/ka-preferences.c:369
+msgid "Choose Certificate"
+msgstr "Seleccione o certificado"
+
+#: ../src/ka-preferences.c:373
+msgid "_Open"
+msgstr "_Abrir"
+
+#: ../src/ka-preferences.c:385
+msgid "X509 Certificates"
+msgstr "Certificados X509"
+
+#: ../src/ka-preferences.c:389
+msgid "all files"
+msgstr "todos os ficheiros"
+
+#: ../src/ka-pwdialog.c:134
+#, c-format
+msgid "%s Error"
+msgstr "Erro %s"
+
+#: ../src/ka-pwdialog.c:253
+#, c-format
+#| msgid "Couldn't acquire kerberos ticket: '%s'"
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "No se puido obter o tícket de Kerberos: «%s»"
+
+#: ../src/ka-pwdialog.c:320
+msgid "Please enter your Kerberos password:"
+msgstr "Introduza o seu contrasinal de Kerberos:"
+
+#: ../src/ka-pwdialog.c:333
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Introduza o contrasinal para '%s':"
+
+#: ../src/ka-pwdialog.c:351
+msgid "The password you entered is invalid"
+msgstr "O contrasinal que introduciu non é válido"
+
+#: ../src/ka-tools.c:43
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1591,60 +1632,24 @@ msgstr ""
 "%s"
 
 #. Translators: add the translators of your language here
-#: ../src/ka-tools.c:84
+#: ../src/ka-tools.c:83
 msgid "translator-credits"
 msgstr ""
+"Fran Dieguez <frandieguez@gnome.org>, 2021\n"
 "Antón Méixome <meixome@mancomun.org> para Mancomún. Centro de Referencia de "
 "Software Libre "
 
-#: ../src/ka-main-window.c:74
-msgid "Principal"
-msgstr "Principal"
-
-#: ../src/ka-main-window.c:80
-msgid "Start Time"
-msgstr "Tempo de inicio"
-
-#: ../src/ka-main-window.c:86
-msgid "End Time"
-msgstr "Tempo de finalización"
-
-#. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:93
-msgid "Fwd"
-msgstr "Rnv"
-
-#. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:100
-msgid "Proxy"
-msgstr "Proxy"
-
-#. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:107
-msgid "Renew"
-msgstr "Renovar"
-
-#: ../src/ka-main-window.c:136
-msgid "Error displaying service ticket information"
-msgstr "Produciuse un erro ao mostrar a información do tiquet de servizo"
-
-#: ../src/ka-preferences.c:296
-msgid "Choose Certificate"
-msgstr "Seleccione o certificado"
-
-#: ../src/ka-preferences.c:312
-msgid "X509 Certificates"
-msgstr "Certificados X509"
-
-#: ../src/ka-preferences.c:316
-msgid "all files"
-msgstr "todos os ficheiros"
-
-#: ../src/krb5-auth-dialog.desktop.in.h:2
-msgid "Kerberos Network Authentication Dialog"
-msgstr "Diálogo de autenticación de rede de Kerberos"
-
 #: ../src/krb5-auth-dialog.appdata.xml.in.h:1
+#| msgid "Kerberos Network Authentication Dialog"
+msgid "Kerberos Authentication Dialog"
+msgstr "Diálogo de autenticación de Kerberos"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#| msgid "Requested Kerberos tickets should be:"
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Solicitar, renovar e ver ticket de Kerberos:"
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:3
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
@@ -1656,13 +1661,27 @@ msgstr ""
 "Tamén lle notifica cando as súas credenciais de Kerberos están a piques de "
 "expirar e renova o seu tique automaticamente se é posíbel."
 
-#: ../src/krb5-auth-dialog.appdata.xml.in.h:2
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:4
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
 "Isto é útil se precisa autenticarse nun servidor de Kerberos (KDC) despois "
 "de iniciar sesión no escritorio (p.ex. en dispositivos móbiles)."
+
+#: ../src/krb5-auth-dialog.appdata.xml.in.h:5
+#| msgid "Kerberos Authentication"
+msgid "Kerberos authentication dialog"
+msgstr "Diálogo de autenticación de Kerberos"
+
+#: ../src/org.gnome.KrbAuthDialog.desktop.in.h:2
+msgid "Kerberos Network Authentication Dialog"
+msgstr "Diálogo de autenticación de rede de Kerberos"
+
+#: ../src/org.gnome.KrbAuthDialog.desktop.in.h:3
+#| msgid "Kerberos;Authentication"
+msgid "kerberos;authentication;"
+msgstr "kerberos;autenticación"
 
 #: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
 msgid "Kerberos principal"
@@ -1762,10 +1781,20 @@ msgstr "Engadidos activados"
 msgid "List of plugins that should be loaded and activated on startup."
 msgstr "Lista de engadidos que se debería cargar e activar ao inicio."
 
-#: ../secmem/util.c:106
-#, c-format
-msgid "Warning: running q-agent setuid on this system is dangerous\n"
-msgstr "Advertencia: executar q-agent setuid neste sistema é perigoso\n"
+#~ msgid "List Tickets"
+#~ msgstr "Listar tiques"
+
+#~ msgid "Don't show me this again"
+#~ msgstr "Non mostrar esta mensaxe de novo"
+
+#~ msgid "Remove Credentials _Cache"
+#~ msgstr "Quitar a _caché de credenciais"
+
+#~ msgid "_List Tickets"
+#~ msgstr "_Listar tiques"
+
+#~ msgid "Warning: running q-agent setuid on this system is dangerous\n"
+#~ msgstr "Advertencia: executar q-agent setuid neste sistema é perigoso\n"
 
 #~ msgid "_File"
 #~ msgstr "_Ficheiro"
@@ -1776,15 +1805,9 @@ msgstr "Advertencia: executar q-agent setuid neste sistema é perigoso\n"
 #~ msgid "There was an error launching the preferences dialog: %s"
 #~ msgstr "Produciuse un erro ao iniciar o diálogo de preferencias: %s"
 
-#~ msgid "Kerberos;Authentication"
-#~ msgstr "Kerberos;Autenticación"
-
 #~ msgid "Set your Kerberos network authentication preferences"
 #~ msgstr ""
 #~ "Estabeleza as súas preferencias de autenticación de rede en Kerberos"
-
-#~ msgid "Network Authentication"
-#~ msgstr "Autenticación de rede"
 
 #~ msgid ""
 #~ "There was an error displaying %s:\n"

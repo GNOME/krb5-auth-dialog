@@ -16,5 +16,4 @@ gnome.yelp(
   'krb5-auth-dialog',
   media: krb5_auth_dialog_media,
   sources: krb5_auth_dialog_help_sources,
-  languages: ['cs', 'de', 'el', 'es', 'pl', 'sl', 'sv', 'uk'],
 )

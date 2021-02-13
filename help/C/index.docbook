@@ -100,7 +100,7 @@
 
   <revhistory>
    <revision>
-    <revnumber>2.0</revnumber>
+    <revnumber>3.0</revnumber>
     <date>&date;</date>
     <revdescription>
      <para role="author">Guido Günther
@@ -160,53 +160,11 @@
     </varlistentry>
   </variablelist>
   <para>
-    The tray icon will indicate one of three states:
+    From now on <application>&app;</application> will display notifications when the status
+    of your Kerberos tickets changes. If you want to get an overview of the current tickets
+    just activate <application>&app;</application> by clicking on the notification or by
+    starting it again as described above.
   </para>
-
-  <section id="trayicon-valid">
-    <title>Valid Kerberos ticket</title>
-    <para>You have a valid Kerberos ticket that can be used to authenticate to network services.</para>
-    <figure>
-      <title>Valid Kerberos ticket</title>
-      <screenshot>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="figures/trayicon-valid.png" format="PNG"/>
-          </imageobject>
-        </mediaobject>
-      </screenshot>
-    </figure>
- </section>
-
-  <section id="trayicon-expiring">
-    <title>Kerberos ticket expiring</title>
-    <para>The Kerberos ticket is about to expire but it can still be used to authenticate to network services.</para>
-    <figure>
-      <title>Kerberos ticket expiring</title>
-      <screenshot>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="figures/trayicon-expiring.png" format="PNG"/>
-          </imageobject>
-        </mediaobject>
-      </screenshot>
-    </figure>
- </section>
-  <section id="trayicon-expired">
-    <title>Kerberos ticket expired</title>
-    <para>Your Kerberos became invalid (e.g. expired). It can no longer be used to authenticate to network services. This is not a problem if the application that requires Kerberos knows how to request a new ticket via &application;. In case it doesn't you can just left click on the applet an reenter your password.
-</para>
-    <figure>
-      <title>Kerberos ticket expired</title>
-      <screenshot>
-        <mediaobject>
-          <imageobject>
-            <imagedata fileref="figures/trayicon-expired.png" format="PNG"/>
-          </imageobject>
-        </mediaobject>
-      </screenshot>
-    </figure>
- </section>
 </section>
 
 <section id="notify">
@@ -264,7 +222,7 @@
 <section id="preferences">
   <title>Preferences</title>
   <para>
-    You can set preferences by selecting "Preferences" from the applets context menu or by selecting "Network Authentication" in the <application>Control Center</application>.
+    You can set preferences by selecting "Preferences" from the window's hamburger menu.
     <table frame="topbot" id="tbl-principal-prefs">
       <title>Kerberos Principal Preferences</title>
       <tgroup cols="2" colsep="1" rowsep="1"> <colspec colwidth="19.21*"/> <colspec colwidth="46.79*"/>

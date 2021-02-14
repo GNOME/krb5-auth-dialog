@@ -1,14 +1,14 @@
 # Polish translation for krb5-auth-dialog help.
-# Copyright © 2017-2018 the krb5-auth-dialog authors.
+# Copyright © 2017-2021 the krb5-auth-dialog authors.
 # This file is distributed under the same license as the krb5-auth-dialog help.
-# Piotr Drąg <piotrdrag@gmail.com>, 2017-2018.
-# Aviary.pl <community-poland@mozilla.org>, 2017-2018.
+# Piotr Drąg <piotrdrag@gmail.com>, 2017-2021.
+# Aviary.pl <community-poland@mozilla.org>, 2017-2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog-help\n"
-"POT-Creation-Date: 2018-08-13 21:43+0000\n"
-"PO-Revision-Date: 2018-08-13 20:47+0200\n"
+"POT-Creation-Date: 2021-02-14 08:52+0000\n"
+"PO-Revision-Date: 2021-02-14 12:05+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -22,8 +22,8 @@ msgstr ""
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
-"Piotr Drąg <piotrdrag@gmail.com>, 2017-2018\n"
-"Aviary.pl <community-poland@mozilla.org>, 2017-2018"
+"Piotr Drąg <piotrdrag@gmail.com>, 2017-2021\n"
+"Aviary.pl <community-poland@mozilla.org>, 2017-2021"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:39
@@ -185,8 +185,8 @@ msgstr "Guido Günther <email>agx@sigxcpu.org</email>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:102
-msgid "<revnumber>2.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
-msgstr "<revnumber>2.0</revnumber> <date>maj 2009</date> <_:revdescription-1/>"
+msgid "<revnumber>3.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
+msgstr "<revnumber>3.0</revnumber> <date>maj 2009</date> <_:revdescription-1/>"
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:112
@@ -283,110 +283,26 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:162
-msgid "The tray icon will indicate one of three states:"
-msgstr "Ikona w obszarze powiadamiania wskazuje jeden z trzech stanów:"
+msgid ""
+"From now on <application>Kerberos Network Authentication Dialog</"
+"application> will display notifications when the status of your Kerberos "
+"tickets changes. If you want to get an overview of the current tickets just "
+"activate <application>Kerberos Network Authentication Dialog</application> "
+"by clicking on the notification or by starting it again as described above."
+msgstr ""
+"Od teraz <application>Okno dialogowe uwierzytelniania w sieci Kerberos</"
+"application> będzie wyświetlać powiadomienie po zmianie stanu biletów "
+"Kerberos. Aby zobaczyć przegląd bieżących biletów, aktywuj <application>Okno "
+"dialogowe uwierzytelniania w sieci Kerberos</application> klikając "
+"powiadomienie lub uruchamiając je jeszcze raz według powyższych instrukcji."
 
 #. (itstool) path: section/title
-#. (itstool) path: figure/title
-#: C/index.docbook:167 C/index.docbook:170
-msgid "Valid Kerberos ticket"
-msgstr "Prawidłowy bilet Kerberos"
-
-#. (itstool) path: section/para
-#: C/index.docbook:168
-msgid ""
-"You have a valid Kerberos ticket that can be used to authenticate to network "
-"services."
-msgstr ""
-"Użytkownik ma prawidłowy bilet Kerberos, który może być używany do "
-"uwierzytelnienia w usługach sieciowych."
-
-#. (itstool) path: imageobject/imagedata
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:174
-msgctxt "_"
-msgid ""
-"external ref='figures/trayicon-valid.png' "
-"md5='78989c41fd36e23c0a97b87a2cc440e4'"
-msgstr ""
-"external ref='figures/trayicon-valid.png' "
-"md5='78989c41fd36e23c0a97b87a2cc440e4'"
-
-#. (itstool) path: section/title
-#. (itstool) path: figure/title
-#: C/index.docbook:182 C/index.docbook:185
-msgid "Kerberos ticket expiring"
-msgstr "Bilet Kerberos wygasa"
-
-#. (itstool) path: section/para
-#: C/index.docbook:183
-msgid ""
-"The Kerberos ticket is about to expire but it can still be used to "
-"authenticate to network services."
-msgstr ""
-"Bilet Kerberos niedługo wygaśnie, ale może nadal być używany do "
-"uwierzytelniania w usługach sieciowych."
-
-#. (itstool) path: imageobject/imagedata
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:189
-msgctxt "_"
-msgid ""
-"external ref='figures/trayicon-expiring.png' "
-"md5='cb1dbed310e568e7cb4684bac85c6969'"
-msgstr ""
-"external ref='figures/trayicon-expiring.png' "
-"md5='cb1dbed310e568e7cb4684bac85c6969'"
-
-#. (itstool) path: section/title
-#. (itstool) path: figure/title
-#: C/index.docbook:196 C/index.docbook:200
-msgid "Kerberos ticket expired"
-msgstr "Bilet Kerberos wygasł"
-
-#. (itstool) path: section/para
-#: C/index.docbook:197
-msgid ""
-"Your Kerberos became invalid (e.g. expired). It can no longer be used to "
-"authenticate to network services. This is not a problem if the application "
-"that requires Kerberos knows how to request a new ticket via "
-"<application>Kerberos Network Authentication Dialog</application>. In case "
-"it doesn't you can just left click on the applet an reenter your password."
-msgstr ""
-"Kerberos jest nieprawidłowy (tzn. wygasł). Nie może już być używany do "
-"uwierzytelniania w usługach sieciowych. Nie jest to problemem, jeśli program "
-"wymagający Kerberosa potrafi zażądać nowego biletu za pomocą "
-"<application>okna dialogowego uwierzytelniania w sieci Kerberos</"
-"application>. Jeśli nie potrafi, to można po prostu kliknąć aplet lewym "
-"przyciskiem myszy i ponownie wpisać hasło."
-
-#. (itstool) path: imageobject/imagedata
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:204
-msgctxt "_"
-msgid ""
-"external ref='figures/trayicon-expired.png' "
-"md5='40c03749e8e3773a0e931232a89e3fe2'"
-msgstr ""
-"external ref='figures/trayicon-expired.png' "
-"md5='40c03749e8e3773a0e931232a89e3fe2'"
-
-#. (itstool) path: section/title
-#: C/index.docbook:213
+#: C/index.docbook:171
 msgid "Notification Messages"
 msgstr "Powiadomienia"
 
 #. (itstool) path: section/para
-#: C/index.docbook:214
+#: C/index.docbook:172
 msgid ""
 "When Kerberos Network Authentication Dialog has started, the following "
 "notifications may be displayed."
@@ -395,12 +311,12 @@ msgstr ""
 "pojawić się poniższe powiadomienia."
 
 #. (itstool) path: section/title
-#: C/index.docbook:219
+#: C/index.docbook:177
 msgid "Kerberos credentials valid"
 msgstr "Dane uwierzytelniania Kerberos są prawidłowe"
 
 #. (itstool) path: section/para
-#: C/index.docbook:220
+#: C/index.docbook:178
 msgid ""
 "You just acquired a valid Kerberos ticket that can be used to authenticate "
 "to network services."
@@ -409,7 +325,7 @@ msgstr ""
 "uwierzytelniania w usługach sieciowych."
 
 #. (itstool) path: figure/title
-#: C/index.docbook:222
+#: C/index.docbook:180
 msgid "Notification when Kerberos credentials become valid"
 msgstr ""
 "Powiadomienie o uzyskaniu prawidłowych danych uwierzytelniających Kerberos"
@@ -419,7 +335,7 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:226
+#: C/index.docbook:184
 msgctxt "_"
 msgid ""
 "external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
@@ -427,12 +343,12 @@ msgstr ""
 "external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
 
 #. (itstool) path: section/title
-#: C/index.docbook:234
+#: C/index.docbook:192
 msgid "Kerberos credentials expiring"
 msgstr "Dane uwierzytelniające Kerberos wygasają"
 
 #. (itstool) path: section/para
-#: C/index.docbook:235
+#: C/index.docbook:193
 msgid ""
 "Your Kerberos credentials are about to expire. You can left click on the "
 "tray applet to refresh them."
@@ -441,7 +357,7 @@ msgstr ""
 "w obszarze powiadamiania lewym przyciskiem myszy, aby je odświeżyć."
 
 #. (itstool) path: figure/title
-#: C/index.docbook:237
+#: C/index.docbook:195
 msgid "Notification when Kerberos credentials expiring"
 msgstr "Powiadomienie o wygasaniu danych uwierzytelniających Kerberos"
 
@@ -450,7 +366,7 @@ msgstr "Powiadomienie o wygasaniu danych uwierzytelniających Kerberos"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:241
+#: C/index.docbook:199
 msgctxt "_"
 msgid ""
 "external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
@@ -458,12 +374,12 @@ msgstr ""
 "external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
 
 #. (itstool) path: section/title
-#: C/index.docbook:249
+#: C/index.docbook:207
 msgid "Kerberos credentials expired"
 msgstr "Dane uwierzytelniające Kerberos wygasły"
 
 #. (itstool) path: section/para
-#: C/index.docbook:250
+#: C/index.docbook:208
 msgid ""
 "Your Kerberos credentials just expired. They can no longer be used to "
 "authenticate to network services."
@@ -472,7 +388,7 @@ msgstr ""
 "uwierzytelniania w usługach sieciowych."
 
 #. (itstool) path: figure/title
-#: C/index.docbook:252
+#: C/index.docbook:210
 msgid "Notification when Kerberos credentials expired"
 msgstr "Powiadomienie o wygaśnięciu danych uwierzytelniających Kerberos"
 
@@ -481,7 +397,7 @@ msgstr "Powiadomienie o wygaśnięciu danych uwierzytelniających Kerberos"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:256
+#: C/index.docbook:214
 msgctxt "_"
 msgid ""
 "external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
@@ -489,32 +405,32 @@ msgstr ""
 "external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
 
 #. (itstool) path: section/title
-#: C/index.docbook:265
+#: C/index.docbook:223
 msgid "Preferences"
 msgstr "Preferencje"
 
 #. (itstool) path: table/title
-#: C/index.docbook:269
+#: C/index.docbook:227
 msgid "Kerberos Principal Preferences"
 msgstr "Preferencje naczelnika Kerberos"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:274
+#: C/index.docbook:232
 msgid "Dialog Element"
 msgstr "Element okna dialogowego"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:277
+#: C/index.docbook:235
 msgid "Description"
 msgstr "Opis"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:284
+#: C/index.docbook:242
 msgid "<guilabel>Kerberos Principal</guilabel>"
 msgstr "<guilabel>Naczelnik Kerberos</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:289
+#: C/index.docbook:247
 msgid ""
 "The Kerberos principal to use. Leave blank to use you current username. If "
 "you change this setting you have to destroy the credential cache before "
@@ -525,12 +441,12 @@ msgstr ""
 "danych uwierzytelniających."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:295
+#: C/index.docbook:253
 msgid "<guilabel>PKINIT Userid</guilabel>"
 msgstr "<guilabel>Identyfikator użytkownika PKINIT</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:300
+#: C/index.docbook:258
 msgid ""
 "The principals public/private/certificate identifier. Leave empty if not "
 "using PKINIT. To enable using a security token add the path to the pkcs11 "
@@ -542,12 +458,12 @@ msgstr ""
 "pkcs11.so”."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:305
+#: C/index.docbook:263
 msgid "<guilabel>PKINIT anchors</guilabel>"
 msgstr "<guilabel>Kotwice PKINIT</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:310
+#: C/index.docbook:268
 msgid ""
 "Path to CA certificates used as trust anchors for pkinit. You only need to "
 "set this if it hasn't been set up globally in <filename>/etc/krb5.conf</"
@@ -558,12 +474,12 @@ msgstr ""
 "<filename>/etc/krb5.conf</filename>."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:315
+#: C/index.docbook:273
 msgid "<guilabel>forwardable</guilabel>"
 msgstr "<guilabel>przekazywalne</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:320
+#: C/index.docbook:278
 msgid ""
 "Whether the requested Kerberos ticket should be forwardable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
@@ -574,12 +490,12 @@ msgstr ""
 "lewym przyciskiem myszy i wpisując hasło."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:325
+#: C/index.docbook:283
 msgid "<guilabel>renewable</guilabel>"
 msgstr "<guilabel>odnawialne</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:330
+#: C/index.docbook:288
 msgid ""
 "Whether the requested Kerberos ticket should be renewable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
@@ -590,12 +506,12 @@ msgstr ""
 "przyciskiem myszy i wpisując hasło."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:335
+#: C/index.docbook:293
 msgid "<guilabel>proxiable</guilabel>"
 msgstr "<guilabel>mogą pośredniczyć</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:340
+#: C/index.docbook:298
 msgid ""
 "Whether the requested Kerberos ticket should be proxiable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
@@ -606,12 +522,12 @@ msgstr ""
 "przyciskiem myszy i wpisując hasło."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:345
+#: C/index.docbook:303
 msgid "<guilabel>Warn .. minutes before expiry</guilabel>"
 msgstr "<guilabel>Ostrzeganie … minut przed wygaśnięciem</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:350
+#: C/index.docbook:308
 msgid ""
 "Notifications that your credentials are about to expire will be sent that "
 "many minutes before expiry."
@@ -620,12 +536,12 @@ msgstr ""
 "minut przed wygaśnięciem."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:355
+#: C/index.docbook:313
 msgid "<guilabel>Show tray icon</guilabel>"
 msgstr "<guilabel>Ikona w obszarze powiadamiania</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:360
+#: C/index.docbook:318
 msgid ""
 "Whether to show the tray icon. Disabling the tray icon will also disable "
 "notifications, the password dialog will be brought up instead."
@@ -634,15 +550,13 @@ msgstr ""
 "także powiadomienia. Zamiast nich będzie wyświetlane okno dialogowe hasła."
 
 #. (itstool) path: section/para
-#: C/index.docbook:266
+#: C/index.docbook:224
 msgid ""
-"You can set preferences by selecting \"Preferences\" from the applets "
-"context menu or by selecting \"Network Authentication\" in the "
-"<application>Control Center</application>. <_:table-1/>"
+"You can set preferences by selecting \"Preferences\" from the window's "
+"hamburger menu. <_:table-1/>"
 msgstr ""
-"Można ustawić preferencje wybierając „Preferencje” z menu kontekstowego "
-"apletu lub wybierając „Uwierzytelnianie sieciowe” w <application>Centrum "
-"sterowania</application>. <_:table-1/>"
+"Można ustawić preferencje wybierając „Preferencje” z głównego menu okna. <_:"
+"table-1/>"
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9

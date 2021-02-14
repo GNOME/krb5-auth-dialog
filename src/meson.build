@@ -28,20 +28,6 @@ configure_file(
   install_dir: join_paths(get_option('datadir'), 'dbus-1', 'services'),
 )
 
-schema_src = 'org.gnome.KrbAuthDialog.gschema.xml'
-compiled = gnome.compile_schemas(build_by_default: true,
-                                 depend_files: files(schema_src))
-install_data(schema_src,
-  install_dir: join_paths(get_option('datadir'), 'glib-2.0/schemas')
-)
-
-compile_schemas = find_program('glib-compile-schemas', required: false)
-if compile_schemas.found()
-  test('Validate schema file', compile_schemas,
-    args: ['--strict', '--dry-run', meson.current_source_dir()]
-  )
-endif
-
 krb5_auth_dialog_resources = gnome.compile_resources(
   'krb5-auth-dialog-resource',
   'krb5-auth-dialog.gresource.xml',

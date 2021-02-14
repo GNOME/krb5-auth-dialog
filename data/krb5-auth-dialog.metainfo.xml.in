@@ -68,7 +68,6 @@
   </kudos>
   <project_group>GNOME</project_group>
   <project_license>GPL-2.0+</project_license>
-  <developer_name>Guido Günther</developer_name>
   <translation type="gettext">krb5-auth-dialog</translation>
   <url type="bugtracker">https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/issues</url>
   <url type="help">https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/</url>

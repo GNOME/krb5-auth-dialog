@@ -308,16 +308,6 @@
               <para>Notifications that your credentials are about to expire will be sent that many minutes before expiry.</para>
             </entry>
           </row>
-          <row>
-            <entry colsep="0" rowsep="0" valign="top">
-              <para>
-                <guilabel>Show tray icon</guilabel>
-              </para>
-            </entry>
-            <entry colsep="0" rowsep="0" valign="top">
-              <para>Whether to show the tray icon. Disabling the tray icon will also disable notifications, the password dialog will be brought up instead.</para>
-            </entry>
-          </row>
 	</tbody>
       </tgroup>
     </table>

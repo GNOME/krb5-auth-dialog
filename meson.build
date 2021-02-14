@@ -243,7 +243,7 @@ flex = find_program('flex', required: want_etpo)
 bison = find_program('bison', required: want_etpo)
 build_etpo = flex.found() and bison.found()
 
-subdir('icons')
+subdir('data')
 subdir('po')
 subdir('src')
 subdir('plugins')

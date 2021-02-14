@@ -301,7 +301,7 @@
           <row>
             <entry colsep="0" rowsep="0" valign="top">
               <para>
-                <guilabel>Warn .. minutes before expiry</guilabel>
+                <guilabel>Warn .. minutes before ticket expiry</guilabel>
               </para>
             </entry>
             <entry colsep="0" rowsep="0" valign="top">

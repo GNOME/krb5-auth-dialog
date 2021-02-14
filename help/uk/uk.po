@@ -2,20 +2,19 @@
 # Copyright (C) 2020 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2020.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"POT-Creation-Date: 2020-10-04 12:08+0000\n"
-"PO-Revision-Date: 2020-10-11 13:51+0300\n"
+"POT-Creation-Date: 2021-02-14 08:52+0000\n"
+"PO-Revision-Date: 2021-02-14 13:02+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
-"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.11.70\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -28,8 +27,8 @@ msgstr "Юрій Чорноіван <yurchor@ukr.net>, 2020"
 msgid ""
 "<application>Kerberos Network Authentication Dialog</application> Manual"
 msgstr ""
-"Підручник з <application>Діалогового вікна мережевої аутентифікації Kerberos<"
-"/application>"
+"Підручник з <application>Діалогового вікна мережевої аутентифікації "
+"Kerberos</application>"
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:41
@@ -37,8 +36,8 @@ msgid ""
 "Kerberos Network Authentication Dialog is a small helper that monitors and "
 "refreshes your Kerberos ticket."
 msgstr ""
-"Діалогове вікно мережевої аутентифікації Kerberos є невеличкою допоміжною"
-" програмою, яка спостерігає і оновлює ваш квиток Kerberos."
+"Діалогове вікно мережевої аутентифікації Kerberos є невеличкою допоміжною "
+"програмою, яка спостерігає і оновлює ваш квиток Kerberos."
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:45
@@ -183,10 +182,12 @@ msgstr "Guido Günther <email>agx@sigxcpu.org</email>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:102
-msgid "<revnumber>2.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
+#| msgid ""
+#| "<revnumber>2.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
+msgid "<revnumber>3.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
 msgstr ""
-"<revnumber>2.0</revnumber> <date>травень 2009 року</date> <"
-"_:revdescription-1/>"
+"<revnumber>3.0</revnumber> <date>травень 2009 року</date> <_:"
+"revdescription-1/>"
 
 #. (itstool) path: articleinfo/releaseinfo
 #: C/index.docbook:112
@@ -194,8 +195,9 @@ msgid ""
 "This manual describes how to use the Kerberos Network Authentication Dialog "
 "to manage your Kerberos tickets."
 msgstr ""
-"У цьому підручнику описано принципи користування «Діалоговим вікном мережевої"
-" аутентифікації Kerberos», яке призначено для керування квитками Kerberos."
+"У цьому підручнику описано принципи користування «Діалоговим вікном "
+"мережевої аутентифікації Kerberos», яке призначено для керування квитками "
+"Kerberos."
 
 #. (itstool) path: legalnotice/title
 #: C/index.docbook:116
@@ -210,9 +212,9 @@ msgid ""
 "type=\"http\">GNOME Gitlab</ulink>."
 msgstr ""
 "Щоб повідомити про помилку або внести пропозицію щодо цієї програми або "
-"цього підручника, скористайтеся <ulink url=\"https://gitlab.gnome.org/GNOME/kr"
-"b5-auth-dialog/issues/\" type=\"http\">системою стеження за вадами у GNOME</"
-"ulink>."
+"цього підручника, скористайтеся <ulink url=\"https://gitlab.gnome.org/GNOME/"
+"krb5-auth-dialog/issues/\" type=\"http\">системою стеження за вадами у "
+"GNOME</ulink>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:129
@@ -225,10 +227,9 @@ msgid ""
 "<primary><application>Kerberos Network Authentication Dialog</application></"
 "primary> <secondary>Manual</secondary> <tertiary>krb5-auth-dialog</tertiary>"
 msgstr ""
-"<primary><application>Діалогове вікно мережевої аутентифікації Kerberos<"
-"/application></"
-"primary> <secondary>Підручник</secondary> <tertiary>krb5-auth-dialog<"
-"/tertiary>"
+"<primary><application>Діалогове вікно мережевої аутентифікації Kerberos</"
+"application></primary> <secondary>Підручник</secondary> <tertiary>krb5-auth-"
+"dialog</tertiary>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:136
@@ -237,9 +238,10 @@ msgid ""
 "<systemitem>GNOME desktop</systemitem> that monitors and refreshes your "
 "Kerberos ticket. It pops up reminders when the ticket is about to expire."
 msgstr ""
-"«Діалогове вікно мережевої аутентифікації Kerberos» є аплетом для <systemitem"
-">стільниці GNOME</systemitem>, який спостерігає і оновлює ваш квиток"
-" Kerberos. Програма показує нагадування, коли строк дії квитка вичерпується."
+"«Діалогове вікно мережевої аутентифікації Kerberos» є аплетом для "
+"<systemitem>стільниці GNOME</systemitem>, який спостерігає і оновлює ваш "
+"квиток Kerberos. Програма показує нагадування, коли строк дії квитка "
+"вичерпується."
 
 #. (itstool) path: section/para
 #: C/index.docbook:141
@@ -249,11 +251,11 @@ msgid ""
 "can also be used to destroy (remove) the credential cache, to acquire a "
 "ticket with different options or to switch to another principal."
 msgstr ""
-"Після отримання квитка Kerberos — за допомогою GDM або самого аплету — аплет"
-" оброблятиме оновлення квитка, аж до вичерпання строку його дії. Аплетом"
-" також можна скористатися для знищення (вилучення) кешу реєстраційних даних,"
-" для отримання квитка із різними параметрами або для перемикання на інший"
-" адміністративний запис."
+"Після отримання квитка Kerberos — за допомогою GDM або самого аплету — аплет "
+"оброблятиме оновлення квитка, аж до вичерпання строку його дії. Аплетом "
+"також можна скористатися для знищення (вилучення) кешу реєстраційних даних, "
+"для отримання квитка із різними параметрами або для перемикання на інший "
+"адміністративний запис."
 
 #. (itstool) path: section/title
 #: C/index.docbook:146
@@ -267,10 +269,10 @@ msgid ""
 "started in GNOME startup, but you can manually start <application>Kerberos "
 "Network Authentication Dialog</application> by doing:"
 msgstr ""
-"<application>Діалогове вікно мережевої аутентифікації Kerberos</application>,"
-" зазвичай, запускається під час запуску GNOME, але ви можете запустити <"
-"application>Діалогове вікно мережевої аутентифікації Kerberos</application>"
-" ось так:"
+"<application>Діалогове вікно мережевої аутентифікації Kerberos</"
+"application>, зазвичай, запускається під час запуску GNOME, але ви можете "
+"запустити <application>Діалогове вікно мережевої аутентифікації Kerberos</"
+"application> ось так:"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:153
@@ -282,141 +284,56 @@ msgstr "Командний рядок"
 msgid ""
 "Type <command>krb5-auth-dialog</command>, then press <keycap>Return</keycap>:"
 msgstr ""
-"Введіть <command>krb5-auth-dialog</command> і натисніть клавішу <keycap"
-">Enter</keycap>:"
+"Введіть <command>krb5-auth-dialog</command> і натисніть клавішу "
+"<keycap>Enter</keycap>:"
 
 #. (itstool) path: section/para
 #: C/index.docbook:162
-msgid "The tray icon will indicate one of three states:"
+#| msgid ""
+#| "<application>Kerberos Network Authentication Dialog</application> is "
+#| "usually started in GNOME startup, but you can manually start "
+#| "<application>Kerberos Network Authentication Dialog</application> by "
+#| "doing:"
+msgid ""
+"From now on <application>Kerberos Network Authentication Dialog</"
+"application> will display notifications when the status of your Kerberos "
+"tickets changes. If you want to get an overview of the current tickets just "
+"activate <application>Kerberos Network Authentication Dialog</application> "
+"by clicking on the notification or by starting it again as described above."
 msgstr ""
-"Піктограма системного лотка повідомляє про перебування в одному з таких трьох"
-" станів:"
+"У поточній версії <application>Діалогове вікно мережевої аутентифікації Kerberos</"
+"application> показує сповіщення при зміні стану ваших квитків Kerberos. Якщо ви хочете здійснити огляд поточний квитків, просто активуйте <application>Діалогове вікно мережевої аутентифікації Kerberos</application> клацанням на сповіщенні або повторним запуском, який описано вище."
 
 #. (itstool) path: section/title
-#. (itstool) path: figure/title
-#: C/index.docbook:167 C/index.docbook:170
-msgid "Valid Kerberos ticket"
-msgstr "Коректний квиток Kerberos"
-
-#. (itstool) path: section/para
-#: C/index.docbook:168
-msgid ""
-"You have a valid Kerberos ticket that can be used to authenticate to network "
-"services."
-msgstr ""
-"У вас є коректний квиток Kerberos, яким можна скористатися для проходження"
-" розпізнавання у мережевих службах."
-
-#. (itstool) path: imageobject/imagedata
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:174
-msgctxt "_"
-msgid ""
-"external ref='figures/trayicon-valid.png' "
-"md5='78989c41fd36e23c0a97b87a2cc440e4'"
-msgstr ""
-"external ref='figures/trayicon-valid.png' "
-"md5='78989c41fd36e23c0a97b87a2cc440e4'"
-
-#. (itstool) path: section/title
-#. (itstool) path: figure/title
-#: C/index.docbook:182 C/index.docbook:185
-msgid "Kerberos ticket expiring"
-msgstr "Строк дії квитка Kerberos вичерпується"
-
-#. (itstool) path: section/para
-#: C/index.docbook:183
-msgid ""
-"The Kerberos ticket is about to expire but it can still be used to "
-"authenticate to network services."
-msgstr ""
-"Строк дії квитка Kerberos вичерпується, але ви ще можете скористатися ним для"
-" проходження розпізнавання у мережевих службах."
-
-#. (itstool) path: imageobject/imagedata
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:189
-msgctxt "_"
-msgid ""
-"external ref='figures/trayicon-expiring.png' "
-"md5='cb1dbed310e568e7cb4684bac85c6969'"
-msgstr ""
-"external ref='figures/trayicon-expiring.png' "
-"md5='cb1dbed310e568e7cb4684bac85c6969'"
-
-#. (itstool) path: section/title
-#. (itstool) path: figure/title
-#: C/index.docbook:196 C/index.docbook:200
-msgid "Kerberos ticket expired"
-msgstr "Строк дії квитка Kerberos вичерпано"
-
-#. (itstool) path: section/para
-#: C/index.docbook:197
-msgid ""
-"Your Kerberos became invalid (e.g. expired). It can no longer be used to "
-"authenticate to network services. This is not a problem if the application "
-"that requires Kerberos knows how to request a new ticket via "
-"<application>Kerberos Network Authentication Dialog</application>. In case "
-"it doesn't you can just left click on the applet an reenter your password."
-msgstr ""
-"Ваші реєстраційні дані Kerberos стали некоректними (наприклад, їхній строк"
-" дії вичерпано). Ними вже не можна скористатися для проходження розпізнавання"
-" у службах мережі. Це не проблема, якщо програма, яка потребує Kerberos знає"
-" про те, як надіслати запит щодо нового квитка за допомогою <application"
-">Діалогового вікна мережевої аутентифікації Kerberos</application>. Якщо ця"
-" програма про це не знає, ви можете просто клацнути лівою кнопкою миші на"
-" аплеті і повторно ввести ваш пароль."
-
-#. (itstool) path: imageobject/imagedata
-#. This is a reference to an external file such as an image or video. When
-#. the file changes, the md5 hash will change to let you know you need to
-#. update your localized copy. The msgstr is not used at all. Set it to
-#. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:204
-msgctxt "_"
-msgid ""
-"external ref='figures/trayicon-expired.png' "
-"md5='40c03749e8e3773a0e931232a89e3fe2'"
-msgstr ""
-"external ref='figures/trayicon-expired.png' "
-"md5='40c03749e8e3773a0e931232a89e3fe2'"
-
-#. (itstool) path: section/title
-#: C/index.docbook:213
+#: C/index.docbook:171
 msgid "Notification Messages"
 msgstr "Повідомлення сповіщення"
 
 #. (itstool) path: section/para
-#: C/index.docbook:214
+#: C/index.docbook:172
 msgid ""
 "When Kerberos Network Authentication Dialog has started, the following "
 "notifications may be displayed."
 msgstr ""
-"Під час запуску «Діалогового вікна мережевої аутентифікації Kerberos» може"
-" бути показано наведені нижче сповіщення."
+"Під час запуску «Діалогового вікна мережевої аутентифікації Kerberos» може "
+"бути показано наведені нижче сповіщення."
 
 #. (itstool) path: section/title
-#: C/index.docbook:219
+#: C/index.docbook:177
 msgid "Kerberos credentials valid"
 msgstr "Реєстраційні дані Kerberos є коректними"
 
 #. (itstool) path: section/para
-#: C/index.docbook:220
+#: C/index.docbook:178
 msgid ""
 "You just acquired a valid Kerberos ticket that can be used to authenticate "
 "to network services."
 msgstr ""
-"Вами щойно отримано коректний квиток Kerberos, яким можна скористатися для"
-" проходження розпізнавання у мережевих службах."
+"Вами щойно отримано коректний квиток Kerberos, яким можна скористатися для "
+"проходження розпізнавання у мережевих службах."
 
 #. (itstool) path: figure/title
-#: C/index.docbook:222
+#: C/index.docbook:180
 msgid "Notification when Kerberos credentials become valid"
 msgstr "Сповіщення про те, що реєстраційні дані Kerberos набувають чинності"
 
@@ -425,7 +342,7 @@ msgstr "Сповіщення про те, що реєстраційні дані
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:226
+#: C/index.docbook:184
 msgctxt "_"
 msgid ""
 "external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
@@ -433,21 +350,21 @@ msgstr ""
 "external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
 
 #. (itstool) path: section/title
-#: C/index.docbook:234
+#: C/index.docbook:192
 msgid "Kerberos credentials expiring"
 msgstr "Строк дії реєстраційних даних Kerberos вичерпується"
 
 #. (itstool) path: section/para
-#: C/index.docbook:235
+#: C/index.docbook:193
 msgid ""
 "Your Kerberos credentials are about to expire. You can left click on the "
 "tray applet to refresh them."
 msgstr ""
-"Строк дії ваших реєстраційних даних Kerberos вичерпується. Ви можете клацнути"
-" лівою кнопкою миші на аплеті у системному лотку, щоб оновити їх."
+"Строк дії ваших реєстраційних даних Kerberos вичерпується. Ви можете "
+"клацнути лівою кнопкою миші на аплеті у системному лотку, щоб оновити їх."
 
 #. (itstool) path: figure/title
-#: C/index.docbook:237
+#: C/index.docbook:195
 msgid "Notification when Kerberos credentials expiring"
 msgstr ""
 "Сповіщення про те, що строк дії реєстраційних даних Kerberos вичерпується"
@@ -457,7 +374,7 @@ msgstr ""
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:241
+#: C/index.docbook:199
 msgctxt "_"
 msgid ""
 "external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
@@ -465,21 +382,21 @@ msgstr ""
 "external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
 
 #. (itstool) path: section/title
-#: C/index.docbook:249
+#: C/index.docbook:207
 msgid "Kerberos credentials expired"
 msgstr "Строк дії реєстраційних даних Kerberos вичерпано"
 
 #. (itstool) path: section/para
-#: C/index.docbook:250
+#: C/index.docbook:208
 msgid ""
 "Your Kerberos credentials just expired. They can no longer be used to "
 "authenticate to network services."
 msgstr ""
-"Строк дії ваших реєстраційних даних Kerberos щойно вичерпано. Ними більше не"
-" можна користуватися для проходження розпізнавання у мережевих службах."
+"Строк дії ваших реєстраційних даних Kerberos щойно вичерпано. Ними більше не "
+"можна користуватися для проходження розпізнавання у мережевих службах."
 
 #. (itstool) path: figure/title
-#: C/index.docbook:252
+#: C/index.docbook:210
 msgid "Notification when Kerberos credentials expired"
 msgstr "Сповіщення про те, що строк дії реєстраційних даних Kerberos вичерпано"
 
@@ -488,7 +405,7 @@ msgstr "Сповіщення про те, що строк дії реєстра�
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:256
+#: C/index.docbook:214
 msgctxt "_"
 msgid ""
 "external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
@@ -496,167 +413,167 @@ msgstr ""
 "external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
 
 #. (itstool) path: section/title
-#: C/index.docbook:265
+#: C/index.docbook:223
 msgid "Preferences"
 msgstr "Налаштування"
 
 #. (itstool) path: table/title
-#: C/index.docbook:269
+#: C/index.docbook:227
 msgid "Kerberos Principal Preferences"
 msgstr "Налаштування адміністратора доступу Kerberos"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:274
+#: C/index.docbook:232
 msgid "Dialog Element"
 msgstr "Елемент вікна"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:277
+#: C/index.docbook:235
 msgid "Description"
 msgstr "Опис"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:284
+#: C/index.docbook:242
 msgid "<guilabel>Kerberos Principal</guilabel>"
 msgstr "<guilabel>Адміністратор доступу Kerberos</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:289
+#: C/index.docbook:247
 msgid ""
 "The Kerberos principal to use. Leave blank to use you current username. If "
 "you change this setting you have to destroy the credential cache before "
 "these setting takes effect."
 msgstr ""
-"Реєстраційні дані Kerberos, якими слід скористатися. Не заповнюйте, якщо слід"
-" використати поточне ім'я вашого користувача. Якщо ви змінюєте значення цього"
-" параметра, вам слід витерти кеш реєстраційних даних до того, як зміни"
-" набудуть чинності."
+"Реєстраційні дані Kerberos, якими слід скористатися. Не заповнюйте, якщо "
+"слід використати поточне ім'я вашого користувача. Якщо ви змінюєте значення "
+"цього параметра, вам слід витерти кеш реєстраційних даних до того, як зміни "
+"набудуть чинності."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:295
+#: C/index.docbook:253
 msgid "<guilabel>PKINIT Userid</guilabel>"
 msgstr "<guilabel>Ід. користувача PKINIT</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:300
+#: C/index.docbook:258
 msgid ""
 "The principals public/private/certificate identifier. Leave empty if not "
 "using PKINIT. To enable using a security token add the path to the pkcs11 "
 "Library here, e.g. \"PKCS11:/usr/lib/opensc/opensc-pkcs11.so\""
 msgstr ""
-"Відкритий, приватний ідентифікатор або ідентифікатор за сертифікатом"
-" адміністратора. Не заповнюйте, якщо ви не користуєтеся PKINIT. Щоб увімкнути"
-" використання жетона захисту, додайте тут шлях до бібліотеки pkcs11,"
-" наприклад, «PKCS11:/usr/lib/opensc/opensc-pkcs11.so»"
+"Відкритий, приватний ідентифікатор або ідентифікатор за сертифікатом "
+"адміністратора. Не заповнюйте, якщо ви не користуєтеся PKINIT. Щоб увімкнути "
+"використання жетона захисту, додайте тут шлях до бібліотеки pkcs11, "
+"наприклад, «PKCS11:/usr/lib/opensc/opensc-pkcs11.so»"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:305
+#: C/index.docbook:263
 msgid "<guilabel>PKINIT anchors</guilabel>"
 msgstr "<guilabel>Прив'язки PKINIT</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:310
+#: C/index.docbook:268
 msgid ""
 "Path to CA certificates used as trust anchors for pkinit. You only need to "
 "set this if it hasn't been set up globally in <filename>/etc/krb5.conf</"
 "filename>"
 msgstr ""
-"Шлях до сертифікатів CA, які використовуються як прив'язки довіри для pkinit."
-" Вам слід встановлювати значення цього параметра, лише якщо його не"
-" встановлено на загальному рівні в <filename>/etc/krb5.conf</"
-"filename>"
+"Шлях до сертифікатів CA, які використовуються як прив'язки довіри для "
+"pkinit. Вам слід встановлювати значення цього параметра, лише якщо його не "
+"встановлено на загальному рівні в <filename>/etc/krb5.conf</filename>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:315
+#: C/index.docbook:273
 msgid "<guilabel>forwardable</guilabel>"
 msgstr "<guilabel>перенаправлення</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:320
+#: C/index.docbook:278
 msgid ""
 "Whether the requested Kerberos ticket should be forwardable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
-"Визначає, чи має бути запитаний квиток Kerberos придатним для"
-" переспрямовування. Зміна цього параметра потребуватиме від вас повторного"
-" проходження розпізнавання клацанням лівою кнопкою миші на піктограмі у лотку"
-" і введенням вашого пароля."
+"Визначає, чи має бути запитаний квиток Kerberos придатним для "
+"переспрямовування. Зміна цього параметра потребуватиме від вас повторного "
+"проходження розпізнавання клацанням лівою кнопкою миші на піктограмі у лотку "
+"і введенням вашого пароля."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:325
+#: C/index.docbook:283
 msgid "<guilabel>renewable</guilabel>"
 msgstr "<guilabel>можливість поновлення</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:330
+#: C/index.docbook:288
 msgid ""
 "Whether the requested Kerberos ticket should be renewable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
-"Визначає, чи має бути запитаний квиток Kerberos придатним для оновлення."
-" Зміна цього параметра потребуватиме від вас повторного проходження"
-" розпізнавання клацанням лівою кнопкою миші на піктограмі у лотку і введенням"
-" вашого пароля."
+"Визначає, чи має бути запитаний квиток Kerberos придатним для оновлення. "
+"Зміна цього параметра потребуватиме від вас повторного проходження "
+"розпізнавання клацанням лівою кнопкою миші на піктограмі у лотку і введенням "
+"вашого пароля."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:335
+#: C/index.docbook:293
 msgid "<guilabel>proxiable</guilabel>"
 msgstr "<guilabel>передача через проксі</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:340
+#: C/index.docbook:298
 msgid ""
 "Whether the requested Kerberos ticket should be proxiable. Changing this "
 "setting requires to you to reauthenticate by left clicking on the tray icon "
 "and entering your password."
 msgstr ""
-"Визначає, чи має бути запитаний квиток Kerberos придатним для"
-" переспрямовування за допомогою проксі. Зміна цього параметра потребуватиме"
-" від вас повторного проходження розпізнавання клацанням лівою кнопкою миші на"
-" піктограмі у лотку і введенням вашого пароля."
+"Визначає, чи має бути запитаний квиток Kerberos придатним для "
+"переспрямовування за допомогою проксі. Зміна цього параметра потребуватиме "
+"від вас повторного проходження розпізнавання клацанням лівою кнопкою миші на "
+"піктограмі у лотку і введенням вашого пароля."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:345
+#: C/index.docbook:303
 msgid "<guilabel>Warn .. minutes before expiry</guilabel>"
 msgstr ""
 "<guilabel>Попередити за .. хвилин до закінчення строку дії квитка</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:350
+#: C/index.docbook:308
 msgid ""
 "Notifications that your credentials are about to expire will be sent that "
 "many minutes before expiry."
 msgstr ""
-"Сповіщення щодо того, що строк дії ваших реєстраційних даних вичерпується,"
-" буде надіслано за вказану кількість хвилин до завершення строку дії."
+"Сповіщення щодо того, що строк дії ваших реєстраційних даних вичерпується, "
+"буде надіслано за вказану кількість хвилин до завершення строку дії."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:355
+#: C/index.docbook:313
 msgid "<guilabel>Show tray icon</guilabel>"
 msgstr "<guilabel>Показувати піктограму у лотку</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:360
+#: C/index.docbook:318
 msgid ""
 "Whether to show the tray icon. Disabling the tray icon will also disable "
 "notifications, the password dialog will be brought up instead."
 msgstr ""
-"Визначає, чи слід показувати піктограму у лотку. Вимикання піктограми у лотку"
-" призведе до вимикання сповіщень — замість них буде відкрито діалогове вікно"
-" введення пароля."
+"Визначає, чи слід показувати піктограму у лотку. Вимикання піктограми у "
+"лотку призведе до вимикання сповіщень — замість них буде відкрито діалогове "
+"вікно введення пароля."
 
 #. (itstool) path: section/para
-#: C/index.docbook:266
+#: C/index.docbook:224
+#| msgid ""
+#| "You can set preferences by selecting \"Preferences\" from the applets "
+#| "context menu or by selecting \"Network Authentication\" in the "
+#| "<application>Control Center</application>. <_:table-1/>"
 msgid ""
-"You can set preferences by selecting \"Preferences\" from the applets "
-"context menu or by selecting \"Network Authentication\" in the "
-"<application>Control Center</application>. <_:table-1/>"
+"You can set preferences by selecting \"Preferences\" from the window's "
+"hamburger menu. <_:table-1/>"
 msgstr ""
-"Налаштувати програму можна за допомогою пункту «Параметри» у контекстному"
-" меню або пункту «Мережева автентифікація» у <application>Центрі керування<"
-"/application>. <_:table-1/>"
+"Налаштувати програму можна за допомогою пункту «Параметри» у меню «три риски» вікна програми. <_:table-1/>"
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9
@@ -679,3 +596,71 @@ msgstr ""
 "(Free Software Foundation), без змінених частин та без текстів на "
 "обкладинках. Ви можете знайти копію ліцензії GFDL за цим <_:ulink-1/> або в "
 "файлі COPYING-DOCS, який поширюється разом з цим посібником."
+
+#~ msgid "The tray icon will indicate one of three states:"
+#~ msgstr ""
+#~ "Піктограма системного лотка повідомляє про перебування в одному з таких "
+#~ "трьох станів:"
+
+#~ msgid "Valid Kerberos ticket"
+#~ msgstr "Коректний квиток Kerberos"
+
+#~ msgid ""
+#~ "You have a valid Kerberos ticket that can be used to authenticate to "
+#~ "network services."
+#~ msgstr ""
+#~ "У вас є коректний квиток Kerberos, яким можна скористатися для "
+#~ "проходження розпізнавання у мережевих службах."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/trayicon-valid.png' "
+#~ "md5='78989c41fd36e23c0a97b87a2cc440e4'"
+#~ msgstr ""
+#~ "external ref='figures/trayicon-valid.png' "
+#~ "md5='78989c41fd36e23c0a97b87a2cc440e4'"
+
+#~ msgid "Kerberos ticket expiring"
+#~ msgstr "Строк дії квитка Kerberos вичерпується"
+
+#~ msgid ""
+#~ "The Kerberos ticket is about to expire but it can still be used to "
+#~ "authenticate to network services."
+#~ msgstr ""
+#~ "Строк дії квитка Kerberos вичерпується, але ви ще можете скористатися ним "
+#~ "для проходження розпізнавання у мережевих службах."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/trayicon-expiring.png' "
+#~ "md5='cb1dbed310e568e7cb4684bac85c6969'"
+#~ msgstr ""
+#~ "external ref='figures/trayicon-expiring.png' "
+#~ "md5='cb1dbed310e568e7cb4684bac85c6969'"
+
+#~ msgid "Kerberos ticket expired"
+#~ msgstr "Строк дії квитка Kerberos вичерпано"
+
+#~ msgid ""
+#~ "Your Kerberos became invalid (e.g. expired). It can no longer be used to "
+#~ "authenticate to network services. This is not a problem if the "
+#~ "application that requires Kerberos knows how to request a new ticket via "
+#~ "<application>Kerberos Network Authentication Dialog</application>. In "
+#~ "case it doesn't you can just left click on the applet an reenter your "
+#~ "password."
+#~ msgstr ""
+#~ "Ваші реєстраційні дані Kerberos стали некоректними (наприклад, їхній "
+#~ "строк дії вичерпано). Ними вже не можна скористатися для проходження "
+#~ "розпізнавання у службах мережі. Це не проблема, якщо програма, яка "
+#~ "потребує Kerberos знає про те, як надіслати запит щодо нового квитка за "
+#~ "допомогою <application>Діалогового вікна мережевої аутентифікації "
+#~ "Kerberos</application>. Якщо ця програма про це не знає, ви можете просто "
+#~ "клацнути лівою кнопкою миші на аплеті і повторно ввести ваш пароль."
+
+#~ msgctxt "_"
+#~ msgid ""
+#~ "external ref='figures/trayicon-expired.png' "
+#~ "md5='40c03749e8e3773a0e931232a89e3fe2'"
+#~ msgstr ""
+#~ "external ref='figures/trayicon-expired.png' "
+#~ "md5='40c03749e8e3773a0e931232a89e3fe2'"

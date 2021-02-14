@@ -28,21 +28,6 @@ configure_file(
   install_dir: join_paths(get_option('datadir'), 'dbus-1', 'services'),
 )
 
-appstream_file = i18n.merge_file(
-  input: 'krb5-auth-dialog.appdata.xml.in',
-  output: 'krb5-auth-dialog.appdata.xml',
-  po_dir: '../po',
-  install: true,
-  install_dir: join_paths(get_option('datadir'), 'metainfo')
-)
-
-appstream_util = find_program('appstream-util', required: false)
-if appstream_util.found()
-  test('Validate appstream file', appstream_util,
-    args: ['validate', '--nonet', appstream_file]
-  )
-endif
-
 schema_src = 'org.gnome.KrbAuthDialog.gschema.xml'
 compiled = gnome.compile_schemas(build_by_default: true,
                                  depend_files: files(schema_src))

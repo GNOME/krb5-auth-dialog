@@ -30,3 +30,10 @@ if compile_schemas.found()
     args: ['--strict', '--dry-run', meson.current_source_dir()]
   )
 endif
+
+man_conf = configuration_data()
+man_conf.set('minimum_lifetime', minimum_lifetime)
+man_conf.set('check_interval', check_interval)
+install_man(configure_file(input: 'krb5-auth-dialog.1.in',
+			   output: 'krb5-auth-dialog.1',
+			   configuration: man_conf))

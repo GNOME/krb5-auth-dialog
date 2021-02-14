@@ -97,12 +97,15 @@ meson.add_install_script(
 # Both heimdal and mit ship a krb5.pc:
 krb5_dep    = dependency('krb5')
 
+minimum_lifetime = get_option('minimum-lifetime')
+check_interval = get_option('check-interval')
+
 conf_data = configuration_data()
 conf_data.set_quoted('PACKAGE', meson.project_name())
 conf_data.set_quoted('VERSION', meson.project_version())
 conf_data.set_quoted('PACKAGE_VERSION', meson.project_version())
-conf_data.set('CREDENTIAL_CHECK_INTERVAL', get_option('check-interval'))
-conf_data.set('MINUTES_BEFORE_PROMPTING', get_option('minimum-lifetime'))
+conf_data.set('CREDENTIAL_CHECK_INTERVAL', check_interval)
+conf_data.set('MINUTES_BEFORE_PROMPTING', minimum_lifetime)
 conf_data.set_quoted('SC_PKCS11', get_option('pkcs11'))
 conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set_quoted('LOCALE_DIR', localedir)
@@ -251,8 +254,8 @@ subdir('help')
 subdir('etpo')
 
 summary({
-           'Minimum Lifetime': conf_data.get('MINUTES_BEFORE_PROMPTING'),
-           'Check Interval': conf_data.get('CREDENTIAL_CHECK_INTERVAL'),
+           'Minimum Lifetime': minimum_lifetime,
+           'Check Interval': check_interval,
            'pkinit': conf_data.get('ENABLE_PKINIT', 0),
            'pkcs11': conf_data.get('SC_PKCS11'),
            'pam-plugin': build_pam_plugin,

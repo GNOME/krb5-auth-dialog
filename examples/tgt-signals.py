@@ -23,31 +23,37 @@ import time
 import subprocess
 from optparse import OptionParser
 
-import gobject
+from gi.repository import GLib
 import dbus
 import dbus.mainloop.glib
+
 
 def print_info(action, principal, when):
     w = datetime.datetime.fromtimestamp(when)
     if options.verbose:
-        print "Ticket %s. Principal %s expires %s" % (action, principal, time.asctime(w.timetuple()))
+        print(f"Ticket {action} Principal {principal} expires {time.asctime(w.timetuple())}")
+
 
 def run_action(cmd):
     if cmd:
         subprocess.call(cmd, shell=True)
 
+
 def tgt_acquired_handler(principal, when):
     print_info("acquired", principal, when)
     run_action(options.acquired_action)
+
 
 def tgt_renewed_handler(principal, when):
     print_info("renewed", principal, when)
     run_action(options.renewed_action)
 
+
 def tgt_expired_handler(principal, when):
     if options.verbose:
-        print "Principal %s expired" % principal
+        print(f"Principal {principal} expired")
     run_action(options.expired_action)
+
 
 if __name__ == '__main__':
     global options
@@ -68,9 +74,8 @@ if __name__ == '__main__':
     dbus.mainloop.glib.DBusGMainLoop(set_as_default=True)
 
     bus = dbus.SessionBus()
-    bus.add_signal_receiver(tgt_renewed_handler, dbus_interface = "org.gnome.KrbAuthDialog", signal_name = "krb_tgt_renewed")
-    bus.add_signal_receiver(tgt_acquired_handler, dbus_interface = "org.gnome.KrbAuthDialog", signal_name = "krb_tgt_acquired")
-    bus.add_signal_receiver(tgt_expired_handler, dbus_interface = "org.gnome.KrbAuthDialog", signal_name = "krb_tgt_expired")
+    bus.add_signal_receiver(tgt_renewed_handler, dbus_interface="org.gnome.KrbAuthDialog", signal_name="krb_tgt_renewed")
+    bus.add_signal_receiver(tgt_acquired_handler, dbus_interface="org.gnome.KrbAuthDialog", signal_name="krb_tgt_acquired")
+    bus.add_signal_receiver(tgt_expired_handler, dbus_interface="org.gnome.KrbAuthDialog", signal_name="krb_tgt_expired")
 
-    loop = gobject.MainLoop()
-    loop.run()
+    GLib.MainLoop().run()

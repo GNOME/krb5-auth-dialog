@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2021-02-13 15:09+0000\n"
-"PO-Revision-Date: 2021-02-14 01:02+0100\n"
+"POT-Creation-Date: 2021-02-15 16:14+0000\n"
+"PO-Revision-Date: 2021-02-15 17:50+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -21,6 +21,138 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 2.4.2\n"
 "X-Project-Style: gnome\n"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:6
+msgid "Kerberos Authentication Dialog"
+msgstr "Kerberos-autentiseringsdialog"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:7
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Begär, förnya och visa Kerberos-biljetter"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:9
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"Kerberos-autentisering låter dig lista dina aktuella Kerberos-biljetter och "
+"begära en ny biljett (autentisera till Kerberos-servern). Den meddelar dig "
+"också när dina Kerberos-autentiseringsuppgifter är på väg att gå ut och "
+"förnyar din biljett automatiskt om möjligt."
+
+#: data/krb5-auth-dialog.metainfo.xml.in:15
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+"Detta är användbart om du behöver autentisera mot en Kerberos-server (KDC) "
+"efter att du loggat in till skrivbordet (t.ex. på en mobil enhet)."
+
+#: data/krb5-auth-dialog.metainfo.xml.in:23
+msgid "Kerberos authentication dialog"
+msgstr "Kerberos-autentiseringsdialog"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:6
+msgid "Kerberos principal"
+msgstr "Kerberos-principal"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:7
+msgid "The Kerberos principal to acquire the ticket for"
+msgstr "Kerberos-principal att hämta biljett för"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:11
+msgid "PKINIT identifier"
+msgstr "PKINIT-identifierare"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:12
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr ""
+"Offentlig/privat/certifikatidentifierare för principal vid användning av "
+"PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:16
+msgid "PKINIT trust anchors"
+msgstr "PKINIT-förtroendeankare"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:17
+msgid "PKINIT CA certificates"
+msgstr "PKINIT CA-certifikat"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:21
+msgid "Prompt minutes before expiry"
+msgstr "Efterfråga minuter innan förfall"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:22
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr "Börja efterfråga/visa aviseringar så många minuter före förfall"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:26
+msgid "Forwardable ticket"
+msgstr "Vidarebefordringsbar biljett"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:27
+msgid "Requested tickets should be forwardable"
+msgstr "Begärda biljetter ska vara vidarebefordringsbara"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:31
+msgid "Renewable ticket"
+msgstr "Förnyelsebara biljetter"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:32
+msgid "Requested tickets should be renewable"
+msgstr "Begärda biljetter ska vara förnyelsebara"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:36
+msgid "Proxiable ticket"
+msgstr "Proxybara biljetter"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:37
+msgid "Requested tickets should be proxiable"
+msgstr "Begärda biljetter ska vara proxybara"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:41
+msgid "Configuration tickets"
+msgstr "Konfigurationsbiljetter"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:42
+msgid "Show configuration tickets"
+msgstr "Visa konfigurationsbiljetter"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:50
+msgid "valid ticket notification"
+msgstr "giltig biljettavisering"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:51
+msgid "Notify user when ticket becomes valid"
+msgstr "Avisera användare när biljett blir giltig"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:55
+msgid "ticket expiring notification"
+msgstr "avisering för förfallande biljetter"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:56
+msgid "Notify user when ticket is about to expire"
+msgstr "Avisera användare när biljett är nära att förfalla"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:60
+msgid "ticket expired notification"
+msgstr "avisering när biljett har förfallit"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:61
+msgid "Notify user when ticket has expired"
+msgstr "Avisera användare när biljett har förfallit"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:67
+msgid "Enabled plugins"
+msgstr "Aktivera insticksmoduler"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:68
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr ""
+"Lista över insticksmoduler som ska läsas in och aktiveras vid uppstart."
 
 # Översättaranteckningar:
 # Lånat en del terminologi från https://docs.oracle.com/cd/E19496-01/806-1968/6jb7gbp27/index.html
@@ -1215,7 +1347,7 @@ msgstr "Given data hanteras inte av denna insticksmodul"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: src/dummy-strings.c:214
-msgid "Plugin does not support the operaton"
+msgid "Plugin does not support the operation"
 msgstr "Insticksmodulen stöder inte denna åtgärd"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
@@ -1645,150 +1777,17 @@ msgstr ""
 "Skicka synpunkter på översättningen till\n"
 "<tp-sv@listor.tp-sv.se>."
 
-#: src/krb5-auth-dialog.appdata.xml.in:6
-msgid "Kerberos Authentication Dialog"
-msgstr "Kerberos-autentiseringsdialog"
-
-#: src/krb5-auth-dialog.appdata.xml.in:7
-msgid "Request, renew and view Kerberos tickets"
-msgstr "Begär, förnya och visa Kerberos-biljetter"
-
-#: src/krb5-auth-dialog.appdata.xml.in:9
-msgid ""
-"Kerberos Authentication allows you to list your current Kerberos tickets, "
-"and to request a new ticket (authenticate to the Kerberos Server). It also "
-"notifies you when your Kerberos credentials are about to expire and renews "
-"your ticket automatically if possible."
-msgstr ""
-"Kerberos-autentisering låter dig lista dina aktuella Kerberos-biljetter och "
-"begära en ny biljett (autentisera till Kerberos-servern). Den meddelar dig "
-"också när dina Kerberos-autentiseringsuppgifter är på väg att gå ut och "
-"förnyar din biljett automatiskt om möjligt."
-
-#: src/krb5-auth-dialog.appdata.xml.in:15
-msgid ""
-"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
-"your login to the desktop (e.g. on a mobile device)."
-msgstr ""
-"Detta är användbart om du behöver autentisera mot en Kerberos-server (KDC) "
-"efter att du loggat in till skrivbordet (t.ex. på en mobil enhet)."
-
-#: src/krb5-auth-dialog.appdata.xml.in:23
-msgid "Kerberos authentication dialog"
-msgstr "Kerberos-autentiseringsdialog"
-
-#: src/krb5-auth-dialog.appdata.xml.in:71
-msgid "Guido Günther"
-msgstr "Guido Günther"
-
 #: src/org.gnome.KrbAuthDialog.desktop.in:4
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Kerberos-nätverksautentiseringsdialog"
 
-#: src/org.gnome.KrbAuthDialog.desktop.in:8
-msgid "krb-valid-ticket"
-msgstr "krb-valid-ticket"
-
-#: src/org.gnome.KrbAuthDialog.desktop.in:10
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: src/org.gnome.KrbAuthDialog.desktop.in:12
 msgid "kerberos;authentication;"
 msgstr "kerberos;autentisering;"
 
-#: src/org.gnome.KrbAuthDialog.gschema.xml:6
-msgid "Kerberos principal"
-msgstr "Kerberos-principal"
+#~ msgid "Guido Günther"
+#~ msgstr "Guido Günther"
 
-#: src/org.gnome.KrbAuthDialog.gschema.xml:7
-msgid "The Kerberos principal to acquire the ticket for"
-msgstr "Kerberos-principal att hämta biljett för"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:11
-msgid "PKINIT identifier"
-msgstr "PKINIT-identifierare"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:12
-msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr ""
-"Offentlig/privat/certifikatidentifierare för principal vid användning av "
-"PKINIT"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:16
-msgid "PKINIT trust anchors"
-msgstr "PKINIT-förtroendeankare"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:17
-msgid "PKINIT CA certificates"
-msgstr "PKINIT CA-certifikat"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:21
-msgid "Prompt minutes before expiry"
-msgstr "Efterfråga minuter innan förfall"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:22
-msgid ""
-"Start prompting/displaying notifications that many minutes before expiry"
-msgstr "Börja efterfråga/visa aviseringar så många minuter före förfall"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:26
-msgid "Forwardable ticket"
-msgstr "Vidarebefordringsbar biljett"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:27
-msgid "Requested tickets should be forwardable"
-msgstr "Begärda biljetter ska vara vidarebefordringsbara"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:31
-msgid "Renewable ticket"
-msgstr "Förnyelsebara biljetter"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:32
-msgid "Requested tickets should be renewable"
-msgstr "Begärda biljetter ska vara förnyelsebara"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:36
-msgid "Proxiable ticket"
-msgstr "Proxybara biljetter"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:37
-msgid "Requested tickets should be proxiable"
-msgstr "Begärda biljetter ska vara proxybara"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:41
-msgid "Configuration tickets"
-msgstr "Konfigurationsbiljetter"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:42
-msgid "Show configuration tickets"
-msgstr "Visa konfigurationsbiljetter"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:50
-msgid "valid ticket notification"
-msgstr "giltig biljettavisering"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:51
-msgid "Notify user when ticket becomes valid"
-msgstr "Avisera användare när biljett blir giltig"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:55
-msgid "ticket expiring notification"
-msgstr "avisering för förfallande biljetter"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:56
-msgid "Notify user when ticket is about to expire"
-msgstr "Avisera användare när biljett är nära att förfalla"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:60
-msgid "ticket expired notification"
-msgstr "avisering när biljett har förfallit"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:61
-msgid "Notify user when ticket has expired"
-msgstr "Avisera användare när biljett har förfallit"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:67
-msgid "Enabled plugins"
-msgstr "Aktivera insticksmoduler"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:68
-msgid "List of plugins that should be loaded and activated on startup."
-msgstr ""
-"Lista över insticksmoduler som ska läsas in och aktiveras vid uppstart."
+#~ msgid "krb-valid-ticket"
+#~ msgstr "krb-valid-ticket"

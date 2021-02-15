@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues\n"
-"POT-Creation-Date: 2021-02-13 15:09+0000\n"
-"PO-Revision-Date: 2021-02-13 20:15+0200\n"
+"POT-Creation-Date: 2021-02-15 16:14+0000\n"
+"PO-Revision-Date: 2021-02-15 18:56+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -19,6 +19,138 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 20.11.70\n"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:6
+msgid "Kerberos Authentication Dialog"
+msgstr "Діалогове вікно аутентифікації Kerberos"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:7
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Запит, оновлення та перегляд квитків Kerberos"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:9
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"«Розпізнавання Kerberos» надає вам змогу створити список ваших поточних "
+"квитків Kerberos і надсилати запит щодо нових квитків (проходити "
+"розпізнавання на сервері Kerberos). Крім того, програма здатна сповіщати вас "
+"про наближення завершення строку дії ваших мандатів Kerberos і оновлювати "
+"ваш квиток автоматично, якщо це можливо."
+
+#: data/krb5-auth-dialog.metainfo.xml.in:15
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+"Це корисно, якщо ви хочете пройти розпізнавання на сервері Kerberos (KDC) "
+"після входу до робочого середовища (наприклад, на мобільному пристрої)."
+
+#: data/krb5-auth-dialog.metainfo.xml.in:23
+msgid "Kerberos authentication dialog"
+msgstr "Діалогове вікно розпізнавання Kerberos"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:6
+msgid "Kerberos principal"
+msgstr "Адміністратор доступу Kerberos"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:7
+msgid "The Kerberos principal to acquire the ticket for"
+msgstr "Адміністратор доступу Kerberos отримує квиток для"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:11
+msgid "PKINIT identifier"
+msgstr "Ідентифікатор PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:12
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr ""
+"Загально доступний або ж приватний Ідентифікатор чи ідентифікатор "
+"сертифікату адміністратора доступу при використанні PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:16
+msgid "PKINIT trust anchors"
+msgstr "Довірчі прив'язки PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:17
+msgid "PKINIT CA certificates"
+msgstr "Сертифікати PKINIT CA"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:21
+msgid "Prompt minutes before expiry"
+msgstr "Показувати час до завершення"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:22
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr "Запустити повідомлення запиту/показу про час завершення"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:26
+msgid "Forwardable ticket"
+msgstr "Квиток перенаправлення"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:27
+msgid "Requested tickets should be forwardable"
+msgstr "Задані квитки повинні перенаправлятися"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:31
+msgid "Renewable ticket"
+msgstr "Квиток може відновлюватися"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:32
+msgid "Requested tickets should be renewable"
+msgstr "Задані квитки повинні відновлюватися"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:36
+msgid "Proxiable ticket"
+msgstr "Квиток може передаватися через проксі"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:37
+msgid "Requested tickets should be proxiable"
+msgstr "Задані квитки повинні передаватися через проксі"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:41
+msgid "Configuration tickets"
+msgstr "Квитки налаштування"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:42
+msgid "Show configuration tickets"
+msgstr "Показати квитки налаштування"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:50
+msgid "valid ticket notification"
+msgstr "Повідомлення про дійсність квитка"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:51
+msgid "Notify user when ticket becomes valid"
+msgstr "Попереджувати користувача, коли квиток стане чинним"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:55
+msgid "ticket expiring notification"
+msgstr "Повідомлення про закінчення терміну дії квитка"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:56
+msgid "Notify user when ticket is about to expire"
+msgstr "Попереджувати користувача, коли завершується термін дії квитка"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:60
+msgid "ticket expired notification"
+msgstr "Повідомлення про закінчений терміну дії квитка"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:61
+msgid "Notify user when ticket has expired"
+msgstr "Попереджувати користувача, коли завершився термін дії квитка"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:67
+msgid "Enabled plugins"
+msgstr "Увімкнені модулі"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:68
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr "Список модулів, які завантажуються при старті."
 
 #: src/resources/ui/ka-main-window.ui:15
 msgid "Prefere_nces"
@@ -1224,8 +1356,9 @@ msgstr "Надані дані не опрацьовуються даним до�
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: src/dummy-strings.c:214
-msgid "Plugin does not support the operaton"
-msgstr "Додаток не підтримує операцію"
+#| msgid "Plugin does not support the operaton"
+msgid "Plugin does not support the operation"
+msgstr "У додатку не передбачено підтримки цієї дії"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
 #: src/dummy-strings.c:215
@@ -1571,14 +1704,12 @@ msgid "Principal"
 msgstr "Голова"
 
 #: src/ka-main-window.c:132
-#| msgid "Start Time"
 msgid "Start"
 msgstr "Початок"
 
 #: src/ka-main-window.c:138
 msgid "End"
-msgstr ""
-"Кінець"
+msgstr "Кінець"
 
 #. Translators: this is an abbreviation for forwardable
 #: src/ka-main-window.c:145
@@ -1653,157 +1784,22 @@ msgid "translator-credits"
 msgstr ""
 "Максим Дзюманенко <dziumanenko@gmail.com>wanderlust <wanderlust@ukr.net>"
 
-#: src/krb5-auth-dialog.appdata.xml.in:6
-msgid "Kerberos Authentication Dialog"
-msgstr "Діалогове вікно аутентифікації Kerberos"
-
-#: src/krb5-auth-dialog.appdata.xml.in:7
-msgid "Request, renew and view Kerberos tickets"
-msgstr "Запит, оновлення та перегляд квитків Kerberos"
-
-#: src/krb5-auth-dialog.appdata.xml.in:9
-msgid ""
-"Kerberos Authentication allows you to list your current Kerberos tickets, "
-"and to request a new ticket (authenticate to the Kerberos Server). It also "
-"notifies you when your Kerberos credentials are about to expire and renews "
-"your ticket automatically if possible."
-msgstr ""
-"«Розпізнавання Kerberos» надає вам змогу створити список ваших поточних "
-"квитків Kerberos і надсилати запит щодо нових квитків (проходити "
-"розпізнавання на сервері Kerberos). Крім того, програма здатна сповіщати вас "
-"про наближення завершення строку дії ваших мандатів Kerberos і оновлювати "
-"ваш квиток автоматично, якщо це можливо."
-
-#: src/krb5-auth-dialog.appdata.xml.in:15
-msgid ""
-"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
-"your login to the desktop (e.g. on a mobile device)."
-msgstr ""
-"Це корисно, якщо ви хочете пройти розпізнавання на сервері Kerberos (KDC) "
-"після входу до робочого середовища (наприклад, на мобільному пристрої)."
-
-#: src/krb5-auth-dialog.appdata.xml.in:23
-msgid "Kerberos authentication dialog"
-msgstr "Діалогове вікно розпізнавання Kerberos"
-
-#: src/krb5-auth-dialog.appdata.xml.in:71
-msgid "Guido Günther"
-msgstr ""
-"Guido Günther"
-
 #: src/org.gnome.KrbAuthDialog.desktop.in:4
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Діалогове вікно мережевої аутентифікації Kerberos"
 
-#: src/org.gnome.KrbAuthDialog.desktop.in:8
-msgid "krb-valid-ticket"
-msgstr ""
-"krb-valid-ticket"
-
-#: src/org.gnome.KrbAuthDialog.desktop.in:10
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: src/org.gnome.KrbAuthDialog.desktop.in:12
 msgid "kerberos;authentication;"
 msgstr ""
 "kerberos;authentication;керберос;цербер;аутентифікація;автентифікація;"
 "розпізнавання;"
 
-#: src/org.gnome.KrbAuthDialog.gschema.xml:6
-msgid "Kerberos principal"
-msgstr "Адміністратор доступу Kerberos"
+#~ msgid "Guido Günther"
+#~ msgstr "Guido Günther"
 
-#: src/org.gnome.KrbAuthDialog.gschema.xml:7
-msgid "The Kerberos principal to acquire the ticket for"
-msgstr "Адміністратор доступу Kerberos отримує квиток для"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:11
-msgid "PKINIT identifier"
-msgstr "Ідентифікатор PKINIT"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:12
-msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr ""
-"Загально доступний або ж приватний Ідентифікатор чи ідентифікатор "
-"сертифікату адміністратора доступу при використанні PKINIT"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:16
-msgid "PKINIT trust anchors"
-msgstr "Довірчі прив'язки PKINIT"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:17
-msgid "PKINIT CA certificates"
-msgstr "Сертифікати PKINIT CA"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:21
-msgid "Prompt minutes before expiry"
-msgstr "Показувати час до завершення"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:22
-msgid ""
-"Start prompting/displaying notifications that many minutes before expiry"
-msgstr "Запустити повідомлення запиту/показу про час завершення"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:26
-msgid "Forwardable ticket"
-msgstr "Квиток перенаправлення"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:27
-msgid "Requested tickets should be forwardable"
-msgstr "Задані квитки повинні перенаправлятися"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:31
-msgid "Renewable ticket"
-msgstr "Квиток може відновлюватися"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:32
-msgid "Requested tickets should be renewable"
-msgstr "Задані квитки повинні відновлюватися"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:36
-msgid "Proxiable ticket"
-msgstr "Квиток може передаватися через проксі"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:37
-msgid "Requested tickets should be proxiable"
-msgstr "Задані квитки повинні передаватися через проксі"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:41
-msgid "Configuration tickets"
-msgstr "Квитки налаштування"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:42
-msgid "Show configuration tickets"
-msgstr "Показати квитки налаштування"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:50
-msgid "valid ticket notification"
-msgstr "Повідомлення про дійсність квитка"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:51
-msgid "Notify user when ticket becomes valid"
-msgstr "Попереджувати користувача, коли квиток стане чинним"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:55
-msgid "ticket expiring notification"
-msgstr "Повідомлення про закінчення терміну дії квитка"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:56
-msgid "Notify user when ticket is about to expire"
-msgstr "Попереджувати користувача, коли завершується термін дії квитка"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:60
-msgid "ticket expired notification"
-msgstr "Повідомлення про закінчений терміну дії квитка"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:61
-msgid "Notify user when ticket has expired"
-msgstr "Попереджувати користувача, коли завершився термін дії квитка"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:67
-msgid "Enabled plugins"
-msgstr "Увімкнені модулі"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:68
-msgid "List of plugins that should be loaded and activated on startup."
-msgstr "Список модулів, які завантажуються при старті."
+#~ msgid "krb-valid-ticket"
+#~ msgstr "krb-valid-ticket"
 
 #~ msgid "Remove Credentials _Cache"
 #~ msgstr "Очистити _кеш мандатів"

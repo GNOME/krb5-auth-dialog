@@ -6,8 +6,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"POT-Creation-Date: 2021-02-14 08:52+0000\n"
-"PO-Revision-Date: 2021-02-14 13:02+0200\n"
+"POT-Creation-Date: 2021-02-15 12:35+0000\n"
+"PO-Revision-Date: 2021-02-15 20:54+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -182,8 +182,6 @@ msgstr "Guido Günther <email>agx@sigxcpu.org</email>"
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:102
-#| msgid ""
-#| "<revnumber>2.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
 msgid "<revnumber>3.0</revnumber> <date>May 2009</date> <_:revdescription-1/>"
 msgstr ""
 "<revnumber>3.0</revnumber> <date>травень 2009 року</date> <_:"
@@ -289,11 +287,6 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:162
-#| msgid ""
-#| "<application>Kerberos Network Authentication Dialog</application> is "
-#| "usually started in GNOME startup, but you can manually start "
-#| "<application>Kerberos Network Authentication Dialog</application> by "
-#| "doing:"
 msgid ""
 "From now on <application>Kerberos Network Authentication Dialog</"
 "application> will display notifications when the status of your Kerberos "
@@ -301,8 +294,11 @@ msgid ""
 "activate <application>Kerberos Network Authentication Dialog</application> "
 "by clicking on the notification or by starting it again as described above."
 msgstr ""
-"У поточній версії <application>Діалогове вікно мережевої аутентифікації Kerberos</"
-"application> показує сповіщення при зміні стану ваших квитків Kerberos. Якщо ви хочете здійснити огляд поточний квитків, просто активуйте <application>Діалогове вікно мережевої аутентифікації Kerberos</application> клацанням на сповіщенні або повторним запуском, який описано вище."
+"У поточній версії <application>Діалогове вікно мережевої аутентифікації "
+"Kerberos</application> показує сповіщення при зміні стану ваших квитків "
+"Kerberos. Якщо ви хочете здійснити огляд поточний квитків, просто активуйте "
+"<application>Діалогове вікно мережевої аутентифікації Kerberos</application> "
+"клацанням на сповіщенні або повторним запуском, який описано вище."
 
 #. (itstool) path: section/title
 #: C/index.docbook:171
@@ -535,7 +531,8 @@ msgstr ""
 
 #. (itstool) path: entry/para
 #: C/index.docbook:303
-msgid "<guilabel>Warn .. minutes before expiry</guilabel>"
+#| msgid "<guilabel>Warn .. minutes before expiry</guilabel>"
+msgid "<guilabel>Warn .. minutes before ticket expiry</guilabel>"
 msgstr ""
 "<guilabel>Попередити за .. хвилин до закінчення строку дії квитка</guilabel>"
 
@@ -548,32 +545,14 @@ msgstr ""
 "Сповіщення щодо того, що строк дії ваших реєстраційних даних вичерпується, "
 "буде надіслано за вказану кількість хвилин до завершення строку дії."
 
-#. (itstool) path: entry/para
-#: C/index.docbook:313
-msgid "<guilabel>Show tray icon</guilabel>"
-msgstr "<guilabel>Показувати піктограму у лотку</guilabel>"
-
-#. (itstool) path: entry/para
-#: C/index.docbook:318
-msgid ""
-"Whether to show the tray icon. Disabling the tray icon will also disable "
-"notifications, the password dialog will be brought up instead."
-msgstr ""
-"Визначає, чи слід показувати піктограму у лотку. Вимикання піктограми у "
-"лотку призведе до вимикання сповіщень — замість них буде відкрито діалогове "
-"вікно введення пароля."
-
 #. (itstool) path: section/para
 #: C/index.docbook:224
-#| msgid ""
-#| "You can set preferences by selecting \"Preferences\" from the applets "
-#| "context menu or by selecting \"Network Authentication\" in the "
-#| "<application>Control Center</application>. <_:table-1/>"
 msgid ""
 "You can set preferences by selecting \"Preferences\" from the window's "
 "hamburger menu. <_:table-1/>"
 msgstr ""
-"Налаштувати програму можна за допомогою пункту «Параметри» у меню «три риски» вікна програми. <_:table-1/>"
+"Налаштувати програму можна за допомогою пункту «Параметри» у меню «три "
+"риски» вікна програми. <_:table-1/>"
 
 #. (itstool) path: para/ulink
 #: C/legal.xml:9
@@ -596,6 +575,17 @@ msgstr ""
 "(Free Software Foundation), без змінених частин та без текстів на "
 "обкладинках. Ви можете знайти копію ліцензії GFDL за цим <_:ulink-1/> або в "
 "файлі COPYING-DOCS, який поширюється разом з цим посібником."
+
+#~ msgid "<guilabel>Show tray icon</guilabel>"
+#~ msgstr "<guilabel>Показувати піктограму у лотку</guilabel>"
+
+#~ msgid ""
+#~ "Whether to show the tray icon. Disabling the tray icon will also disable "
+#~ "notifications, the password dialog will be brought up instead."
+#~ msgstr ""
+#~ "Визначає, чи слід показувати піктограму у лотку. Вимикання піктограми у "
+#~ "лотку призведе до вимикання сповіщень — замість них буде відкрито "
+#~ "діалогове вікно введення пароля."
 
 #~ msgid "The tray icon will indicate one of three states:"
 #~ msgstr ""

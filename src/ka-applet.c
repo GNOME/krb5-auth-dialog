@@ -622,7 +622,7 @@ ka_send_event_notification (KaApplet *self,
     else
         g_notification_add_button (notification,
                                    _("Remove Credentials Cache"),
-                                   "app.acquire-remove-ccache");
+                                   "app.remove-ccache");
 
     g_application_send_notification (G_APPLICATION (self),
                                      PACKAGE,

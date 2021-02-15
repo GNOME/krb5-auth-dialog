@@ -211,7 +211,7 @@ const char *dummy[] = {
 	N_("Ccache function not supported: not implemented"),	/* krb5_err.et:krb5:KRB5_CC_NOSUPP */
 	N_("Invalid format of Kerberos lifetime or clock skew string"),	/* krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT */
 	N_("Supplied data not handled by this plugin"),	/* krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE */
-	N_("Plugin does not support the operaton"),	/* krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP */
+	N_("Plugin does not support the operation"),	/* krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP */
 	N_("Kerberos V5 magic number table"),	/* kv5m_err.et:kv5m:KV5M_NONE */
 	N_("Bad magic number for krb5_principal structure"),	/* kv5m_err.et:kv5m:KV5M_PRINCIPAL */
 	N_("Bad magic number for krb5_data structure"),	/* kv5m_err.et:kv5m:KV5M_DATA */

@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog-help\n"
-"POT-Creation-Date: 2021-02-14 08:52+0000\n"
-"PO-Revision-Date: 2021-02-14 12:05+0100\n"
+"POT-Creation-Date: 2021-02-15 12:35+0000\n"
+"PO-Revision-Date: 2021-02-21 12:52+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <community-poland@mozilla.org>\n"
 "Language: pl\n"
@@ -523,8 +523,8 @@ msgstr ""
 
 #. (itstool) path: entry/para
 #: C/index.docbook:303
-msgid "<guilabel>Warn .. minutes before expiry</guilabel>"
-msgstr "<guilabel>Ostrzeganie … minut przed wygaśnięciem</guilabel>"
+msgid "<guilabel>Warn .. minutes before ticket expiry</guilabel>"
+msgstr "<guilabel>Ostrzeganie … minut przed wygaśnięciem biletu</guilabel>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:308
@@ -534,20 +534,6 @@ msgid ""
 msgstr ""
 "Powiadomienia o wygaśnięciu danych uwierzytelniających będą wysyłane o tyle "
 "minut przed wygaśnięciem."
-
-#. (itstool) path: entry/para
-#: C/index.docbook:313
-msgid "<guilabel>Show tray icon</guilabel>"
-msgstr "<guilabel>Ikona w obszarze powiadamiania</guilabel>"
-
-#. (itstool) path: entry/para
-#: C/index.docbook:318
-msgid ""
-"Whether to show the tray icon. Disabling the tray icon will also disable "
-"notifications, the password dialog will be brought up instead."
-msgstr ""
-"Czy wyświetlać ikonę w obszarze powiadamiania. Wyłączenie ikony wyłączy "
-"także powiadomienia. Zamiast nich będzie wyświetlane okno dialogowe hasła."
 
 #. (itstool) path: section/para
 #: C/index.docbook:224

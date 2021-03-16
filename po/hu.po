@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues\n"
-"POT-Creation-Date: 2021-02-14 11:01+0000\n"
-"PO-Revision-Date: 2021-02-15 01:34+0100\n"
+"POT-Creation-Date: 2021-02-15 16:14+0000\n"
+"PO-Revision-Date: 2021-03-17 00:49+0100\n"
 "Last-Translator: Balázs Úr <ur.balazs at fsf dot hu>\n"
 "Language-Team: Hungarian <gnome-hu-list at gnome dot org>\n"
 "Language: hu\n"
@@ -19,6 +19,139 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 19.12.3\n"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:6
+msgid "Kerberos Authentication Dialog"
+msgstr "Kerberos hitelesítési ablak"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:7
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Kerberos jegyek kérése, megújítása és megjelenítése"
+
+#: data/krb5-auth-dialog.metainfo.xml.in:9
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"A Kerberos hitelesítés segítségével listázhatja az aktuális Kerberos "
+"jegyeit, és új jegyet kérhet (hitelesíthet a Kerberos kiszolgáló felé). "
+"Emellett értesíti is Önt, ha a jegyei hamarosan lejárnak, és automatikusan "
+"meg is újítja azokat, ha lehetséges."
+
+#: data/krb5-auth-dialog.metainfo.xml.in:15
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+"Ez hasznos, ha hitelesítenie kell egy Kerberos kiszolgáló (KDC) felé, miután "
+"bejelentkezett a fiókjába (például egy mobil eszközön)."
+
+#: data/krb5-auth-dialog.metainfo.xml.in:23
+msgid "Kerberos authentication dialog"
+msgstr "Kerberos hitelesítési ablak"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:6
+msgid "Kerberos principal"
+msgstr "Kerberos résztvevő"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:7
+msgid "The Kerberos principal to acquire the ticket for"
+msgstr "A Kerberos résztvevő, amelyhez jegyet akar szerezni"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:11
+msgid "PKINIT identifier"
+msgstr "PKINIT azonosító"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:12
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr ""
+"A résztvevő nyilvános/személyes/tanúsítvány azonosítója a PKINIT "
+"használatakor"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:16
+msgid "PKINIT trust anchors"
+msgstr "PKINIT bizalmi horgonyok"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:17
+msgid "PKINIT CA certificates"
+msgstr "PKINIT CA tanúsítványok"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:21
+msgid "Prompt minutes before expiry"
+msgstr "Figyelmeztetés a lejárat előtt ennyi perccel"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:22
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr "Figyelmeztetés/értesítések megjelenítése a lejárat előtt ennyi perccel"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:26
+msgid "Forwardable ticket"
+msgstr "Továbbítható jegy"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:27
+msgid "Requested tickets should be forwardable"
+msgstr "A kért jegyeknek továbbíthatónak kell lenniük"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:31
+msgid "Renewable ticket"
+msgstr "Megújítható jegy"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:32
+msgid "Requested tickets should be renewable"
+msgstr "A kért jegyeknek megújíthatónak kell lenniük"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:36
+msgid "Proxiable ticket"
+msgstr "Proxyzható jegy"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:37
+msgid "Requested tickets should be proxiable"
+msgstr "A kért jegyeknek proxyzhatónak kell lenniük"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:41
+msgid "Configuration tickets"
+msgstr "Konfigurációs jegyek"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:42
+msgid "Show configuration tickets"
+msgstr "Konfigurációs jegyek megjelenítése"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:50
+msgid "valid ticket notification"
+msgstr "érvényes jegy értesítés"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:51
+msgid "Notify user when ticket becomes valid"
+msgstr "Felhasználó értesítése, amikor a jegy érvényes lesz"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:55
+msgid "ticket expiring notification"
+msgstr "jegylejárat értesítés"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:56
+msgid "Notify user when ticket is about to expire"
+msgstr "Felhasználó értesítése, amikor a jegy lejárni készül"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:60
+msgid "ticket expired notification"
+msgstr "lejárt jegy értesítés"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:61
+msgid "Notify user when ticket has expired"
+msgstr "Felhasználó értesítése, amikor a jegy lejárt"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:67
+msgid "Enabled plugins"
+msgstr "Engedélyezett bővítmények"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:68
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr ""
+"A bővítmények listája, amelyeknek betöltöttnek és aktiváltnak kell lenniük "
+"indításkor."
 
 #: src/resources/ui/ka-main-window.ui:15
 msgid "Prefere_nces"
@@ -1213,7 +1346,8 @@ msgstr "A megadott adatokat nem kezeli ez a bővítmény"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: src/dummy-strings.c:214
-msgid "Plugin does not support the operaton"
+#| msgid "Plugin does not support the operaton"
+msgid "Plugin does not support the operation"
 msgstr "A bővítmény nem támogatja a műveletet"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
@@ -1559,7 +1693,6 @@ msgid "Principal"
 msgstr "Résztvevő"
 
 #: src/ka-main-window.c:132
-#| msgid "Start Time"
 msgid "Start"
 msgstr "Kezdés"
 
@@ -1641,42 +1774,6 @@ msgstr ""
 "Meskó Balázs <mesko.balazs at fsf dot hu>, 2016.\n"
 "Úr Balázs <ur.balazs at fsf dot hu>, 2016, 2021."
 
-#: src/krb5-auth-dialog.appdata.xml.in:6
-msgid "Kerberos Authentication Dialog"
-msgstr "Kerberos hitelesítési ablak"
-
-#: src/krb5-auth-dialog.appdata.xml.in:7
-msgid "Request, renew and view Kerberos tickets"
-msgstr "Kerberos jegyek kérése, megújítása és megjelenítése"
-
-#: src/krb5-auth-dialog.appdata.xml.in:9
-msgid ""
-"Kerberos Authentication allows you to list your current Kerberos tickets, "
-"and to request a new ticket (authenticate to the Kerberos Server). It also "
-"notifies you when your Kerberos credentials are about to expire and renews "
-"your ticket automatically if possible."
-msgstr ""
-"A Kerberos hitelesítés segítségével listázhatja az aktuális Kerberos "
-"jegyeit, és új jegyet kérhet (hitelesíthet a Kerberos kiszolgáló felé). "
-"Emellett értesíti is Önt, ha a jegyei hamarosan lejárnak, és automatikusan "
-"meg is újítja azokat, ha lehetséges."
-
-#: src/krb5-auth-dialog.appdata.xml.in:15
-msgid ""
-"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
-"your login to the desktop (e.g. on a mobile device)."
-msgstr ""
-"Ez hasznos, ha hitelesítenie kell egy Kerberos kiszolgáló (KDC) felé, miután "
-"bejelentkezett a fiókjába (például egy mobil eszközön)."
-
-#: src/krb5-auth-dialog.appdata.xml.in:23
-msgid "Kerberos authentication dialog"
-msgstr "Kerberos hitelesítési ablak"
-
-#: src/krb5-auth-dialog.appdata.xml.in:71
-msgid "Guido Günther"
-msgstr "Guido Günther"
-
 #: src/org.gnome.KrbAuthDialog.desktop.in:4
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Kerberos hálózati hitelesítés ablak"
@@ -1685,104 +1782,3 @@ msgstr "Kerberos hálózati hitelesítés ablak"
 #: src/org.gnome.KrbAuthDialog.desktop.in:12
 msgid "kerberos;authentication;"
 msgstr "kerberos;hitelesítés;"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:6
-msgid "Kerberos principal"
-msgstr "Kerberos résztvevő"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:7
-msgid "The Kerberos principal to acquire the ticket for"
-msgstr "A Kerberos résztvevő, amelyhez jegyet akar szerezni"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:11
-msgid "PKINIT identifier"
-msgstr "PKINIT azonosító"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:12
-msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr ""
-"A résztvevő nyilvános/személyes/tanúsítvány azonosítója a PKINIT "
-"használatakor"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:16
-msgid "PKINIT trust anchors"
-msgstr "PKINIT bizalmi horgonyok"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:17
-msgid "PKINIT CA certificates"
-msgstr "PKINIT CA tanúsítványok"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:21
-msgid "Prompt minutes before expiry"
-msgstr "Figyelmeztetés a lejárat előtt ennyi perccel"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:22
-msgid ""
-"Start prompting/displaying notifications that many minutes before expiry"
-msgstr "Figyelmeztetés/értesítések megjelenítése a lejárat előtt ennyi perccel"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:26
-msgid "Forwardable ticket"
-msgstr "Továbbítható jegy"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:27
-msgid "Requested tickets should be forwardable"
-msgstr "A kért jegyeknek továbbíthatónak kell lenniük"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:31
-msgid "Renewable ticket"
-msgstr "Megújítható jegy"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:32
-msgid "Requested tickets should be renewable"
-msgstr "A kért jegyeknek megújíthatónak kell lenniük"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:36
-msgid "Proxiable ticket"
-msgstr "Proxyzható jegy"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:37
-msgid "Requested tickets should be proxiable"
-msgstr "A kért jegyeknek proxyzhatónak kell lenniük"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:41
-msgid "Configuration tickets"
-msgstr "Konfigurációs jegyek"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:42
-msgid "Show configuration tickets"
-msgstr "Konfigurációs jegyek megjelenítése"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:50
-msgid "valid ticket notification"
-msgstr "érvényes jegy értesítés"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:51
-msgid "Notify user when ticket becomes valid"
-msgstr "Felhasználó értesítése, amikor a jegy érvényes lesz"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:55
-msgid "ticket expiring notification"
-msgstr "jegylejárat értesítés"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:56
-msgid "Notify user when ticket is about to expire"
-msgstr "Felhasználó értesítése, amikor a jegy lejárni készül"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:60
-msgid "ticket expired notification"
-msgstr "lejárt jegy értesítés"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:61
-msgid "Notify user when ticket has expired"
-msgstr "Felhasználó értesítése, amikor a jegy lejárt"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:67
-msgid "Enabled plugins"
-msgstr "Engedélyezett bővítmények"
-
-#: src/org.gnome.KrbAuthDialog.gschema.xml:68
-msgid "List of plugins that should be loaded and activated on startup."
-msgstr ""
-"A bővítmények listája, amelyeknek betöltöttnek és aktiváltnak kell lenniük "
-"indításkor."

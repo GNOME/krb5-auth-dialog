@@ -6,8 +6,8 @@
 msgid ""
 msgstr "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues\n"
-"POT-Creation-Date: 2021-02-15 16:14+0000\n"
-"PO-Revision-Date: 2022-03-30 10:00+0000\n"
+"POT-Creation-Date: 2022-04-17 11:21+0000\n"
+"PO-Revision-Date: 2022-04-21 10:00+0000\n"
 "Last-Translator: Asier Sarasua Garmendia <asier.sarasua@gmail.com>\n"
 "Language-Team: Basque <librezale@librezale.eus>\n"
 "Language: eu\n"
@@ -354,17 +354,17 @@ msgstr "ASN.1 analisi-errorea"
 #. asn1_err.et:asn1:ASN1_PARSE_ERROR
 #: src/dummy-strings.c:20
 msgid "ASN.1 bad return from gmtime"
-msgstr ""
+msgstr "ASN.1 itzulera okerra gmtime-rako"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: src/dummy-strings.c:21
 msgid "ASN.1 non-constructed indefinite encoding"
-msgstr ""
+msgstr "ASN.1 eraiki gabeko kodeketa definitu gabea"
 
 #. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
 #: src/dummy-strings.c:22
 msgid "ASN.1 missing expected EOC"
-msgstr ""
+msgstr "ASN.1 espero zen EOC falta da"
 
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: src/dummy-strings.c:23
@@ -419,12 +419,12 @@ msgstr "Bezeroak edo zerbitzariak gako nulua du"
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
 #: src/dummy-strings.c:33
 msgid "Ticket is ineligible for postdating"
-msgstr ""
+msgstr "Tiketa ezin da aukeratu postdatarako"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
 #: src/dummy-strings.c:34
 msgid "Requested effective lifetime is negative or too short"
-msgstr ""
+msgstr "Eskatutako bizialdi efektiboa negatiboa edo laburregia da"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
 #: src/dummy-strings.c:35
@@ -444,17 +444,17 @@ msgstr "KDCk ez du zifratze motarako euskarririk"
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
 #: src/dummy-strings.c:38
 msgid "KDC has no support for checksum type"
-msgstr ""
+msgstr "KDCk ez du kontrol-baturaren motarako euskarririk"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
 #: src/dummy-strings.c:39
 msgid "KDC has no support for padata type"
-msgstr ""
+msgstr "KDCk ez du euskarririk padata motarako"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
 #: src/dummy-strings.c:40
 msgid "KDC has no support for transited type"
-msgstr ""
+msgstr "KDCk ez du euskarririk igarotze motarako"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
 #: src/dummy-strings.c:41
@@ -504,12 +504,12 @@ msgstr "Eskatutako zerbitzaria eta tiketa ez datoz bat"
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: src/dummy-strings.c:50
 msgid "A service is not available that is required to process the request"
-msgstr ""
+msgstr "Eskaria prozesatzeko beharrezkoa den zerbitzu bat ez dago eskuragarri"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
 #: src/dummy-strings.c:51
 msgid "Decrypt integrity check failed"
-msgstr ""
+msgstr "Deszifratzearen osotasun-egiaztatzeak huts egin du"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
 #: src/dummy-strings.c:52
@@ -524,7 +524,7 @@ msgstr "Tiketa ez da oraindik baliozkoa"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
 #: src/dummy-strings.c:54
 msgid "Request is a replay"
-msgstr ""
+msgstr "Eskaria errepikapen bat da"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
 #: src/dummy-strings.c:55
@@ -539,7 +539,7 @@ msgstr "Tiketa/autentifikatzailea ez datoz bat"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: src/dummy-strings.c:57
 msgid "Clock skew too great"
-msgstr ""
+msgstr "Ordulari-distortsio handiegia"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
 #: src/dummy-strings.c:58
@@ -549,7 +549,7 @@ msgstr "Sareko helbide okerra"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
 #: src/dummy-strings.c:59
 msgid "Protocol version mismatch"
-msgstr ""
+msgstr "Protokolo-bertsioa ez dator bat"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
 #: src/dummy-strings.c:60
@@ -569,7 +569,7 @@ msgstr "Ordenaz kanpoko mezua"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
 #: src/dummy-strings.c:63
 msgid "Illegal cross-realm ticket"
-msgstr ""
+msgstr "Domeinuarteko legez kanpoko tiketa"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
 #: src/dummy-strings.c:64
@@ -605,12 +605,12 @@ msgstr "Sekuentzia-zenbaki okerra mezuan"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
 #: src/dummy-strings.c:70
 msgid "Inappropriate type of checksum in message"
-msgstr ""
+msgstr "Kontrol-baturaren mota desegokia mezuan"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
 #: src/dummy-strings.c:71
 msgid "Policy rejects transited path"
-msgstr ""
+msgstr "Igarotako bidea politikak baztertua"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
 #: src/dummy-strings.c:72
@@ -690,37 +690,37 @@ msgstr "KDCren izena ez dator bat"
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
 #: src/dummy-strings.c:87
 msgid "Inconsistent key purpose"
-msgstr ""
+msgstr "Gako-xede inkoherentea"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
 #: src/dummy-strings.c:88
 msgid "Digest in certificate not accepted"
-msgstr ""
+msgstr "Ez da onartzen laburpenik ziurtagirian"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
 #: src/dummy-strings.c:89
 msgid "Checksum must be included"
-msgstr ""
+msgstr "Kontrol-batura sartu behar da"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
 #: src/dummy-strings.c:90
 msgid "Digest in signed-data not accepted"
-msgstr ""
+msgstr "Ez da onartzen laburpenik sinatutako datuetan"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
 #: src/dummy-strings.c:91
 msgid "Public key encryption not supported"
-msgstr ""
+msgstr "Gako publikoaren zifratzea ez da onartzen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
 #: src/dummy-strings.c:92
 msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
-msgstr ""
+msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
 
 #. krb5_err.et:krb5:KRB5_ERR_RCSID
 #: src/dummy-strings.c:93
 msgid "Invalid flag for file lock mode"
-msgstr ""
+msgstr "Bandera baliogabea fitxategien blokeo modurako"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
 #: src/dummy-strings.c:94
@@ -745,7 +745,7 @@ msgstr "Legez kanpoko karakterea osagaiaren izenean"
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
 #: src/dummy-strings.c:98
 msgid "Malformed representation of principal"
-msgstr ""
+msgstr "Nagusiaren gaizki osatutako adierazpena"
 
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
 #: src/dummy-strings.c:99
@@ -755,42 +755,42 @@ msgstr "Izen da ireki/aurkit Kerberosen konfigurazio-fitxategia"
 #. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
 #: src/dummy-strings.c:100
 msgid "Improper format of Kerberos configuration file"
-msgstr ""
+msgstr "Kerberos konfigurazio-fitxategiaren formatu desegokia"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
 #: src/dummy-strings.c:101
 msgid "Insufficient space to return complete information"
-msgstr ""
+msgstr "Ez dago informazio osoa itzultzeko behar adina tokirk"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
 #: src/dummy-strings.c:102
 msgid "Invalid message type specified for encoding"
-msgstr ""
+msgstr "Mezu mota baliogabea zehaztu da kodeketarako"
 
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
 #: src/dummy-strings.c:103
 msgid "Credential cache name malformed"
-msgstr ""
+msgstr "Kredentzialen cache-izena gaizki osatua"
 
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
 #: src/dummy-strings.c:104
 msgid "Unknown credential cache type"
-msgstr ""
+msgstr "Kredentzialen cache-izen ezezaguna"
 
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
 #: src/dummy-strings.c:105
 msgid "Matching credential not found"
-msgstr ""
+msgstr "Ez da aurkitu bat datorren kredentziala"
 
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
 #: src/dummy-strings.c:106
 msgid "End of credential cache reached"
-msgstr ""
+msgstr "Kredentzial-cachearen amaierara iritsi da"
 
 #. krb5_err.et:krb5:KRB5_CC_END
 #: src/dummy-strings.c:107
 msgid "Request did not supply a ticket"
-msgstr ""
+msgstr "Eskariak ez du tiketik eman"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
 #: src/dummy-strings.c:108
@@ -805,22 +805,22 @@ msgstr "Tiketak bandera baliogabea du ezarrita"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
 #: src/dummy-strings.c:110
 msgid "Requested principal and ticket don't match"
-msgstr ""
+msgstr "Eskatutako nagusia eta tiketa ez datoz bat"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
 #: src/dummy-strings.c:111
 msgid "KDC reply did not match expectations"
-msgstr ""
+msgstr "KDCren erantzuna ez dator bat esperotakoarekin"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
 #: src/dummy-strings.c:112
 msgid "Clock skew too great in KDC reply"
-msgstr ""
+msgstr "Ordulari-distortsioa handiegia da KDCren erantzunean"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: src/dummy-strings.c:113
 msgid "Client/server realm mismatch in initial ticket request"
-msgstr ""
+msgstr "Bezero/zerbitzari domeinua ez dator bat hasierako tiket-eskarian"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: src/dummy-strings.c:114
@@ -840,12 +840,12 @@ msgstr "Eskatutako zifratze mota ez da erabili mezuan"
 #. krb5_err.et:krb5:KRB5_WRONG_ETYPE
 #: src/dummy-strings.c:117
 msgid "Program lacks support for checksum type"
-msgstr ""
+msgstr "Programak ez du euskarririk kontrol-batura motarako"
 
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
 #: src/dummy-strings.c:118
 msgid "Cannot find KDC for requested realm"
-msgstr ""
+msgstr "Ezin da KFC aurkitu eskatutako domeinurako"
 
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: src/dummy-strings.c:119
@@ -855,7 +855,7 @@ msgstr "Kerberos zerbitzu ezezaguna"
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: src/dummy-strings.c:120
 msgid "Cannot contact any KDC for requested realm"
-msgstr ""
+msgstr "Ezin da inolako KDCrekin kontaktatu eskatutako domeinurako"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: src/dummy-strings.c:121
@@ -865,17 +865,17 @@ msgstr "Ez da izen lokalik aurkitu izen nagusian"
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
 #: src/dummy-strings.c:123
 msgid "Replay cache type is already registered"
-msgstr ""
+msgstr "Erreproduzio-cachearen mota dagoeneko erregistratuta dago"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
 #: src/dummy-strings.c:124
 msgid "No more memory to allocate (in replay cache code)"
-msgstr ""
+msgstr "Ezin da memoria gehiagorik esleitu (erreprodukzio-cachearen kodean)"
 
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
 #: src/dummy-strings.c:125
 msgid "Replay cache type is unknown"
-msgstr ""
+msgstr "Erreproduzio-cachearen mota ezezaguna da"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
 #: src/dummy-strings.c:126
@@ -885,42 +885,42 @@ msgstr "RC errore ezezagun orokorra"
 #. krb5_err.et:krb5:KRB5_RC_UNKNOWN
 #: src/dummy-strings.c:127
 msgid "Message is a replay"
-msgstr ""
+msgstr "Mezua erreprodukzio bat da"
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: src/dummy-strings.c:128
 msgid "Replay I/O operation failed XXX"
-msgstr ""
+msgstr "Erreprodukzioaren S/I eragiketak huts egin du hemen: XXX"
 
 #. krb5_err.et:krb5:KRB5_RC_IO
 #: src/dummy-strings.c:129
 msgid "Replay cache type does not support non-volatile storage"
-msgstr ""
+msgstr "Erreprodukzio-cachearen motak ez du onartzen hegazkorra ez den biltegiratzea"
 
 #. krb5_err.et:krb5:KRB5_RC_NOIO
 #: src/dummy-strings.c:130
 msgid "Replay cache name parse/format error"
-msgstr ""
+msgstr "Errorea erreprodukzio-cachearen izena analizatzean/formatuan"
 
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: src/dummy-strings.c:131
 msgid "End-of-file on replay cache I/O"
-msgstr ""
+msgstr "Fitxategi-amaiera erreprodukzio-cachearen S/I eragiketan"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: src/dummy-strings.c:132
 msgid "No more memory to allocate (in replay cache I/O code)"
-msgstr ""
+msgstr "Ezin da memoria gehiagorik esleitu (erreprodukzio-cachearen S/I kodean)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: src/dummy-strings.c:133
 msgid "Permission denied in replay cache code"
-msgstr ""
+msgstr "Baimena ukatu da erreprodukzio-cachearen kodean"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
 #: src/dummy-strings.c:134
 msgid "I/O error in replay cache i/o code"
-msgstr ""
+msgstr "S/I errorea erreprodukzio cachearen s/i kodean"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: src/dummy-strings.c:135
@@ -930,47 +930,47 @@ msgstr "RC/IO errore ezezagun orokorra"
 #. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
 #: src/dummy-strings.c:136
 msgid "Insufficient system space to store replay information"
-msgstr ""
+msgstr "Leku gutxiegi sisteman erreprodukzio-informazioa biltegiratzeko"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
 #: src/dummy-strings.c:137
 msgid "Can't open/find realm translation file"
-msgstr ""
+msgstr "Ezin da ireki/aurkitu domeinua itzultzeko fitxategia"
 
 #. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
 #: src/dummy-strings.c:138
 msgid "Improper format of realm translation file"
-msgstr ""
+msgstr "Domeinua itzultzeko fitxategiaren formatu desegokia"
 
 #. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
 #: src/dummy-strings.c:139
 msgid "Can't open/find lname translation database"
-msgstr ""
+msgstr "Ezin da ireki/aurkitu izena itzultzeko datu-basea"
 
 #. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
 #: src/dummy-strings.c:140
 msgid "No translation available for requested principal"
-msgstr ""
+msgstr "Ez dago itzulpenik eskuragarri eskatutako nagusirako"
 
 #. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
 #: src/dummy-strings.c:141
 msgid "Improper format of translation database entry"
-msgstr ""
+msgstr "Itzulpene datu-basearen sarreraren formatu desegokia"
 
 #. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
 #: src/dummy-strings.c:142
 msgid "Cryptosystem internal error"
-msgstr ""
+msgstr "Zifratze-sistemaren barneko errorea"
 
 #. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
 #: src/dummy-strings.c:143
 msgid "Key table name malformed"
-msgstr ""
+msgstr "Gako-taularen izena gaizki osatuta dago"
 
 #. krb5_err.et:krb5:KRB5_KT_BADNAME
 #: src/dummy-strings.c:144
 msgid "Unknown Key table type"
-msgstr ""
+msgstr "Gako-taularen mota ezezaguna"
 
 #. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
 #: src/dummy-strings.c:145
@@ -995,232 +995,232 @@ msgstr "Errorea gako-taulan idaztean"
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: src/dummy-strings.c:149
 msgid "Cannot find ticket for requested realm"
-msgstr ""
+msgstr "Ezin da tiketa aurkitu eskatutako domeinurako"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: src/dummy-strings.c:150
 msgid "DES key has bad parity"
-msgstr ""
+msgstr "DES gakoak parekidetasun okerra du"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
 #: src/dummy-strings.c:151
 msgid "DES key is a weak key"
-msgstr ""
+msgstr "DES gakoa ahula da"
 
 #. krb5_err.et:krb5:KRB5DES_WEAK_KEY
 #: src/dummy-strings.c:152
 msgid "Bad encryption type"
-msgstr ""
+msgstr "Zifratze mota okerra"
 
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
 #: src/dummy-strings.c:153
 msgid "Key size is incompatible with encryption type"
-msgstr ""
+msgstr "Gakoaren tamaina ez da bateragarria zifratze motarekin"
 
 #. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
 #: src/dummy-strings.c:154
 msgid "Message size is incompatible with encryption type"
-msgstr ""
+msgstr "Mezuaren tamaina ez da bateragarria zigratze motarekin"
 
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
 #: src/dummy-strings.c:155
 msgid "Credentials cache type is already registered."
-msgstr ""
+msgstr "Kredentzialen cachearen mota dagoeneko erregistratuta dago."
 
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
 #: src/dummy-strings.c:156
 msgid "Key table type is already registered."
-msgstr ""
+msgstr "Gako-taularen mota dagoeneko erregistratuta dago."
 
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
 #: src/dummy-strings.c:157
 msgid "Credentials cache I/O operation failed XXX"
-msgstr ""
+msgstr "Kredentzialen cachearen S/I eragiketak huts egin du XXX"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
 #: src/dummy-strings.c:158
 msgid "Credentials cache permissions incorrect"
-msgstr ""
+msgstr "Kredentzialen cachearen baimenak ez dira zuzenak"
 
 #. krb5_err.et:krb5:KRB5_FCC_PERM
 #: src/dummy-strings.c:159
 msgid "No credentials cache found"
-msgstr ""
+msgstr "Ez da kredentzialen cacherik aurkitu"
 
 #. krb5_err.et:krb5:KRB5_FCC_NOFILE
 #: src/dummy-strings.c:160
 msgid "Internal credentials cache error"
-msgstr ""
+msgstr "Barneko kredentzialen cachearen errorea"
 
 #. krb5_err.et:krb5:KRB5_FCC_INTERNAL
 #: src/dummy-strings.c:161
 msgid "Error writing to credentials cache"
-msgstr ""
+msgstr "Errorea kredentzialen cachean idaztean"
 
 #. krb5_err.et:krb5:KRB5_CC_WRITE
 #: src/dummy-strings.c:162
 msgid "No more memory to allocate (in credentials cache code)"
-msgstr ""
+msgstr "Ezin da memoria gehiagorik esleitu (kredentzialen cachearen kodean)"
 
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
 #: src/dummy-strings.c:163
 msgid "Bad format in credentials cache"
-msgstr ""
+msgstr "Formatu okerra kredentzialen cachean"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
 #: src/dummy-strings.c:164
 msgid "No credentials found with supported encryption types"
-msgstr ""
+msgstr "Ez da kredentzialik aurkitu onartutako zifratze motekin"
 
 #. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
 #: src/dummy-strings.c:165
 msgid "Invalid KDC option combination (library internal error)"
-msgstr ""
+msgstr "KDC aukera-konbinazio okerra (liburutegiaren barneko errorea)"
 
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
 #: src/dummy-strings.c:166
 msgid "Request missing second ticket"
-msgstr ""
+msgstr "Eskariak bigarren tiketa falta du"
 
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
 #: src/dummy-strings.c:167
 msgid "No credentials supplied to library routine"
-msgstr ""
+msgstr "Ez zaio kredentzialik eman liburutegi-errutinari"
 
 #. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
 #: src/dummy-strings.c:168
 msgid "Bad sendauth version was sent"
-msgstr ""
+msgstr "sendauth bertsio okerra bidali da"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
 #: src/dummy-strings.c:169
 msgid "Bad application version was sent (via sendauth)"
-msgstr ""
+msgstr "Aplikazio-bertsio okerra bidali da (sendauth bidez)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
 #: src/dummy-strings.c:170
 msgid "Bad response (during sendauth exchange)"
-msgstr ""
+msgstr "Erantzun okerra (sendauth trukean)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
 #: src/dummy-strings.c:171
 msgid "Server rejected authentication (during sendauth exchange)"
-msgstr ""
+msgstr "Zerbitzariak autentifikazioa baztertu du (sendauth trukean)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
 #: src/dummy-strings.c:172
 msgid "Unsupported preauthentication type"
-msgstr ""
+msgstr "Onartzen ez den aurreautentifikazio mota"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
 #: src/dummy-strings.c:173
 msgid "Required preauthentication key not supplied"
-msgstr ""
+msgstr "Ez da eman beharrezkoa den aurreautentifikazio-gakoa"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
 #: src/dummy-strings.c:174
 msgid "Generic preauthentication failure"
-msgstr ""
+msgstr "Aurreautentifikazioaren hutsegite generikoa"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
 #: src/dummy-strings.c:175
 msgid "Unsupported replay cache format version number"
-msgstr ""
+msgstr "Onartzen ez den erreprodukzio-cachearen formatuaren bertsio-zenbakia"
 
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
 #: src/dummy-strings.c:176
 msgid "Unsupported credentials cache format version number"
-msgstr ""
+msgstr "Onartzen ez den kredentzialen cachearen formatuaren bertsio-zenbakia"
 
 #. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
 #: src/dummy-strings.c:177
 msgid "Unsupported key table format version number"
-msgstr ""
+msgstr "Onartzen ez den gako-taularen formatuaren bertsio-zenbakia"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
 #: src/dummy-strings.c:178
 msgid "Program lacks support for address type"
-msgstr ""
+msgstr "Programak ez du euskarririk helbide motarako"
 
 #. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
 #: src/dummy-strings.c:179
 msgid "Message replay detection requires rcache parameter"
-msgstr ""
+msgstr "Mezuaren erreprodukzioaren detekzioak rcache parametroa behar du"
 
 #. krb5_err.et:krb5:KRB5_RC_REQUIRED
 #: src/dummy-strings.c:180
 msgid "Hostname cannot be canonicalized"
-msgstr ""
+msgstr "Ostalari-izena ezin da kanonizatu"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
 #: src/dummy-strings.c:181
 msgid "Cannot determine realm for host"
-msgstr ""
+msgstr "Ezin da domeinua zehaztu ostalarirako"
 
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
 #: src/dummy-strings.c:182
 msgid "Conversion to service principal undefined for name type"
-msgstr ""
+msgstr "Nagusiaren zerbitzuaren bihurketa definitu gabea izen motarako"
 
 #. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
 #: src/dummy-strings.c:183
 msgid "Initial Ticket response appears to be Version 4 error"
-msgstr ""
+msgstr "Hasierako tiket-erantzunak 4. bertsioaren errorea dirudi"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
 #: src/dummy-strings.c:184
 msgid "Cannot resolve network address for KDC in requested realm"
-msgstr ""
+msgstr "Ezin da sare-helbidea ebatzi KDCrako eskatutako domeinuan"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: src/dummy-strings.c:185
 msgid "Requesting ticket can't get forwardable tickets"
-msgstr ""
+msgstr "Tiket-eskariak ezin du eskuratu tiket birbidalgarria"
 
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
 #: src/dummy-strings.c:186
 msgid "Bad principal name while trying to forward credentials"
-msgstr ""
+msgstr "Nagusiaren izen okerra kredentzialak birbidaltzen saiatzean"
 
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
 #: src/dummy-strings.c:187
 msgid "Looping detected inside krb5_get_in_tkt"
-msgstr ""
+msgstr "Begizta detektatu da krb5_get_in_tkt barruan"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: src/dummy-strings.c:188
 msgid "Configuration file does not specify default realm"
-msgstr ""
+msgstr "Konfigurazio-fitxategiak ez du domeinu lehenetsia zehaztu"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
 #: src/dummy-strings.c:189
 msgid "Bad SAM flags in obtain_sam_padata"
-msgstr ""
+msgstr "SAM bandera okerrak obtain_sam_padata funtzioan"
 
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
 #: src/dummy-strings.c:190
 msgid "Invalid encryption type in SAM challenge"
-msgstr ""
+msgstr "Zifratze mota baliogabea SAM erronkan"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
 #: src/dummy-strings.c:191
 msgid "Missing checksum in SAM challenge"
-msgstr ""
+msgstr "Kontrol-batura falta da SAM erronkan"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
 #: src/dummy-strings.c:192
 msgid "Bad checksum in SAM challenge"
-msgstr ""
+msgstr "Kontrol-batura okerra SAM erronkan"
 
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
 #: src/dummy-strings.c:193
 msgid "Keytab name too long"
-msgstr ""
+msgstr "Gako-fitxaren izen luzeegia"
 
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
 #: src/dummy-strings.c:194
 msgid "Key version number for principal in key table is incorrect"
-msgstr ""
+msgstr "Nagusiak gako-taulan duen gako-bertsioaren zenbakia ez da zuzena"
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
 #: src/dummy-strings.c:195
@@ -1245,7 +1245,7 @@ msgstr "Pasahitzaren aldaketak huts egin du"
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
 #: src/dummy-strings.c:199
 msgid "Bad format in keytab"
-msgstr ""
+msgstr "Formatu okerra gako-fitxan"
 
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
 #: src/dummy-strings.c:200
@@ -1255,7 +1255,7 @@ msgstr "ZIfratze mota ez da onartzen"
 #. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
 #: src/dummy-strings.c:201
 msgid "No supported encryption types (config file error?)"
-msgstr ""
+msgstr "Onartzen ez diren zifratze motak (konfigurazio-fitxategiaren errorea?)"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
 #: src/dummy-strings.c:202
@@ -1265,32 +1265,32 @@ msgstr "Programak funtzio zaharkitu eta ezabatu bati deitu dio"
 #. krb5_err.et:krb5:KRB5_OBSOLETE_FN
 #: src/dummy-strings.c:203
 msgid "unknown getaddrinfo failure"
-msgstr ""
+msgstr "getaddrinfo hutsegite ezezaguna"
 
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
 #: src/dummy-strings.c:204
 msgid "no data available for host/domain name"
-msgstr ""
+msgstr "Ez dago daturik eskuragarria ostalari/domeinu izenerako "
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
 #: src/dummy-strings.c:205
 msgid "host/domain name not found"
-msgstr ""
+msgstr "Ez da aurkitu ostalari/domeinu izena"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: src/dummy-strings.c:206
 msgid "service name unknown"
-msgstr "zerbitzu-izen ezezaguna"
+msgstr "Zerbitzu-izen ezezaguna"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: src/dummy-strings.c:207
 msgid "Cannot determine realm for numeric host address"
-msgstr ""
+msgstr "Ezin da domeinua zehaztu zenbakizko ostalari-helbiderako"
 
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
 #: src/dummy-strings.c:208
 msgid "Invalid key generation parameters from KDC"
-msgstr ""
+msgstr "Gakoa sortzeko parametro baliogabeak KDCn"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: src/dummy-strings.c:209
@@ -1300,22 +1300,22 @@ msgstr "zerbitzua ez dago erabilgarri"
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: src/dummy-strings.c:210
 msgid "Ccache function not supported: read-only ccache type"
-msgstr ""
+msgstr "Cache-funtzioa ez da onartzen: irakurtzeko soilik den ccache mota"
 
 #. krb5_err.et:krb5:KRB5_CC_READONLY
 #: src/dummy-strings.c:211
 msgid "Ccache function not supported: not implemented"
-msgstr ""
+msgstr "Ccache funtzioa ez da onartzen: ez dago inplementatuta"
 
 #. krb5_err.et:krb5:KRB5_CC_NOSUPP
 #: src/dummy-strings.c:212
 msgid "Invalid format of Kerberos lifetime or clock skew string"
-msgstr ""
+msgstr "Kerberos bizialdiaren edo ordulari-distortsioaren katearen formatu baliogabea"
 
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
 #: src/dummy-strings.c:213
 msgid "Supplied data not handled by this plugin"
-msgstr ""
+msgstr "Plugin honek ez ditu emandako datuak maneiatzen"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
 #: src/dummy-strings.c:214

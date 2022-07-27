@@ -28,7 +28,6 @@ build-debian:
     - ninja -C _build
 
 flatpak:
-  image: registry.gitlab.gnome.org/gnome/gnome-runtime-images/gnome:master
   stage: build
   variables:
     MANIFEST_PATH: 'org.gnome.KrbAuthDialog.json'

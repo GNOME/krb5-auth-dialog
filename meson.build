@@ -1,5 +1,5 @@
 project('krb5-auth-dialog', 'c',
-          version: '3.26.1',
+          version: '43.0',
           license: 'GPLv2-or-later',
     meson_version: '>= 0.53.0',
   default_options: [ 'warning_level=1', 'buildtype=debugoptimized', 'c_std=gnu11' ],

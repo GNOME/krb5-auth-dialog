@@ -480,11 +480,13 @@
                                     </child>
                                     <child>
                                       <object class="GtkButton" id="pkuserid_button">
-                                        <property name="label" translatable="yes">_Browse...</property>
                                         <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
-                                        <property name="receives_default">True</property>
-                                        <property name="use_underline">True</property>
+                                        <child>
+                                          <object class="GtkImage">
+                                            <property name="visible">True</property>
+                                            <property name="icon-name">folder-open-symbolic</property>
+                                          </object>
+                                        </child>
                                       </object>
                                       <packing>
                                         <property name="expand">False</property>
@@ -572,11 +574,13 @@
                         </child>
                         <child>
                           <object class="GtkButton" id="pkanchors_button">
-                            <property name="label" translatable="yes">_Browse...</property>
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <property name="use_underline">True</property>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="visible">True</property>
+                                <property name="icon-name">folder-open-symbolic</property>
+                              </object>
+                            </child>
                           </object>
                           <packing>
                             <property name="expand">False</property>

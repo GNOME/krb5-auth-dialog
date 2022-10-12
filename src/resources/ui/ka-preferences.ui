@@ -251,9 +251,6 @@
                                           </object>
                                         </child>
                                       </object>
-                                      <packing>
-                                        <property name="padding">5</property>
-                                      </packing>
                                     </child>
                                   </object>
                                 </child>
@@ -302,9 +299,6 @@
                               </object>
                             </child>
                           </object>
-                          <packing>
-                            <property name="padding">5</property>
-                          </packing>
                         </child>
                       </object>
                     </child>

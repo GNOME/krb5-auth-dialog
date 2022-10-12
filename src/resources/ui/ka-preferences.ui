@@ -63,8 +63,8 @@
                                 <child>
                                   <object class="GtkEntry" id="principal_entry">
                                     <property name="visible">True</property>
-				    <property name="margin-top">5</property>
-				    <property name="margin-left">12</property>
+                                    <property name="margin-top">5</property>
+                                    <property name="margin-left">12</property>
                                     <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
                                     <property name="invisible_char">●</property>
                                     <property name="activates_default">True</property>
@@ -130,15 +130,10 @@
                               <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <child>
-                                  <object class="GtkLabel">
-                                    <property name="visible">True</property>
-                                    <property name="label">    </property>
-                                  </object>
-                                </child>
-                                <child>
                                   <object class="GtkCheckButton" id="forwardable_toggle">
                                     <property name="label" translatable="yes">forwardable</property>
                                     <property name="visible">True</property>
+                                    <property name="margin-left">12</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
                                     <property name="xalign">0</property>
@@ -151,15 +146,10 @@
                               <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <child>
-                                  <object class="GtkLabel">
-                                    <property name="visible">True</property>
-                                    <property name="label">    </property>
-                                  </object>
-                                </child>
-                                <child>
                                   <object class="GtkCheckButton" id="renewable_toggle">
                                     <property name="label" translatable="yes">renewable</property>
                                     <property name="visible">True</property>
+                                    <property name="margin-left">12</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
                                     <property name="xalign">0</property>
@@ -172,15 +162,10 @@
                               <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <child>
-                                  <object class="GtkLabel">
-                                    <property name="visible">True</property>
-                                    <property name="label">    </property>
-                                  </object>
-                                </child>
-                                <child>
                                   <object class="GtkCheckButton" id="proxiable_toggle">
                                     <property name="label" translatable="yes">proxiable</property>
                                     <property name="visible">True</property>
+                                    <property name="margin-left">12</property>
                                     <property name="receives_default">False</property>
                                     <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
                                     <property name="xalign">0</property>

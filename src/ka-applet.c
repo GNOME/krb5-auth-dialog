@@ -509,7 +509,7 @@ ka_applet_class_init (KaAppletClass *klass)
 
     pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_FORWARDABLE,
                                   "Forwardable ticket",
-                                  "wether to request forwardable tickets",
+                                  "whether to request forwardable tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class,
@@ -517,7 +517,7 @@ ka_applet_class_init (KaAppletClass *klass)
 
     pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_PROXIABLE,
                                   "Proxiable ticket",
-                                  "wether to request proxiable tickets",
+                                  "whether to request proxiable tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class,
@@ -525,7 +525,7 @@ ka_applet_class_init (KaAppletClass *klass)
 
     pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_RENEWABLE,
                                   "Renewable ticket",
-                                  "wether to request renewable tickets",
+                                  "whether to request renewable tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class,
@@ -533,7 +533,7 @@ ka_applet_class_init (KaAppletClass *klass)
 
     pspec = g_param_spec_boolean (KA_PROP_NAME_CONF_TICKETS,
                                   "Configuration tickets",
-                                  "wether to show configuration tickets",
+                                  "whether to show configuration tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
     g_object_class_install_property (object_class,

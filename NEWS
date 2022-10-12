@@ -1,3 +1,45 @@
+============
+Version 43.0
+============
+* Long overdue release
+* Switch to meson
+* Adjust a bit better to smaller screen sizes
+* Lots of bug fixes and modernization
+* Drop tray icon (won't exist in GTK4)
+* Build a flatpak
+* Contributors:
+	Anders Jonsson
+	Andre Klapper
+	Bartłomiej Piotrowski
+	Daniel Mustieles
+	Guido Günther
+	Marek Cernocky
+	Mario Blättermann
+	Pino Toscano
+	Piotr Drąg
+	Yuri Chornoivan
+* UI translations:
+	Alan Mortensen (da)
+	Anders Jonsson (sv)
+	Andika Triwidada (id)
+	Asier Sarasua Garmendia (eu)
+	Ask Hjorth Larsen (da)
+	Balázs Úr (hu)
+	Claude Paroz (fr)
+	Daniel Mustieles (es)
+	Daniel Șerbănescu (ro)
+	Emin Tufan Çetin (tr)
+	Enrico Nicoletto (pt_BR)
+	Florentina Mușat (ro)
+	Fran Dieguez (gl)
+	Hugo Carvalho (pt)
+	Jiri Grönroos (fi)
+	Kukuh Syafaat (id)
+	Marek Černocký (cs)
+	Piotr Drąg (pl)
+	Yuri Chornoivan (uk)
+	Мирослав Николић (sr)
+
 ==============
 Version 3.26.1
 ==============

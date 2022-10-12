@@ -1,5 +1,5 @@
 desktop_file = 'org.gnome.KrbAuthDialog.desktop'
-merged = i18n.merge_file('desktop',
+merged = i18n.merge_file(
     input: desktop_file + '.in',
     output: desktop_file,
     po_dir: '../po',
@@ -8,7 +8,7 @@ merged = i18n.merge_file('desktop',
     type: 'desktop'
 )
 
-merged = i18n.merge_file('autostart',
+merged = i18n.merge_file(
     input: desktop_file + '.in',
     output: 'krb5-auth-dialog.desktop',
     po_dir: '../po',

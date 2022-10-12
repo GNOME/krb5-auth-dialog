@@ -206,26 +206,27 @@ endif
 if cc.has_header('hx509_err.h',
                  prefix: '''#include <krb5.h>''',
                  dependencies: krb5_dep)
-  conf_data.set10('HAVE_HX509_ERR_H', 1)
+  conf_data.set10('HAVE_HX509_ERR_H', true)
 endif
 
-have_pkinit = false
-conf_data.set10('HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PKINIT', 0)
+have_creds_opt_set_pkinit = false
 if cc.has_function('krb5_get_init_creds_opt_set_pkinit',
                    prefix: '''#include <krb5.h>''',
                    dependencies: krb5_dep)
-  conf_data.set10('HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PKINIT', 1)
-  have_pkinit = true
+  have_creds_opt_set_pkinit = true
 endif
+conf_data.set10('HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PKINIT', have_creds_opt_set_pkinit)
 
-conf_data.set10('HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PA', 0)
+have_creds_opt_set_pa = false
 if cc.has_function('krb5_get_init_creds_opt_set_pa',
                    prefix: '''#include <krb5.h>''',
                    dependencies: krb5_dep)
-  conf_data.set10('HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PA', 1)
+  have_creds_opt_set_pa = true
   have_pkinit = true
 endif
+conf_data.set10('HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PA', have_creds_opt_set_pa)
 
+have_pkinit = have_creds_opt_set_pkinit or have_creds_opt_set_pa
 want_pkinit = get_option('pkinit')
 if not want_pkinit.disabled()
   if have_pkinit == true

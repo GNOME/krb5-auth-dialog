@@ -7,17 +7,14 @@
     <property name="page_increment">10</property>
   </object>
   <template class="KaPreferences" parent="GtkDialog">
-    <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
       <object class="GtkBox">
-        <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
           <object class="GtkButtonBox">
-            <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
               <placeholder/>
@@ -33,23 +30,19 @@
         <child>
           <object class="GtkNotebook" id="notebook">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
             <child>
               <object class="GtkVBox" id="vbox_kerberos">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="border_width">12</property>
                 <property name="spacing">18</property>
                 <property name="expand">True</property>
                 <child>
                   <object class="GtkVBox" id="vbox_kerberos_user">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="label_kerberos_user">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">Kerberos User</property>
                         <attributes>
@@ -65,12 +58,10 @@
                     <child>
                       <object class="GtkHBox">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
                           <object class="GtkImage" id="access">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="yalign">0</property>
                             <property name="icon_name">krb-valid-ticket</property>
                             <property name="icon-size">6</property>
@@ -84,24 +75,20 @@
                         <child>
                           <object class="GtkVBox">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="spacing">6</property>
                             <child>
                               <object class="GtkFrame" id="frame_princ">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="label_xalign">0</property>
                                 <property name="shadow_type">none</property>
                                 <child>
                                   <object class="GtkAlignment">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <property name="top_padding">5</property>
                                     <property name="left_padding">12</property>
                                     <child>
                                       <object class="GtkEntry" id="principal_entry">
                                         <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
                                         <property name="has_tooltip">True</property>
                                         <property name="tooltip_markup" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
                                         <property name="tooltip_text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
@@ -115,7 +102,6 @@
                                 <child type="label">
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes">Kerberos principal:</property>
                                     <property name="use_markup">True</property>
                                   </object>
@@ -151,12 +137,10 @@
                 <child>
                   <object class="GtkVBox" id="vbox_ticket_options">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">Kerberos Ticket Options</property>
                         <attributes>
@@ -172,12 +156,10 @@
                     <child>
                       <object class="GtkHBox">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
                           <object class="GtkImage">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="yalign">0</property>
                             <property name="stock">gtk-properties</property>
                             <property name="icon-size">6</property>
@@ -191,12 +173,10 @@
                         <child>
                           <object class="GtkVBox">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="spacing">6</property>
                             <child>
                               <object class="GtkLabel">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="xalign">0</property>
                                 <property name="label" translatable="yes">Requested Kerberos tickets should be:</property>
                                 <property name="wrap">True</property>
@@ -210,11 +190,9 @@
                             <child>
                               <object class="GtkHBox">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <child>
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <property name="label">    </property>
                                   </object>
                                   <packing>
@@ -227,7 +205,6 @@
                                   <object class="GtkCheckButton" id="forwardable_toggle">
                                     <property name="label" translatable="yes">forwardable</property>
                                     <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip_markup" translatable="yes">If checked, request forwardable tickets</property>
@@ -251,11 +228,9 @@
                             <child>
                               <object class="GtkHBox">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <child>
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <property name="label">    </property>
                                   </object>
                                   <packing>
@@ -268,7 +243,6 @@
                                   <object class="GtkCheckButton" id="renewable_toggle">
                                     <property name="label" translatable="yes">renewable</property>
                                     <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip_markup" translatable="yes">If checked, request renewable tickets</property>
@@ -292,11 +266,9 @@
                             <child>
                               <object class="GtkHBox">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <child>
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <property name="label">    </property>
                                   </object>
                                   <packing>
@@ -309,7 +281,6 @@
                                   <object class="GtkCheckButton" id="proxiable_toggle">
                                     <property name="label" translatable="yes">proxiable</property>
                                     <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
                                     <property name="receives_default">False</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip_markup" translatable="yes">If checked, request proxiable tickets</property>
@@ -356,7 +327,6 @@
             <child type="tab">
               <object class="GtkLabel">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Kerberos</property>
               </object>
               <packing>
@@ -366,19 +336,16 @@
             <child>
               <object class="GtkVBox" id="vbox_pkinit">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="valign">start</property>
                 <property name="border_width">12</property>
                 <property name="spacing">18</property>
                 <child>
                   <object class="GtkVBox" id="vbox_pkinit_userid">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="label_pkinit_userid">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">Userid</property>
                         <attributes>
@@ -394,12 +361,10 @@
                     <child>
                       <object class="GtkHBox">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
                           <object class="GtkImage">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="yalign">0</property>
                             <property name="icon_name">krb-valid-ticket</property>
                             <property name="icon-size">6</property>
@@ -413,21 +378,17 @@
                         <child>
                           <object class="GtkVBox">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="spacing">6</property>
                             <child>
                               <object class="GtkVBox">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <child>
                                   <object class="GtkHBox">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <child>
                                       <object class="GtkCheckButton" id="smartcard_toggle">
                                         <property name="label" translatable="yes">Use Smartcard</property>
                                         <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
                                         <property name="receives_default">False</property>
                                         <property name="has_tooltip">True</property>
                                         <property name="tooltip_markup" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
@@ -444,7 +405,6 @@
                                     <child>
                                       <object class="GtkLabel">
                                         <property name="visible">True</property>
-                                        <property name="can_focus">False</property>
                                       </object>
                                       <packing>
                                         <property name="expand">True</property>
@@ -462,11 +422,9 @@
                                 <child>
                                   <object class="GtkHBox">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <child>
                                       <object class="GtkEntry" id="pkuserid_entry">
                                         <property name="visible">True</property>
-                                        <property name="can_focus">True</property>
                                         <property name="has_tooltip">True</property>
                                         <property name="tooltip_markup" translatable="yes">Certificate and private key used for authentication</property>
                                         <property name="tooltip_text" translatable="yes">Certificate and private key used for authentication</property>
@@ -535,12 +493,10 @@
                 <child>
                   <object class="GtkVBox" id="vbox_anchors">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="label_anchors">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">X509 trust anchors</property>
                         <attributes>
@@ -556,11 +512,9 @@
                     <child>
                       <object class="GtkHBox">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <child>
                           <object class="GtkEntry" id="pkanchors_entry">
                             <property name="visible">True</property>
-                            <property name="can_focus">True</property>
                             <property name="has_tooltip">True</property>
                             <property name="tooltip_markup" translatable="yes">Certificate used to verify digital signatures.</property>
                             <property name="tooltip_text" translatable="yes">Certificate used to verify digital signatures.</property>
@@ -613,7 +567,6 @@
             <child type="tab">
               <object class="GtkLabel" id="label_pkinit">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="has_tooltip">True</property>
                 <property name="tooltip_markup" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
                 <property name="tooltip_text" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
@@ -627,18 +580,15 @@
             <child>
               <object class="GtkVBox" id="vbox_notifications">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="border_width">12</property>
                 <property name="spacing">18</property>
                 <child>
                   <object class="GtkVBox">
                     <property name="visible">True</property>
-                    <property name="can_focus">False</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="xalign">0</property>
                         <property name="label" translatable="yes">Notifications</property>
                         <attributes>
@@ -654,12 +604,10 @@
                     <child>
                       <object class="GtkHBox">
                         <property name="visible">True</property>
-                        <property name="can_focus">False</property>
                         <property name="spacing">12</property>
                         <child>
                           <object class="GtkImage" id="image_notifications">
                             <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="yalign">0</property>
                             <property name="icon_name">krb-expiring-ticket</property>
                             <property name="icon-size">6</property>
@@ -674,17 +622,14 @@
 			  <object class="GtkBox">
 			    <property name="orientation">vertical</property>
 			    <property name="visible">True</property>
-                            <property name="can_focus">False</property>
                             <property name="spacing">6</property>
                             <child>
                               <object class="GtkHBox">
 				<property name="visible">True</property>
-				<property name="can_focus">False</property>
 				<property name="spacing">6</property>
 				<child>
 				  <object class="GtkLabel">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">False</property>
                                     <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">Warn</property>
 				  </object>
 				  <packing>
@@ -696,7 +641,6 @@
 				<child>
 				  <object class="GtkSpinButton" id="prompt_mins_entry">
                                     <property name="visible">True</property>
-                                    <property name="can_focus">True</property>
                                     <property name="has_tooltip">True</property>
                                     <property name="tooltip_markup" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
                                     <property name="tooltip_text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
@@ -717,7 +661,6 @@
 			    <child>
 			      <object class="GtkLabel">
                                 <property name="visible">True</property>
-                                <property name="can_focus">False</property>
                                 <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">minutes before ticket expiry</property>
 			      </object>
 			      <packing>
@@ -755,7 +698,6 @@
             <child type="tab">
               <object class="GtkLabel">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="label" translatable="yes">Notifications</property>
               </object>
               <packing>

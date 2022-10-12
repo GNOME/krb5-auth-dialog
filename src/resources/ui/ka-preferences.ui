@@ -17,14 +17,16 @@
           <object class="GtkNotebook" id="notebook">
             <property name="visible">True</property>
             <child>
-              <object class="GtkVBox" id="vbox_kerberos">
+              <object class="GtkBox" id="vbox_kerberos">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <property name="border_width">12</property>
                 <property name="spacing">18</property>
                 <property name="expand">True</property>
                 <child>
-                  <object class="GtkVBox" id="vbox_kerberos_user">
+                  <object class="GtkBox" id="vbox_kerberos_user">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="label_kerberos_user">
@@ -35,14 +37,9 @@
                           <attribute name="weight" value="bold"/>
                         </attributes>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
                     </child>
                     <child>
-                      <object class="GtkHBox">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
                         <property name="spacing">12</property>
                         <child>
@@ -52,16 +49,12 @@
                             <property name="icon_name">krb-valid-ticket</property>
                             <property name="icon-size">6</property>
                           </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">0</property>
-                          </packing>
                         </child>
                         <child>
-                          <object class="GtkVBox">
+                          <object class="GtkBox">
                             <property name="visible">True</property>
                             <property name="spacing">6</property>
+                            <property name="orientation">vertical</property>
                             <child>
                               <object class="GtkFrame" id="frame_princ">
                                 <property name="visible">True</property>
@@ -91,36 +84,17 @@
                                   </object>
                                 </child>
                               </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
                             </child>
                           </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
                         </child>
                       </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
                 </child>
                 <child>
-                  <object class="GtkVBox" id="vbox_ticket_options">
+                  <object class="GtkBox" id="vbox_ticket_options">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel">
@@ -131,14 +105,9 @@
                           <attribute name="weight" value="bold"/>
                         </attributes>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">0</property>
-                      </packing>
                     </child>
                     <child>
-                      <object class="GtkHBox">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
                         <property name="spacing">12</property>
                         <child>
@@ -148,15 +117,11 @@
                             <property name="stock">gtk-properties</property>
                             <property name="icon-size">6</property>
                           </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">0</property>
-                          </packing>
                         </child>
                         <child>
-                          <object class="GtkVBox">
+                          <object class="GtkBox">
                             <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
                             <property name="spacing">6</property>
                             <child>
                               <object class="GtkLabel">
@@ -165,25 +130,15 @@
                                 <property name="label" translatable="yes">Requested Kerberos tickets should be:</property>
                                 <property name="wrap">True</property>
                               </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">0</property>
-                              </packing>
                             </child>
                             <child>
-                              <object class="GtkHBox">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <child>
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="label">    </property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">0</property>
-                                  </packing>
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="forwardable_toggle">
@@ -194,32 +149,17 @@
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
                                 </child>
                               </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">1</property>
-                              </packing>
                             </child>
                             <child>
-                              <object class="GtkHBox">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <child>
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="label">    </property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">0</property>
-                                  </packing>
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="renewable_toggle">
@@ -230,32 +170,17 @@
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
                                 </child>
                               </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">2</property>
-                              </packing>
                             </child>
                             <child>
-                              <object class="GtkHBox">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <child>
                                   <object class="GtkLabel">
                                     <property name="visible">True</property>
                                     <property name="label">    </property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">0</property>
-                                  </packing>
                                 </child>
                                 <child>
                                   <object class="GtkCheckButton" id="proxiable_toggle">
@@ -266,39 +191,14 @@
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
                                 </child>
                               </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">3</property>
-                              </packing>
                             </child>
                           </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
                         </child>
                       </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
                 </child>
               </object>
             </child>
@@ -312,14 +212,16 @@
               </packing>
             </child>
             <child>
-              <object class="GtkVBox" id="vbox_pkinit">
+              <object class="GtkBox" id="vbox_pkinit">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <property name="valign">start</property>
                 <property name="border_width">12</property>
                 <property name="spacing">18</property>
                 <child>
-                  <object class="GtkVBox" id="vbox_pkinit_userid">
+                  <object class="GtkBox" id="vbox_pkinit_userid">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="label_pkinit_userid">
@@ -330,14 +232,9 @@
                           <attribute name="weight" value="bold"/>
                         </attributes>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
                     </child>
                     <child>
-                      <object class="GtkHBox">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
                         <property name="spacing">12</property>
                         <child>
@@ -347,21 +244,18 @@
                             <property name="icon_name">krb-valid-ticket</property>
                             <property name="icon-size">6</property>
                           </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">0</property>
-                          </packing>
                         </child>
                         <child>
-                          <object class="GtkVBox">
+                          <object class="GtkBox">
                             <property name="visible">True</property>
+                            <property name="orientation">vertical</property>
                             <property name="spacing">6</property>
                             <child>
-                              <object class="GtkVBox">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
+                                <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkHBox">
+                                  <object class="GtkBox">
                                     <property name="visible">True</property>
                                     <child>
                                       <object class="GtkCheckButton" id="smartcard_toggle">
@@ -372,21 +266,11 @@
                                         <property name="xalign">0</property>
                                         <property name="draw_indicator">True</property>
                                       </object>
-                                      <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">0</property>
-                                      </packing>
                                     </child>
                                     <child>
                                       <object class="GtkLabel">
                                         <property name="visible">True</property>
                                       </object>
-                                      <packing>
-                                        <property name="expand">True</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">1</property>
-                                      </packing>
                                     </child>
                                   </object>
                                   <packing>
@@ -396,7 +280,7 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkHBox">
+                                  <object class="GtkBox">
                                     <property name="visible">True</property>
                                     <child>
                                       <object class="GtkEntry" id="pkuserid_entry">
@@ -406,11 +290,6 @@
                                         <property name="activates_default">True</property>
                                         <property name="invisible_char_set">True</property>
                                       </object>
-                                      <packing>
-                                        <property name="expand">True</property>
-                                        <property name="fill">True</property>
-                                        <property name="position">0</property>
-                                      </packing>
                                     </child>
                                     <child>
                                       <object class="GtkButton" id="pkuserid_button">
@@ -423,50 +302,23 @@
                                         </child>
                                       </object>
                                       <packing>
-                                        <property name="expand">False</property>
-                                        <property name="fill">True</property>
                                         <property name="padding">5</property>
-                                        <property name="position">1</property>
                                       </packing>
                                     </child>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">True</property>
-                                    <property name="position">1</property>
-                                  </packing>
                                 </child>
                               </object>
-                              <packing>
-                                <property name="expand">True</property>
-                                <property name="fill">True</property>
-                                <property name="position">0</property>
-                              </packing>
                             </child>
                           </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
                         </child>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">1</property>
-                  </packing>
                 </child>
                 <child>
-                  <object class="GtkVBox" id="vbox_anchors">
+                  <object class="GtkBox" id="vbox_anchors">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel" id="label_anchors">
@@ -477,14 +329,9 @@
                           <attribute name="weight" value="bold"/>
                         </attributes>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
                     </child>
                     <child>
-                      <object class="GtkHBox">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
                         <child>
                           <object class="GtkEntry" id="pkanchors_entry">
@@ -494,11 +341,6 @@
                             <property name="activates_default">True</property>
                             <property name="invisible_char_set">True</property>
                           </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
                         </child>
                         <child>
                           <object class="GtkButton" id="pkanchors_button">
@@ -511,25 +353,12 @@
                             </child>
                           </object>
                           <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
                             <property name="padding">5</property>
-                            <property name="position">1</property>
                           </packing>
                         </child>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">2</property>
-                  </packing>
                 </child>
               </object>
               <packing>
@@ -548,13 +377,15 @@
               </packing>
             </child>
             <child>
-              <object class="GtkVBox" id="vbox_notifications">
+              <object class="GtkBox" id="vbox_notifications">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <property name="border_width">12</property>
                 <property name="spacing">18</property>
                 <child>
-                  <object class="GtkVBox">
+                  <object class="GtkBox">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="spacing">12</property>
                     <child>
                       <object class="GtkLabel">
@@ -565,14 +396,9 @@
                           <attribute name="weight" value="bold"/>
                         </attributes>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">False</property>
-                        <property name="position">0</property>
-                      </packing>
                     </child>
                     <child>
-                      <object class="GtkHBox">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
                         <property name="spacing">12</property>
                         <child>
@@ -582,11 +408,6 @@
                             <property name="icon_name">krb-expiring-ticket</property>
                             <property name="icon-size">6</property>
                           </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">0</property>
-                          </packing>
                         </child>
                         <child>
                           <object class="GtkBox">
@@ -594,7 +415,7 @@
                             <property name="visible">True</property>
                             <property name="spacing">6</property>
                             <child>
-                              <object class="GtkHBox">
+                              <object class="GtkBox">
                                 <property name="visible">True</property>
                                 <property name="spacing">6</property>
                                 <child>
@@ -602,11 +423,6 @@
                                     <property name="visible">True</property>
                                     <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">Warn</property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">1</property>
-                                  </packing>
                                 </child>
                                 <child>
                                   <object class="GtkSpinButton" id="prompt_mins_entry">
@@ -618,11 +434,6 @@
                                     <property name="snap_to_ticks">True</property>
                                     <property name="numeric">True</property>
                                   </object>
-                                  <packing>
-                                    <property name="expand">False</property>
-                                    <property name="fill">False</property>
-                                    <property name="position">2</property>
-                                  </packing>
                                 </child>
                               </object>
                             </child>
@@ -631,37 +442,14 @@
                                 <property name="visible">True</property>
                                 <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">minutes before ticket expiry</property>
                               </object>
-                              <packing>
-                                <property name="expand">False</property>
-                                <property name="fill">False</property>
-                                <property name="position">3</property>
-                              </packing>
                             </child>
                           </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">True</property>
-                            <property name="position">1</property>
-                          </packing>
                         </child>
                       </object>
-                      <packing>
-                        <property name="expand">False</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
                   </object>
-                  <packing>
-                    <property name="expand">False</property>
-                    <property name="fill">True</property>
-                    <property name="position">0</property>
-                  </packing>
                 </child>
               </object>
-              <packing>
-                <property name="position">2</property>
-              </packing>
             </child>
             <child type="tab">
               <object class="GtkLabel">
@@ -674,11 +462,6 @@
               </packing>
             </child>
           </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
         </child>
       </object>
     </child>

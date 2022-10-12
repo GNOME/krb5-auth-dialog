@@ -75,9 +75,7 @@
                                     <child>
                                       <object class="GtkEntry" id="principal_entry">
                                         <property name="visible">True</property>
-                                        <property name="has_tooltip">True</property>
-                                        <property name="tooltip_markup" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
-                                        <property name="tooltip_text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
+                                        <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
                                         <property name="invisible_char">●</property>
                                         <property name="activates_default">True</property>
                                         <property name="invisible_char_set">True</property>
@@ -192,9 +190,7 @@
                                     <property name="label" translatable="yes">forwardable</property>
                                     <property name="visible">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="has_tooltip">True</property>
-                                    <property name="tooltip_markup" translatable="yes">If checked, request forwardable tickets</property>
-                                    <property name="tooltip_text" translatable="yes">If checked, request forwardable tickets</property>
+                                    <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -230,9 +226,7 @@
                                     <property name="label" translatable="yes">renewable</property>
                                     <property name="visible">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="has_tooltip">True</property>
-                                    <property name="tooltip_markup" translatable="yes">If checked, request renewable tickets</property>
-                                    <property name="tooltip_text" translatable="yes">If checked, request renewable tickets</property>
+                                    <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -268,9 +262,7 @@
                                     <property name="label" translatable="yes">proxiable</property>
                                     <property name="visible">True</property>
                                     <property name="receives_default">False</property>
-                                    <property name="has_tooltip">True</property>
-                                    <property name="tooltip_markup" translatable="yes">If checked, request proxiable tickets</property>
-                                    <property name="tooltip_text" translatable="yes">If checked, request proxiable tickets</property>
+                                    <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
                                     <property name="xalign">0</property>
                                     <property name="draw_indicator">True</property>
                                   </object>
@@ -376,9 +368,7 @@
                                         <property name="label" translatable="yes">Use Smartcard</property>
                                         <property name="visible">True</property>
                                         <property name="receives_default">False</property>
-                                        <property name="has_tooltip">True</property>
-                                        <property name="tooltip_markup" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
-                                        <property name="tooltip_text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
+                                        <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
                                         <property name="xalign">0</property>
                                         <property name="draw_indicator">True</property>
                                       </object>
@@ -411,9 +401,7 @@
                                     <child>
                                       <object class="GtkEntry" id="pkuserid_entry">
                                         <property name="visible">True</property>
-                                        <property name="has_tooltip">True</property>
-                                        <property name="tooltip_markup" translatable="yes">Certificate and private key used for authentication</property>
-                                        <property name="tooltip_text" translatable="yes">Certificate and private key used for authentication</property>
+                                        <property name="tooltip-text" translatable="yes">Certificate and private key used for authentication</property>
                                         <property name="invisible_char">●</property>
                                         <property name="activates_default">True</property>
                                         <property name="invisible_char_set">True</property>
@@ -501,9 +489,7 @@
                         <child>
                           <object class="GtkEntry" id="pkanchors_entry">
                             <property name="visible">True</property>
-                            <property name="has_tooltip">True</property>
-                            <property name="tooltip_markup" translatable="yes">Certificate used to verify digital signatures.</property>
-                            <property name="tooltip_text" translatable="yes">Certificate used to verify digital signatures.</property>
+                            <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
                             <property name="invisible_char">●</property>
                             <property name="activates_default">True</property>
                             <property name="invisible_char_set">True</property>
@@ -553,9 +539,7 @@
             <child type="tab">
               <object class="GtkLabel" id="label_pkinit">
                 <property name="visible">True</property>
-                <property name="has_tooltip">True</property>
-                <property name="tooltip_markup" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
-                <property name="tooltip_text" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
+                <property name="tooltip-text" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
                 <property name="label" translatable="yes">PKINIT</property>
               </object>
               <packing>
@@ -627,9 +611,7 @@
                                 <child>
                                   <object class="GtkSpinButton" id="prompt_mins_entry">
                                     <property name="visible">True</property>
-                                    <property name="has_tooltip">True</property>
-                                    <property name="tooltip_markup" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
-                                    <property name="tooltip_text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
+                                    <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
                                     <property name="invisible_char">●</property>
                                     <property name="invisible_char_set">True</property>
                                     <property name="adjustment">adjustment1</property>

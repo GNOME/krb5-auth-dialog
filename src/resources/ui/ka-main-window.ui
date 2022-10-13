@@ -48,7 +48,6 @@
     <property name="page_increment">10</property>
   </object>
   <object class="GtkApplicationWindow" id="krb5_main_window">
-    <property name="can_focus">False</property>
     <property name="title" translatable="yes">Service Tickets</property>
     <property name="window_position">center</property>
     <property name="default-width">700</property>
@@ -56,13 +55,11 @@
     <child>
       <object class="GtkStack" id="stack">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <property name="border_width">5</property>
         <property name="transition_type">slide-down</property>
         <child>
           <object class="GtkTreeView" id="krb5_tickets_treeview">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
             <child internal-child="selection">
               <object class="GtkTreeSelection" id="treeview-selection"/>
             </child>
@@ -74,7 +71,6 @@
         <child>
           <object class="GtkLabel">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="label" translatable="yes">Your ticket cache is currently empty</property>
           </object>
           <packing>
@@ -86,25 +82,21 @@
     <child type="titlebar">
       <object class="GtkHeaderBar" id="header">
         <property name="visible">True</property>
-        <property name="can_focus">False</property>
         <property name="show_close_button">True</property>
         <child>
           <object class="GtkButton" id="get_ticket_btn">
             <property name="visible">True</property>
-            <property name="can_focus">False</property>
             <property name="label" translatable="yes">Get Ticket</property>
           </object>
         </child>
         <child>
           <object class="GtkMenuButton">
             <property name="visible">True</property>
-            <property name="can_focus">True</property>
             <property name="receives_default">True</property>
             <property name="popover">menu_main</property>
             <child>
               <object class="GtkImage">
                 <property name="visible">True</property>
-                <property name="can_focus">False</property>
                 <property name="icon_name">open-menu-symbolic</property>
               </object>
             </child>

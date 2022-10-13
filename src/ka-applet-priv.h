@@ -33,6 +33,16 @@
 G_BEGIN_DECLS
 #define KA_NAME _("Kerberos Authentication")
 
+/* properties */
+#define KA_PROP_NAME_PRINCIPAL       "principal"
+#define KA_PROP_NAME_PK_USERID       "pk-userid"
+#define KA_PROP_NAME_PK_ANCHORS      "pk-anchors"
+#define KA_PROP_NAME_PW_PROMPT_MINS  "pw-prompt-mins"
+#define KA_PROP_NAME_TGT_FORWARDABLE "tgt-forwardable"
+#define KA_PROP_NAME_TGT_PROXIABLE   "tgt-proxiable"
+#define KA_PROP_NAME_TGT_RENEWABLE   "tgt-renewable"
+#define KA_PROP_NAME_CONF_TICKETS    "conf-tickets"
+
 /* signals emitted by KaApplet */
 typedef enum {
     KA_SIGNAL_ACQUIRED_TGT,     /* New TGT acquired */
@@ -54,17 +64,6 @@ void ka_applet_signal_emit (KaApplet *self, KaAppletSignalNumber signum,
                             krb5_timestamp expiry);
 void ka_applet_set_msg (KaApplet *self, const char *msg);
 GtkWindow* ka_applet_last_focused_window(KaApplet *self);
-
-/* properties */
-#define KA_PROP_NAME_PRINCIPAL       "principal"
-#define KA_PROP_NAME_PK_USERID       "pk-userid"
-#define KA_PROP_NAME_PK_ANCHORS      "pk-anchors"
-#define KA_PROP_NAME_PW_PROMPT_MINS  "pw-prompt-mins"
-#define KA_PROP_NAME_TGT_FORWARDABLE "tgt-forwardable"
-#define KA_PROP_NAME_TGT_PROXIABLE   "tgt-proxiable"
-#define KA_PROP_NAME_TGT_RENEWABLE   "tgt-renewable"
-#define KA_PROP_NAME_CONF_TICKETS    "conf-tickets"
-
 /* update tooltip and icon */
 int ka_applet_update_status (KaApplet *self, krb5_timestamp expiry);
 

@@ -361,8 +361,9 @@ static void
 ka_preferences_browse_certs (KaPreferences *self, GtkEntry *entry)
 {
     GtkWidget *filechooser;
-    GtkFileFilter *cert_filter, *all_filter;
-    gchar *filename = NULL;
+    g_autoptr(GtkFileFilter) cert_filter = g_object_ref_sink (gtk_file_filter_new ());
+    g_autoptr(GtkFileFilter) all_filter = g_object_ref_sink (gtk_file_filter_new ());
+    g_autofree gchar *filename = NULL;
     const gchar *current;
     gint ret;
 
@@ -380,11 +381,10 @@ ka_preferences_browse_certs (KaPreferences *self, GtkEntry *entry)
                                           (const gchar*)&current[strlen(PKINIT_FILE)]);
     }
 
-    cert_filter = g_object_ref_sink (gtk_file_filter_new ());
     gtk_file_filter_add_mime_type (cert_filter, "application/x-x509-ca-cert");
     gtk_file_filter_set_name (cert_filter, _("X509 Certificates"));
     gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (filechooser), cert_filter);
-    all_filter = g_object_ref_sink (gtk_file_filter_new ());
+
     gtk_file_filter_add_pattern (all_filter, "*");
     gtk_file_filter_set_name (all_filter, _("all files"));
     gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (filechooser), all_filter);
@@ -395,13 +395,9 @@ ka_preferences_browse_certs (KaPreferences *self, GtkEntry *entry)
     gtk_widget_destroy (GTK_WIDGET(filechooser));
 
     if (filename) {
-        gchar *cert = g_strconcat (PKINIT_FILE, filename, NULL);
+        g_autofree gchar *cert = g_strconcat (PKINIT_FILE, filename, NULL);
         gtk_entry_set_text (entry, cert);
-        g_free (cert);
     }
-    g_object_unref (cert_filter);
-    g_object_unref (all_filter);
-    g_free (filename);
 }
 
 static void

@@ -55,7 +55,10 @@
     <child>
       <object class="GtkStack" id="stack">
         <property name="visible">True</property>
-        <property name="border_width">5</property>
+        <property name="margin-bottom">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-start">5</property>
+        <property name="margin-top">5</property>
         <property name="transition_type">slide-down</property>
         <child>
           <object class="GtkTreeView" id="krb5_tickets_treeview">

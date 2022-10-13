@@ -358,14 +358,31 @@ ka_preferences_setup_smartcard_toggle (KaPreferences *self)
 
 
 static void
+on_file_chooser_response (GtkDialog* dialog, gint response_id, gpointer user_data)
+{
+    GtkFileChooser *filechooser = GTK_FILE_CHOOSER (dialog);
+    GtkEntry *entry = GTK_ENTRY (user_data);
+    g_autofree gchar *filename = NULL;
+
+    if (response_id == GTK_RESPONSE_ACCEPT)
+        filename = gtk_file_chooser_get_filename (filechooser);
+
+    gtk_widget_destroy (GTK_WIDGET(filechooser));
+
+    if (filename) {
+        g_autofree gchar *cert = g_strconcat (PKINIT_FILE, filename, NULL);
+        gtk_entry_set_text (entry, cert);
+    }
+}
+
+
+static void
 ka_preferences_browse_certs (KaPreferences *self, GtkEntry *entry)
 {
     GtkWidget *filechooser;
     g_autoptr(GtkFileFilter) cert_filter = g_object_ref_sink (gtk_file_filter_new ());
     g_autoptr(GtkFileFilter) all_filter = g_object_ref_sink (gtk_file_filter_new ());
-    g_autofree gchar *filename = NULL;
     const gchar *current;
-    gint ret;
 
     filechooser = gtk_file_chooser_dialog_new(_("Choose Certificate"),
                                               GTK_WINDOW (self),
@@ -389,15 +406,10 @@ ka_preferences_browse_certs (KaPreferences *self, GtkEntry *entry)
     gtk_file_filter_set_name (all_filter, _("all files"));
     gtk_file_chooser_add_filter (GTK_FILE_CHOOSER (filechooser), all_filter);
 
-    ret = gtk_dialog_run (GTK_DIALOG(filechooser));
-    if (ret == GTK_RESPONSE_ACCEPT)
-        filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER(filechooser));
-    gtk_widget_destroy (GTK_WIDGET(filechooser));
-
-    if (filename) {
-        g_autofree gchar *cert = g_strconcat (PKINIT_FILE, filename, NULL);
-        gtk_entry_set_text (entry, cert);
-    }
+    gtk_window_set_modal (GTK_WINDOW (filechooser), TRUE);
+    g_signal_connect (filechooser, "response",
+                      G_CALLBACK (on_file_chooser_response), entry);
+    gtk_window_present (GTK_WINDOW(filechooser));
 }
 
 static void

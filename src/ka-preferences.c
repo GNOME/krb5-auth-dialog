@@ -364,8 +364,10 @@ on_file_chooser_response (GtkDialog* dialog, gint response_id, gpointer user_dat
     GtkEntry *entry = GTK_ENTRY (user_data);
     g_autofree gchar *filename = NULL;
 
-    if (response_id == GTK_RESPONSE_ACCEPT)
-        filename = gtk_file_chooser_get_filename (filechooser);
+    if (response_id == GTK_RESPONSE_ACCEPT) {
+        g_autoptr(GFile) file = gtk_file_chooser_get_file (filechooser);
+        filename = g_file_get_path (file);
+    }
 
     gtk_widget_destroy (GTK_WIDGET(filechooser));
 
@@ -394,8 +396,10 @@ ka_preferences_browse_certs (KaPreferences *self, GtkEntry *entry)
     current = gtk_entry_get_text (entry);
     if (current && g_str_has_prefix (current, PKINIT_FILE) &&
         strlen(current) > strlen (PKINIT_FILE)) {
-        gtk_file_chooser_select_filename (GTK_FILE_CHOOSER(filechooser),
-                                          (const gchar*)&current[strlen(PKINIT_FILE)]);
+        g_autoptr(GFile) file = g_file_new_for_path (
+            (const gchar*)&current[strlen(PKINIT_FILE)]);
+
+        gtk_file_chooser_set_file (GTK_FILE_CHOOSER(filechooser), file, NULL);
     }
 
     gtk_file_filter_add_mime_type (cert_filter, "application/x-x509-ca-cert");

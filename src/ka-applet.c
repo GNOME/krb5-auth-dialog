@@ -35,12 +35,6 @@
 
 #define NOTIFY_SECONDS 300
 
-enum ka_icon {
-    inv_icon = 0,
-    exp_icon,
-    val_icon,
-};
-
 enum {
     KA_PROP_0 = 0,
     KA_PROP_PRINCIPAL,
@@ -64,8 +58,6 @@ static guint signals[KA_SIGNAL_COUNT];
 
 struct _KaApplet {
     GtkApplication parent;
-
-    const char *icons[3];       /* for invalid, expiring and valid tickts */
 
     KaPwDialog *pwdialog;       /* the password dialog */
     KaPreferences *prefs;       /* the prefs dialog */
@@ -716,19 +708,6 @@ ka_applet_update_status (KaApplet *self, krb5_timestamp expiry)
     return 0;
 }
 
-
-static int
-ka_applet_setup_icons (KaApplet *self)
-{
-    /* Add application specific icons to search path */
-    gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
-                                       DATA_DIR G_DIR_SEPARATOR_S "icons");
-    self->icons[val_icon] = "krb-valid-ticket";
-    self->icons[exp_icon] = "krb-expiring-ticket";
-    self->icons[inv_icon] = "krb-no-valid-ticket";
-    return TRUE;
-}
-
 guint
 ka_applet_get_pw_prompt_secs (const KaApplet *self)
 {
@@ -808,9 +787,7 @@ ka_applet_create (void)
 {
     KaApplet *self = ka_applet_new ();
 
-    if (!(ka_applet_setup_icons (self)))
-        g_error ("Failure to setup icons");
-    gtk_window_set_default_icon_name (self->icons[val_icon]);
+    gtk_window_set_default_icon_name ("krb-valid-ticket");
 
     self->pwdialog = ka_pwdialog_new ();
     g_return_val_if_fail (self->pwdialog != NULL, NULL);

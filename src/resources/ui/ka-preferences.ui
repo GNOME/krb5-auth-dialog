@@ -74,9 +74,7 @@
                                 <property name="margin-top">5</property>
                                 <property name="margin-start">12</property>
                                 <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
-                                <property name="invisible_char">●</property>
                                 <property name="activates_default">True</property>
-                                <property name="invisible_char_set">True</property>
                               </object>
                             </child>
                           </object>
@@ -235,9 +233,7 @@
                                       <object class="GtkEntry" id="pkuserid_entry">
                                         <property name="visible">True</property>
                                         <property name="tooltip-text" translatable="yes">Certificate and private key used for authentication</property>
-                                        <property name="invisible_char">●</property>
                                         <property name="activates_default">True</property>
-                                        <property name="invisible_char_set">True</property>
                                       </object>
                                     </child>
                                     <child>
@@ -283,9 +279,7 @@
                           <object class="GtkEntry" id="pkanchors_entry">
                             <property name="visible">True</property>
                             <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
-                            <property name="invisible_char">●</property>
                             <property name="activates_default">True</property>
-                            <property name="invisible_char_set">True</property>
                           </object>
                         </child>
                         <child>
@@ -367,8 +361,6 @@
                                   <object class="GtkSpinButton" id="prompt_mins_entry">
                                     <property name="visible">True</property>
                                     <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
-                                    <property name="invisible_char">●</property>
-                                    <property name="invisible_char_set">True</property>
                                     <property name="adjustment">adjustment1</property>
                                     <property name="snap_to_ticks">True</property>
                                     <property name="numeric">True</property>

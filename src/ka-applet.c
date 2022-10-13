@@ -20,6 +20,7 @@
 #include "config.h"
 
 #include <glib/gi18n.h>
+#include <glib-unix.h>
 
 #include "ka-applet-priv.h"
 #include "ka-dbus.h"
@@ -217,26 +218,15 @@ action_quit (GSimpleAction *action G_GNUC_UNUSED,
 }
 
 
-KaApplet *sigapplet;
-static void
-signal_handler (int signum)
+static gboolean
+on_shutdown_signal (gpointer data)
 {
-    g_message ("Caught signal %d", signum);
-    if (sigapplet)
-        ka_applet_destroy (sigapplet);
-}
+    KaApplet *self = KA_APPLET (data);
 
+    g_message ("Caught shutdown signal");
+    g_application_quit (G_APPLICATION (self));
 
-static void
-setup_signal_handlers (KaApplet *applet)
-{
-    struct sigaction sa;
-
-    memset (&sa, 0, sizeof(sa));
-    sa.sa_handler = signal_handler;
-    sigapplet = applet;
-    sigaction(SIGINT, &sa, NULL);
-    sigaction(SIGTERM, &sa, NULL);
+    return G_SOURCE_REMOVE;
 }
 
 
@@ -415,6 +405,9 @@ ka_applet_constructed (GObject *object)
     self->settings = ka_settings_init (self);
     self->loader = ka_plugin_loader_create (self);
     ka_dbus_connect (self);
+
+    g_unix_signal_add (SIGTERM, on_shutdown_signal, self);
+    g_unix_signal_add (SIGINT, on_shutdown_signal, self);
 }
 
 
@@ -801,7 +794,6 @@ main (int argc, char *argv[])
     gtk_init (&argc, &argv);
     applet = ka_applet_new ();
 
-    setup_signal_handlers(applet);
     return g_application_run (G_APPLICATION(applet), argc, argv);
 }
 

@@ -834,8 +834,7 @@ ka_renew_credentials (KaApplet *applet)
             ka_log_error_message ("krb5_cc_store_cred", kcontext, retval);
             goto out;
         }
-        ka_applet_signal_emit (applet, KA_SIGNAL_RENEWED_TGT,
-                               my_creds.times.endtime);
+        ka_applet_emit_renewed (applet, my_creds.times.endtime);
     }
   out:
     if (!retval)

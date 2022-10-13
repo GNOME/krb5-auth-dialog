@@ -107,30 +107,15 @@ ka_dbus_handle_method_call (GDBusConnection       *connection G_GNUC_UNUSED,
     }
 }
 
-static gchar* ka_dbus_signal_name (const gchar *name)
-{
-    gchar *c;
-    gchar *signal_name = g_strdup(name);
-
-   /* The DBus signal names use underscores */
-   for (c = signal_name; *c != '\0'; c++ ) {
-       if (*c == '-')
-           *c = '_';
-   }
-
-   return signal_name;
-}
-
 /* Emit DBus signals */
 static void
 ka_dbus_signal_cb (gpointer *applet G_GNUC_UNUSED,
                    gchar *princ,
                    guint when, gpointer user_data)
 {
-    GError *error = NULL;
-    gchar *signal_name;
+    g_autoptr (GError) error = NULL;
+    gchar *signal_name = user_data;
 
-    signal_name = ka_dbus_signal_name(user_data);
     if (!g_dbus_connection_emit_signal (dbus_connection,
                                         NULL,
                                         dbus_object_path,
@@ -143,22 +128,18 @@ ka_dbus_signal_cb (gpointer *applet G_GNUC_UNUSED,
         g_warning ("Failed to emit DBus signal %s: %s",
                    signal_name,
                    error->message);
-        g_clear_error (&error);
     }
-    g_free (signal_name);
 }
 
 
 static void
 ka_dbus_connect_signals(KaApplet *applet)
 {
-    int i;
-
-    for (i = 0; i < KA_SIGNAL_COUNT-1; i++) {
-        g_signal_connect (applet, ka_signal_names[i],
-                          G_CALLBACK (ka_dbus_signal_cb),
-                          (gpointer)ka_signal_names[i]);
-    }
+    g_object_connect (applet,
+                      "signal::krb-tgt-acquired", ka_dbus_signal_cb, "krb_tgt_acquired",
+                      "signal::krb-tgt-renewed", ka_dbus_signal_cb, "krb_tgt_renewed",
+                      "signal::krb-tgt-expired", ka_dbus_signal_cb, "krb_tgt_expired",
+                      NULL);
 }
 
 

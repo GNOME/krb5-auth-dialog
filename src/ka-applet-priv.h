@@ -43,25 +43,13 @@ G_BEGIN_DECLS
 #define KA_PROP_NAME_TGT_RENEWABLE   "tgt-renewable"
 #define KA_PROP_NAME_CONF_TICKETS    "conf-tickets"
 
-/* signals emitted by KaApplet */
-typedef enum {
-    KA_SIGNAL_ACQUIRED_TGT,     /* New TGT acquired */
-    KA_SIGNAL_RENEWED_TGT,      /* TGT got renewed */
-    KA_SIGNAL_EXPIRED_TGT,      /* TGT expired or ticket cache got destroyed */
-    KA_CCACHE_CHANGED,          /* The credential cache changed */
-    KA_SIGNAL_COUNT
-} KaAppletSignalNumber;
-
-extern const gchar *ka_signal_names[];
-
 /* public functions */
 void ka_applet_set_tgt_renewable (KaApplet *self, gboolean renewable);
 gboolean ka_applet_get_tgt_renewable (const KaApplet *self);
 guint ka_applet_get_pw_prompt_secs (const KaApplet *self);
 KaPwDialog *ka_applet_get_pwdialog (const KaApplet *self);
 GSettings *ka_applet_get_settings (const KaApplet *self);
-void ka_applet_signal_emit (KaApplet *self, KaAppletSignalNumber signum,
-                            krb5_timestamp expiry);
+void ka_applet_emit_renewed (KaApplet *self, krb5_timestamp expiry);
 void ka_applet_set_msg (KaApplet *self, const char *msg);
 GtkWindow* ka_applet_last_focused_window(KaApplet *self);
 /* update tooltip and icon */

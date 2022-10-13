@@ -50,13 +50,21 @@ enum {
 };
 static GParamSpec *props[KA_PROP_LAST_PROP];
 
-const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
+enum _KaAppletSignalNumber {
+    KA_SIGNAL_ACQUIRED_TGT,     /* New TGT acquired */
+    KA_SIGNAL_RENEWED_TGT,      /* TGT got renewed */
+    KA_SIGNAL_EXPIRED_TGT,      /* TGT expired or ticket cache got destroyed */
+    KA_CCACHE_CHANGED,          /* The credential cache changed */
+    KA_SIGNAL_COUNT
+};
+static guint signals[KA_SIGNAL_COUNT];
+
+const gchar *ka_signal_names[] = {
     "krb-tgt-acquired",
     "krb-tgt-renewed",
     "krb-tgt-expired",
     "krb-ccache-changed",
 };
-static guint signals[KA_SIGNAL_COUNT];
 
 struct _KaApplet {
     GtkApplication parent;
@@ -90,6 +98,18 @@ struct _KaApplet {
 G_DEFINE_TYPE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
 
 static gboolean is_initialized;
+
+static void
+ka_applet_signal_emit (KaApplet *this, guint signum, krb5_timestamp expiry)
+{
+    g_autofree char *princ = NULL;
+
+    princ = ka_unparse_name ();
+    if (!princ)
+        return;
+
+    g_signal_emit (this, signals[signum], 0, princ, (guint32) expiry);
+}
 
 static void
 ka_applet_activate (GApplication *application G_GNUC_UNUSED)
@@ -747,20 +767,14 @@ ka_applet_set_msg (KaApplet *self, const char *msg)
 }
 
 void
-ka_applet_signal_emit (KaApplet *this,
-                       KaAppletSignalNumber signum,
-                       krb5_timestamp expiry)
+ka_applet_emit_renewed (KaApplet *self, krb5_timestamp expiry)
 {
-    char *princ;
+    g_autofree char *princ = NULL;
 
-    princ = ka_unparse_name ();
-    if (!princ)
-        return;
+    g_return_if_fail (KA_IS_APPLET (self));
 
-    g_signal_emit (this, signals[signum], 0, princ, (guint32) expiry);
-    g_free (princ);
+    ka_applet_signal_emit (self, KA_SIGNAL_RENEWED_TGT, expiry);
 }
-
 
 int
 main (int argc, char *argv[])

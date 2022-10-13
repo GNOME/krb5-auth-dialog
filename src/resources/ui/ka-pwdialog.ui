@@ -30,7 +30,7 @@
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <child>
-          <object class="GtkHBox">
+          <object class="GtkBox">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">6</property>
@@ -43,11 +43,6 @@
                 <property name="icon_name">krb-valid-ticket</property>
                 <property name="icon-size">6</property>
               </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="fill">True</property>
-                <property name="position">0</property>
-              </packing>
             </child>
             <child>
               <object class="GtkAlignment">
@@ -55,13 +50,15 @@
                 <property name="can_focus">False</property>
                 <property name="bottom_padding">10</property>
                 <child>
-                  <object class="GtkVBox">
+                  <object class="GtkBox">
                     <property name="visible">True</property>
+                    <property name="orientation">vertical</property>
                     <property name="can_focus">False</property>
                     <property name="spacing">12</property>
                     <child>
-                      <object class="GtkVBox">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
+                        <property name="orientation">vertical</property>
                         <property name="can_focus">False</property>
                         <child>
                           <object class="GtkLabel" id="krb_label">
@@ -71,26 +68,17 @@
                             <property name="use_markup">True</property>
                             <property name="wrap">True</property>
                           </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">0</property>
-                          </packing>
                         </child>
                       </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">0</property>
-                      </packing>
                     </child>
                     <child>
-                      <object class="GtkVBox">
+                      <object class="GtkBox">
                         <property name="visible">True</property>
+                        <property name="orientation">vertical</property>
                         <property name="can_focus">False</property>
                         <property name="spacing">3</property>
                         <child>
-                          <object class="GtkHBox">
+                          <object class="GtkBox">
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="spacing">3</property>
@@ -104,14 +92,10 @@
 				<property name="input-purpose">password</property>
 				<property name="buffer">pw_entry_buffer</property>
 				<property name="has-focus">True</property>
+                                <property name="hexpand">True</property>
                               </object>
                             </child>
                           </object>
-                          <packing>
-                            <property name="expand">True</property>
-                            <property name="fill">True</property>
-                            <property name="position">0</property>
-                          </packing>
                         </child>
                         <child>
                           <object class="GtkLabel" id="status_label">
@@ -121,34 +105,14 @@
                             <property name="label">&lt;span size="smaller"&gt; &lt;/span&gt;</property>
                             <property name="use_markup">True</property>
                           </object>
-                          <packing>
-                            <property name="expand">False</property>
-                            <property name="fill">False</property>
-                            <property name="position">1</property>
-                          </packing>
                         </child>
                       </object>
-                      <packing>
-                        <property name="expand">True</property>
-                        <property name="fill">True</property>
-                        <property name="position">1</property>
-                      </packing>
                     </child>
                   </object>
                 </child>
               </object>
-              <packing>
-                <property name="expand">True</property>
-                <property name="fill">True</property>
-                <property name="position">1</property>
-              </packing>
             </child>
           </object>
-          <packing>
-            <property name="expand">False</property>
-            <property name="fill">True</property>
-            <property name="position">1</property>
-          </packing>
         </child>
       </object>
     </child>

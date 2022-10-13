@@ -7,7 +7,10 @@
     <property name="page_increment">10</property>
   </object>
   <template class="KaPreferences" parent="GtkDialog">
-    <property name="border_width">5</property>
+    <property name="margin-bottom">5</property>
+    <property name="margin-end">5</property>
+    <property name="margin-start">5</property>
+    <property name="margin-top">5</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
       <object class="GtkBox">
@@ -20,7 +23,10 @@
               <object class="GtkBox" id="vbox_kerberos">
                 <property name="visible">True</property>
                 <property name="orientation">vertical</property>
-                <property name="border_width">12</property>
+                <property name="margin-bottom">12</property>
+                <property name="margin-end">12</property>
+                <property name="margin-start">12</property>
+                <property name="margin-top">12</property>
                 <property name="spacing">18</property>
                 <property name="expand">True</property>
                 <child>
@@ -181,7 +187,10 @@
                 <property name="visible">True</property>
                 <property name="orientation">vertical</property>
                 <property name="valign">start</property>
-                <property name="border_width">12</property>
+                <property name="margin-bottom">12</property>
+                <property name="margin-end">12</property>
+                <property name="margin-start">12</property>
+                <property name="margin-top">12</property>
                 <property name="spacing">18</property>
                 <child>
                   <object class="GtkBox" id="vbox_pkinit_userid">
@@ -324,7 +333,10 @@
               <object class="GtkBox" id="vbox_notifications">
                 <property name="visible">True</property>
                 <property name="orientation">vertical</property>
-                <property name="border_width">12</property>
+                <property name="margin-bottom">12</property>
+                <property name="margin-end">12</property>
+                <property name="margin-start">12</property>
+                <property name="margin-top">12</property>
                 <property name="spacing">18</property>
                 <child>
                   <object class="GtkBox">

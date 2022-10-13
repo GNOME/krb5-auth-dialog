@@ -404,6 +404,18 @@ ka_applet_get_property (GObject *object,
     }
 }
 
+static void
+ka_applet_constructed (GObject *object)
+{
+    KaApplet *self = KA_APPLET (object);
+
+    G_OBJECT_CLASS (ka_applet_parent_class)->constructed (object);
+
+    self->pwdialog = ka_pwdialog_new ();
+    self->settings = ka_settings_init (self);
+    self->loader = ka_plugin_loader_create (self);
+    ka_dbus_connect (self);
+}
 
 static void
 ka_applet_dispose (GObject *object)
@@ -442,6 +454,7 @@ ka_applet_finalize (GObject *object)
 static void
 ka_applet_init (KaApplet *applet)
 {
+    gtk_window_set_default_icon_name ("krb-valid-ticket");
 }
 
 static void
@@ -450,6 +463,7 @@ ka_applet_class_init (KaAppletClass *klass)
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
     int i;
 
+    object_class->constructed = ka_applet_constructed;;
     object_class->dispose = ka_applet_dispose;
     object_class->finalize = ka_applet_finalize;
 
@@ -779,27 +793,6 @@ ka_applet_destroy (KaApplet* self)
 }
 
 
-KaApplet *
-ka_applet_create (void)
-{
-    KaApplet *self = ka_applet_new ();
-
-    gtk_window_set_default_icon_name ("krb-valid-ticket");
-
-    self->pwdialog = ka_pwdialog_new ();
-    g_return_val_if_fail (self->pwdialog != NULL, NULL);
-
-    self->settings = ka_settings_init (self);
-    g_return_val_if_fail (self->settings != NULL, NULL);
-
-    self->loader = ka_plugin_loader_create (self);
-    g_return_val_if_fail (self->loader != NULL, NULL);
-
-    g_return_val_if_fail (ka_dbus_connect (self), NULL);
-
-    return self;
-}
-
 int
 main (int argc, char *argv[])
 {
@@ -813,9 +806,7 @@ main (int argc, char *argv[])
     g_set_application_name (KA_NAME);
 
     gtk_init (&argc, &argv);
-    applet = ka_applet_create ();
-    if (!applet)
-        return 1;
+    applet = ka_applet_new ();
 
     setup_signal_handlers(applet);
     return g_application_run (G_APPLICATION(applet), argc, argv);

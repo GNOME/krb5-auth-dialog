@@ -829,8 +829,7 @@ ka_applet_create (void)
 int
 main (int argc, char *argv[])
 {
-    KaApplet *applet;
-    int ret = 0;
+    g_autoptr(KaApplet) applet = NULL;
 
     textdomain (PACKAGE);
     bind_textdomain_codeset (PACKAGE, "UTF-8");
@@ -845,9 +844,7 @@ main (int argc, char *argv[])
         return 1;
 
     setup_signal_handlers(applet);
-    ret = g_application_run (G_APPLICATION(applet), argc, argv);
-    g_object_unref (applet);
-    return ret;
+    return g_application_run (G_APPLICATION(applet), argc, argv);
 }
 
 /*

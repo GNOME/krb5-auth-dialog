@@ -577,6 +577,11 @@ ka_preferences_init (KaPreferences *self)
 {
     self->priv = ka_preferences_get_instance_private (self);
     gtk_widget_init_template (GTK_WIDGET (self));
+
+    g_signal_connect (self,
+                      "delete-event",
+                      G_CALLBACK (gtk_widget_hide_on_delete),
+                      NULL);
 }
 
 
@@ -642,9 +647,9 @@ ka_preferences_run (KaPreferences *self)
     if (parent)
         gtk_window_set_transient_for (GTK_WINDOW(self),
                                       GTK_WINDOW(parent));
+
+    gtk_window_set_modal (GTK_WINDOW (self), TRUE);
     gtk_window_present (GTK_WINDOW(self));
-    gtk_dialog_run (GTK_DIALOG (self));
-    gtk_widget_hide (GTK_WIDGET (self));
 }
 
 /*

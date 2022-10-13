@@ -60,6 +60,7 @@ const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
     "krb-tgt-expired",
     "krb-ccache-changed",
 };
+static guint signals[KA_SIGNAL_COUNT];
 
 
 struct _KaApplet {
@@ -70,8 +71,6 @@ struct _KaApplet {
 
 struct _KaAppletClass {
     GtkApplicationClass parent;
-
-    guint signals[KA_SIGNAL_COUNT];
 };
 
 struct _KaAppletPrivate {
@@ -547,9 +546,9 @@ ka_applet_class_init (KaAppletClass *klass)
                                  ka_closure_VOID__STRING_UINT,
                                  G_TYPE_NONE, 2,   /* number of parameters */
                                  G_TYPE_STRING, G_TYPE_UINT);
-        klass->signals[i] = signalId;
+        signals[i] = signalId;
     }
-    klass->signals[KA_CCACHE_CHANGED] = g_signal_new (
+    signals[KA_CCACHE_CHANGED] = g_signal_new (
         ka_signal_names[KA_CCACHE_CHANGED],
         G_OBJECT_CLASS_TYPE (klass),
         G_SIGNAL_RUN_LAST, 0, NULL, NULL,
@@ -782,14 +781,13 @@ ka_applet_signal_emit (KaApplet *this,
                        KaAppletSignalNumber signum,
                        krb5_timestamp expiry)
 {
-    KaAppletClass *klass = KA_APPLET_GET_CLASS (this);
     char *princ;
 
     princ = ka_unparse_name ();
     if (!princ)
         return;
 
-    g_signal_emit (this, klass->signals[signum], 0, princ, (guint32) expiry);
+    g_signal_emit (this, signals[signum], 0, princ, (guint32) expiry);
     g_free (princ);
 }
 

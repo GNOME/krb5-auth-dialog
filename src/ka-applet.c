@@ -45,8 +45,9 @@ enum {
     KA_PROP_TGT_PROXIABLE,
     KA_PROP_TGT_RENEWABLE,
     KA_PROP_CONF_TICKETS,
+    KA_PROP_LAST_PROP
 };
-
+static GParamSpec *props[KA_PROP_LAST_PROP];
 
 const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
     "krb-tgt-acquired",
@@ -447,7 +448,6 @@ static void
 ka_applet_class_init (KaAppletClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
-    GParamSpec *pspec;
     int i;
 
     object_class->dispose = ka_applet_dispose;
@@ -462,63 +462,60 @@ ka_applet_class_init (KaAppletClass *klass)
     object_class->set_property = ka_applet_set_property;
     object_class->get_property = ka_applet_get_property;
 
-    pspec = g_param_spec_string (KA_PROP_NAME_PRINCIPAL,
+    props[KA_PROP_PRINCIPAL] =
+        g_param_spec_string (KA_PROP_NAME_PRINCIPAL,
                                  "Principal",
                                  "Get/Set Kerberos principal",
                                  "", G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class, KA_PROP_PRINCIPAL, pspec);
 
-    pspec = g_param_spec_string (KA_PROP_NAME_PK_USERID,
+    props[KA_PROP_PK_USERID] =
+        g_param_spec_string (KA_PROP_NAME_PK_USERID,
                                  "PKinit identifier",
                                  "Get/Set Pkinit identifier",
                                  "", G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class, KA_PROP_PK_USERID, pspec);
 
-    pspec = g_param_spec_string (KA_PROP_NAME_PK_ANCHORS,
+    props[KA_PROP_PK_ANCHORS] =
+        g_param_spec_string (KA_PROP_NAME_PK_ANCHORS,
                                  "PKinit trust anchors",
                                  "Get/Set Pkinit trust anchors",
                                  "", G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class, KA_PROP_PK_ANCHORS, pspec);
 
-    pspec = g_param_spec_uint (KA_PROP_NAME_PW_PROMPT_MINS,
+    props[KA_PROP_PW_PROMPT_MINS] =
+        g_param_spec_uint (KA_PROP_NAME_PW_PROMPT_MINS,
                                "Password prompting interval",
                                "Password prompting interval in minutes",
                                0, G_MAXUINT, MINUTES_BEFORE_PROMPTING,
                                G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class,
-                                     KA_PROP_PW_PROMPT_MINS, pspec);
 
-    pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_FORWARDABLE,
+    props[KA_PROP_TGT_FORWARDABLE] =
+        g_param_spec_boolean (KA_PROP_NAME_TGT_FORWARDABLE,
                                   "Forwardable ticket",
                                   "whether to request forwardable tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class,
-                                     KA_PROP_TGT_FORWARDABLE, pspec);
 
-    pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_PROXIABLE,
+    props[KA_PROP_TGT_PROXIABLE] =
+        g_param_spec_boolean (KA_PROP_NAME_TGT_PROXIABLE,
                                   "Proxiable ticket",
                                   "whether to request proxiable tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class,
-                                     KA_PROP_TGT_PROXIABLE, pspec);
 
-    pspec = g_param_spec_boolean (KA_PROP_NAME_TGT_RENEWABLE,
+    props[KA_PROP_TGT_RENEWABLE] =
+        g_param_spec_boolean (KA_PROP_NAME_TGT_RENEWABLE,
                                   "Renewable ticket",
                                   "whether to request renewable tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class,
-                                     KA_PROP_TGT_RENEWABLE, pspec);
 
-    pspec = g_param_spec_boolean (KA_PROP_NAME_CONF_TICKETS,
+    props[KA_PROP_CONF_TICKETS] =
+        g_param_spec_boolean (KA_PROP_NAME_CONF_TICKETS,
                                   "Configuration tickets",
                                   "whether to show configuration tickets",
                                   FALSE,
                                   G_PARAM_CONSTRUCT | G_PARAM_READWRITE);
-    g_object_class_install_property (object_class,
-                                     KA_PROP_CONF_TICKETS, pspec);
+
+    g_object_class_install_properties (object_class, KA_PROP_LAST_PROP, props);
 
     for (i=0; i < KA_SIGNAL_COUNT-1; i++) {
         guint signalId;

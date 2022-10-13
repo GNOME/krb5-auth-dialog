@@ -77,7 +77,6 @@ struct _KaApplet {
     /* command line and env handling */
     gboolean startup_ccache;    /* ccache found on startup */
     gboolean auto_run;          /* only start with valid ccache */
-    gint debug_flags;           /* Debug options from environment */
 
     char *krb_msg;              /* Additional banner delivered by Kerberos */
 

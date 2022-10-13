@@ -116,6 +116,7 @@ conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set_quoted('LOCALE_DIR', localedir)
 conf_data.set_quoted('KA_PLUGINS_DIR', pluginsdir)
 conf_data.set_quoted('DATA_DIR', datadir)
+conf_data.set_quoted('KA_APP_ID', app_id)
 
 # Hooray to different Kerberos implementations:
 if cc.has_member('krb5_creds', 'ticket_flags',

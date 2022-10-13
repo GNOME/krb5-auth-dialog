@@ -32,7 +32,6 @@
 
 G_BEGIN_DECLS
 #define KA_NAME _("Kerberos Authentication")
-#define KA_APP_ID "org.gnome.KrbAuthDialog"
 
 /* signals emitted by KaApplet */
 typedef enum {

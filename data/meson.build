@@ -3,8 +3,8 @@ subdir('22x22')
 subdir('48x48')
 
 appstream_file = i18n.merge_file(
-  input: 'krb5-auth-dialog.metainfo.xml.in',
-  output: 'krb5-auth-dialog.metainfo.xml',
+  input: '@0@.metainfo.xml.in'.format(app_id),
+  output: '@0@.metainfo.xml'.format(app_id),
   po_dir: '../po',
   install: true,
   install_dir: join_paths(get_option('datadir'), 'metainfo')

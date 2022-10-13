@@ -13,6 +13,8 @@ libdir = join_paths(prefix, get_option('libdir'))
 desktopdir = join_paths(datadir, 'applications')
 pluginsdir = join_paths(libdir, 'krb5-auth-dialog/plugins')
 
+app_id = 'org.gnome.KrbAuthDialog'
+
 glib_ver = '2.66'
 glib_ver_str = 'GLIB_VERSION_@0@'.format(glib_ver.replace('.','_'))
 glib_ver_cmp = '>=@0@'.format(glib_ver)

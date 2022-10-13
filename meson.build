@@ -13,11 +13,14 @@ libdir = join_paths(prefix, get_option('libdir'))
 desktopdir = join_paths(datadir, 'applications')
 pluginsdir = join_paths(libdir, 'krb5-auth-dialog/plugins')
 
-glib_ver = 'GLIB_VERSION_2_58'
+glib_ver = '2.66'
+glib_ver_str = 'GLIB_VERSION_@0@'.format(glib_ver.replace('.','_'))
+glib_ver_cmp = '>=@0@'.format(glib_ver)
 
 add_project_arguments([
   '-DHAVE_CONFIG_H',
-  '-DGLIB_VERSION_MIN_REQUIRED=@0@'.format(glib_ver),
+  '-DGLIB_VERSION_MIN_REQUIRED=@0@'.format(glib_ver_str),
+  '-DGLIB_VERSION_MAX_REQUIRED=@0@'.format(glib_ver_str),
   '-DG_LOG_DOMAIN="KrbAuthDialog"',
   '-I' + meson.build_root(),
 ], language: 'c')
@@ -82,11 +85,11 @@ add_project_arguments(
 gnome = import('gnome')
 i18n  = import('i18n')
 
-glib_dep = dependency('glib-2.0', version: '>=2.58')
-gio_dep = dependency('gio-2.0', version: '>=2.58')
+glib_dep = dependency('glib-2.0', version: glib_ver_cmp)
+gio_dep = dependency('gio-2.0', version: glib_ver_cmp)
+gobject_dep = dependency('gobject-2.0', version: glib_ver_cmp)
+gmodule_dep = dependency('gmodule-2.0', version: glib_ver_cmp)
 gtk_dep = dependency('gtk+-3.0', version: '>=3.14')
-gobject_dep = dependency('gobject-2.0', version: '>=2.50.0')
-gmodule_dep = dependency('gmodule-2.0')
 gcr_dep = dependency('gcr-3', version: '>= 3.5.5')
 
 meson.add_install_script(

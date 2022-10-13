@@ -27,6 +27,7 @@ G_BEGIN_DECLS
 
 void ka_show_help (GtkWindow* window, const char* section);
 void ka_show_about (KaApplet *applet);
+void ka_window_destroy (gpointer window);
 
 G_END_DECLS
 

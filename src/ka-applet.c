@@ -417,22 +417,16 @@ ka_applet_constructed (GObject *object)
     ka_dbus_connect (self);
 }
 
+
 static void
 ka_applet_dispose (GObject *object)
 {
     KaApplet *self = KA_APPLET (object);
-    GObjectClass *parent_class = G_OBJECT_CLASS (ka_applet_parent_class);
 
-    if (self->pwdialog) {
-        gtk_widget_destroy (GTK_WIDGET(self->pwdialog));
-        self->pwdialog = NULL;
-    }
-    if (self->loader) {
-        g_object_unref (self->loader);
-        self->loader = NULL;
-    }
+    g_clear_pointer (&self->pwdialog, ka_window_destroy);
+    g_clear_object (&self->loader);
 
-    parent_class->dispose (object);
+    G_OBJECT_CLASS (ka_applet_parent_class)->dispose (object);
 }
 
 

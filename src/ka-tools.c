@@ -83,3 +83,11 @@ ka_show_about (KaApplet *applet)
                            "translator-credits", _("translator-credits"),
                            NULL);
 }
+
+
+void
+ka_window_destroy (gpointer window)
+{
+    g_assert (GTK_IS_WINDOW (window));
+    gtk_widget_destroy (GTK_WIDGET (window));
+}

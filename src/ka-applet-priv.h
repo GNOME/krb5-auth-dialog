@@ -65,9 +65,6 @@ GtkWindow* ka_applet_last_focused_window(KaApplet *self);
 #define KA_PROP_NAME_TGT_RENEWABLE   "tgt-renewable"
 #define KA_PROP_NAME_CONF_TICKETS    "conf-tickets"
 
-/* destroy the applet */
-void ka_applet_destroy (KaApplet *self);
-
 /* update tooltip and icon */
 int ka_applet_update_status (KaApplet *self, krb5_timestamp expiry);
 

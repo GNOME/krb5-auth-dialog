@@ -111,10 +111,9 @@ ka_applet_command_line (GApplication            *application,
     KaApplet *self = KA_APPLET(application);
     KA_DEBUG ("Evaluating command line");
 
-    if (!self->startup_ccache &&
-        self->auto_run)
-        ka_applet_destroy (self);
-    else
+    if (!self->startup_ccache && self->auto_run) {
+        g_application_quit (G_APPLICATION (self));
+    } else
         ka_applet_activate (application);
     return 0;
 }
@@ -214,7 +213,7 @@ action_quit (GSimpleAction *action G_GNUC_UNUSED,
 {
     KaApplet *self = KA_APPLET (userdata);
 
-    ka_applet_destroy (self);
+    g_application_quit (G_APPLICATION (self));
 }
 
 
@@ -419,6 +418,9 @@ ka_applet_dispose (GObject *object)
     g_clear_pointer (&self->pwdialog, ka_window_destroy);
     g_clear_pointer (&self->prefs, ka_window_destroy);
     g_clear_object (&self->loader);
+
+    ka_dbus_disconnect ();
+    ka_kerberos_destroy ();
 
     G_OBJECT_CLASS (ka_applet_parent_class)->dispose (object);
 }
@@ -757,25 +759,6 @@ ka_applet_signal_emit (KaApplet *this,
 
     g_signal_emit (this, signals[signum], 0, princ, (guint32) expiry);
     g_free (princ);
-}
-
-
-/* undo what was done on startup() */
-void
-ka_applet_destroy (KaApplet* self)
-{
-    GList *windows, *first;
-
-    ka_dbus_disconnect ();
-    windows = gtk_application_get_windows (GTK_APPLICATION(self));
-    if (windows) {
-        first = g_list_first (windows);
-        gtk_application_remove_window(GTK_APPLICATION (self),
-                                      GTK_WINDOW (first->data));
-    }
-
-
-    ka_kerberos_destroy ();
 }
 
 

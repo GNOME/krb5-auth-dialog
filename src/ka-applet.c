@@ -424,6 +424,7 @@ ka_applet_dispose (GObject *object)
     KaApplet *self = KA_APPLET (object);
 
     g_clear_pointer (&self->pwdialog, ka_window_destroy);
+    g_clear_pointer (&self->prefs, ka_window_destroy);
     g_clear_object (&self->loader);
 
     G_OBJECT_CLASS (ka_applet_parent_class)->dispose (object);
@@ -780,8 +781,6 @@ ka_applet_destroy (KaApplet* self)
                                       GTK_WINDOW (first->data));
     }
 
-    gtk_widget_destroy (GTK_WIDGET(self->prefs));
-    self->prefs = NULL;
 
     ka_kerberos_destroy ();
 }

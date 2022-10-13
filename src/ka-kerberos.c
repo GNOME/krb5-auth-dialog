@@ -989,7 +989,7 @@ ka_check_credentials (KaApplet *applet, const char *newprincipal)
 }
 
 
-/* initiate grabbing of credentials (e.g. on leftclick of tray icon) */
+/* initiate grabbing of credentials (on "Get Ticket" button click) */
 gboolean
 ka_grab_credentials (KaApplet *applet)
 {

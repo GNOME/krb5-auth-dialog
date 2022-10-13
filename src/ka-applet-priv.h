@@ -45,7 +45,6 @@ typedef enum {
 extern const gchar *ka_signal_names[];
 
 /* public functions */
-gboolean ka_applet_get_show_trayicon (const KaApplet *self);
 void ka_applet_set_tgt_renewable (KaApplet *self, gboolean renewable);
 gboolean ka_applet_get_tgt_renewable (const KaApplet *self);
 guint ka_applet_get_pw_prompt_secs (const KaApplet *self);

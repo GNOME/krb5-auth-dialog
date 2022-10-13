@@ -109,7 +109,7 @@
                           <object class="GtkImage">
                             <property name="visible">True</property>
                             <property name="valign">start</property>
-                            <property name="stock">gtk-properties</property>
+                            <property name="icon-name">gtk-properties</property>
                             <property name="icon-size">6</property>
                           </object>
                         </child>

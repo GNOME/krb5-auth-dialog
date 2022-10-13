@@ -53,7 +53,7 @@
                             <property name="visible">True</property>
                             <property name="valign">start</property>
                             <property name="icon_name">krb-valid-ticket</property>
-                            <property name="icon-size">6</property>
+                            <property name="pixel-size">48</property>
                           </object>
                         </child>
                         <child>
@@ -107,7 +107,7 @@
                             <property name="visible">True</property>
                             <property name="valign">start</property>
                             <property name="icon-name">gtk-properties</property>
-                            <property name="icon-size">6</property>
+                            <property name="pixel-size">48</property>
                           </object>
                         </child>
                         <child>
@@ -204,7 +204,7 @@
                             <property name="visible">True</property>
                             <property name="valign">start</property>
                             <property name="icon_name">krb-valid-ticket</property>
-                            <property name="icon-size">6</property>
+                            <property name="pixel-size">48</property>
                           </object>
                         </child>
                         <child>
@@ -339,7 +339,7 @@
                             <property name="visible">True</property>
                             <property name="valign">start</property>
                             <property name="icon_name">krb-expiring-ticket</property>
-                            <property name="icon-size">6</property>
+                            <property name="pixel-size">48</property>
                           </object>
                         </child>
                         <child>

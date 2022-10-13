@@ -1058,8 +1058,7 @@ ka_kerberos_init (KaApplet *applet)
 gboolean
 ka_kerberos_destroy (void)
 {
-    if (ccache_monitor)
-        g_object_unref (ccache_monitor);
+    g_clear_object (&ccache_monitor);
 
     ka_krb5_context_free ();
     return TRUE;

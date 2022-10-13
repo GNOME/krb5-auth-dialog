@@ -20,27 +20,12 @@
 #ifndef KA_APPLET_H
 #define KA_APPLET_H
 
-#include <glib-object.h>
+#include <gtk/gtk.h>
 
 G_BEGIN_DECLS
 
-#define KA_TYPE_APPLET            (ka_applet_get_type ())
-#define KA_APPLET(obj)            \
-    (G_TYPE_CHECK_INSTANCE_CAST ((obj), KA_TYPE_APPLET, KaApplet))
-#define KA_APPLET_CLASS(klass)    \
-    (G_TYPE_CHECK_CLASS_CAST ((klass), KA_TYPE_APPLET, KaAppletClass))
-#define KA_IS_APPLET(obj)         \
-    (G_TYPE_CHECK_INSTANCE_TYPE ((obj), KA_TYPE_APPLET))
-#define KA_IS_APPLET_CLASS(klass) \
-    (G_TYPE_CHECK_CLASS_TYPE ((klass), KA_TYPE_APPLET))
-#define KA_APPLET_GET_CLASS(obj)  \
-    (G_TYPE_INSTANCE_GET_CLASS ((obj), KA_TYPE_APPLET, KaAppletClass))
-
-typedef struct _KaApplet        KaApplet;
-typedef struct _KaAppletClass   KaAppletClass;
-typedef struct _KaAppletPrivate KaAppletPrivate;
-
-GType ka_applet_get_type (void);
+#define KA_TYPE_APPLET  (ka_applet_get_type ())
+G_DECLARE_FINAL_TYPE    (KaApplet, ka_applet, KA, APPLET, GtkApplication)
 
 G_END_DECLS
 

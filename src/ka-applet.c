@@ -62,18 +62,9 @@ const gchar *ka_signal_names[KA_SIGNAL_COUNT] = {
 };
 static guint signals[KA_SIGNAL_COUNT];
 
-
 struct _KaApplet {
     GtkApplication parent;
 
-    KaAppletPrivate *priv;
-};
-
-struct _KaAppletClass {
-    GtkApplicationClass parent;
-};
-
-struct _KaAppletPrivate {
     const char *icons[3];       /* for invalid, expiring and valid tickts */
 
     KaPwDialog *pwdialog;       /* the password dialog */
@@ -102,7 +93,7 @@ struct _KaAppletPrivate {
     GSettings *settings;         /* GSettings client */
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
+G_DEFINE_TYPE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
 
 static gboolean is_initialized;
 
@@ -126,8 +117,8 @@ ka_applet_command_line (GApplication            *application,
     KaApplet *self = KA_APPLET(application);
     KA_DEBUG ("Evaluating command line");
 
-    if (!self->priv->startup_ccache &&
-        self->priv->auto_run)
+    if (!self->startup_ccache &&
+        self->auto_run)
         ka_applet_destroy (self);
     else
         ka_applet_activate (application);
@@ -172,7 +163,7 @@ ka_applet_local_command_line (GApplication *application,
         g_clear_error (&error);
         *exit_status = 1;
     } else {
-        self->priv->auto_run = auto_run;
+        self->auto_run = auto_run;
         *exit_status = 0;
     }
 
@@ -198,7 +189,7 @@ action_preferences (GSimpleAction *action G_GNUC_UNUSED,
 		    gpointer userdata)
 {
     KaApplet *self = userdata;
-    ka_preferences_run (self->priv->prefs);
+    ka_preferences_run (self->prefs);
 }
 
 static void
@@ -298,12 +289,12 @@ ka_applet_startup (GApplication *application)
 
     G_APPLICATION_CLASS (ka_applet_parent_class)->startup (application);
 
-    self->priv->startup_ccache = ka_kerberos_init (self);
+    self->startup_ccache = ka_kerberos_init (self);
     main_window = GTK_WINDOW(ka_main_window_create (self));
-    gtk_window_set_transient_for(GTK_WINDOW(self->priv->pwdialog),
+    gtk_window_set_transient_for(GTK_WINDOW(self->pwdialog),
                                  main_window);
 
-    self->priv->prefs = ka_preferences_new (self);
+    self->prefs = ka_preferences_new (self);
 
     g_action_map_add_action_entries (G_ACTION_MAP (self),
                                      app_entries, G_N_ELEMENTS (app_entries),
@@ -320,50 +311,50 @@ ka_applet_set_property (GObject *object,
 
     switch (property_id) {
     case KA_PROP_PRINCIPAL:
-        g_free (self->priv->principal);
-        self->priv->principal = g_value_dup_string (value);
-        KA_DEBUG ("%s: %s", pspec->name, self->priv->principal);
+        g_free (self->principal);
+        self->principal = g_value_dup_string (value);
+        KA_DEBUG ("%s: %s", pspec->name, self->principal);
         break;
 
     case KA_PROP_PK_USERID:
-        g_free (self->priv->pk_userid);
-        self->priv->pk_userid = g_value_dup_string (value);
-        KA_DEBUG ("%s: %s", pspec->name, self->priv->pk_userid);
+        g_free (self->pk_userid);
+        self->pk_userid = g_value_dup_string (value);
+        KA_DEBUG ("%s: %s", pspec->name, self->pk_userid);
         break;
 
     case KA_PROP_PK_ANCHORS:
-        g_free (self->priv->pk_anchors);
-        self->priv->pk_anchors = g_value_dup_string (value);
-        KA_DEBUG ("%s: %s", pspec->name, self->priv->pk_anchors);
+        g_free (self->pk_anchors);
+        self->pk_anchors = g_value_dup_string (value);
+        KA_DEBUG ("%s: %s", pspec->name, self->pk_anchors);
         break;
 
     case KA_PROP_PW_PROMPT_MINS:
-        self->priv->pw_prompt_secs = g_value_get_uint (value) * 60;
-        KA_DEBUG ("%s: %d", pspec->name, self->priv->pw_prompt_secs / 60);
+        self->pw_prompt_secs = g_value_get_uint (value) * 60;
+        KA_DEBUG ("%s: %d", pspec->name, self->pw_prompt_secs / 60);
         break;
 
     case KA_PROP_TGT_FORWARDABLE:
-        self->priv->tgt_forwardable = g_value_get_boolean (value);
+        self->tgt_forwardable = g_value_get_boolean (value);
         KA_DEBUG ("%s: %s", pspec->name,
-                  self->priv->tgt_forwardable ? "True" : "False");
+                  self->tgt_forwardable ? "True" : "False");
         break;
 
     case KA_PROP_TGT_PROXIABLE:
-        self->priv->tgt_proxiable = g_value_get_boolean (value);
+        self->tgt_proxiable = g_value_get_boolean (value);
         KA_DEBUG ("%s: %s", pspec->name,
-                  self->priv->tgt_proxiable ? "True" : "False");
+                  self->tgt_proxiable ? "True" : "False");
         break;
 
     case KA_PROP_TGT_RENEWABLE:
-        self->priv->tgt_renewable = g_value_get_boolean (value);
+        self->tgt_renewable = g_value_get_boolean (value);
         KA_DEBUG ("%s: %s", pspec->name,
-                  self->priv->tgt_renewable ? "True" : "False");
+                  self->tgt_renewable ? "True" : "False");
         break;
 
     case KA_PROP_CONF_TICKETS:
-        self->priv->conf_tickets = g_value_get_boolean (value);
+        self->conf_tickets = g_value_get_boolean (value);
         KA_DEBUG ("%s: %s", pspec->name,
-                  self->priv->tgt_renewable ? "True" : "False");
+                  self->tgt_renewable ? "True" : "False");
         break;
 
     default:
@@ -383,35 +374,35 @@ ka_applet_get_property (GObject *object,
 
     switch (property_id) {
     case KA_PROP_PRINCIPAL:
-        g_value_set_string (value, self->priv->principal);
+        g_value_set_string (value, self->principal);
         break;
 
     case KA_PROP_PK_USERID:
-        g_value_set_string (value, self->priv->pk_userid);
+        g_value_set_string (value, self->pk_userid);
         break;
 
     case KA_PROP_PK_ANCHORS:
-        g_value_set_string (value, self->priv->pk_anchors);
+        g_value_set_string (value, self->pk_anchors);
         break;
 
     case KA_PROP_PW_PROMPT_MINS:
-        g_value_set_uint (value, self->priv->pw_prompt_secs / 60);
+        g_value_set_uint (value, self->pw_prompt_secs / 60);
         break;
 
     case KA_PROP_TGT_FORWARDABLE:
-        g_value_set_boolean (value, self->priv->tgt_forwardable);
+        g_value_set_boolean (value, self->tgt_forwardable);
         break;
 
     case KA_PROP_TGT_PROXIABLE:
-        g_value_set_boolean (value, self->priv->tgt_proxiable);
+        g_value_set_boolean (value, self->tgt_proxiable);
         break;
 
     case KA_PROP_TGT_RENEWABLE:
-        g_value_set_boolean (value, self->priv->tgt_renewable);
+        g_value_set_boolean (value, self->tgt_renewable);
         break;
 
     case KA_PROP_CONF_TICKETS:
-        g_value_set_boolean (value, self->priv->conf_tickets);
+        g_value_set_boolean (value, self->conf_tickets);
         break;
 
     default:
@@ -424,16 +415,16 @@ ka_applet_get_property (GObject *object,
 static void
 ka_applet_dispose (GObject *object)
 {
-    KaApplet *applet = KA_APPLET (object);
+    KaApplet *self = KA_APPLET (object);
     GObjectClass *parent_class = G_OBJECT_CLASS (ka_applet_parent_class);
 
-    if (applet->priv->pwdialog) {
-        gtk_widget_destroy (GTK_WIDGET(applet->priv->pwdialog));
-        applet->priv->pwdialog = NULL;
+    if (self->pwdialog) {
+        gtk_widget_destroy (GTK_WIDGET(self->pwdialog));
+        self->pwdialog = NULL;
     }
-    if (applet->priv->loader) {
-        g_object_unref (applet->priv->loader);
-        applet->priv->loader = NULL;
+    if (self->loader) {
+        g_object_unref (self->loader);
+        self->loader = NULL;
     }
 
     parent_class->dispose (object);
@@ -443,14 +434,14 @@ ka_applet_dispose (GObject *object)
 static void
 ka_applet_finalize (GObject *object)
 {
-    KaApplet *applet = KA_APPLET (object);
+    KaApplet *self = KA_APPLET (object);
     GObjectClass *parent_class = G_OBJECT_CLASS (ka_applet_parent_class);
 
-    g_free (applet->priv->principal);
-    g_free (applet->priv->pk_userid);
-    g_free (applet->priv->pk_anchors);
-    g_free (applet->priv->krb_msg);
-    /* no need to free applet->priv */
+    g_free (self->principal);
+    g_free (self->pk_userid);
+    g_free (self->pk_anchors);
+    g_free (self->krb_msg);
+    /* no need to free self */
 
     parent_class->finalize (object);
 }
@@ -458,7 +449,6 @@ ka_applet_finalize (GObject *object)
 static void
 ka_applet_init (KaApplet *applet)
 {
-    applet->priv = ka_applet_get_instance_private (applet);
 }
 
 static void
@@ -634,7 +624,7 @@ static gboolean
 get_notify_enabled (KaApplet *self, const char *key)
 {
     gboolean ret;
-    GSettings *ns = g_settings_get_child (self->priv->settings,
+    GSettings *ns = g_settings_get_child (self->settings,
                                           KA_SETTING_CHILD_NOTIFY);
     ret = g_settings_get_boolean (ns, key);
     g_object_unref (ns);
@@ -646,7 +636,7 @@ get_notify_enabled (KaApplet *self, const char *key)
  * and notify listeners about acquired/expiring tickets via signals
  */
 int
-ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
+ka_applet_update_status (KaApplet *self, krb5_timestamp expiry)
 {
     int now = time (0);
     int remaining = expiry - now;
@@ -660,38 +650,38 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
     if (remaining > 0) {
         if (expiry_notified || initial_notification) {
             const char* msg;
-            notify = get_notify_enabled (applet, KA_SETTING_KEY_NOTIFY_VALID);
+            notify = get_notify_enabled (self, KA_SETTING_KEY_NOTIFY_VALID);
             if (notify) {
-                applet->priv->notify_key = KA_SETTING_KEY_NOTIFY_VALID;
+                self->notify_key = KA_SETTING_KEY_NOTIFY_VALID;
 
-                if (applet->priv->krb_msg)
-                    msg = applet->priv->krb_msg;
+                if (self->krb_msg)
+                    msg = self->krb_msg;
                 else {
                     if (initial_notification)
                         msg = _("You have valid Kerberos credentials.");
                     else
                         msg = _("You've refreshed your Kerberos credentials.");
                 }
-                ka_send_event_notification (applet,
+                ka_send_event_notification (self,
                                             _("Network credentials valid"),
                                             msg,
                                             "krb-valid-ticket",
                                             FALSE);
             }
-            ka_applet_signal_emit (applet, KA_SIGNAL_ACQUIRED_TGT, expiry);
+            ka_applet_signal_emit (self, KA_SIGNAL_ACQUIRED_TGT, expiry);
             expiry_notified = FALSE;
-            g_free (applet->priv->krb_msg);
-            applet->priv->krb_msg = NULL;
+            g_free (self->krb_msg);
+            self->krb_msg = NULL;
         } else {
-            if (remaining < applet->priv->pw_prompt_secs
+            if (remaining < self->pw_prompt_secs
                 && (now - last_warn) > NOTIFY_SECONDS
-                && !applet->priv->renewable) {
-                notify = get_notify_enabled (applet,
+                && !self->renewable) {
+                notify = get_notify_enabled (self,
                                              KA_SETTING_KEY_NOTIFY_EXPIRING);
                 if (notify) {
-                    applet->priv->notify_key =
+                    self->notify_key =
                         KA_SETTING_KEY_NOTIFY_EXPIRING;
-                    ka_send_event_notification (applet,
+                    ka_send_event_notification (self,
                                                 _("Network credentials expiring"),
                                                 tooltip_text,
                                                 "krb-expiring-ticket",
@@ -701,20 +691,20 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
             }
             /* ticket lifetime got longer e.g. by kinit -R */
             if (old_expiry && expiry > old_expiry)
-                ka_applet_signal_emit (applet, KA_SIGNAL_RENEWED_TGT, expiry);
+                ka_applet_signal_emit (self, KA_SIGNAL_RENEWED_TGT, expiry);
         }
     } else {
         if (!expiry_notified) {
-            notify = get_notify_enabled (applet, KA_SETTING_KEY_NOTIFY_EXPIRED);
+            notify = get_notify_enabled (self, KA_SETTING_KEY_NOTIFY_EXPIRED);
             if (notify) {
-                applet->priv->notify_key = KA_SETTING_KEY_NOTIFY_EXPIRED;
-                ka_send_event_notification (applet,
+                self->notify_key = KA_SETTING_KEY_NOTIFY_EXPIRED;
+                ka_send_event_notification (self,
                                             _("Network credentials expired"),
                                             _("Your Kerberos credentials have expired."),
                                             "krb-no-valid-ticket",
                                             TRUE);
             }
-            ka_applet_signal_emit (applet, KA_SIGNAL_EXPIRED_TGT, expiry);
+            ka_applet_signal_emit (self, KA_SIGNAL_EXPIRED_TGT, expiry);
             expiry_notified = TRUE;
             last_warn = 0;
         }
@@ -728,52 +718,52 @@ ka_applet_update_status (KaApplet *applet, krb5_timestamp expiry)
 
 
 static int
-ka_applet_setup_icons (KaApplet *applet)
+ka_applet_setup_icons (KaApplet *self)
 {
     /* Add application specific icons to search path */
     gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
                                        DATA_DIR G_DIR_SEPARATOR_S "icons");
-    applet->priv->icons[val_icon] = "krb-valid-ticket";
-    applet->priv->icons[exp_icon] = "krb-expiring-ticket";
-    applet->priv->icons[inv_icon] = "krb-no-valid-ticket";
+    self->icons[val_icon] = "krb-valid-ticket";
+    self->icons[exp_icon] = "krb-expiring-ticket";
+    self->icons[inv_icon] = "krb-no-valid-ticket";
     return TRUE;
 }
 
 guint
-ka_applet_get_pw_prompt_secs (const KaApplet *applet)
+ka_applet_get_pw_prompt_secs (const KaApplet *self)
 {
-    return applet->priv->pw_prompt_secs;
+    return self->pw_prompt_secs;
 }
 
 void
-ka_applet_set_tgt_renewable (KaApplet *applet, gboolean renewable)
+ka_applet_set_tgt_renewable (KaApplet *self, gboolean renewable)
 {
-    applet->priv->renewable = renewable;
+    self->renewable = renewable;
 }
 
 gboolean
-ka_applet_get_tgt_renewable (const KaApplet *applet)
+ka_applet_get_tgt_renewable (const KaApplet *self)
 {
-    return applet->priv->renewable;
+    return self->renewable;
 }
 
 KaPwDialog *
-ka_applet_get_pwdialog (const KaApplet *applet)
+ka_applet_get_pwdialog (const KaApplet *self)
 {
-    return applet->priv->pwdialog;
+    return self->pwdialog;
 }
 
 GSettings *
 ka_applet_get_settings (const KaApplet *self)
 {
-    return self->priv->settings;
+    return self->settings;
 }
 
 void
 ka_applet_set_msg (KaApplet *self, const char *msg)
 {
-    g_free (self->priv->krb_msg);
-    self->priv->krb_msg = g_strdup (msg);
+    g_free (self->krb_msg);
+    self->krb_msg = g_strdup (msg);
 }
 
 void
@@ -806,8 +796,8 @@ ka_applet_destroy (KaApplet* self)
                                       GTK_WINDOW (first->data));
     }
 
-    gtk_widget_destroy (GTK_WIDGET(self->priv->prefs));
-    self->priv->prefs = NULL;
+    gtk_widget_destroy (GTK_WIDGET(self->prefs));
+    self->prefs = NULL;
 
     ka_kerberos_destroy ();
 }
@@ -816,24 +806,24 @@ ka_applet_destroy (KaApplet* self)
 KaApplet *
 ka_applet_create (void)
 {
-    KaApplet *applet = ka_applet_new ();
+    KaApplet *self = ka_applet_new ();
 
-    if (!(ka_applet_setup_icons (applet)))
+    if (!(ka_applet_setup_icons (self)))
         g_error ("Failure to setup icons");
-    gtk_window_set_default_icon_name (applet->priv->icons[val_icon]);
+    gtk_window_set_default_icon_name (self->icons[val_icon]);
 
-    applet->priv->pwdialog = ka_pwdialog_new ();
-    g_return_val_if_fail (applet->priv->pwdialog != NULL, NULL);
+    self->pwdialog = ka_pwdialog_new ();
+    g_return_val_if_fail (self->pwdialog != NULL, NULL);
 
-    applet->priv->settings = ka_settings_init (applet);
-    g_return_val_if_fail (applet->priv->settings != NULL, NULL);
+    self->settings = ka_settings_init (self);
+    g_return_val_if_fail (self->settings != NULL, NULL);
 
-    applet->priv->loader = ka_plugin_loader_create (applet);
-    g_return_val_if_fail (applet->priv->loader != NULL, NULL);
+    self->loader = ka_plugin_loader_create (self);
+    g_return_val_if_fail (self->loader != NULL, NULL);
 
-    g_return_val_if_fail (ka_dbus_connect (applet), NULL);
+    g_return_val_if_fail (ka_dbus_connect (self), NULL);
 
-    return applet;
+    return self;
 }
 
 int

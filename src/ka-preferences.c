@@ -148,13 +148,13 @@ ka_preferences_principal_notify (KaPreferences *self,
     principal = g_settings_get_string (self->priv->settings, key);
 
     if (!principal || !strlen(principal))
-        gtk_entry_set_text (GTK_ENTRY (self->priv->principal_entry), "");
+        ka_editable_set_text (self->priv->principal_entry, "");
     else {
         const char *old_principal;
 
-        old_principal = gtk_entry_get_text (GTK_ENTRY (self->priv->principal_entry));
+        old_principal = ka_editable_get_text (self->priv->principal_entry);
         if (!old_principal || (old_principal && strcmp (old_principal, principal)))
-            gtk_entry_set_text (GTK_ENTRY (self->priv->principal_entry), principal);
+            ka_editable_set_text (self->priv->principal_entry, principal);
     }
 }
 
@@ -165,7 +165,7 @@ ka_preferences_principal_changed (GtkEntry *entry,
     const char *principal;
     KaPreferences *self = KA_PREFERENCES (userdata);
 
-    principal = gtk_entry_get_text (entry);
+    principal = ka_editable_get_text (entry);
 
     if (principal && strlen(principal))
         g_object_set (self->priv->applet, KA_PROP_NAME_PRINCIPAL, principal, NULL);
@@ -183,7 +183,7 @@ ka_preferences_setup_principal_entry (KaPreferences *self)
     if (!principal)
         g_warning ("Getting principal failed");
     if (principal && strlen(principal))
-        gtk_entry_set_text (GTK_ENTRY (self->priv->principal_entry), principal);
+        ka_editable_set_text (self->priv->principal_entry, principal);
     g_free (principal);
 
     g_signal_connect (self->priv->principal_entry, "changed",
@@ -202,11 +202,11 @@ ka_preferences_pkuserid_notify (KaPreferences *self,
     if (pkuserid && strlen(pkuserid)) {
         const char *old_pkuserid;
 
-        old_pkuserid = gtk_entry_get_text (GTK_ENTRY (self->priv->pkuserid_entry));
+        old_pkuserid = ka_editable_get_text (self->priv->pkuserid_entry);
         if (!old_pkuserid || (old_pkuserid && strcmp (old_pkuserid, pkuserid)))
-            gtk_entry_set_text (GTK_ENTRY (self->priv->pkuserid_entry), pkuserid);
+            ka_editable_set_text (self->priv->pkuserid_entry, pkuserid);
     } else {
-        gtk_entry_set_text (GTK_ENTRY (self->priv->pkuserid_entry), "");
+        ka_editable_set_text (self->priv->pkuserid_entry, "");
     }
 }
 
@@ -218,7 +218,7 @@ ka_preferences_pkuserid_changed (GtkEntry *entry,
     const char *pkuserid;
     KaPreferences *self = KA_PREFERENCES (userdata);
 
-    pkuserid = gtk_entry_get_text (entry);
+    pkuserid = ka_editable_get_text (entry);
 
     if (pkuserid && strlen(pkuserid))
         g_object_set (self->priv->applet, KA_PROP_NAME_PK_USERID, pkuserid, NULL);
@@ -236,7 +236,7 @@ ka_preferences_setup_pkuserid_entry (KaPreferences *self)
     if (!pkuserid)
         g_warning ("Getting pkuserid failed");
     if (pkuserid && strlen(pkuserid))
-        gtk_entry_set_text (GTK_ENTRY (self->priv->pkuserid_entry), pkuserid);
+        ka_editable_set_text (self->priv->pkuserid_entry, pkuserid);
     if (pkuserid)
         g_free (pkuserid);
 
@@ -255,12 +255,12 @@ ka_preferences_pkanchors_notify (KaPreferences *self,
     if (pkanchors && strlen(pkanchors)) {
         const char *old_pkanchors;
 
-        old_pkanchors = gtk_entry_get_text (GTK_ENTRY (self->priv->pkanchors_entry));
+        old_pkanchors = ka_editable_get_text (self->priv->pkanchors_entry);
         if (!old_pkanchors || (old_pkanchors && strcmp (old_pkanchors,
                                                         pkanchors)))
-            gtk_entry_set_text (GTK_ENTRY (self->priv->pkanchors_entry), pkanchors);
+            ka_editable_set_text (self->priv->pkanchors_entry, pkanchors);
     } else {
-        gtk_entry_set_text (GTK_ENTRY (self->priv->pkanchors_entry), "");
+        ka_editable_set_text (self->priv->pkanchors_entry, "");
     }
 }
 
@@ -271,7 +271,7 @@ ka_preferences_pkanchors_changed (GtkEntry *entry,
     const char *pkanchors;
     KaPreferences *self = KA_PREFERENCES (userdata);
 
-    pkanchors = gtk_entry_get_text (entry);
+    pkanchors = ka_editable_get_text (entry);
 
     if (pkanchors && strlen(pkanchors))
         g_object_set (self->priv->applet, KA_PROP_NAME_PK_ANCHORS, pkanchors, NULL);
@@ -290,7 +290,7 @@ ka_preferences_setup_pkanchors_entry (KaPreferences *self)
         g_warning ("Getting pkanchors failed");
 
     if (pkanchors && strlen(pkanchors))
-        gtk_entry_set_text (GTK_ENTRY (self->priv->pkanchors_entry), pkanchors);
+        ka_editable_set_text (self->priv->pkanchors_entry, pkanchors);
     if (pkanchors)
         g_free (pkanchors);
 
@@ -318,7 +318,7 @@ ka_preferences_smartcard_toggled (GtkToggleButton *toggle,
     if (smartcard) {
         const char *path;
 
-        path = gtk_entry_get_text (GTK_ENTRY(self->priv->pkuserid_entry));
+        path = ka_editable_get_text (self->priv->pkuserid_entry);
         if (g_strcmp0 (path, PKINIT_SMARTCARD)) {
             g_free (old_path);
             old_path = g_strdup (path);
@@ -373,7 +373,7 @@ on_file_chooser_response (GtkDialog* dialog, gint response_id, gpointer user_dat
 
     if (filename) {
         g_autofree gchar *cert = g_strconcat (PKINIT_FILE, filename, NULL);
-        gtk_entry_set_text (entry, cert);
+        ka_editable_set_text (entry, cert);
     }
 }
 
@@ -393,7 +393,7 @@ ka_preferences_browse_certs (KaPreferences *self, GtkEntry *entry)
                                               _("_Open"), GTK_RESPONSE_ACCEPT,
                                               NULL);
 
-    current = gtk_entry_get_text (entry);
+    current = ka_editable_get_text (entry);
     if (current && g_str_has_prefix (current, PKINIT_FILE) &&
         strlen(current) > strlen (PKINIT_FILE)) {
         g_autoptr(GFile) file = g_file_new_for_path (

@@ -24,6 +24,7 @@
 #include "ka-applet-priv.h"
 #include "ka-kerberos.h"
 #include "ka-pwdialog.h"
+#include "ka-tools.h"
 
 #define GCR_API_SUBJECT_TO_CHANGE
 #include <gcr/gcr.h>
@@ -275,7 +276,7 @@ ka_pwdialog_hide (const KaPwDialog *pwdialog, gboolean force)
 const gchar *
 ka_pwdialog_get_password (KaPwDialog *pwdialog)
 {
-    return gtk_entry_get_text (GTK_ENTRY (pwdialog->priv->pw_entry));
+    return ka_editable_get_text (pwdialog->priv->pw_entry);
 }
 
 gboolean
@@ -338,7 +339,7 @@ ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
     }
 
     /* Clear the password entry field */
-    gtk_entry_set_text (GTK_ENTRY (priv->pw_entry), "");
+    ka_editable_set_text (priv->pw_entry, "");
 
     /* Use the prompt label that krb5 provides us */
     gtk_label_set_text (GTK_LABEL (priv->krb_label), prompt);

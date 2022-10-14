@@ -55,7 +55,7 @@ ka_show_help (GtkWindow* window, const char* chapter)
 }
 
 
-void 
+void
 ka_show_about (KaApplet *applet)
 {
     GtkWindow *parent = ka_applet_last_focused_window (applet);
@@ -90,4 +90,25 @@ ka_window_destroy (gpointer window)
 {
     g_assert (GTK_IS_WINDOW (window));
     gtk_widget_destroy (GTK_WIDGET (window));
+}
+
+
+void
+ka_editable_set_text (gpointer editable, const char *text)
+{
+#if GTK_CHECK_VERSION(4,0,0)
+    gtk_editable_set_text (GTK_EDITABLE(editable), text);
+#else
+    gtk_entry_set_text (GTK_ENTRY(editable), text);
+#endif
+}
+
+const char *
+ka_editable_get_text (gpointer editable)
+{
+#if GTK_CHECK_VERSION(4,0,0)
+    return gtk_editable_get_text (GTK_EDITABLE (editable));
+#else
+    return gtk_entry_get_text (GTK_ENTRY (editable));
+#endif
 }

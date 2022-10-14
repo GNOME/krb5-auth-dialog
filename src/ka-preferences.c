@@ -369,7 +369,7 @@ on_file_chooser_response (GtkDialog* dialog, gint response_id, gpointer user_dat
         filename = g_file_get_path (file);
     }
 
-    gtk_widget_destroy (GTK_WIDGET(filechooser));
+    ka_window_destroy (filechooser);
 
     if (filename) {
         g_autofree gchar *cert = g_strconcat (PKINIT_FILE, filename, NULL);

@@ -45,8 +45,8 @@ ka_show_help (GtkWindow* window, const char* chapter)
       gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
 
       g_signal_connect (message_dialog, "response",
-                  G_CALLBACK (gtk_widget_destroy),
-                  NULL);
+                        G_CALLBACK (ka_window_destroy),
+                        NULL);
 
       gtk_widget_show (message_dialog);
       g_clear_error (&error);
@@ -89,7 +89,11 @@ void
 ka_window_destroy (gpointer window)
 {
     g_assert (GTK_IS_WINDOW (window));
+#if GTK_CHECK_VERSION(4,0,0)
+    gtk_window_destroy (GTK_WINDOW (window));
+#else
     gtk_widget_destroy (GTK_WIDGET (window));
+#endif
 }
 
 

@@ -215,7 +215,7 @@ ka_main_window_show (KaApplet *applet)
         gtk_window_set_resizable (GTK_WINDOW (message_dialog), FALSE);
 
         g_signal_connect (message_dialog, "response",
-                          G_CALLBACK (gtk_widget_destroy), NULL);
+                          G_CALLBACK (ka_window_destroy), NULL);
         gtk_widget_show (message_dialog);
     }
 }

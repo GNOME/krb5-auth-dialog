@@ -66,7 +66,7 @@ ka_pwdialog_finalize (GObject *object)
     KaPwDialog *pwdialog = KA_PWDIALOG (object);
     GObjectClass *parent_class = G_OBJECT_CLASS (ka_pwdialog_parent_class);
 
-    gtk_widget_destroy (pwdialog->priv->error_dialog);
+    ka_window_destroy (pwdialog->priv->error_dialog);
     pwdialog->priv->error_dialog = NULL;
 
     parent_class->finalize (object);

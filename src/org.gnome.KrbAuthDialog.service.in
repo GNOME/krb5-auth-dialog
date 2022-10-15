@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=org.gnome.KrbAuthDialog
-Exec=@BINDIR@/krb5-auth-dialog

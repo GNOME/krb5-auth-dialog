@@ -2,7 +2,6 @@
 <interface>
   <!-- interface-requires gtk+ 3.10 -->
   <template class="KaPwDialog" parent="GtkDialog">
-    <property name="border_width">6</property>
     <property name="title" translatable="yes">Kerberos Authentication</property>
     <property name="resizable">False</property>
 

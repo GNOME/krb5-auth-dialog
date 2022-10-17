@@ -11,18 +11,27 @@ variables:
       libadwaita-1-dev
       libglib2.0-dev
       libgtk-4-dev
-      libkrb5-dev
       libpam0g-dev
       meson
       pkg-config
       yelp-tools
 
-build-debian:
+build-debian-mit:
   image: debian:bookworm
   stage: build
   before_script:
     - apt-get update
-    - apt-get -y install $DEBIAN_DEPS
+    - apt-get -y install $DEBIAN_DEPS libkrb5-dev
+  script:
+    - meson . _build
+    - ninja -C _build
+
+build-debian-heimdal:
+  image: debian:bookworm
+  stage: build
+  before_script:
+    - apt-get update
+    - apt-get -y install $DEBIAN_DEPS heimdal-dev
   script:
     - meson . _build
     - ninja -C _build

@@ -129,6 +129,10 @@ ka_error_dialog_new (void)
                                 _("%s Error"), KA_NAME);
 
     gtk_window_set_title (GTK_WINDOW (dialog), _(KA_NAME));
+    g_signal_connect (dialog,
+                      "response",
+                      G_CALLBACK (gtk_widget_hide),
+                      NULL);
     return dialog;
 }
 
@@ -171,8 +175,6 @@ ka_pwdialog_error (KaPwDialog *self, const char *msg)
                                               ("Couldn't acquire Kerberos ticket: '%s'"),
                                               _(msg));
     gtk_widget_show (GTK_WIDGET (dialog));
-    gtk_dialog_run (GTK_DIALOG (dialog));
-    gtk_widget_hide (dialog);
 }
 
 

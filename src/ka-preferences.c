@@ -308,10 +308,14 @@ ka_preferences_toggle_pkuserid_entry (KaPreferences *self, gboolean state)
 
 
 static void
-ka_preferences_smartcard_toggled (GtkToggleButton *toggle,
-                                  gpointer userdata)
+ka_preferences_smartcard_toggled (GtkWidget *toggle,
+                                  gpointer   userdata)
 {
-    gboolean smartcard = gtk_toggle_button_get_active (toggle);
+#if GTK_CHECK_VERSION(4,0,0)
+    gboolean smartcard = gtk_check_button_get_active (GTK_CHECK_BUTTON (toggle));
+#else
+    gboolean smartcard = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (toggle));
+#endif
     static gchar *old_path = NULL;
     KaPreferences *self = KA_PREFERENCES(userdata);
 
@@ -339,7 +343,8 @@ ka_preferences_smartcard_toggled (GtkToggleButton *toggle,
 static void
 ka_preferences_setup_smartcard_toggle (KaPreferences *self)
 {
-    char *pkuserid = NULL;
+    g_autofree char *pkuserid = NULL;
+    gboolean active = FALSE;
 
     g_object_get(self->priv->applet, KA_PROP_NAME_PK_USERID, &pkuserid, NULL);
     if (!pkuserid)
@@ -348,12 +353,14 @@ ka_preferences_setup_smartcard_toggle (KaPreferences *self)
     g_signal_connect (self->priv->smartcard_toggle, "toggled",
                       G_CALLBACK (ka_preferences_smartcard_toggled), self);
 
-    if (!g_strcmp0 (pkuserid, PKINIT_SMARTCARD))
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (self->priv->smartcard_toggle), TRUE);
-    else
-        gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (self->priv->smartcard_toggle), FALSE);
+    if (g_strcmp0 (pkuserid, PKINIT_SMARTCARD) == 0)
+        active = TRUE;
 
-    g_free (pkuserid);
+#if GTK_CHECK_VERSION(4,0,0)
+    gtk_check_button_set_active (GTK_CHECK_BUTTON (self->priv->smartcard_toggle), active);
+#else
+    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (self->priv->smartcard_toggle), active);
+#endif
 }
 
 

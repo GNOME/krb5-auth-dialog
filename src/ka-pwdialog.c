@@ -135,7 +135,6 @@ ka_error_dialog_new (void)
                                 _("%s Error"), KA_NAME);
 
     gtk_window_set_title (GTK_WINDOW (dialog), _(KA_NAME));
-    gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
     return dialog;
 }
 

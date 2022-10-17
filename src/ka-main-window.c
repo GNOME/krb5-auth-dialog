@@ -87,7 +87,6 @@ on_row_deleted(GtkTreeModel *model,
 }
 
 
-
 GtkApplicationWindow *
 ka_main_window_create (KaApplet *applet)
 {
@@ -218,11 +217,4 @@ ka_main_window_show (KaApplet *applet)
                           G_CALLBACK (ka_window_destroy), NULL);
         gtk_widget_show (message_dialog);
     }
-}
-
-void
-ka_main_window_hide (void)
-{
-    KA_DEBUG("Hiding main window");
-    gtk_widget_hide (GTK_WIDGET(main_window));
 }

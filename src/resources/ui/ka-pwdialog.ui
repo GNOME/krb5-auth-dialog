@@ -89,8 +89,8 @@
       </object>
     </child>
     <action-widgets>
-      <action-widget response="-6">cancel_button</action-widget>
-      <action-widget response="-5">krb5_renew_button</action-widget>
+      <action-widget response="cancel">cancel_button</action-widget>
+      <action-widget response="ok">krb5_renew_button</action-widget>
     </action-widgets>
   </template>
 

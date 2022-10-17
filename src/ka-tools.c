@@ -32,7 +32,12 @@ ka_show_help (GtkWindow* window, const char* chapter)
 
   url = g_strdup_printf("help:krb5-auth-dialog%s", section);
 
+#if GTK_CHECK_VERSION(4,0,0)
+  gtk_show_uri (window, url, GDK_CURRENT_TIME);
+#else
   gtk_show_uri_on_window (window, url, gtk_get_current_event_time (), &error);
+#endif
+
   if (error) {
       GtkWidget *message_dialog;
 

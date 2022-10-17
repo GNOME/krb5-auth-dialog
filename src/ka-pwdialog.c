@@ -50,11 +50,16 @@ struct _KaPwDialogPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (KaPwDialog, ka_pwdialog, GTK_TYPE_DIALOG);
 
 static void
-ka_pwdialog_init (KaPwDialog *pwdialog)
+ka_pwdialog_init (KaPwDialog *self)
 {
-    pwdialog->priv = ka_pwdialog_get_instance_private (pwdialog);
+    self->priv = ka_pwdialog_get_instance_private (self);
 
-    gtk_widget_init_template (GTK_WIDGET (pwdialog));
+    gtk_widget_init_template (GTK_WIDGET (self));
+
+    g_signal_connect (self,
+                      "delete-event",
+                      G_CALLBACK (gtk_widget_hide_on_delete),
+                      NULL);
 }
 
 static void

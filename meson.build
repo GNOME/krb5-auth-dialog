@@ -148,6 +148,12 @@ elif cc.has_member('krb5_creds', 'flags',
   endif
 endif
 
+if cc.has_member('krb5_prompt', 'type',
+                 prefix : '#include <krb5.h>',
+		 dependencies: krb5_dep)
+    conf_data.set('HAVE_KRB5_PROMPT_TYPE', 1)
+endif
+
 if cc.compiles('''
     #include <krb5.h>
     int main(int argc, char **argv)

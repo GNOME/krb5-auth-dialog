@@ -413,11 +413,17 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
     if (banner && !num_prompts)
         ka_applet_set_msg (applet, banner);
 
+    KA_DEBUG ("Num prompts: %d", num_prompts);
     for (i = 0; i < num_prompts; i++) {
         const gchar *password = NULL;
         int password_len = 0;
         int response;
 
+#ifdef HAVE_KRB5_PROMPT_TYPE
+        KA_DEBUG ("prompt: %s, type: %d", prompts[i].prompt, prompts[i].type);
+#else
+        KA_DEBUG ("prompt: %s", prompts[i].prompt);
+#endif
         errcode = KRB5_LIBOS_CANTREADPWD;
 
         source_id =

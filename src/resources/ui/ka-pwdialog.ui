@@ -4,6 +4,7 @@
   <template class="KaPwDialog" parent="GtkDialog">
     <property name="title" translatable="yes">Kerberos Authentication</property>
     <property name="resizable">False</property>
+    <property name="hide-on-close">True</property>
     <property name="default-widget">krb5_renew_button</property>
     <property name="focus-widget">pw_entry</property>
     <child type="action">

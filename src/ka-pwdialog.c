@@ -55,11 +55,6 @@ ka_pwdialog_init (KaPwDialog *self)
     self->priv = ka_pwdialog_get_instance_private (self);
 
     gtk_widget_init_template (GTK_WIDGET (self));
-
-    g_signal_connect (self,
-                      "delete-event",
-                      G_CALLBACK (gtk_widget_hide_on_delete),
-                      NULL);
 }
 
 static void

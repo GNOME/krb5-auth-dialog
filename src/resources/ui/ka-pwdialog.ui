@@ -4,7 +4,8 @@
   <template class="KaPwDialog" parent="GtkDialog">
     <property name="title" translatable="yes">Kerberos Authentication</property>
     <property name="resizable">False</property>
-
+    <property name="default-widget">krb5_renew_button</property>
+    <property name="focus-widget">pw_entry</property>
     <child type="action">
       <object class="GtkButton" id="cancel_button">
         <property name="visible">True</property>
@@ -16,7 +17,6 @@
       <object class="GtkButton" id="krb5_renew_button">
         <property name="visible">True</property>
         <property name="label" translatable="yes">_Renew Ticket</property>
-        <property name="has_default">True</property>
         <property name="use_underline">True</property>
       </object>
     </child>
@@ -69,7 +69,6 @@
                         <property name="invisible-char">●</property>
                         <property name="input-purpose">password</property>
                         <property name="buffer">pw_entry_buffer</property>
-                        <property name="has-focus">True</property>
                         <property name="hexpand">True</property>
                       </object>
                     </child>

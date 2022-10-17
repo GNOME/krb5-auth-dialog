@@ -311,6 +311,7 @@ ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
         retval = TRUE;
         goto out;
     } else if (ret) {
+        ka_log_error_message_at_level (G_LOG_LEVEL_DEBUG, "krb5_cc_start_seq_get", kcontext, ret);
         goto out;
     }
 

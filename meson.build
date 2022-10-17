@@ -91,7 +91,7 @@ glib_dep = dependency('glib-2.0', version: glib_ver_cmp)
 gio_dep = dependency('gio-2.0', version: glib_ver_cmp)
 gobject_dep = dependency('gobject-2.0', version: glib_ver_cmp)
 gmodule_dep = dependency('gmodule-2.0', version: glib_ver_cmp)
-gtk_dep = dependency('gtk+-3.0', version: '>=3.14')
+gtk_dep = dependency('gtk4', version: '>=4.4')
 
 meson.add_install_script(
   join_paths('build-aux', 'post_install.py'),

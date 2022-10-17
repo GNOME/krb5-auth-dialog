@@ -167,7 +167,9 @@ ka_applet_local_command_line (GApplication *application,
 
     context = g_option_context_new ("- Kerberos 5 credential checking");
     g_option_context_add_main_entries (context, options, NULL);
+#if !GTK_CHECK_VERSION(4,0,0)
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
+#endif
     g_option_context_parse (context, &argc, argv, &error);
 
     if (error) {
@@ -787,7 +789,11 @@ main (int argc, char *argv[])
     g_set_prgname (KA_APP_ID);
     g_set_application_name (KA_NAME);
 
+#if GTK_CHECK_VERSION(4,0,0)
+    gtk_init ();
+#else
     gtk_init (&argc, &argv);
+#endif
     applet = ka_applet_new ();
 
     return g_application_run (G_APPLICATION(applet), argc, argv);

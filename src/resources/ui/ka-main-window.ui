@@ -91,7 +91,7 @@
             <property name="label" translatable="yes">Get Ticket</property>
           </object>
         </child>
-        <child>
+        <child type="end">
           <object class="GtkMenuButton">
             <property name="visible">True</property>
             <property name="receives_default">True</property>
@@ -103,9 +103,6 @@
               </object>
             </child>
           </object>
-          <packing>
-            <property name="pack_type">end</property>
-          </packing>
         </child>
       </object>
     </child>

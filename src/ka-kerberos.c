@@ -306,7 +306,7 @@ ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
     g_return_val_if_fail (!ret, FALSE);
 
     ret = krb5_cc_start_seq_get (kcontext, ccache, &cursor);
-    if (ret == KRB5_FCC_NOFILE) {
+    if (ret == KRB5_FCC_NOFILE || ret == ENOENT) {
         ka_log_error_message_at_level (G_LOG_LEVEL_INFO, "krb5_cc_start_seq_get", kcontext, ret);
         retval = TRUE;
         goto out;

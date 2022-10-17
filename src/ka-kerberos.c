@@ -430,7 +430,7 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
             g_timeout_add_seconds (5,
                                    (GSourceFunc) krb5_auth_dialog_do_updates,
                                    applet);
-        ka_pwdialog_setup (pwdialog, (gchar *) prompts[i].prompt,
+        ka_pwdialog_setup (pwdialog, prompts[i].prompt,
                            invalid_auth);
         response = ka_pwdialog_run (pwdialog);
         switch (response) {

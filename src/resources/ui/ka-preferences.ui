@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
-  <!-- interface-requires gtk+ 3.0 -->
+  <requires lib="gtk" version="4.0"/>
   <object class="GtkAdjustment" id="adjustment1">
     <property name="upper">100</property>
     <property name="step_increment">1</property>
@@ -14,236 +14,205 @@
     <property name="margin-top">5</property>
     <child internal-child="content_area">
       <object class="GtkBox">
-        <property name="visible">True</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child>
           <object class="GtkNotebook" id="notebook">
-            <property name="visible">True</property>
             <child>
-              <object class="GtkBox" id="vbox_kerberos">
-                <property name="visible">True</property>
-                <property name="orientation">vertical</property>
-                <property name="margin-bottom">12</property>
-                <property name="margin-end">12</property>
-                <property name="margin-start">12</property>
-                <property name="margin-top">12</property>
-                <property name="spacing">18</property>
-                <property name="expand">True</property>
-                <child>
-                  <object class="GtkBox" id="vbox_kerberos_user">
-                    <property name="visible">True</property>
+              <object class="GtkNotebookPage">
+                <property name="child">
+                  <object class="GtkBox" id="vbox_kerberos">
                     <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="spacing">18</property>
+                    <property name="hexpand">True</property>
+                    <property name="vexpand">True</property>
                     <child>
-                      <object class="GtkLabel" id="label_kerberos_user">
-                        <property name="visible">True</property>
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Kerberos User</property>
-                        <style>
-                          <class name="heading"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
+                      <object class="GtkBox" id="vbox_kerberos_user">
+                        <property name="orientation">vertical</property>
                         <property name="spacing">12</property>
                         <child>
-                          <object class="GtkImage" id="access">
-                            <property name="visible">True</property>
-                            <property name="valign">start</property>
-                            <property name="icon_name">krb-valid-ticket</property>
-                            <property name="pixel-size">48</property>
+                          <object class="GtkLabel" id="label_kerberos_user">
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Kerberos User</property>
+                            <style>
+                              <class name="heading"/>
+                            </style>
                           </object>
                         </child>
                         <child>
                           <object class="GtkBox">
-                            <property name="visible">True</property>
-                            <property name="spacing">6</property>
-                            <property name="orientation">vertical</property>
+                            <property name="spacing">12</property>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="halign">start</property>
-                                <property name="label" translatable="yes">Kerberos principal:</property>
+                              <object class="GtkImage" id="access">
+                                <property name="valign">start</property>
+                                <property name="icon_name">krb-valid-ticket</property>
+                                <property name="pixel-size">48</property>
                               </object>
                             </child>
-                            <child>
-                              <object class="GtkEntry" id="principal_entry">
-                                <property name="visible">True</property>
-                                <property name="margin-top">5</property>
-                                <property name="margin-start">12</property>
-                                <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
-                                <property name="activates_default">True</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkBox" id="vbox_ticket_options">
-                    <property name="visible">True</property>
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Kerberos Ticket Options</property>
-                        <style>
-                          <class name="heading"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="GtkImage">
-                            <property name="visible">True</property>
-                            <property name="valign">start</property>
-                            <property name="icon-name">preferences-system</property>
-                            <property name="pixel-size">48</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="visible">True</property>
-                            <property name="orientation">vertical</property>
-                            <property name="spacing">6</property>
-                            <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="halign">start</property>
-                                <property name="label" translatable="yes">Requested Kerberos tickets should be:</property>
-                                <property name="wrap">True</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkCheckButton" id="forwardable_toggle">
-                                <property name="label" translatable="yes">forwardable</property>
-                                <property name="visible">True</property>
-                                <property name="margin-start">12</property>
-                                <property name="receives_default">False</property>
-                                <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
-                                <property name="halign">start</property>
-                                <property name="draw_indicator">True</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkCheckButton" id="renewable_toggle">
-                                <property name="label" translatable="yes">renewable</property>
-                                <property name="visible">True</property>
-                                <property name="margin-start">12</property>
-                                <property name="receives_default">False</property>
-                                <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
-                                <property name="halign">start</property>
-                                <property name="draw_indicator">True</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkCheckButton" id="proxiable_toggle">
-                                <property name="label" translatable="yes">proxiable</property>
-                                <property name="visible">True</property>
-                                <property name="margin-start">12</property>
-                                <property name="receives_default">False</property>
-                                <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
-                                <property name="halign">start</property>
-                                <property name="draw_indicator">True</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child type="tab">
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">Kerberos</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkBox" id="vbox_pkinit">
-                <property name="visible">True</property>
-                <property name="orientation">vertical</property>
-                <property name="valign">start</property>
-                <property name="margin-bottom">12</property>
-                <property name="margin-end">12</property>
-                <property name="margin-start">12</property>
-                <property name="margin-top">12</property>
-                <property name="spacing">18</property>
-                <child>
-                  <object class="GtkBox" id="vbox_pkinit_userid">
-                    <property name="visible">True</property>
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
-                    <child>
-                      <object class="GtkLabel" id="label_pkinit_userid">
-                        <property name="visible">True</property>
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Userid</property>
-                        <style>
-                          <class name="heading"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="GtkImage">
-                            <property name="visible">True</property>
-                            <property name="valign">start</property>
-                            <property name="icon_name">krb-valid-ticket</property>
-                            <property name="pixel-size">48</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="visible">True</property>
-                            <property name="orientation">vertical</property>
-                            <property name="spacing">6</property>
                             <child>
                               <object class="GtkBox">
-                                <property name="visible">True</property>
+                                <property name="spacing">6</property>
                                 <property name="orientation">vertical</property>
                                 <child>
-                                  <object class="GtkCheckButton" id="smartcard_toggle">
-                                    <property name="label" translatable="yes">Use Smartcard</property>
-                                    <property name="visible">True</property>
-                                    <property name="receives_default">False</property>
-                                    <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
+                                  <object class="GtkLabel">
                                     <property name="halign">start</property>
-                                    <property name="draw_indicator">True</property>
+                                    <property name="label" translatable="yes">Kerberos principal:</property>
                                   </object>
                                 </child>
                                 <child>
+                                  <object class="GtkEntry" id="principal_entry">
+                                    <property name="margin-top">5</property>
+                                    <property name="margin-start">12</property>
+                                    <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
+                                    <property name="activates_default">True</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkBox" id="vbox_ticket_options">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Kerberos Ticket Options</property>
+                            <style>
+                              <class name="heading"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="valign">start</property>
+                                <property name="icon-name">preferences-system</property>
+                                <property name="pixel-size">48</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">6</property>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="halign">start</property>
+                                    <property name="label" translatable="yes">Requested Kerberos tickets should be:</property>
+                                    <property name="wrap">True</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="forwardable_toggle">
+                                    <property name="label" translatable="yes">forwardable</property>
+                                    <property name="margin-start">12</property>
+                                    <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
+                                    <property name="halign">start</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="renewable_toggle">
+                                    <property name="label" translatable="yes">renewable</property>
+                                    <property name="margin-start">12</property>
+                                    <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
+                                    <property name="halign">start</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkCheckButton" id="proxiable_toggle">
+                                    <property name="label" translatable="yes">proxiable</property>
+                                    <property name="margin-start">12</property>
+                                    <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
+                                    <property name="halign">start</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="tab">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Kerberos</property>
+                  </object>
+                </property>
+              </object>
+            </child>
+            <child>
+              <object class="GtkNotebookPage">
+                <property name="child">
+                  <object class="GtkBox" id="vbox_pkinit">
+                    <property name="orientation">vertical</property>
+                    <property name="valign">start</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="spacing">18</property>
+                    <child>
+                      <object class="GtkBox" id="vbox_pkinit_userid">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkLabel" id="label_pkinit_userid">
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Userid</property>
+                            <style>
+                              <class name="heading"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkImage">
+                                <property name="valign">start</property>
+                                <property name="icon_name">krb-valid-ticket</property>
+                                <property name="pixel-size">48</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">6</property>
+                                <child>
                                   <object class="GtkBox">
-                                    <property name="visible">True</property>
+                                    <property name="orientation">vertical</property>
                                     <child>
-                                      <object class="GtkEntry" id="pkuserid_entry">
-                                        <property name="visible">True</property>
-                                        <property name="tooltip-text" translatable="yes">Certificate and private key used for authentication</property>
-                                        <property name="activates_default">True</property>
+                                      <object class="GtkCheckButton" id="smartcard_toggle">
+                                        <property name="label" translatable="yes">Use Smartcard</property>
+                                        <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
+                                        <property name="halign">start</property>
                                       </object>
                                     </child>
                                     <child>
-                                      <object class="GtkButton" id="pkuserid_button">
-                                        <property name="visible">True</property>
+                                      <object class="GtkBox">
                                         <child>
-                                          <object class="GtkImage">
-                                            <property name="visible">True</property>
-                                            <property name="icon-name">folder-open-symbolic</property>
+                                          <object class="GtkEntry" id="pkuserid_entry">
+                                            <property name="tooltip-text" translatable="yes">Certificate and private key used for authentication</property>
+                                            <property name="activates_default">True</property>
+                                          </object>
+                                        </child>
+                                        <child>
+                                          <object class="GtkButton" id="pkuserid_button">
+                                            <child>
+                                              <object class="GtkImage">
+                                                <property name="icon-name">folder-open-symbolic</property>
+                                              </object>
+                                            </child>
                                           </object>
                                         </child>
                                       </object>
@@ -256,123 +225,34 @@
                         </child>
                       </object>
                     </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkBox" id="vbox_anchors">
-                    <property name="visible">True</property>
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
                     <child>
-                      <object class="GtkLabel" id="label_anchors">
-                        <property name="visible">True</property>
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">X509 trust anchors</property>
-                        <style>
-                          <class name="heading"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
-                        <child>
-                          <object class="GtkEntry" id="pkanchors_entry">
-                            <property name="visible">True</property>
-                            <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
-                            <property name="activates_default">True</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="pkanchors_button">
-                            <property name="visible">True</property>
-                            <child>
-                              <object class="GtkImage">
-                                <property name="visible">True</property>
-                                <property name="icon-name">folder-open-symbolic</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-            <child type="tab">
-              <object class="GtkLabel" id="label_pkinit">
-                <property name="visible">True</property>
-                <property name="tooltip-text" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
-                <property name="label" translatable="yes">PKINIT</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkBox" id="vbox_notifications">
-                <property name="visible">True</property>
-                <property name="orientation">vertical</property>
-                <property name="margin-bottom">12</property>
-                <property name="margin-end">12</property>
-                <property name="margin-start">12</property>
-                <property name="margin-top">12</property>
-                <property name="spacing">18</property>
-                <child>
-                  <object class="GtkBox">
-                    <property name="visible">True</property>
-                    <property name="orientation">vertical</property>
-                    <property name="spacing">12</property>
-                    <child>
-                      <object class="GtkLabel">
-                        <property name="visible">True</property>
-                        <property name="halign">start</property>
-                        <property name="label" translatable="yes">Notifications</property>
-                        <style>
-                          <class name="heading"/>
-                        </style>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="visible">True</property>
+                      <object class="GtkBox" id="vbox_anchors">
+                        <property name="orientation">vertical</property>
                         <property name="spacing">12</property>
                         <child>
-                          <object class="GtkImage" id="image_notifications">
-                            <property name="visible">True</property>
-                            <property name="valign">start</property>
-                            <property name="icon_name">krb-expiring-ticket</property>
-                            <property name="pixel-size">48</property>
+                          <object class="GtkLabel" id="label_anchors">
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">X509 trust anchors</property>
+                            <style>
+                              <class name="heading"/>
+                            </style>
                           </object>
                         </child>
                         <child>
                           <object class="GtkBox">
-                            <property name="orientation">vertical</property>
-                            <property name="visible">True</property>
-                            <property name="spacing">6</property>
                             <child>
-                              <object class="GtkBox">
-                                <property name="visible">True</property>
-                                <property name="spacing">6</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="visible">True</property>
-                                    <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">Warn</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkSpinButton" id="prompt_mins_entry">
-                                    <property name="visible">True</property>
-                                    <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
-                                    <property name="adjustment">adjustment1</property>
-                                    <property name="snap_to_ticks">True</property>
-                                    <property name="numeric">True</property>
-                                  </object>
-                                </child>
+                              <object class="GtkEntry" id="pkanchors_entry">
+                                <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
+                                <property name="activates_default">True</property>
                               </object>
                             </child>
                             <child>
-                              <object class="GtkLabel">
-                                <property name="visible">True</property>
-                                <property name="label" translatable="yes" comments="Used in combination: 'Warn x minutes before expiry'">minutes before ticket expiry</property>
+                              <object class="GtkButton" id="pkanchors_button">
+                                <child>
+                                  <object class="GtkImage">
+                                    <property name="icon-name">folder-open-symbolic</property>
+                                  </object>
+                                </child>
                               </object>
                             </child>
                           </object>
@@ -380,13 +260,88 @@
                       </object>
                     </child>
                   </object>
-                </child>
+                </property>
+                <property name="tab">
+                  <object class="GtkLabel" id="label_pkinit">
+                    <property name="tooltip-text" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
+                    <property name="label" translatable="yes">PKINIT</property>
+                  </object>
+                </property>
               </object>
             </child>
-            <child type="tab">
-              <object class="GtkLabel">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">Notifications</property>
+            <child>
+              <object class="GtkNotebookPage">
+                <property name="child">
+                  <object class="GtkBox" id="vbox_notifications">
+                    <property name="orientation">vertical</property>
+                    <property name="margin-bottom">12</property>
+                    <property name="margin-end">12</property>
+                    <property name="margin-start">12</property>
+                    <property name="margin-top">12</property>
+                    <property name="spacing">18</property>
+                    <child>
+                      <object class="GtkBox">
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">12</property>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="halign">start</property>
+                            <property name="label" translatable="yes">Notifications</property>
+                            <style>
+                              <class name="heading"/>
+                            </style>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkBox">
+                            <property name="spacing">12</property>
+                            <child>
+                              <object class="GtkImage" id="image_notifications">
+                                <property name="valign">start</property>
+                                <property name="icon_name">krb-expiring-ticket</property>
+                                <property name="pixel-size">48</property>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkBox">
+                                <property name="orientation">vertical</property>
+                                <property name="spacing">6</property>
+                                <child>
+                                  <object class="GtkBox">
+                                    <property name="spacing">6</property>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="label" translatable="yes" comments="Used in combination: &apos;Warn x minutes before expiry&apos;">Warn</property>
+                                      </object>
+                                    </child>
+                                    <child>
+                                      <object class="GtkSpinButton" id="prompt_mins_entry">
+                                        <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
+                                        <property name="adjustment">adjustment1</property>
+                                        <property name="snap_to_ticks">True</property>
+                                        <property name="numeric">True</property>
+                                      </object>
+                                    </child>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkLabel">
+                                    <property name="label" translatable="yes" comments="Used in combination: &apos;Warn x minutes before expiry&apos;">minutes before ticket expiry</property>
+                                  </object>
+                                </child>
+                              </object>
+                            </child>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </property>
+                <property name="tab">
+                  <object class="GtkLabel">
+                    <property name="label" translatable="yes">Notifications</property>
+                  </object>
+                </property>
               </object>
             </child>
           </object>

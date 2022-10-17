@@ -107,7 +107,6 @@ ka_main_window_create (KaApplet *applet)
     main_window =
         GTK_APPLICATION_WINDOW (gtk_builder_get_object (builder,
                                                         "krb5_main_window"));
-    gtk_builder_connect_signals (builder, NULL);
     g_object_set(main_window, "application", applet, NULL);
 
     tickets_view =

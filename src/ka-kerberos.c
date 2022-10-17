@@ -565,6 +565,7 @@ ka_auth_heimdal_pkinit (KaApplet *applet, krb5_creds *creds,
     krb5_get_init_creds_opt *opts = NULL;
     krb5_error_code retval;
     const char *pkinit_anchors = NULL;
+    krb5_init_creds_context ctx = NULL;
 
     KA_DEBUG ("pkinit with '%s'", pk_userid);
     if (pk_anchors && strlen (pk_anchors)) {
@@ -583,10 +584,33 @@ ka_auth_heimdal_pkinit (KaApplet *applet, krb5_creds *creds,
     if (retval)
         goto out;
 
-    retval = krb5_get_init_creds_password (kcontext, creds, kprincipal,
-                                           NULL, auth_dialog_prompter, applet,
-                                           0, NULL, opts);
+    retval = krb5_init_creds_init(kcontext, kprincipal, auth_dialog_prompter, NULL, 0, opts, &ctx);
+    if (retval) {
+        g_autofree char *msg = ka_get_error_message (kcontext, retval);
+
+        g_warning ("krb5_init_creds_init failed: %s", msg);
+        goto out;
+    }
+
+    retval = krb5_init_creds_get (kcontext, ctx);
+    if (retval) {
+        g_autofree char *msg = ka_get_error_message (kcontext, retval);
+
+        g_warning ("krb5_init_creds_init failed: %s", msg);
+        goto out;
+    }
+
+    retval = krb5_init_creds_get_creds (kcontext, ctx, creds);
+    if (retval) {
+        g_autofree char *msg = ka_get_error_message (kcontext, retval);
+
+        g_warning ("krb5_init_creds_init failed: %s", msg);
+        goto out;
+    }
+
   out:
+    if (ctx)
+        krb5_init_creds_free (kcontext, ctx);
     if (opts)
         krb5_get_init_creds_opt_free (kcontext, opts);
     return retval;

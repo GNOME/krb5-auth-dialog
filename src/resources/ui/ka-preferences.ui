@@ -7,6 +7,7 @@
     <property name="page_increment">10</property>
   </object>
   <template class="KaPreferences" parent="GtkDialog">
+    <property name="hide-on-close">True</property>
     <property name="margin-bottom">5</property>
     <property name="margin-end">5</property>
     <property name="margin-start">5</property>

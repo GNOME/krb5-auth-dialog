@@ -596,11 +596,6 @@ ka_preferences_init (KaPreferences *self)
 {
     self->priv = ka_preferences_get_instance_private (self);
     gtk_widget_init_template (GTK_WIDGET (self));
-
-    g_signal_connect (self,
-                      "delete-event",
-                      G_CALLBACK (gtk_widget_hide_on_delete),
-                      NULL);
 }
 
 

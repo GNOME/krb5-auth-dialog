@@ -153,69 +153,6 @@ ka_pwdialog_new (void)
     return pwdialog;
 }
 
-static gboolean
-grab_keyboard (GtkWidget *win, GdkEvent * event, gpointer data)
-{
-    KaPwDialog *pwdialog = KA_PWDIALOG (data);
-    GdkGrabStatus status;
-    GdkWindow *window = gtk_widget_get_window(win);
-
-    gtk_grab_add(win);
-    if (!pwdialog->priv->grabbed) {
-        status = gdk_seat_grab (gdk_display_get_default_seat(
-                                    gdk_window_get_display (window)),
-                                window,
-                                GDK_SEAT_CAPABILITY_ALL,
-                                TRUE,
-                                NULL,
-                                event,
-                                NULL,
-                                NULL);
-
-        if (status == GDK_GRAB_SUCCESS)
-            pwdialog->priv->grabbed = TRUE;
-        else
-            g_message ("could not grab keyboard: %d", (int) status);
-    }
-    return FALSE;
-}
-
-
-static gboolean
-ungrab_keyboard (GtkWidget *win,
-                 GdkEvent *event G_GNUC_UNUSED, gpointer data)
-{
-    KaPwDialog *pwdialog = KA_PWDIALOG (data);
-    GdkWindow *window = gtk_widget_get_window(win);
-
-    if (pwdialog->priv->grabbed) {
-        gtk_grab_remove (win);
-        gdk_seat_ungrab (gdk_display_get_default_seat(
-                             gdk_window_get_display (window)));
-
-        pwdialog->priv->grabbed = FALSE;
-    }
-    return FALSE;
-}
-
-
-static gboolean
-window_state_changed (GtkWidget *win, GdkEventWindowState *event,
-                      gpointer data)
-{
-    GdkWindowState state = gdk_window_get_state (gtk_widget_get_window (win));
-
-    if (state & GDK_WINDOW_STATE_WITHDRAWN ||
-        state & GDK_WINDOW_STATE_ICONIFIED ||
-        state & GDK_WINDOW_STATE_FULLSCREEN ||
-        state & GDK_WINDOW_STATE_MAXIMIZED)
-        ungrab_keyboard (win, (GdkEvent *) event, data);
-    else
-        grab_keyboard (win, (GdkEvent *) event, data);
-
-    return FALSE;
-}
-
 
 gint
 ka_pwdialog_run (KaPwDialog *self)
@@ -224,19 +161,6 @@ ka_pwdialog_run (KaPwDialog *self)
      * the error but clicked the tray icon again) */
     if (self->priv->error_dialog)
         gtk_widget_hide (self->priv->error_dialog);
-
-    /* make sure we pop up on top */
-    gtk_window_set_keep_above (GTK_WINDOW (self), TRUE);
-
-    /*
-     * grab the keyboard so that people don't accidentally type their
-     * passwords in other windows.
-     */
-    g_signal_connect (self, "map-event", G_CALLBACK (grab_keyboard), self);
-    g_signal_connect (self, "unmap-event", G_CALLBACK (ungrab_keyboard),
-                      self);
-    g_signal_connect (self, "window-state-event",
-                      G_CALLBACK (window_state_changed), self);
 
     gtk_widget_grab_focus (self->priv->pw_entry);
     gtk_widget_show (GTK_WIDGET (self));

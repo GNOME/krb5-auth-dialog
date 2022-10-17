@@ -1005,13 +1005,10 @@ ka_grab_credentials (KaApplet *applet)
         if (canceled)
             break;
         if (retval) {
-            gchar *errmsg;
-
-            errmsg = g_strdup_printf("%s%s",
-                                     ka_get_error_message (kcontext, retval),
-                                     is_online ? "" : _(" (No network connection)"));
+            g_autofree char *errmsg = g_strdup_printf("%s%s",
+                                                      ka_get_error_message (kcontext, retval),
+                                                      is_online ? "" : _(" (No network connection)"));
             ka_pwdialog_error (pwdialog, errmsg);
-            g_free (errmsg);
             break;
         } else {
             success = TRUE;

@@ -95,5 +95,5 @@
     </action-widgets>
   </template>
 
-  <object class="GcrSecureEntryBuffer" id="pw_entry_buffer"/>
+  <object class="GtkEntryBuffer" id="pw_entry_buffer"/>
 </interface>

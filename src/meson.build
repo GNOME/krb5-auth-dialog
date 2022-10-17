@@ -57,7 +57,6 @@ krb5_auth_dialog_sources = [
 ]
 
 krb5_auth_dialog_deps = [
-  gcr_dep,
   gio_dep,
   gmodule_dep,
   gobject_dep,

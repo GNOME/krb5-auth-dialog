@@ -26,9 +26,6 @@
 #include "ka-pwdialog.h"
 #include "ka-tools.h"
 
-#define GCR_API_SUBJECT_TO_CHANGE
-#include <gcr/gcr.h>
-
 struct _KaPwDialog {
     GtkDialog parent;
 
@@ -114,9 +111,6 @@ ka_pwdialog_class_init (KaPwDialogClass * klass)
     object_class->finalize = ka_pwdialog_finalize;
     object_class->constructor = ka_pwdialog_constructor;
 
-    /* Bind class to template
-     */
-    g_type_ensure (GCR_TYPE_SECURE_ENTRY_BUFFER);
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/krb5-auth-dialog/ui/ka-pwdialog.ui");
 

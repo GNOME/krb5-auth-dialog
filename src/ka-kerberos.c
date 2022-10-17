@@ -402,6 +402,7 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
     KaApplet *applet = KA_APPLET (data);
     KaPwDialog *pwdialog = ka_applet_get_pwdialog (applet);
     krb5_error_code errcode;
+    guint source_id;
     int i;
 
     errcode = KRB5KRB_ERR_GENERIC;
@@ -415,7 +416,6 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
         const gchar *password = NULL;
         int password_len = 0;
         int response;
-        guint32 source_id;
 
         errcode = KRB5_LIBOS_CANTREADPWD;
 
@@ -441,7 +441,7 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
             g_warning ("Unknown Response: %d", response);
             g_assert_not_reached ();
         }
-        g_source_remove (source_id);
+        g_clear_handle_id (&source_id, g_source_remove);
 
         if (!password)
             goto cleanup;
@@ -456,6 +456,7 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
         errcode = 0;
     }
   cleanup:
+    g_clear_handle_id (&source_id, g_source_remove);
     ka_pwdialog_hide (pwdialog, TRUE);
     /* Reset this, so we know the next time we get a TRUE value, it is accurate. */
     invalid_auth = FALSE;

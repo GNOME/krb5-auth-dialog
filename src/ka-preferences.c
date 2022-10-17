@@ -311,11 +311,7 @@ static void
 ka_preferences_smartcard_toggled (GtkWidget *toggle,
                                   gpointer   userdata)
 {
-#if GTK_CHECK_VERSION(4,0,0)
     gboolean smartcard = gtk_check_button_get_active (GTK_CHECK_BUTTON (toggle));
-#else
-    gboolean smartcard = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (toggle));
-#endif
     static gchar *old_path = NULL;
     KaPreferences *self = KA_PREFERENCES(userdata);
 
@@ -356,11 +352,7 @@ ka_preferences_setup_smartcard_toggle (KaPreferences *self)
     if (g_strcmp0 (pkuserid, PKINIT_SMARTCARD) == 0)
         active = TRUE;
 
-#if GTK_CHECK_VERSION(4,0,0)
     gtk_check_button_set_active (GTK_CHECK_BUTTON (self->priv->smartcard_toggle), active);
-#else
-    gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (self->priv->smartcard_toggle), active);
-#endif
 }
 
 

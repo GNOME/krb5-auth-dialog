@@ -155,18 +155,43 @@ ka_pwdialog_new (void)
     return pwdialog;
 }
 
+int response;
+
+
+static void
+on_response (GtkDialog *dialog, int response_id, GMainLoop *main_loop)
+{
+    response = response_id;
+    g_main_loop_quit (main_loop);
+}
+
 
 gint
 ka_pwdialog_run (KaPwDialog *self)
 {
+    int id;
+    g_autoptr (GMainLoop) dialog_main_loop = NULL;
+
     /* cleanup old error dialog, if present (e.g. user didn't acknowledge
      * the error but clicked the tray icon again) */
     if (self->priv->error_dialog)
         gtk_widget_hide (self->priv->error_dialog);
 
     gtk_widget_grab_focus (self->priv->pw_entry);
+
+    /* FIXME: we use a separate main loop as the Kerberos code wants
+       us to return a response. This is not worse than it was before -
+       it's just that gtk_dialog_run() going a way in GTK4 makes this
+       more obvious. */
+    dialog_main_loop = g_main_loop_new (NULL, FALSE);
+    id = g_signal_connect (self, "response", G_CALLBACK (on_response), dialog_main_loop);
+
     gtk_widget_show (GTK_WIDGET (self));
-    return gtk_dialog_run (GTK_DIALOG (self));
+    g_main_loop_run (dialog_main_loop);
+
+    g_signal_handler_disconnect (self, id);
+
+    return response;
 }
 
 

@@ -481,8 +481,7 @@ ka_preferences_constructed (GObject *object)
 {
   KaPreferences *self = KA_PREFERENCES (object);
 
-  if (G_OBJECT_CLASS (ka_preferences_parent_class)->constructed != NULL)
-    G_OBJECT_CLASS (ka_preferences_parent_class)->constructed (object);
+  G_OBJECT_CLASS (ka_preferences_parent_class)->constructed (object);
 
   g_assert_nonnull (self->applet);
   self->settings = ka_applet_get_settings(self->applet);

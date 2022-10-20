@@ -87,7 +87,7 @@ add_project_arguments(
 gnome = import('gnome')
 i18n  = import('i18n')
 
-adw_dep = dependency('libadwaita-1', version: '>=1.1')
+adw_dep = dependency('libadwaita-1', version: '>=1.2')
 glib_dep = dependency('glib-2.0', version: glib_ver_cmp)
 gio_dep = dependency('gio-2.0', version: glib_ver_cmp)
 gobject_dep = dependency('gobject-2.0', version: glib_ver_cmp)

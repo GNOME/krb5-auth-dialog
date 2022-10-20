@@ -148,37 +148,9 @@
                 <property name="icon-name">preferences-system-notifications-symbolic</property>
                 <property name="use-underline">True</property>
                 <child>
-                  <object class="GtkBox" id="vbox_notifications">
-                    <property name="orientation">vertical</property>
-                    <property name="margin-bottom">12</property>
-                    <property name="margin-end">12</property>
-                    <property name="margin-start">12</property>
-                    <property name="margin-top">12</property>
-                    <property name="spacing">18</property>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title" translatable="yes">Notifications</property>
                     <child>
-                      <object class="GtkBox">
-                        <property name="orientation">vertical</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="halign">start</property>
-                            <property name="label" translatable="yes">Notifications</property>
-                            <style>
-                              <class name="heading"/>
-                            </style>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkBox">
-                            <property name="spacing">12</property>
-                            <child>
-                              <object class="GtkImage" id="image_notifications">
-                                <property name="valign">start</property>
-                                <property name="icon_name">krb-expiring-ticket</property>
-                                <property name="pixel-size">48</property>
-                              </object>
-                            </child>
-                            <child>
                               <object class="GtkBox">
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">6</property>
@@ -206,10 +178,6 @@
                                   </object>
                                 </child>
                               </object>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
                     </child>
                   </object>
                 </child>

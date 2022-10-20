@@ -151,33 +151,20 @@
                   <object class="AdwPreferencesGroup">
                     <property name="title" translatable="yes">Notifications</property>
                     <child>
-                              <object class="GtkBox">
-                                <property name="orientation">vertical</property>
-                                <property name="spacing">6</property>
-                                <child>
-                                  <object class="GtkBox">
-                                    <property name="spacing">6</property>
-                                    <child>
-                                      <object class="GtkLabel">
-                                        <property name="label" translatable="yes" comments="Used in combination: &apos;Warn x minutes before expiry&apos;">Warn</property>
-                                      </object>
-                                    </child>
-                                    <child>
-                                      <object class="GtkSpinButton" id="prompt_mins_entry">
-                                        <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
-                                        <property name="adjustment">adjustment1</property>
-                                        <property name="snap_to_ticks">True</property>
-                                        <property name="numeric">True</property>
-                                      </object>
-                                    </child>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label" translatable="yes" comments="Used in combination: &apos;Warn x minutes before expiry&apos;">minutes before ticket expiry</property>
-                                  </object>
-                                </child>
-                              </object>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">Warn before ticket expiry</property>
+                        <!-- Not marked as translatable: UI will change here so no need to bother translators -->
+                        <property name="subtitle" translatable="no">Show notification that many minutes before ticket expiry</property>
+                        <child>
+                          <object class="GtkSpinButton" id="prompt_mins_entry">
+                            <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
+                            <property name="adjustment">adjustment1</property>
+                            <property name="snap_to_ticks">True</property>
+                            <property name="numeric">True</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                      </object>
                     </child>
                   </object>
                 </child>

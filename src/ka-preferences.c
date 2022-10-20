@@ -28,7 +28,7 @@
 #define PKINIT_FILE "FILE:"
 
 struct _KaPreferences {
-    GtkDialog parent;
+    AdwPreferencesWindow parent;
     
     GtkWidget *dialog;
     GtkWidget *notebook;
@@ -48,7 +48,7 @@ struct _KaPreferences {
     KaApplet *applet;
 };
 
-G_DEFINE_FINAL_TYPE (KaPreferences, ka_preferences, GTK_TYPE_DIALOG);
+G_DEFINE_FINAL_TYPE (KaPreferences, ka_preferences, ADW_TYPE_PREFERENCES_WINDOW);
 
 enum {
     PROP_0,

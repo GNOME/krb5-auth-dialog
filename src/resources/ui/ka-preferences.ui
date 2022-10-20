@@ -77,68 +77,35 @@
                 <property name="icon-name">application-certificate-symbolic</property>
                 <property name="use-underline">True</property>
                 <child>
-                  <object class="GtkBox" id="vbox_pkinit">
-                    <property name="orientation">vertical</property>
-                    <property name="valign">start</property>
-                    <property name="margin-bottom">12</property>
-                    <property name="margin-end">12</property>
-                    <property name="margin-start">12</property>
-                    <property name="margin-top">12</property>
-                    <property name="spacing">18</property>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title" translatable="yes">Userid</property>
                     <child>
-                      <object class="GtkBox" id="vbox_pkinit_userid">
+                      <object class="GtkBox">
                         <property name="orientation">vertical</property>
-                        <property name="spacing">12</property>
-                        <child>
-                          <object class="GtkLabel" id="label_pkinit_userid">
-                            <property name="halign">start</property>
-                            <property name="label" translatable="yes">Userid</property>
-                            <style>
-                              <class name="heading"/>
-                            </style>
-                          </object>
-                        </child>
+                        <property name="spacing">6</property>
                         <child>
                           <object class="GtkBox">
-                            <property name="spacing">12</property>
+                            <property name="orientation">vertical</property>
                             <child>
-                              <object class="GtkImage">
-                                <property name="valign">start</property>
-                                <property name="icon_name">krb-valid-ticket</property>
-                                <property name="pixel-size">48</property>
+                              <object class="GtkCheckButton" id="smartcard_toggle">
+                                <property name="label" translatable="yes">Use Smartcard</property>
+                                <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
+                                <property name="halign">start</property>
                               </object>
                             </child>
                             <child>
                               <object class="GtkBox">
-                                <property name="orientation">vertical</property>
-                                <property name="spacing">6</property>
                                 <child>
-                                  <object class="GtkBox">
-                                    <property name="orientation">vertical</property>
+                                  <object class="GtkEntry" id="pkuserid_entry">
+                                    <property name="tooltip-text" translatable="yes">Certificate and private key used for authentication</property>
+                                    <property name="activates_default">True</property>
+                                  </object>
+                                </child>
+                                <child>
+                                  <object class="GtkButton" id="pkuserid_button">
                                     <child>
-                                      <object class="GtkCheckButton" id="smartcard_toggle">
-                                        <property name="label" translatable="yes">Use Smartcard</property>
-                                        <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
-                                        <property name="halign">start</property>
-                                      </object>
-                                    </child>
-                                    <child>
-                                      <object class="GtkBox">
-                                        <child>
-                                          <object class="GtkEntry" id="pkuserid_entry">
-                                            <property name="tooltip-text" translatable="yes">Certificate and private key used for authentication</property>
-                                            <property name="activates_default">True</property>
-                                          </object>
-                                        </child>
-                                        <child>
-                                          <object class="GtkButton" id="pkuserid_button">
-                                            <child>
-                                              <object class="GtkImage">
-                                                <property name="icon-name">folder-open-symbolic</property>
-                                              </object>
-                                            </child>
-                                          </object>
-                                        </child>
+                                      <object class="GtkImage">
+                                        <property name="icon-name">folder-open-symbolic</property>
                                       </object>
                                     </child>
                                   </object>
@@ -149,34 +116,24 @@
                         </child>
                       </object>
                     </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title" translatable="yes">X509 trust anchors</property>
                     <child>
-                      <object class="GtkBox" id="vbox_anchors">
-                        <property name="orientation">vertical</property>
-                        <property name="spacing">12</property>
+                      <object class="GtkBox">
                         <child>
-                          <object class="GtkLabel" id="label_anchors">
-                            <property name="halign">start</property>
-                            <property name="label" translatable="yes">X509 trust anchors</property>
-                            <style>
-                              <class name="heading"/>
-                            </style>
+                          <object class="GtkEntry" id="pkanchors_entry">
+                            <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
+                            <property name="activates_default">True</property>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkBox">
+                          <object class="GtkButton" id="pkanchors_button">
                             <child>
-                              <object class="GtkEntry" id="pkanchors_entry">
-                                <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
-                                <property name="activates_default">True</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkButton" id="pkanchors_button">
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">folder-open-symbolic</property>
-                                  </object>
-                                </child>
+                              <object class="GtkImage">
+                                <property name="icon-name">folder-open-symbolic</property>
                               </object>
                             </child>
                           </object>

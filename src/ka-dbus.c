@@ -159,7 +159,7 @@ ka_dbus_register (KaApplet *applet)
         NULL);
 
     id = g_dbus_connection_register_object (dbus_connection,
-                                        "/org/gnome/KrbAuthDialog",
+                                        dbus_object_path,
                                         introspection_data->interfaces[0],
                                         &interface_vtable,
                                         applet,

@@ -255,14 +255,6 @@ ka_preferences_setup_pkanchors_entry (KaPreferences *self)
 
 
 static void
-ka_preferences_toggle_pkuserid_entry (KaPreferences *self, gboolean state)
-{
-    gtk_widget_set_sensitive (self->pkuserid_entry, state);
-    gtk_widget_set_sensitive (self->pkuserid_button, state);
-}
-
-
-static void
 on_smartcard_toggled_active_changd (GtkWidget  *toggle,
                                     GParamSpec *pspec,
                                     gpointer    userdata)
@@ -280,10 +272,8 @@ on_smartcard_toggled_active_changd (GtkWidget  *toggle,
             old_path = g_strdup (path);
         }
 
-        ka_preferences_toggle_pkuserid_entry (self, FALSE);
         g_object_set (self->applet, KA_PROP_NAME_PK_USERID, PKINIT_SMARTCARD, NULL);
     } else {
-        ka_preferences_toggle_pkuserid_entry (self, TRUE);
         if (old_path && strlen(old_path))
             g_object_set (self->applet, KA_PROP_NAME_PK_USERID, old_path, NULL);
         else

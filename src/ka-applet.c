@@ -71,6 +71,7 @@ struct _KaApplet {
 
     KaPwDialog *pwdialog;       /* the password dialog */
     KaPreferences *prefs;       /* the prefs dialog */
+    KaMainWindow *main_window;  /* The main application window */
     int pw_prompt_secs;         /* when to start sending notifications */
     KaPluginLoader *loader;     /* Plugin loader */
 
@@ -110,14 +111,18 @@ ka_applet_signal_emit (KaApplet *this, guint signum, krb5_timestamp expiry)
     g_signal_emit (this, signals[signum], 0, princ, (guint32) expiry);
 }
 
+
 static void
-ka_applet_activate (GApplication *application G_GNUC_UNUSED)
+ka_applet_activate (GApplication *application)
 {
     KaApplet *self = KA_APPLET(application);
 
     if (is_initialized) {
+        gboolean show_conf_tickets;
+
         KA_DEBUG ("Main window activated");
-        ka_main_window_show (self);
+        g_object_get(self, KA_PROP_NAME_CONF_TICKETS, &show_conf_tickets, NULL);
+        ka_main_window_show (self->main_window, show_conf_tickets);
     } else
         is_initialized = TRUE;
 }
@@ -283,16 +288,14 @@ static void
 ka_applet_startup (GApplication *application)
 {
     KaApplet *self = KA_APPLET (application);
-    GtkWindow *main_window;
 
     KA_DEBUG ("Primary application");
 
     G_APPLICATION_CLASS (ka_applet_parent_class)->startup (application);
 
     self->startup_ccache = ka_kerberos_init (self);
-    main_window = GTK_WINDOW(ka_main_window_create (self));
-    gtk_window_set_transient_for(GTK_WINDOW(self->pwdialog),
-                                 main_window);
+    self->main_window = ka_main_window_new (self);
+    gtk_window_set_transient_for(GTK_WINDOW(self->pwdialog), GTK_WINDOW (self->main_window));
 
     self->prefs = ka_preferences_new (self);
 

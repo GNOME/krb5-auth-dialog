@@ -20,7 +20,11 @@
 #ifndef KA_TICKETS_H
 #define KA_TICKETS_H
 
+#include <glib-object.h>
+
 #include "ka-applet.h"
+
+G_BEGIN_DECLS
 
 enum ticket_columns {
     PRINCIPAL_COLUMN,
@@ -32,8 +36,12 @@ enum ticket_columns {
     N_COLUMNS
 };
 
+#define KA_TYPE_MAIN_WINDOW (ka_main_window_get_type ())
+G_DECLARE_FINAL_TYPE        (KaMainWindow, ka_main_window, KA, MAIN_WINDOW, GtkApplicationWindow)
 
-GtkApplicationWindow *ka_main_window_create (KaApplet *applet);
-void ka_main_window_show (KaApplet *applet);
+KaMainWindow *ka_main_window_new (KaApplet *self);
+void          ka_main_window_show (KaMainWindow *self, gboolean show_conf_tickets);
+
+G_END_DECLS
 
 #endif

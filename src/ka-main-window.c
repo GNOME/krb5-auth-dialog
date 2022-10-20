@@ -2,7 +2,7 @@
  *
  * Krb5 Auth Applet -- Acquire and release Kerberos tickets
  *
- * (C) 2009,2011,2013 Guido Guenther <agx@sigxcpu.org>
+ * (C) 2009,2011,2013,2022 Guido Guenther <agx@sigxcpu.org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,19 +29,26 @@
 #include "ka-tools.h"
 #include "ka-preferences.h"
 
-static GtkListStore *tickets;
-static GtkButton *ticket_btn;
-static GtkApplicationWindow *main_window;
+
+struct _KaMainWindow {
+    GtkApplicationWindow parent;
+
+    GtkStack      *stack;
+    GtkListStore  *tickets;
+    GtkButton     *get_ticket_btn;
+    GtkTreeView   *tickets_view;
+};
+
+G_DEFINE_TYPE (KaMainWindow, ka_main_window, GTK_TYPE_APPLICATION_WINDOW)
 
 static void
-ccache_changed_cb (KaApplet* applet,
-                   gpointer user_data G_GNUC_UNUSED)
+ccache_changed_cb (KaApplet* applet, KaMainWindow *self)
 {
     gboolean conf_tickets;
 
     KA_DEBUG("Refreshing ticket list");
     g_object_get(applet, KA_PROP_NAME_CONF_TICKETS, &conf_tickets, NULL);
-    ka_get_service_tickets (tickets, !conf_tickets);
+    ka_get_service_tickets (self->tickets, !conf_tickets);
 }
 
 
@@ -49,16 +56,24 @@ static void
 enable_ticket_button_cb (gpointer* applet G_GNUC_UNUSED,
                          gchar *princ G_GNUC_UNUSED,
                          guint when G_GNUC_UNUSED,
-                         gpointer user_data)
+                         KaMainWindow *self)
 {
-    gboolean enable = GPOINTER_TO_UINT(user_data);
-    KA_DEBUG ("Sensitive: %u", enable);
-    gtk_widget_set_sensitive(GTK_WIDGET(ticket_btn), enable);
+    gtk_widget_set_sensitive(GTK_WIDGET(self->get_ticket_btn), TRUE);
 }
 
 
 static void
-ticket_btn_clicked(GtkButton* btn G_GNUC_UNUSED, gpointer user_data)
+disable_ticket_button_cb (gpointer* applet G_GNUC_UNUSED,
+                          gchar *princ G_GNUC_UNUSED,
+                          guint when G_GNUC_UNUSED,
+                          KaMainWindow *self)
+{
+    gtk_widget_set_sensitive(GTK_WIDGET(self->get_ticket_btn), FALSE);
+}
+
+
+static void
+get_ticket_btn_clicked(GtkButton* btn G_GNUC_UNUSED, gpointer user_data)
 {
     KaApplet *applet = KA_APPLET(user_data);
     ka_grab_credentials (applet);
@@ -87,32 +102,63 @@ on_row_deleted(GtkTreeModel *model,
 }
 
 
-GtkApplicationWindow *
-ka_main_window_create (KaApplet *applet)
+static void
+ka_main_window_constructed (GObject *object)
+{
+    KaMainWindow *self = KA_MAIN_WINDOW(object);
+    KaApplet *applet = KA_APPLET (g_application_get_default ());
+
+    G_OBJECT_CLASS (ka_main_window_parent_class)->constructed (object);
+
+    g_signal_connect (applet, "krb-ccache-changed",
+                      G_CALLBACK(ccache_changed_cb),
+                      self);
+
+    g_signal_connect (applet, "krb-tgt-acquired",
+                      G_CALLBACK (disable_ticket_button_cb),
+                      self);
+
+    g_signal_connect (applet, "krb-tgt-expired",
+                      G_CALLBACK (enable_ticket_button_cb),
+                      self);
+
+    g_signal_connect(self->get_ticket_btn, "clicked", G_CALLBACK(get_ticket_btn_clicked), applet);
+}
+
+
+static void
+ka_main_window_class_init (KaMainWindowClass *klass)
+{
+    GObjectClass *object_class = G_OBJECT_CLASS (klass);
+    GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
+
+    object_class->constructed = ka_main_window_constructed;
+
+    gtk_widget_class_set_template_from_resource (widget_class,
+                                                 "/org/gnome/krb5-auth-dialog/ui/ka-main-window.ui");
+    gtk_widget_class_bind_template_child (widget_class, KaMainWindow, stack);
+    gtk_widget_class_bind_template_child (widget_class, KaMainWindow, get_ticket_btn);
+    gtk_widget_class_bind_template_child (widget_class, KaMainWindow, tickets_view);
+}
+
+
+static void
+ka_main_window_init (KaMainWindow *self)
 {
     GtkCellRenderer *text_renderer, *toggle_renderer;
     GtkTreeViewColumn *column;
-    GtkTreeView *tickets_view;
-    GtkStack *stack;
-    GtkBuilder *builder;
 
-    tickets = gtk_list_store_new (N_COLUMNS,
-                                  G_TYPE_STRING,
-                                  G_TYPE_STRING,
-                                  G_TYPE_STRING,
-                                  G_TYPE_BOOLEAN,
-                                  G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
+    gtk_widget_init_template (GTK_WIDGET (self));
 
-    builder = gtk_builder_new_from_resource ("/org/gnome/krb5-auth-dialog/ui/ka-main-window.ui");
-    main_window =
-        GTK_APPLICATION_WINDOW (gtk_builder_get_object (builder,
-                                                        "krb5_main_window"));
-    g_object_set(main_window, "application", applet, NULL);
+    self->tickets = gtk_list_store_new (N_COLUMNS,
+                                        G_TYPE_STRING,
+                                        G_TYPE_STRING,
+                                        G_TYPE_STRING,
+                                        G_TYPE_BOOLEAN,
+                                        G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 
-    tickets_view =
-        GTK_TREE_VIEW (gtk_builder_get_object (builder, "krb5_tickets_treeview"));
-    gtk_tree_view_set_model (GTK_TREE_VIEW (tickets_view),
-                             GTK_TREE_MODEL (tickets));
+    gtk_tree_view_set_model (GTK_TREE_VIEW (self->tickets_view),
+                             GTK_TREE_MODEL (self->tickets));
 
     text_renderer = gtk_cell_renderer_text_new ();
     g_object_set (text_renderer,
@@ -120,39 +166,39 @@ ka_main_window_create (KaApplet *applet)
                   NULL);
     toggle_renderer = gtk_cell_renderer_toggle_new ();
 
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(self->tickets_view), -1,
                                                 _("Principal"),
                                                 text_renderer,
                                                 "text",
                                                 PRINCIPAL_COLUMN,
                                                 NULL);
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(self->tickets_view), -1,
                                                 _("Start"),
                                                 text_renderer,
                                                 "text",
                                                 START_TIME_COLUMN,
                                                 NULL);
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(self->tickets_view), -1,
                                                 _("End"),
                                                 text_renderer,
                                                 "markup",
                                                 END_TIME_COLUMN,
                                                 NULL);
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(self->tickets_view), -1,
                       /* Translators: this is an abbreviation for forwardable */
                                                 _("Fwd"),
                                                 toggle_renderer,
                                                 "active",
                                                 FORWARDABLE_COLUMN,
                                                 NULL);
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(self->tickets_view), -1,
                         /* Translators: this is an abbreviation for proxiable */
                                                 _("Proxy"),
                                                 toggle_renderer,
                                                 "active",
                                                 PROXIABLE_COLUMN,
                                                 NULL);
-    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(tickets_view), -1,
+    gtk_tree_view_insert_column_with_attributes(GTK_TREE_VIEW(self->tickets_view), -1,
                         /* Translators: this is an abbreviation for renewable */
                                                 _("Renew"),
                                                 toggle_renderer,
@@ -161,46 +207,34 @@ ka_main_window_create (KaApplet *applet)
                                                 NULL);
 
     for (int i = PRINCIPAL_COLUMN; i <= END_TIME_COLUMN; i++) {
-        column = gtk_tree_view_get_column(tickets_view, i);
+        column = gtk_tree_view_get_column(self->tickets_view, i);
         g_object_set (column, "expand", TRUE, NULL);
     }
 
-    stack = GTK_STACK (gtk_builder_get_object (builder, "stack"));
-    g_signal_connect(tickets, "row-inserted",
+    g_signal_connect(self->tickets, "row-inserted",
                      G_CALLBACK(on_row_inserted),
-                     stack);
-    g_signal_connect(tickets, "row-deleted",
+                     self->stack);
+    g_signal_connect(self->tickets, "row-deleted",
                      G_CALLBACK(on_row_deleted),
-                     stack);
-    on_row_deleted(GTK_TREE_MODEL(tickets), NULL, stack);
-
-    g_signal_connect (applet, "krb-ccache-changed",
-                      G_CALLBACK(ccache_changed_cb),
-                      NULL);
-
-    ticket_btn =
-        GTK_BUTTON (gtk_builder_get_object (builder, "get_ticket_btn"));
-    g_signal_connect(ticket_btn, "clicked", G_CALLBACK(ticket_btn_clicked), applet);
-
-    g_signal_connect (applet, "krb-tgt-acquired",
-                      G_CALLBACK (enable_ticket_button_cb),
-                      GUINT_TO_POINTER(FALSE));
-
-    g_signal_connect (applet, "krb-tgt-expired",
-                      G_CALLBACK (enable_ticket_button_cb),
-                      GUINT_TO_POINTER(TRUE));
-    g_object_unref (builder);
-    return main_window;
+                     self->stack);
+    on_row_deleted(GTK_TREE_MODEL(self->tickets), NULL, self->stack);
 }
 
-void
-ka_main_window_show (KaApplet *applet)
-{
-    gboolean conf_tickets;
 
-    g_object_get(applet, KA_PROP_NAME_CONF_TICKETS, &conf_tickets, NULL);
-    if (ka_get_service_tickets (tickets, !conf_tickets)) {
-        gtk_window_present (GTK_WINDOW(main_window));
+KaMainWindow *
+ka_main_window_new (KaApplet *ka_applet)
+{
+    return KA_MAIN_WINDOW (g_object_new (KA_TYPE_MAIN_WINDOW,
+                                         "application", ka_applet,
+                                         NULL));
+}
+
+
+void
+ka_main_window_show (KaMainWindow *self, gboolean show_conf_tickets)
+{
+    if (ka_get_service_tickets (self->tickets, !show_conf_tickets)) {
+        gtk_window_present (GTK_WINDOW(self));
     } else {
         GtkWidget *message_dialog;
 

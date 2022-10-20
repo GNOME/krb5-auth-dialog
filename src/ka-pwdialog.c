@@ -35,7 +35,6 @@ struct _KaPwDialog {
     GtkWidget *pw_entry;        /* password entry field */
 
     gboolean persist;           /* don't hide the dialog when creds are still valid */
-    gboolean grabbed;           /* keyboard grabbed? */
     GtkWidget *error_dialog;    /* error dialog */
 };
 

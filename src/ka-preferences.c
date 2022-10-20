@@ -46,7 +46,6 @@ struct _KaPreferences {
     GtkWidget *renewable_toggle;
 
     GSettings *settings;
-    GBinding* bindings[N_BINDINGS];
     int       n_bindings;
 
     KaApplet *applet;
@@ -410,45 +409,36 @@ ka_preferences_setup_pkanchors_button (KaPreferences *self)
 static void
 ka_preferences_setup_forwardable_toggle (KaPreferences *self)
 {
-    GBinding *binding;
-
-    binding = g_object_bind_property (self->applet,
-                                      KA_PROP_NAME_TGT_FORWARDABLE,
-                                      self->forwardable_toggle,
-                                      "active",
-                                      G_BINDING_BIDIRECTIONAL |
-                                      G_BINDING_SYNC_CREATE);
-    self->bindings[self->n_bindings] = binding;
+    g_object_bind_property (self->applet,
+                            KA_PROP_NAME_TGT_FORWARDABLE,
+                            self->forwardable_toggle,
+                            "active",
+                            G_BINDING_BIDIRECTIONAL |
+                            G_BINDING_SYNC_CREATE);
     self->n_bindings++;
 }
 
 static void
 ka_preferences_setup_proxiable_toggle (KaPreferences *self)
 {
-    GBinding *binding;
-
-    binding = g_object_bind_property (self->applet,
-                                      KA_PROP_NAME_TGT_PROXIABLE,
-                                      self->proxiable_toggle,
-                                      "active",
-                                      G_BINDING_BIDIRECTIONAL |
-                                      G_BINDING_SYNC_CREATE);
-    self->bindings[self->n_bindings] = binding;
+    g_object_bind_property (self->applet,
+                            KA_PROP_NAME_TGT_PROXIABLE,
+                            self->proxiable_toggle,
+                            "active",
+                            G_BINDING_BIDIRECTIONAL |
+                            G_BINDING_SYNC_CREATE);
     self->n_bindings++;
 }
 
 static void
 ka_preferences_setup_renewable_toggle (KaPreferences *self)
 {
-    GBinding *binding;
-
-    binding = g_object_bind_property (self->applet,
-                                      KA_PROP_NAME_TGT_RENEWABLE,
-                                      self->renewable_toggle,
-                                      "active",
-                                      G_BINDING_BIDIRECTIONAL |
-                                      G_BINDING_SYNC_CREATE);
-    self->bindings[self->n_bindings] = binding;
+    g_object_bind_property (self->applet,
+                            KA_PROP_NAME_TGT_RENEWABLE,
+                            self->renewable_toggle,
+                            "active",
+                            G_BINDING_BIDIRECTIONAL |
+                            G_BINDING_SYNC_CREATE);
     self->n_bindings++;
 }
 

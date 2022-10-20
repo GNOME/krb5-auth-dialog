@@ -27,37 +27,23 @@
 #include "config.h"
 
 G_BEGIN_DECLS
-#define KA_TYPE_PWDIALOG            (ka_pwdialog_get_type ())
-#define KA_PWDIALOG(obj)            \
-    (G_TYPE_CHECK_INSTANCE_CAST ((obj), KA_TYPE_PWDIALOG, KaPwDialog))
-#define KA_PWDIALOG_CLASS(klass)    \
-    (G_TYPE_CHECK_CLASS_CAST ((klass), KA_TYPE_PWDIALOG, KaPwDialogClass))
-#define KA_IS_PWDIALOG(obj)         \
-    (G_TYPE_CHECK_INSTANCE_TYPE ((obj), KA_TYPE_PWDIALOG))
-#define KA_IS_PWDIALOG_CLASS(klass) \
-    (G_TYPE_CHECK_CLASS_TYPE ((klass), KA_TYPE_PWDIALOG))
-#define KA_PWDIALOG_GET_CLASS(obj)  \
-    (G_TYPE_INSTANCE_GET_CLASS ((obj), KA_TYPE_PWDIALOG, KaPwDialogClass))
-    typedef struct _KaPwDialog KaPwDialog;
-typedef struct _KaPwDialogClass KaPwDialogClass;
-typedef struct _KaPwDialogPrivate KaPwDialogPrivate;
-
-GType ka_pwdialog_get_type (void);
+#define KA_TYPE_PWDIALOG      (ka_pwdialog_get_type ())
+G_DECLARE_FINAL_TYPE          (KaPwDialog, ka_pwdialog, KA, PWDIALOG, GtkDialog)
 
 /* public functions */
 KaPwDialog *ka_pwdialog_new (void);
 
 /* setup everything for the next prompting */
-void ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
+void ka_pwdialog_setup (KaPwDialog *self, const gchar *krb5prompt,
                         gboolean invalid_auth);
-gint ka_pwdialog_run (KaPwDialog *pwdialog);
-void ka_pwdialog_hide (const KaPwDialog *pwdialog, gboolean force);
-void ka_pwdialog_set_persist (KaPwDialog *pwdialog, gboolean persist);
-void ka_pwdialog_error (KaPwDialog *pwdialog, const char *msg);
+gint ka_pwdialog_run (KaPwDialog *self);
+void ka_pwdialog_hide (const KaPwDialog *self, gboolean force);
+void ka_pwdialog_set_persist (KaPwDialog *self, gboolean persist);
+void ka_pwdialog_error (KaPwDialog *self, const char *msg);
 
 /* update the expiry information in the status entry */
-gboolean ka_pwdialog_status_update (KaPwDialog *pwdialog);
-const gchar *ka_pwdialog_get_password (KaPwDialog *dialog);
+gboolean ka_pwdialog_status_update (KaPwDialog *self);
+const gchar *ka_pwdialog_get_password (KaPwDialog *self);
 
 G_END_DECLS
 #endif

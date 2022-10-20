@@ -29,14 +29,6 @@
 struct _KaPwDialog {
     GtkDialog parent;
 
-    KaPwDialogPrivate *priv;
-};
-
-struct _KaPwDialogClass {
-    GtkDialogClass parent;
-};
-
-struct _KaPwDialogPrivate {
     /* The password dialog */
     GtkWidget *status_label;    /* the wrong password/timeout label */
     GtkWidget *krb_label;       /* krb5 passwort prompt label */
@@ -47,13 +39,11 @@ struct _KaPwDialogPrivate {
     GtkWidget *error_dialog;    /* error dialog */
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (KaPwDialog, ka_pwdialog, GTK_TYPE_DIALOG);
+G_DEFINE_FINAL_TYPE (KaPwDialog, ka_pwdialog, GTK_TYPE_DIALOG)
 
 static void
 ka_pwdialog_init (KaPwDialog *self)
 {
-    self->priv = ka_pwdialog_get_instance_private (self);
-
     gtk_widget_init_template (GTK_WIDGET (self));
 }
 
@@ -61,12 +51,11 @@ static void
 ka_pwdialog_finalize (GObject *object)
 {
     KaPwDialog *pwdialog = KA_PWDIALOG (object);
-    GObjectClass *parent_class = G_OBJECT_CLASS (ka_pwdialog_parent_class);
 
-    ka_window_destroy (pwdialog->priv->error_dialog);
-    pwdialog->priv->error_dialog = NULL;
+    ka_window_destroy (pwdialog->error_dialog);
+    pwdialog->error_dialog = NULL;
 
-    parent_class->finalize (object);
+    G_OBJECT_CLASS (ka_pwdialog_parent_class)->finalize (object);
 }
 
 
@@ -114,9 +103,9 @@ ka_pwdialog_class_init (KaPwDialogClass * klass)
     gtk_widget_class_set_template_from_resource (widget_class,
                                                  "/org/gnome/krb5-auth-dialog/ui/ka-pwdialog.ui");
 
-    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, status_label);
-    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, krb_label);
-    gtk_widget_class_bind_template_child_private (widget_class, KaPwDialog, pw_entry);
+    gtk_widget_class_bind_template_child (widget_class, KaPwDialog, status_label);
+    gtk_widget_class_bind_template_child (widget_class, KaPwDialog, krb_label);
+    gtk_widget_class_bind_template_child (widget_class, KaPwDialog, pw_entry);
 }
 
 
@@ -146,7 +135,7 @@ ka_pwdialog_new (void)
     g_object_get (gtk_settings_get_default (), "gtk-dialogs-use-header", &use_header, NULL);
     pwdialog = g_object_new (KA_TYPE_PWDIALOG, "use-header-bar", use_header, NULL);
 
-    pwdialog->priv->error_dialog = ka_error_dialog_new ();
+    pwdialog->error_dialog = ka_error_dialog_new ();
     return pwdialog;
 }
 
@@ -169,10 +158,10 @@ ka_pwdialog_run (KaPwDialog *self)
 
     /* cleanup old error dialog, if present (e.g. user didn't acknowledge
      * the error but clicked the tray icon again) */
-    if (self->priv->error_dialog)
-        gtk_widget_hide (self->priv->error_dialog);
+    if (self->error_dialog)
+        gtk_widget_hide (self->error_dialog);
 
-    gtk_widget_grab_focus (self->priv->pw_entry);
+    gtk_widget_grab_focus (self->pw_entry);
 
     /* FIXME: we use a separate main loop as the Kerberos code wants
        us to return a response. This is not worse than it was before -
@@ -193,7 +182,7 @@ ka_pwdialog_run (KaPwDialog *self)
 void
 ka_pwdialog_error (KaPwDialog *self, const char *msg)
 {
-    GtkWidget *dialog = self->priv->error_dialog;
+    GtkWidget *dialog = self->error_dialog;
 
     gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
                                               _
@@ -206,21 +195,21 @@ ka_pwdialog_error (KaPwDialog *self, const char *msg)
 void
 ka_pwdialog_set_persist (KaPwDialog *pwdialog, gboolean persist)
 {
-    pwdialog->priv->persist = persist;
+    pwdialog->persist = persist;
 }
 
 void
 ka_pwdialog_hide (const KaPwDialog *pwdialog, gboolean force)
 {
-    KA_DEBUG ("PW Dialog persist: %d", pwdialog->priv->persist);
-    if (!pwdialog->priv->persist || force)
+    KA_DEBUG ("PW Dialog persist: %d", pwdialog->persist);
+    if (!pwdialog->persist || force)
         gtk_widget_hide (GTK_WIDGET (pwdialog));
 }
 
 const gchar *
 ka_pwdialog_get_password (KaPwDialog *pwdialog)
 {
-    return ka_editable_get_text (pwdialog->priv->pw_entry);
+    return ka_editable_get_text (pwdialog->pw_entry);
 }
 
 gboolean
@@ -244,7 +233,7 @@ ka_pwdialog_status_update (KaPwDialog *pwdialog)
     expiry_markup =
         g_strdup_printf ("<span size=\"smaller\" style=\"italic\">%s</span>",
                          expiry_text);
-    gtk_label_set_markup (GTK_LABEL (pwdialog->priv->status_label),
+    gtk_label_set_markup (GTK_LABEL (pwdialog->status_label),
                           expiry_markup);
     g_free (expiry_text);
     g_free (expiry_markup);
@@ -253,13 +242,13 @@ ka_pwdialog_status_update (KaPwDialog *pwdialog)
 }
 
 void
-ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
-                   gboolean invalid_auth)
+ka_pwdialog_setup (KaPwDialog *self, const gchar *krb5prompt, gboolean invalid_auth)
 {
-    KaPwDialogPrivate *priv = pwdialog->priv;
     gchar *wrong_markup = NULL;
     gchar *prompt;
     int pw4len;
+
+    g_assert (KA_IS_PWDIALOG (self));
 
     if (krb5prompt == NULL) {
         prompt = g_strdup (_("Please enter your Kerberos password:"));
@@ -283,10 +272,10 @@ ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
     }
 
     /* Clear the password entry field */
-    ka_editable_set_text (priv->pw_entry, "");
+    ka_editable_set_text (self->pw_entry, "");
 
     /* Use the prompt label that krb5 provides us */
-    gtk_label_set_text (GTK_LABEL (priv->krb_label), prompt);
+    gtk_label_set_text (GTK_LABEL (self->krb_label), prompt);
 
     /* Add our extra message hints */
     if (invalid_auth) {
@@ -294,9 +283,9 @@ ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
             g_strdup_printf
             ("<span size=\"smaller\" style=\"italic\">%s</span>",
              _("The password you entered is invalid"));
-        gtk_label_set_markup (GTK_LABEL (priv->status_label), wrong_markup);
+        gtk_label_set_markup (GTK_LABEL (self->status_label), wrong_markup);
     } else
-        ka_pwdialog_status_update (pwdialog);
+        ka_pwdialog_status_update (self);
 
     g_free (wrong_markup);
     g_free (prompt);

@@ -31,7 +31,6 @@ struct _KaPreferences {
     AdwPreferencesWindow parent;
     
     GtkWidget *dialog;
-    GtkWidget *notebook;
     GtkWidget *principal_entry;
     GtkWidget *pkuserid_entry;
     GtkWidget *pkuserid_button;
@@ -545,7 +544,6 @@ ka_preferences_class_init (KaPreferencesClass *klass)
     gtk_widget_class_bind_template_child (widget_class, KaPreferences, forwardable_toggle);
     gtk_widget_class_bind_template_child (widget_class, KaPreferences, renewable_toggle);
     gtk_widget_class_bind_template_child (widget_class, KaPreferences, proxiable_toggle);
-    gtk_widget_class_bind_template_child (widget_class, KaPreferences, notebook);
 }
 
 

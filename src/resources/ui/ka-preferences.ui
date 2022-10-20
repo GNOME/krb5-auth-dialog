@@ -13,15 +13,12 @@
     <property name="margin-end">5</property>
     <property name="margin-start">5</property>
     <property name="margin-top">5</property>
-    <child>
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
-        <property name="spacing">2</property>
-        <child>
-          <object class="GtkNotebook" id="notebook">
             <child>
-              <object class="GtkNotebookPage">
-                <property name="child">
+              <object class="AdwPreferencesPage">
+                <property name="title" translatable="yes">_Kerberos</property>
+                <property name="icon-name">dialog-password-symbolic</property>
+                <property name="use-underline">True</property>
+                <child>
                   <object class="GtkBox" id="vbox_kerberos">
                     <property name="orientation">vertical</property>
                     <property name="margin-bottom">12</property>
@@ -143,17 +140,15 @@
                       </object>
                     </child>
                   </object>
-                </property>
-                <property name="tab">
-                  <object class="GtkLabel">
-                    <property name="label" translatable="yes">Kerberos</property>
-                  </object>
-                </property>
+                </child>
               </object>
             </child>
             <child>
-              <object class="GtkNotebookPage">
-                <property name="child">
+              <object class="AdwPreferencesPage">
+                <property name="title" translatable="yes">_PKINIT</property>
+                <property name="icon-name">application-certificate-symbolic</property>
+                <property name="use-underline">True</property>
+                <child>
                   <object class="GtkBox" id="vbox_pkinit">
                     <property name="orientation">vertical</property>
                     <property name="valign">start</property>
@@ -261,18 +256,15 @@
                       </object>
                     </child>
                   </object>
-                </property>
-                <property name="tab">
-                  <object class="GtkLabel" id="label_pkinit">
-                    <property name="tooltip-text" translatable="yes">Configure the use of certificates and smartcards for your Kerberos network authentication.</property>
-                    <property name="label" translatable="yes">PKINIT</property>
-                  </object>
-                </property>
+                </child>
               </object>
             </child>
             <child>
-              <object class="GtkNotebookPage">
-                <property name="child">
+              <object class="AdwPreferencesPage">
+                <property name="title" translatable="yes">_Notifications</property>
+                <property name="icon-name">preferences-system-notifications-symbolic</property>
+                <property name="use-underline">True</property>
+                <child>
                   <object class="GtkBox" id="vbox_notifications">
                     <property name="orientation">vertical</property>
                     <property name="margin-bottom">12</property>
@@ -337,17 +329,8 @@
                       </object>
                     </child>
                   </object>
-                </property>
-                <property name="tab">
-                  <object class="GtkLabel">
-                    <property name="label" translatable="yes">Notifications</property>
-                  </object>
-                </property>
+                </child>
               </object>
             </child>
-          </object>
-        </child>
-      </object>
-    </child>
   </template>
 </interface>

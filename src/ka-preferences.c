@@ -29,17 +29,7 @@
 
 #define N_BINDINGS 3
 
-struct _KaPreferences {
-    GtkDialog parent;
-
-    KaPreferencesPrivate *priv;
-};
-
-struct _KaPreferencesClass {
-    GtkDialogClass parent;
-};
-
-struct _KaPreferencesPrivate {
+typedef struct _KaPreferencesPrivate {
     GtkWidget *dialog;
     GtkWidget *notebook;
     GtkWidget *principal_entry;
@@ -58,6 +48,12 @@ struct _KaPreferencesPrivate {
     int       n_bindings;
 
     KaApplet *applet;
+} KaPreferencesPrivate;
+
+struct _KaPreferences {
+    GtkDialog parent;
+
+    KaPreferencesPrivate *priv;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (KaPreferences, ka_preferences, GTK_TYPE_DIALOG);

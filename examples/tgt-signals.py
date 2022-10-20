@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 #
 # Copyright (C) 2010 Guido Guenther <agx@sigxcpu.org>
 #

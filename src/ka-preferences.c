@@ -27,8 +27,6 @@
 #define PKINIT_SMARTCARD "PKCS11:" SC_PKCS11
 #define PKINIT_FILE "FILE:"
 
-#define N_BINDINGS 3
-
 struct _KaPreferences {
     GtkDialog parent;
     
@@ -46,7 +44,6 @@ struct _KaPreferences {
     GtkWidget *renewable_toggle;
 
     GSettings *settings;
-    int       n_bindings;
 
     KaApplet *applet;
 };
@@ -406,40 +403,17 @@ ka_preferences_setup_pkanchors_button (KaPreferences *self)
 
 }
 
-static void
-ka_preferences_setup_forwardable_toggle (KaPreferences *self)
-{
-    g_object_bind_property (self->applet,
-                            KA_PROP_NAME_TGT_FORWARDABLE,
-                            self->forwardable_toggle,
-                            "active",
-                            G_BINDING_BIDIRECTIONAL |
-                            G_BINDING_SYNC_CREATE);
-    self->n_bindings++;
-}
 
 static void
-ka_preferences_setup_proxiable_toggle (KaPreferences *self)
+ka_preferences_setup_ticket_toggle (KaPreferences *self,
+                                    GtkWidget     *toggle,
+                                    const char    *prop_name)
 {
     g_object_bind_property (self->applet,
-                            KA_PROP_NAME_TGT_PROXIABLE,
-                            self->proxiable_toggle,
+                            prop_name,
+                            toggle,
                             "active",
-                            G_BINDING_BIDIRECTIONAL |
-                            G_BINDING_SYNC_CREATE);
-    self->n_bindings++;
-}
-
-static void
-ka_preferences_setup_renewable_toggle (KaPreferences *self)
-{
-    g_object_bind_property (self->applet,
-                            KA_PROP_NAME_TGT_RENEWABLE,
-                            self->renewable_toggle,
-                            "active",
-                            G_BINDING_BIDIRECTIONAL |
-                            G_BINDING_SYNC_CREATE);
-    self->n_bindings++;
+                            G_BINDING_BIDIRECTIONAL | G_BINDING_SYNC_CREATE);
 }
 
 
@@ -519,17 +493,15 @@ ka_preferences_constructed (GObject *object)
   ka_preferences_setup_pkanchors_entry (self);
   ka_preferences_setup_pkanchors_button (self);
 
-  ka_preferences_setup_forwardable_toggle (self);
-  ka_preferences_setup_proxiable_toggle (self);
-  ka_preferences_setup_renewable_toggle (self);
+  ka_preferences_setup_ticket_toggle (self, self->forwardable_toggle, KA_PROP_NAME_TGT_FORWARDABLE);
+  ka_preferences_setup_ticket_toggle (self, self->proxiable_toggle, KA_PROP_NAME_TGT_PROXIABLE);
+  ka_preferences_setup_ticket_toggle (self, self->renewable_toggle, KA_PROP_NAME_TGT_RENEWABLE);
   ka_preferences_setup_prompt_mins_entry (self);
 
   g_signal_connect (ka_applet_get_settings(self->applet),
                     "changed",
                     G_CALLBACK (ka_preferences_settings_changed),
                     self);
-
-  g_assert (self->n_bindings == N_BINDINGS);
 }
 
 

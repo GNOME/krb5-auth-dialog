@@ -67,7 +67,7 @@ const gchar *ka_signal_names[] = {
 };
 
 struct _KaApplet {
-    GtkApplication parent;
+    AdwApplication parent;
 
     KaPwDialog *pwdialog;       /* the password dialog */
     KaPreferences *prefs;       /* the prefs dialog */
@@ -94,7 +94,7 @@ struct _KaApplet {
     GSettings *settings;         /* GSettings client */
 };
 
-G_DEFINE_TYPE (KaApplet, ka_applet, GTK_TYPE_APPLICATION);
+G_DEFINE_TYPE (KaApplet, ka_applet, ADW_TYPE_APPLICATION);
 
 static gboolean is_initialized;
 

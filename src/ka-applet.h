@@ -20,12 +20,12 @@
 #ifndef KA_APPLET_H
 #define KA_APPLET_H
 
-#include <gtk/gtk.h>
+#include <adwaita.h>
 
 G_BEGIN_DECLS
 
 #define KA_TYPE_APPLET  (ka_applet_get_type ())
-G_DECLARE_FINAL_TYPE    (KaApplet, ka_applet, KA, APPLET, GtkApplication)
+G_DECLARE_FINAL_TYPE    (KaApplet, ka_applet, KA, APPLET, AdwApplication)
 
 G_END_DECLS
 

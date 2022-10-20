@@ -1,4 +1,4 @@
-data/krb5-auth-dialog.metainfo.xml.in
+data/org.gnome.KrbAuthDialog.metainfo.xml.in
 data/org.gnome.KrbAuthDialog.gschema.xml
 src/resources/ui/ka-main-window.ui
 src/resources/ui/ka-preferences.ui

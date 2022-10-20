@@ -263,12 +263,13 @@ ka_preferences_toggle_pkuserid_entry (KaPreferences *self, gboolean state)
 
 
 static void
-ka_preferences_smartcard_toggled (GtkWidget *toggle,
-                                  gpointer   userdata)
+on_smartcard_toggled_active_changd (GtkWidget  *toggle,
+                                    GParamSpec *pspec,
+                                    gpointer    userdata)
 {
-    gboolean smartcard = gtk_check_button_get_active (GTK_CHECK_BUTTON (toggle));
+    gboolean smartcard = gtk_switch_get_active (GTK_SWITCH (toggle));
     static gchar *old_path = NULL;
-    KaPreferences *self = KA_PREFERENCES(userdata);
+    KaPreferences *self = KA_PREFERENCES (userdata);
 
     if (smartcard) {
         const char *path;
@@ -301,13 +302,13 @@ ka_preferences_setup_smartcard_toggle (KaPreferences *self)
     if (!pkuserid)
         g_warning ("Getting pk userid failed");
 
-    g_signal_connect (self->smartcard_toggle, "toggled",
-                      G_CALLBACK (ka_preferences_smartcard_toggled), self);
+    g_signal_connect (self->smartcard_toggle, "notify::active",
+                      G_CALLBACK (on_smartcard_toggled_active_changd), self);
 
     if (g_strcmp0 (pkuserid, PKINIT_SMARTCARD) == 0)
         active = TRUE;
 
-    gtk_check_button_set_active (GTK_CHECK_BUTTON (self->smartcard_toggle), active);
+    gtk_switch_set_active (GTK_SWITCH (self->smartcard_toggle), active);
 }
 
 

@@ -79,37 +79,33 @@
                 <child>
                   <object class="AdwPreferencesGroup">
                     <property name="title" translatable="yes">Userid</property>
+                    <property name="description" translatable="yes">Principal certificate and private key</property>
                     <child>
-                      <object class="GtkBox">
-                        <property name="orientation">vertical</property>
-                        <property name="spacing">6</property>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">Use Smartcard</property>
                         <child>
-                          <object class="GtkBox">
-                            <property name="orientation">vertical</property>
+                          <object class="GtkSwitch" id="smartcard_toggle">
+                            <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">Certificate and private key file</property>
+                        <property name="sensitive" bind-source="smartcard_toggle" bind-property="active" bind-flags="sync-create|invert-boolean"/>
+                        <child>
+                          <object class="GtkEntry" id="pkuserid_entry">
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="pkuserid_button">
+                            <property name="valign">center</property>
                             <child>
-                              <object class="GtkCheckButton" id="smartcard_toggle">
-                                <property name="label" translatable="yes">Use Smartcard</property>
-                                <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
-                                <property name="halign">start</property>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkBox">
-                                <child>
-                                  <object class="GtkEntry" id="pkuserid_entry">
-                                    <property name="tooltip-text" translatable="yes">Certificate and private key used for authentication</property>
-                                    <property name="activates_default">True</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkButton" id="pkuserid_button">
-                                    <child>
-                                      <object class="GtkImage">
-                                        <property name="icon-name">folder-open-symbolic</property>
-                                      </object>
-                                    </child>
-                                  </object>
-                                </child>
+                              <object class="GtkImage">
+                                <property name="icon-name">folder-open-symbolic</property>
                               </object>
                             </child>
                           </object>
@@ -122,15 +118,17 @@
                   <object class="AdwPreferencesGroup">
                     <property name="title" translatable="yes">X509 trust anchors</property>
                     <child>
-                      <object class="GtkBox">
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">KDC trust anchor</property>
                         <child>
                           <object class="GtkEntry" id="pkanchors_entry">
+                            <property name="valign">center</property>
                             <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
-                            <property name="activates_default">True</property>
                           </object>
                         </child>
                         <child>
                           <object class="GtkButton" id="pkanchors_button">
+                            <property name="valign">center</property>
                             <child>
                               <object class="GtkImage">
                                 <property name="icon-name">folder-open-symbolic</property>

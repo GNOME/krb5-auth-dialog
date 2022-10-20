@@ -99,38 +99,6 @@ ka_preferences_get_property (GObject    *object,
 }
 
 
-static GObject *
-ka_preferences_constructor (GType type,
-                         guint n_construct_properties,
-                         GObjectConstructParam *construct_params)
-{
-    GObject *object;
-    guint idx;
-    GParamSpec *pspec;
-    GValue *value;
-
-    for (idx = 0; idx < n_construct_properties; idx++)
-    {
-        pspec = construct_params[idx].pspec;
-        if (g_strcmp0 (pspec->name, "use-header-bar") != 0)
-            continue;
-
-        /* GtkDialog uses "-1" to imply an unset value for this property */
-        value = construct_params[idx].value;
-        if (g_value_get_int (value) == -1)
-            g_value_set_int (value, 1);
-
-        break;
-    }
-
-    object = G_OBJECT_CLASS (ka_preferences_parent_class)->constructor (type,
-                                                                     n_construct_properties,
-                                                                     construct_params);
-
-    return object;
-}
-
-
 static void
 ka_preferences_principal_notify (KaPreferences *self,
                                  gchar *key)
@@ -588,7 +556,6 @@ ka_preferences_class_init (KaPreferencesClass *klass)
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
     GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
-    object_class->constructor = ka_preferences_constructor;
     object_class->set_property = ka_preferences_set_property;
     object_class->get_property = ka_preferences_get_property;
     object_class->constructed = ka_preferences_constructed;
@@ -625,13 +592,8 @@ KaPreferences*
 ka_preferences_new (KaApplet *applet)
 {
     KaPreferences *self;
-    gboolean use_header;
 
-    g_object_get (gtk_settings_get_default (), "gtk-dialogs-use-header", &use_header, NULL);
-    self = g_object_new (KA_TYPE_PREFERENCES,
-                         "applet", applet,
-                         "use-header-bar", use_header,
-                         NULL);
+    self = g_object_new (KA_TYPE_PREFERENCES, "applet", applet, NULL);
     return self;
 }
 

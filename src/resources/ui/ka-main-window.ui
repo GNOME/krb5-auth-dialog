@@ -23,11 +23,6 @@
     </section>
   </menu>
 
-  <object class="GtkAdjustment" id="adjustment1">
-    <property name="upper">100</property>
-    <property name="step_increment">1</property>
-    <property name="page_increment">10</property>
-  </object>
   <object class="GtkApplicationWindow" id="krb5_main_window">
     <property name="title" translatable="yes">Service Tickets</property>
     <property name="default-width">700</property>

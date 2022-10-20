@@ -9,166 +9,166 @@
   </object>
   <template class="KaPreferences" parent="AdwPreferencesWindow">
     <property name="hide-on-close">True</property>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title" translatable="yes">_Kerberos</property>
+        <property name="icon-name">dialog-password-symbolic</property>
+        <property name="use-underline">True</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Kerberos User</property>
             <child>
-              <object class="AdwPreferencesPage">
-                <property name="title" translatable="yes">_Kerberos</property>
-                <property name="icon-name">dialog-password-symbolic</property>
-                <property name="use-underline">True</property>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Kerberos principal</property>
                 <child>
-                  <object class="AdwPreferencesGroup">
-                    <property name="title" translatable="yes">Kerberos User</property>
-                            <child>
-                              <object class="AdwActionRow">
-                                <property name="title" translatable="yes">Kerberos principal</property>
-                                <child>
-                                  <object class="GtkEntry" id="principal_entry">
-                                    <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
-                                    <property name="valign">center</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
+                  <object class="GtkEntry" id="principal_entry">
+                    <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Kerberos Ticket Options</property>
+            <property name="description" translatable="yes">Requested Kerberos tickets should be:</property>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">forwardable</property>
+                <child>
+                  <object class="GtkSwitch" id="forwardable_toggle">
+                    <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">renewable</property>
+                <child>
+                  <object class="GtkSwitch" id="renewable_toggle">
+                    <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">proxiable</property>
+                <child>
+                  <object class="GtkSwitch" id="proxiable_toggle">
+                    <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title" translatable="yes">_PKINIT</property>
+        <property name="icon-name">application-certificate-symbolic</property>
+        <property name="use-underline">True</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Userid</property>
+            <property name="description" translatable="yes">Principal certificate and private key</property>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Use Smartcard</property>
+                <child>
+                  <object class="GtkSwitch" id="smartcard_toggle">
+                    <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
+                    <property name="valign">center</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Certificate and private key file</property>
+                <property name="sensitive" bind-source="smartcard_toggle" bind-property="active" bind-flags="sync-create|invert-boolean"/>
+                <child>
+                  <object class="GtkEntry" id="pkuserid_entry">
+                    <property name="valign">center</property>
                   </object>
                 </child>
                 <child>
-                  <object class="AdwPreferencesGroup">
-                    <property name="title" translatable="yes">Kerberos Ticket Options</property>
-                    <property name="description" translatable="yes">Requested Kerberos tickets should be:</property>
+                  <object class="GtkButton" id="pkuserid_button">
+                    <property name="valign">center</property>
                     <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">forwardable</property>
-                        <child>
-                          <object class="GtkSwitch" id="forwardable_toggle">
-                            <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
-                            <property name="valign">center</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">renewable</property>
-                        <child>
-                          <object class="GtkSwitch" id="renewable_toggle">
-                            <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
-                            <property name="valign">center</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">proxiable</property>
-                        <child>
-                          <object class="GtkSwitch" id="proxiable_toggle">
-                            <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
-                            <property name="valign">center</property>
-                          </object>
-                        </child>
+                      <object class="GtkImage">
+                        <property name="icon-name">folder-open-symbolic</property>
                       </object>
                     </child>
                   </object>
                 </child>
               </object>
             </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">X509 trust anchors</property>
             <child>
-              <object class="AdwPreferencesPage">
-                <property name="title" translatable="yes">_PKINIT</property>
-                <property name="icon-name">application-certificate-symbolic</property>
-                <property name="use-underline">True</property>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">KDC trust anchor</property>
                 <child>
-                  <object class="AdwPreferencesGroup">
-                    <property name="title" translatable="yes">Userid</property>
-                    <property name="description" translatable="yes">Principal certificate and private key</property>
-                    <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">Use Smartcard</property>
-                        <child>
-                          <object class="GtkSwitch" id="smartcard_toggle">
-                            <property name="tooltip-text" translatable="yes">If checked, use a security token (Smartcard) to authenticate.</property>
-                            <property name="valign">center</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                    <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">Certificate and private key file</property>
-                        <property name="sensitive" bind-source="smartcard_toggle" bind-property="active" bind-flags="sync-create|invert-boolean"/>
-                        <child>
-                          <object class="GtkEntry" id="pkuserid_entry">
-                            <property name="valign">center</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="pkuserid_button">
-                            <property name="valign">center</property>
-                            <child>
-                              <object class="GtkImage">
-                                <property name="icon-name">folder-open-symbolic</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
+                  <object class="GtkEntry" id="pkanchors_entry">
+                    <property name="valign">center</property>
+                    <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
                   </object>
                 </child>
                 <child>
-                  <object class="AdwPreferencesGroup">
-                    <property name="title" translatable="yes">X509 trust anchors</property>
+                  <object class="GtkButton" id="pkanchors_button">
+                    <property name="valign">center</property>
                     <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">KDC trust anchor</property>
-                        <child>
-                          <object class="GtkEntry" id="pkanchors_entry">
-                            <property name="valign">center</property>
-                            <property name="tooltip-text" translatable="yes">Certificate used to verify digital signatures.</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkButton" id="pkanchors_button">
-                            <property name="valign">center</property>
-                            <child>
-                              <object class="GtkImage">
-                                <property name="icon-name">folder-open-symbolic</property>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
+                      <object class="GtkImage">
+                        <property name="icon-name">folder-open-symbolic</property>
                       </object>
                     </child>
                   </object>
                 </child>
               </object>
             </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="AdwPreferencesPage">
+        <property name="title" translatable="yes">_Notifications</property>
+        <property name="icon-name">preferences-system-notifications-symbolic</property>
+        <property name="use-underline">True</property>
+        <child>
+          <object class="AdwPreferencesGroup">
+            <property name="title" translatable="yes">Notifications</property>
             <child>
-              <object class="AdwPreferencesPage">
-                <property name="title" translatable="yes">_Notifications</property>
-                <property name="icon-name">preferences-system-notifications-symbolic</property>
-                <property name="use-underline">True</property>
+              <object class="AdwActionRow">
+                <property name="title" translatable="yes">Warn before ticket expiry</property>
+                <!-- Not marked as translatable: UI will change here so no need to bother translators -->
+                <property name="subtitle" translatable="no">Show notification that many minutes before ticket expiry</property>
                 <child>
-                  <object class="AdwPreferencesGroup">
-                    <property name="title" translatable="yes">Notifications</property>
-                    <child>
-                      <object class="AdwActionRow">
-                        <property name="title" translatable="yes">Warn before ticket expiry</property>
-                        <!-- Not marked as translatable: UI will change here so no need to bother translators -->
-                        <property name="subtitle" translatable="no">Show notification that many minutes before ticket expiry</property>
-                        <child>
-                          <object class="GtkSpinButton" id="prompt_mins_entry">
-                            <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
-                            <property name="adjustment">adjustment1</property>
-                            <property name="snap_to_ticks">True</property>
-                            <property name="numeric">True</property>
-                            <property name="valign">center</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
+                  <object class="GtkSpinButton" id="prompt_mins_entry">
+                    <property name="tooltip-text" translatable="yes">Send notification about ticket expiry that many minutes before it finally expires</property>
+                    <property name="adjustment">adjustment1</property>
+                    <property name="snap_to_ticks">True</property>
+                    <property name="numeric">True</property>
+                    <property name="valign">center</property>
                   </object>
                 </child>
               </object>
             </child>
+          </object>
+        </child>
+      </object>
+    </child>
   </template>
 </interface>

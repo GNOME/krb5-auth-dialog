@@ -59,9 +59,7 @@ ka_show_help (GtkWindow* window, const char* chapter)
 void
 ka_show_about (KaApplet *applet)
 {
-    GtkWindow *parent = ka_applet_last_focused_window (applet);
-
-    const gchar *authors[] = {
+    const gchar *developers[] = {
         "Christopher Aillon <caillon@redhat.com>",
         "Jonathan Blandford <jrb@redhat.com>",
         "Colin Walters <walters@verbum.org>",
@@ -69,18 +67,16 @@ ka_show_about (KaApplet *applet)
         NULL
     };
 
-    gtk_show_about_dialog (parent,
-                           "authors", authors,
+    adw_show_about_window (gtk_application_get_active_window (GTK_APPLICATION (g_application_get_default ())),
+                           "application-name", _(KA_NAME),
+                           "application-icon", "krb-valid-ticket",
                            "version", VERSION,
-                           "logo-icon-name", "krb-valid-ticket",
-                           "copyright",
-                           "Copyright (C) 2004,2005,2006 Red Hat, Inc.,\n"
-                           "2008-2011,2014,2021 Guido Günther",
-                           "website-label", PACKAGE " website",
-                           "website",
-                           "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",
-                           "license", "GNU General Public License Version 2",
-                           /* Translators: add the translators of your language here */
+                           "copyright", "Copyright (C) 2004,2005,2006 Red Hat, Inc.,"
+                                        "2008-2011,2014,2021,2022 Guido Günther",
+                           "website", "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",
+                           "issue-url", "https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/issues/new",
+                           "license-type", GTK_LICENSE_GPL_2_0,
+                           "developers", developers,
                            "translator-credits", _("translator-credits"),
                            NULL);
 }

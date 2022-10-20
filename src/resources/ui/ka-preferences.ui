@@ -9,10 +9,6 @@
   </object>
   <template class="KaPreferences" parent="AdwPreferencesWindow">
     <property name="hide-on-close">True</property>
-    <property name="margin-bottom">5</property>
-    <property name="margin-end">5</property>
-    <property name="margin-start">5</property>
-    <property name="margin-top">5</property>
             <child>
               <object class="AdwPreferencesPage">
                 <property name="title" translatable="yes">_Kerberos</property>
@@ -22,21 +18,12 @@
                   <object class="AdwPreferencesGroup">
                     <property name="title" translatable="yes">Kerberos User</property>
                             <child>
-                              <object class="GtkBox">
-                                <property name="spacing">6</property>
-                                <property name="orientation">vertical</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="halign">start</property>
-                                    <property name="label" translatable="yes">Kerberos principal:</property>
-                                  </object>
-                                </child>
+                              <object class="AdwActionRow">
+                                <property name="title" translatable="yes">Kerberos principal</property>
                                 <child>
                                   <object class="GtkEntry" id="principal_entry">
-                                    <property name="margin-top">5</property>
-                                    <property name="margin-start">12</property>
                                     <property name="tooltip-text" translatable="yes">The name of your Kerberos account. Leave blank to use your current username.</property>
-                                    <property name="activates_default">True</property>
+                                    <property name="valign">center</property>
                                   </object>
                                 </child>
                               </object>
@@ -46,43 +33,40 @@
                 <child>
                   <object class="AdwPreferencesGroup">
                     <property name="title" translatable="yes">Kerberos Ticket Options</property>
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">vertical</property>
-                                <property name="spacing">6</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="halign">start</property>
-                                    <property name="label" translatable="yes">Requested Kerberos tickets should be:</property>
-                                    <property name="wrap">True</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkCheckButton" id="forwardable_toggle">
-                                    <property name="label" translatable="yes">forwardable</property>
-                                    <property name="margin-start">12</property>
-                                    <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
-                                    <property name="halign">start</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkCheckButton" id="renewable_toggle">
-                                    <property name="label" translatable="yes">renewable</property>
-                                    <property name="margin-start">12</property>
-                                    <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
-                                    <property name="halign">start</property>
-                                  </object>
-                                </child>
-                                <child>
-                                  <object class="GtkCheckButton" id="proxiable_toggle">
-                                    <property name="label" translatable="yes">proxiable</property>
-                                    <property name="margin-start">12</property>
-                                    <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
-                                    <property name="halign">start</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
+                    <property name="description" translatable="yes">Requested Kerberos tickets should be:</property>
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">forwardable</property>
+                        <child>
+                          <object class="GtkSwitch" id="forwardable_toggle">
+                            <property name="tooltip-text" translatable="yes">If checked, request forwardable tickets</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">renewable</property>
+                        <child>
+                          <object class="GtkSwitch" id="renewable_toggle">
+                            <property name="tooltip-text" translatable="yes">If checked, request renewable tickets</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title" translatable="yes">proxiable</property>
+                        <child>
+                          <object class="GtkSwitch" id="proxiable_toggle">
+                            <property name="tooltip-text" translatable="yes">If checked, request proxiable tickets</property>
+                            <property name="valign">center</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
                   </object>
                 </child>
               </object>

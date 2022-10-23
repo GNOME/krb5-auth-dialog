@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_DBUS_H
-#define KA_DBUS_H
+#pragma once
 
 #include <glib.h>
 #include "ka-applet-priv.h"
@@ -15,5 +14,3 @@ void ka_dbus_disconnect (void);
 gboolean ka_dbus_acquire_tgt (KaApplet *applet,
                               const gchar *principal);
 gboolean ka_dbus_destroy_ccache (KaApplet *applet);
-
-#endif /* KA_DBUS_H */

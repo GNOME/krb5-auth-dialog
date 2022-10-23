@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_TOOLS
-#define KA_TOOLS
+#pragma once
 
 #include <gtk/gtk.h>
 #include <ka-applet-priv.h>
@@ -21,5 +20,3 @@ void        ka_editable_set_text (gpointer editable, const char *text);
 const char *ka_editable_get_text (gpointer editable);
 
 G_END_DECLS
-
-#endif

@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_PREFERENCES_H
-#define KA_PREFERENCES_H
+#pragma once
 
 #include <adwaita.h>
 #include <glib.h>
@@ -25,9 +24,3 @@ void ka_preferences_run (KaPreferences *self);
 
 
 G_END_DECLS
-
-#endif /* KA_PREFERENCES */
-
-/*
- * vim:ts:sts=4:sw=4:et:
- */

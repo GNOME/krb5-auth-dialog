@@ -5,8 +5,7 @@
  */
 /* "Private" header - functions not exported to plugins */
 
-#ifndef KA_APPLET_PRIV_H
-#define KA_APPLET_PRIV_H
+#pragma once
 
 #include <glib-object.h>
 #include <glib/gprintf.h>
@@ -41,9 +40,7 @@ GtkWindow* ka_applet_last_focused_window(KaApplet *self);
 /* update tooltip and icon */
 int ka_applet_update_status (KaApplet *self, krb5_timestamp expiry);
 
-G_END_DECLS
-
 #define KA_DEBUG(fmt,...) \
     g_debug ("%s: " fmt, __func__, ##__VA_ARGS__)
 
-#endif
+G_END_DECLS

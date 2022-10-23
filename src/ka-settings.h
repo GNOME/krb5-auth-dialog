@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_GCONF_H
-#define KA_GCONF_H
+#pragma once
 
 #include "ka-applet-priv.h"
 
@@ -26,5 +25,3 @@
 #define KA_SETTING_KEY_PLUGINS_ENABLED  "enabled"
 
 GSettings* ka_settings_init (KaApplet* applet);
-
-#endif

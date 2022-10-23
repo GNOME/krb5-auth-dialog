@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef _KA_PLUGIN_LOADER
-#define _KA_PLUGIN_LOADER
+#pragma once
 
 #include <glib-object.h>
 #include "ka-applet.h"
@@ -42,5 +41,3 @@ GType ka_plugin_loader_get_type (void);
 KaPluginLoader* ka_plugin_loader_create (KaApplet *applet);
 
 G_END_DECLS
-
-#endif /* _KA_PLUGIN_LOADER */

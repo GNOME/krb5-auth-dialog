@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_PWDIALOG_H
-#define KA_PWDIALOG_H
+#pragma once
 
 #include <glib.h>
 #include <glib-object.h>
@@ -33,4 +32,3 @@ gboolean ka_pwdialog_status_update (KaPwDialog *self);
 const gchar *ka_pwdialog_get_password (KaPwDialog *self);
 
 G_END_DECLS
-#endif

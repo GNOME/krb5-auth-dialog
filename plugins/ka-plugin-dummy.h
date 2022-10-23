@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef _KA_PLUGIN_DUMMY
-#define _KA_PLUGIN_DUMMY
+#pragma once
 
 #include "ka-plugin.h"
 
@@ -35,4 +34,3 @@ GType ka_plugin_dummy_get_type (void);
 KaPluginDummy *ka_plugin_dummy_new (void);
 
 G_END_DECLS
-#endif /* _KA_PLUGIN_DUMMY */

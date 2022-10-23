@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_DIALOG
-#define KA_DIALOG
+#pragma once
 
 #include "ka-applet-priv.h"
 
@@ -19,4 +18,3 @@ gboolean ka_get_service_tickets(GtkListStore *tickets,
                                 gboolean hide_service_tickets);
 char* ka_unparse_name(void);
 int ka_tgt_valid_seconds(void);
-#endif

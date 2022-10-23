@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_TICKETS_H
-#define KA_TICKETS_H
+#pragma once
 
 #include <glib-object.h>
 
@@ -30,5 +29,3 @@ KaMainWindow *ka_main_window_new (KaApplet *self);
 void          ka_main_window_show (KaMainWindow *self, gboolean show_conf_tickets);
 
 G_END_DECLS
-
-#endif

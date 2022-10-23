@@ -4,8 +4,7 @@
  * SPDX-License-Identifier: GPL-2.0-or-later
  */
 
-#ifndef KA_APPLET_H
-#define KA_APPLET_H
+#pragma once
 
 #include <adwaita.h>
 
@@ -18,5 +17,3 @@ KaApplet          *ka_applet_new                    (void);
 const char        *ka_applet_get_principal          (KaApplet *self);
 
 G_END_DECLS
-
-#endif

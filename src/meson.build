@@ -53,6 +53,7 @@ krb5_auth_dialog_sources = [
   'ka-pwdialog.c',
   'ka-settings.c',
   'ka-tools.c',
+  'main.c',
   krb5_auth_dialog_generated_sources,
 ]
 

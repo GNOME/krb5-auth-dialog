@@ -561,7 +561,7 @@ ka_applet_class_init (KaAppletClass *klass)
 }
 
 
-static KaApplet *
+KaApplet *
 ka_applet_new (void)
 {
     return g_object_new (KA_TYPE_APPLET,
@@ -776,24 +776,3 @@ ka_applet_emit_renewed (KaApplet *self, krb5_timestamp expiry)
 
     ka_applet_signal_emit (self, KA_SIGNAL_RENEWED_TGT, expiry);
 }
-
-int
-main (int argc, char *argv[])
-{
-    g_autoptr(KaApplet) applet = NULL;
-
-    textdomain (PACKAGE);
-    bind_textdomain_codeset (PACKAGE, "UTF-8");
-    bindtextdomain (PACKAGE, LOCALE_DIR);
-
-    g_set_application_name (KA_NAME);
-
-    gtk_init ();
-    applet = ka_applet_new ();
-
-    return g_application_run (G_APPLICATION(applet), argc, argv);
-}
-
-/*
- * vim:ts:sts=4:sw=4:et:
- */

@@ -543,14 +543,11 @@ ka_applet_class_init (KaAppletClass *klass)
     g_object_class_install_properties (object_class, KA_PROP_LAST_PROP, props);
 
     for (i=0; i < KA_SIGNAL_COUNT-1; i++) {
-        guint signalId;
-
-        signalId = g_signal_new (ka_signal_names[i], G_OBJECT_CLASS_TYPE (klass),
-                                 G_SIGNAL_RUN_LAST, 0, NULL, NULL,
-                                 ka_closure_VOID__STRING_UINT,
-                                 G_TYPE_NONE, 2,   /* number of parameters */
-                                 G_TYPE_STRING, G_TYPE_UINT);
-        signals[i] = signalId;
+        signals[i] = g_signal_new (ka_signal_names[i], G_OBJECT_CLASS_TYPE (klass),
+                                   G_SIGNAL_RUN_LAST, 0, NULL, NULL,
+                                   ka_closure_VOID__STRING_UINT,
+                                   G_TYPE_NONE, 2,   /* number of parameters */
+                                   G_TYPE_STRING, G_TYPE_UINT);
     }
     signals[KA_CCACHE_CHANGED] = g_signal_new (
         ka_signal_names[KA_CCACHE_CHANGED],

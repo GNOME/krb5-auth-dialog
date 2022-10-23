@@ -40,7 +40,9 @@
             <property name="child">
               <object class="GtkTreeView" id="tickets_view">
                 <child internal-child="selection">
-                  <object class="GtkTreeSelection" id="treeview-selection"/>
+                  <object class="GtkTreeSelection" id="treeview-selection">
+                    <property name="mode">none</property>
+                  </object>
                 </child>
               </object>
             </property>

@@ -28,9 +28,9 @@
 #include "ka-settings.h"
 #include "ka-tools.h"
 #include "ka-main-window.h"
+#include "ka-marshallers.h"
 #include "ka-plugin-loader.h"
 #include "ka-preferences.h"
-#include "ka-closures.h"
 
 #include <signal.h>
 
@@ -545,7 +545,7 @@ ka_applet_class_init (KaAppletClass *klass)
     for (i=0; i < KA_SIGNAL_COUNT-1; i++) {
         signals[i] = g_signal_new (ka_signal_names[i], G_OBJECT_CLASS_TYPE (klass),
                                    G_SIGNAL_RUN_LAST, 0, NULL, NULL,
-                                   ka_closure_VOID__STRING_UINT,
+                                   _ka_marshal_VOID__STRING_UINT,
                                    G_TYPE_NONE, 2,   /* number of parameters */
                                    G_TYPE_STRING, G_TYPE_UINT);
     }

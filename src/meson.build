@@ -35,15 +35,21 @@ krb5_auth_dialog_resources = gnome.compile_resources(
   c_name: 'krb5_auth_dialog_resource',
 )
 
+krb5_auth_dialog_marshallers = gnome.genmarshal('ka-marshallers',
+  sources : 'ka-marshallers.list',
+  prefix : '_ka_marshal',
+  valist_marshallers : true,
+)
+
 krb5_auth_dialog_generated_sources = [
   configure_file,
+  krb5_auth_dialog_marshallers,
   krb5_auth_dialog_resources,
 ]
 
 krb5_auth_dialog_sources = [
   'dummy-strings.c',
   'ka-applet.c',
-  'ka-closures.c',
   'ka-dbus.c',
   'ka-kerberos.c',
   'ka-main-window.c',

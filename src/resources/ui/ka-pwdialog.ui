@@ -59,6 +59,7 @@
                       <object class="GtkPasswordEntry" id="pw_entry">
                         <property name="activates-default">True</property>
                         <property name="hexpand">True</property>
+                        <property name="show-peek-icon">True</property>
                       </object>
                     </child>
                     <child>

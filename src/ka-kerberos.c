@@ -978,7 +978,7 @@ ka_check_credentials (KaApplet *applet, const char *newprincipal)
 {
     gboolean success = FALSE;
     int retval;
-    char *principal;
+    g_autofree char *principal = NULL;
 
     g_object_get (applet, KA_PROP_NAME_PRINCIPAL, &principal, NULL);
 
@@ -989,34 +989,32 @@ ka_check_credentials (KaApplet *applet, const char *newprincipal)
         if (!kprincipal && g_strcmp0 (principal, newprincipal)) {
             KA_DEBUG ("Requested principal %s not %s", principal,
                       newprincipal);
-            goto out;
+            return FALSE;
         }
 
         /* ticket cache: check if the requested principal is the one we have */
         retval = krb5_parse_name (kcontext, newprincipal, &knewprinc);
         if (retval) {
             g_warning ("Cannot parse principal '%s'", newprincipal);
-            goto out;
+            return FALSE;
         }
         if (kprincipal
             && !krb5_principal_compare (kcontext, kprincipal, knewprinc)) {
             KA_DEBUG ("Current Principal '%s' not '%s'", principal,
                       newprincipal);
             krb5_free_principal (kcontext, knewprinc);
-            goto out;
+            return FALSE;
         }
         krb5_free_principal (kcontext, knewprinc);
     }
 
     if (credentials_expiring_real (applet)) {
-        if (!is_online)
-            success = FALSE;
-        else
+        if (is_online)
             success = ka_grab_credentials (applet);
+        else
+            success = FALSE;
     } else
         success = TRUE;
-  out:
-    g_free (principal);
     return success;
 }
 

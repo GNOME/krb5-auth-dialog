@@ -786,7 +786,6 @@ main (int argc, char *argv[])
     bind_textdomain_codeset (PACKAGE, "UTF-8");
     bindtextdomain (PACKAGE, LOCALE_DIR);
 
-    g_set_prgname (KA_APP_ID);
     g_set_application_name (KA_NAME);
 
     gtk_init ();

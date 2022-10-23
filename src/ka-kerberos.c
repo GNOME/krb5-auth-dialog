@@ -642,19 +642,17 @@ ka_parse_name (KaApplet *applet, krb5_context krbcontext,
                krb5_principal * kprinc)
 {
     krb5_error_code ret;
-    gchar *principal = NULL;
+    const gchar *principal;
 
     if (*kprinc != NULL)
         krb5_free_principal (krbcontext, *kprinc);
 
-    g_object_get (applet, KA_PROP_NAME_PRINCIPAL, &principal, NULL);
+    principal = ka_applet_get_principal (applet);
     if (principal[0] == '\0') {
-        g_free (principal);
-        principal = g_strdup (g_get_user_name());
+        principal = g_get_user_name();
     }
     ret = krb5_parse_name (krbcontext, principal, kprinc);
 
-    g_free (principal);
     return ret;
 }
 
@@ -978,9 +976,9 @@ ka_check_credentials (KaApplet *applet, const char *newprincipal)
 {
     gboolean success = FALSE;
     int retval;
-    g_autofree char *principal = NULL;
+    const char *principal;
 
-    g_object_get (applet, KA_PROP_NAME_PRINCIPAL, &principal, NULL);
+    principal = ka_applet_get_principal (applet);
 
     if (strlen (newprincipal)) {
         krb5_principal knewprinc;

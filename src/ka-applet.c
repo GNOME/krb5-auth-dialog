@@ -377,7 +377,7 @@ ka_applet_get_property (GObject *object,
 
     switch (property_id) {
     case KA_PROP_PRINCIPAL:
-        g_value_set_string (value, self->principal);
+        g_value_set_string (value, ka_applet_get_principal (self));
         break;
 
     case KA_PROP_PK_USERID:
@@ -775,4 +775,12 @@ ka_applet_emit_renewed (KaApplet *self, krb5_timestamp expiry)
     g_return_if_fail (KA_IS_APPLET (self));
 
     ka_applet_signal_emit (self, KA_SIGNAL_RENEWED_TGT, expiry);
+}
+
+const char *
+ka_applet_get_principal (KaApplet *self)
+{
+    g_assert (KA_IS_APPLET (self));
+
+    return self->principal;
 }

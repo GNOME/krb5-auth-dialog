@@ -73,14 +73,6 @@ disable_ticket_button_cb (gpointer* applet G_GNUC_UNUSED,
 
 
 static void
-get_ticket_btn_clicked(GtkButton* btn G_GNUC_UNUSED, gpointer user_data)
-{
-    KaApplet *applet = KA_APPLET(user_data);
-    ka_grab_credentials (applet);
-}
-
-
-static void
 on_row_inserted(GtkTreeModel *model,
                 GtkTreePath  *unused,
                 GtkTreeIter  *iter,
@@ -121,8 +113,6 @@ ka_main_window_constructed (GObject *object)
     g_signal_connect (applet, "krb-tgt-expired",
                       G_CALLBACK (enable_ticket_button_cb),
                       self);
-
-    g_signal_connect(self->get_ticket_btn, "clicked", G_CALLBACK(get_ticket_btn_clicked), applet);
 }
 
 

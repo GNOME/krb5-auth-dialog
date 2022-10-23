@@ -1,4 +1,8 @@
-/* ka-preferences.h */
+/*
+ * Copyright (C) 2022 Guido Guenther <agx@sigxcpu.org>
+ *
+ * SPDX-License-Identifier: GPL-2.0-or-later
+ */
 
 #ifndef KA_PREFERENCES_H
 #define KA_PREFERENCES_H

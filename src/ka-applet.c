@@ -548,6 +548,10 @@ ka_applet_class_init (KaAppletClass *klass)
                                    _ka_marshal_VOID__STRING_UINT,
                                    G_TYPE_NONE, 2,   /* number of parameters */
                                    G_TYPE_STRING, G_TYPE_UINT);
+        g_signal_set_va_marshaller (signals[i],
+                                    G_TYPE_FROM_CLASS (klass),
+                                    _ka_marshal_VOID__STRING_UINTv);
+
     }
     signals[KA_CCACHE_CHANGED] = g_signal_new (
         ka_signal_names[KA_CCACHE_CHANGED],

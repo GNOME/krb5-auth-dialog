@@ -67,12 +67,6 @@ event_cb (KaApplet *applet, gchar *princ, guint when, gpointer user_data)
 }
 
 static void
-ka_plugin_gnomelock_finalize (GObject *object)
-{
-    G_OBJECT_CLASS (ka_plugin_gnomelock_parent_class)->finalize (object);
-}
-
-static void
 ka_plugin_gnomelock_activate (KaPlugin *self, KaApplet *applet)
 {
     KaPluginGnomeLockPrivate *priv =
@@ -100,7 +94,6 @@ ka_plugin_gnomelock_class_init (KaPluginGnomeLockClass *klass)
 
     plugin_class->activate = ka_plugin_gnomelock_activate;
     plugin_class->deactivate = ka_plugin_gnomelock_deactivate;
-    object_class->finalize = ka_plugin_gnomelock_finalize;
 }
 
 static void

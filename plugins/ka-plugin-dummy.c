@@ -20,6 +20,7 @@ ka_plugin_create (void)
 }
 
 typedef struct _KaPluginDummyPrivate {
+
     gulong handlers[3];
 } KaPluginDummyPrivate;
 
@@ -29,12 +30,6 @@ static void
 event_cb (KaApplet *applet, gchar *princ, guint when, gpointer user_data)
 {
     g_message ("%s %s @%d", (gchar*)user_data, princ, when);
-}
-
-static void
-ka_plugin_dummy_finalize (GObject *object)
-{
-    G_OBJECT_CLASS (ka_plugin_dummy_parent_class)->finalize (object);
 }
 
 static void
@@ -71,7 +66,6 @@ ka_plugin_dummy_class_init (KaPluginDummyClass *klass)
 
     plugin_class->activate = ka_plugin_dummy_activate;
     plugin_class->deactivate = ka_plugin_dummy_deactivate;
-    object_class->finalize = ka_plugin_dummy_finalize;
 }
 
 static void

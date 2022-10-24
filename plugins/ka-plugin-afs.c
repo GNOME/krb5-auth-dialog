@@ -48,12 +48,6 @@ event_cb (KaApplet *applet, gchar *princ, guint when, gpointer user_data G_GNUC_
 }
 
 static void
-ka_plugin_afs_finalize (GObject *object)
-{
-    G_OBJECT_CLASS (ka_plugin_afs_parent_class)->finalize (object);
-}
-
-static void
 ka_plugin_afs_activate (KaPlugin *self, KaApplet *applet)
 {
     KaPluginAfsPrivate *priv = ka_plugin_afs_get_instance_private (KA_PLUGIN_AFS (self));
@@ -84,7 +78,6 @@ ka_plugin_afs_class_init (KaPluginAfsClass *klass)
 
     plugin_class->activate = ka_plugin_afs_activate;
     plugin_class->deactivate = ka_plugin_afs_deactivate;
-    object_class->finalize = ka_plugin_afs_finalize;
 }
 
 static void

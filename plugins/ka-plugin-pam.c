@@ -27,13 +27,6 @@ typedef struct _KaPluginPamPrivate {
 
 G_DEFINE_TYPE (KaPluginPam, ka_plugin_pam, KA_TYPE_PLUGIN)
 
-
-static void
-ka_plugin_pam_finalize (GObject *object)
-{
-    G_OBJECT_CLASS (ka_plugin_pam_parent_class)->finalize (object);
-}
-
 static int
 simple_conv (int n, const struct pam_message **msg, struct pam_response **resp,
              void *data)
@@ -98,7 +91,6 @@ ka_plugin_pam_class_init (KaPluginPamClass *klass)
 
     plugin_class->activate = ka_plugin_pam_activate;
     plugin_class->deactivate = ka_plugin_pam_deactivate;
-    object_class->finalize = ka_plugin_pam_finalize;
 }
 
 static void

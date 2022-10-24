@@ -11,9 +11,10 @@
 #include "ka-kerberos.h"
 #include "ka-dbus.h"
 
+#define DBUS_INTERFACE_NAME "org.gnome.KrbAuthDialog"
+
 static GDBusConnection *dbus_connection;
 static const char *dbus_object_path;
-static const char *dbus_interface_name = "org.gnome.KrbAuthDialog";
 static GDBusNodeInfo *introspection_data;
 static guint dbus_obj_id;
 
@@ -105,7 +106,7 @@ ka_dbus_signal_cb (KaApplet *applet, gchar *princ, guint when, gpointer  user_da
     if (!g_dbus_connection_emit_signal (dbus_connection,
                                         NULL,
                                         dbus_object_path,
-                                        dbus_interface_name,
+                                        DBUS_INTERFACE_NAME,
                                         signal_name,
                                         g_variant_new ("(su)",
                                                        princ,

@@ -39,7 +39,6 @@ static gboolean is_online = TRUE;
 static gboolean kcontext_valid;
 GFileMonitor *ccache_monitor;
 
-static int grab_credentials (KaApplet *applet);
 static int ka_renew_credentials (KaApplet *applet);
 static gboolean ka_get_tgt_from_ccache (krb5_context context,
                                         krb5_creds *creds);

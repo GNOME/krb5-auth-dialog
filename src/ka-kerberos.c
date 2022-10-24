@@ -306,9 +306,7 @@ ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
     while ((ret = krb5_cc_next_cred (kcontext, ccache, &cursor, &creds)) == 0) {
         gboolean renewable, proxiable, forwardable;
 
-
-        if (hide_conf_tickets && krb5_is_config_principal (kcontext,
-                                                           creds.server)) {
+        if (hide_conf_tickets && krb5_is_config_principal (kcontext, creds.server)) {
             krb5_free_cred_contents (kcontext, &creds);
             continue;
         }

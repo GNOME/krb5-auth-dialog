@@ -291,6 +291,36 @@ ka_applet_startup (GApplication *application)
                                      self);
 }
 
+static gboolean
+ka_applet_dbus_register (GApplication    *application,
+                         GDBusConnection *connection,
+                         const gchar     *object_path,
+                         GError         **error)
+{
+  KaApplet *self = KA_APPLET (application);
+
+  G_APPLICATION_CLASS (ka_applet_parent_class)->dbus_register (application,
+                                                               connection,
+                                                               object_path,
+                                                               error);
+
+  ka_dbus_connect (self);
+  return TRUE;
+}
+
+
+static void
+ka_applet_dbus_unregister (GApplication    *application,
+                           GDBusConnection *connection,
+                           const gchar     *object_path)
+{
+  ka_dbus_disconnect ();
+
+  G_APPLICATION_CLASS (ka_applet_parent_class)->dbus_unregister (application,
+                                                                 connection,
+                                                                 object_path);
+}
+
 static void
 ka_applet_set_property (GObject *object,
                         guint property_id,
@@ -411,7 +441,6 @@ ka_applet_constructed (GObject *object)
     self->pwdialog = ka_pwdialog_new ();
     self->settings = ka_settings_init (self);
     self->loader = ka_plugin_loader_create (self);
-    ka_dbus_connect (self);
 
     g_unix_signal_add (SIGTERM, on_shutdown_signal, self);
     g_unix_signal_add (SIGINT, on_shutdown_signal, self);
@@ -427,7 +456,6 @@ ka_applet_dispose (GObject *object)
     g_clear_pointer (&self->prefs, ka_window_destroy);
     g_clear_object (&self->loader);
 
-    ka_dbus_disconnect ();
     ka_kerberos_destroy ();
 
     G_OBJECT_CLASS (ka_applet_parent_class)->dispose (object);
@@ -470,6 +498,8 @@ ka_applet_class_init (KaAppletClass *klass)
     application_class->command_line = ka_applet_command_line;
     application_class->startup = ka_applet_startup;
     application_class->activate = ka_applet_activate;
+    application_class->dbus_register = ka_applet_dbus_register;
+    application_class->dbus_unregister = ka_applet_dbus_unregister;
 
     object_class->set_property = ka_applet_set_property;
     object_class->get_property = ka_applet_get_property;

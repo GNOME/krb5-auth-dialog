@@ -459,17 +459,17 @@ static void
 ka_applet_class_init (KaAppletClass *klass)
 {
     GObjectClass *object_class = G_OBJECT_CLASS (klass);
+    GApplicationClass *application_class = G_APPLICATION_CLASS (klass);
     int i;
 
     object_class->constructed = ka_applet_constructed;;
     object_class->dispose = ka_applet_dispose;
     object_class->finalize = ka_applet_finalize;
 
-    G_APPLICATION_CLASS (klass)->local_command_line =   \
-        ka_applet_local_command_line;
-    G_APPLICATION_CLASS (klass)->command_line = ka_applet_command_line;
-    G_APPLICATION_CLASS (klass)->startup = ka_applet_startup;
-    G_APPLICATION_CLASS (klass)->activate = ka_applet_activate;
+    application_class->local_command_line = ka_applet_local_command_line;
+    application_class->command_line = ka_applet_command_line;
+    application_class->startup = ka_applet_startup;
+    application_class->activate = ka_applet_activate;
 
     object_class->set_property = ka_applet_set_property;
     object_class->get_property = ka_applet_get_property;

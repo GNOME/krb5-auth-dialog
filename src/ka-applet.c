@@ -304,7 +304,7 @@ ka_applet_dbus_register (GApplication    *application,
                                                                object_path,
                                                                error);
 
-  ka_dbus_connect (self);
+  ka_dbus_connect (self, connection, object_path);
   return TRUE;
 }
 

@@ -12,10 +12,9 @@
 #include "ka-dbus.h"
 
 static GDBusConnection *dbus_connection;
-static const char *dbus_object_path = "/org/gnome/KrbAuthDialog";
+static const char *dbus_object_path;
 static const char *dbus_interface_name = "org.gnome.KrbAuthDialog";
 static GDBusNodeInfo *introspection_data;
-
 
 gboolean
 ka_dbus_acquire_tgt (KaApplet *applet,
@@ -136,7 +135,7 @@ static const GDBusInterfaceVTable interface_vtable =
 
 
 static gboolean
-ka_dbus_register (KaApplet *applet)
+ka_dbus_register (KaApplet *applet, const char *object_path)
 {
     guint id;
 
@@ -145,12 +144,12 @@ ka_dbus_register (KaApplet *applet)
         NULL);
 
     id = g_dbus_connection_register_object (dbus_connection,
-                                        dbus_object_path,
-                                        introspection_data->interfaces[0],
-                                        &interface_vtable,
-                                        applet,
-                                        NULL,  /* user_data_free_func */
-                                        NULL); /* GError** */
+                                            object_path,
+                                            introspection_data->interfaces[0],
+                                            &interface_vtable,
+                                            applet,
+                                            NULL,  /* user_data_free_func */
+                                            NULL); /* GError** */
 
     g_return_val_if_fail(id, FALSE);
     ka_dbus_connect_signals (applet);
@@ -167,21 +166,23 @@ ka_dbus_disconnect (void)
     }
 
     dbus_connection = NULL;
+    dbus_object_path = NULL;
 }
 
 
 gboolean
-ka_dbus_connect (KaApplet *applet)
+ka_dbus_connect (KaApplet *applet, GDBusConnection *connection, const char *object_path)
 {
     g_return_val_if_fail (applet != 0, FALSE);
+    g_return_val_if_fail (connection, FALSE);
+    g_return_val_if_fail (object_path, FALSE);
 
-    dbus_connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, NULL);
-    g_return_val_if_fail (dbus_connection != NULL, FALSE);
+    dbus_connection = connection;
+    dbus_object_path = object_path;
 
-    return ka_dbus_register(applet);
+    return ka_dbus_register(applet, object_path);
 }
 
 /*
  * vim:ts=4:sts=4:sw=4:et:
  */
-

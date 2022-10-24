@@ -10,14 +10,14 @@ krb5-auth-dialog \- Kerberos 5 credential checking
 The \fBkrb5-auth-dialog\fR application will periodically check (every
 @check_interval@ seconds) if the user has Kerberos credentials, and if so, if
 they will expire soon (in less than @minimum_lifetime@ minutes).  If it
-determines that this is the case, krb5-auth-dialog will attempt to obtain fresh
+determines that this is the case, \fBkrb5-auth-dialog\fR will attempt to obtain fresh
 credentials, prompting the user for whatever information is necessary.
 
 .SH ARGUMENTS
 
 .TP
 \fB--auto\fR
-If this option is specified, \fkrb5-auth-dialog\f will start only if it
+If this option is specified, \fBkrb5-auth-dialog\fR will start only if it
 finds that the user has Kerberos credentials. This may be used to
 ensure that only users who actually use Kerberos see the program.
 Note that in some settings, users may authenticate to Kerberos at a

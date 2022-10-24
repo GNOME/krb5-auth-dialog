@@ -234,8 +234,11 @@ credentials_expiring_real (KaApplet *applet)
     return retval;
 }
 
-
-/* time in seconds the tgt will be still valid */
+/**
+ * ka_tgt_valid_seconds:
+ *
+ * Returns: The time in seconds the tgt will be still valid
+ */
 int
 ka_tgt_valid_seconds (void)
 {
@@ -273,7 +276,15 @@ ka_format_time (time_t t, gchar *ts, size_t len)
 }
 
 
-/* fill in service tickets data */
+/**
+ * ka_get_service_tickets:
+ * @tickets: The tickets list store
+ * @hide_conf_tickets: Whether to hide configuration principals
+ *
+ * Fill in service tickets data
+ *
+ * Returns: %TRUE on success
+ */
 gboolean
 ka_get_service_tickets (GtkListStore * tickets, gboolean hide_conf_tickets)
 {
@@ -642,10 +653,11 @@ ka_parse_name (KaApplet *applet, krb5_context krbcontext,
 }
 
 
-/*
- * return current principal in text form
+/**
+ * ka_unparse_name:
  *
- * caller needs to free the returned result using g_free();
+ * Returns: The current principal in text form. The caller needs to free the
+ *     returned result using g_free();
  */
 char *
 ka_unparse_name (void)
@@ -950,9 +962,14 @@ ka_destroy_ccache (KaApplet *applet)
 }
 
 
-/*
- * check if we have valid credentials for the requested principal - if not, grab them
- * principal: requested principal - if empty use default
+/**
+ * ka_check_credentials:
+ * @applet: The applet
+ * newprincipal: The requested principal - if empty string, use the default
+ *
+ * Check if we have valid credentials for the requested principal - if not, grab them.
+ *
+ * Returns: %TRUE if credentials were grabbed
  */
 gboolean
 ka_check_credentials (KaApplet *applet, const char *newprincipal)
@@ -1000,7 +1017,14 @@ ka_check_credentials (KaApplet *applet, const char *newprincipal)
 }
 
 
-/* initiate grabbing of credentials (on "Get Ticket" button click) */
+/**
+ * ka_grab_credentials:
+ * @applet: The applet
+ *
+ * Initiate grabbing of credentials (e.g. xon "Get Ticket" button click)
+ *
+ * Returns: %TRUE if credentials were grabbed
+ */
 gboolean
 ka_grab_credentials (KaApplet *applet)
 {

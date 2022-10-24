@@ -100,7 +100,7 @@ G_DEFINE_TYPE (KaApplet, ka_applet, ADW_TYPE_APPLICATION);
 static gboolean is_initialized;
 
 static void
-ka_applet_signal_emit (KaApplet *this, guint signum, krb5_timestamp expiry)
+ka_applet_signal_emit (KaApplet *self, guint signum, krb5_timestamp expiry)
 {
     g_autofree char *princ = NULL;
 
@@ -108,7 +108,7 @@ ka_applet_signal_emit (KaApplet *this, guint signum, krb5_timestamp expiry)
     if (!princ)
         return;
 
-    g_signal_emit (this, signals[signum], 0, princ, (guint32) expiry);
+    g_signal_emit (self, signals[signum], 0, princ, (guint32) expiry);
 }
 
 

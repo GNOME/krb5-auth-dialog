@@ -33,7 +33,6 @@
 static krb5_context kcontext;
 static krb5_principal kprincipal;
 static krb5_timestamp creds_expiry;
-static krb5_timestamp canceled_creds_expiry;
 static gboolean canceled;
 static gboolean invalid_auth;
 static gboolean is_online = TRUE;
@@ -397,7 +396,6 @@ auth_dialog_prompter (krb5_context ctx G_GNUC_UNUSED,
 
     errcode = KRB5KRB_ERR_GENERIC;
     canceled = FALSE;
-    canceled_creds_expiry = 0;
 
     if (banner && !num_prompts)
         ka_applet_set_msg (applet, banner);
@@ -774,8 +772,6 @@ grab_credentials (KaApplet *applet)
         retval = ka_auth_password (applet, &my_creds, pk_userid, pk_anchors);
 
     creds_expiry = my_creds.times.endtime;
-    if (canceled)
-        canceled_creds_expiry = creds_expiry;
     if (retval) {
         switch (retval) {
         case KRB5KDC_ERR_PREAUTH_FAILED:

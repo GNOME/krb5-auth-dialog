@@ -13,10 +13,13 @@
 
 #define DBUS_INTERFACE_NAME "org.gnome.KrbAuthDialog"
 
-static GDBusConnection *dbus_connection;
-static const char *dbus_object_path;
-static GDBusNodeInfo *introspection_data;
-static guint dbus_obj_id;
+typedef struct {
+    GDBusConnection *connection;
+    const char      *object_path;
+    GDBusNodeInfo   *introspection_data;
+    guint            obj_id;
+} DBusData;
+static DBusData dbus_data;
 
 gboolean
 ka_dbus_acquire_tgt (KaApplet *applet,
@@ -103,9 +106,9 @@ ka_dbus_signal_cb (KaApplet *applet, gchar *princ, guint when, gpointer  user_da
     g_autoptr (GError) error = NULL;
     gchar *signal_name = user_data;
 
-    if (!g_dbus_connection_emit_signal (dbus_connection,
+    if (!g_dbus_connection_emit_signal (dbus_data.connection,
                                         NULL,
-                                        dbus_object_path,
+                                        dbus_data.object_path,
                                         DBUS_INTERFACE_NAME,
                                         signal_name,
                                         g_variant_new ("(su)",
@@ -141,18 +144,18 @@ ka_dbus_register (KaApplet *applet, const char *object_path)
 {
     g_autoptr (GError) err = NULL;
 
-    introspection_data = g_dbus_node_info_new_for_xml (
+    dbus_data.introspection_data = g_dbus_node_info_new_for_xml (
         ka_dbus_introspection_xml,
         NULL);
 
-    dbus_obj_id = g_dbus_connection_register_object (dbus_connection,
-                                                     object_path,
-                                                     introspection_data->interfaces[0],
-                                                     &interface_vtable,
-                                                     applet,
-                                                     NULL,
-                                                     &err);
-    if (dbus_obj_id == 0) {
+    dbus_data.obj_id = g_dbus_connection_register_object (dbus_data.connection,
+                                                          object_path,
+                                                          dbus_data.introspection_data->interfaces[0],
+                                                          &interface_vtable,
+                                                          applet,
+                                                          NULL,
+                                                          &err);
+    if (dbus_data.obj_id == 0) {
         g_warning ("Failed to register DBus object: %s", err->message);
         return FALSE;
     }
@@ -165,18 +168,18 @@ ka_dbus_register (KaApplet *applet, const char *object_path)
 void
 ka_dbus_disconnect (void)
 {
-    if (dbus_obj_id) {
-        g_dbus_connection_unregister_object (dbus_connection, dbus_obj_id);
-        dbus_obj_id = 0;
+    if (dbus_data.obj_id) {
+        g_dbus_connection_unregister_object (dbus_data.connection, dbus_data.obj_id);
+        dbus_data.obj_id = 0;
     }
 
-    if (introspection_data) {
-        g_dbus_node_info_unref (introspection_data);
-        introspection_data = NULL;
+    if (dbus_data.introspection_data) {
+        g_dbus_node_info_unref (dbus_data.introspection_data);
+        dbus_data.introspection_data = NULL;
     }
 
-    dbus_connection = NULL;
-    dbus_object_path = NULL;
+    dbus_data.connection = NULL;
+    dbus_data.object_path = NULL;
 }
 
 
@@ -187,8 +190,8 @@ ka_dbus_connect (KaApplet *applet, GDBusConnection *connection, const char *obje
     g_return_val_if_fail (connection, FALSE);
     g_return_val_if_fail (object_path, FALSE);
 
-    dbus_connection = connection;
-    dbus_object_path = object_path;
+    dbus_data.connection = connection;
+    dbus_data.object_path = object_path;
 
     return ka_dbus_register(applet, object_path);
 }

@@ -97,9 +97,7 @@ ka_dbus_handle_method_call (GDBusConnection       *connection G_GNUC_UNUSED,
 
 /* Emit DBus signals */
 static void
-ka_dbus_signal_cb (gpointer *applet G_GNUC_UNUSED,
-                   gchar *princ,
-                   guint when, gpointer user_data)
+ka_dbus_signal_cb (KaApplet *applet, gchar *princ, guint when, gpointer  user_data)
 {
     g_autoptr (GError) error = NULL;
     gchar *signal_name = user_data;

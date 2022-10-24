@@ -7,7 +7,7 @@ krb5-auth-dialog \- Kerberos 5 credential checking
 .B krb5-auth-dialog [--auto]
 
 .SH DESCRIPTION
-The krb5-auth-dialog application will periodically check (every
+The \fBkrb5-auth-dialog\fR application will periodically check (every
 @check_interval@ seconds) if the user has Kerberos credentials, and if so, if
 they will expire soon (in less than @minimum_lifetime@ minutes).  If it
 determines that this is the case, krb5-auth-dialog will attempt to obtain fresh

@@ -156,7 +156,7 @@ ka_preferences_pkuserid_notify (KaPreferences *self,
 
 static void
 ka_preferences_pkuserid_changed (GtkEntry *entry,
-                                 gpointer *userdata)
+                                 gpointer  userdata)
 {
     const char *pkuserid;
     KaPreferences *self = KA_PREFERENCES (userdata);

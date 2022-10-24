@@ -122,47 +122,10 @@ ka_dbus_signal_cb (KaApplet *applet, gchar *princ, guint when, gpointer  user_da
 }
 
 
-static void
-ka_dbus_connect_signals(KaApplet *applet)
-{
-    g_object_connect (applet,
-                      "signal::krb-tgt-acquired", ka_dbus_signal_cb, "krb_tgt_acquired",
-                      "signal::krb-tgt-renewed", ka_dbus_signal_cb, "krb_tgt_renewed",
-                      "signal::krb-tgt-expired", ka_dbus_signal_cb, "krb_tgt_expired",
-                      NULL);
-}
-
-
 static const GDBusInterfaceVTable interface_vtable =
 {
   .method_call = ka_dbus_handle_method_call,
 };
-
-
-static gboolean
-ka_dbus_register (KaApplet *applet, const char *object_path)
-{
-    g_autoptr (GError) err = NULL;
-
-    dbus_data.introspection_data = g_dbus_node_info_new_for_xml (
-        ka_dbus_introspection_xml,
-        NULL);
-
-    dbus_data.obj_id = g_dbus_connection_register_object (dbus_data.connection,
-                                                          object_path,
-                                                          dbus_data.introspection_data->interfaces[0],
-                                                          &interface_vtable,
-                                                          applet,
-                                                          NULL,
-                                                          &err);
-    if (dbus_data.obj_id == 0) {
-        g_warning ("Failed to register DBus object: %s", err->message);
-        return FALSE;
-    }
-
-    ka_dbus_connect_signals (applet);
-    return TRUE;
-}
 
 
 void
@@ -186,14 +149,36 @@ ka_dbus_disconnect (void)
 gboolean
 ka_dbus_connect (KaApplet *applet, GDBusConnection *connection, const char *object_path)
 {
+    g_autoptr (GError) err = NULL;
+
     g_return_val_if_fail (applet != 0, FALSE);
     g_return_val_if_fail (connection, FALSE);
     g_return_val_if_fail (object_path, FALSE);
 
     dbus_data.connection = connection;
     dbus_data.object_path = object_path;
+    dbus_data.introspection_data = g_dbus_node_info_new_for_xml (ka_dbus_introspection_xml,
+                                                                 NULL);
 
-    return ka_dbus_register(applet, object_path);
+    dbus_data.obj_id = g_dbus_connection_register_object (dbus_data.connection,
+                                                          object_path,
+                                                          dbus_data.introspection_data->interfaces[0],
+                                                          &interface_vtable,
+                                                          applet,
+                                                          NULL,
+                                                          &err);
+    if (dbus_data.obj_id == 0) {
+        g_warning ("Failed to register DBus object: %s", err->message);
+        return FALSE;
+    }
+
+    g_object_connect (applet,
+                      "signal::krb-tgt-acquired", ka_dbus_signal_cb, "krb_tgt_acquired",
+                      "signal::krb-tgt-renewed", ka_dbus_signal_cb, "krb_tgt_renewed",
+                      "signal::krb-tgt-expired", ka_dbus_signal_cb, "krb_tgt_expired",
+                      NULL);
+
+    return TRUE;
 }
 
 /*

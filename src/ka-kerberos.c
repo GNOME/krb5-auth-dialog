@@ -495,7 +495,7 @@ credentials_expiring (gpointer *data)
     }
     ka_applet_update_status (applet, creds_expiry);
 
-    return TRUE;
+    return G_SOURCE_CONTINUE;
 }
 
 
@@ -504,7 +504,7 @@ static gboolean
 credentials_expiring_once (gpointer *data)
 {
     credentials_expiring (data);
-    return FALSE;
+    return G_SOURCE_REMOVE;
 }
 
 

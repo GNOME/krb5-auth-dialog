@@ -26,7 +26,7 @@ typedef struct _KaPluginAfsPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (KaPluginAfs, ka_plugin_afs, KA_TYPE_PLUGIN)
 
 static void
-event_cb (gpointer *applet, gchar *princ, guint when, gpointer user_data G_GNUC_UNUSED)
+event_cb (KaApplet *applet, gchar *princ, guint when, gpointer user_data G_GNUC_UNUSED)
 {
     GError *err = NULL;
     gboolean ret;

@@ -27,7 +27,7 @@ typedef struct _KaPluginGnomeLockPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (KaPluginGnomeLock, ka_plugin_gnomelock, KA_TYPE_PLUGIN)
 
 static void
-event_cb (gpointer *applet, gchar *princ, guint when, gpointer user_data)
+event_cb (KaApplet *applet, gchar *princ, guint when, gpointer user_data)
 {
     GError *error = NULL;
     GDBusProxyFlags flags= G_DBUS_PROXY_FLAGS_NONE;

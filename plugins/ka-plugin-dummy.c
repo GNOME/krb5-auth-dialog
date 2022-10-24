@@ -26,7 +26,7 @@ typedef struct _KaPluginDummyPrivate {
 G_DEFINE_TYPE_WITH_PRIVATE (KaPluginDummy, ka_plugin_dummy, KA_TYPE_PLUGIN)
 
 static void
-event_cb (gpointer *applet, gchar *princ, guint when, gpointer user_data)
+event_cb (KaApplet *applet, gchar *princ, guint when, gpointer user_data)
 {
     g_message ("%s %s @%d", (gchar*)user_data, princ, when);
 }

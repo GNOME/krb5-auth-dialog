@@ -44,8 +44,7 @@ simple_conv (int n, const struct pam_message **msg, struct pam_response **resp,
 static struct pam_conv simplepamconv = { simple_conv, NULL };
 
 static void
-renewed_event_cb (gpointer *applet, gchar *princ, guint when,
-                  gpointer user_data)
+renewed_event_cb (KaApplet *applet, gchar *princ, guint when, gpointer user_data)
 {
     const char *user;
     pam_handle_t *pamh = NULL;

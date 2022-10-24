@@ -15,6 +15,7 @@ static GDBusConnection *dbus_connection;
 static const char *dbus_object_path;
 static const char *dbus_interface_name = "org.gnome.KrbAuthDialog";
 static GDBusNodeInfo *introspection_data;
+static guint dbus_obj_id;
 
 gboolean
 ka_dbus_acquire_tgt (KaApplet *applet,
@@ -137,21 +138,24 @@ static const GDBusInterfaceVTable interface_vtable =
 static gboolean
 ka_dbus_register (KaApplet *applet, const char *object_path)
 {
-    guint id;
+    g_autoptr (GError) err = NULL;
 
     introspection_data = g_dbus_node_info_new_for_xml (
         ka_dbus_introspection_xml,
         NULL);
 
-    id = g_dbus_connection_register_object (dbus_connection,
-                                            object_path,
-                                            introspection_data->interfaces[0],
-                                            &interface_vtable,
-                                            applet,
-                                            NULL,  /* user_data_free_func */
-                                            NULL); /* GError** */
+    dbus_obj_id = g_dbus_connection_register_object (dbus_connection,
+                                                     object_path,
+                                                     introspection_data->interfaces[0],
+                                                     &interface_vtable,
+                                                     applet,
+                                                     NULL,
+                                                     &err);
+    if (dbus_obj_id == 0) {
+        g_warning ("Failed to register DBus object: %s", err->message);
+        return FALSE;
+    }
 
-    g_return_val_if_fail(id, FALSE);
     ka_dbus_connect_signals (applet);
     return TRUE;
 }
@@ -160,6 +164,11 @@ ka_dbus_register (KaApplet *applet, const char *object_path)
 void
 ka_dbus_disconnect (void)
 {
+    if (dbus_obj_id) {
+        g_dbus_connection_unregister_object (dbus_connection, dbus_obj_id);
+        dbus_obj_id = 0;
+    }
+
     if (introspection_data) {
         g_dbus_node_info_unref (introspection_data);
         introspection_data = NULL;

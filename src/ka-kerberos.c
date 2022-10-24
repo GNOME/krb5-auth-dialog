@@ -930,14 +930,14 @@ ka_krb5_context_init (void)
 }
 
 
-static gboolean
+static void
 ka_krb5_context_free (void)
 {
-    if (kcontext_valid) {
-        kcontext_valid = FALSE;
-        krb5_free_context (kcontext);
-    }
-    return TRUE;
+    if (kcontext_valid == FALSE)
+        return;
+
+    kcontext_valid = FALSE;
+    krb5_free_context (kcontext);
 }
 
 

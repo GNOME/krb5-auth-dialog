@@ -482,10 +482,11 @@ ka_network_available_changed_cb (GNetworkMonitor *mon,
 
 /* credentials expiring timer */
 static gboolean
-credentials_expiring (gpointer *data)
+credentials_expiring (gpointer data)
 {
     KaApplet *applet = KA_APPLET (data);
 
+    g_assert (KA_IS_APPLET (applet));
     KA_DEBUG ("Checking expiry <%ds", ka_applet_get_pw_prompt_secs (applet));
     if (credentials_expiring_real (applet) && is_online) {
         KA_DEBUG ("Expiry @ %ld", (long int)creds_expiry);
@@ -501,7 +502,7 @@ credentials_expiring (gpointer *data)
 
 /* run once, then terminate the timer */
 static gboolean
-credentials_expiring_once (gpointer *data)
+credentials_expiring_once (gpointer data)
 {
     credentials_expiring (data);
     return G_SOURCE_REMOVE;
@@ -1077,9 +1078,8 @@ ka_kerberos_init (KaApplet *applet)
 
     ret = ka_krb5_context_init ();
     ka_nm_init ();
-    g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL,
-                           (GSourceFunc) credentials_expiring, applet);
-    g_idle_add ((GSourceFunc) credentials_expiring_once, applet);
+    g_timeout_add_seconds (CREDENTIAL_CHECK_INTERVAL, credentials_expiring, applet);
+    g_idle_add (credentials_expiring_once, applet);
     ccache_monitor = monitor_ccache (applet);
     return ret;
 }

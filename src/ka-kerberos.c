@@ -529,7 +529,7 @@ ka_set_ticket_options (KaApplet *applet, krb5_context context,
         krb5_get_init_creds_opt_set_renew_life (out, r);
     }
 #if ENABLE_PKINIT && HAVE_KRB5_GET_INIT_CREDS_OPT_SET_PA
-    /* pkinit optins for MIT Kerberos */
+    /* pkinit options for MIT Kerberos */
     if (pk_userid && strlen (pk_userid)) {
         KA_DEBUG ("pkinit with '%s'", pk_userid);
         krb5_get_init_creds_opt_set_pa (context, out,

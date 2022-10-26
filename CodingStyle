@@ -1,6 +1,5 @@
 CodingStyle
 -----------
-- secmem/ keeps it's CodingStyle so we can merge easily with pinentry-gtk
 - Public functions start with ka_
 - The object in instance methods is called self
 - Indent in four space units, no tabs

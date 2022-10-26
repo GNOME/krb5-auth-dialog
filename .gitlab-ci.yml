@@ -60,3 +60,17 @@ flatpak:
     BUNDLE: 'org.gnome.KrbAuthDialog.flatpak'
   extends: .flatpak
 
+update-etpo:
+  image: debian:bookworm
+  stage: build
+  when: manual
+  before_script:
+    - apt-get update
+    - apt-get -y install $DEBIAN_DEPS libkrb5-dev flex bison git
+  script:
+    - git clone --depth=1 https://github.com/krb5/krb5
+    - meson -Detpo=enabled . _build
+    - ninja -C _build
+    - ET_DIR=$PWD/krb5  _build/etpo/update-etpo
+    - git diff src/dummy-strings.c
+

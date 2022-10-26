@@ -4,7 +4,7 @@ dialog when they are about to expire.
 
 Configuration
 =============
-Configuration settings are handled via gsettings.
+Configuration settings are handled via GSettings.
 
 You can set the principal that is used to acquire tickets via:
 
@@ -30,20 +30,19 @@ or if you're using a smartcard:
 gsettings set org.gnome.KrbAuthDialog pk-userid "PKCS11:/usr/lib/opensc/opensc-pkcs11.so"
 ```
 
+All of these settings are also be set via the applications preferences dialog.
+
 DBus API
 ========
 You can request a ticket granting ticket via DBus:
 
 ```sh
- dbus-send --print-reply --type=method_call \
-              --dest=org.gnome.KrbAuthDialog \
-               /org/gnome/KrbAuthDialog \
-               org.gnome.KrbAuthDialog.acquireTgt \
-               string:'principal'
+gdbus call -e -d org.gnome.KrbAuthDialog -o /org/gnome/KrbAuthDialog -m org.gnome.KrbAuthDialog.acquireTgt 'principal'
 ```
 
 If the sent principal doesn't match the one currently in the ticket cache the
-request fails. To request a TGT for the "default" principal use string:''.
+request fails. To request a TGT for the "default" principal use the empty
+string ''.
 
 See [examples/tgt-signals.py](examples/tgt-signals.py) for information
 about sent DBus signals.

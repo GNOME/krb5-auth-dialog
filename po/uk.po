@@ -4,31 +4,33 @@
 #
 # wanderlust <wanderlust@ukr.net>, 2009.
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2009.
-# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020, 2021, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues\n"
-"POT-Creation-Date: 2021-02-15 16:14+0000\n"
-"PO-Revision-Date: 2021-02-15 18:56+0200\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/issues"
+"\n"
+"POT-Creation-Date: 2022-10-30 11:14+0000\n"
+"PO-Revision-Date: 2022-10-30 17:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 20.11.70\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.12.0\n"
 
-#: data/krb5-auth-dialog.metainfo.xml.in:6
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:6
 msgid "Kerberos Authentication Dialog"
 msgstr "Діалогове вікно аутентифікації Kerberos"
 
-#: data/krb5-auth-dialog.metainfo.xml.in:7
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:7
 msgid "Request, renew and view Kerberos tickets"
 msgstr "Запит, оновлення та перегляд квитків Kerberos"
 
-#: data/krb5-auth-dialog.metainfo.xml.in:9
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:9
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
@@ -41,7 +43,7 @@ msgstr ""
 "про наближення завершення строку дії ваших мандатів Kerberos і оновлювати "
 "ваш квиток автоматично, якщо це можливо."
 
-#: data/krb5-auth-dialog.metainfo.xml.in:15
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:15
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
@@ -49,11 +51,12 @@ msgstr ""
 "Це корисно, якщо ви хочете пройти розпізнавання на сервері Kerberos (KDC) "
 "після входу до робочого середовища (наприклад, на мобільному пристрої)."
 
-#: data/krb5-auth-dialog.metainfo.xml.in:23
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:23
 msgid "Kerberos authentication dialog"
 msgstr "Діалогове вікно розпізнавання Kerberos"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:6
+#: src/resources/ui/ka-preferences.ui:22
 msgid "Kerberos principal"
 msgstr "Адміністратор доступу Kerberos"
 
@@ -66,7 +69,8 @@ msgid "PKINIT identifier"
 msgstr "Ідентифікатор PKINIT"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:12
-msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgid ""
+"The principal's public/private/certificate identifier when using PKINIT"
 msgstr ""
 "Загально доступний або ж приватний Ідентифікатор чи ідентифікатор "
 "сертифікату адміністратора доступу при використанні PKINIT"
@@ -152,148 +156,138 @@ msgstr "Увімкнені модулі"
 msgid "List of plugins that should be loaded and activated on startup."
 msgstr "Список модулів, які завантажуються при старті."
 
-#: src/resources/ui/ka-main-window.ui:15
+#: src/resources/ui/ka-main-window.ui:9
 msgid "Prefere_nces"
 msgstr "Н_алаштування"
 
-#: src/resources/ui/ka-main-window.ui:22
+#: src/resources/ui/ka-main-window.ui:13
 msgid "_About"
 msgstr "_Про програму"
 
-#: src/resources/ui/ka-main-window.ui:29
+#: src/resources/ui/ka-main-window.ui:17
 msgid "_Help"
 msgstr "_Довідка"
 
-#: src/resources/ui/ka-main-window.ui:36
+#: src/resources/ui/ka-main-window.ui:21
 msgid "_Quit"
 msgstr "Ви_йти"
 
-#: src/resources/ui/ka-main-window.ui:49
+#: src/resources/ui/ka-main-window.ui:27
 msgid "Service Tickets"
 msgstr "Квиток на сервіс"
 
-#: src/resources/ui/ka-main-window.ui:75
+#: src/resources/ui/ka-main-window.ui:56
 msgid "Your ticket cache is currently empty"
 msgstr "Ваш кеш квитків зараз є порожнім"
 
-#: src/resources/ui/ka-main-window.ui:92 src/ka-applet.c:620
+#: src/resources/ui/ka-main-window.ui:67 src/ka-applet.c:641
 msgid "Get Ticket"
 msgstr "Отримати _квиток"
 
-#: src/resources/ui/ka-preferences.ui:53
+#: src/resources/ui/ka-preferences.ui:14
+#| msgid "Kerberos"
+msgid "_Kerberos"
+msgstr "_Kerberos"
+
+#: src/resources/ui/ka-preferences.ui:19
 msgid "Kerberos User"
 msgstr "Користувач Kerberos"
 
-#: src/resources/ui/ka-preferences.ui:105
-#: src/resources/ui/ka-preferences.ui:106
+#: src/resources/ui/ka-preferences.ui:25
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
 "Назва вашого облікового запису Kerberos. Не заповнюйте, якщо слід "
 "використовувати ваше поточне ім'я користувача."
 
-#: src/resources/ui/ka-preferences.ui:118
-msgid "Kerberos principal:"
-msgstr "Адміністратор доступу Kerberos:"
-
-#: src/resources/ui/ka-preferences.ui:160
+#: src/resources/ui/ka-preferences.ui:35
 msgid "Kerberos Ticket Options"
 msgstr "Параметри квитків Kerberos"
 
-#: src/resources/ui/ka-preferences.ui:200
+#: src/resources/ui/ka-preferences.ui:36
 msgid "Requested Kerberos tickets should be:"
 msgstr "Обрані квитки Kerberos повинні бути:"
 
-#: src/resources/ui/ka-preferences.ui:226
+#: src/resources/ui/ka-preferences.ui:39
 msgid "forwardable"
 msgstr "перенаправлення"
 
-#: src/resources/ui/ka-preferences.ui:231
-#: src/resources/ui/ka-preferences.ui:232
+#: src/resources/ui/ka-preferences.ui:42
 msgid "If checked, request forwardable tickets"
 msgstr "При виборі, вимагає квитки перенаправлення"
 
-#: src/resources/ui/ka-preferences.ui:267
+#: src/resources/ui/ka-preferences.ui:50
 msgid "renewable"
 msgstr "можливість поновлення"
 
-#: src/resources/ui/ka-preferences.ui:272
-#: src/resources/ui/ka-preferences.ui:273
+#: src/resources/ui/ka-preferences.ui:53
 msgid "If checked, request renewable tickets"
 msgstr "При виборі, вимагає квитки поновлення"
 
-#: src/resources/ui/ka-preferences.ui:308
+#: src/resources/ui/ka-preferences.ui:61
 msgid "proxiable"
 msgstr "передача через проксі"
 
-#: src/resources/ui/ka-preferences.ui:313
-#: src/resources/ui/ka-preferences.ui:314
+#: src/resources/ui/ka-preferences.ui:64
 msgid "If checked, request proxiable tickets"
 msgstr "При виборі, вимагає квитки, які передаються через проксі"
 
-#: src/resources/ui/ka-preferences.ui:358
-msgid "Kerberos"
-msgstr "Kerberos"
+#: src/resources/ui/ka-preferences.ui:76
+#| msgid "PKINIT"
+msgid "_PKINIT"
+msgstr "_PKINIT"
 
-#: src/resources/ui/ka-preferences.ui:381
+#: src/resources/ui/ka-preferences.ui:81
 msgid "Userid"
 msgstr "Ід.користувача"
 
-#: src/resources/ui/ka-preferences.ui:426
+#: src/resources/ui/ka-preferences.ui:82
+msgid "Principal certificate and private key"
+msgstr "Основний сертифікат та закритий ключ"
+
+#: src/resources/ui/ka-preferences.ui:85
 msgid "Use Smartcard"
 msgstr "Використовувати смарткартку"
 
-#: src/resources/ui/ka-preferences.ui:431
-#: src/resources/ui/ka-preferences.ui:432
+#: src/resources/ui/ka-preferences.ui:88
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
 "Якщо відмічено, використовувати пристрій безпеки (смарткартку) для "
 "автентифікації."
 
-#: src/resources/ui/ka-preferences.ui:469
-#: src/resources/ui/ka-preferences.ui:470
-msgid "Certificate and private key used for authentication"
-msgstr "Сертифікат та приватний ключ використовуються для автентифікації"
+#: src/resources/ui/ka-preferences.ui:96
+#| msgid "Certificate and private key used for authentication"
+msgid "Certificate and private key file"
+msgstr "Файл сертифіката і закритого ключа"
 
-#: src/resources/ui/ka-preferences.ui:483
-#: src/resources/ui/ka-preferences.ui:575
-msgid "_Browse..."
-msgstr "_Огляд..."
-
-#: src/resources/ui/ka-preferences.ui:541
+#: src/resources/ui/ka-preferences.ui:119
 msgid "X509 trust anchors"
 msgstr "Довірчі прив'язки X509"
 
-#: src/resources/ui/ka-preferences.ui:561
-#: src/resources/ui/ka-preferences.ui:562
+#: src/resources/ui/ka-preferences.ui:122
+#| msgid "PKINIT trust anchors"
+msgid "KDC trust anchor"
+msgstr "Прив'язка довіри KDC"
+
+#: src/resources/ui/ka-preferences.ui:126
 msgid "Certificate used to verify digital signatures."
 msgstr "Сертифікат, який буде використано для перевірки цифрових підписів."
 
-#: src/resources/ui/ka-preferences.ui:612
-#: src/resources/ui/ka-preferences.ui:613
-msgid ""
-"Configure the use of certificates and smartcards for your Kerberos network "
-"authentication."
-msgstr ""
-"Налаштуйте використання сертифікатів та смарткарток для вашого розпізнавання "
-"у мережі за допомогою Kerberos."
+#: src/resources/ui/ka-preferences.ui:147
+#| msgid "Notifications"
+msgid "_Notifications"
+msgstr "_Сповіщення"
 
-#: src/resources/ui/ka-preferences.ui:614
-msgid "PKINIT"
-msgstr "PKINIT"
-
-#: src/resources/ui/ka-preferences.ui:637
-#: src/resources/ui/ka-preferences.ui:753
+#: src/resources/ui/ka-preferences.ui:152
 msgid "Notifications"
 msgstr "Повідомлення"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: src/resources/ui/ka-preferences.ui:682
-msgid "Warn"
-msgstr "Попередження"
+#: src/resources/ui/ka-preferences.ui:155
+#| msgid "minutes before ticket expiry"
+msgid "Warn before ticket expiry"
+msgstr "Попереджати до закінчення строку дії квитка"
 
-#: src/resources/ui/ka-preferences.ui:695
-#: src/resources/ui/ka-preferences.ui:696
+#: src/resources/ui/ka-preferences.ui:160
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
@@ -301,1353 +295,1544 @@ msgstr ""
 "Надіслати повідомлення про завершення терміну дії квитка до часу його "
 "завершення"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: src/resources/ui/ka-preferences.ui:715
-msgid "minutes before ticket expiry"
-msgstr "хвилин до закінчення строку дії квитка"
-
-#: src/resources/ui/ka-pwdialog.ui:7 src/ka-applet-priv.h:34
+#: src/resources/ui/ka-pwdialog.ui:5 src/ka-applet-priv.h:19
 #: src/org.gnome.KrbAuthDialog.desktop.in:3
 msgid "Kerberos Authentication"
 msgstr "Розпізнавання Kerberos"
 
-#: src/resources/ui/ka-pwdialog.ui:15 src/ka-preferences.c:372
+#: src/resources/ui/ka-pwdialog.ui:12 src/ka-preferences.c:325
 msgid "_Cancel"
 msgstr "_Скасувати"
 
-#: src/resources/ui/ka-pwdialog.ui:22
+#: src/resources/ui/ka-pwdialog.ui:18
 msgid "_Renew Ticket"
 msgstr "Оновити _квиток"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with ka- and krb5-auth-
-#. first since these are the ones the user will see in any case.
-#: src/dummy-strings.c:10
-msgid "ASN.1 failed call to system time library"
-msgstr "ASN.1 зазнав невдачі при виклику системної бібліотеки часу"
-
-#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
-#: src/dummy-strings.c:11
-msgid "ASN.1 structure is missing a required field"
-msgstr "У структурі ASN.1 відсутнє обов'язкове поле"
-
-#. asn1_err.et:asn1:ASN1_MISSING_FIELD
-#: src/dummy-strings.c:12
-msgid "ASN.1 unexpected field number"
-msgstr "Невідомий номер поля ASN.1"
-
-#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
-#: src/dummy-strings.c:13
-msgid "ASN.1 type numbers are inconsistent"
-msgstr "Номери типів ASN.1 непослідовні"
-
-#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
-#: src/dummy-strings.c:14
-msgid "ASN.1 value too large"
-msgstr "Значення ASN.1 надто довге"
-
-#. asn1_err.et:asn1:ASN1_OVERFLOW
-#: src/dummy-strings.c:15
-msgid "ASN.1 encoding ended unexpectedly"
-msgstr "Кодування ASN.1 несподівано закінчилось"
-
-#. asn1_err.et:asn1:ASN1_OVERRUN
-#: src/dummy-strings.c:16
-msgid "ASN.1 identifier doesn't match expected value"
-msgstr "Ідентифікатор ASN.1 не відповідає очікуваному значенню"
-
-#. asn1_err.et:asn1:ASN1_BAD_ID
-#: src/dummy-strings.c:17
-msgid "ASN.1 length doesn't match expected value"
-msgstr "Довжина ASN.1 не відповідає очікуваному значенню"
-
-#. asn1_err.et:asn1:ASN1_BAD_LENGTH
-#: src/dummy-strings.c:18
-msgid "ASN.1 badly-formatted encoding"
-msgstr "Погано форматоване кодування ASN.1"
-
-#. asn1_err.et:asn1:ASN1_BAD_FORMAT
-#: src/dummy-strings.c:19
-msgid "ASN.1 parse error"
-msgstr "Помилка при аналізі ASN.1"
-
-#. asn1_err.et:asn1:ASN1_PARSE_ERROR
-#: src/dummy-strings.c:20
-msgid "ASN.1 bad return from gmtime"
-msgstr "Неправильний результат ASN.1 від gmtime"
-
-#. asn1_err.et:asn1:ASN1_BAD_GMTIME
-#: src/dummy-strings.c:21
-msgid "ASN.1 non-constructed indefinite encoding"
-msgstr "Невідоме або не створене  ASN.1 кодування"
-
-#. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
-#: src/dummy-strings.c:22
-msgid "ASN.1 missing expected EOC"
-msgstr "У ASN.1 відсутній ідентифікатор кінця перетворення (EOC)"
-
-#. asn1_err.et:asn1:ASN1_MISSING_EOC
-#: src/dummy-strings.c:23
+#. doubt skip src/dummy-strings.h as the strings from other files
+#. are the ones the user will see in any case.
+#: src/dummy-strings.c:9
 msgid "No error"
 msgstr "Без помилок"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NONE
-#: src/dummy-strings.c:24
+#: src/dummy-strings.c:10
 msgid "Client's entry in database has expired"
 msgstr "Запис клієнта у базі даних має прострочений термін"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
-#: src/dummy-strings.c:25
+#: src/dummy-strings.c:11
 msgid "Server's entry in database has expired"
 msgstr "Запис сервера у базі даних має прострочений термін"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
-#: src/dummy-strings.c:26
+#: src/dummy-strings.c:12
 msgid "Requested protocol version not supported"
 msgstr "Очікувана версія протоколу не підтримується"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
-#: src/dummy-strings.c:27
+#: src/dummy-strings.c:13
 msgid "Client's key is encrypted in an old master key"
 msgstr "Ключ клієнта зашифровано застарілим головним ключем"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
-#: src/dummy-strings.c:28
+#: src/dummy-strings.c:14
 msgid "Server's key is encrypted in an old master key"
 msgstr "Ключ сервера зашифровано застарілим головним ключем"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
-#: src/dummy-strings.c:29
+#: src/dummy-strings.c:15
 msgid "Client not found in Kerberos database"
 msgstr "Клієнт відсутній у базі даних Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
-#: src/dummy-strings.c:30
+#: src/dummy-strings.c:16
 msgid "Server not found in Kerberos database"
 msgstr "Сервер відсутній у базі даних Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
-#: src/dummy-strings.c:31
+#: src/dummy-strings.c:17
 msgid "Principal has multiple entries in Kerberos database"
 msgstr "Адміністратор доступу має декілька записів у базі даних Kerberos"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
-#: src/dummy-strings.c:32
+#: src/dummy-strings.c:18
 msgid "Client or server has a null key"
 msgstr "Клієнт або сервер має порожній ключ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
-#: src/dummy-strings.c:33
+#: src/dummy-strings.c:19
 msgid "Ticket is ineligible for postdating"
 msgstr "Квиток не придатний для датування пізнішим числом"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
-#: src/dummy-strings.c:34
+#: src/dummy-strings.c:20
 msgid "Requested effective lifetime is negative or too short"
 msgstr ""
 "Величина запитаного ефективного часу життя є негативною або надто короткою"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
-#: src/dummy-strings.c:35
+#: src/dummy-strings.c:21
 msgid "KDC policy rejects request"
 msgstr "Політика Центру розподілу ключів (KDC) відкидає запит"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
-#: src/dummy-strings.c:36
+#: src/dummy-strings.c:22
 msgid "KDC can't fulfill requested option"
 msgstr "Центр розподілу ключів (KDC) не може завершити зазначену опцію"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
-#: src/dummy-strings.c:37
+#: src/dummy-strings.c:23
 msgid "KDC has no support for encryption type"
 msgstr "Центр розподілу ключів (KDC) не підтримує тип шифрування"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
-#: src/dummy-strings.c:38
+#: src/dummy-strings.c:24
 msgid "KDC has no support for checksum type"
 msgstr "Центр розподілу ключів (KDC) не підтримує тип контрольної суми"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
-#: src/dummy-strings.c:39
+#: src/dummy-strings.c:25
 msgid "KDC has no support for padata type"
 msgstr "Центр розподілу ключів (KDC) не підтримує тип padata"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
-#: src/dummy-strings.c:40
+#: src/dummy-strings.c:26
 msgid "KDC has no support for transited type"
 msgstr "Центр розподілу ключів (KDC) не підтримує тип передачі"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
-#: src/dummy-strings.c:41
-msgid "Clients credentials have been revoked"
-msgstr "Мандати клієнтів було анульовано"
+#: src/dummy-strings.c:27
+#| msgid "Clients credentials have been revoked"
+msgid "Client's credentials have been revoked"
+msgstr "Реєстраційні дані клієнтів було анульовано"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
-#: src/dummy-strings.c:42
+#: src/dummy-strings.c:28
 msgid "Credentials for server have been revoked"
 msgstr "Мандати сервера було анульовано"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
-#: src/dummy-strings.c:43
+#: src/dummy-strings.c:29
 msgid "TGT has been revoked"
 msgstr "Квиток гарантування квитка (TGT) було анульовано"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
-#: src/dummy-strings.c:44
+#: src/dummy-strings.c:30
 msgid "Client not yet valid - try again later"
 msgstr "Клієнт ще не справжній - спробуйте пізніше"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
-#: src/dummy-strings.c:45
+#: src/dummy-strings.c:31
 msgid "Server not yet valid - try again later"
 msgstr "Сервер ще не справжній - спробуйте пізніше"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
-#: src/dummy-strings.c:46
+#: src/dummy-strings.c:32
 msgid "Password has expired"
 msgstr "Термін дії паролю закінчився"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
-#: src/dummy-strings.c:47
+#: src/dummy-strings.c:33
 msgid "Preauthentication failed"
 msgstr "Попередня аутентифікація зазнала невдачі"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
-#: src/dummy-strings.c:48
+#: src/dummy-strings.c:34
 msgid "Additional pre-authentication required"
 msgstr "Необхідна додаткова попередня аутентифікація"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
-#: src/dummy-strings.c:49
+#: src/dummy-strings.c:35
 msgid "Requested server and ticket don't match"
 msgstr "Необхідні сервер та квиток не збігаються"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
-#: src/dummy-strings.c:50
+#: src/dummy-strings.c:36
+msgid "Server principal valid for user2user only"
+msgstr "Основний сертифікат сервера є коректним лише для user2user"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_MUST_USE_USER2USER
+#: src/dummy-strings.c:37
+#| msgid "Policy rejects transited path"
+msgid "KDC policy rejects transited path"
+msgstr "Правила KDC забороняє шлях передавання"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PATH_NOT_ACCEPTED
+#: src/dummy-strings.c:38
 msgid "A service is not available that is required to process the request"
 msgstr "Недоступна послуга, яка необхідна для обробки запиту"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
-#: src/dummy-strings.c:51
+#: src/dummy-strings.c:39
 msgid "Decrypt integrity check failed"
 msgstr "Перевірка цілісності дешифрування зазнала невдачі"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
-#: src/dummy-strings.c:52
+#: src/dummy-strings.c:40
 msgid "Ticket expired"
 msgstr "Термін дії квитка завершився"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
-#: src/dummy-strings.c:53
+#: src/dummy-strings.c:41
 msgid "Ticket not yet valid"
 msgstr "Квиток ще не дійсний"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
-#: src/dummy-strings.c:54
+#: src/dummy-strings.c:42
 msgid "Request is a replay"
 msgstr "Запит є повторним"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
-#: src/dummy-strings.c:55
+#: src/dummy-strings.c:43
 msgid "The ticket isn't for us"
 msgstr "Чужий квиток"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
-#: src/dummy-strings.c:56
+#: src/dummy-strings.c:44
 msgid "Ticket/authenticator don't match"
 msgstr "Квиток та автентифікатор не збігаються"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
-#: src/dummy-strings.c:57
+#: src/dummy-strings.c:45
 msgid "Clock skew too great"
 msgstr "Надто велика зміна фаз синхронних імпульсів"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
-#: src/dummy-strings.c:58
+#: src/dummy-strings.c:46
 msgid "Incorrect net address"
 msgstr "Невірна мережева адреса"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
-#: src/dummy-strings.c:59
+#: src/dummy-strings.c:47
 msgid "Protocol version mismatch"
 msgstr "Версія протоколу відсутня"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
-#: src/dummy-strings.c:60
+#: src/dummy-strings.c:48
 msgid "Invalid message type"
 msgstr "Неправильний тип повідомлення"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
-#: src/dummy-strings.c:61
+#: src/dummy-strings.c:49
 msgid "Message stream modified"
 msgstr "Змінено потік повідомлення"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
-#: src/dummy-strings.c:62
+#: src/dummy-strings.c:50
 msgid "Message out of order"
 msgstr "Повідомлення поза чергою"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
-#: src/dummy-strings.c:63
+#: src/dummy-strings.c:51
 msgid "Illegal cross-realm ticket"
 msgstr "Неправильний міжобласний квиток"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
-#: src/dummy-strings.c:64
+#: src/dummy-strings.c:52
 msgid "Key version is not available"
 msgstr "Версія ключа недоступна"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
-#: src/dummy-strings.c:65
+#: src/dummy-strings.c:53
 msgid "Service key not available"
 msgstr "Ключ послуги не доступний"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
-#: src/dummy-strings.c:66 src/dummy-strings.c:122
+#: src/dummy-strings.c:54 src/dummy-strings.c:119
 msgid "Mutual authentication failed"
 msgstr "Взаємна аутентифікація зазнала невдачі"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
-#: src/dummy-strings.c:67
+#: src/dummy-strings.c:55
 msgid "Incorrect message direction"
 msgstr "Невірний напрямок повідомлення"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
-#: src/dummy-strings.c:68
+#: src/dummy-strings.c:56
 msgid "Alternative authentication method required"
 msgstr "Необхідно застосувати альтернативний метод аутентифікації"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
-#: src/dummy-strings.c:69
+#: src/dummy-strings.c:57
 msgid "Incorrect sequence number in message"
 msgstr "Невірний номер послідовності у повідомленні"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
-#: src/dummy-strings.c:70
+#: src/dummy-strings.c:58
 msgid "Inappropriate type of checksum in message"
 msgstr "Невірний тип контрольної суми у повідомленні"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
-#: src/dummy-strings.c:71
+#: src/dummy-strings.c:59
 msgid "Policy rejects transited path"
 msgstr "Політика забороняє шлях передачі"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
-#: src/dummy-strings.c:72
+#: src/dummy-strings.c:60
 msgid "Response too big for UDP, retry with TCP"
 msgstr "Надто довга відповідь для UDP, спробуйте TCP"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
-#: src/dummy-strings.c:73
+#: src/dummy-strings.c:61
 msgid "Generic error (see e-text)"
 msgstr "Загальна помилка (див. e-text)"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
-#: src/dummy-strings.c:74
+#: src/dummy-strings.c:62
 msgid "Field is too long for this implementation"
 msgstr "Поле надто довге для цієї реалізації"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
-#: src/dummy-strings.c:75
+#: src/dummy-strings.c:63
 msgid "Client not trusted"
 msgstr "Клієнт не має довіри"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
-#: src/dummy-strings.c:76
+#: src/dummy-strings.c:64
 msgid "KDC not trusted"
 msgstr "Центр розподілу ключів (KDC) не має довіри"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
-#: src/dummy-strings.c:77
+#: src/dummy-strings.c:65
 msgid "Invalid signature"
 msgstr "Неправильний підпис"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
-#: src/dummy-strings.c:78
+#: src/dummy-strings.c:66
 msgid "Key parameters not accepted"
 msgstr "Параметри ключа не приймаються"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
-#: src/dummy-strings.c:79
+#: src/dummy-strings.c:67
 msgid "Certificate mismatch"
 msgstr "Відсутній сертифікат"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
-#: src/dummy-strings.c:80
+#: src/dummy-strings.c:68
+#| msgid "Configuration tickets"
+msgid "No ticket granting ticket"
+msgstr "Немає квитка, що надає квиток"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NO_TGT
+#: src/dummy-strings.c:69
+msgid "Realm not local to KDC"
+msgstr "Область дії не є локальною для KDC"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_WRONG_REALM
+#: src/dummy-strings.c:70
+msgid "User to user required"
+msgstr "Потрібне передавання безпосередньо між користувачами"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_USER_TO_USER_REQUIRED
+#: src/dummy-strings.c:71
 msgid "Can't verify certificate"
 msgstr "Неможливо перевірити сертифікат"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
-#: src/dummy-strings.c:81
+#: src/dummy-strings.c:72
 msgid "Invalid certificate"
 msgstr "Неправильний сертифікат"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
-#: src/dummy-strings.c:82
+#: src/dummy-strings.c:73
 msgid "Revoked certificate"
 msgstr "Скасований сертифікат"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
-#: src/dummy-strings.c:83
+#: src/dummy-strings.c:74
 msgid "Revocation status unknown"
 msgstr "Невідомий стан скасування"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
-#: src/dummy-strings.c:84
+#: src/dummy-strings.c:75
 msgid "Revocation status unavailable"
 msgstr "Стан скасування недоступний"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
-#: src/dummy-strings.c:85
+#: src/dummy-strings.c:76
 msgid "Client name mismatch"
 msgstr "Відсутнє ім'я клієнта"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
-#: src/dummy-strings.c:86
+#: src/dummy-strings.c:77
 msgid "KDC name mismatch"
 msgstr "Відсутнє ім'я центру розподілу ключів (KDC)"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
-#: src/dummy-strings.c:87
+#: src/dummy-strings.c:78
 msgid "Inconsistent key purpose"
 msgstr "Суперечлива мета ключа"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
-#: src/dummy-strings.c:88
+#: src/dummy-strings.c:79
 msgid "Digest in certificate not accepted"
 msgstr "Неприйнятний дайджест сертифікату"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
-#: src/dummy-strings.c:89
+#: src/dummy-strings.c:80
 msgid "Checksum must be included"
 msgstr "Контрольна сума повинна бути включена"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
-#: src/dummy-strings.c:90
+#: src/dummy-strings.c:81
 msgid "Digest in signed-data not accepted"
 msgstr "Неприйнятний дайджест у підписаних даних"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
-#: src/dummy-strings.c:91
+#: src/dummy-strings.c:82
 msgid "Public key encryption not supported"
 msgstr "Шифрування з відкритим ключем не підтримується"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
-#: src/dummy-strings.c:92
-msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
-msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
+#: src/dummy-strings.c:83
+msgid "The IAKERB proxy could not find a KDC"
+msgstr "Проксі IAKERB не вдалося знайти KDC"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NOT_FOUND
+#: src/dummy-strings.c:84
+msgid "The KDC did not respond to the IAKERB proxy"
+msgstr "KDC не надіслано відповіді проксі IAKERB"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NO_RESPONSE
+#: src/dummy-strings.c:85
+#| msgid "Preauthentication failed"
+msgid "Preauthentication expired"
+msgstr "Строк дії попереднього розпізнавання вичерпано"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_EXPIRED
+#: src/dummy-strings.c:86
+#| msgid "Additional pre-authentication required"
+msgid "More preauthentication data is required"
+msgstr "Потрібні додаткові дані попереднього розпізнавання"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_MORE_PREAUTH_DATA_REQUIRED
+#: src/dummy-strings.c:87
+msgid "An unsupported critical FAST option was requested"
+msgstr "Було надіслано запит щодо непідтримуваного критичного параметра FAST"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_UNKNOWN_CRITICAL_FAST_OPTION
+#: src/dummy-strings.c:88
+msgid "No acceptable KDF offered"
+msgstr "Не запропоновано прийнятного KDF"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NO_ACCEPTABLE_KDF
+#: src/dummy-strings.c:89
+msgid "$Id$"
+msgstr "$Id$"
 
 #. krb5_err.et:krb5:KRB5_ERR_RCSID
-#: src/dummy-strings.c:93
+#: src/dummy-strings.c:90
 msgid "Invalid flag for file lock mode"
 msgstr "Неправильний прапорець для режиму блокування файлу"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
-#: src/dummy-strings.c:94
+#: src/dummy-strings.c:91
 msgid "Cannot read password"
 msgstr "Неможливо прочитати пароль"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
-#: src/dummy-strings.c:95
+#: src/dummy-strings.c:92
 msgid "Password mismatch"
 msgstr "Пароль не збігається"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
-#: src/dummy-strings.c:96
+#: src/dummy-strings.c:93
 msgid "Password read interrupted"
 msgstr "Перервано при читанні паролю"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
-#: src/dummy-strings.c:97
+#: src/dummy-strings.c:94
 msgid "Illegal character in component name"
 msgstr "Недопустимий символ у імені складової"
 
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
-#: src/dummy-strings.c:98
+#: src/dummy-strings.c:95
 msgid "Malformed representation of principal"
 msgstr "Спотворене представлення адміністратора доступу"
 
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
-#: src/dummy-strings.c:99
+#: src/dummy-strings.c:96
 msgid "Can't open/find Kerberos configuration file"
 msgstr "Неможливо відкрити/знайти файл налаштувань Kerberos"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
-#: src/dummy-strings.c:100
+#: src/dummy-strings.c:97
 msgid "Improper format of Kerberos configuration file"
 msgstr "Неправильний формат файлу налаштувань Kerberos"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
-#: src/dummy-strings.c:101
+#: src/dummy-strings.c:98
 msgid "Insufficient space to return complete information"
 msgstr "Недостатньо місця для видачі повної інформації"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
-#: src/dummy-strings.c:102
+#: src/dummy-strings.c:99
 msgid "Invalid message type specified for encoding"
 msgstr "Для кодування вибрано неправильний тип повідомлення"
 
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
-#: src/dummy-strings.c:103
+#: src/dummy-strings.c:100
 msgid "Credential cache name malformed"
 msgstr "Спотворено мандат імені кешу"
 
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
-#: src/dummy-strings.c:104
+#: src/dummy-strings.c:101
 msgid "Unknown credential cache type"
 msgstr "Невідомий тип мандату кешу"
 
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
-#: src/dummy-strings.c:105
+#: src/dummy-strings.c:102
 msgid "Matching credential not found"
 msgstr "Відповідний мандат не знайдено"
 
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
-#: src/dummy-strings.c:106
+#: src/dummy-strings.c:103
 msgid "End of credential cache reached"
 msgstr "Досягнуто кінець мандату кешу"
 
 #. krb5_err.et:krb5:KRB5_CC_END
-#: src/dummy-strings.c:107
+#: src/dummy-strings.c:104
 msgid "Request did not supply a ticket"
 msgstr "Запит не підтримує роботу з квитками"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
-#: src/dummy-strings.c:108
+#: src/dummy-strings.c:105
 msgid "Wrong principal in request"
 msgstr "Запит містить неправильний мандат"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
-#: src/dummy-strings.c:109
+#: src/dummy-strings.c:106
 msgid "Ticket has invalid flag set"
 msgstr "Квиток має неправильний прапорець"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
-#: src/dummy-strings.c:110
+#: src/dummy-strings.c:107
 msgid "Requested principal and ticket don't match"
 msgstr "Запитані мандат та квиток не збігаються"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
-#: src/dummy-strings.c:111
+#: src/dummy-strings.c:108
 msgid "KDC reply did not match expectations"
 msgstr "Відповідь Центру розподілу ключів (KDC) не відповідає очікуванням"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
-#: src/dummy-strings.c:112
+#: src/dummy-strings.c:109
 msgid "Clock skew too great in KDC reply"
 msgstr ""
 "Відповідь Центру розподілу ключів (KDC) має надто велику зміну фаз "
 "синхронних імпульсів"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
-#: src/dummy-strings.c:113
+#: src/dummy-strings.c:110
 msgid "Client/server realm mismatch in initial ticket request"
 msgstr "Область клієнта/сервера не збігається у початковому запиті квитка"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
-#: src/dummy-strings.c:114
+#: src/dummy-strings.c:111
 msgid "Program lacks support for encryption type"
 msgstr "Програмі бракує підтримки типу шифрування"
 
 #. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
-#: src/dummy-strings.c:115
+#: src/dummy-strings.c:112
 msgid "Program lacks support for key type"
 msgstr "Програмі бракує підтримки типу ключа"
 
 #. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
-#: src/dummy-strings.c:116
+#: src/dummy-strings.c:113
 msgid "Requested encryption type not used in message"
 msgstr "Запитаний тип шифрування не використовується у повідомленні"
 
 #. krb5_err.et:krb5:KRB5_WRONG_ETYPE
-#: src/dummy-strings.c:117
+#: src/dummy-strings.c:114
 msgid "Program lacks support for checksum type"
 msgstr "Програмі бракує підтримки типу контрольної суми"
 
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
-#: src/dummy-strings.c:118
+#: src/dummy-strings.c:115
 msgid "Cannot find KDC for requested realm"
 msgstr "Неможливо знайти Центр розподілу ключів (KDC) для обраної області"
 
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
-#: src/dummy-strings.c:119
+#: src/dummy-strings.c:116
 msgid "Kerberos service unknown"
 msgstr "Невідома послуга Kerberos"
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
-#: src/dummy-strings.c:120
+#: src/dummy-strings.c:117
 msgid "Cannot contact any KDC for requested realm"
 msgstr ""
 "Неможливо зв'язатися із жодним з Центрів розподілу ключів (KDC) для заданої "
 "області"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
-#: src/dummy-strings.c:121
+#: src/dummy-strings.c:118
 msgid "No local name found for principal name"
 msgstr "Не знайдено локального імені для адміністратора доступу"
 
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
-#: src/dummy-strings.c:123
+#: src/dummy-strings.c:120
 msgid "Replay cache type is already registered"
 msgstr "Тип відтворення кешу вже зареєстровано"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
-#: src/dummy-strings.c:124
+#: src/dummy-strings.c:121
 msgid "No more memory to allocate (in replay cache code)"
 msgstr "Не залишилося пам'яті для розміщення (для коду відтворення кешу)"
 
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
-#: src/dummy-strings.c:125
+#: src/dummy-strings.c:122
 msgid "Replay cache type is unknown"
 msgstr "Невідомий тип відтворення кешу"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
-#: src/dummy-strings.c:126
+#: src/dummy-strings.c:123
 msgid "Generic unknown RC error"
 msgstr "Звичайна невідома RC помилка"
 
 #. krb5_err.et:krb5:KRB5_RC_UNKNOWN
-#: src/dummy-strings.c:127
+#: src/dummy-strings.c:124
 msgid "Message is a replay"
 msgstr "Повторне повідомлення "
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
-#: src/dummy-strings.c:128
-msgid "Replay I/O operation failed XXX"
-msgstr "Повторення операції вводу/виводу зазнало невдачі XXX"
+#: src/dummy-strings.c:125
+#| msgid "Replay I/O operation failed XXX"
+msgid "Replay cache I/O operation failed"
+msgstr "Спроба повторення операції введення-виведення зазнала невдачі"
 
 #. krb5_err.et:krb5:KRB5_RC_IO
-#: src/dummy-strings.c:129
+#: src/dummy-strings.c:126
 msgid "Replay cache type does not support non-volatile storage"
 msgstr "Тип повторення кешу не підтримується для нез'ємних сховищ"
 
 #. krb5_err.et:krb5:KRB5_RC_NOIO
-#: src/dummy-strings.c:130
+#: src/dummy-strings.c:127
 msgid "Replay cache name parse/format error"
 msgstr "Помилка аналізу/форматування імені відтворення кешу"
 
 #. krb5_err.et:krb5:KRB5_RC_PARSE
-#: src/dummy-strings.c:131
+#: src/dummy-strings.c:128
 msgid "End-of-file on replay cache I/O"
 msgstr "Кінець файлу при відтворенні кешу вводу/виводу"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
-#: src/dummy-strings.c:132
+#: src/dummy-strings.c:129
 msgid "No more memory to allocate (in replay cache I/O code)"
 msgstr "Немає пам'яті для розміщення (у коді вводу/виводу відтворення кешу)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
-#: src/dummy-strings.c:133
+#: src/dummy-strings.c:130
 msgid "Permission denied in replay cache code"
 msgstr "Заборонено для коду відтворення кешу"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
-#: src/dummy-strings.c:134
+#: src/dummy-strings.c:131
 msgid "I/O error in replay cache i/o code"
 msgstr "Помилка вводу/виводу у коду вводу/виводу відтворення кешу"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
-#: src/dummy-strings.c:135
+#: src/dummy-strings.c:132
 msgid "Generic unknown RC/IO error"
 msgstr "Звичайна невідома помилка RC/вводу/виводу"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
-#: src/dummy-strings.c:136
+#: src/dummy-strings.c:133
 msgid "Insufficient system space to store replay information"
 msgstr "Недостатньо системного простору для зберігання інформації відтворення"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
-#: src/dummy-strings.c:137
+#: src/dummy-strings.c:134
 msgid "Can't open/find realm translation file"
 msgstr "Неможливо відкрити/знайти файл перетворення області"
 
 #. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
-#: src/dummy-strings.c:138
+#: src/dummy-strings.c:135
 msgid "Improper format of realm translation file"
 msgstr "Невідповідний формат файлу перетворення області"
 
 #. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
-#: src/dummy-strings.c:139
+#: src/dummy-strings.c:136
 msgid "Can't open/find lname translation database"
 msgstr "Неможливо знайти ім'я база даних перетворення"
 
 #. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
-#: src/dummy-strings.c:140
+#: src/dummy-strings.c:137
 msgid "No translation available for requested principal"
 msgstr "Для бажаного адміністратора доступу перетворення відсутнє"
 
 #. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
-#: src/dummy-strings.c:141
+#: src/dummy-strings.c:138
 msgid "Improper format of translation database entry"
 msgstr "Невідповідний формат перетворення запису бази даних"
 
 #. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
-#: src/dummy-strings.c:142
+#: src/dummy-strings.c:139
 msgid "Cryptosystem internal error"
 msgstr "Внутрішня помилка криптосистеми"
 
 #. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
-#: src/dummy-strings.c:143
+#: src/dummy-strings.c:140
 msgid "Key table name malformed"
 msgstr "Змінене ім'я таблиці ключів"
 
 #. krb5_err.et:krb5:KRB5_KT_BADNAME
-#: src/dummy-strings.c:144
+#: src/dummy-strings.c:141
 msgid "Unknown Key table type"
 msgstr "Невідомий тип таблиці ключів"
 
 #. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
-#: src/dummy-strings.c:145
+#: src/dummy-strings.c:142
 msgid "Key table entry not found"
 msgstr "Не знайдено запису таблиці ключів"
 
 #. krb5_err.et:krb5:KRB5_KT_NOTFOUND
-#: src/dummy-strings.c:146
+#: src/dummy-strings.c:143
 msgid "End of key table reached"
 msgstr "Досягнуто кінця таблиці ключів"
 
 #. krb5_err.et:krb5:KRB5_KT_END
-#: src/dummy-strings.c:147
+#: src/dummy-strings.c:144
 msgid "Cannot write to specified key table"
 msgstr "Неможливо записувати до вказаної таблиці ключів"
 
 #. krb5_err.et:krb5:KRB5_KT_NOWRITE
-#: src/dummy-strings.c:148
+#: src/dummy-strings.c:145
 msgid "Error writing to key table"
 msgstr "Помилка при записі до таблиці ключів"
 
 #. krb5_err.et:krb5:KRB5_KT_IOERR
-#: src/dummy-strings.c:149
+#: src/dummy-strings.c:146
 msgid "Cannot find ticket for requested realm"
 msgstr "Неможливо знайти квиток для вказаної області"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
-#: src/dummy-strings.c:150
+#: src/dummy-strings.c:147
 msgid "DES key has bad parity"
 msgstr "Ключ DES має погану парність"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
-#: src/dummy-strings.c:151
+#: src/dummy-strings.c:148
 msgid "DES key is a weak key"
 msgstr "Ключ DES є слабким"
 
 #. krb5_err.et:krb5:KRB5DES_WEAK_KEY
-#: src/dummy-strings.c:152
+#: src/dummy-strings.c:149
 msgid "Bad encryption type"
 msgstr "Поганий тип шифрування"
 
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
-#: src/dummy-strings.c:153
+#: src/dummy-strings.c:150
 msgid "Key size is incompatible with encryption type"
 msgstr "Розмір ключа є несумісним з типом шифрування"
 
 #. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
-#: src/dummy-strings.c:154
+#: src/dummy-strings.c:151
 msgid "Message size is incompatible with encryption type"
 msgstr "Розмір повідомлення є несумісним з типом шифрування"
 
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
-#: src/dummy-strings.c:155
+#: src/dummy-strings.c:152
 msgid "Credentials cache type is already registered."
 msgstr "Тип кешу мандатів вже зареєстровано."
 
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
-#: src/dummy-strings.c:156
+#: src/dummy-strings.c:153
 msgid "Key table type is already registered."
 msgstr "Тип таблиці ключів вже зареєстровано."
 
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
-#: src/dummy-strings.c:157
-msgid "Credentials cache I/O operation failed XXX"
-msgstr "Кешу мандатів зазнав помилки при операції вводу/виводу XXX"
+#: src/dummy-strings.c:154
+#| msgid "Credentials cache I/O operation failed XXX"
+msgid "Credentials cache I/O operation failed"
+msgstr ""
+"Дія кешування реєстраційних даних зазнала невдачі при дії з"
+" введення-виведення"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
-#: src/dummy-strings.c:158
+#: src/dummy-strings.c:155
 msgid "Credentials cache permissions incorrect"
 msgstr "Невірні права кешу мандатів"
 
 #. krb5_err.et:krb5:KRB5_FCC_PERM
-#: src/dummy-strings.c:159
+#: src/dummy-strings.c:156
 msgid "No credentials cache found"
 msgstr "Не знайдено жодних кешу мандатів"
 
 #. krb5_err.et:krb5:KRB5_FCC_NOFILE
-#: src/dummy-strings.c:160
+#: src/dummy-strings.c:157
 msgid "Internal credentials cache error"
 msgstr "Внутрішня помилка кешу мандатів"
 
 #. krb5_err.et:krb5:KRB5_FCC_INTERNAL
-#: src/dummy-strings.c:161
+#: src/dummy-strings.c:158
 msgid "Error writing to credentials cache"
 msgstr "Помилка при записі у кеш мандатів"
 
 #. krb5_err.et:krb5:KRB5_CC_WRITE
-#: src/dummy-strings.c:162
+#: src/dummy-strings.c:159
 msgid "No more memory to allocate (in credentials cache code)"
 msgstr "Нема пам'яті для розміщення (у коді кешу мандатів)"
 
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
-#: src/dummy-strings.c:163
+#: src/dummy-strings.c:160
 msgid "Bad format in credentials cache"
 msgstr "Поганий формат кешу мандатів"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
-#: src/dummy-strings.c:164
+#: src/dummy-strings.c:161
 msgid "No credentials found with supported encryption types"
 msgstr "Не знайдено жодних мандатів, які б підтримували типи шифрування"
 
 #. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
-#: src/dummy-strings.c:165
+#: src/dummy-strings.c:162
 msgid "Invalid KDC option combination (library internal error)"
 msgstr ""
 "Невірна комбінація параметрів Центру розподілу ключів (KDC) (внутрішня "
 "помилка бібліотеки)"
 
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
-#: src/dummy-strings.c:166
+#: src/dummy-strings.c:163
 msgid "Request missing second ticket"
 msgstr "Запит відсутнього другого квитка"
 
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
-#: src/dummy-strings.c:167
+#: src/dummy-strings.c:164
 msgid "No credentials supplied to library routine"
 msgstr "Відсутні мандати, які б надавалися бібліотеці програми"
 
 #. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
-#: src/dummy-strings.c:168
+#: src/dummy-strings.c:165
 msgid "Bad sendauth version was sent"
 msgstr "Надіслано погану версію sendauth"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
-#: src/dummy-strings.c:169
+#: src/dummy-strings.c:166
 msgid "Bad application version was sent (via sendauth)"
 msgstr "Надіслано погану версію програми (через sendauth)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
-#: src/dummy-strings.c:170
+#: src/dummy-strings.c:167
 msgid "Bad response (during sendauth exchange)"
 msgstr "Погана відповідь (під час обміну sendauth)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
-#: src/dummy-strings.c:171
+#: src/dummy-strings.c:168
 msgid "Server rejected authentication (during sendauth exchange)"
 msgstr "Сервер відхилив аутентифікацію (під час обміну sendauth)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
-#: src/dummy-strings.c:172
+#: src/dummy-strings.c:169
 msgid "Unsupported preauthentication type"
 msgstr "Тип попередньої аутентифікації не підтримується"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
-#: src/dummy-strings.c:173
+#: src/dummy-strings.c:170
 msgid "Required preauthentication key not supplied"
 msgstr "Очікуваний ключ попередньої аутентифікації не підтримується"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
-#: src/dummy-strings.c:174
+#: src/dummy-strings.c:171
 msgid "Generic preauthentication failure"
 msgstr "Звичайна невдача при попередній аутентифікації"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
-#: src/dummy-strings.c:175
+#: src/dummy-strings.c:172
 msgid "Unsupported replay cache format version number"
 msgstr "Формат номеру версії кешу відтворення не підтримується"
 
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
-#: src/dummy-strings.c:176
+#: src/dummy-strings.c:173
 msgid "Unsupported credentials cache format version number"
 msgstr "Формат номеру версії кешу мандатів не підтримується"
 
 #. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
-#: src/dummy-strings.c:177
+#: src/dummy-strings.c:174
 msgid "Unsupported key table format version number"
 msgstr "Формат номеру версії таблиці ключів не підтримується"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
-#: src/dummy-strings.c:178
+#: src/dummy-strings.c:175
 msgid "Program lacks support for address type"
 msgstr "Програмі не вистачає підтримки для типу адреси"
 
 #. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
-#: src/dummy-strings.c:179
+#: src/dummy-strings.c:176
 msgid "Message replay detection requires rcache parameter"
 msgstr "Повідомлення відтворення виявлення вимагає параметр rcache"
 
 #. krb5_err.et:krb5:KRB5_RC_REQUIRED
-#: src/dummy-strings.c:180
+#: src/dummy-strings.c:177
 msgid "Hostname cannot be canonicalized"
 msgstr "Неможливо привести ім'я вузла до канонічної форми"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
-#: src/dummy-strings.c:181
+#: src/dummy-strings.c:178
 msgid "Cannot determine realm for host"
 msgstr "Неможливо визначити область для вузла"
 
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
-#: src/dummy-strings.c:182
+#: src/dummy-strings.c:179
 msgid "Conversion to service principal undefined for name type"
 msgstr ""
 "Для типу імені не визначено перетворення у послугу адміністратора доступу"
 
 #. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
-#: src/dummy-strings.c:183
+#: src/dummy-strings.c:180
 msgid "Initial Ticket response appears to be Version 4 error"
 msgstr "Початкова версія відповіді на квиток схожа на помилку версії 4"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
-#: src/dummy-strings.c:184
+#: src/dummy-strings.c:181
 msgid "Cannot resolve network address for KDC in requested realm"
 msgstr ""
 "Неможливо отримати мережеву адресу Центру розподілу ключів (KDC) для заданої "
 "області"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
-#: src/dummy-strings.c:185
+#: src/dummy-strings.c:182
 msgid "Requesting ticket can't get forwardable tickets"
 msgstr "Заданий квиток не може отримати квитки перенаправлення"
 
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
-#: src/dummy-strings.c:186
+#: src/dummy-strings.c:183
 msgid "Bad principal name while trying to forward credentials"
 msgstr ""
 "Невірне ім'я адміністратора доступу при спробі отримання мандатів на "
 "перенаправлення"
 
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
-#: src/dummy-strings.c:187
+#: src/dummy-strings.c:184
 msgid "Looping detected inside krb5_get_in_tkt"
 msgstr "Виявлено зациклення у krb5_get_in_tkt"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
-#: src/dummy-strings.c:188
+#: src/dummy-strings.c:185
 msgid "Configuration file does not specify default realm"
 msgstr "Файл налаштувань не визначає первинну область"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
-#: src/dummy-strings.c:189
+#: src/dummy-strings.c:186
 msgid "Bad SAM flags in obtain_sam_padata"
 msgstr "obtain_sam_padata містить невірні прапорці диспетчера рахунків (SAM)"
 
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
-#: src/dummy-strings.c:190
+#: src/dummy-strings.c:187
 msgid "Invalid encryption type in SAM challenge"
 msgstr "Невірний тип шифрування у виклику диспетчера рахунків (SAM)"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
-#: src/dummy-strings.c:191
+#: src/dummy-strings.c:188
 msgid "Missing checksum in SAM challenge"
 msgstr "Виклик диспетчера рахунків (SAM) не містить контрольної суми"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
-#: src/dummy-strings.c:192
+#: src/dummy-strings.c:189
 msgid "Bad checksum in SAM challenge"
 msgstr "Виклик диспетчера рахунків (SAM) містить невірну контрольну суму"
 
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
-#: src/dummy-strings.c:193
+#: src/dummy-strings.c:190
 msgid "Keytab name too long"
 msgstr "Ім'я keytab надто довге"
 
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
-#: src/dummy-strings.c:194
+#: src/dummy-strings.c:191
 msgid "Key version number for principal in key table is incorrect"
 msgstr ""
 "Версія номеру ключа для адміністратора доступу у таблиці ключів є невірною."
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
-#: src/dummy-strings.c:195
+#: src/dummy-strings.c:192
 msgid "This application has expired"
 msgstr "Термін дії програми завершився"
 
 #. krb5_err.et:krb5:KRB5_APPL_EXPIRED
-#: src/dummy-strings.c:196
+#: src/dummy-strings.c:193
 msgid "This Krb5 library has expired"
 msgstr "Термін дії бібліотеки Krb5 завершився"
 
 #. krb5_err.et:krb5:KRB5_LIB_EXPIRED
-#: src/dummy-strings.c:197
+#: src/dummy-strings.c:194
 msgid "New password cannot be zero length"
 msgstr "Новий пароль повинен бути ненульової довжини"
 
 #. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
-#: src/dummy-strings.c:198
+#: src/dummy-strings.c:195
 msgid "Password change failed"
 msgstr "При зміні паролю виникла помилка"
 
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
-#: src/dummy-strings.c:199
+#: src/dummy-strings.c:196
 msgid "Bad format in keytab"
 msgstr "Поганий формат keytab"
 
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
-#: src/dummy-strings.c:200
+#: src/dummy-strings.c:197
 msgid "Encryption type not permitted"
 msgstr "Тип шифрування не дозволено"
 
 #. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
-#: src/dummy-strings.c:201
+#: src/dummy-strings.c:198
 msgid "No supported encryption types (config file error?)"
 msgstr ""
 "Нема типів шифрування, які підтримуються (помилка у файлі налаштувань?)"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
-#: src/dummy-strings.c:202
+#: src/dummy-strings.c:199
 msgid "Program called an obsolete, deleted function"
 msgstr "Програма викликала застарілу, видалену функцію"
 
 #. krb5_err.et:krb5:KRB5_OBSOLETE_FN
-#: src/dummy-strings.c:203
+#: src/dummy-strings.c:200
 msgid "unknown getaddrinfo failure"
 msgstr "Невідома помилка getaddrinfo"
 
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
-#: src/dummy-strings.c:204
+#: src/dummy-strings.c:201
 msgid "no data available for host/domain name"
 msgstr "Дані про ім'я вузла/домену відсутні"
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
-#: src/dummy-strings.c:205
+#: src/dummy-strings.c:202
 msgid "host/domain name not found"
 msgstr "Ім'я вузла/домену не знайдено"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
-#: src/dummy-strings.c:206
+#: src/dummy-strings.c:203
 msgid "service name unknown"
 msgstr "Невідоме ім'я послуги"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
-#: src/dummy-strings.c:207
+#: src/dummy-strings.c:204
 msgid "Cannot determine realm for numeric host address"
 msgstr "Неможливо визначити область для числової адреси вузла"
 
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
-#: src/dummy-strings.c:208
+#: src/dummy-strings.c:205
 msgid "Invalid key generation parameters from KDC"
 msgstr "Центр розподілу ключів надіслав невірні параметри створення ключа"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
-#: src/dummy-strings.c:209
+#: src/dummy-strings.c:206
 msgid "service not available"
 msgstr "Послуга недоступна"
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
-#: src/dummy-strings.c:210
+#: src/dummy-strings.c:207
 msgid "Ccache function not supported: read-only ccache type"
 msgstr "Функція ccache не підтримується: тип ccache -\"лише для читання\""
 
 #. krb5_err.et:krb5:KRB5_CC_READONLY
-#: src/dummy-strings.c:211
+#: src/dummy-strings.c:208
 msgid "Ccache function not supported: not implemented"
 msgstr "Функція ccache не підтримується: не реалізована"
 
 #. krb5_err.et:krb5:KRB5_CC_NOSUPP
-#: src/dummy-strings.c:212
+#: src/dummy-strings.c:209
 msgid "Invalid format of Kerberos lifetime or clock skew string"
 msgstr ""
 "Неправильний формат часу життя Kerberos або ж рядка зміни фаз синхронних "
 "імпульсів"
 
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
-#: src/dummy-strings.c:213
+#: src/dummy-strings.c:210
 msgid "Supplied data not handled by this plugin"
 msgstr "Надані дані не опрацьовуються даним додатком"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
-#: src/dummy-strings.c:214
-#| msgid "Plugin does not support the operaton"
+#: src/dummy-strings.c:211
 msgid "Plugin does not support the operation"
 msgstr "У додатку не передбачено підтримки цієї дії"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
+#: src/dummy-strings.c:212
+msgid "Invalid UTF-8 string"
+msgstr "Некоректний рядок UTF-8"
+
+#. krb5_err.et:krb5:KRB5_ERR_INVALID_UTF8
+#: src/dummy-strings.c:213
+#| msgid "Required preauthentication key not supplied"
+msgid "FAST protected pre-authentication required but not supported by KDC"
+msgstr ""
+"Потрібне попереднє розпізнавання із захистом FAST, але його підтримки не"
+" передбачено у KDC"
+
+#. krb5_err.et:krb5:KRB5_ERR_FAST_REQUIRED
+#: src/dummy-strings.c:214
+msgid "Auth context must contain local address"
+msgstr "Контекст розпізнавання має містити локальну адресу"
+
+#. krb5_err.et:krb5:KRB5_LOCAL_ADDR_REQUIRED
 #: src/dummy-strings.c:215
+msgid "Auth context must contain remote address"
+msgstr "Контекст розпізнавання має містити віддалену адресу"
+
+#. krb5_err.et:krb5:KRB5_REMOTE_ADDR_REQUIRED
+#: src/dummy-strings.c:216
+msgid "Tracing unsupported"
+msgstr "Не передбачено підтримки трасування"
+
+#. krb5_err.et:krb5:KRB5_TRACE_NOSUPP
+#: src/dummy-strings.c:217
 msgid "Kerberos V5 magic number table"
 msgstr "Таблиця магічних чисел Kerberos V5"
 
 #. kv5m_err.et:kv5m:KV5M_NONE
-#: src/dummy-strings.c:216
+#: src/dummy-strings.c:218
 msgid "Bad magic number for krb5_principal structure"
 msgstr "Погане магічне число для структури krb5_principal"
 
 #. kv5m_err.et:kv5m:KV5M_PRINCIPAL
-#: src/dummy-strings.c:217
+#: src/dummy-strings.c:219
 msgid "Bad magic number for krb5_data structure"
 msgstr "Погане магічне число для структури krb5_data"
 
 #. kv5m_err.et:kv5m:KV5M_DATA
-#: src/dummy-strings.c:218
+#: src/dummy-strings.c:220
 msgid "Bad magic number for krb5_keyblock structure"
 msgstr "Погане магічне число для структури krb5_keyblock"
 
 #. kv5m_err.et:kv5m:KV5M_KEYBLOCK
-#: src/dummy-strings.c:219
+#: src/dummy-strings.c:221
 msgid "Bad magic number for krb5_checksum structure"
 msgstr "Погане магічне число для структури krb5_checksum"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM
-#: src/dummy-strings.c:220
+#: src/dummy-strings.c:222
 msgid "Bad magic number for krb5_encrypt_block structure"
 msgstr "Погане магічне число для структури krb5_encrypt_block"
 
 #. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
-#: src/dummy-strings.c:221
+#: src/dummy-strings.c:223
 msgid "Bad magic number for krb5_enc_data structure"
 msgstr "Погане магічне число для структури krb5_enc_data"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_DATA
-#: src/dummy-strings.c:222
+#: src/dummy-strings.c:224
 msgid "Bad magic number for krb5_cryptosystem_entry structure"
 msgstr "Погане магічне число для структури krb5_cryptosystem_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
-#: src/dummy-strings.c:223
+#: src/dummy-strings.c:225
 msgid "Bad magic number for krb5_cs_table_entry structure"
 msgstr "Погане магічне число для структури krb5_cs_table_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
-#: src/dummy-strings.c:224
+#: src/dummy-strings.c:226
 msgid "Bad magic number for krb5_checksum_entry structure"
 msgstr "Погане магічне число для структури krb5_checksum_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
-#: src/dummy-strings.c:225
+#: src/dummy-strings.c:227
 msgid "Bad magic number for krb5_authdata structure"
 msgstr "Погане магічне число для структури krb5_authdata"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA
-#: src/dummy-strings.c:226
+#: src/dummy-strings.c:228
 msgid "Bad magic number for krb5_transited structure"
 msgstr "Погане магічне число для структури krb5_transited"
 
 #. kv5m_err.et:kv5m:KV5M_TRANSITED
-#: src/dummy-strings.c:227
+#: src/dummy-strings.c:229
 msgid "Bad magic number for krb5_enc_tkt_part structure"
 msgstr "Погане магічне число для структури krb5_enc_tkt_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
-#: src/dummy-strings.c:228
+#: src/dummy-strings.c:230
 msgid "Bad magic number for krb5_ticket structure"
 msgstr "Погане магічне число для структури krb5_ticket"
 
 #. kv5m_err.et:kv5m:KV5M_TICKET
-#: src/dummy-strings.c:229
+#: src/dummy-strings.c:231
 msgid "Bad magic number for krb5_authenticator structure"
 msgstr "Погане магічне число для структури krb5_authenticator"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
-#: src/dummy-strings.c:230
+#: src/dummy-strings.c:232
 msgid "Bad magic number for krb5_tkt_authent structure"
 msgstr "Погане магічне число для структури krb5_tkt_authent"
 
 #. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
-#: src/dummy-strings.c:231
+#: src/dummy-strings.c:233
 msgid "Bad magic number for krb5_creds structure"
 msgstr "Погане магічне число для структури krb5_creds"
 
 #. kv5m_err.et:kv5m:KV5M_CREDS
-#: src/dummy-strings.c:232
+#: src/dummy-strings.c:234
 msgid "Bad magic number for krb5_last_req_entry structure"
 msgstr "Погане магічне число для структури krb5_last_req_entry"
 
 #. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
-#: src/dummy-strings.c:233
+#: src/dummy-strings.c:235
 msgid "Bad magic number for krb5_pa_data structure"
 msgstr "Погане магічне число для структури krb5_pa_data"
 
 #. kv5m_err.et:kv5m:KV5M_PA_DATA
-#: src/dummy-strings.c:234
+#: src/dummy-strings.c:236
 msgid "Bad magic number for krb5_kdc_req structure"
 msgstr "Погане магічне число для структури krb5_kdc_req"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REQ
-#: src/dummy-strings.c:235
+#: src/dummy-strings.c:237
 msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
 msgstr "Погане магічне число для структури krb5_enc_kdc_rep_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
-#: src/dummy-strings.c:236
+#: src/dummy-strings.c:238
 msgid "Bad magic number for krb5_kdc_rep structure"
 msgstr "Погане магічне число для структури krb5_kdc_rep"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REP
-#: src/dummy-strings.c:237
+#: src/dummy-strings.c:239
 msgid "Bad magic number for krb5_error structure"
 msgstr "Погане магічне число для структури krb5_error"
 
 #. kv5m_err.et:kv5m:KV5M_ERROR
-#: src/dummy-strings.c:238
+#: src/dummy-strings.c:240
 msgid "Bad magic number for krb5_ap_req structure"
 msgstr "Погане магічне число для структури krb5_ap_req"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REQ
-#: src/dummy-strings.c:239
+#: src/dummy-strings.c:241
 msgid "Bad magic number for krb5_ap_rep structure"
 msgstr "Погане магічне число для структури krb5_ap_rep"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP
-#: src/dummy-strings.c:240
+#: src/dummy-strings.c:242
 msgid "Bad magic number for krb5_ap_rep_enc_part structure"
 msgstr "Погане магічне число для структури krb5_ap_rep_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
-#: src/dummy-strings.c:241
+#: src/dummy-strings.c:243
 msgid "Bad magic number for krb5_response structure"
 msgstr "Погане магічне число для структури krb5_response"
 
 #. kv5m_err.et:kv5m:KV5M_RESPONSE
-#: src/dummy-strings.c:242
+#: src/dummy-strings.c:244
 msgid "Bad magic number for krb5_safe structure"
 msgstr "Погане магічне число для структури krb5_safe"
 
 #. kv5m_err.et:kv5m:KV5M_SAFE
-#: src/dummy-strings.c:243
+#: src/dummy-strings.c:245
 msgid "Bad magic number for krb5_priv structure"
 msgstr "Погане магічне число для структури krb5_priv"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV
-#: src/dummy-strings.c:244
+#: src/dummy-strings.c:246
 msgid "Bad magic number for krb5_priv_enc_part structure"
 msgstr "Погане магічне число для структури krb5_priv_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
-#: src/dummy-strings.c:245
+#: src/dummy-strings.c:247
 msgid "Bad magic number for krb5_cred structure"
 msgstr "Погане магічне число для структури krb5_cred"
 
 #. kv5m_err.et:kv5m:KV5M_CRED
-#: src/dummy-strings.c:246
+#: src/dummy-strings.c:248
 msgid "Bad magic number for krb5_cred_info structure"
 msgstr "Погане магічне число для структури krb5_cred_info"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_INFO
-#: src/dummy-strings.c:247
+#: src/dummy-strings.c:249
 msgid "Bad magic number for krb5_cred_enc_part structure"
 msgstr "Погане магічне число для структури krb5_cred_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
-#: src/dummy-strings.c:248
+#: src/dummy-strings.c:250
 msgid "Bad magic number for krb5_pwd_data structure"
 msgstr "Погане магічне число для структури krb5_pwd_data"
 
 #. kv5m_err.et:kv5m:KV5M_PWD_DATA
-#: src/dummy-strings.c:249
+#: src/dummy-strings.c:251
 msgid "Bad magic number for krb5_address structure"
 msgstr "Погане магічне число для структури krb5_address"
 
 #. kv5m_err.et:kv5m:KV5M_ADDRESS
-#: src/dummy-strings.c:250
+#: src/dummy-strings.c:252
 msgid "Bad magic number for krb5_keytab_entry structure"
 msgstr "Погане магічне число для структури krb5_keytab_entry"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
-#: src/dummy-strings.c:251
+#: src/dummy-strings.c:253
 msgid "Bad magic number for krb5_context structure"
 msgstr "Погане магічне число для структури krb5_context"
 
 #. kv5m_err.et:kv5m:KV5M_CONTEXT
-#: src/dummy-strings.c:252
+#: src/dummy-strings.c:254
 msgid "Bad magic number for krb5_os_context structure"
 msgstr "Погане магічне число для структури krb5_os_context"
 
 #. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
-#: src/dummy-strings.c:253
+#: src/dummy-strings.c:255
 msgid "Bad magic number for krb5_alt_method structure"
 msgstr "Погане магічне число для структури krb5_alt_method"
 
 #. kv5m_err.et:kv5m:KV5M_ALT_METHOD
-#: src/dummy-strings.c:254
+#: src/dummy-strings.c:256
 msgid "Bad magic number for krb5_etype_info_entry structure"
 msgstr "Погане магічне число для структури krb5_etype_info_entry"
 
 #. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
-#: src/dummy-strings.c:255
+#: src/dummy-strings.c:257
 msgid "Bad magic number for krb5_db_context structure"
 msgstr "Погане магічне число для структури krb5_db_context"
 
 #. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
-#: src/dummy-strings.c:256
+#: src/dummy-strings.c:258
 msgid "Bad magic number for krb5_auth_context structure"
 msgstr "Погане магічне число для структури krb5_auth_context"
 
 #. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
-#: src/dummy-strings.c:257
+#: src/dummy-strings.c:259
 msgid "Bad magic number for krb5_keytab structure"
 msgstr "Погане магічне число для структури krb5_keytab"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB
-#: src/dummy-strings.c:258
+#: src/dummy-strings.c:260
 msgid "Bad magic number for krb5_rcache structure"
 msgstr "Погане магічне число для структури krb5_rcache"
 
 #. kv5m_err.et:kv5m:KV5M_RCACHE
-#: src/dummy-strings.c:259
+#: src/dummy-strings.c:261
 msgid "Bad magic number for krb5_ccache structure"
 msgstr "Погане магічне число для структури krb5_ccache"
 
 #. kv5m_err.et:kv5m:KV5M_CCACHE
-#: src/dummy-strings.c:260
+#: src/dummy-strings.c:262
 msgid "Bad magic number for krb5_preauth_ops"
 msgstr "Погане магічне число для krb5_preauth_ops"
 
 #. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
-#: src/dummy-strings.c:261
+#: src/dummy-strings.c:263
 msgid "Bad magic number for krb5_sam_challenge"
 msgstr "Погане магічне число для krb5_sam_challenge"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
-#: src/dummy-strings.c:262
+#: src/dummy-strings.c:264
 msgid "Bad magic number for krb5_sam_challenge_2"
 msgstr "Погане магічне число для krb5_sam_challenge_2"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
-#: src/dummy-strings.c:263
+#: src/dummy-strings.c:265
 msgid "Bad magic number for krb5_sam_key"
 msgstr "Погане магічне число для krb5_sam_key"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_KEY
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
-#: src/dummy-strings.c:264 src/dummy-strings.c:265
+#: src/dummy-strings.c:266 src/dummy-strings.c:267
 msgid "Bad magic number for krb5_enc_sam_response_enc"
 msgstr "Погане магічне число для krb5_enc_sam_response_enc"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
-#: src/dummy-strings.c:266
+#: src/dummy-strings.c:268
 msgid "Bad magic number for krb5_sam_response"
 msgstr "Погане магічне число для krb5_sam_response"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
-#: src/dummy-strings.c:267
+#: src/dummy-strings.c:269
 msgid "Bad magic number for krb5_sam_response 2"
 msgstr "Погане магічне число для krb5_sam_response 2"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
-#: src/dummy-strings.c:268
+#: src/dummy-strings.c:270
 msgid "Bad magic number for krb5_predicted_sam_response"
 msgstr "Погане магічне число для krb5_predicted_sam_response"
 
 #. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
-#: src/dummy-strings.c:269
+#: src/dummy-strings.c:271
 msgid "Bad magic number for passwd_phrase_element"
 msgstr "Погане магічне число для passwd_phrase_element"
 
 #. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
-#: src/dummy-strings.c:270
+#: src/dummy-strings.c:272
 msgid "Bad magic number for GSSAPI OID"
 msgstr "Погане магічне число для GSSAPI OID"
 
 #. kv5m_err.et:kv5m:KV5M_GSS_OID
-#: src/dummy-strings.c:271
+#: src/dummy-strings.c:273
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Погане магічне число для GSSAPI QUEUE"
 
+#. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
+#: src/dummy-strings.c:274
+#| msgid "Bad magic number for krb5_cred structure"
+msgid "Bad magic number for fast armored request"
+msgstr "Помилкова контрольна сума для запиту щодо швидкого захисту"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_ARMORED_REQ
+#: src/dummy-strings.c:275
+#| msgid "Bad magic number for GSSAPI OID"
+msgid "Bad magic number for FAST request"
+msgstr "Помилкова контрольна сума для запиту FAST"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_REQ
+#: src/dummy-strings.c:276
+#| msgid "Bad magic number for krb5_sam_response"
+msgid "Bad magic number for FAST response"
+msgstr "Помилкова контрольна сума для відповіді FAST"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_RESPONSE
+#: src/dummy-strings.c:277
+#| msgid "Bad magic number for krb5_authdata structure"
+msgid "Bad magic number for krb5_authdata_context"
+msgstr "Помилкова контрольна сума для krb5_authdata_context"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHDATA_CONTEXT
+#: src/dummy-strings.c:278
+msgid "ASN.1 failed call to system time library"
+msgstr "ASN.1 зазнав невдачі при виклику системної бібліотеки часу"
+
+#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
+#: src/dummy-strings.c:279
+msgid "ASN.1 structure is missing a required field"
+msgstr "У структурі ASN.1 відсутнє обов'язкове поле"
+
+#. asn1_err.et:asn1:ASN1_MISSING_FIELD
+#: src/dummy-strings.c:280
+msgid "ASN.1 unexpected field number"
+msgstr "Невідомий номер поля ASN.1"
+
+#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
+#: src/dummy-strings.c:281
+msgid "ASN.1 type numbers are inconsistent"
+msgstr "Номери типів ASN.1 непослідовні"
+
+#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
+#: src/dummy-strings.c:282
+msgid "ASN.1 value too large"
+msgstr "Значення ASN.1 надто довге"
+
+#. asn1_err.et:asn1:ASN1_OVERFLOW
+#: src/dummy-strings.c:283
+msgid "ASN.1 encoding ended unexpectedly"
+msgstr "Кодування ASN.1 несподівано закінчилось"
+
+#. asn1_err.et:asn1:ASN1_OVERRUN
+#: src/dummy-strings.c:284
+msgid "ASN.1 identifier doesn't match expected value"
+msgstr "Ідентифікатор ASN.1 не відповідає очікуваному значенню"
+
+#. asn1_err.et:asn1:ASN1_BAD_ID
+#: src/dummy-strings.c:285
+msgid "ASN.1 length doesn't match expected value"
+msgstr "Довжина ASN.1 не відповідає очікуваному значенню"
+
+#. asn1_err.et:asn1:ASN1_BAD_LENGTH
+#: src/dummy-strings.c:286
+msgid "ASN.1 badly-formatted encoding"
+msgstr "Погано форматоване кодування ASN.1"
+
+#. asn1_err.et:asn1:ASN1_BAD_FORMAT
+#: src/dummy-strings.c:287
+msgid "ASN.1 parse error"
+msgstr "Помилка при аналізі ASN.1"
+
+#. asn1_err.et:asn1:ASN1_PARSE_ERROR
+#: src/dummy-strings.c:288
+msgid "ASN.1 bad return from gmtime"
+msgstr "Неправильний результат ASN.1 від gmtime"
+
+#. asn1_err.et:asn1:ASN1_BAD_GMTIME
+#: src/dummy-strings.c:289
+#| msgid "ASN.1 non-constructed indefinite encoding"
+msgid "ASN.1 indefinite encoding"
+msgstr "Невизначене кодування ASN.1"
+
+#. asn1_err.et:asn1:ASN1_INDEF
+#: src/dummy-strings.c:290
+msgid "ASN.1 missing expected EOC"
+msgstr "У ASN.1 відсутній ідентифікатор кінця перетворення (EOC)"
+
+#. asn1_err.et:asn1:ASN1_MISSING_EOC
+#: src/dummy-strings.c:291
+msgid "ASN.1 object omitted in sequence"
+msgstr "Об'єкт ASN.1 пропущено у послідовності"
+
+#. asn1_err.et:asn1:ASN1_OMITTED
+#: src/dummy-strings.c:292
+#| msgid "Plugin does not support the operation"
+msgid "Plugin does not support interface version"
+msgstr "У додатку не передбачено підтримки версії інтерфейсу"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_VER_NOTSUPP
+#: src/dummy-strings.c:293
+#| msgid "Invalid certificate"
+msgid "Invalid module specifier"
+msgstr "Некоректний специфікатор модуля"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_BAD_MODULE_SPEC
+#: src/dummy-strings.c:294
+#| msgid "host/domain name not found"
+msgid "Plugin module name not found"
+msgstr "Не знайдено назви модуля додатка"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_NAME_NOTFOUND
+#: src/dummy-strings.c:295
+#| msgid "KDC policy rejects request"
+msgid "The KDC should discard this request"
+msgstr "KDC має відкинути цей запит"
+
+#. k5e1_err.et:k5e1:KRB5KDC_ERR_DISCARD
+#: src/dummy-strings.c:296
+msgid "Can't create new subsidiary cache"
+msgstr "Не вдалося створити додатковий кеш"
+
+#. k5e1_err.et:k5e1:KRB5_DCC_CANNOT_CREATE
+#: src/dummy-strings.c:297
+#| msgid "Invalid certificate"
+msgid "Invalid keyring anchor name"
+msgstr "Некоректна назва прив'язки сховища ключів"
+
+#. k5e1_err.et:k5e1:KRB5_KCC_INVALID_ANCHOR
+#: src/dummy-strings.c:298
+msgid "Unknown keyring collection version"
+msgstr "Невідома версія збірки сховища ключів"
+
+#. k5e1_err.et:k5e1:KRB5_KCC_UNKNOWN_VERSION
+#: src/dummy-strings.c:299
+msgid "Invalid UID in persistent keyring name"
+msgstr "Некоректне значення UID у назві постійного сховища ключів"
+
+#. k5e1_err.et:k5e1:KRB5_KCC_INVALID_UID
+#: src/dummy-strings.c:300
+msgid "Malformed reply from KCM daemon"
+msgstr "Помилкове форматування відповіді від фонової служби KCM"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_MALFORMED_REPLY
+#: src/dummy-strings.c:301
+msgid "Mach RPC error communicating with KCM daemon"
+msgstr "Помилка Mach RPC під час обміну даними із фоновою службою KCM"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_RPC_ERROR
+#: src/dummy-strings.c:302
+msgid "KCM daemon reply too big"
+msgstr "Відповідь фонової служби KCM є надто великою"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_REPLY_TOO_BIG
+#: src/dummy-strings.c:303
+msgid "No KCM server found"
+msgstr "Не знайдено сервера KCM"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_NO_SERVER
+#: src/dummy-strings.c:304
+msgid "Authorize and set hw-authent ticket flag"
+msgstr "Уповноважити і встановити прапорець квитка hw-authent"
+
+#. k5e1_err.et:k5e1:KRB5_CERTAUTH_HWAUTH
+#: src/dummy-strings.c:305
+msgid "Set hw-authent ticket flag but do not authorize"
+msgstr "Встановити прапорець квитка hw-authent, але не уповноважувати"
+
 #. Translators: First number is hours, second number is minutes
-#: src/ka-applet.c:583
+#: src/ka-applet.c:604
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Термін дії Ваших мандатів завершиться через %.2d:%.2d годин"
 
-#: src/ka-applet.c:589 src/ka-pwdialog.c:292
+#: src/ka-applet.c:610 src/ka-pwdialog.c:212
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -1655,121 +1840,121 @@ msgstr[0] "Термін дії Вашого мандату закінчитьс�
 msgstr[1] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
 msgstr[2] "Термін дії Вашого мандату закінчиться через %d хвилин(и)"
 
-#: src/ka-applet.c:594 src/ka-pwdialog.c:297
+#: src/ka-applet.c:615 src/ka-pwdialog.c:217
 msgid "Your credentials have expired"
 msgstr "Термін дії Вашого мандату закінчився"
 
-#: src/ka-applet.c:624
+#: src/ka-applet.c:645
 msgid "Remove Credentials Cache"
 msgstr "Очистити кеш мандатів"
 
-#: src/ka-applet.c:672
+#: src/ka-applet.c:693
 msgid "You have valid Kerberos credentials."
 msgstr "У вас є чинні мандати Kerberos."
 
-#: src/ka-applet.c:674
+#: src/ka-applet.c:695
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Ви оновили власні мандати Kerberos."
 
-#: src/ka-applet.c:677
+#: src/ka-applet.c:698
 msgid "Network credentials valid"
 msgstr "Чинні мережеві мандати"
 
-#: src/ka-applet.c:696
+#: src/ka-applet.c:717
 msgid "Network credentials expiring"
 msgstr "Термін дії мережевих мандатів закінчується"
 
-#: src/ka-applet.c:713
+#: src/ka-applet.c:734
 msgid "Network credentials expired"
 msgstr "Термін дії мережевих мандатів закінчився"
 
-#: src/ka-applet.c:714
+#: src/ka-applet.c:735
 msgid "Your Kerberos credentials have expired."
 msgstr "Строк дії ваших мандатів Kerberos вичерпано."
 
-#: src/ka-kerberos.c:161
+#: src/ka-kerberos.c:148
 msgid "unknown error"
 msgstr "невідома помилка"
 
-#: src/ka-kerberos.c:340
+#: src/ka-kerberos.c:337
 msgid "Expired"
 msgstr "Вийшов термін"
 
-#: src/ka-kerberos.c:1013
+#: src/ka-kerberos.c:1045
 msgid " (No network connection)"
 msgstr "  (Немає з'єднання із мережею)"
 
-#: src/ka-main-window.c:126
+#: src/ka-main-window.c:145
 msgid "Principal"
 msgstr "Голова"
 
-#: src/ka-main-window.c:132
+#: src/ka-main-window.c:151
 msgid "Start"
 msgstr "Початок"
 
-#: src/ka-main-window.c:138
+#: src/ka-main-window.c:157
 msgid "End"
 msgstr "Кінець"
 
 #. Translators: this is an abbreviation for forwardable
-#: src/ka-main-window.c:145
+#: src/ka-main-window.c:164
 msgid "Fwd"
 msgstr "Пересланий"
 
 #. Translators: this is an abbreviation for proxiable
-#: src/ka-main-window.c:152
+#: src/ka-main-window.c:171
 msgid "Proxy"
 msgstr "Проксі"
 
 #. Translators: this is an abbreviation for renewable
-#: src/ka-main-window.c:159
+#: src/ka-main-window.c:178
 msgid "Renew"
 msgstr "Оновити"
 
-#: src/ka-main-window.c:214
+#: src/ka-main-window.c:221
 msgid "Error displaying service ticket information"
 msgstr "Помилка при показі інформації про квиток"
 
-#: src/ka-preferences.c:369
+#: src/ka-preferences.c:322
 msgid "Choose Certificate"
 msgstr "Оберіть сертифікат"
 
-#: src/ka-preferences.c:373
+#: src/ka-preferences.c:326
 msgid "_Open"
 msgstr "_Відкрити"
 
-#: src/ka-preferences.c:385
+#: src/ka-preferences.c:339
 msgid "X509 Certificates"
 msgstr "Сертифікат X509"
 
-#: src/ka-preferences.c:389
+#: src/ka-preferences.c:343
 msgid "all files"
 msgstr "усі файли"
 
-#: src/ka-pwdialog.c:134
+#: src/ka-pwdialog.c:104
 #, c-format
 msgid "%s Error"
 msgstr "Помилка %s"
 
-#: src/ka-pwdialog.c:253
+#: src/ka-pwdialog.c:175
 #, c-format
 msgid "Couldn't acquire Kerberos ticket: '%s'"
 msgstr "Неможливо отримати квиток Kerberos: «%s»"
 
-#: src/ka-pwdialog.c:320
+#: src/ka-pwdialog.c:240
 msgid "Please enter your Kerberos password:"
 msgstr "Введіть Ваш пароль Kerberos:"
 
-#: src/ka-pwdialog.c:333
+#: src/ka-pwdialog.c:253
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Будь ласка, введіть пароль для '%s':"
 
-#: src/ka-pwdialog.c:351
+#: src/ka-pwdialog.c:271
 msgid "The password you entered is invalid"
 msgstr "Введений Вами пароль невірний"
 
-#: src/ka-tools.c:43
+#: src/ka-tools.c:33
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1778,8 +1963,7 @@ msgstr ""
 "При показі довідки виникла помилка:\n"
 "%s"
 
-#. Translators: add the translators of your language here
-#: src/ka-tools.c:83
+#: src/ka-tools.c:69
 msgid "translator-credits"
 msgstr ""
 "Максим Дзюманенко <dziumanenko@gmail.com>wanderlust <wanderlust@ukr.net>"
@@ -1794,6 +1978,25 @@ msgid "kerberos;authentication;"
 msgstr ""
 "kerberos;authentication;керберос;цербер;аутентифікація;автентифікація;"
 "розпізнавання;"
+
+#~ msgid "Kerberos principal:"
+#~ msgstr "Адміністратор доступу Kerberos:"
+
+#~ msgid "_Browse..."
+#~ msgstr "_Огляд..."
+
+#~ msgid ""
+#~ "Configure the use of certificates and smartcards for your Kerberos "
+#~ "network authentication."
+#~ msgstr ""
+#~ "Налаштуйте використання сертифікатів та смарткарток для вашого "
+#~ "розпізнавання у мережі за допомогою Kerberos."
+
+#~ msgid "Warn"
+#~ msgstr "Попередження"
+
+#~ msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
+#~ msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
 
 #~ msgid "Guido Günther"
 #~ msgstr "Guido Günther"

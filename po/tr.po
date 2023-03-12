@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-gialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2023-02-19 11:39+0000\n"
-"PO-Revision-Date: 2023-02-21 01:19+0300\n"
+"POT-Creation-Date: 2023-03-01 22:22+0000\n"
+"PO-Revision-Date: 2023-03-07 00:07+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -46,7 +46,7 @@ msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
-"Masaüstüne girişinizden sonra (örneğin mobil agıtta) Kerberos Sunucusuna "
+"Masaüstüne girişinizden sonra (örneğin mobil aygıtta) Kerberos Sunucusuna "
 "(KDC) kimlik doğrulama yapmanız gerekirse bu kullanışlıdır."
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:23
@@ -478,7 +478,7 @@ msgstr "Bilet bizim için değil"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
 #: src/dummy-strings.c:44
 msgid "Ticket/authenticator don't match"
-msgstr "Bilet/doğrulayıcı eşleşmez"
+msgstr "Bilet/kimlik doğrulayıcı eşleşmiyor"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
 #: src/dummy-strings.c:45
@@ -1105,12 +1105,12 @@ msgstr "Sunucu kimlik doğrulamayı reddetti (sendauth exchange sırasında)"
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
 #: src/dummy-strings.c:169
 msgid "Unsupported preauthentication type"
-msgstr "Desteklenmeyen önceden kimlik doğrulama türü"
+msgstr "Desteklenmeyen ön kimlik doğrulama türü"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
 #: src/dummy-strings.c:170
 msgid "Required preauthentication key not supplied"
-msgstr "Gereken ön kimlik doğrulama anahtarı ürünle birlikte verilmez"
+msgstr "Gereken ön kimlik doğrulama anahtarı sağlanmadı"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
 #: src/dummy-strings.c:171

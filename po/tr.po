@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: krb5-auth-gialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2023-03-01 22:22+0000\n"
-"PO-Revision-Date: 2023-03-07 00:07+0300\n"
+"POT-Creation-Date: 2023-03-12 05:47+0000\n"
+"PO-Revision-Date: 2023-05-12 14:31+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-POOTLE-MTIME: 1425375592.000000\n"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:6
@@ -170,7 +170,7 @@ msgstr "_Kapat"
 
 #: src/resources/ui/ka-main-window.ui:27
 msgid "Service Tickets"
-msgstr "Servis Biletleri"
+msgstr "Hizmet Biletleri"
 
 #: src/resources/ui/ka-main-window.ui:56
 msgid "Your ticket cache is currently empty"
@@ -448,7 +448,7 @@ msgstr "KDC ilkesi transit yolu reddediyor"
 #. krb5_err.et:krb5:KRB5KDC_ERR_PATH_NOT_ACCEPTED
 #: src/dummy-strings.c:38
 msgid "A service is not available that is required to process the request"
-msgstr "İsteği işlemek için gerekli olan servis kullanılabilir değil"
+msgstr "İsteği işlemek için gerekli olan hizmet kullanılabilir değil"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
 #: src/dummy-strings.c:39
@@ -523,7 +523,7 @@ msgstr "Anahtar sürümü kullanılabilir değil"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
 #: src/dummy-strings.c:53
 msgid "Service key not available"
-msgstr "Servis anahtarı kullanılabilir değil"
+msgstr "Hizmet anahtarı kullanılabilir değil"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
@@ -841,7 +841,7 @@ msgstr "İstenen realm için KDC bulunamıyor"
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: src/dummy-strings.c:116
 msgid "Kerberos service unknown"
-msgstr "Bilinmeyen Kerberos servisi"
+msgstr "Bilinmeyen Kerberos hizmeti"
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: src/dummy-strings.c:117
@@ -1155,7 +1155,7 @@ msgstr "İstemci için alana karar verilemiyor"
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
 #: src/dummy-strings.c:179
 msgid "Conversion to service principal undefined for name type"
-msgstr "Servis yetkilisine dönüştürme, ad türü için tanımlanmamış"
+msgstr "Hizmet yetkilisine dönüştürme, ad türü için tanımlanmamış"
 
 #. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
 #: src/dummy-strings.c:180
@@ -1275,7 +1275,7 @@ msgstr "ana makine/alan adı bulunamaz"
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
 #: src/dummy-strings.c:203
 msgid "service name unknown"
-msgstr "servis adı bilinmez"
+msgstr "hizmet adı bilinmiyor"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: src/dummy-strings.c:204
@@ -1290,7 +1290,7 @@ msgstr "KDC'den geçersiz anahtar üretim parametreleri"
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
 #: src/dummy-strings.c:206
 msgid "service not available"
-msgstr "servis kullanılabilir değil"
+msgstr "hizmet kullanılabilir değil"
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
 #: src/dummy-strings.c:207
@@ -1870,7 +1870,7 @@ msgstr "Yenile"
 
 #: src/ka-main-window.c:221
 msgid "Error displaying service ticket information"
-msgstr "Servis bilet bilgisi gösterilirken hata"
+msgstr "Hizmet bilet bilgisi gösterilirken hata"
 
 #: src/ka-preferences.c:322
 msgid "Choose Certificate"

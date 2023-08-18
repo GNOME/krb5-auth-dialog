@@ -1,3 +1,6 @@
+# Turkish translation for krb5-auth-gialog.
+# Copyright (C) 2015-2023 krb5-auth-gialog's COPYRIGHT HOLDER
+# This file is distributed under the same license as the krb5-auth-gialog package.
 #
 # Simge Sezgin <simgeszgn@gmail.com>, 2015.
 # İşbaran Akçayır <isbaran@gmail.com>, 2015.
@@ -9,10 +12,10 @@ msgstr ""
 "Project-Id-Version: krb5-auth-gialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2023-05-20 06:54+0000\n"
+"POT-Creation-Date: 2023-07-15 15:45+0000\n"
 "PO-Revision-Date: 2023-05-31 03:48+0300\n"
 "Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
-"Language-Team: Türkçe <gnome-turk@gnome.org>\n"
+"Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"

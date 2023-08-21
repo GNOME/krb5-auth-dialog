@@ -1,17 +1,17 @@
 # Swedish translation for krb5-auth-dialog.
-# Copyright © 2009-2021 Free Software Foundation, Inc.
+# Copyright © 2009-2023 Free Software Foundation, Inc.
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # Daniel Nylander <po@danielnylander.se>, 2009, 2011.
 # Josef Andersson <josef.andersson@fripost.org>, 2016.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017, 2021.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2017, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2021-02-15 16:14+0000\n"
-"PO-Revision-Date: 2021-02-15 17:50+0100\n"
+"POT-Creation-Date: 2022-10-30 11:14+0000\n"
+"PO-Revision-Date: 2023-08-21 11:18+0200\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -19,18 +19,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.3.2\n"
 "X-Project-Style: gnome\n"
 
-#: data/krb5-auth-dialog.metainfo.xml.in:6
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:6
 msgid "Kerberos Authentication Dialog"
 msgstr "Kerberos-autentiseringsdialog"
 
-#: data/krb5-auth-dialog.metainfo.xml.in:7
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:7
 msgid "Request, renew and view Kerberos tickets"
 msgstr "Begär, förnya och visa Kerberos-biljetter"
 
-#: data/krb5-auth-dialog.metainfo.xml.in:9
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:9
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
@@ -42,7 +42,7 @@ msgstr ""
 "också när dina Kerberos-autentiseringsuppgifter är på väg att gå ut och "
 "förnyar din biljett automatiskt om möjligt."
 
-#: data/krb5-auth-dialog.metainfo.xml.in:15
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:15
 msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
@@ -50,11 +50,12 @@ msgstr ""
 "Detta är användbart om du behöver autentisera mot en Kerberos-server (KDC) "
 "efter att du loggat in till skrivbordet (t.ex. på en mobil enhet)."
 
-#: data/krb5-auth-dialog.metainfo.xml.in:23
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:23
 msgid "Kerberos authentication dialog"
 msgstr "Kerberos-autentiseringsdialog"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:6
+#: src/resources/ui/ka-preferences.ui:22
 msgid "Kerberos principal"
 msgstr "Kerberos-principal"
 
@@ -156,146 +157,132 @@ msgstr ""
 
 # Översättaranteckningar:
 # Lånat en del terminologi från https://docs.oracle.com/cd/E19496-01/806-1968/6jb7gbp27/index.html
-#: src/resources/ui/ka-main-window.ui:15
+#: src/resources/ui/ka-main-window.ui:9
 msgid "Prefere_nces"
 msgstr "Inställ_ningar"
 
-#: src/resources/ui/ka-main-window.ui:22
+#: src/resources/ui/ka-main-window.ui:13
 msgid "_About"
 msgstr "_Om"
 
-#: src/resources/ui/ka-main-window.ui:29
+#: src/resources/ui/ka-main-window.ui:17
 msgid "_Help"
 msgstr "_Hjälp"
 
-#: src/resources/ui/ka-main-window.ui:36
+#: src/resources/ui/ka-main-window.ui:21
 msgid "_Quit"
 msgstr "A_vsluta"
 
-#: src/resources/ui/ka-main-window.ui:49
+#: src/resources/ui/ka-main-window.ui:27
 msgid "Service Tickets"
 msgstr "Tjänstbiljetter"
 
-#: src/resources/ui/ka-main-window.ui:75
+#: src/resources/ui/ka-main-window.ui:56
 msgid "Your ticket cache is currently empty"
 msgstr "Din biljettcache är för tillfället tom"
 
-#: src/resources/ui/ka-main-window.ui:92 src/ka-applet.c:620
+#: src/resources/ui/ka-main-window.ui:67 src/ka-applet.c:641
 msgid "Get Ticket"
 msgstr "Hämta biljett"
 
-#: src/resources/ui/ka-preferences.ui:53
+#: src/resources/ui/ka-preferences.ui:14
+#| msgid "Kerberos"
+msgid "_Kerberos"
+msgstr "_Kerberos"
+
+#: src/resources/ui/ka-preferences.ui:19
 msgid "Kerberos User"
 msgstr "Kerberosanvändare"
 
-#: src/resources/ui/ka-preferences.ui:105
-#: src/resources/ui/ka-preferences.ui:106
+#: src/resources/ui/ka-preferences.ui:25
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
 "Namnet på ditt Kerberoskonto. Lämna tomt för att använda ditt nuvarande "
 "användarnamn."
 
-#: src/resources/ui/ka-preferences.ui:118
-msgid "Kerberos principal:"
-msgstr "Kerberos-principal:"
-
-#: src/resources/ui/ka-preferences.ui:160
+#: src/resources/ui/ka-preferences.ui:35
 msgid "Kerberos Ticket Options"
 msgstr "Kerberos-biljettalternativ"
 
-#: src/resources/ui/ka-preferences.ui:200
+#: src/resources/ui/ka-preferences.ui:36
 msgid "Requested Kerberos tickets should be:"
 msgstr "Begärda Kerberos-biljetter ska vara:"
 
-#: src/resources/ui/ka-preferences.ui:226
+#: src/resources/ui/ka-preferences.ui:39
 msgid "forwardable"
 msgstr "vidarebefordringsbara"
 
-#: src/resources/ui/ka-preferences.ui:231
-#: src/resources/ui/ka-preferences.ui:232
+#: src/resources/ui/ka-preferences.ui:42
 msgid "If checked, request forwardable tickets"
 msgstr "Om ikryssad, begär vidarebefordringsbara biljetter"
 
-#: src/resources/ui/ka-preferences.ui:267
+#: src/resources/ui/ka-preferences.ui:50
 msgid "renewable"
 msgstr "förnyelsebara"
 
-#: src/resources/ui/ka-preferences.ui:272
-#: src/resources/ui/ka-preferences.ui:273
+#: src/resources/ui/ka-preferences.ui:53
 msgid "If checked, request renewable tickets"
 msgstr "Om ikryssad, begär förnyelsebara biljetter"
 
-#: src/resources/ui/ka-preferences.ui:308
+#: src/resources/ui/ka-preferences.ui:61
 msgid "proxiable"
 msgstr "proxybara"
 
-#: src/resources/ui/ka-preferences.ui:313
-#: src/resources/ui/ka-preferences.ui:314
+#: src/resources/ui/ka-preferences.ui:64
 msgid "If checked, request proxiable tickets"
 msgstr "Om ikryssad, begär proxybara biljetter"
 
-#: src/resources/ui/ka-preferences.ui:358
-msgid "Kerberos"
-msgstr "Kerberos"
+#: src/resources/ui/ka-preferences.ui:76
+#| msgid "PKINIT"
+msgid "_PKINIT"
+msgstr "_PKINIT"
 
-#: src/resources/ui/ka-preferences.ui:381
+#: src/resources/ui/ka-preferences.ui:81
 msgid "Userid"
 msgstr "Användar-ID"
 
-#: src/resources/ui/ka-preferences.ui:426
+#: src/resources/ui/ka-preferences.ui:82
+msgid "Principal certificate and private key"
+msgstr "Principalcertifikat och privat nyckel"
+
+#: src/resources/ui/ka-preferences.ui:85
 msgid "Use Smartcard"
 msgstr "Använd smartkort"
 
-#: src/resources/ui/ka-preferences.ui:431
-#: src/resources/ui/ka-preferences.ui:432
+#: src/resources/ui/ka-preferences.ui:88
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr "Om ikryssad, använd en säkerhetstoken (Smartkort) för att autentisera."
 
-#: src/resources/ui/ka-preferences.ui:469
-#: src/resources/ui/ka-preferences.ui:470
-msgid "Certificate and private key used for authentication"
-msgstr "Certifikat och privat nyckel som används för autentisering"
+#: src/resources/ui/ka-preferences.ui:96
+msgid "Certificate and private key file"
+msgstr "Fil för certifikat och privat nyckel"
 
-#: src/resources/ui/ka-preferences.ui:483
-#: src/resources/ui/ka-preferences.ui:575
-msgid "_Browse..."
-msgstr "_Bläddra…"
-
-#: src/resources/ui/ka-preferences.ui:541
+#: src/resources/ui/ka-preferences.ui:119
 msgid "X509 trust anchors"
 msgstr "X509-förtroendeankare"
 
-#: src/resources/ui/ka-preferences.ui:561
-#: src/resources/ui/ka-preferences.ui:562
+#: src/resources/ui/ka-preferences.ui:122
+msgid "KDC trust anchor"
+msgstr "KDC-förtroendeankare"
+
+#: src/resources/ui/ka-preferences.ui:126
 msgid "Certificate used to verify digital signatures."
 msgstr "Certifikat använt för att verifiera digitala signaturer."
 
-#: src/resources/ui/ka-preferences.ui:612
-#: src/resources/ui/ka-preferences.ui:613
-msgid ""
-"Configure the use of certificates and smartcards for your Kerberos network "
-"authentication."
-msgstr ""
-"Konfigurera användningen av certifikat och smartkort för din Kerberos-"
-"nätverksautentisering."
+#: src/resources/ui/ka-preferences.ui:147
+msgid "_Notifications"
+msgstr "_Aviseringar"
 
-#: src/resources/ui/ka-preferences.ui:614
-msgid "PKINIT"
-msgstr "PKINIT"
-
-#: src/resources/ui/ka-preferences.ui:637
-#: src/resources/ui/ka-preferences.ui:753
+#: src/resources/ui/ka-preferences.ui:152
 msgid "Notifications"
 msgstr "Aviseringar"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: src/resources/ui/ka-preferences.ui:682
-msgid "Warn"
-msgstr "Varna"
+#: src/resources/ui/ka-preferences.ui:155
+msgid "Warn before ticket expiry"
+msgstr "Varna innan biljett förfaller"
 
-#: src/resources/ui/ka-preferences.ui:695
-#: src/resources/ui/ka-preferences.ui:696
+#: src/resources/ui/ka-preferences.ui:160
 msgid ""
 "Send notification about ticket expiry that many minutes before it finally "
 "expires"
@@ -303,1462 +290,1632 @@ msgstr ""
 "Skicka avisering om att biljett förfallit så många minuter innan den "
 "slutligen går ut"
 
-#. Used in combination: 'Warn x minutes before expiry'
-#: src/resources/ui/ka-preferences.ui:715
-msgid "minutes before ticket expiry"
-msgstr "minuter innan biljett förfaller"
-
-#: src/resources/ui/ka-pwdialog.ui:7 src/ka-applet-priv.h:34
+#: src/resources/ui/ka-pwdialog.ui:5 src/ka-applet-priv.h:19
 #: src/org.gnome.KrbAuthDialog.desktop.in:3
 msgid "Kerberos Authentication"
 msgstr "Kerberos-autentisering"
 
-#: src/resources/ui/ka-pwdialog.ui:15 src/ka-preferences.c:372
+#: src/resources/ui/ka-pwdialog.ui:12 src/ka-preferences.c:325
 msgid "_Cancel"
-msgstr "_Avbryt"
+msgstr "A_vbryt"
 
-#: src/resources/ui/ka-pwdialog.ui:22
+#: src/resources/ui/ka-pwdialog.ui:18
 msgid "_Renew Ticket"
 msgstr "_Förnya biljett"
 
-# NOT.: Tolkar det som att ASN-1 ska vara helt fristående och inte sammansatt
-# som ASN.1-meningen.
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with ka- and krb5-auth-
-#. first since these are the ones the user will see in any case.
-#: src/dummy-strings.c:10
-msgid "ASN.1 failed call to system time library"
-msgstr "ASN.1 misslyckat anrop till systemtidsbiblioteket"
-
-#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
-#: src/dummy-strings.c:11
-msgid "ASN.1 structure is missing a required field"
-msgstr "ASN.1 strukturen saknar ett obligatoriskt fält"
-
-#. asn1_err.et:asn1:ASN1_MISSING_FIELD
-#: src/dummy-strings.c:12
-msgid "ASN.1 unexpected field number"
-msgstr "ASN.1 oväntat fältnummer"
-
-#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
-#: src/dummy-strings.c:13
-msgid "ASN.1 type numbers are inconsistent"
-msgstr "ASN.1 typsiffror är inkonsekventa"
-
-#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
-#: src/dummy-strings.c:14
-msgid "ASN.1 value too large"
-msgstr "ASN.1 värdet är för stort"
-
-#. asn1_err.et:asn1:ASN1_OVERFLOW
-#: src/dummy-strings.c:15
-msgid "ASN.1 encoding ended unexpectedly"
-msgstr "ASN.1 kodning avslutades oväntat"
-
-#. asn1_err.et:asn1:ASN1_OVERRUN
-#: src/dummy-strings.c:16
-msgid "ASN.1 identifier doesn't match expected value"
-msgstr "ASN.1 identifierare matchar inte förväntat värde"
-
-#. asn1_err.et:asn1:ASN1_BAD_ID
-#: src/dummy-strings.c:17
-msgid "ASN.1 length doesn't match expected value"
-msgstr "ASN.1 längden matchar inte förväntat värde"
-
-#. asn1_err.et:asn1:ASN1_BAD_LENGTH
-#: src/dummy-strings.c:18
-msgid "ASN.1 badly-formatted encoding"
-msgstr "ASN.1 dåligt formaterad kodning"
-
-#. asn1_err.et:asn1:ASN1_BAD_FORMAT
-#: src/dummy-strings.c:19
-msgid "ASN.1 parse error"
-msgstr "ASN.1 tolkningsfel"
-
-#. asn1_err.et:asn1:ASN1_PARSE_ERROR
-#: src/dummy-strings.c:20
-msgid "ASN.1 bad return from gmtime"
-msgstr "ASN.1 dåligt returvärde från gmtime"
-
-#. asn1_err.et:asn1:ASN1_BAD_GMTIME
-#: src/dummy-strings.c:21
-msgid "ASN.1 non-constructed indefinite encoding"
-msgstr "ASN.1 ej konstruerad oändlig kodning"
-
-#. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
-#: src/dummy-strings.c:22
-msgid "ASN.1 missing expected EOC"
-msgstr "ASN.1 saknar förväntad EOC"
-
-#. asn1_err.et:asn1:ASN1_MISSING_EOC
-#: src/dummy-strings.c:23
+#. doubt skip src/dummy-strings.h as the strings from other files
+#. are the ones the user will see in any case.
+#: src/dummy-strings.c:9
 msgid "No error"
 msgstr "Inga fel"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NONE
-#: src/dummy-strings.c:24
+#: src/dummy-strings.c:10
 msgid "Client's entry in database has expired"
 msgstr "Klientens post i databasen har förfallit"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
-#: src/dummy-strings.c:25
+#: src/dummy-strings.c:11
 msgid "Server's entry in database has expired"
 msgstr "Serverns post i databasen har förfallit"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
-#: src/dummy-strings.c:26
+#: src/dummy-strings.c:12
 msgid "Requested protocol version not supported"
 msgstr "Begärda protokoll stöds ej"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
-#: src/dummy-strings.c:27
+#: src/dummy-strings.c:13
 msgid "Client's key is encrypted in an old master key"
 msgstr "Klientens nyckel är krypterad med en gammal huvudnyckel"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
-#: src/dummy-strings.c:28
+#: src/dummy-strings.c:14
 msgid "Server's key is encrypted in an old master key"
 msgstr "Serverns nyckel är krypterad med en gammal huvudnyckel"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
-#: src/dummy-strings.c:29
+#: src/dummy-strings.c:15
 msgid "Client not found in Kerberos database"
 msgstr "Klienten hittades inte i Kerberos-databasen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
-#: src/dummy-strings.c:30
+#: src/dummy-strings.c:16
 msgid "Server not found in Kerberos database"
 msgstr "Servern hittades inte i Kerberos-databasen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
-#: src/dummy-strings.c:31
+#: src/dummy-strings.c:17
 msgid "Principal has multiple entries in Kerberos database"
 msgstr "Principal har flera poster i Kerberos-databasen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
-#: src/dummy-strings.c:32
+#: src/dummy-strings.c:18
 msgid "Client or server has a null key"
 msgstr "Klient eller server har en tom nyckel"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
-#: src/dummy-strings.c:33
+#: src/dummy-strings.c:19
 msgid "Ticket is ineligible for postdating"
 msgstr "Biljett är ej berättigad till efterdatering"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
-#: src/dummy-strings.c:34
+#: src/dummy-strings.c:20
 msgid "Requested effective lifetime is negative or too short"
 msgstr "Begärd effektiv livstid är negativ eller för kort"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
-#: src/dummy-strings.c:35
+#: src/dummy-strings.c:21
 msgid "KDC policy rejects request"
 msgstr "KDC-policy avvisar begäran"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
-#: src/dummy-strings.c:36
+#: src/dummy-strings.c:22
 msgid "KDC can't fulfill requested option"
 msgstr "KDC kan inte uppfylla begärd åtgärd"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
-#: src/dummy-strings.c:37
+#: src/dummy-strings.c:23
 msgid "KDC has no support for encryption type"
 msgstr "KDC har inget stöd för krypteringstypen"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
-#: src/dummy-strings.c:38
+#: src/dummy-strings.c:24
 msgid "KDC has no support for checksum type"
 msgstr "KDC har inget stöd för typen av kontrollsumma"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
-#: src/dummy-strings.c:39
+#: src/dummy-strings.c:25
 msgid "KDC has no support for padata type"
 msgstr "KDC har inget stöd för typen av padata"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
-#: src/dummy-strings.c:40
+#: src/dummy-strings.c:26
 msgid "KDC has no support for transited type"
 msgstr "KDC har inget stöd för överförd typ"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
-#: src/dummy-strings.c:41
-msgid "Clients credentials have been revoked"
+#: src/dummy-strings.c:27
+msgid "Client's credentials have been revoked"
 msgstr "Klientens autentiseringsuppgifter har återkallats"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
-#: src/dummy-strings.c:42
+#: src/dummy-strings.c:28
 msgid "Credentials for server have been revoked"
 msgstr "Autentiseringsuppgifter för servern har återkallats"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
-#: src/dummy-strings.c:43
+#: src/dummy-strings.c:29
 msgid "TGT has been revoked"
 msgstr "TGT har återkallats"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
-#: src/dummy-strings.c:44
+#: src/dummy-strings.c:30
 msgid "Client not yet valid - try again later"
 msgstr "Klienten är ännu inte giltig - försök igen senare"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
-#: src/dummy-strings.c:45
+#: src/dummy-strings.c:31
 msgid "Server not yet valid - try again later"
 msgstr "Servern är ännu inte giltig - försök igen senare"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
-#: src/dummy-strings.c:46
+#: src/dummy-strings.c:32
 msgid "Password has expired"
 msgstr "Lösenordet har förfallit"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
-#: src/dummy-strings.c:47
+#: src/dummy-strings.c:33
 msgid "Preauthentication failed"
 msgstr "Förautentisering misslyckades"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
-#: src/dummy-strings.c:48
+#: src/dummy-strings.c:34
 msgid "Additional pre-authentication required"
 msgstr "Ytterligare förautentisering begärd"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
-#: src/dummy-strings.c:49
+#: src/dummy-strings.c:35
 msgid "Requested server and ticket don't match"
 msgstr "Begärd server och biljett matchar inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
-#: src/dummy-strings.c:50
+#: src/dummy-strings.c:36
+msgid "Server principal valid for user2user only"
+msgstr "Serverprincipal endast giltig för user2user"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_MUST_USE_USER2USER
+#: src/dummy-strings.c:37
+msgid "KDC policy rejects transited path"
+msgstr "KDC-policy avvisar överförd sökväg"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PATH_NOT_ACCEPTED
+#: src/dummy-strings.c:38
 msgid "A service is not available that is required to process the request"
 msgstr "En tjänst som behövs för att bearbeta begäran är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
-#: src/dummy-strings.c:51
+#: src/dummy-strings.c:39
 msgid "Decrypt integrity check failed"
 msgstr "Misslyckades med avkryptering av integritetskontrollen"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
-#: src/dummy-strings.c:52
+#: src/dummy-strings.c:40
 msgid "Ticket expired"
 msgstr "Biljett har förfallit"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
-#: src/dummy-strings.c:53
+#: src/dummy-strings.c:41
 msgid "Ticket not yet valid"
 msgstr "Biljett ännu inte giltig"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
-#: src/dummy-strings.c:54
+#: src/dummy-strings.c:42
 msgid "Request is a replay"
 msgstr "Begäran är en återanvändning"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
-#: src/dummy-strings.c:55
+#: src/dummy-strings.c:43
 msgid "The ticket isn't for us"
 msgstr "Biljetten är inte för oss"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
-#: src/dummy-strings.c:56
+#: src/dummy-strings.c:44
 msgid "Ticket/authenticator don't match"
 msgstr "Biljett/autentiserare matchar ej"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
-#: src/dummy-strings.c:57
+#: src/dummy-strings.c:45
 msgid "Clock skew too great"
 msgstr "Klockavvikelse för stor"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
-#: src/dummy-strings.c:58
+#: src/dummy-strings.c:46
 msgid "Incorrect net address"
 msgstr "Felaktig nätadress"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
-#: src/dummy-strings.c:59
+#: src/dummy-strings.c:47
 msgid "Protocol version mismatch"
 msgstr "Protokollversionen matchar ej"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
-#: src/dummy-strings.c:60
+#: src/dummy-strings.c:48
 msgid "Invalid message type"
 msgstr "Ogiltig meddelandetyp"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
-#: src/dummy-strings.c:61
+#: src/dummy-strings.c:49
 msgid "Message stream modified"
 msgstr "Meddelandeström är modifierad"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
-#: src/dummy-strings.c:62
+#: src/dummy-strings.c:50
 msgid "Message out of order"
 msgstr "Meddelande är inte i ordning"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
-#: src/dummy-strings.c:63
+#: src/dummy-strings.c:51
 msgid "Illegal cross-realm ticket"
 msgstr "Ogiltig korsdomänbiljett"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
-#: src/dummy-strings.c:64
+#: src/dummy-strings.c:52
 msgid "Key version is not available"
 msgstr "Nyckelversionen är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
-#: src/dummy-strings.c:65
+#: src/dummy-strings.c:53
 msgid "Service key not available"
 msgstr "Tjänstenyckeln är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
 #. krb5_err.et:krb5:KRB5_NO_LOCALNAME
-#: src/dummy-strings.c:66 src/dummy-strings.c:122
+#: src/dummy-strings.c:54 src/dummy-strings.c:119
 msgid "Mutual authentication failed"
 msgstr "Gemensam autentisering misslyckades"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
-#: src/dummy-strings.c:67
+#: src/dummy-strings.c:55
 msgid "Incorrect message direction"
 msgstr "Felaktig meddelanderiktning"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
-#: src/dummy-strings.c:68
+#: src/dummy-strings.c:56
 msgid "Alternative authentication method required"
 msgstr "Alternativ autentiseringsmetod begärd"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
-#: src/dummy-strings.c:69
+#: src/dummy-strings.c:57
 msgid "Incorrect sequence number in message"
 msgstr "Felaktigt sekvensnummer i meddelandet"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
-#: src/dummy-strings.c:70
+#: src/dummy-strings.c:58
 msgid "Inappropriate type of checksum in message"
 msgstr "Opassande typ av kontrollsumma i meddelandet"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
-#: src/dummy-strings.c:71
+#: src/dummy-strings.c:59
 msgid "Policy rejects transited path"
 msgstr "Policy avvisar överförd sökväg"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
-#: src/dummy-strings.c:72
+#: src/dummy-strings.c:60
 msgid "Response too big for UDP, retry with TCP"
 msgstr "Svaret är för stort för UDP, försöker med TCP"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
-#: src/dummy-strings.c:73
+#: src/dummy-strings.c:61
 msgid "Generic error (see e-text)"
 msgstr "Allmänt fel (se e-text)"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
-#: src/dummy-strings.c:74
+#: src/dummy-strings.c:62
 msgid "Field is too long for this implementation"
 msgstr "Fältet är för långt för denna implementation"
 
 #. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
-#: src/dummy-strings.c:75
+#: src/dummy-strings.c:63
 msgid "Client not trusted"
 msgstr "Klienten är inte pålitlig"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
-#: src/dummy-strings.c:76
+#: src/dummy-strings.c:64
 msgid "KDC not trusted"
 msgstr "KDC är inte pålitlig"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
-#: src/dummy-strings.c:77
+#: src/dummy-strings.c:65
 msgid "Invalid signature"
 msgstr "Ogiltig signatur"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
-#: src/dummy-strings.c:78
+#: src/dummy-strings.c:66
 msgid "Key parameters not accepted"
 msgstr "Nyckelparametrar accepteras ej"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
-#: src/dummy-strings.c:79
+#: src/dummy-strings.c:67
 msgid "Certificate mismatch"
 msgstr "Certifikatet stämmer inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
-#: src/dummy-strings.c:80
+#: src/dummy-strings.c:68
+msgid "No ticket granting ticket"
+msgstr "Ingen biljettbeviljande biljett"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NO_TGT
+#: src/dummy-strings.c:69
+msgid "Realm not local to KDC"
+msgstr "Sfär inte lokal för KDC"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_WRONG_REALM
+#: src/dummy-strings.c:70
+msgid "User to user required"
+msgstr "”User to user” krävs"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_USER_TO_USER_REQUIRED
+#: src/dummy-strings.c:71
 msgid "Can't verify certificate"
 msgstr "Kan inte verifiera certifikatet"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
-#: src/dummy-strings.c:81
+#: src/dummy-strings.c:72
 msgid "Invalid certificate"
 msgstr "Ogiltigt certifikat"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
-#: src/dummy-strings.c:82
+#: src/dummy-strings.c:73
 msgid "Revoked certificate"
 msgstr "Spärrat certifikat"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
-#: src/dummy-strings.c:83
+#: src/dummy-strings.c:74
 msgid "Revocation status unknown"
 msgstr "Spärrstatus är okänd"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
-#: src/dummy-strings.c:84
+#: src/dummy-strings.c:75
 msgid "Revocation status unavailable"
 msgstr "Spärrstatus är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
-#: src/dummy-strings.c:85
+#: src/dummy-strings.c:76
 msgid "Client name mismatch"
 msgstr "Klientnamnet stämmer inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
-#: src/dummy-strings.c:86
+#: src/dummy-strings.c:77
 msgid "KDC name mismatch"
 msgstr "KDC-namnet stämmer inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
-#: src/dummy-strings.c:87
+#: src/dummy-strings.c:78
 msgid "Inconsistent key purpose"
 msgstr "Inkonsekvent nyckeländamål"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
-#: src/dummy-strings.c:88
+#: src/dummy-strings.c:79
 msgid "Digest in certificate not accepted"
 msgstr "Sammandrag i certifikatet inte accepterat"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
-#: src/dummy-strings.c:89
+#: src/dummy-strings.c:80
 msgid "Checksum must be included"
 msgstr "Kontrollsumman måste inkluderas"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
-#: src/dummy-strings.c:90
+#: src/dummy-strings.c:81
 msgid "Digest in signed-data not accepted"
 msgstr "Sammandrag i signerad data accepteras inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
-#: src/dummy-strings.c:91
+#: src/dummy-strings.c:82
 msgid "Public key encryption not supported"
 msgstr "Kryptering med offentlig nyckel stöds inte"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
-#: src/dummy-strings.c:92
-msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
-msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
+#: src/dummy-strings.c:83
+msgid "The IAKERB proxy could not find a KDC"
+msgstr "IAKERB-proxyn kunde inte hitta en KDC"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NOT_FOUND
+#: src/dummy-strings.c:84
+msgid "The KDC did not respond to the IAKERB proxy"
+msgstr "KDC:n svarade inte IAKERB-proxyn"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NO_RESPONSE
+#: src/dummy-strings.c:85
+msgid "Preauthentication expired"
+msgstr "Förautentisering utgången"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_EXPIRED
+#: src/dummy-strings.c:86
+msgid "More preauthentication data is required"
+msgstr "Mer förautentiseringsdata krävs"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_MORE_PREAUTH_DATA_REQUIRED
+#: src/dummy-strings.c:87
+msgid "An unsupported critical FAST option was requested"
+msgstr "Ett kritiskt FAST-alternativ som inte stöds begärdes"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_UNKNOWN_CRITICAL_FAST_OPTION
+#: src/dummy-strings.c:88
+msgid "No acceptable KDF offered"
+msgstr "Ingen acceptabel KDF erbjuden"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NO_ACCEPTABLE_KDF
+#: src/dummy-strings.c:89
+msgid "$Id$"
+msgstr "$Id$"
 
 #. krb5_err.et:krb5:KRB5_ERR_RCSID
-#: src/dummy-strings.c:93
+#: src/dummy-strings.c:90
 msgid "Invalid flag for file lock mode"
 msgstr "Ogiltig flagga för fillåsningsläge"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
-#: src/dummy-strings.c:94
+#: src/dummy-strings.c:91
 msgid "Cannot read password"
 msgstr "Kan inte läsa lösenordet"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
-#: src/dummy-strings.c:95
+#: src/dummy-strings.c:92
 msgid "Password mismatch"
 msgstr "Lösenorden stämmer inte"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
-#: src/dummy-strings.c:96
+#: src/dummy-strings.c:93
 msgid "Password read interrupted"
 msgstr "Lösenordsläsningen avbröts"
 
 #. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
-#: src/dummy-strings.c:97
+#: src/dummy-strings.c:94
 msgid "Illegal character in component name"
 msgstr "Otillåtet tecken i komponentnamnet"
 
 #. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
-#: src/dummy-strings.c:98
+#: src/dummy-strings.c:95
 msgid "Malformed representation of principal"
 msgstr "Felaktig representation av principal"
 
 #. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
-#: src/dummy-strings.c:99
+#: src/dummy-strings.c:96
 msgid "Can't open/find Kerberos configuration file"
 msgstr "Kan inte öppna/hitta konfigurationsfil för Kerberos"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
-#: src/dummy-strings.c:100
+#: src/dummy-strings.c:97
 msgid "Improper format of Kerberos configuration file"
 msgstr "Opassande format för Kerberos konfigurationsfil"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
-#: src/dummy-strings.c:101
+#: src/dummy-strings.c:98
 msgid "Insufficient space to return complete information"
 msgstr "Otillräckligt utrymme för att returnera komplett information"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
-#: src/dummy-strings.c:102
+#: src/dummy-strings.c:99
 msgid "Invalid message type specified for encoding"
 msgstr "Ogiltig meddelandetyp angiven för kodning"
 
 #. krb5_err.et:krb5:KRB5_BADMSGTYPE
-#: src/dummy-strings.c:103
+#: src/dummy-strings.c:100
 msgid "Credential cache name malformed"
 msgstr "Namnet på cachen för autentiseringsuppgifter är felaktig"
 
 #. krb5_err.et:krb5:KRB5_CC_BADNAME
-#: src/dummy-strings.c:104
+#: src/dummy-strings.c:101
 msgid "Unknown credential cache type"
 msgstr "Okänd typ på cache för autentiseringsuppgifter"
 
 #. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
-#: src/dummy-strings.c:105
+#: src/dummy-strings.c:102
 msgid "Matching credential not found"
 msgstr "Matchande autentiseringsuppgifter inte funna"
 
 #. krb5_err.et:krb5:KRB5_CC_NOTFOUND
-#: src/dummy-strings.c:106
+#: src/dummy-strings.c:103
 msgid "End of credential cache reached"
 msgstr "Slutet av cache för autentiseringsuppgifter nådd"
 
 #. krb5_err.et:krb5:KRB5_CC_END
-#: src/dummy-strings.c:107
+#: src/dummy-strings.c:104
 msgid "Request did not supply a ticket"
 msgstr "Begäran gav inte en biljett"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
-#: src/dummy-strings.c:108
+#: src/dummy-strings.c:105
 msgid "Wrong principal in request"
 msgstr "Fel principal i begäran"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
-#: src/dummy-strings.c:109
+#: src/dummy-strings.c:106
 msgid "Ticket has invalid flag set"
 msgstr "Biljett har ogiltig flagga angiven"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
-#: src/dummy-strings.c:110
+#: src/dummy-strings.c:107
 msgid "Requested principal and ticket don't match"
 msgstr "Begärd principal och biljett matchar inte"
 
 #. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
-#: src/dummy-strings.c:111
+#: src/dummy-strings.c:108
 msgid "KDC reply did not match expectations"
 msgstr "KDC-svar motsvarade inte förväntningarna"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
-#: src/dummy-strings.c:112
+#: src/dummy-strings.c:109
 msgid "Clock skew too great in KDC reply"
 msgstr "Klockavvikelse för stor i KDC-svar"
 
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
-#: src/dummy-strings.c:113
+#: src/dummy-strings.c:110
 msgid "Client/server realm mismatch in initial ticket request"
 msgstr "Klient/serversfär felmatchade i ursprunglig biljettbegäran"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
-#: src/dummy-strings.c:114
+#: src/dummy-strings.c:111
 msgid "Program lacks support for encryption type"
 msgstr "Programmet saknar stöd för krypteringstyp"
 
 #. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
-#: src/dummy-strings.c:115
+#: src/dummy-strings.c:112
 msgid "Program lacks support for key type"
 msgstr "Programmet saknar stöd för nyckeltyp"
 
 #. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
-#: src/dummy-strings.c:116
+#: src/dummy-strings.c:113
 msgid "Requested encryption type not used in message"
 msgstr "Begärd krypteringstyp används ej i meddelande"
 
 #. krb5_err.et:krb5:KRB5_WRONG_ETYPE
-#: src/dummy-strings.c:117
+#: src/dummy-strings.c:114
 msgid "Program lacks support for checksum type"
 msgstr "Programmet saknar stöd för kontrollsummetyp"
 
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
-#: src/dummy-strings.c:118
+#: src/dummy-strings.c:115
 msgid "Cannot find KDC for requested realm"
 msgstr "Kan inte hitta KDC för begärd sfär"
 
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
-#: src/dummy-strings.c:119
+#: src/dummy-strings.c:116
 msgid "Kerberos service unknown"
 msgstr "Kerberos-tjänsten är okänd"
 
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
-#: src/dummy-strings.c:120
+#: src/dummy-strings.c:117
 msgid "Cannot contact any KDC for requested realm"
 msgstr "Kan inte kontakta någon KDC för begärd sfär"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
-#: src/dummy-strings.c:121
+#: src/dummy-strings.c:118
 msgid "No local name found for principal name"
 msgstr "Inget lokalt namn funnet för principal-namnet"
 
 #. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
-#: src/dummy-strings.c:123
+#: src/dummy-strings.c:120
 msgid "Replay cache type is already registered"
 msgstr "Återanvändningscachetypen är redan registrerad"
 
 # http://web.mit.edu/kerberos/krb5-1.12/doc/basic/rcache_def.html
 #. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
-#: src/dummy-strings.c:124
+#: src/dummy-strings.c:121
 msgid "No more memory to allocate (in replay cache code)"
 msgstr "Inget mer minne att allokera (i återanvändningscachekod)"
 
 #. krb5_err.et:krb5:KRB5_RC_MALLOC
-#: src/dummy-strings.c:125
+#: src/dummy-strings.c:122
 msgid "Replay cache type is unknown"
 msgstr "Återanvändningscachetyp är okänd"
 
 #. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
-#: src/dummy-strings.c:126
+#: src/dummy-strings.c:123
 msgid "Generic unknown RC error"
 msgstr "Allmänt okänt RC-fel"
 
 #. krb5_err.et:krb5:KRB5_RC_UNKNOWN
-#: src/dummy-strings.c:127
+#: src/dummy-strings.c:124
 msgid "Message is a replay"
 msgstr "Meddelandet är en återanvändning"
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
-#: src/dummy-strings.c:128
-msgid "Replay I/O operation failed XXX"
-msgstr "Misslyckades med återanvänd I/O-åtgärd XXX"
+#: src/dummy-strings.c:125
+msgid "Replay cache I/O operation failed"
+msgstr "Misslyckades med I/O-åtgärd för återanvänd cache"
 
 #. krb5_err.et:krb5:KRB5_RC_IO
-#: src/dummy-strings.c:129
+#: src/dummy-strings.c:126
 msgid "Replay cache type does not support non-volatile storage"
 msgstr "Återanvänd cachetyp stöder inte beständig lagring"
 
 #. krb5_err.et:krb5:KRB5_RC_NOIO
-#: src/dummy-strings.c:130
+#: src/dummy-strings.c:127
 msgid "Replay cache name parse/format error"
 msgstr "Återanvänt cachenamn har tolknings-/formatfel"
 
 #. krb5_err.et:krb5:KRB5_RC_PARSE
-#: src/dummy-strings.c:131
+#: src/dummy-strings.c:128
 msgid "End-of-file on replay cache I/O"
 msgstr "Slut-på-fil vid I/O för återanvändningscache"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
-#: src/dummy-strings.c:132
+#: src/dummy-strings.c:129
 msgid "No more memory to allocate (in replay cache I/O code)"
 msgstr "Inget mer minne att allokera (i I/O-kod för återanvändningscache)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
-#: src/dummy-strings.c:133
+#: src/dummy-strings.c:130
 msgid "Permission denied in replay cache code"
 msgstr "Behörighet nekad i cachekod för återanvändningscache"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
-#: src/dummy-strings.c:134
+#: src/dummy-strings.c:131
 msgid "I/O error in replay cache i/o code"
 msgstr "I/O-fel i i/o-kod för återanvändningscache"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
-#: src/dummy-strings.c:135
+#: src/dummy-strings.c:132
 msgid "Generic unknown RC/IO error"
 msgstr "Generellt okänt RC/IO-fel"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
-#: src/dummy-strings.c:136
+#: src/dummy-strings.c:133
 msgid "Insufficient system space to store replay information"
 msgstr "Otillräckligt systemutrymme för att lagra återanvändningsinformation"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
-#: src/dummy-strings.c:137
+#: src/dummy-strings.c:134
 msgid "Can't open/find realm translation file"
 msgstr "Kan inte öppna/finna sfär-översättningsfil"
 
 #. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
-#: src/dummy-strings.c:138
+#: src/dummy-strings.c:135
 msgid "Improper format of realm translation file"
 msgstr "Opassande format för sfär-översättningsfil"
 
 #. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
-#: src/dummy-strings.c:139
+#: src/dummy-strings.c:136
 msgid "Can't open/find lname translation database"
 msgstr "Kan inte öppna/finna lname-översättningsdatabas"
 
 #. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
-#: src/dummy-strings.c:140
+#: src/dummy-strings.c:137
 msgid "No translation available for requested principal"
 msgstr "Ingen översättning tillgänglig för begärd principal"
 
 #. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
-#: src/dummy-strings.c:141
+#: src/dummy-strings.c:138
 msgid "Improper format of translation database entry"
 msgstr "Opassande format för översättningsdatabaspost"
 
 #. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
-#: src/dummy-strings.c:142
+#: src/dummy-strings.c:139
 msgid "Cryptosystem internal error"
 msgstr "Kryptosystem-internfel"
 
 #. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
-#: src/dummy-strings.c:143
+#: src/dummy-strings.c:140
 msgid "Key table name malformed"
 msgstr "Nyckeltabellnamn felaktigt"
 
 #. krb5_err.et:krb5:KRB5_KT_BADNAME
-#: src/dummy-strings.c:144
+#: src/dummy-strings.c:141
 msgid "Unknown Key table type"
 msgstr "Okänd nyckeltabelltyp"
 
 #. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
-#: src/dummy-strings.c:145
+#: src/dummy-strings.c:142
 msgid "Key table entry not found"
 msgstr "Nyckeltabellpost ej funnen"
 
 #. krb5_err.et:krb5:KRB5_KT_NOTFOUND
-#: src/dummy-strings.c:146
+#: src/dummy-strings.c:143
 msgid "End of key table reached"
 msgstr "Nådde slutet på nyckeltabell"
 
 #. krb5_err.et:krb5:KRB5_KT_END
-#: src/dummy-strings.c:147
+#: src/dummy-strings.c:144
 msgid "Cannot write to specified key table"
 msgstr "Kan inte skriva till specificerad nyckeltabell"
 
 #. krb5_err.et:krb5:KRB5_KT_NOWRITE
-#: src/dummy-strings.c:148
+#: src/dummy-strings.c:145
 msgid "Error writing to key table"
 msgstr "Fel vid skrivning till nyckeltabell"
 
 #. krb5_err.et:krb5:KRB5_KT_IOERR
-#: src/dummy-strings.c:149
+#: src/dummy-strings.c:146
 msgid "Cannot find ticket for requested realm"
 msgstr "Kan inte hitta biljett för begärd sfär"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
-#: src/dummy-strings.c:150
+#: src/dummy-strings.c:147
 msgid "DES key has bad parity"
 msgstr "DES-nyckeln har dålig paritet"
 
 #. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
-#: src/dummy-strings.c:151
+#: src/dummy-strings.c:148
 msgid "DES key is a weak key"
 msgstr "DES-nyckeln är en svag nyckel"
 
 #. krb5_err.et:krb5:KRB5DES_WEAK_KEY
-#: src/dummy-strings.c:152
+#: src/dummy-strings.c:149
 msgid "Bad encryption type"
 msgstr "Dålig krypteringstyp"
 
 #. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
-#: src/dummy-strings.c:153
+#: src/dummy-strings.c:150
 msgid "Key size is incompatible with encryption type"
 msgstr "Nyckelstorlek är inkompatibel med krypteringstypen"
 
 #. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
-#: src/dummy-strings.c:154
+#: src/dummy-strings.c:151
 msgid "Message size is incompatible with encryption type"
 msgstr "Meddelandestorlek är inkompatibel med krypteringstypen"
 
 #. krb5_err.et:krb5:KRB5_BAD_MSIZE
-#: src/dummy-strings.c:155
+#: src/dummy-strings.c:152
 msgid "Credentials cache type is already registered."
 msgstr "Cachetypen för autentiseringsuppgifter är redan registrerad."
 
 #. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
-#: src/dummy-strings.c:156
+#: src/dummy-strings.c:153
 msgid "Key table type is already registered."
 msgstr "Nyckeltabelltypen är redan registrerad."
 
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
-#: src/dummy-strings.c:157
-msgid "Credentials cache I/O operation failed XXX"
-msgstr "Misslyckades med I/O-åtgärd på cache för autentiseringsuppgifter XXX"
+#: src/dummy-strings.c:154
+msgid "Credentials cache I/O operation failed"
+msgstr "Misslyckades med I/O-åtgärd på cache för autentiseringsuppgifter"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
-#: src/dummy-strings.c:158
+#: src/dummy-strings.c:155
 msgid "Credentials cache permissions incorrect"
 msgstr "Cacherättigheter för autentiseringsuppgifter felaktiga"
 
 #. krb5_err.et:krb5:KRB5_FCC_PERM
-#: src/dummy-strings.c:159
+#: src/dummy-strings.c:156
 msgid "No credentials cache found"
 msgstr "Ingen cache för autentiseringsuppgifter funnen"
 
 #. krb5_err.et:krb5:KRB5_FCC_NOFILE
-#: src/dummy-strings.c:160
+#: src/dummy-strings.c:157
 msgid "Internal credentials cache error"
 msgstr "Internfel i cache för autentiseringsuppgifter"
 
 #. krb5_err.et:krb5:KRB5_FCC_INTERNAL
-#: src/dummy-strings.c:161
+#: src/dummy-strings.c:158
 msgid "Error writing to credentials cache"
 msgstr "Fel vid skrivning till cache för autentiseringsuppgifter"
 
 #. krb5_err.et:krb5:KRB5_CC_WRITE
-#: src/dummy-strings.c:162
+#: src/dummy-strings.c:159
 msgid "No more memory to allocate (in credentials cache code)"
 msgstr ""
 "Inget mer minne finns att allokera (i cachekod för autentiseringsuppgifter)"
 
 #. krb5_err.et:krb5:KRB5_CC_NOMEM
-#: src/dummy-strings.c:163
+#: src/dummy-strings.c:160
 msgid "Bad format in credentials cache"
 msgstr "Dåligt format i cache för autentiseringsuppgifter"
 
 #. krb5_err.et:krb5:KRB5_CC_FORMAT
-#: src/dummy-strings.c:164
+#: src/dummy-strings.c:161
 msgid "No credentials found with supported encryption types"
 msgstr "Inga autentiseringsuppgifter med krypteringstyp som stöds funna"
 
 #. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
-#: src/dummy-strings.c:165
+#: src/dummy-strings.c:162
 msgid "Invalid KDC option combination (library internal error)"
 msgstr "Ogiltig KDC-alternativkombination (internt biblioteksfel)"
 
 #. krb5_err.et:krb5:KRB5_INVALID_FLAGS
-#: src/dummy-strings.c:166
+#: src/dummy-strings.c:163
 msgid "Request missing second ticket"
 msgstr "Begär saknad andrabiljett"
 
 #. krb5_err.et:krb5:KRB5_NO_2ND_TKT
-#: src/dummy-strings.c:167
+#: src/dummy-strings.c:164
 msgid "No credentials supplied to library routine"
 msgstr "Inga autentiseringsuppgifter givna till biblioteksrutinen"
 
 #. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
-#: src/dummy-strings.c:168
+#: src/dummy-strings.c:165
 msgid "Bad sendauth version was sent"
 msgstr "Dålig sendauth-version skickades"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
-#: src/dummy-strings.c:169
+#: src/dummy-strings.c:166
 msgid "Bad application version was sent (via sendauth)"
 msgstr "Dålig programversion skickades (via sendauth)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
-#: src/dummy-strings.c:170
+#: src/dummy-strings.c:167
 msgid "Bad response (during sendauth exchange)"
 msgstr "Dåligt svar (under sendauth-utbyte)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
-#: src/dummy-strings.c:171
+#: src/dummy-strings.c:168
 msgid "Server rejected authentication (during sendauth exchange)"
 msgstr "Server avvisade autentisering (under sendauth-utbyte)"
 
 #. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
-#: src/dummy-strings.c:172
+#: src/dummy-strings.c:169
 msgid "Unsupported preauthentication type"
 msgstr "Förautentiseringstyp som inte stöds"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
-#: src/dummy-strings.c:173
+#: src/dummy-strings.c:170
 msgid "Required preauthentication key not supplied"
 msgstr "Begärd förautentiseringsnyckel inte given"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
-#: src/dummy-strings.c:174
+#: src/dummy-strings.c:171
 msgid "Generic preauthentication failure"
 msgstr "Generiskt förautentiseringsfel"
 
 #. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
-#: src/dummy-strings.c:175
+#: src/dummy-strings.c:172
 msgid "Unsupported replay cache format version number"
 msgstr "Formatversionsnumret för återanvändningscache stöds ej"
 
 #. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
-#: src/dummy-strings.c:176
+#: src/dummy-strings.c:173
 msgid "Unsupported credentials cache format version number"
 msgstr "Formatversionsnumret för autentiseringsuppgifter stöds ej"
 
 #. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
-#: src/dummy-strings.c:177
+#: src/dummy-strings.c:174
 msgid "Unsupported key table format version number"
 msgstr "Formatversionsnumret för nyckeltabellen stöds ej"
 
 #. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
-#: src/dummy-strings.c:178
+#: src/dummy-strings.c:175
 msgid "Program lacks support for address type"
 msgstr "Programmet saknar stöd för adresstypen"
 
 #. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
-#: src/dummy-strings.c:179
+#: src/dummy-strings.c:176
 msgid "Message replay detection requires rcache parameter"
 msgstr "Återanvändning av meddelandeidentifiering kräver rcache-parameter"
 
 #. krb5_err.et:krb5:KRB5_RC_REQUIRED
-#: src/dummy-strings.c:180
+#: src/dummy-strings.c:177
 msgid "Hostname cannot be canonicalized"
 msgstr "Värdnamn kan inte kanoniseras"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
-#: src/dummy-strings.c:181
+#: src/dummy-strings.c:178
 msgid "Cannot determine realm for host"
 msgstr "Kan inte avgöra sfär för värd"
 
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
-#: src/dummy-strings.c:182
+#: src/dummy-strings.c:179
 msgid "Conversion to service principal undefined for name type"
 msgstr "Konvertering till tjänste-principal odefinierad för namntyp"
 
 #. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
-#: src/dummy-strings.c:183
+#: src/dummy-strings.c:180
 msgid "Initial Ticket response appears to be Version 4 error"
 msgstr "Ursprungligt biljettsvar verkar vara Version 4-fel"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
-#: src/dummy-strings.c:184
+#: src/dummy-strings.c:181
 msgid "Cannot resolve network address for KDC in requested realm"
 msgstr "Kan inte hitta nätverksadress för KDC i begärd sfär"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
-#: src/dummy-strings.c:185
+#: src/dummy-strings.c:182
 msgid "Requesting ticket can't get forwardable tickets"
 msgstr "Begärande biljett kan inte få vidarebefordringsbara biljetter"
 
 #. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
-#: src/dummy-strings.c:186
+#: src/dummy-strings.c:183
 msgid "Bad principal name while trying to forward credentials"
 msgstr "Dåligt principalnamn vid vidarebefordring av autentiseringsuppgifter"
 
 #. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
-#: src/dummy-strings.c:187
+#: src/dummy-strings.c:184
 msgid "Looping detected inside krb5_get_in_tkt"
 msgstr "Loop upptäckt inuti krb5_get_in_tkt"
 
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
-#: src/dummy-strings.c:188
+#: src/dummy-strings.c:185
 msgid "Configuration file does not specify default realm"
 msgstr "Konfigurationsfil anger inte standardsfär"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
-#: src/dummy-strings.c:189
+#: src/dummy-strings.c:186
 msgid "Bad SAM flags in obtain_sam_padata"
 msgstr "Dåliga SAM-flaggor i obtain_sam_padata"
 
 #. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
-#: src/dummy-strings.c:190
+#: src/dummy-strings.c:187
 msgid "Invalid encryption type in SAM challenge"
 msgstr "Ogiltig krypteringstyp i SAM-utmaning"
 
 #. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
-#: src/dummy-strings.c:191
+#: src/dummy-strings.c:188
 msgid "Missing checksum in SAM challenge"
 msgstr "Saknad kontrollsumma i SAM-utmaning"
 
 #. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
-#: src/dummy-strings.c:192
+#: src/dummy-strings.c:189
 msgid "Bad checksum in SAM challenge"
 msgstr "Dålig kontrollsumma i SAM-utmaning"
 
 # Förkortning för key table http://web.mit.edu/Kerberos/krb5-1.13/doc/basic/keytab_def.html
 #. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
-#: src/dummy-strings.c:193
+#: src/dummy-strings.c:190
 msgid "Keytab name too long"
 msgstr "Nyckeltabellnamn för långt"
 
 #. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
-#: src/dummy-strings.c:194
+#: src/dummy-strings.c:191
 msgid "Key version number for principal in key table is incorrect"
 msgstr "Nyckelversionsnumret för principal i nyckeltabellen är felaktigt"
 
 #. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
-#: src/dummy-strings.c:195
+#: src/dummy-strings.c:192
 msgid "This application has expired"
 msgstr "Programmets tidsgräns har överskridits"
 
 #. krb5_err.et:krb5:KRB5_APPL_EXPIRED
-#: src/dummy-strings.c:196
+#: src/dummy-strings.c:193
 msgid "This Krb5 library has expired"
 msgstr "Detta Krb5-bibliotek har förfallit"
 
 #. krb5_err.et:krb5:KRB5_LIB_EXPIRED
-#: src/dummy-strings.c:197
+#: src/dummy-strings.c:194
 msgid "New password cannot be zero length"
 msgstr "Nytt lösenord får inte vara noll tecken långt"
 
 #. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
-#: src/dummy-strings.c:198
+#: src/dummy-strings.c:195
 msgid "Password change failed"
 msgstr "Ändring av lösenord misslyckades"
 
 #. krb5_err.et:krb5:KRB5_CHPW_FAIL
-#: src/dummy-strings.c:199
+#: src/dummy-strings.c:196
 msgid "Bad format in keytab"
 msgstr "Dåligt format i nyckeltabell"
 
 #. krb5_err.et:krb5:KRB5_KT_FORMAT
-#: src/dummy-strings.c:200
+#: src/dummy-strings.c:197
 msgid "Encryption type not permitted"
 msgstr "Krypteringstypen tillåts inte"
 
 #. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
-#: src/dummy-strings.c:201
+#: src/dummy-strings.c:198
 msgid "No supported encryption types (config file error?)"
 msgstr "Inga krypteringstyper som stöds (fel i konfigurationsfil?)"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
-#: src/dummy-strings.c:202
+#: src/dummy-strings.c:199
 msgid "Program called an obsolete, deleted function"
 msgstr "Programmet anropade en föråldrad, borttagen funktion"
 
 #. krb5_err.et:krb5:KRB5_OBSOLETE_FN
-#: src/dummy-strings.c:203
+#: src/dummy-strings.c:200
 msgid "unknown getaddrinfo failure"
 msgstr "okänt getaddrinfo-fel"
 
 #. krb5_err.et:krb5:KRB5_EAI_FAIL
-#: src/dummy-strings.c:204
+#: src/dummy-strings.c:201
 msgid "no data available for host/domain name"
 msgstr "ingen data tillgänglig för värd-/domännamn"
 
 #. krb5_err.et:krb5:KRB5_EAI_NODATA
-#: src/dummy-strings.c:205
+#: src/dummy-strings.c:202
 msgid "host/domain name not found"
 msgstr "värd-/domännamnet hittades inte"
 
 #. krb5_err.et:krb5:KRB5_EAI_NONAME
-#: src/dummy-strings.c:206
+#: src/dummy-strings.c:203
 msgid "service name unknown"
 msgstr "tjänstenamnet är okänt"
 
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
-#: src/dummy-strings.c:207
+#: src/dummy-strings.c:204
 msgid "Cannot determine realm for numeric host address"
 msgstr "Kan inte bestämma sfär för numerisk värdadress"
 
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
-#: src/dummy-strings.c:208
+#: src/dummy-strings.c:205
 msgid "Invalid key generation parameters from KDC"
 msgstr "Ogiltiga nyckelgenerationsparametrar från KDC"
 
 #. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
-#: src/dummy-strings.c:209
+#: src/dummy-strings.c:206
 msgid "service not available"
 msgstr "tjänsten är inte tillgänglig"
 
 #. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
-#: src/dummy-strings.c:210
+#: src/dummy-strings.c:207
 msgid "Ccache function not supported: read-only ccache type"
 msgstr "Ccache-funktion stöds ej: ej skrivbar ccache-typ"
 
 #. krb5_err.et:krb5:KRB5_CC_READONLY
-#: src/dummy-strings.c:211
+#: src/dummy-strings.c:208
 msgid "Ccache function not supported: not implemented"
 msgstr "Ccache-funktion stöds ej: inte implementerat"
 
 #. krb5_err.et:krb5:KRB5_CC_NOSUPP
-#: src/dummy-strings.c:212
+#: src/dummy-strings.c:209
 msgid "Invalid format of Kerberos lifetime or clock skew string"
 msgstr "Ogiltig format på Kerberos-livstids- eller klockavvikelsesträng"
 
 #. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
-#: src/dummy-strings.c:213
+#: src/dummy-strings.c:210
 msgid "Supplied data not handled by this plugin"
 msgstr "Given data hanteras inte av denna insticksmodul"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
-#: src/dummy-strings.c:214
+#: src/dummy-strings.c:211
 msgid "Plugin does not support the operation"
 msgstr "Insticksmodulen stöder inte denna åtgärd"
 
 #. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
+#: src/dummy-strings.c:212
+msgid "Invalid UTF-8 string"
+msgstr "Ogiltig UTF-8-sträng"
+
+#. krb5_err.et:krb5:KRB5_ERR_INVALID_UTF8
+#: src/dummy-strings.c:213
+msgid "FAST protected pre-authentication required but not supported by KDC"
+msgstr "Skyddad FAST-förautentisering krävs men stöds inte av KDC"
+
+#. krb5_err.et:krb5:KRB5_ERR_FAST_REQUIRED
+#: src/dummy-strings.c:214
+msgid "Auth context must contain local address"
+msgstr "Autentiseringskontext måste innehålla lokal adress"
+
+#. krb5_err.et:krb5:KRB5_LOCAL_ADDR_REQUIRED
 #: src/dummy-strings.c:215
+msgid "Auth context must contain remote address"
+msgstr "Autentiseringskontext måste innehålla fjärradress"
+
+#. krb5_err.et:krb5:KRB5_REMOTE_ADDR_REQUIRED
+#: src/dummy-strings.c:216
+msgid "Tracing unsupported"
+msgstr "Spårning stöds ej"
+
+#. krb5_err.et:krb5:KRB5_TRACE_NOSUPP
+#: src/dummy-strings.c:217
 msgid "Kerberos V5 magic number table"
 msgstr "Kerberos V5-magisk nummertabell"
 
 #. kv5m_err.et:kv5m:KV5M_NONE
-#: src/dummy-strings.c:216
+#: src/dummy-strings.c:218
 msgid "Bad magic number for krb5_principal structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_principal"
 
 #. kv5m_err.et:kv5m:KV5M_PRINCIPAL
-#: src/dummy-strings.c:217
+#: src/dummy-strings.c:219
 msgid "Bad magic number for krb5_data structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_data"
 
 #. kv5m_err.et:kv5m:KV5M_DATA
-#: src/dummy-strings.c:218
+#: src/dummy-strings.c:220
 msgid "Bad magic number for krb5_keyblock structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_keyblock"
 
 #. kv5m_err.et:kv5m:KV5M_KEYBLOCK
-#: src/dummy-strings.c:219
+#: src/dummy-strings.c:221
 msgid "Bad magic number for krb5_checksum structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_checksum"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM
-#: src/dummy-strings.c:220
+#: src/dummy-strings.c:222
 msgid "Bad magic number for krb5_encrypt_block structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_encrypt_block"
 
 #. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
-#: src/dummy-strings.c:221
+#: src/dummy-strings.c:223
 msgid "Bad magic number for krb5_enc_data structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_enc_data"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_DATA
-#: src/dummy-strings.c:222
+#: src/dummy-strings.c:224
 msgid "Bad magic number for krb5_cryptosystem_entry structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_cryptosystem_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
-#: src/dummy-strings.c:223
+#: src/dummy-strings.c:225
 msgid "Bad magic number for krb5_cs_table_entry structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_cs_table_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
-#: src/dummy-strings.c:224
+#: src/dummy-strings.c:226
 msgid "Bad magic number for krb5_checksum_entry structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_checksum_entry"
 
 #. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
-#: src/dummy-strings.c:225
+#: src/dummy-strings.c:227
 msgid "Bad magic number for krb5_authdata structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_authdata"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA
-#: src/dummy-strings.c:226
+#: src/dummy-strings.c:228
 msgid "Bad magic number for krb5_transited structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_transited"
 
 #. kv5m_err.et:kv5m:KV5M_TRANSITED
-#: src/dummy-strings.c:227
+#: src/dummy-strings.c:229
 msgid "Bad magic number for krb5_enc_tkt_part structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_enc_tkt_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
-#: src/dummy-strings.c:228
+#: src/dummy-strings.c:230
 msgid "Bad magic number for krb5_ticket structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_ticket"
 
 #. kv5m_err.et:kv5m:KV5M_TICKET
-#: src/dummy-strings.c:229
+#: src/dummy-strings.c:231
 msgid "Bad magic number for krb5_authenticator structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_authenticator"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
-#: src/dummy-strings.c:230
+#: src/dummy-strings.c:232
 msgid "Bad magic number for krb5_tkt_authent structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_tkt_authent"
 
 #. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
-#: src/dummy-strings.c:231
+#: src/dummy-strings.c:233
 msgid "Bad magic number for krb5_creds structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_creds"
 
 #. kv5m_err.et:kv5m:KV5M_CREDS
-#: src/dummy-strings.c:232
+#: src/dummy-strings.c:234
 msgid "Bad magic number for krb5_last_req_entry structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_last_req_entry"
 
 #. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
-#: src/dummy-strings.c:233
+#: src/dummy-strings.c:235
 msgid "Bad magic number for krb5_pa_data structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_pa_data"
 
 #. kv5m_err.et:kv5m:KV5M_PA_DATA
-#: src/dummy-strings.c:234
+#: src/dummy-strings.c:236
 msgid "Bad magic number for krb5_kdc_req structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_kdc_req"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REQ
-#: src/dummy-strings.c:235
+#: src/dummy-strings.c:237
 msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_enc_kdc_rep_part"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
-#: src/dummy-strings.c:236
+#: src/dummy-strings.c:238
 msgid "Bad magic number for krb5_kdc_rep structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_kdc_rep"
 
 #. kv5m_err.et:kv5m:KV5M_KDC_REP
-#: src/dummy-strings.c:237
+#: src/dummy-strings.c:239
 msgid "Bad magic number for krb5_error structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_error"
 
 #. kv5m_err.et:kv5m:KV5M_ERROR
-#: src/dummy-strings.c:238
+#: src/dummy-strings.c:240
 msgid "Bad magic number for krb5_ap_req structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_ap_req"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REQ
-#: src/dummy-strings.c:239
+#: src/dummy-strings.c:241
 msgid "Bad magic number for krb5_ap_rep structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_ap_rep"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP
-#: src/dummy-strings.c:240
+#: src/dummy-strings.c:242
 msgid "Bad magic number for krb5_ap_rep_enc_part structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_ap_rep_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
-#: src/dummy-strings.c:241
+#: src/dummy-strings.c:243
 msgid "Bad magic number for krb5_response structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_response"
 
 #. kv5m_err.et:kv5m:KV5M_RESPONSE
-#: src/dummy-strings.c:242
+#: src/dummy-strings.c:244
 msgid "Bad magic number for krb5_safe structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_safe"
 
 #. kv5m_err.et:kv5m:KV5M_SAFE
-#: src/dummy-strings.c:243
+#: src/dummy-strings.c:245
 msgid "Bad magic number for krb5_priv structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_priv"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV
-#: src/dummy-strings.c:244
+#: src/dummy-strings.c:246
 msgid "Bad magic number for krb5_priv_enc_part structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_priv_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
-#: src/dummy-strings.c:245
+#: src/dummy-strings.c:247
 msgid "Bad magic number for krb5_cred structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_cred"
 
 #. kv5m_err.et:kv5m:KV5M_CRED
-#: src/dummy-strings.c:246
+#: src/dummy-strings.c:248
 msgid "Bad magic number for krb5_cred_info structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_cred_info"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_INFO
-#: src/dummy-strings.c:247
+#: src/dummy-strings.c:249
 msgid "Bad magic number for krb5_cred_enc_part structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_cred_enc_part"
 
 #. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
-#: src/dummy-strings.c:248
+#: src/dummy-strings.c:250
 msgid "Bad magic number for krb5_pwd_data structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_pwd_data"
 
 #. kv5m_err.et:kv5m:KV5M_PWD_DATA
-#: src/dummy-strings.c:249
+#: src/dummy-strings.c:251
 msgid "Bad magic number for krb5_address structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_address"
 
 #. kv5m_err.et:kv5m:KV5M_ADDRESS
-#: src/dummy-strings.c:250
+#: src/dummy-strings.c:252
 msgid "Bad magic number for krb5_keytab_entry structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_keytab_entry"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
-#: src/dummy-strings.c:251
+#: src/dummy-strings.c:253
 msgid "Bad magic number for krb5_context structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_context"
 
 #. kv5m_err.et:kv5m:KV5M_CONTEXT
-#: src/dummy-strings.c:252
+#: src/dummy-strings.c:254
 msgid "Bad magic number for krb5_os_context structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_os_context"
 
 #. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
-#: src/dummy-strings.c:253
+#: src/dummy-strings.c:255
 msgid "Bad magic number for krb5_alt_method structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_alt_method"
 
 #. kv5m_err.et:kv5m:KV5M_ALT_METHOD
-#: src/dummy-strings.c:254
+#: src/dummy-strings.c:256
 msgid "Bad magic number for krb5_etype_info_entry structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_etype_info_entry"
 
 #. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
-#: src/dummy-strings.c:255
+#: src/dummy-strings.c:257
 msgid "Bad magic number for krb5_db_context structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_db_context"
 
 #. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
-#: src/dummy-strings.c:256
+#: src/dummy-strings.c:258
 msgid "Bad magic number for krb5_auth_context structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_auth_context"
 
 #. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
-#: src/dummy-strings.c:257
+#: src/dummy-strings.c:259
 msgid "Bad magic number for krb5_keytab structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_keytab"
 
 #. kv5m_err.et:kv5m:KV5M_KEYTAB
-#: src/dummy-strings.c:258
+#: src/dummy-strings.c:260
 msgid "Bad magic number for krb5_rcache structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_rcache"
 
 #. kv5m_err.et:kv5m:KV5M_RCACHE
-#: src/dummy-strings.c:259
+#: src/dummy-strings.c:261
 msgid "Bad magic number for krb5_ccache structure"
 msgstr "Dåligt magiskt nummer för strukturen krb5_ccache"
 
 #. kv5m_err.et:kv5m:KV5M_CCACHE
-#: src/dummy-strings.c:260
+#: src/dummy-strings.c:262
 msgid "Bad magic number for krb5_preauth_ops"
 msgstr "Dåligt magiskt nummer för krb5_preauth_ops"
 
 #. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
-#: src/dummy-strings.c:261
+#: src/dummy-strings.c:263
 msgid "Bad magic number for krb5_sam_challenge"
 msgstr "Dåligt magiskt nummer för krb5_sam_challenge"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
-#: src/dummy-strings.c:262
+#: src/dummy-strings.c:264
 msgid "Bad magic number for krb5_sam_challenge_2"
 msgstr "Dåligt magiskt nummer för krb5_sam_challenge_2"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
-#: src/dummy-strings.c:263
+#: src/dummy-strings.c:265
 msgid "Bad magic number for krb5_sam_key"
 msgstr "Dåligt magiskt nummer för krb5_sam_key"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_KEY
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
-#: src/dummy-strings.c:264 src/dummy-strings.c:265
+#: src/dummy-strings.c:266 src/dummy-strings.c:267
 msgid "Bad magic number for krb5_enc_sam_response_enc"
 msgstr "Dåligt magiskt nummer för krb5_enc_sam_response_enc"
 
 #. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
-#: src/dummy-strings.c:266
+#: src/dummy-strings.c:268
 msgid "Bad magic number for krb5_sam_response"
 msgstr "Dåligt magiskt nummer för krb5_sam_response"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
-#: src/dummy-strings.c:267
+#: src/dummy-strings.c:269
 msgid "Bad magic number for krb5_sam_response 2"
 msgstr "Dåligt magiskt nummer för krb5_sam_response 2"
 
 #. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
-#: src/dummy-strings.c:268
+#: src/dummy-strings.c:270
 msgid "Bad magic number for krb5_predicted_sam_response"
 msgstr "Dåligt magiskt nummer för krb5_predicted_sam_response"
 
 #. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
-#: src/dummy-strings.c:269
+#: src/dummy-strings.c:271
 msgid "Bad magic number for passwd_phrase_element"
 msgstr "Dåligt magiskt nummer för passwd_phrase_element"
 
 #. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
-#: src/dummy-strings.c:270
+#: src/dummy-strings.c:272
 msgid "Bad magic number for GSSAPI OID"
 msgstr "Dåligt magiskt nummer för GSSAPI OID"
 
 #. kv5m_err.et:kv5m:KV5M_GSS_OID
-#: src/dummy-strings.c:271
+#: src/dummy-strings.c:273
 msgid "Bad magic number for GSSAPI QUEUE"
 msgstr "Dåligt magiskt nummer för GSSAPI QUEUE"
 
+#. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
+#: src/dummy-strings.c:274
+msgid "Bad magic number for fast armored request"
+msgstr "Dåligt magiskt nummer för snabb skyddad begäran"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_ARMORED_REQ
+#: src/dummy-strings.c:275
+msgid "Bad magic number for FAST request"
+msgstr "Dåligt magiskt nummer för FAST-begäran"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_REQ
+#: src/dummy-strings.c:276
+msgid "Bad magic number for FAST response"
+msgstr "Dåligt magiskt nummer för FAST-svar"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_RESPONSE
+#: src/dummy-strings.c:277
+msgid "Bad magic number for krb5_authdata_context"
+msgstr "Dåligt magiskt nummer för krb5_authdata_context"
+
+# NOT.: Tolkar det som att ASN-1 ska vara helt fristående och inte sammansatt
+# som ASN.1-meningen.
+#. kv5m_err.et:kv5m:KV5M_AUTHDATA_CONTEXT
+#: src/dummy-strings.c:278
+msgid "ASN.1 failed call to system time library"
+msgstr "ASN.1 misslyckat anrop till systemtidsbiblioteket"
+
+#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
+#: src/dummy-strings.c:279
+msgid "ASN.1 structure is missing a required field"
+msgstr "ASN.1 strukturen saknar ett obligatoriskt fält"
+
+#. asn1_err.et:asn1:ASN1_MISSING_FIELD
+#: src/dummy-strings.c:280
+msgid "ASN.1 unexpected field number"
+msgstr "ASN.1 oväntat fältnummer"
+
+#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
+#: src/dummy-strings.c:281
+msgid "ASN.1 type numbers are inconsistent"
+msgstr "ASN.1 typsiffror är inkonsekventa"
+
+#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
+#: src/dummy-strings.c:282
+msgid "ASN.1 value too large"
+msgstr "ASN.1 värdet är för stort"
+
+#. asn1_err.et:asn1:ASN1_OVERFLOW
+#: src/dummy-strings.c:283
+msgid "ASN.1 encoding ended unexpectedly"
+msgstr "ASN.1 kodning avslutades oväntat"
+
+#. asn1_err.et:asn1:ASN1_OVERRUN
+#: src/dummy-strings.c:284
+msgid "ASN.1 identifier doesn't match expected value"
+msgstr "ASN.1 identifierare matchar inte förväntat värde"
+
+#. asn1_err.et:asn1:ASN1_BAD_ID
+#: src/dummy-strings.c:285
+msgid "ASN.1 length doesn't match expected value"
+msgstr "ASN.1 längden matchar inte förväntat värde"
+
+#. asn1_err.et:asn1:ASN1_BAD_LENGTH
+#: src/dummy-strings.c:286
+msgid "ASN.1 badly-formatted encoding"
+msgstr "ASN.1 dåligt formaterad kodning"
+
+#. asn1_err.et:asn1:ASN1_BAD_FORMAT
+#: src/dummy-strings.c:287
+msgid "ASN.1 parse error"
+msgstr "ASN.1 tolkningsfel"
+
+#. asn1_err.et:asn1:ASN1_PARSE_ERROR
+#: src/dummy-strings.c:288
+msgid "ASN.1 bad return from gmtime"
+msgstr "ASN.1 dåligt returvärde från gmtime"
+
+#. asn1_err.et:asn1:ASN1_BAD_GMTIME
+#: src/dummy-strings.c:289
+msgid "ASN.1 indefinite encoding"
+msgstr "ASN.1 oändlig kodning"
+
+#. asn1_err.et:asn1:ASN1_INDEF
+#: src/dummy-strings.c:290
+msgid "ASN.1 missing expected EOC"
+msgstr "ASN.1 saknar förväntad EOC"
+
+#. asn1_err.et:asn1:ASN1_MISSING_EOC
+#: src/dummy-strings.c:291
+msgid "ASN.1 object omitted in sequence"
+msgstr "ASN.1 objekt överhoppat i sekvens"
+
+#. asn1_err.et:asn1:ASN1_OMITTED
+#: src/dummy-strings.c:292
+msgid "Plugin does not support interface version"
+msgstr "Insticksmodulen stöder inte gränssnittsversionen"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_VER_NOTSUPP
+#: src/dummy-strings.c:293
+msgid "Invalid module specifier"
+msgstr "Ogiltig modulspecificerare"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_BAD_MODULE_SPEC
+#: src/dummy-strings.c:294
+msgid "Plugin module name not found"
+msgstr "Insticksmodulnamnet hittades inte"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_NAME_NOTFOUND
+#: src/dummy-strings.c:295
+msgid "The KDC should discard this request"
+msgstr "KDC:n bör avvisa denna begäran"
+
+#. k5e1_err.et:k5e1:KRB5KDC_ERR_DISCARD
+#: src/dummy-strings.c:296
+msgid "Can't create new subsidiary cache"
+msgstr "Kan inte skapa ny underliggande cache"
+
+#. k5e1_err.et:k5e1:KRB5_DCC_CANNOT_CREATE
+#: src/dummy-strings.c:297
+msgid "Invalid keyring anchor name"
+msgstr "Ogiltigt nyckelringsankarnamn"
+
+#. k5e1_err.et:k5e1:KRB5_KCC_INVALID_ANCHOR
+#: src/dummy-strings.c:298
+msgid "Unknown keyring collection version"
+msgstr "Okänd nyckelringssamlingsversion"
+
+#. k5e1_err.et:k5e1:KRB5_KCC_UNKNOWN_VERSION
+#: src/dummy-strings.c:299
+msgid "Invalid UID in persistent keyring name"
+msgstr "Ogiltigt UID i beständigt nyckelnamn"
+
+#. k5e1_err.et:k5e1:KRB5_KCC_INVALID_UID
+#: src/dummy-strings.c:300
+msgid "Malformed reply from KCM daemon"
+msgstr "Felformulerat svar från KCM-demon"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_MALFORMED_REPLY
+#: src/dummy-strings.c:301
+msgid "Mach RPC error communicating with KCM daemon"
+msgstr "Mach RPC-fel vid kommunikation med KCM-demon"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_RPC_ERROR
+#: src/dummy-strings.c:302
+msgid "KCM daemon reply too big"
+msgstr "KCM-demonsvar är för stort"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_REPLY_TOO_BIG
+#: src/dummy-strings.c:303
+msgid "No KCM server found"
+msgstr "Ingen KCM-server hittades"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_NO_SERVER
+#: src/dummy-strings.c:304
+msgid "Authorize and set hw-authent ticket flag"
+msgstr "Auktorisera och ställ in hw-authent-biljettflagga"
+
+#. k5e1_err.et:k5e1:KRB5_CERTAUTH_HWAUTH
+#: src/dummy-strings.c:305
+msgid "Set hw-authent ticket flag but do not authorize"
+msgstr "Ställ in hw-authent-biljettflagga men auktorisera inte"
+
 #. Translators: First number is hours, second number is minutes
-#: src/ka-applet.c:583
+#: src/ka-applet.c:604
 #, c-format
 msgid "Your credentials expire in %.2d:%.2dh"
 msgstr "Dina autentiseringsuppgifter går ut om %.2d:%.2dh"
 
-#: src/ka-applet.c:589 src/ka-pwdialog.c:292
+#: src/ka-applet.c:610 src/ka-pwdialog.c:212
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
 msgstr[0] "Dina autentiseringsuppgifter går ut om %d minut"
 msgstr[1] "Dina autentiseringsuppgifter går ut om %d minuter"
 
-#: src/ka-applet.c:594 src/ka-pwdialog.c:297
+#: src/ka-applet.c:615 src/ka-pwdialog.c:217
 msgid "Your credentials have expired"
 msgstr "Dina autentiseringsuppgifter har förfallit"
 
-#: src/ka-applet.c:624
+#: src/ka-applet.c:645
 msgid "Remove Credentials Cache"
 msgstr "Ta bort cache för autentiseringsuppgifter"
 
-#: src/ka-applet.c:672
+#: src/ka-applet.c:693
 msgid "You have valid Kerberos credentials."
 msgstr "Du har giltiga Kerberosautentiseringsuppgifter."
 
-#: src/ka-applet.c:674
+#: src/ka-applet.c:695
 msgid "You've refreshed your Kerberos credentials."
 msgstr "Du har uppdaterat dina Kerberosautentiseringsuppgifter."
 
-#: src/ka-applet.c:677
+#: src/ka-applet.c:698
 msgid "Network credentials valid"
 msgstr "Nätverksautentiseringsuppgifter giltiga"
 
-#: src/ka-applet.c:696
+#: src/ka-applet.c:717
 msgid "Network credentials expiring"
 msgstr "Nätverksautentiseringsuppgifter förfaller"
 
-#: src/ka-applet.c:713
+#: src/ka-applet.c:734
 msgid "Network credentials expired"
 msgstr "Nätverksautentiseringsuppgifter har förfallit"
 
-#: src/ka-applet.c:714
+#: src/ka-applet.c:735
 msgid "Your Kerberos credentials have expired."
 msgstr "Dina Kerberos-autentiseringsuppgifter har förfallit."
 
-#: src/ka-kerberos.c:161
+#: src/ka-kerberos.c:148
 msgid "unknown error"
 msgstr "okänt fel"
 
-#: src/ka-kerberos.c:340
+#: src/ka-kerberos.c:337
 msgid "Expired"
 msgstr "Förfallit"
 
-#: src/ka-kerberos.c:1013
+#: src/ka-kerberos.c:1045
 msgid " (No network connection)"
 msgstr " (Ingen nätverksanslutning)"
 
-#: src/ka-main-window.c:126
+#: src/ka-main-window.c:145
 msgid "Principal"
 msgstr "Principal"
 
-#: src/ka-main-window.c:132
+#: src/ka-main-window.c:151
 msgid "Start"
 msgstr "Start"
 
-#: src/ka-main-window.c:138
+#: src/ka-main-window.c:157
 msgid "End"
 msgstr "Slut"
 
 #. Translators: this is an abbreviation for forwardable
-#: src/ka-main-window.c:145
+#: src/ka-main-window.c:164
 msgid "Fwd"
 msgstr "Vb"
 
 #. Translators: this is an abbreviation for proxiable
-#: src/ka-main-window.c:152
+#: src/ka-main-window.c:171
 msgid "Proxy"
 msgstr "Proxy"
 
 #. Translators: this is an abbreviation for renewable
-#: src/ka-main-window.c:159
+#: src/ka-main-window.c:178
 msgid "Renew"
 msgstr "Förny"
 
-#: src/ka-main-window.c:214
+#: src/ka-main-window.c:221
 msgid "Error displaying service ticket information"
 msgstr "Fil vid visning av information för tjänstbiljett"
 
-#: src/ka-preferences.c:369
+#: src/ka-preferences.c:322
 msgid "Choose Certificate"
 msgstr "Välj certifikat"
 
-#: src/ka-preferences.c:373
+#: src/ka-preferences.c:326
 msgid "_Open"
 msgstr "_Öppna"
 
-#: src/ka-preferences.c:385
+#: src/ka-preferences.c:339
 msgid "X509 Certificates"
 msgstr "X509-certifikat"
 
-#: src/ka-preferences.c:389
+#: src/ka-preferences.c:343
 msgid "all files"
 msgstr "alla filer"
 
-#: src/ka-pwdialog.c:134
+#: src/ka-pwdialog.c:104
 #, c-format
 msgid "%s Error"
 msgstr "%s-fel"
 
-#: src/ka-pwdialog.c:253
+#: src/ka-pwdialog.c:175
 #, c-format
 msgid "Couldn't acquire Kerberos ticket: '%s'"
 msgstr "Kunde inte hämta Kerberos-biljett: ”%s”"
 
-#: src/ka-pwdialog.c:320
+#: src/ka-pwdialog.c:240
 msgid "Please enter your Kerberos password:"
 msgstr "Ange ditt Kerberos-lösenord:"
 
-#: src/ka-pwdialog.c:333
+#: src/ka-pwdialog.c:253
 #, c-format
 msgid "Please enter the password for '%s':"
 msgstr "Ange lösenordet för ”%s”:"
 
-#: src/ka-pwdialog.c:351
+#: src/ka-pwdialog.c:271
 msgid "The password you entered is invalid"
 msgstr "Lösenordet som du angav är ogiltigt"
 
-#: src/ka-tools.c:43
+#: src/ka-tools.c:33
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1767,8 +1924,7 @@ msgstr ""
 "Det uppstod ett fel vid visning av hjälp:\n"
 "%s"
 
-#. Translators: add the translators of your language here
-#: src/ka-tools.c:83
+#: src/ka-tools.c:69
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>\n"
@@ -1786,8 +1942,18 @@ msgstr "Kerberos-nätverksautentiseringsdialog"
 msgid "kerberos;authentication;"
 msgstr "kerberos;autentisering;"
 
-#~ msgid "Guido Günther"
-#~ msgstr "Guido Günther"
+#~ msgid "Kerberos principal:"
+#~ msgstr "Kerberos-principal:"
 
-#~ msgid "krb-valid-ticket"
-#~ msgstr "krb-valid-ticket"
+#~ msgid "_Browse..."
+#~ msgstr "_Bläddra…"
+
+#~ msgid ""
+#~ "Configure the use of certificates and smartcards for your Kerberos "
+#~ "network authentication."
+#~ msgstr ""
+#~ "Konfigurera användningen av certifikat och smartkort för din Kerberos-"
+#~ "nätverksautentisering."
+
+#~ msgid "Warn"
+#~ msgstr "Varna"

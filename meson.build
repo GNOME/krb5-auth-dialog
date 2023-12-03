@@ -19,8 +19,15 @@ glib_ver = '2.66'
 glib_ver_str = 'GLIB_VERSION_@0@'.format(glib_ver.replace('.','_'))
 glib_ver_cmp = '>=@0@'.format(glib_ver)
 
+gtk_version = '4.8'
+gtk_version_arr = gtk_version.split('.')
+gtk_major = gtk_version_arr[0]
+gtk_minor = gtk_version_arr[1]
+
 add_project_arguments([
   '-DHAVE_CONFIG_H',
+  '-DGDK_VERSION_MIN_REQUIRED=GDK_VERSION_@0@_@1@'.format(gtk_major, gtk_minor),
+  '-DGDK_VERSION_MAX_ALLOWED=GDK_VERSION_@0@_@1@'.format(gtk_major, gtk_minor),
   '-DGLIB_VERSION_MIN_REQUIRED=@0@'.format(glib_ver_str),
   '-DGLIB_VERSION_MAX_REQUIRED=@0@'.format(glib_ver_str),
   '-DG_LOG_DOMAIN="KrbAuthDialog"',
@@ -92,7 +99,7 @@ glib_dep = dependency('glib-2.0', version: glib_ver_cmp)
 gio_dep = dependency('gio-2.0', version: glib_ver_cmp)
 gobject_dep = dependency('gobject-2.0', version: glib_ver_cmp)
 gmodule_dep = dependency('gmodule-2.0', version: glib_ver_cmp)
-gtk_dep = dependency('gtk4', version: '>=4.4')
+gtk_dep = dependency('gtk4', version: '>=@0@'.format(gtk_version))
 
 meson.add_install_script(
   join_paths('build-aux', 'post_install.py'),

@@ -61,7 +61,6 @@ ka_plugin_dummy_deactivate (KaPlugin *self, KaApplet *applet)
 static void
 ka_plugin_dummy_class_init (KaPluginDummyClass *klass)
 {
-    GObjectClass *object_class = G_OBJECT_CLASS (klass);
     KaPluginClass *plugin_class = KA_PLUGIN_CLASS (klass);
 
     plugin_class->activate = ka_plugin_dummy_activate;

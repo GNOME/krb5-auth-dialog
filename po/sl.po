@@ -7,173 +7,1804 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=krb5-auth-dialog&keywords=I18N+L10N&component=general\n"
-"POT-Creation-Date: 2013-03-25 11:44+0000\n"
-"PO-Revision-Date: 2013-03-28 08:48+0100\n"
-"Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
+"issues\n"
+"POT-Creation-Date: 2022-10-30 11:14+0000\n"
+"PO-Revision-Date: 2024-04-29 00:38+0200\n"
+"Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n%100==4 ? 3 : 0);\n"
-"X-Poedit-Country: SLOVENIA\n"
-"X-Poedit-Language: Slovenian\n"
+"Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
+"%100==4 ? 3 : 0);\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Poedit 2.2.1\n"
 
-#: ../src/krb5-auth-dialog.ui.h:1
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:6
+#, fuzzy
+#| msgid "Kerberos Network Authentication Dialog"
+msgid "Kerberos Authentication Dialog"
+msgstr "Pogovorno okno Kerberos omrežne overitve"
+
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:7
+#, fuzzy
+#| msgid "Requested Kerberos tickets should be:"
+msgid "Request, renew and view Kerberos tickets"
+msgstr "Zahtevane vstopnice Kerberos bi morale biti:"
+
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:9
+#, fuzzy
+msgid ""
+"Kerberos Authentication allows you to list your current Kerberos tickets, "
+"and to request a new ticket (authenticate to the Kerberos Server). It also "
+"notifies you when your Kerberos credentials are about to expire and renews "
+"your ticket automatically if possible."
+msgstr ""
+"Kerberos Authentication vam omogoča, da navedete svoje trenutne vstopnice za "
+"Kerberos in zahtevate novo vstopnico (overite na strežniku Kerberos). Prav "
+"tako vas obvesti, ko bodo vaše poverilnice za Kerberos potekle, in samodejno "
+"podaljša vstopnico, če je to mogoče."
+
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:15
+msgid ""
+"This is useful if you need to authenticate to a Kerberos Server (KDC) after "
+"your login to the desktop (e.g. on a mobile device)."
+msgstr ""
+
+#: data/org.gnome.KrbAuthDialog.metainfo.xml.in:23
+msgid "Kerberos authentication dialog"
+msgstr "Pogovorno okno za preverjanje pristnosti Kerberos"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:6
+#: src/resources/ui/ka-preferences.ui:22
+msgid "Kerberos principal"
+msgstr "Kerberos ravnatelj"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:7
+msgid "The Kerberos principal to acquire the ticket for"
+msgstr "Ravnatelj Kerberos za izdajo vstopnice za"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:11
+msgid "PKINIT identifier"
+msgstr "Določilnik PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:12
+msgid "The principal's public/private/certificate identifier when using PKINIT"
+msgstr "Ravnateljevo javno/zasebno/potrdilno določilo ob uporabi PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:16
+msgid "PKINIT trust anchors"
+msgstr "Sidra zaupanja PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:17
+msgid "PKINIT CA certificates"
+msgstr "CA potrdila PKINIT"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:21
+msgid "Prompt minutes before expiry"
+msgstr "Opozorilo pred potekom v minutah"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:22
+msgid ""
+"Start prompting/displaying notifications that many minutes before expiry"
+msgstr "Začetek prikazovanja obvestil toliko minut pred potekom"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:26
+msgid "Forwardable ticket"
+msgstr "Prenosljiva vstopnica"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:27
+msgid "Requested tickets should be forwardable"
+msgstr "Zahtevane vstopnice bi morale biti prenosljive"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:31
+msgid "Renewable ticket"
+msgstr "Obnovljiva vstopnica"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:32
+msgid "Requested tickets should be renewable"
+msgstr "Zahtevane vstopnice bi morale biti obnovljive"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:36
+msgid "Proxiable ticket"
+msgstr "Posredovalna vstopnica"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:37
+msgid "Requested tickets should be proxiable"
+msgstr "Zahtevano vstopnico bi moralo biti mogoče posredovati"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:41
+msgid "Configuration tickets"
+msgstr "Nastavitvene vstopnice"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:42
+msgid "Show configuration tickets"
+msgstr "Pokaži nastavitvene vstopnice"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:50
+msgid "valid ticket notification"
+msgstr "obvestilo veljavne vstopnice"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:51
+msgid "Notify user when ticket becomes valid"
+msgstr "Obvesti uporabnika, ko vstopnica postane veljavna"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:55
+msgid "ticket expiring notification"
+msgstr "obvestilo o pretekanju vstopnice"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:56
+msgid "Notify user when ticket is about to expire"
+msgstr "Obvesti uporabnika, ko bo vstopnica potekla"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:60
+msgid "ticket expired notification"
+msgstr "obvestilo potekle vstopnice"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:61
+msgid "Notify user when ticket has expired"
+msgstr "Obvesti uporabnika ob poteku vstopnice"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:67
+msgid "Enabled plugins"
+msgstr "Omogočeni vstavki"
+
+#: data/org.gnome.KrbAuthDialog.gschema.xml:68
+msgid "List of plugins that should be loaded and activated on startup."
+msgstr "Seznam vstavkov, ki bodo naloženi in omogočeni ob zagonu."
+
+#: src/resources/ui/ka-main-window.ui:9
 msgid "Prefere_nces"
 msgstr "_Nastavitve"
 
-#: ../src/krb5-auth-dialog.ui.h:2
+#: src/resources/ui/ka-main-window.ui:13
 msgid "_About"
 msgstr "_O programu"
 
-#: ../src/krb5-auth-dialog.ui.h:3
+#: src/resources/ui/ka-main-window.ui:17
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: ../src/krb5-auth-dialog.ui.h:4
+#: src/resources/ui/ka-main-window.ui:21
 msgid "_Quit"
 msgstr "_Izhod"
 
-#.
-#. * vim:ts:sts=4:sw=4:et:
-#.
-#: ../src/krb5-auth-dialog.ui.h:5
-#: ../src/krb5-auth-dialog.desktop.in.h:1
-msgid "Kerberos Authentication"
-msgstr "Overitev Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:6
-msgid "_Renew Ticket"
-msgstr "_Obnovi vstopnico"
-
-#: ../src/krb5-auth-dialog.ui.h:7
+#: src/resources/ui/ka-main-window.ui:27
 msgid "Service Tickets"
 msgstr "Storitvene vstopnice"
 
-#: ../src/krb5-auth-dialog.ui.h:8
-msgid "Kerberos User"
-msgstr "Uporabnik Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:9
-msgid "The name of your Kerberos account. Leave blank to use your current username."
-msgstr "Ime vašega računa Kerberos. Pustite prazno za uporabo vašega trenutnega uporabniškega imena."
-
-#: ../src/krb5-auth-dialog.ui.h:10
-msgid "Kerberos principal:"
-msgstr "Kerberos ravnatelj:"
-
-#: ../src/krb5-auth-dialog.ui.h:11
-msgid "Kerberos Ticket Options"
-msgstr "Možnosti vstopnice Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:12
-msgid "Requested Kerberos tickets should be:"
-msgstr "Zahtevane vstopnice Kerberos bi morale biti:"
-
-#: ../src/krb5-auth-dialog.ui.h:13
-msgid "forwardable"
-msgstr "prenosljiva"
-
-#: ../src/krb5-auth-dialog.ui.h:14
-msgid "If checked, request forwardable tickets"
-msgstr "Izbrana možnost določi zahtevo za uporabo prenosljivih vstopnic"
-
-#: ../src/krb5-auth-dialog.ui.h:15
-msgid "renewable"
-msgstr "obnovljiva"
-
-#: ../src/krb5-auth-dialog.ui.h:16
-msgid "If checked, request renewable tickets"
-msgstr "Izbrana možnost določi zahtevo za uporabo obnovljivih vstopnic"
-
-#: ../src/krb5-auth-dialog.ui.h:17
-msgid "proxiable"
-msgstr "posredovana"
-
-#: ../src/krb5-auth-dialog.ui.h:18
-msgid "If checked, request proxiable tickets"
-msgstr "Izbrana možnost omogoči zahtevo za posredovalno vstopnico"
-
-#: ../src/krb5-auth-dialog.ui.h:19
-msgid "Kerberos"
-msgstr "Kerberos"
-
-#: ../src/krb5-auth-dialog.ui.h:20
-msgid "Userid"
-msgstr "Uporabniški id"
-
-#: ../src/krb5-auth-dialog.ui.h:21
-msgid "Use Smartcard"
-msgstr "Uporabi SmartCard"
-
-#: ../src/krb5-auth-dialog.ui.h:22
-msgid "If checked, use a security token (Smartcard) to authenticate."
-msgstr "Izbrana možnost omogoči zahtevo za uporabo Varnostne SmartCard za overjanje"
-
-#: ../src/krb5-auth-dialog.ui.h:23
-msgid "Certificate and private key used for authentication"
-msgstr "Potrdilo in osebni ključ uporabljena za overitev"
-
-#: ../src/krb5-auth-dialog.ui.h:24
-msgid "_Browse..."
-msgstr "_Prebrskaj ..."
-
-#: ../src/krb5-auth-dialog.ui.h:25
-msgid "X509 trust anchors"
-msgstr "X509 zaupna sidra"
-
-#: ../src/krb5-auth-dialog.ui.h:26
-msgid "Certificate used to verify digital signatures."
-msgstr "Potrdilo, ki se uporablja za potrjevanje digitalnih podpisov."
-
-#: ../src/krb5-auth-dialog.ui.h:27
-msgid "Configure the use of certificates and smartcards for your Kerberos network authentication."
-msgstr "Nastavite uporabo potrdil in pametnih kartic za vašo overitev omrežja Kerberos."
-
-#: ../src/krb5-auth-dialog.ui.h:28
-msgid "PKINIT"
-msgstr "PKINIT"
-
-#: ../src/krb5-auth-dialog.ui.h:29
-msgid "Notifications"
-msgstr "Obvestila"
-
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:31
-msgid "Warn"
-msgstr "Opozori"
-
-#: ../src/krb5-auth-dialog.ui.h:32
-msgid "Send notification about ticket expiry that many minutes before it finally expires"
-msgstr "Pošiljanje obvestila o preteku vstopnice toliko minut pred končnim pretekom."
-
-#. Used in combination: 'Warn x minutes before expiry'
-#: ../src/krb5-auth-dialog.ui.h:34
-msgid "minutes before ticket expiry"
-msgstr "Opozorilo pred potekom v minutah"
-
-#: ../src/ka-kerberos.c:177
-msgid "unknown error"
-msgstr "neznana napaka"
-
-#: ../src/ka-kerberos.c:317
+#: src/resources/ui/ka-main-window.ui:56
 msgid "Your ticket cache is currently empty"
 msgstr "Vaš predpomnilnik vozovnic je trenutno prazen"
 
-#: ../src/ka-kerberos.c:348
-msgid "Expired"
-msgstr "Pretečeno"
+#: src/resources/ui/ka-main-window.ui:67 src/ka-applet.c:641
+msgid "Get Ticket"
+msgstr "Dobi vstopnico"
 
-#: ../src/ka-pwdialog.c:230
+#: src/resources/ui/ka-preferences.ui:14
+msgid "_Kerberos"
+msgstr "_Kerberos"
+
+#: src/resources/ui/ka-preferences.ui:19
+msgid "Kerberos User"
+msgstr "Uporabnik Kerberos"
+
+#: src/resources/ui/ka-preferences.ui:25
+msgid ""
+"The name of your Kerberos account. Leave blank to use your current username."
+msgstr ""
+"Ime vašega računa Kerberos. Pustite prazno za uporabo vašega trenutnega "
+"uporabniškega imena."
+
+#: src/resources/ui/ka-preferences.ui:35
+msgid "Kerberos Ticket Options"
+msgstr "Možnosti vstopnice Kerberos"
+
+#: src/resources/ui/ka-preferences.ui:36
+msgid "Requested Kerberos tickets should be:"
+msgstr "Zahtevane vstopnice Kerberos bi morale biti:"
+
+#: src/resources/ui/ka-preferences.ui:39
+msgid "forwardable"
+msgstr "prenosljiva"
+
+#: src/resources/ui/ka-preferences.ui:42
+msgid "If checked, request forwardable tickets"
+msgstr "Izbrana možnost določi zahtevo za uporabo prenosljivih vstopnic"
+
+#: src/resources/ui/ka-preferences.ui:50
+msgid "renewable"
+msgstr "obnovljiva"
+
+#: src/resources/ui/ka-preferences.ui:53
+msgid "If checked, request renewable tickets"
+msgstr "Izbrana možnost določi zahtevo za uporabo obnovljivih vstopnic"
+
+#: src/resources/ui/ka-preferences.ui:61
+msgid "proxiable"
+msgstr "posredovana"
+
+#: src/resources/ui/ka-preferences.ui:64
+msgid "If checked, request proxiable tickets"
+msgstr "Izbrana možnost omogoči zahtevo za posredovalno vstopnico"
+
+#: src/resources/ui/ka-preferences.ui:76
+msgid "_PKINIT"
+msgstr "_PKINIT"
+
+#: src/resources/ui/ka-preferences.ui:81
+msgid "Userid"
+msgstr "Uporabniški id"
+
+#: src/resources/ui/ka-preferences.ui:82
+msgid "Principal certificate and private key"
+msgstr "Glavno potrdilo in zasebni ključ"
+
+#: src/resources/ui/ka-preferences.ui:85
+msgid "Use Smartcard"
+msgstr "Uporabi SmartCard"
+
+#: src/resources/ui/ka-preferences.ui:88
+msgid "If checked, use a security token (Smartcard) to authenticate."
+msgstr ""
+"Izbrana možnost omogoči zahtevo za uporabo Varnostne SmartCard za overjanje"
+
+#: src/resources/ui/ka-preferences.ui:96
+#, fuzzy
+#| msgid "Certificate and private key used for authentication"
+msgid "Certificate and private key file"
+msgstr "Potrdilo in osebni ključ uporabljena za overitev"
+
+#: src/resources/ui/ka-preferences.ui:119
+msgid "X509 trust anchors"
+msgstr "X509 zaupna sidra"
+
+#: src/resources/ui/ka-preferences.ui:122
+msgid "KDC trust anchor"
+msgstr "Sidro zaupanja KDC"
+
+#: src/resources/ui/ka-preferences.ui:126
+msgid "Certificate used to verify digital signatures."
+msgstr "Potrdilo, ki se uporablja za potrjevanje digitalnih podpisov."
+
+#: src/resources/ui/ka-preferences.ui:147
+msgid "_Notifications"
+msgstr ":Obvestila"
+
+#: src/resources/ui/ka-preferences.ui:152
+msgid "Notifications"
+msgstr "Obvestila"
+
+#: src/resources/ui/ka-preferences.ui:155
+msgid "Warn before ticket expiry"
+msgstr "Opozori pred potekom vstopnice"
+
+#: src/resources/ui/ka-preferences.ui:160
+msgid ""
+"Send notification about ticket expiry that many minutes before it finally "
+"expires"
+msgstr ""
+"Pošiljanje obvestila o preteku vstopnice toliko minut pred končnim pretekom."
+
+#: src/resources/ui/ka-pwdialog.ui:5 src/ka-applet-priv.h:19
+#: src/org.gnome.KrbAuthDialog.desktop.in:3
+msgid "Kerberos Authentication"
+msgstr "Overitev Kerberos"
+
+#: src/resources/ui/ka-pwdialog.ui:12 src/ka-preferences.c:325
+msgid "_Cancel"
+msgstr "Pre_kliči"
+
+#: src/resources/ui/ka-pwdialog.ui:18
+msgid "_Renew Ticket"
+msgstr "_Obnovi vstopnico"
+
+#. Translators: files from dummy-strings.c are *all* possible errors
+#. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
+#. doubt skip src/dummy-strings.h as the strings from other files
+#. are the ones the user will see in any case.
+#: src/dummy-strings.c:9
+msgid "No error"
+msgstr "Brez napak"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NONE
+#: src/dummy-strings.c:10
+msgid "Client's entry in database has expired"
+msgstr "Vnos odjemalca v podatkovni zbirki je potekel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
+#: src/dummy-strings.c:11
+msgid "Server's entry in database has expired"
+msgstr "Vnos strežnika v podatkovni zbirki je potekel"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
+#: src/dummy-strings.c:12
+msgid "Requested protocol version not supported"
+msgstr "Zahtevana različica protokola ni podprta"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
+#: src/dummy-strings.c:13
+msgid "Client's key is encrypted in an old master key"
+msgstr "Ključ odjemalca je šifriran v starem glavnem ključu"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
+#: src/dummy-strings.c:14
+msgid "Server's key is encrypted in an old master key"
+msgstr "Ključ strežnika je šifriran v starem glavnem ključu"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
+#: src/dummy-strings.c:15
+msgid "Client not found in Kerberos database"
+msgstr "Odjemalca ni mogoče najti v podatkovni zbirki Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
+#: src/dummy-strings.c:16
+msgid "Server not found in Kerberos database"
+msgstr "Strežnika ni mogoče najti v podatkovni zbirki Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
+#: src/dummy-strings.c:17
+msgid "Principal has multiple entries in Kerberos database"
+msgstr "Ravnatelj ima več vnosov v podatkovni zbirki Kerberos"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
+#: src/dummy-strings.c:18
+msgid "Client or server has a null key"
+msgstr "Odjemalec ali strežnik ima nični ključ"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
+#: src/dummy-strings.c:19
+msgid "Ticket is ineligible for postdating"
+msgstr "Vstopnica ni upravičena za datumsko pretečenost"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
+#: src/dummy-strings.c:20
+msgid "Requested effective lifetime is negative or too short"
+msgstr "Zahtevana življenjska doba je negativna ali pa prekratka"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
+#: src/dummy-strings.c:21
+msgid "KDC policy rejects request"
+msgstr "Pravila KDC niso skladna z zahtevo"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
+#: src/dummy-strings.c:22
+msgid "KDC can't fulfill requested option"
+msgstr "KDC ne more izpolniti zahtevane možnosti"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
+#: src/dummy-strings.c:23
+msgid "KDC has no support for encryption type"
+msgstr "KDC nima podpore za vrsto šifriranja"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
+#: src/dummy-strings.c:24
+msgid "KDC has no support for checksum type"
+msgstr "KDC nima podpore za vrsto nadzorne vsote"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
+#: src/dummy-strings.c:25
+msgid "KDC has no support for padata type"
+msgstr "KDC nima podpore za vrsto padata"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
+#: src/dummy-strings.c:26
+msgid "KDC has no support for transited type"
+msgstr "KDC nima podpore za prehodno vrsto"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
+#: src/dummy-strings.c:27
+msgid "Client's credentials have been revoked"
+msgstr "Poverilnice odjemalca so bile preklicane"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
+#: src/dummy-strings.c:28
+msgid "Credentials for server have been revoked"
+msgstr "Poverila za strežnik so bila preklicana"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
+#: src/dummy-strings.c:29
+msgid "TGT has been revoked"
+msgstr "TGT je bil preklican"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
+#: src/dummy-strings.c:30
+msgid "Client not yet valid - try again later"
+msgstr "Odjemalec še ni veljaven - poskusite ponovno kasneje"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
+#: src/dummy-strings.c:31
+msgid "Server not yet valid - try again later"
+msgstr "Strežnik še ni veljaven - poskusite ponovno kasneje"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
+#: src/dummy-strings.c:32
+msgid "Password has expired"
+msgstr "Geslo je poteklo"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
+#: src/dummy-strings.c:33
+msgid "Preauthentication failed"
+msgstr "Predhodna overitev je spodletela"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
+#: src/dummy-strings.c:34
+msgid "Additional pre-authentication required"
+msgstr "Zahtevana je predhodna overitev"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
+#: src/dummy-strings.c:35
+msgid "Requested server and ticket don't match"
+msgstr "Zahtevani strežnik in vstopnica se ne skladata"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
+#: src/dummy-strings.c:36
+msgid "Server principal valid for user2user only"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_MUST_USE_USER2USER
+#: src/dummy-strings.c:37
+msgid "KDC policy rejects transited path"
+msgstr "Pravila KDC onemogočajo prehodno pot"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PATH_NOT_ACCEPTED
+#: src/dummy-strings.c:38
+msgid "A service is not available that is required to process the request"
+msgstr "Storitev zahtevana za obdelavo zahteve ni na voljo"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
+#: src/dummy-strings.c:39
+msgid "Decrypt integrity check failed"
+msgstr "Preverjanje celovitosti dešifriranja je spodletelo"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
+#: src/dummy-strings.c:40
+msgid "Ticket expired"
+msgstr "Vstopnica je potekla"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
+#: src/dummy-strings.c:41
+msgid "Ticket not yet valid"
+msgstr "Vstopnica še ni veljavna"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
+#: src/dummy-strings.c:42
+msgid "Request is a replay"
+msgstr "Zahteva je odgovor"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
+#: src/dummy-strings.c:43
+msgid "The ticket isn't for us"
+msgstr "Vstopnica ni za nas"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
+#: src/dummy-strings.c:44
+msgid "Ticket/authenticator don't match"
+msgstr "Vstopnica in pooblastitelj overitve se ne skladata"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
+#: src/dummy-strings.c:45
+msgid "Clock skew too great"
+msgstr "Časovni zamik sistemske ure je prevelik"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
+#: src/dummy-strings.c:46
+msgid "Incorrect net address"
+msgstr "Nepravilen spletni naslov"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
+#: src/dummy-strings.c:47
+msgid "Protocol version mismatch"
+msgstr "Neskladje različice protokola"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
+#: src/dummy-strings.c:48
+msgid "Invalid message type"
+msgstr "Neveljavna vrsta sporočila"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
+#: src/dummy-strings.c:49
+msgid "Message stream modified"
+msgstr "Tok sporočila je spremenjen"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
+#: src/dummy-strings.c:50
+msgid "Message out of order"
+msgstr "Sporočilo ni urejeno"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
+#: src/dummy-strings.c:51
+msgid "Illegal cross-realm ticket"
+msgstr "Neveljavna izmenska vstopnica"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
+#: src/dummy-strings.c:52
+msgid "Key version is not available"
+msgstr "Različica ključa ni na voljo"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
+#: src/dummy-strings.c:53
+msgid "Service key not available"
+msgstr "Ključ storitve ni na voljo"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
+#. krb5_err.et:krb5:KRB5_NO_LOCALNAME
+#: src/dummy-strings.c:54 src/dummy-strings.c:119
+msgid "Mutual authentication failed"
+msgstr "Ročna overitev je spodletela"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
+#: src/dummy-strings.c:55
+msgid "Incorrect message direction"
+msgstr "Nepravilna smer sporočila"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
+#: src/dummy-strings.c:56
+msgid "Alternative authentication method required"
+msgstr "Zahtevan je dodaten način overitve"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
+#: src/dummy-strings.c:57
+msgid "Incorrect sequence number in message"
+msgstr "Napačno število zaporedja v sporočilu"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
+#: src/dummy-strings.c:58
+msgid "Inappropriate type of checksum in message"
+msgstr "Neprimerna vrsta nadzorne vsote v sporočilu"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
+#: src/dummy-strings.c:59
+msgid "Policy rejects transited path"
+msgstr "Pravila onemogočajo prehodno pot"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
+#: src/dummy-strings.c:60
+msgid "Response too big for UDP, retry with TCP"
+msgstr "Odziv je prevelik za UDP, ponoven poskus s TCP"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
+#: src/dummy-strings.c:61
+msgid "Generic error (see e-text)"
+msgstr "Splošna napaka (oglejte is e-besedilo)"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
+#: src/dummy-strings.c:62
+msgid "Field is too long for this implementation"
+msgstr "Polje je predolgo za to izvedbo"
+
+#. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
+#: src/dummy-strings.c:63
+msgid "Client not trusted"
+msgstr "Odjemalec ni zaupljiv"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
+#: src/dummy-strings.c:64
+msgid "KDC not trusted"
+msgstr "KDC ni zaupljiv"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
+#: src/dummy-strings.c:65
+msgid "Invalid signature"
+msgstr "Neveljaven podpis"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
+#: src/dummy-strings.c:66
+msgid "Key parameters not accepted"
+msgstr "Parametri ključa niso sprejeti"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
+#: src/dummy-strings.c:67
+msgid "Certificate mismatch"
+msgstr "Neskladnost potrdila"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
+#: src/dummy-strings.c:68
+#, fuzzy
+#| msgid "Configuration tickets"
+msgid "No ticket granting ticket"
+msgstr "Nastavitvene vstopnice"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NO_TGT
+#: src/dummy-strings.c:69
+msgid "Realm not local to KDC"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_WRONG_REALM
+#: src/dummy-strings.c:70
+msgid "User to user required"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_USER_TO_USER_REQUIRED
+#: src/dummy-strings.c:71
+msgid "Can't verify certificate"
+msgstr "Potrdila ni mogoče preveriti"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
+#: src/dummy-strings.c:72
+msgid "Invalid certificate"
+msgstr "Neveljavno potrdilo"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
+#: src/dummy-strings.c:73
+msgid "Revoked certificate"
+msgstr "Preklicano potrdilo"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
+#: src/dummy-strings.c:74
+msgid "Revocation status unknown"
+msgstr "Stanje preklica ni znano"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
+#: src/dummy-strings.c:75
+msgid "Revocation status unavailable"
+msgstr "Stanje preklica ni na voljo"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
+#: src/dummy-strings.c:76
+msgid "Client name mismatch"
+msgstr "Neskladje imena odjemalca"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
+#: src/dummy-strings.c:77
+msgid "KDC name mismatch"
+msgstr "Neskladje imena KDC"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
+#: src/dummy-strings.c:78
+msgid "Inconsistent key purpose"
+msgstr "Neenoten namen ključa"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
+#: src/dummy-strings.c:79
+msgid "Digest in certificate not accepted"
+msgstr "Povzetek v potrdilu ni sprejet"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
+#: src/dummy-strings.c:80
+msgid "Checksum must be included"
+msgstr "Nadzorna vsota mora biti vključena"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
+#: src/dummy-strings.c:81
+msgid "Digest in signed-data not accepted"
+msgstr "Predelava podpisanih podatkov ni sprejemljiva"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
+#: src/dummy-strings.c:82
+msgid "Public key encryption not supported"
+msgstr "Šifriranje javnega ključa ni podprto"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
+#: src/dummy-strings.c:83
+msgid "The IAKERB proxy could not find a KDC"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NOT_FOUND
+#: src/dummy-strings.c:84
+msgid "The KDC did not respond to the IAKERB proxy"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NO_RESPONSE
+#: src/dummy-strings.c:85
+msgid "Preauthentication expired"
+msgstr "Predhodna overitev je spodletela"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_EXPIRED
+#: src/dummy-strings.c:86
+msgid "More preauthentication data is required"
+msgstr "Potrebnih je več podatkov za predhodno preverjanje pristnosti"
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_MORE_PREAUTH_DATA_REQUIRED
+#: src/dummy-strings.c:87
+msgid "An unsupported critical FAST option was requested"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_UNKNOWN_CRITICAL_FAST_OPTION
+#: src/dummy-strings.c:88
+msgid "No acceptable KDF offered"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5KDC_ERR_NO_ACCEPTABLE_KDF
+#: src/dummy-strings.c:89
+msgid "$Id$"
+msgstr "$Id$"
+
+#. krb5_err.et:krb5:KRB5_ERR_RCSID
+#: src/dummy-strings.c:90
+msgid "Invalid flag for file lock mode"
+msgstr "Neveljavna zastava za način zaklepa datoteke"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
+#: src/dummy-strings.c:91
+msgid "Cannot read password"
+msgstr "Gesla ni mogoče prebrati"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
+#: src/dummy-strings.c:92
+msgid "Password mismatch"
+msgstr "Neskladnost gesla"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
+#: src/dummy-strings.c:93
+msgid "Password read interrupted"
+msgstr "Branje gesla je bilo prekinjeno"
+
+#. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
+#: src/dummy-strings.c:94
+msgid "Illegal character in component name"
+msgstr "Neveljaven znak v imenu komponente"
+
+#. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
+#: src/dummy-strings.c:95
+msgid "Malformed representation of principal"
+msgstr "Slabo oblikovani podatki ravnatelja"
+
+#. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
+#: src/dummy-strings.c:96
+msgid "Can't open/find Kerberos configuration file"
+msgstr "Ni mogoče odpreti/najti nastavitvene datoteke Kerberos"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
+#: src/dummy-strings.c:97
+msgid "Improper format of Kerberos configuration file"
+msgstr "Nepravilna oblika nastavitvene datoteke Kerberos"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
+#: src/dummy-strings.c:98
+msgid "Insufficient space to return complete information"
+msgstr "Ni dovolj prostora za vračanje celotnih podatkov"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
+#: src/dummy-strings.c:99
+msgid "Invalid message type specified for encoding"
+msgstr "Za kodiranje je določena napačna vrsta sporočila"
+
+#. krb5_err.et:krb5:KRB5_BADMSGTYPE
+#: src/dummy-strings.c:100
+msgid "Credential cache name malformed"
+msgstr "Slabo oblikovano ime predpomnilnika poveril"
+
+#. krb5_err.et:krb5:KRB5_CC_BADNAME
+#: src/dummy-strings.c:101
+msgid "Unknown credential cache type"
+msgstr "Neznana vrsta predpomnilnika poveril"
+
+#. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
+#: src/dummy-strings.c:102
+msgid "Matching credential not found"
+msgstr "Skladnega poverila ni mogoče najti"
+
+#. krb5_err.et:krb5:KRB5_CC_NOTFOUND
+#: src/dummy-strings.c:103
+msgid "End of credential cache reached"
+msgstr "Dosežen konec predpomnilnika overil"
+
+#. krb5_err.et:krb5:KRB5_CC_END
+#: src/dummy-strings.c:104
+msgid "Request did not supply a ticket"
+msgstr "Zahteva ni vsebovala vstopnice"
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
+#: src/dummy-strings.c:105
+msgid "Wrong principal in request"
+msgstr "Napačen ravnatelj v zahtevi"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
+#: src/dummy-strings.c:106
+msgid "Ticket has invalid flag set"
+msgstr "Vstopnica ima nastavljeno neveljavno zastavico"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
+#: src/dummy-strings.c:107
+msgid "Requested principal and ticket don't match"
+msgstr "Zahtevani ravnatelj in vstopnica nista skladna"
+
+#. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
+#: src/dummy-strings.c:108
+msgid "KDC reply did not match expectations"
+msgstr "Odgovor KDC se ne sklada s pričakovanji"
+
+#. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
+#: src/dummy-strings.c:109
+msgid "Clock skew too great in KDC reply"
+msgstr "Časovni zamik sistemske ure je v odgovoru KDC prevelik"
+
+#. krb5_err.et:krb5:KRB5_KDCREP_SKEW
+#: src/dummy-strings.c:110
+msgid "Client/server realm mismatch in initial ticket request"
+msgstr "Neskladje področja odjemalca/strežnika v začetni zahtevi vstopnice"
+
+#. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
+#: src/dummy-strings.c:111
+msgid "Program lacks support for encryption type"
+msgstr "Programu manjka podpora za vrsto šifriranja"
+
+#. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
+#: src/dummy-strings.c:112
+msgid "Program lacks support for key type"
+msgstr "Programu manjka podpora za vrsto ključa"
+
+#. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
+#: src/dummy-strings.c:113
+msgid "Requested encryption type not used in message"
+msgstr "Zahtevana vrsta šifriranja ni uporabljena v sporočilu"
+
+#. krb5_err.et:krb5:KRB5_WRONG_ETYPE
+#: src/dummy-strings.c:114
+msgid "Program lacks support for checksum type"
+msgstr "Programu manjka podpora za vrsto nadzorne vsote"
+
+#. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
+#: src/dummy-strings.c:115
+msgid "Cannot find KDC for requested realm"
+msgstr "Ni mogoče najti KDC za zahtevano področje"
+
+#. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
+#: src/dummy-strings.c:116
+msgid "Kerberos service unknown"
+msgstr "Neznana storitev Kerberos"
+
+#. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
+#: src/dummy-strings.c:117
+msgid "Cannot contact any KDC for requested realm"
+msgstr "Ni mogoče vzpostaviti stika s KDC za zahtevano področje"
+
+#. krb5_err.et:krb5:KRB5_KDC_UNREACH
+#: src/dummy-strings.c:118
+msgid "No local name found for principal name"
+msgstr "Ni krajevnega imena za ravnatelja"
+
+#. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
+#: src/dummy-strings.c:120
+msgid "Replay cache type is already registered"
+msgstr "Vrsta predpomnilnika odgovora je že vpisana"
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
+#: src/dummy-strings.c:121
+msgid "No more memory to allocate (in replay cache code)"
+msgstr "Ni pomnilnika za dodelitev (v kodi odgovora predpomnilnika)"
+
+#. krb5_err.et:krb5:KRB5_RC_MALLOC
+#: src/dummy-strings.c:122
+msgid "Replay cache type is unknown"
+msgstr "Vrsta predpomnilnika odgovora ni znana"
+
+#. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
+#: src/dummy-strings.c:123
+msgid "Generic unknown RC error"
+msgstr "Splošna neznana napaka RC"
+
+#. krb5_err.et:krb5:KRB5_RC_UNKNOWN
+#: src/dummy-strings.c:124
+msgid "Message is a replay"
+msgstr "Sporočilo je odgovor"
+
+#. krb5_err.et:krb5:KRB5_RC_REPLAY
+#: src/dummy-strings.c:125
+#, fuzzy
+msgid "Replay cache I/O operation failed"
+msgstr "V/I dejanje predpomnilnika ponovnega predvajanja je spodletelo"
+
+#. krb5_err.et:krb5:KRB5_RC_IO
+#: src/dummy-strings.c:126
+msgid "Replay cache type does not support non-volatile storage"
+msgstr "Vrsta predpomnilnika odgovora ne podpira nespremenljivega shranjevanja"
+
+#. krb5_err.et:krb5:KRB5_RC_NOIO
+#: src/dummy-strings.c:127
+msgid "Replay cache name parse/format error"
+msgstr "Napaka razčlenjevanja/oblike predpomnilnika odgovora"
+
+#. krb5_err.et:krb5:KRB5_RC_PARSE
+#: src/dummy-strings.c:128
+msgid "End-of-file on replay cache I/O"
+msgstr "Konec življenjske dobe predpomnilnika odgovora V/I"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_EOF
+#: src/dummy-strings.c:129
+msgid "No more memory to allocate (in replay cache I/O code)"
+msgstr "Ni več pomnilnika za dodelitev (v predpomnilniku odgovora V/I kode)"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
+#: src/dummy-strings.c:130
+msgid "Permission denied in replay cache code"
+msgstr "Ni dovoljenja v odgovoru kode predpomnilnika"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_PERM
+#: src/dummy-strings.c:131
+msgid "I/O error in replay cache i/o code"
+msgstr "Napaka V/I v predpomnilniku odgovora V/I kode "
+
+#. krb5_err.et:krb5:KRB5_RC_IO_IO
+#: src/dummy-strings.c:132
+msgid "Generic unknown RC/IO error"
+msgstr "Splošna neznana naprava RC/VI"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
+#: src/dummy-strings.c:133
+msgid "Insufficient system space to store replay information"
+msgstr "Ni dovolj sistemskega prostora za shranitev podrobnosti odgovora"
+
+#. krb5_err.et:krb5:KRB5_RC_IO_SPACE
+#: src/dummy-strings.c:134
+msgid "Can't open/find realm translation file"
+msgstr "Ni mogoče odpreti/najti datoteke prevajanja področja "
+
+#. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
+#: src/dummy-strings.c:135
+msgid "Improper format of realm translation file"
+msgstr "Napačna oblika datoteke prevajanja področja"
+
+#. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
+#: src/dummy-strings.c:136
+msgid "Can't open/find lname translation database"
+msgstr "Ni mogoče odpreti/najti lname podatokvne zbirke prevodov"
+
+#. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
+#: src/dummy-strings.c:137
+msgid "No translation available for requested principal"
+msgstr "Za zahtevanega ravnatelja ni razpoložljivega prevoda"
+
+#. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
+#: src/dummy-strings.c:138
+msgid "Improper format of translation database entry"
+msgstr "Napačna oblika vnosa podatkovne zbirke prevodov"
+
+#. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
+#: src/dummy-strings.c:139
+msgid "Cryptosystem internal error"
+msgstr "Notranja napaka šifrirnega sistema"
+
+#. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
+#: src/dummy-strings.c:140
+msgid "Key table name malformed"
+msgstr "Ime razpredelnice ključa je slabo oblikovano"
+
+#. krb5_err.et:krb5:KRB5_KT_BADNAME
+#: src/dummy-strings.c:141
+msgid "Unknown Key table type"
+msgstr "Neznana vrsta razpredelnice ključa"
+
+#. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
+#: src/dummy-strings.c:142
+msgid "Key table entry not found"
+msgstr "Vnosa razpredelnice ključa ni mogoče najti"
+
+#. krb5_err.et:krb5:KRB5_KT_NOTFOUND
+#: src/dummy-strings.c:143
+msgid "End of key table reached"
+msgstr "Dosežen konec razpredelnice ključev"
+
+#. krb5_err.et:krb5:KRB5_KT_END
+#: src/dummy-strings.c:144
+msgid "Cannot write to specified key table"
+msgstr "Ni mogoče pisati v določeno tabelo ključev"
+
+#. krb5_err.et:krb5:KRB5_KT_NOWRITE
+#: src/dummy-strings.c:145
+msgid "Error writing to key table"
+msgstr "Napaka med zapisovanjem v razpredelnico ključa"
+
+#. krb5_err.et:krb5:KRB5_KT_IOERR
+#: src/dummy-strings.c:146
+msgid "Cannot find ticket for requested realm"
+msgstr "Ni mogoče najti vstopnice za zahtevano področje"
+
+#. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
+#: src/dummy-strings.c:147
+msgid "DES key has bad parity"
+msgstr "Ključ DES ima slabo pariteto"
+
+#. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
+#: src/dummy-strings.c:148
+msgid "DES key is a weak key"
+msgstr "Ključ DES je šibek ključ"
+
+#. krb5_err.et:krb5:KRB5DES_WEAK_KEY
+#: src/dummy-strings.c:149
+msgid "Bad encryption type"
+msgstr "Slaba vrsta šifriranja"
+
+#. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
+#: src/dummy-strings.c:150
+msgid "Key size is incompatible with encryption type"
+msgstr "Velikost ključa je nezdružljiva z vrsto šifriranja"
+
+#. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
+#: src/dummy-strings.c:151
+msgid "Message size is incompatible with encryption type"
+msgstr "Velikost sporočila je nezdružljiva z vrsto šifriranja"
+
+#. krb5_err.et:krb5:KRB5_BAD_MSIZE
+#: src/dummy-strings.c:152
+msgid "Credentials cache type is already registered."
+msgstr "Vrsta predpomnilnika poveril je že vpisana."
+
+#. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
+#: src/dummy-strings.c:153
+msgid "Key table type is already registered."
+msgstr "Vrsta razpredelnice ključev je že vpisana."
+
+#. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
+#: src/dummy-strings.c:154
+msgid "Credentials cache I/O operation failed"
+msgstr "V/I dejanje predpomnilnika poveril je spodletelo"
+
+#. krb5_err.et:krb5:KRB5_CC_IO
+#: src/dummy-strings.c:155
+msgid "Credentials cache permissions incorrect"
+msgstr "Dovoljenja predpomnilnika poveril so napačna"
+
+#. krb5_err.et:krb5:KRB5_FCC_PERM
+#: src/dummy-strings.c:156
+msgid "No credentials cache found"
+msgstr "Predpomnilnika poveril ni mogoče najti"
+
+#. krb5_err.et:krb5:KRB5_FCC_NOFILE
+#: src/dummy-strings.c:157
+msgid "Internal credentials cache error"
+msgstr "Notranja napaka predpomnilnika poveril"
+
+#. krb5_err.et:krb5:KRB5_FCC_INTERNAL
+#: src/dummy-strings.c:158
+msgid "Error writing to credentials cache"
+msgstr "Napaka med zapisovanjem v predpomnilnik poveril"
+
+#. krb5_err.et:krb5:KRB5_CC_WRITE
+#: src/dummy-strings.c:159
+msgid "No more memory to allocate (in credentials cache code)"
+msgstr "Ni več pomnilnika za dodeljevanje (v kodi predpomnilnika overil)"
+
+#. krb5_err.et:krb5:KRB5_CC_NOMEM
+#: src/dummy-strings.c:160
+msgid "Bad format in credentials cache"
+msgstr "Slaba oblika v predpomnilniku poveril"
+
+#. krb5_err.et:krb5:KRB5_CC_FORMAT
+#: src/dummy-strings.c:161
+msgid "No credentials found with supported encryption types"
+msgstr "Poveril s podprtimi vrstami šifriranja ni mogoče najti"
+
+#. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
+#: src/dummy-strings.c:162
+msgid "Invalid KDC option combination (library internal error)"
+msgstr "Neveljavna kombinacija možnosti KDC (notranja napaka knjižnice)"
+
+#. krb5_err.et:krb5:KRB5_INVALID_FLAGS
+#: src/dummy-strings.c:163
+msgid "Request missing second ticket"
+msgstr "Zahtevana je manjkajoče druga vstopnica"
+
+#. krb5_err.et:krb5:KRB5_NO_2ND_TKT
+#: src/dummy-strings.c:164
+msgid "No credentials supplied to library routine"
+msgstr "Poverila niso bila zagotovljena rutini knjižnice"
+
+#. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
+#: src/dummy-strings.c:165
+msgid "Bad sendauth version was sent"
+msgstr "Poslana je bila slaba različica sendauth"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
+#: src/dummy-strings.c:166
+msgid "Bad application version was sent (via sendauth)"
+msgstr "Poslana je slaba različica programa (preko sendauth)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
+#: src/dummy-strings.c:167
+msgid "Bad response (during sendauth exchange)"
+msgstr "Slab odgovor (med sendauth izmenjavo)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
+#: src/dummy-strings.c:168
+msgid "Server rejected authentication (during sendauth exchange)"
+msgstr "Strežnik zavrača overitev (med sendaut izmenjavo)"
+
+#. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
+#: src/dummy-strings.c:169
+msgid "Unsupported preauthentication type"
+msgstr "Nepodprta vrsta predhodne overitve"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
+#: src/dummy-strings.c:170
+msgid "Required preauthentication key not supplied"
+msgstr "Zahtevana predhodna overitev ni pridobljena"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
+#: src/dummy-strings.c:171
+msgid "Generic preauthentication failure"
+msgstr "Splošna napaka predhodne overitve"
+
+#. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
+#: src/dummy-strings.c:172
+msgid "Unsupported replay cache format version number"
+msgstr "Nepodprta oblika različice predpomnilniškega odgovora"
+
+#. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
+#: src/dummy-strings.c:173
+msgid "Unsupported credentials cache format version number"
+msgstr "Nepodprta številka različice oblike predpomnilnika poveril"
+
+#. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
+#: src/dummy-strings.c:174
+msgid "Unsupported key table format version number"
+msgstr "Nepodprta številka različice oblike razpredelnice ključev"
+
+#. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
+#: src/dummy-strings.c:175
+msgid "Program lacks support for address type"
+msgstr "Programu manjka podpora za vrsto naslova"
+
+#. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
+#: src/dummy-strings.c:176
+msgid "Message replay detection requires rcache parameter"
+msgstr "Zaznavanje sporočila odgovora zahteva parameter rcache"
+
+#. krb5_err.et:krb5:KRB5_RC_REQUIRED
+#: src/dummy-strings.c:177
+msgid "Hostname cannot be canonicalized"
+msgstr "Imena gostitelja ni mogoče predpisati"
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
+#: src/dummy-strings.c:178
+msgid "Cannot determine realm for host"
+msgstr "Ni mogoče določiti področja gostitelja"
+
+#. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
+#: src/dummy-strings.c:179
+msgid "Conversion to service principal undefined for name type"
+msgstr "Pretvarjanje v ravnatelja storitve za ime vrste ni določeno"
+
+#. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
+#: src/dummy-strings.c:180
+msgid "Initial Ticket response appears to be Version 4 error"
+msgstr "Videti je, da je začetni odgovor vstopnice napaka različice 4"
+
+#. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
+#: src/dummy-strings.c:181
+msgid "Cannot resolve network address for KDC in requested realm"
+msgstr "Naslova imena omrežja ni mogoče razrešiti za KDC v zahtevanem področju"
+
+#. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
+#: src/dummy-strings.c:182
+msgid "Requesting ticket can't get forwardable tickets"
+msgstr "Zahtevana vstopnica ne more dobiti prenosljivih vstopnic"
+
+#. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
+#: src/dummy-strings.c:183
+msgid "Bad principal name while trying to forward credentials"
+msgstr "Slabo ime ravnatelja med poskusom posredovanja poveril"
+
+#. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
+#: src/dummy-strings.c:184
+msgid "Looping detected inside krb5_get_in_tkt"
+msgstr "Znotraj krb5_get_in_tkt je zaznano ponavljanje"
+
+#. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
+#: src/dummy-strings.c:185
+msgid "Configuration file does not specify default realm"
+msgstr "Nastavitvena datoteka ne določi privzetega področja"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
+#: src/dummy-strings.c:186
+msgid "Bad SAM flags in obtain_sam_padata"
+msgstr "Slabe zastavice SAM v obtain_sam_padata"
+
+#. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
+#: src/dummy-strings.c:187
+msgid "Invalid encryption type in SAM challenge"
+msgstr "Neveljavna vrsta šifriranje v izzivu SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
+#: src/dummy-strings.c:188
+msgid "Missing checksum in SAM challenge"
+msgstr "Manjkajoča nadzorna vsota v izzivu SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
+#: src/dummy-strings.c:189
+msgid "Bad checksum in SAM challenge"
+msgstr "Slaba nadzorna vsota v izzivu SAM"
+
+#. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
+#: src/dummy-strings.c:190
+msgid "Keytab name too long"
+msgstr "Predolgo ime zavihka ključa"
+
+#. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
+#: src/dummy-strings.c:191
+msgid "Key version number for principal in key table is incorrect"
+msgstr "Številka različice ključa za ravnatelja je nepravilna"
+
+#. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
+#: src/dummy-strings.c:192
+msgid "This application has expired"
+msgstr "Ta program je potekel"
+
+#. krb5_err.et:krb5:KRB5_APPL_EXPIRED
+#: src/dummy-strings.c:193
+msgid "This Krb5 library has expired"
+msgstr "Ta knjižnica Krb5 je potekla"
+
+#. krb5_err.et:krb5:KRB5_LIB_EXPIRED
+#: src/dummy-strings.c:194
+msgid "New password cannot be zero length"
+msgstr "Dolžina novega gesla ne more biti nič"
+
+#. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
+#: src/dummy-strings.c:195
+msgid "Password change failed"
+msgstr "Zamenjava gesla je spodletela"
+
+#. krb5_err.et:krb5:KRB5_CHPW_FAIL
+#: src/dummy-strings.c:196
+msgid "Bad format in keytab"
+msgstr "Slaba oblika v zavihku ključev"
+
+#. krb5_err.et:krb5:KRB5_KT_FORMAT
+#: src/dummy-strings.c:197
+msgid "Encryption type not permitted"
+msgstr "Vrsta šifriranja ni dovoljena"
+
+#. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
+#: src/dummy-strings.c:198
+msgid "No supported encryption types (config file error?)"
+msgstr "Ni podprtih vrst šifriranje (napaka nastavitvene datoteke?)"
+
+#. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
+#: src/dummy-strings.c:199
+msgid "Program called an obsolete, deleted function"
+msgstr "Program je klical zastarelo, izbrisano funkcijo"
+
+#. krb5_err.et:krb5:KRB5_OBSOLETE_FN
+#: src/dummy-strings.c:200
+msgid "unknown getaddrinfo failure"
+msgstr "neznana napaka getaddrinfo"
+
+#. krb5_err.et:krb5:KRB5_EAI_FAIL
+#: src/dummy-strings.c:201
+msgid "no data available for host/domain name"
+msgstr "podatki za ime gostitelja/domene niso na voljo"
+
+#. krb5_err.et:krb5:KRB5_EAI_NODATA
+#: src/dummy-strings.c:202
+msgid "host/domain name not found"
+msgstr "Imena gostitelja/domene ni mogoče najti"
+
+#. krb5_err.et:krb5:KRB5_EAI_NONAME
+#: src/dummy-strings.c:203
+msgid "service name unknown"
+msgstr "neznano ime storitve"
+
+#. krb5_err.et:krb5:KRB5_EAI_SERVICE
+#: src/dummy-strings.c:204
+msgid "Cannot determine realm for numeric host address"
+msgstr "Ni mogoče določiti področja za številčni naslov gostitelja"
+
+#. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
+#: src/dummy-strings.c:205
+msgid "Invalid key generation parameters from KDC"
+msgstr "Neveljavni parametri ustvarjanja ključa od KDC"
+
+#. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
+#: src/dummy-strings.c:206
+msgid "service not available"
+msgstr "storitev ni na voljo"
+
+#. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
+#: src/dummy-strings.c:207
+msgid "Ccache function not supported: read-only ccache type"
+msgstr "Zmožnost Ccahe ni podprta: vrsta ccache le za branje"
+
+#. krb5_err.et:krb5:KRB5_CC_READONLY
+#: src/dummy-strings.c:208
+msgid "Ccache function not supported: not implemented"
+msgstr "Zmožnost predpomnilnika ni podprta"
+
+#. krb5_err.et:krb5:KRB5_CC_NOSUPP
+#: src/dummy-strings.c:209
+msgid "Invalid format of Kerberos lifetime or clock skew string"
+msgstr ""
+"Neveljavna oblika življenjskega časa Kerberos ali pa niza zamika sistemske "
+"ure"
+
+#. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
+#: src/dummy-strings.c:210
+msgid "Supplied data not handled by this plugin"
+msgstr "Vstavek ne upravlja z danimi podatki"
+
+#. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
+#: src/dummy-strings.c:211
+msgid "Plugin does not support the operation"
+msgstr "Vstavek ne podpira opravila"
+
+#. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
+#: src/dummy-strings.c:212
+msgid "Invalid UTF-8 string"
+msgstr "neveljaven niz UTF-8"
+
+#. krb5_err.et:krb5:KRB5_ERR_INVALID_UTF8
+#: src/dummy-strings.c:213
+#, fuzzy
+#| msgid "Required preauthentication key not supplied"
+msgid "FAST protected pre-authentication required but not supported by KDC"
+msgstr "Zahtevana predhodna overitev ni pridobljena"
+
+#. krb5_err.et:krb5:KRB5_ERR_FAST_REQUIRED
+#: src/dummy-strings.c:214
+msgid "Auth context must contain local address"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_LOCAL_ADDR_REQUIRED
+#: src/dummy-strings.c:215
+msgid "Auth context must contain remote address"
+msgstr ""
+
+#. krb5_err.et:krb5:KRB5_REMOTE_ADDR_REQUIRED
+#: src/dummy-strings.c:216
+msgid "Tracing unsupported"
+msgstr "Sledenje ni podprto"
+
+#. krb5_err.et:krb5:KRB5_TRACE_NOSUPP
+#: src/dummy-strings.c:217
+msgid "Kerberos V5 magic number table"
+msgstr "Kerberos V5 razpredelnica čarobnih števil"
+
+#. kv5m_err.et:kv5m:KV5M_NONE
+#: src/dummy-strings.c:218
+msgid "Bad magic number for krb5_principal structure"
+msgstr "Slabo čarobno število za zgradbo krb5_principal"
+
+#. kv5m_err.et:kv5m:KV5M_PRINCIPAL
+#: src/dummy-strings.c:219
+msgid "Bad magic number for krb5_data structure"
+msgstr "Slabo čarobno število za zgradbo krb5_data"
+
+#. kv5m_err.et:kv5m:KV5M_DATA
+#: src/dummy-strings.c:220
+msgid "Bad magic number for krb5_keyblock structure"
+msgstr "Slabo čarobno število za zgradbo krb5_keyblock"
+
+#. kv5m_err.et:kv5m:KV5M_KEYBLOCK
+#: src/dummy-strings.c:221
+msgid "Bad magic number for krb5_checksum structure"
+msgstr "Slabo čarobno število za zgradbo krb5_checksum"
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM
+#: src/dummy-strings.c:222
+msgid "Bad magic number for krb5_encrypt_block structure"
+msgstr "Slabo čarobno število za zgradbo krb5_encrypt_block"
+
+#. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
+#: src/dummy-strings.c:223
+msgid "Bad magic number for krb5_enc_data structure"
+msgstr "Slabo čarobno število za zgradbo krb5_enc_data"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_DATA
+#: src/dummy-strings.c:224
+msgid "Bad magic number for krb5_cryptosystem_entry structure"
+msgstr "Slabo čarobno število za zgradbo krb5_cryptosystem_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
+#: src/dummy-strings.c:225
+msgid "Bad magic number for krb5_cs_table_entry structure"
+msgstr "Slabo čarobno število za zgradbo krb5_cs_table_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
+#: src/dummy-strings.c:226
+msgid "Bad magic number for krb5_checksum_entry structure"
+msgstr "Slabo čarobno število za zgradbo krb5_checksum_entry"
+
+#. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
+#: src/dummy-strings.c:227
+msgid "Bad magic number for krb5_authdata structure"
+msgstr "Slabo čarobno število za zgradbo krb5_authdata"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHDATA
+#: src/dummy-strings.c:228
+msgid "Bad magic number for krb5_transited structure"
+msgstr "Slabo čarobno število za zgradbo krb5_transited"
+
+#. kv5m_err.et:kv5m:KV5M_TRANSITED
+#: src/dummy-strings.c:229
+msgid "Bad magic number for krb5_enc_tkt_part structure"
+msgstr "Slabo čarobno število za zgradbo krb5_enc_tkt_part"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
+#: src/dummy-strings.c:230
+msgid "Bad magic number for krb5_ticket structure"
+msgstr "Slabo čarobno število za zgradbo krb5_ticket"
+
+#. kv5m_err.et:kv5m:KV5M_TICKET
+#: src/dummy-strings.c:231
+msgid "Bad magic number for krb5_authenticator structure"
+msgstr "Slabo čarobno število za zgradbo krb5_authenticator"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
+#: src/dummy-strings.c:232
+msgid "Bad magic number for krb5_tkt_authent structure"
+msgstr "Slabo čarobno število za zgradbo krb5_tkt_authent"
+
+#. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
+#: src/dummy-strings.c:233
+msgid "Bad magic number for krb5_creds structure"
+msgstr "Slabo čarobno število za zgradbo krb5_creds"
+
+#. kv5m_err.et:kv5m:KV5M_CREDS
+#: src/dummy-strings.c:234
+msgid "Bad magic number for krb5_last_req_entry structure"
+msgstr "Slabo čarobno število za zgradbo krb5_last_req_entry"
+
+#. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
+#: src/dummy-strings.c:235
+msgid "Bad magic number for krb5_pa_data structure"
+msgstr "Slabo čarobno število za zgradbo krb5_pa_data"
+
+#. kv5m_err.et:kv5m:KV5M_PA_DATA
+#: src/dummy-strings.c:236
+msgid "Bad magic number for krb5_kdc_req structure"
+msgstr "Slabo čarobno število za zgradbo krb5_kdc_req"
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REQ
+#: src/dummy-strings.c:237
+msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
+msgstr "Slabo čarobno število za zgradbo krb5_enc_kdc_rep_part"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
+#: src/dummy-strings.c:238
+msgid "Bad magic number for krb5_kdc_rep structure"
+msgstr "Slabo čarobno število za zgradbo krb5_kdc_rep"
+
+#. kv5m_err.et:kv5m:KV5M_KDC_REP
+#: src/dummy-strings.c:239
+msgid "Bad magic number for krb5_error structure"
+msgstr "Slabo čarobno število za zgradbo krb5_error"
+
+#. kv5m_err.et:kv5m:KV5M_ERROR
+#: src/dummy-strings.c:240
+msgid "Bad magic number for krb5_ap_req structure"
+msgstr "Slabo čarobno število za zgradbo krb5_ap_req"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REQ
+#: src/dummy-strings.c:241
+msgid "Bad magic number for krb5_ap_rep structure"
+msgstr "Slabo čarobno število za zgradbo krb5_ap_rep"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP
+#: src/dummy-strings.c:242
+msgid "Bad magic number for krb5_ap_rep_enc_part structure"
+msgstr "Slabo čarobno število za zgradbo krb5_ap_rep_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
+#: src/dummy-strings.c:243
+msgid "Bad magic number for krb5_response structure"
+msgstr "Slabo čarobno število za zgradbo krb5_response"
+
+#. kv5m_err.et:kv5m:KV5M_RESPONSE
+#: src/dummy-strings.c:244
+msgid "Bad magic number for krb5_safe structure"
+msgstr "Slabo čarobno število za zgradbo krb5_safe"
+
+#. kv5m_err.et:kv5m:KV5M_SAFE
+#: src/dummy-strings.c:245
+msgid "Bad magic number for krb5_priv structure"
+msgstr "Slabo čarobno število za zgradbo krb5_priv"
+
+#. kv5m_err.et:kv5m:KV5M_PRIV
+#: src/dummy-strings.c:246
+msgid "Bad magic number for krb5_priv_enc_part structure"
+msgstr "Slabo čarobno število za zgradbo krb5_priv_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
+#: src/dummy-strings.c:247
+msgid "Bad magic number for krb5_cred structure"
+msgstr "Slabo čarobno število za zgradbo krb5_cred"
+
+#. kv5m_err.et:kv5m:KV5M_CRED
+#: src/dummy-strings.c:248
+msgid "Bad magic number for krb5_cred_info structure"
+msgstr "Slabo čarobno število za zgradbo krb5_cred_info"
+
+#. kv5m_err.et:kv5m:KV5M_CRED_INFO
+#: src/dummy-strings.c:249
+msgid "Bad magic number for krb5_cred_enc_part structure"
+msgstr "Slabo čarobno število za zgradbo krb5_cred_enc_part"
+
+#. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
+#: src/dummy-strings.c:250
+msgid "Bad magic number for krb5_pwd_data structure"
+msgstr "Slabo čarobno število za zgradbo krb5_pwd_data"
+
+#. kv5m_err.et:kv5m:KV5M_PWD_DATA
+#: src/dummy-strings.c:251
+msgid "Bad magic number for krb5_address structure"
+msgstr "Slabo čarobno število za zgradbo krb5_address"
+
+#. kv5m_err.et:kv5m:KV5M_ADDRESS
+#: src/dummy-strings.c:252
+msgid "Bad magic number for krb5_keytab_entry structure"
+msgstr "Slabo čarobno število za zgradbo krb5_keytab_entry"
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
+#: src/dummy-strings.c:253
+msgid "Bad magic number for krb5_context structure"
+msgstr "Slabo čarobno število za zgradbo krb5_context"
+
+#. kv5m_err.et:kv5m:KV5M_CONTEXT
+#: src/dummy-strings.c:254
+msgid "Bad magic number for krb5_os_context structure"
+msgstr "Slabo čarobno število za zgradbo krb5_os_context"
+
+#. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
+#: src/dummy-strings.c:255
+msgid "Bad magic number for krb5_alt_method structure"
+msgstr "Slabo čarobno število za zgradbo krb5_alt_method"
+
+#. kv5m_err.et:kv5m:KV5M_ALT_METHOD
+#: src/dummy-strings.c:256
+msgid "Bad magic number for krb5_etype_info_entry structure"
+msgstr "Slabo čarobno število za zgradbo krb5_etype_info_entry"
+
+#. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
+#: src/dummy-strings.c:257
+msgid "Bad magic number for krb5_db_context structure"
+msgstr "Slabo čarobno število za zgradbo krb5_db_context"
+
+#. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
+#: src/dummy-strings.c:258
+msgid "Bad magic number for krb5_auth_context structure"
+msgstr "Slabo čarobno število za zgradbo krb5_auth_context"
+
+#. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
+#: src/dummy-strings.c:259
+msgid "Bad magic number for krb5_keytab structure"
+msgstr "Slabo čarobno število za krb5_keytab structure"
+
+#. kv5m_err.et:kv5m:KV5M_KEYTAB
+#: src/dummy-strings.c:260
+msgid "Bad magic number for krb5_rcache structure"
+msgstr "Slabo čarobno število za krb5_rcache structure"
+
+#. kv5m_err.et:kv5m:KV5M_RCACHE
+#: src/dummy-strings.c:261
+msgid "Bad magic number for krb5_ccache structure"
+msgstr "Slabo čarobno število za krb5_ccache structure"
+
+#. kv5m_err.et:kv5m:KV5M_CCACHE
+#: src/dummy-strings.c:262
+msgid "Bad magic number for krb5_preauth_ops"
+msgstr "Slabo čarobno število za krb5_preauth_ops"
+
+#. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
+#: src/dummy-strings.c:263
+msgid "Bad magic number for krb5_sam_challenge"
+msgstr "Slabo čarobno število za krb5_sam_challenge"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
+#: src/dummy-strings.c:264
+msgid "Bad magic number for krb5_sam_challenge_2"
+msgstr "Slabo čarobno število za krb5_sam_challenge_2"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
+#: src/dummy-strings.c:265
+msgid "Bad magic number for krb5_sam_key"
+msgstr "Slabo čarobno število za krb5_sam_key"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_KEY
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
+#: src/dummy-strings.c:266 src/dummy-strings.c:267
+msgid "Bad magic number for krb5_enc_sam_response_enc"
+msgstr "Slabo čarobno število za krb5_enc_sam_response_enc"
+
+#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
+#: src/dummy-strings.c:268
+msgid "Bad magic number for krb5_sam_response"
+msgstr "Slabo čarobno število za krb5_sam_response"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
+#: src/dummy-strings.c:269
+msgid "Bad magic number for krb5_sam_response 2"
+msgstr "Slabo čarobno število za krb5_sam_response 2"
+
+#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
+#: src/dummy-strings.c:270
+msgid "Bad magic number for krb5_predicted_sam_response"
+msgstr "Slabo čarobno število za krb5_predicted_sam_response"
+
+#. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
+#: src/dummy-strings.c:271
+msgid "Bad magic number for passwd_phrase_element"
+msgstr "Slabo čarobno število za passwd_phrase_element"
+
+#. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
+#: src/dummy-strings.c:272
+msgid "Bad magic number for GSSAPI OID"
+msgstr "Slabo čarobno število za GSSAPI OID"
+
+#. kv5m_err.et:kv5m:KV5M_GSS_OID
+#: src/dummy-strings.c:273
+msgid "Bad magic number for GSSAPI QUEUE"
+msgstr "Slabo čarobno število od GSSAPI VRSTE"
+
+#. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
+#: src/dummy-strings.c:274
+#, fuzzy
+#| msgid "Bad magic number for krb5_cred structure"
+msgid "Bad magic number for fast armored request"
+msgstr "Slabo čarobno število za zgradbo krb5_cred"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_ARMORED_REQ
+#: src/dummy-strings.c:275
+msgid "Bad magic number for FAST request"
+msgstr "Slabo čarobno število za zahtevo FAST"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_REQ
+#: src/dummy-strings.c:276
+msgid "Bad magic number for FAST response"
+msgstr "Slabo čarobno število za odgovor FAST"
+
+#. kv5m_err.et:kv5m:KV5M_FAST_RESPONSE
+#: src/dummy-strings.c:277
+#, fuzzy
+#| msgid "Bad magic number for krb5_authdata structure"
+msgid "Bad magic number for krb5_authdata_context"
+msgstr "Slabo čarobno število za zgradbo krb5_authdata"
+
+#. kv5m_err.et:kv5m:KV5M_AUTHDATA_CONTEXT
+#: src/dummy-strings.c:278
+msgid "ASN.1 failed call to system time library"
+msgstr "ASN.1 klic knjižnice sistemskega časa je spodletel"
+
+#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
+#: src/dummy-strings.c:279
+msgid "ASN.1 structure is missing a required field"
+msgstr "ASN.1 strukturi manjka zahtevano polje"
+
+#. asn1_err.et:asn1:ASN1_MISSING_FIELD
+#: src/dummy-strings.c:280
+msgid "ASN.1 unexpected field number"
+msgstr "ASN.1 nepričakovano število polja"
+
+#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
+#: src/dummy-strings.c:281
+msgid "ASN.1 type numbers are inconsistent"
+msgstr "ASN.1 števila vrste so neskladna"
+
+#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
+#: src/dummy-strings.c:282
+msgid "ASN.1 value too large"
+msgstr "ASN.1 vrednost je prevelika"
+
+#. asn1_err.et:asn1:ASN1_OVERFLOW
+#: src/dummy-strings.c:283
+msgid "ASN.1 encoding ended unexpectedly"
+msgstr "ASN.1 kodiranje se je nepričakovano končalo"
+
+#. asn1_err.et:asn1:ASN1_OVERRUN
+#: src/dummy-strings.c:284
+msgid "ASN.1 identifier doesn't match expected value"
+msgstr "ASN.1 določilnik se ne sklada s pričakovano vrednostjo"
+
+#. asn1_err.et:asn1:ASN1_BAD_ID
+#: src/dummy-strings.c:285
+msgid "ASN.1 length doesn't match expected value"
+msgstr "ASN.1 dolžina se ne sklada s pričakovano vrednostjo"
+
+#. asn1_err.et:asn1:ASN1_BAD_LENGTH
+#: src/dummy-strings.c:286
+msgid "ASN.1 badly-formatted encoding"
+msgstr "ASN.1 slabo oblikovano kodiranje"
+
+#. asn1_err.et:asn1:ASN1_BAD_FORMAT
+#: src/dummy-strings.c:287
+msgid "ASN.1 parse error"
+msgstr "ASN.1 napaka razčlenjevanja"
+
+#. asn1_err.et:asn1:ASN1_PARSE_ERROR
+#: src/dummy-strings.c:288
+msgid "ASN.1 bad return from gmtime"
+msgstr "ASN.1 slab odziv preko gmtime"
+
+#. asn1_err.et:asn1:ASN1_BAD_GMTIME
+#: src/dummy-strings.c:289
+#, fuzzy
+#| msgid "ASN.1 non-constructed indefinite encoding"
+msgid "ASN.1 indefinite encoding"
+msgstr "ASN.1 ne-izgrajeno nedoločeno kodiranje"
+
+#. asn1_err.et:asn1:ASN1_INDEF
+#: src/dummy-strings.c:290
+msgid "ASN.1 missing expected EOC"
+msgstr "ASN.1 manjka pričakovani EOC"
+
+#. asn1_err.et:asn1:ASN1_MISSING_EOC
+#: src/dummy-strings.c:291
+msgid "ASN.1 object omitted in sequence"
+msgstr ""
+
+#. asn1_err.et:asn1:ASN1_OMITTED
+#: src/dummy-strings.c:292
+msgid "Plugin does not support interface version"
+msgstr "Vstavek ne podpira različice vmesnika"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_VER_NOTSUPP
+#: src/dummy-strings.c:293
+#, fuzzy
+msgid "Invalid module specifier"
+msgstr "Neveljaven določitelj modula"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_BAD_MODULE_SPEC
+#: src/dummy-strings.c:294
+msgid "Plugin module name not found"
+msgstr "Imena modula vstavka ni mogoče najti"
+
+#. k5e1_err.et:k5e1:KRB5_PLUGIN_NAME_NOTFOUND
+#: src/dummy-strings.c:295
+#, fuzzy
+msgid "The KDC should discard this request"
+msgstr "KDC bi morala to zahtevo zavreči"
+
+#. k5e1_err.et:k5e1:KRB5KDC_ERR_DISCARD
+#: src/dummy-strings.c:296
+msgid "Can't create new subsidiary cache"
+msgstr ""
+
+#. k5e1_err.et:k5e1:KRB5_DCC_CANNOT_CREATE
+#: src/dummy-strings.c:297
+#, fuzzy
+#| msgid "Invalid certificate"
+msgid "Invalid keyring anchor name"
+msgstr "Neveljavno potrdilo"
+
+#. k5e1_err.et:k5e1:KRB5_KCC_INVALID_ANCHOR
+#: src/dummy-strings.c:298
+msgid "Unknown keyring collection version"
+msgstr ""
+
+#. k5e1_err.et:k5e1:KRB5_KCC_UNKNOWN_VERSION
+#: src/dummy-strings.c:299
+msgid "Invalid UID in persistent keyring name"
+msgstr ""
+
+#. k5e1_err.et:k5e1:KRB5_KCC_INVALID_UID
+#: src/dummy-strings.c:300
+msgid "Malformed reply from KCM daemon"
+msgstr ""
+
+#. k5e1_err.et:k5e1:KRB5_KCM_MALFORMED_REPLY
+#: src/dummy-strings.c:301
+msgid "Mach RPC error communicating with KCM daemon"
+msgstr ""
+
+#. k5e1_err.et:k5e1:KRB5_KCM_RPC_ERROR
+#: src/dummy-strings.c:302
+msgid "KCM daemon reply too big"
+msgstr ""
+
+#. k5e1_err.et:k5e1:KRB5_KCM_REPLY_TOO_BIG
+#: src/dummy-strings.c:303
+msgid "No KCM server found"
+msgstr "Ni najdenega strežnika KCM"
+
+#. k5e1_err.et:k5e1:KRB5_KCM_NO_SERVER
+#: src/dummy-strings.c:304
+msgid "Authorize and set hw-authent ticket flag"
+msgstr ""
+
+#. k5e1_err.et:k5e1:KRB5_CERTAUTH_HWAUTH
+#: src/dummy-strings.c:305
+msgid "Set hw-authent ticket flag but do not authorize"
+msgstr ""
+
+#. Translators: First number is hours, second number is minutes
+#: src/ka-applet.c:604
 #, c-format
-msgid "Couldn't acquire kerberos ticket: '%s'"
-msgstr "Ni mogoče pridobiti vstopnice kerberos: '%s'"
+msgid "Your credentials expire in %.2d:%.2dh"
+msgstr "Vaša poverila potečejo v %.2d%.2dh"
 
-#: ../src/ka-pwdialog.c:269
-#: ../src/ka-applet.c:572
+#: src/ka-applet.c:610 src/ka-pwdialog.c:212
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
@@ -182,1391 +1813,121 @@ msgstr[1] "Vaša poverila potečejo v %d minuti"
 msgstr[2] "Vaša poverila potečejo v %d minutah"
 msgstr[3] "Vaša poverila potečejo v %d minutah"
 
-#: ../src/ka-pwdialog.c:274
-#: ../src/ka-applet.c:577
+#: src/ka-applet.c:615 src/ka-pwdialog.c:217
 msgid "Your credentials have expired"
 msgstr "Vaša poverila so potekla"
 
-#: ../src/ka-pwdialog.c:297
-msgid "Please enter your Kerberos password:"
-msgstr "Vnesite svoje geslo Kerberos:"
+#: src/ka-applet.c:645
+msgid "Remove Credentials Cache"
+msgstr "Odstrani predpomnilnik poveril"
 
-#: ../src/ka-pwdialog.c:310
-#, c-format
-msgid "Please enter the password for '%s':"
-msgstr "Vnesite geslo za '%s':"
+#: src/ka-applet.c:693
+msgid "You have valid Kerberos credentials."
+msgstr "Naložena so veljavna poverila Kerberos"
 
-#: ../src/ka-pwdialog.c:328
-msgid "The password you entered is invalid"
-msgstr "Vneseno geslo je neveljavno"
+#: src/ka-applet.c:695
+msgid "You've refreshed your Kerberos credentials."
+msgstr "Osvežili ste svoja poverila Kerberos"
 
-#: ../src/ka-pwdialog.c:344
+#: src/ka-applet.c:698
+msgid "Network credentials valid"
+msgstr "Omrežna poverila so veljavna"
+
+#: src/ka-applet.c:717
+msgid "Network credentials expiring"
+msgstr "Omrežna poverila bodo potekla"
+
+#: src/ka-applet.c:734
+msgid "Network credentials expired"
+msgstr "Omrežna poverila so potekla"
+
+#: src/ka-applet.c:735
+msgid "Your Kerberos credentials have expired."
+msgstr "Poverila Kerberos so potekla."
+
+#: src/ka-kerberos.c:148
+msgid "unknown error"
+msgstr "neznana napaka"
+
+#: src/ka-kerberos.c:337
+msgid "Expired"
+msgstr "Pretečeno"
+
+#: src/ka-kerberos.c:1045
+msgid " (No network connection)"
+msgstr " (brez omrežne povezave)"
+
+#: src/ka-main-window.c:145
+msgid "Principal"
+msgstr "Ravnatelj"
+
+#: src/ka-main-window.c:151
+msgid "Start"
+msgstr "Začetek"
+
+#: src/ka-main-window.c:157
+msgid "End"
+msgstr "Konec"
+
+#. Translators: this is an abbreviation for forwardable
+#: src/ka-main-window.c:164
+msgid "Fwd"
+msgstr "Posreduj"
+
+#. Translators: this is an abbreviation for proxiable
+#: src/ka-main-window.c:171
+msgid "Proxy"
+msgstr "Posredovalni strežnik"
+
+#. Translators: this is an abbreviation for renewable
+#: src/ka-main-window.c:178
+msgid "Renew"
+msgstr "Obnovi"
+
+#: src/ka-main-window.c:221
+msgid "Error displaying service ticket information"
+msgstr "Napaka med prikazovanjem podrobnosti storitvene vstopnice"
+
+#: src/ka-preferences.c:322
+msgid "Choose Certificate"
+msgstr "Izbor potrdila"
+
+#: src/ka-preferences.c:326
+msgid "_Open"
+msgstr "_Odpri"
+
+#: src/ka-preferences.c:339
+msgid "X509 Certificates"
+msgstr "X509 potrdila"
+
+#: src/ka-preferences.c:343
+msgid "all files"
+msgstr "vse datoteke"
+
+#: src/ka-pwdialog.c:104
 #, c-format
 msgid "%s Error"
 msgstr "%s napaka"
 
-#. Translators: files from dummy-strings.c are *all* possible errors
-#. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
-#. doubt please translate strings from files starting with ka- and krb5-auth-
-#. first since these are the ones the user will see in any case.
-#: ../src/dummy-strings.c:10
-msgid "ASN.1 failed call to system time library"
-msgstr "ASN.1 klic knjižnice sistemskega časa je spodletel"
-
-#. asn1_err.et:asn1:ASN1_BAD_TIMEFORMAT
-#: ../src/dummy-strings.c:11
-msgid "ASN.1 structure is missing a required field"
-msgstr "ASN.1 strukturi manjka zahtevano polje"
-
-#. asn1_err.et:asn1:ASN1_MISSING_FIELD
-#: ../src/dummy-strings.c:12
-msgid "ASN.1 unexpected field number"
-msgstr "ASN.1 nepričakovano število polja"
-
-#. asn1_err.et:asn1:ASN1_MISPLACED_FIELD
-#: ../src/dummy-strings.c:13
-msgid "ASN.1 type numbers are inconsistent"
-msgstr "ASN.1 števila vrste so neskladna"
-
-#. asn1_err.et:asn1:ASN1_TYPE_MISMATCH
-#: ../src/dummy-strings.c:14
-msgid "ASN.1 value too large"
-msgstr "ASN.1 vrednost je prevelika"
-
-#. asn1_err.et:asn1:ASN1_OVERFLOW
-#: ../src/dummy-strings.c:15
-msgid "ASN.1 encoding ended unexpectedly"
-msgstr "ASN.1 kodiranje se je nepričakovano končalo"
-
-#. asn1_err.et:asn1:ASN1_OVERRUN
-#: ../src/dummy-strings.c:16
-msgid "ASN.1 identifier doesn't match expected value"
-msgstr "ASN.1 določilnik se ne sklada s pričakovano vrednostjo"
-
-#. asn1_err.et:asn1:ASN1_BAD_ID
-#: ../src/dummy-strings.c:17
-msgid "ASN.1 length doesn't match expected value"
-msgstr "ASN.1 dolžina se ne sklada s pričakovano vrednostjo"
-
-#. asn1_err.et:asn1:ASN1_BAD_LENGTH
-#: ../src/dummy-strings.c:18
-msgid "ASN.1 badly-formatted encoding"
-msgstr "ASN.1 slabo oblikovano kodiranje"
-
-#. asn1_err.et:asn1:ASN1_BAD_FORMAT
-#: ../src/dummy-strings.c:19
-msgid "ASN.1 parse error"
-msgstr "ASN.1 napaka razčlenjevanja"
-
-#. asn1_err.et:asn1:ASN1_PARSE_ERROR
-#: ../src/dummy-strings.c:20
-msgid "ASN.1 bad return from gmtime"
-msgstr "ASN.1 slab odziv preko gmtime"
-
-#. asn1_err.et:asn1:ASN1_BAD_GMTIME
-#: ../src/dummy-strings.c:21
-msgid "ASN.1 non-constructed indefinite encoding"
-msgstr "ASN.1 ne-izgrajeno nedoločeno kodiranje"
-
-#. asn1_err.et:asn1:ASN1_MISMATCH_INDEF
-#: ../src/dummy-strings.c:22
-msgid "ASN.1 missing expected EOC"
-msgstr "ASN.1 manjka pričakovani EOC"
-
-#. asn1_err.et:asn1:ASN1_MISSING_EOC
-#: ../src/dummy-strings.c:23
-msgid "No error"
-msgstr "Brez napak"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_NONE
-#: ../src/dummy-strings.c:24
-msgid "Client's entry in database has expired"
-msgstr "Vnos odjemalca v podatkovni zbirki je potekel"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_NAME_EXP
-#: ../src/dummy-strings.c:25
-msgid "Server's entry in database has expired"
-msgstr "Vnos strežnika v podatkovni zbirki je potekel"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_EXP
-#: ../src/dummy-strings.c:26
-msgid "Requested protocol version not supported"
-msgstr "Zahtevana različica protokola ni podprta"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_BAD_PVNO
-#: ../src/dummy-strings.c:27
-msgid "Client's key is encrypted in an old master key"
-msgstr "Ključ odjemalca je šifriran v starem glavnem ključu"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_C_OLD_MAST_KVNO
-#: ../src/dummy-strings.c:28
-msgid "Server's key is encrypted in an old master key"
-msgstr "Ključ strežnika je šifriran v starem glavnem ključu"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_S_OLD_MAST_KVNO
-#: ../src/dummy-strings.c:29
-msgid "Client not found in Kerberos database"
-msgstr "Odjemalca ni mogoče najti v podatkovni zbirki Kerberos"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_C_PRINCIPAL_UNKNOWN
-#: ../src/dummy-strings.c:30
-msgid "Server not found in Kerberos database"
-msgstr "Strežnika ni mogoče najti v podatkovni zbirki Kerberos"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_S_PRINCIPAL_UNKNOWN
-#: ../src/dummy-strings.c:31
-msgid "Principal has multiple entries in Kerberos database"
-msgstr "Ravnatelj ima več vnosov v podatkovni zbirki Kerberos"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_PRINCIPAL_NOT_UNIQUE
-#: ../src/dummy-strings.c:32
-msgid "Client or server has a null key"
-msgstr "Odjemalec ali strežnik ima nični ključ"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_NULL_KEY
-#: ../src/dummy-strings.c:33
-msgid "Ticket is ineligible for postdating"
-msgstr "Vstopnica ni upravičena za datumsko pretečenost"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_CANNOT_POSTDATE
-#: ../src/dummy-strings.c:34
-msgid "Requested effective lifetime is negative or too short"
-msgstr "Zahtevana življenjska doba je negativna ali pa prekratka"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_NEVER_VALID
-#: ../src/dummy-strings.c:35
-msgid "KDC policy rejects request"
-msgstr "Pravila KDC niso skladna z zahtevo"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_POLICY
-#: ../src/dummy-strings.c:36
-msgid "KDC can't fulfill requested option"
-msgstr "KDC ne more izpolniti zahtevane možnosti"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_BADOPTION
-#: ../src/dummy-strings.c:37
-msgid "KDC has no support for encryption type"
-msgstr "KDC nima podpore za vrsto šifriranja"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_ETYPE_NOSUPP
-#: ../src/dummy-strings.c:38
-msgid "KDC has no support for checksum type"
-msgstr "KDC nima podpore za vrsto nadzorne vsote"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_SUMTYPE_NOSUPP
-#: ../src/dummy-strings.c:39
-msgid "KDC has no support for padata type"
-msgstr "KDC nima podpore za vrsto padata"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_PADATA_TYPE_NOSUPP
-#: ../src/dummy-strings.c:40
-msgid "KDC has no support for transited type"
-msgstr "KDC nima podpore za prehodno vrsto"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_TRTYPE_NOSUPP
-#: ../src/dummy-strings.c:41
-msgid "Clients credentials have been revoked"
-msgstr "Poverila odjemalcev so bila preklicana"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_REVOKED
-#: ../src/dummy-strings.c:42
-msgid "Credentials for server have been revoked"
-msgstr "Poverila za strežnik so bila preklicana"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_REVOKED
-#: ../src/dummy-strings.c:43
-msgid "TGT has been revoked"
-msgstr "TGT je bil preklican"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_TGT_REVOKED
-#: ../src/dummy-strings.c:44
-msgid "Client not yet valid - try again later"
-msgstr "Odjemalec še ni veljaven - poskusite ponovno kasneje"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOTYET
-#: ../src/dummy-strings.c:45
-msgid "Server not yet valid - try again later"
-msgstr "Strežnik še ni veljaven - poskusite ponovno kasneje"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_SERVICE_NOTYET
-#: ../src/dummy-strings.c:46
-msgid "Password has expired"
-msgstr "Geslo je poteklo"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_KEY_EXP
-#: ../src/dummy-strings.c:47
-msgid "Preauthentication failed"
-msgstr "Predhodna overitev je spodletela"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_FAILED
-#: ../src/dummy-strings.c:48
-msgid "Additional pre-authentication required"
-msgstr "Zahtevana je predhodna overitev"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_REQUIRED
-#: ../src/dummy-strings.c:49
-msgid "Requested server and ticket don't match"
-msgstr "Zahtevani strežnik in vstopnica se ne skladata"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
-#: ../src/dummy-strings.c:50
-msgid "A service is not available that is required to process the request"
-msgstr "Storitev zahtevana za obdelavo zahteve ni na voljo"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_SVC_UNAVAILABLE
-#: ../src/dummy-strings.c:51
-msgid "Decrypt integrity check failed"
-msgstr "Preverjanje celovitosti dešifriranja je spodletelo"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BAD_INTEGRITY
-#: ../src/dummy-strings.c:52
-msgid "Ticket expired"
-msgstr "Vstopnica je potekla"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_EXPIRED
-#: ../src/dummy-strings.c:53
-msgid "Ticket not yet valid"
-msgstr "Vstopnica še ni veljavna"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_NYV
-#: ../src/dummy-strings.c:54
-msgid "Request is a replay"
-msgstr "Zahteva je odgovor"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_REPEAT
-#: ../src/dummy-strings.c:55
-msgid "The ticket isn't for us"
-msgstr "Vstopnica ni za nas"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOT_US
-#: ../src/dummy-strings.c:56
-msgid "Ticket/authenticator don't match"
-msgstr "Vstopnica in pooblastitelj overitve se ne skladata"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADMATCH
-#: ../src/dummy-strings.c:57
-msgid "Clock skew too great"
-msgstr "Časovni zamik sistemske ure je prevelik"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_SKEW
-#: ../src/dummy-strings.c:58
-msgid "Incorrect net address"
-msgstr "Nepravilen spletni naslov"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADADDR
-#: ../src/dummy-strings.c:59
-msgid "Protocol version mismatch"
-msgstr "Neskladje različice protokola"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADVERSION
-#: ../src/dummy-strings.c:60
-msgid "Invalid message type"
-msgstr "Neveljavna vrsta sporočila"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MSG_TYPE
-#: ../src/dummy-strings.c:61
-msgid "Message stream modified"
-msgstr "Tok sporočila je spremenjen"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MODIFIED
-#: ../src/dummy-strings.c:62
-msgid "Message out of order"
-msgstr "Sporočilo ni urejeno"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
-#: ../src/dummy-strings.c:63
-msgid "Illegal cross-realm ticket"
-msgstr "Neveljavna izmenska vstopnica"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
-#: ../src/dummy-strings.c:64
-msgid "Key version is not available"
-msgstr "Različica ključa ni na voljo"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADKEYVER
-#: ../src/dummy-strings.c:65
-msgid "Service key not available"
-msgstr "Ključ storitve ni na voljo"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_NOKEY
-#. krb5_err.et:krb5:KRB5_NO_LOCALNAME
-#: ../src/dummy-strings.c:66
-#: ../src/dummy-strings.c:122
-msgid "Mutual authentication failed"
-msgstr "Ročna overitev je spodletela"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_MUT_FAIL
-#: ../src/dummy-strings.c:67
-msgid "Incorrect message direction"
-msgstr "Nepravilna smer sporočila"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADDIRECTION
-#: ../src/dummy-strings.c:68
-msgid "Alternative authentication method required"
-msgstr "Zahtevan je dodaten način overitve"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_METHOD
-#: ../src/dummy-strings.c:69
-msgid "Incorrect sequence number in message"
-msgstr "Napačno število zaporedja v sporočilu"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADSEQ
-#: ../src/dummy-strings.c:70
-msgid "Inappropriate type of checksum in message"
-msgstr "Neprimerna vrsta nadzorne vsote v sporočilu"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_INAPP_CKSUM
-#: ../src/dummy-strings.c:71
-msgid "Policy rejects transited path"
-msgstr "Pravila onemogočajo prehodno pot"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_PATH_NOT_ACCEPTED
-#: ../src/dummy-strings.c:72
-msgid "Response too big for UDP, retry with TCP"
-msgstr "Odziv je prevelik za UDP, ponoven poskus s TCP"
-
-#. krb5_err.et:krb5:KRB5KRB_ERR_RESPONSE_TOO_BIG
-#: ../src/dummy-strings.c:73
-msgid "Generic error (see e-text)"
-msgstr "Splošna napaka (oglejte is e-besedilo)"
-
-#. krb5_err.et:krb5:KRB5KRB_ERR_GENERIC
-#: ../src/dummy-strings.c:74
-msgid "Field is too long for this implementation"
-msgstr "Polje je predolgo za to izvedbo"
-
-#. krb5_err.et:krb5:KRB5KRB_ERR_FIELD_TOOLONG
-#: ../src/dummy-strings.c:75
-msgid "Client not trusted"
-msgstr "Odjemalec ni zaupljiv"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NOT_TRUSTED
-#: ../src/dummy-strings.c:76
-msgid "KDC not trusted"
-msgstr "KDC ni zaupljiv"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NOT_TRUSTED
-#: ../src/dummy-strings.c:77
-msgid "Invalid signature"
-msgstr "Neveljaven podpis"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_SIG
-#: ../src/dummy-strings.c:78
-msgid "Key parameters not accepted"
-msgstr "Parametri ključa niso sprejeti"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_DH_KEY_PARAMETERS_NOT_ACCEPTED
-#: ../src/dummy-strings.c:79
-msgid "Certificate mismatch"
-msgstr "Neskladnost potrdila"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
-#: ../src/dummy-strings.c:80
-msgid "Can't verify certificate"
-msgstr "Potrdila ni mogoče preveriti"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_CANT_VERIFY_CERTIFICATE
-#: ../src/dummy-strings.c:81
-msgid "Invalid certificate"
-msgstr "Neveljavno potrdilo"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_INVALID_CERTIFICATE
-#: ../src/dummy-strings.c:82
-msgid "Revoked certificate"
-msgstr "Preklicano potrdilo"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_REVOKED_CERTIFICATE
-#: ../src/dummy-strings.c:83
-msgid "Revocation status unknown"
-msgstr "Stanje preklica ni znano"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNKNOWN
-#: ../src/dummy-strings.c:84
-msgid "Revocation status unavailable"
-msgstr "Stanje preklica ni na voljo"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_REVOCATION_STATUS_UNAVAILABLE
-#: ../src/dummy-strings.c:85
-msgid "Client name mismatch"
-msgstr "Neskladje imena odjemalca"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_CLIENT_NAME_MISMATCH
-#: ../src/dummy-strings.c:86
-msgid "KDC name mismatch"
-msgstr "Neskladje imena KDC"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_KDC_NAME_MISMATCH
-#: ../src/dummy-strings.c:87
-msgid "Inconsistent key purpose"
-msgstr "Neenoten namen ključa"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_INCONSISTENT_KEY_PURPOSE
-#: ../src/dummy-strings.c:88
-msgid "Digest in certificate not accepted"
-msgstr "Povzetek v potrdilu ni sprejet"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_CERT_NOT_ACCEPTED
-#: ../src/dummy-strings.c:89
-msgid "Checksum must be included"
-msgstr "Nadzorna vsota mora biti vključena"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_PA_CHECKSUM_MUST_BE_INCLUDED
-#: ../src/dummy-strings.c:90
-msgid "Digest in signed-data not accepted"
-msgstr "Predelava podpisanih podatkov ni sprejemljiva"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_DIGEST_IN_SIGNED_DATA_NOT_ACCEPTED
-#: ../src/dummy-strings.c:91
-msgid "Public key encryption not supported"
-msgstr "Šifriranje javnega ključa ni podprto"
-
-#. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
-#: ../src/dummy-strings.c:92
-msgid "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
-msgstr "$Id: krb5_err.et 19934 2007-09-13 23:49:00Z tlyu $"
-
-#. krb5_err.et:krb5:KRB5_ERR_RCSID
-#: ../src/dummy-strings.c:93
-msgid "Invalid flag for file lock mode"
-msgstr "Neveljavna zastava za način zaklepa datoteke"
-
-#. krb5_err.et:krb5:KRB5_LIBOS_BADLOCKFLAG
-#: ../src/dummy-strings.c:94
-msgid "Cannot read password"
-msgstr "Gesla ni mogoče prebrati"
-
-#. krb5_err.et:krb5:KRB5_LIBOS_CANTREADPWD
-#: ../src/dummy-strings.c:95
-msgid "Password mismatch"
-msgstr "Neskladnost gesla"
-
-#. krb5_err.et:krb5:KRB5_LIBOS_BADPWDMATCH
-#: ../src/dummy-strings.c:96
-msgid "Password read interrupted"
-msgstr "Branje gesla je bilo prekinjeno"
-
-#. krb5_err.et:krb5:KRB5_LIBOS_PWDINTR
-#: ../src/dummy-strings.c:97
-msgid "Illegal character in component name"
-msgstr "Neveljaven znak v imenu komponente"
-
-#. krb5_err.et:krb5:KRB5_PARSE_ILLCHAR
-#: ../src/dummy-strings.c:98
-msgid "Malformed representation of principal"
-msgstr "Slabo oblikovani podatki ravnatelja"
-
-#. krb5_err.et:krb5:KRB5_PARSE_MALFORMED
-#: ../src/dummy-strings.c:99
-msgid "Can't open/find Kerberos configuration file"
-msgstr "Ni mogoče odpreti/najti nastavitvene datoteke Kerberos"
-
-#. krb5_err.et:krb5:KRB5_CONFIG_CANTOPEN
-#: ../src/dummy-strings.c:100
-msgid "Improper format of Kerberos configuration file"
-msgstr "Nepravilna oblika nastavitvene datoteke Kerberos"
-
-#. krb5_err.et:krb5:KRB5_CONFIG_BADFORMAT
-#: ../src/dummy-strings.c:101
-msgid "Insufficient space to return complete information"
-msgstr "Ni dovolj prostora za vračanje celotnih podatkov"
-
-#. krb5_err.et:krb5:KRB5_CONFIG_NOTENUFSPACE
-#: ../src/dummy-strings.c:102
-msgid "Invalid message type specified for encoding"
-msgstr "Za kodiranje je določena napačna vrsta sporočila"
-
-#. krb5_err.et:krb5:KRB5_BADMSGTYPE
-#: ../src/dummy-strings.c:103
-msgid "Credential cache name malformed"
-msgstr "Slabo oblikovano ime predpomnilnika poveril"
-
-#. krb5_err.et:krb5:KRB5_CC_BADNAME
-#: ../src/dummy-strings.c:104
-msgid "Unknown credential cache type"
-msgstr "Neznana vrsta predpomnilnika poveril"
-
-#. krb5_err.et:krb5:KRB5_CC_UNKNOWN_TYPE
-#: ../src/dummy-strings.c:105
-msgid "Matching credential not found"
-msgstr "Skladnega poverila ni mogoče najti"
-
-#. krb5_err.et:krb5:KRB5_CC_NOTFOUND
-#: ../src/dummy-strings.c:106
-msgid "End of credential cache reached"
-msgstr "Dosežen konec predpomnilnika overil"
-
-#. krb5_err.et:krb5:KRB5_CC_END
-#: ../src/dummy-strings.c:107
-msgid "Request did not supply a ticket"
-msgstr "Zahteva ni vsebovala vstopnice"
-
-#. krb5_err.et:krb5:KRB5_NO_TKT_SUPPLIED
-#: ../src/dummy-strings.c:108
-msgid "Wrong principal in request"
-msgstr "Napačen ravnatelj v zahtevi"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_WRONG_PRINC
-#: ../src/dummy-strings.c:109
-msgid "Ticket has invalid flag set"
-msgstr "Vstopnica ima nastavljeno neveljavno zastavico"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_TKT_INVALID
-#: ../src/dummy-strings.c:110
-msgid "Requested principal and ticket don't match"
-msgstr "Zahtevani ravnatelj in vstopnica nista skladna"
-
-#. krb5_err.et:krb5:KRB5_PRINC_NOMATCH
-#: ../src/dummy-strings.c:111
-msgid "KDC reply did not match expectations"
-msgstr "Odgovor KDC se ne sklada s pričakovanji"
-
-#. krb5_err.et:krb5:KRB5_KDCREP_MODIFIED
-#: ../src/dummy-strings.c:112
-msgid "Clock skew too great in KDC reply"
-msgstr "Časovni zamik sistemske ure je v odgovoru KDC prevelik"
-
-#. krb5_err.et:krb5:KRB5_KDCREP_SKEW
-#: ../src/dummy-strings.c:113
-msgid "Client/server realm mismatch in initial ticket request"
-msgstr "Neskladje področja odjemalca/strežnika v začetni zahtevi vstopnice"
-
-#. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
-#: ../src/dummy-strings.c:114
-msgid "Program lacks support for encryption type"
-msgstr "Programu manjka podpora za vrsto šifriranja"
-
-#. krb5_err.et:krb5:KRB5_PROG_ETYPE_NOSUPP
-#: ../src/dummy-strings.c:115
-msgid "Program lacks support for key type"
-msgstr "Programu manjka podpora za vrsto ključa"
-
-#. krb5_err.et:krb5:KRB5_PROG_KEYTYPE_NOSUPP
-#: ../src/dummy-strings.c:116
-msgid "Requested encryption type not used in message"
-msgstr "Zahtevana vrsta šifriranja ni uporabljena v sporočilu"
-
-#. krb5_err.et:krb5:KRB5_WRONG_ETYPE
-#: ../src/dummy-strings.c:117
-msgid "Program lacks support for checksum type"
-msgstr "Programu manjka podpora za vrsto nadzorne vsote"
-
-#. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
-#: ../src/dummy-strings.c:118
-msgid "Cannot find KDC for requested realm"
-msgstr "Ni mogoče najti KDC za zahtevano področje"
-
-#. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
-#: ../src/dummy-strings.c:119
-msgid "Kerberos service unknown"
-msgstr "Neznana storitev Kerberos"
-
-#. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
-#: ../src/dummy-strings.c:120
-msgid "Cannot contact any KDC for requested realm"
-msgstr "Ni mogoče vzpostaviti stika s KDC za zahtevano področje"
-
-#. krb5_err.et:krb5:KRB5_KDC_UNREACH
-#: ../src/dummy-strings.c:121
-msgid "No local name found for principal name"
-msgstr "Ni krajevnega imena za ravnatelja"
-
-#. krb5_err.et:krb5:KRB5_MUTUAL_FAILED
-#: ../src/dummy-strings.c:123
-msgid "Replay cache type is already registered"
-msgstr "Vrsta predpomnilnika odgovora je že vpisana"
-
-#. krb5_err.et:krb5:KRB5_RC_TYPE_EXISTS
-#: ../src/dummy-strings.c:124
-msgid "No more memory to allocate (in replay cache code)"
-msgstr "Ni pomnilnika za dodelitev (v kodi odgovora predpomnilnika)"
-
-#. krb5_err.et:krb5:KRB5_RC_MALLOC
-#: ../src/dummy-strings.c:125
-msgid "Replay cache type is unknown"
-msgstr "Vrsta predpomnilnika odgovora ni znana"
-
-#. krb5_err.et:krb5:KRB5_RC_TYPE_NOTFOUND
-#: ../src/dummy-strings.c:126
-msgid "Generic unknown RC error"
-msgstr "Splošna neznana napaka RC"
-
-#. krb5_err.et:krb5:KRB5_RC_UNKNOWN
-#: ../src/dummy-strings.c:127
-msgid "Message is a replay"
-msgstr "Sporočilo je odgovor"
-
-#. krb5_err.et:krb5:KRB5_RC_REPLAY
-#: ../src/dummy-strings.c:128
-msgid "Replay I/O operation failed XXX"
-msgstr "Dejanje odgovora V/I je spodletelo XXX"
-
-#. krb5_err.et:krb5:KRB5_RC_IO
-#: ../src/dummy-strings.c:129
-msgid "Replay cache type does not support non-volatile storage"
-msgstr "Vrsta predpomnilnika odgovora ne podpira nespremenljivega shranjevanja"
-
-#. krb5_err.et:krb5:KRB5_RC_NOIO
-#: ../src/dummy-strings.c:130
-msgid "Replay cache name parse/format error"
-msgstr "Napaka razčlenjevanja/oblike predpomnilnika odgovora"
-
-#. krb5_err.et:krb5:KRB5_RC_PARSE
-#: ../src/dummy-strings.c:131
-msgid "End-of-file on replay cache I/O"
-msgstr "Konec življenjske dobe predpomnilnika odgovora V/I"
-
-#. krb5_err.et:krb5:KRB5_RC_IO_EOF
-#: ../src/dummy-strings.c:132
-msgid "No more memory to allocate (in replay cache I/O code)"
-msgstr "Ni več pomnilnika za dodelitev (v predpomnilniku odgovora V/I kode)"
-
-#. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
-#: ../src/dummy-strings.c:133
-msgid "Permission denied in replay cache code"
-msgstr "Ni dovoljenja v odgovoru kode predpomnilnika"
-
-#. krb5_err.et:krb5:KRB5_RC_IO_PERM
-#: ../src/dummy-strings.c:134
-msgid "I/O error in replay cache i/o code"
-msgstr "Napaka V/I v predpomnilniku odgovora V/I kode "
-
-#. krb5_err.et:krb5:KRB5_RC_IO_IO
-#: ../src/dummy-strings.c:135
-msgid "Generic unknown RC/IO error"
-msgstr "Splošna neznana naprava RC/VI"
-
-#. krb5_err.et:krb5:KRB5_RC_IO_UNKNOWN
-#: ../src/dummy-strings.c:136
-msgid "Insufficient system space to store replay information"
-msgstr "Ni dovolj sistemskega prostora za shranitev podrobnosti odgovora"
-
-#. krb5_err.et:krb5:KRB5_RC_IO_SPACE
-#: ../src/dummy-strings.c:137
-msgid "Can't open/find realm translation file"
-msgstr "Ni mogoče odpreti/najti datoteke prevajanja področja "
-
-#. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
-#: ../src/dummy-strings.c:138
-msgid "Improper format of realm translation file"
-msgstr "Napačna oblika datoteke prevajanja področja"
-
-#. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
-#: ../src/dummy-strings.c:139
-msgid "Can't open/find lname translation database"
-msgstr "Ni mogoče odpreti/najti lname podatokvne zbirke prevodov"
-
-#. krb5_err.et:krb5:KRB5_LNAME_CANTOPEN
-#: ../src/dummy-strings.c:140
-msgid "No translation available for requested principal"
-msgstr "Za zahtevanega ravnatelja ni razpoložljivega prevoda"
-
-#. krb5_err.et:krb5:KRB5_LNAME_NOTRANS
-#: ../src/dummy-strings.c:141
-msgid "Improper format of translation database entry"
-msgstr "Napačna oblika vnosa podatkovne zbirke prevodov"
-
-#. krb5_err.et:krb5:KRB5_LNAME_BADFORMAT
-#: ../src/dummy-strings.c:142
-msgid "Cryptosystem internal error"
-msgstr "Notranja napaka šifrirnega sistema"
-
-#. krb5_err.et:krb5:KRB5_CRYPTO_INTERNAL
-#: ../src/dummy-strings.c:143
-msgid "Key table name malformed"
-msgstr "Ime razpredelnice ključa je slabo oblikovano"
-
-#. krb5_err.et:krb5:KRB5_KT_BADNAME
-#: ../src/dummy-strings.c:144
-msgid "Unknown Key table type"
-msgstr "Neznana vrsta razpredelnice ključa"
-
-#. krb5_err.et:krb5:KRB5_KT_UNKNOWN_TYPE
-#: ../src/dummy-strings.c:145
-msgid "Key table entry not found"
-msgstr "Vnosa razpredelnice ključa ni mogoče najti"
-
-#. krb5_err.et:krb5:KRB5_KT_NOTFOUND
-#: ../src/dummy-strings.c:146
-msgid "End of key table reached"
-msgstr "Dosežen konec razpredelnice ključev"
-
-#. krb5_err.et:krb5:KRB5_KT_END
-#: ../src/dummy-strings.c:147
-msgid "Cannot write to specified key table"
-msgstr "Ni mogoče pisati v določeno tabelo ključev"
-
-#. krb5_err.et:krb5:KRB5_KT_NOWRITE
-#: ../src/dummy-strings.c:148
-msgid "Error writing to key table"
-msgstr "Napaka med zapisovanjem v razpredelnico ključa"
-
-#. krb5_err.et:krb5:KRB5_KT_IOERR
-#: ../src/dummy-strings.c:149
-msgid "Cannot find ticket for requested realm"
-msgstr "Ni mogoče najti vstopnice za zahtevano področje"
-
-#. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
-#: ../src/dummy-strings.c:150
-msgid "DES key has bad parity"
-msgstr "Ključ DES ima slabo pariteto"
-
-#. krb5_err.et:krb5:KRB5DES_BAD_KEYPAR
-#: ../src/dummy-strings.c:151
-msgid "DES key is a weak key"
-msgstr "Ključ DES je šibek ključ"
-
-#. krb5_err.et:krb5:KRB5DES_WEAK_KEY
-#: ../src/dummy-strings.c:152
-msgid "Bad encryption type"
-msgstr "Slaba vrsta šifriranja"
-
-#. krb5_err.et:krb5:KRB5_BAD_ENCTYPE
-#: ../src/dummy-strings.c:153
-msgid "Key size is incompatible with encryption type"
-msgstr "Velikost ključa je nezdružljiva z vrsto šifriranja"
-
-#. krb5_err.et:krb5:KRB5_BAD_KEYSIZE
-#: ../src/dummy-strings.c:154
-msgid "Message size is incompatible with encryption type"
-msgstr "Velikost sporočila je nezdružljiva z vrsto šifriranja"
-
-#. krb5_err.et:krb5:KRB5_BAD_MSIZE
-#: ../src/dummy-strings.c:155
-msgid "Credentials cache type is already registered."
-msgstr "Vrsta predpomnilnika poveril je že vpisana."
-
-#. krb5_err.et:krb5:KRB5_CC_TYPE_EXISTS
-#: ../src/dummy-strings.c:156
-msgid "Key table type is already registered."
-msgstr "Vrsta razpredelnice ključev je že vpisana."
-
-#. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
-#: ../src/dummy-strings.c:157
-msgid "Credentials cache I/O operation failed XXX"
-msgstr "V/I dejanje predpomnilnika poveril je spodletelo XXX"
-
-#. krb5_err.et:krb5:KRB5_CC_IO
-#: ../src/dummy-strings.c:158
-msgid "Credentials cache permissions incorrect"
-msgstr "Dovoljenja predpomnilnika poveril so napačna"
-
-#. krb5_err.et:krb5:KRB5_FCC_PERM
-#: ../src/dummy-strings.c:159
-msgid "No credentials cache found"
-msgstr "Predpomnilnika poveril ni mogoče najti"
-
-#. krb5_err.et:krb5:KRB5_FCC_NOFILE
-#: ../src/dummy-strings.c:160
-msgid "Internal credentials cache error"
-msgstr "Notranja napaka predpomnilnika poveril"
-
-#. krb5_err.et:krb5:KRB5_FCC_INTERNAL
-#: ../src/dummy-strings.c:161
-msgid "Error writing to credentials cache"
-msgstr "Napaka med zapisovanjem v predpomnilnik poveril"
-
-#. krb5_err.et:krb5:KRB5_CC_WRITE
-#: ../src/dummy-strings.c:162
-msgid "No more memory to allocate (in credentials cache code)"
-msgstr "Ni več pomnilnika za dodeljevanje (v kodi predpomnilnika overil)"
-
-#. krb5_err.et:krb5:KRB5_CC_NOMEM
-#: ../src/dummy-strings.c:163
-msgid "Bad format in credentials cache"
-msgstr "Slaba oblika v predpomnilniku poveril"
-
-#. krb5_err.et:krb5:KRB5_CC_FORMAT
-#: ../src/dummy-strings.c:164
-msgid "No credentials found with supported encryption types"
-msgstr "Poveril s podprtimi vrstami šifriranja ni mogoče najti"
-
-#. krb5_err.et:krb5:KRB5_CC_NOT_KTYPE
-#: ../src/dummy-strings.c:165
-msgid "Invalid KDC option combination (library internal error)"
-msgstr "Neveljavna kombinacija možnosti KDC (notranja napaka knjižnice)"
-
-#. krb5_err.et:krb5:KRB5_INVALID_FLAGS
-#: ../src/dummy-strings.c:166
-msgid "Request missing second ticket"
-msgstr "Zahtevana je manjkajoče druga vstopnica"
-
-#. krb5_err.et:krb5:KRB5_NO_2ND_TKT
-#: ../src/dummy-strings.c:167
-msgid "No credentials supplied to library routine"
-msgstr "Poverila niso bila zagotovljena rutini knjižnice"
-
-#. krb5_err.et:krb5:KRB5_NOCREDS_SUPPLIED
-#: ../src/dummy-strings.c:168
-msgid "Bad sendauth version was sent"
-msgstr "Poslana je bila slaba različica sendauth"
-
-#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAUTHVERS
-#: ../src/dummy-strings.c:169
-msgid "Bad application version was sent (via sendauth)"
-msgstr "Poslana je slaba različica programa (preko sendauth)"
-
-#. krb5_err.et:krb5:KRB5_SENDAUTH_BADAPPLVERS
-#: ../src/dummy-strings.c:170
-msgid "Bad response (during sendauth exchange)"
-msgstr "Slab odgovor (med sendauth izmenjavo)"
-
-#. krb5_err.et:krb5:KRB5_SENDAUTH_BADRESPONSE
-#: ../src/dummy-strings.c:171
-msgid "Server rejected authentication (during sendauth exchange)"
-msgstr "Strežnik zavrača overitev (med sendaut izmenjavo)"
-
-#. krb5_err.et:krb5:KRB5_SENDAUTH_REJECTED
-#: ../src/dummy-strings.c:172
-msgid "Unsupported preauthentication type"
-msgstr "Nepodprta vrsta predhodne overitve"
-
-#. krb5_err.et:krb5:KRB5_PREAUTH_BAD_TYPE
-#: ../src/dummy-strings.c:173
-msgid "Required preauthentication key not supplied"
-msgstr "Zahtevana predhodna overitev ni pridobljena"
-
-#. krb5_err.et:krb5:KRB5_PREAUTH_NO_KEY
-#: ../src/dummy-strings.c:174
-msgid "Generic preauthentication failure"
-msgstr "Splošna napaka predhodne overitve"
-
-#. krb5_err.et:krb5:KRB5_PREAUTH_FAILED
-#: ../src/dummy-strings.c:175
-msgid "Unsupported replay cache format version number"
-msgstr "Nepodprta oblika različice predpomnilniškega odgovora"
-
-#. krb5_err.et:krb5:KRB5_RCACHE_BADVNO
-#: ../src/dummy-strings.c:176
-msgid "Unsupported credentials cache format version number"
-msgstr "Nepodprta številka različice oblike predpomnilnika poveril"
-
-#. krb5_err.et:krb5:KRB5_CCACHE_BADVNO
-#: ../src/dummy-strings.c:177
-msgid "Unsupported key table format version number"
-msgstr "Nepodprta številka različice oblike razpredelnice ključev"
-
-#. krb5_err.et:krb5:KRB5_KEYTAB_BADVNO
-#: ../src/dummy-strings.c:178
-msgid "Program lacks support for address type"
-msgstr "Programu manjka podpora za vrsto naslova"
-
-#. krb5_err.et:krb5:KRB5_PROG_ATYPE_NOSUPP
-#: ../src/dummy-strings.c:179
-msgid "Message replay detection requires rcache parameter"
-msgstr "Zaznavanje sporočila odgovora zahteva parameter rcache"
-
-#. krb5_err.et:krb5:KRB5_RC_REQUIRED
-#: ../src/dummy-strings.c:180
-msgid "Hostname cannot be canonicalized"
-msgstr "Imena gostitelja ni mogoče predpisati"
-
-#. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
-#: ../src/dummy-strings.c:181
-msgid "Cannot determine realm for host"
-msgstr "Ni mogoče določiti področja gostitelja"
-
-#. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
-#: ../src/dummy-strings.c:182
-msgid "Conversion to service principal undefined for name type"
-msgstr "Pretvarjanje v ravnatelja storitve za ime vrste ni določeno"
-
-#. krb5_err.et:krb5:KRB5_SNAME_UNSUPP_NAMETYPE
-#: ../src/dummy-strings.c:183
-msgid "Initial Ticket response appears to be Version 4 error"
-msgstr "Videti je, da je začetni odgovor vstopnice napaka različice 4"
-
-#. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
-#: ../src/dummy-strings.c:184
-msgid "Cannot resolve network address for KDC in requested realm"
-msgstr "Naslova imena omrežja ni mogoče razrešiti za KDC v zahtevanem področju"
-
-#. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
-#: ../src/dummy-strings.c:185
-msgid "Requesting ticket can't get forwardable tickets"
-msgstr "Zahtevana vstopnica ne more dobiti prenosljivih vstopnic"
-
-#. krb5_err.et:krb5:KRB5_TKT_NOT_FORWARDABLE
-#: ../src/dummy-strings.c:186
-msgid "Bad principal name while trying to forward credentials"
-msgstr "Slabo ime ravnatelja med poskusom posredovanja poveril"
-
-#. krb5_err.et:krb5:KRB5_FWD_BAD_PRINCIPAL
-#: ../src/dummy-strings.c:187
-msgid "Looping detected inside krb5_get_in_tkt"
-msgstr "Znotraj krb5_get_in_tkt je zaznano ponavljanje"
-
-#. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
-#: ../src/dummy-strings.c:188
-msgid "Configuration file does not specify default realm"
-msgstr "Nastavitvena datoteka ne določi privzetega področja"
-
-#. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
-#: ../src/dummy-strings.c:189
-msgid "Bad SAM flags in obtain_sam_padata"
-msgstr "Slabe zastavice SAM v obtain_sam_padata"
-
-#. krb5_err.et:krb5:KRB5_SAM_UNSUPPORTED
-#: ../src/dummy-strings.c:190
-msgid "Invalid encryption type in SAM challenge"
-msgstr "Neveljavna vrsta šifriranje v izzivu SAM"
-
-#. krb5_err.et:krb5:KRB5_SAM_INVALID_ETYPE
-#: ../src/dummy-strings.c:191
-msgid "Missing checksum in SAM challenge"
-msgstr "Manjkajoča nadzorna vsota v izzivu SAM"
-
-#. krb5_err.et:krb5:KRB5_SAM_NO_CHECKSUM
-#: ../src/dummy-strings.c:192
-msgid "Bad checksum in SAM challenge"
-msgstr "Slaba nadzorna vsota v izzivu SAM"
-
-#. krb5_err.et:krb5:KRB5_SAM_BAD_CHECKSUM
-#: ../src/dummy-strings.c:193
-msgid "Keytab name too long"
-msgstr "Predolgo ime zavihka ključa"
-
-#. krb5_err.et:krb5:KRB5_KT_NAME_TOOLONG
-#: ../src/dummy-strings.c:194
-msgid "Key version number for principal in key table is incorrect"
-msgstr "Številka različice ključa za ravnatelja je nepravilna"
-
-#. krb5_err.et:krb5:KRB5_KT_KVNONOTFOUND
-#: ../src/dummy-strings.c:195
-msgid "This application has expired"
-msgstr "Ta program je potekel"
-
-#. krb5_err.et:krb5:KRB5_APPL_EXPIRED
-#: ../src/dummy-strings.c:196
-msgid "This Krb5 library has expired"
-msgstr "Ta knjižnica Krb5 je potekla"
-
-#. krb5_err.et:krb5:KRB5_LIB_EXPIRED
-#: ../src/dummy-strings.c:197
-msgid "New password cannot be zero length"
-msgstr "Dolžina novega gesla ne more biti nič"
-
-#. krb5_err.et:krb5:KRB5_CHPW_PWDNULL
-#: ../src/dummy-strings.c:198
-msgid "Password change failed"
-msgstr "Zamenjava gesla je spodletela"
-
-#. krb5_err.et:krb5:KRB5_CHPW_FAIL
-#: ../src/dummy-strings.c:199
-msgid "Bad format in keytab"
-msgstr "Slaba oblika v zavihku ključev"
-
-#. krb5_err.et:krb5:KRB5_KT_FORMAT
-#: ../src/dummy-strings.c:200
-msgid "Encryption type not permitted"
-msgstr "Vrsta šifriranja ni dovoljena"
-
-#. krb5_err.et:krb5:KRB5_NOPERM_ETYPE
-#: ../src/dummy-strings.c:201
-msgid "No supported encryption types (config file error?)"
-msgstr "Ni podprtih vrst šifriranje (napaka nastavitvene datoteke?)"
-
-#. krb5_err.et:krb5:KRB5_CONFIG_ETYPE_NOSUPP
-#: ../src/dummy-strings.c:202
-msgid "Program called an obsolete, deleted function"
-msgstr "Program je klical zastarelo, izbrisano funkcijo"
-
-#. krb5_err.et:krb5:KRB5_OBSOLETE_FN
-#: ../src/dummy-strings.c:203
-msgid "unknown getaddrinfo failure"
-msgstr "neznana napaka getaddrinfo"
-
-#. krb5_err.et:krb5:KRB5_EAI_FAIL
-#: ../src/dummy-strings.c:204
-msgid "no data available for host/domain name"
-msgstr "podatki za ime gostitelja/domene niso na voljo"
-
-#. krb5_err.et:krb5:KRB5_EAI_NODATA
-#: ../src/dummy-strings.c:205
-msgid "host/domain name not found"
-msgstr "Imena gostitelja/domene ni mogoče najti"
-
-#. krb5_err.et:krb5:KRB5_EAI_NONAME
-#: ../src/dummy-strings.c:206
-msgid "service name unknown"
-msgstr "neznano ime storitve"
-
-#. krb5_err.et:krb5:KRB5_EAI_SERVICE
-#: ../src/dummy-strings.c:207
-msgid "Cannot determine realm for numeric host address"
-msgstr "Ni mogoče določiti področja za številčni naslov gostitelja"
-
-#. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
-#: ../src/dummy-strings.c:208
-msgid "Invalid key generation parameters from KDC"
-msgstr "Neveljavni parametri ustvarjanja ključa od KDC"
-
-#. krb5_err.et:krb5:KRB5_ERR_BAD_S2K_PARAMS
-#: ../src/dummy-strings.c:209
-msgid "service not available"
-msgstr "storitev ni na voljo"
-
-#. krb5_err.et:krb5:KRB5_ERR_NO_SERVICE
-#: ../src/dummy-strings.c:210
-msgid "Ccache function not supported: read-only ccache type"
-msgstr "Zmožnost Ccahe ni podprta: vrsta ccache le za branje"
-
-#. krb5_err.et:krb5:KRB5_CC_READONLY
-#: ../src/dummy-strings.c:211
-msgid "Ccache function not supported: not implemented"
-msgstr "Zmožnost predpomnilnika ni podprta"
-
-#. krb5_err.et:krb5:KRB5_CC_NOSUPP
-#: ../src/dummy-strings.c:212
-msgid "Invalid format of Kerberos lifetime or clock skew string"
-msgstr "Neveljavna oblika življenjskega časa Kerberos ali pa niza zamika sistemske ure"
-
-#. krb5_err.et:krb5:KRB5_DELTAT_BADFORMAT
-#: ../src/dummy-strings.c:213
-msgid "Supplied data not handled by this plugin"
-msgstr "Vstavek ne upravlja z danimi podatki"
-
-#. krb5_err.et:krb5:KRB5_PLUGIN_NO_HANDLE
-#: ../src/dummy-strings.c:214
-msgid "Plugin does not support the operaton"
-msgstr "Vstavek ne podpira opravila"
-
-#. krb5_err.et:krb5:KRB5_PLUGIN_OP_NOTSUPP
-#: ../src/dummy-strings.c:215
-msgid "Kerberos V5 magic number table"
-msgstr "Kerberos V5 razpredelnica čarobnih števil"
-
-#. kv5m_err.et:kv5m:KV5M_NONE
-#: ../src/dummy-strings.c:216
-msgid "Bad magic number for krb5_principal structure"
-msgstr "Slabo čarobno število za zgradbo krb5_principal"
-
-#. kv5m_err.et:kv5m:KV5M_PRINCIPAL
-#: ../src/dummy-strings.c:217
-msgid "Bad magic number for krb5_data structure"
-msgstr "Slabo čarobno število za zgradbo krb5_data"
-
-#. kv5m_err.et:kv5m:KV5M_DATA
-#: ../src/dummy-strings.c:218
-msgid "Bad magic number for krb5_keyblock structure"
-msgstr "Slabo čarobno število za zgradbo krb5_keyblock"
-
-#. kv5m_err.et:kv5m:KV5M_KEYBLOCK
-#: ../src/dummy-strings.c:219
-msgid "Bad magic number for krb5_checksum structure"
-msgstr "Slabo čarobno število za zgradbo krb5_checksum"
-
-#. kv5m_err.et:kv5m:KV5M_CHECKSUM
-#: ../src/dummy-strings.c:220
-msgid "Bad magic number for krb5_encrypt_block structure"
-msgstr "Slabo čarobno število za zgradbo krb5_encrypt_block"
-
-#. kv5m_err.et:kv5m:KV5M_ENCRYPT_BLOCK
-#: ../src/dummy-strings.c:221
-msgid "Bad magic number for krb5_enc_data structure"
-msgstr "Slabo čarobno število za zgradbo krb5_enc_data"
-
-#. kv5m_err.et:kv5m:KV5M_ENC_DATA
-#: ../src/dummy-strings.c:222
-msgid "Bad magic number for krb5_cryptosystem_entry structure"
-msgstr "Slabo čarobno število za zgradbo krb5_cryptosystem_entry"
-
-#. kv5m_err.et:kv5m:KV5M_CRYPTOSYSTEM_ENTRY
-#: ../src/dummy-strings.c:223
-msgid "Bad magic number for krb5_cs_table_entry structure"
-msgstr "Slabo čarobno število za zgradbo krb5_cs_table_entry"
-
-#. kv5m_err.et:kv5m:KV5M_CS_TABLE_ENTRY
-#: ../src/dummy-strings.c:224
-msgid "Bad magic number for krb5_checksum_entry structure"
-msgstr "Slabo čarobno število za zgradbo krb5_checksum_entry"
-
-#. kv5m_err.et:kv5m:KV5M_CHECKSUM_ENTRY
-#: ../src/dummy-strings.c:225
-msgid "Bad magic number for krb5_authdata structure"
-msgstr "Slabo čarobno število za zgradbo krb5_authdata"
-
-#. kv5m_err.et:kv5m:KV5M_AUTHDATA
-#: ../src/dummy-strings.c:226
-msgid "Bad magic number for krb5_transited structure"
-msgstr "Slabo čarobno število za zgradbo krb5_transited"
-
-#. kv5m_err.et:kv5m:KV5M_TRANSITED
-#: ../src/dummy-strings.c:227
-msgid "Bad magic number for krb5_enc_tkt_part structure"
-msgstr "Slabo čarobno število za zgradbo krb5_enc_tkt_part"
-
-#. kv5m_err.et:kv5m:KV5M_ENC_TKT_PART
-#: ../src/dummy-strings.c:228
-msgid "Bad magic number for krb5_ticket structure"
-msgstr "Slabo čarobno število za zgradbo krb5_ticket"
-
-#. kv5m_err.et:kv5m:KV5M_TICKET
-#: ../src/dummy-strings.c:229
-msgid "Bad magic number for krb5_authenticator structure"
-msgstr "Slabo čarobno število za zgradbo krb5_authenticator"
-
-#. kv5m_err.et:kv5m:KV5M_AUTHENTICATOR
-#: ../src/dummy-strings.c:230
-msgid "Bad magic number for krb5_tkt_authent structure"
-msgstr "Slabo čarobno število za zgradbo krb5_tkt_authent"
-
-#. kv5m_err.et:kv5m:KV5M_TKT_AUTHENT
-#: ../src/dummy-strings.c:231
-msgid "Bad magic number for krb5_creds structure"
-msgstr "Slabo čarobno število za zgradbo krb5_creds"
-
-#. kv5m_err.et:kv5m:KV5M_CREDS
-#: ../src/dummy-strings.c:232
-msgid "Bad magic number for krb5_last_req_entry structure"
-msgstr "Slabo čarobno število za zgradbo krb5_last_req_entry"
-
-#. kv5m_err.et:kv5m:KV5M_LAST_REQ_ENTRY
-#: ../src/dummy-strings.c:233
-msgid "Bad magic number for krb5_pa_data structure"
-msgstr "Slabo čarobno število za zgradbo krb5_pa_data"
-
-#. kv5m_err.et:kv5m:KV5M_PA_DATA
-#: ../src/dummy-strings.c:234
-msgid "Bad magic number for krb5_kdc_req structure"
-msgstr "Slabo čarobno število za zgradbo krb5_kdc_req"
-
-#. kv5m_err.et:kv5m:KV5M_KDC_REQ
-#: ../src/dummy-strings.c:235
-msgid "Bad magic number for krb5_enc_kdc_rep_part structure"
-msgstr "Slabo čarobno število za zgradbo krb5_enc_kdc_rep_part"
-
-#. kv5m_err.et:kv5m:KV5M_ENC_KDC_REP_PART
-#: ../src/dummy-strings.c:236
-msgid "Bad magic number for krb5_kdc_rep structure"
-msgstr "Slabo čarobno število za zgradbo krb5_kdc_rep"
-
-#. kv5m_err.et:kv5m:KV5M_KDC_REP
-#: ../src/dummy-strings.c:237
-msgid "Bad magic number for krb5_error structure"
-msgstr "Slabo čarobno število za zgradbo krb5_error"
-
-#. kv5m_err.et:kv5m:KV5M_ERROR
-#: ../src/dummy-strings.c:238
-msgid "Bad magic number for krb5_ap_req structure"
-msgstr "Slabo čarobno število za zgradbo krb5_ap_req"
-
-#. kv5m_err.et:kv5m:KV5M_AP_REQ
-#: ../src/dummy-strings.c:239
-msgid "Bad magic number for krb5_ap_rep structure"
-msgstr "Slabo čarobno število za zgradbo krb5_ap_rep"
-
-#. kv5m_err.et:kv5m:KV5M_AP_REP
-#: ../src/dummy-strings.c:240
-msgid "Bad magic number for krb5_ap_rep_enc_part structure"
-msgstr "Slabo čarobno število za zgradbo krb5_ap_rep_enc_part"
-
-#. kv5m_err.et:kv5m:KV5M_AP_REP_ENC_PART
-#: ../src/dummy-strings.c:241
-msgid "Bad magic number for krb5_response structure"
-msgstr "Slabo čarobno število za zgradbo krb5_response"
-
-#. kv5m_err.et:kv5m:KV5M_RESPONSE
-#: ../src/dummy-strings.c:242
-msgid "Bad magic number for krb5_safe structure"
-msgstr "Slabo čarobno število za zgradbo krb5_safe"
-
-#. kv5m_err.et:kv5m:KV5M_SAFE
-#: ../src/dummy-strings.c:243
-msgid "Bad magic number for krb5_priv structure"
-msgstr "Slabo čarobno število za zgradbo krb5_priv"
-
-#. kv5m_err.et:kv5m:KV5M_PRIV
-#: ../src/dummy-strings.c:244
-msgid "Bad magic number for krb5_priv_enc_part structure"
-msgstr "Slabo čarobno število za zgradbo krb5_priv_enc_part"
-
-#. kv5m_err.et:kv5m:KV5M_PRIV_ENC_PART
-#: ../src/dummy-strings.c:245
-msgid "Bad magic number for krb5_cred structure"
-msgstr "Slabo čarobno število za zgradbo krb5_cred"
-
-#. kv5m_err.et:kv5m:KV5M_CRED
-#: ../src/dummy-strings.c:246
-msgid "Bad magic number for krb5_cred_info structure"
-msgstr "Slabo čarobno število za zgradbo krb5_cred_info"
-
-#. kv5m_err.et:kv5m:KV5M_CRED_INFO
-#: ../src/dummy-strings.c:247
-msgid "Bad magic number for krb5_cred_enc_part structure"
-msgstr "Slabo čarobno število za zgradbo krb5_cred_enc_part"
-
-#. kv5m_err.et:kv5m:KV5M_CRED_ENC_PART
-#: ../src/dummy-strings.c:248
-msgid "Bad magic number for krb5_pwd_data structure"
-msgstr "Slabo čarobno število za zgradbo krb5_pwd_data"
-
-#. kv5m_err.et:kv5m:KV5M_PWD_DATA
-#: ../src/dummy-strings.c:249
-msgid "Bad magic number for krb5_address structure"
-msgstr "Slabo čarobno število za zgradbo krb5_address"
-
-#. kv5m_err.et:kv5m:KV5M_ADDRESS
-#: ../src/dummy-strings.c:250
-msgid "Bad magic number for krb5_keytab_entry structure"
-msgstr "Slabo čarobno število za zgradbo krb5_keytab_entry"
-
-#. kv5m_err.et:kv5m:KV5M_KEYTAB_ENTRY
-#: ../src/dummy-strings.c:251
-msgid "Bad magic number for krb5_context structure"
-msgstr "Slabo čarobno število za zgradbo krb5_context"
-
-#. kv5m_err.et:kv5m:KV5M_CONTEXT
-#: ../src/dummy-strings.c:252
-msgid "Bad magic number for krb5_os_context structure"
-msgstr "Slabo čarobno število za zgradbo krb5_os_context"
-
-#. kv5m_err.et:kv5m:KV5M_OS_CONTEXT
-#: ../src/dummy-strings.c:253
-msgid "Bad magic number for krb5_alt_method structure"
-msgstr "Slabo čarobno število za zgradbo krb5_alt_method"
-
-#. kv5m_err.et:kv5m:KV5M_ALT_METHOD
-#: ../src/dummy-strings.c:254
-msgid "Bad magic number for krb5_etype_info_entry structure"
-msgstr "Slabo čarobno število za zgradbo krb5_etype_info_entry"
-
-#. kv5m_err.et:kv5m:KV5M_ETYPE_INFO_ENTRY
-#: ../src/dummy-strings.c:255
-msgid "Bad magic number for krb5_db_context structure"
-msgstr "Slabo čarobno število za zgradbo krb5_db_context"
-
-#. kv5m_err.et:kv5m:KV5M_DB_CONTEXT
-#: ../src/dummy-strings.c:256
-msgid "Bad magic number for krb5_auth_context structure"
-msgstr "Slabo čarobno število za zgradbo krb5_auth_context"
-
-#. kv5m_err.et:kv5m:KV5M_AUTH_CONTEXT
-#: ../src/dummy-strings.c:257
-msgid "Bad magic number for krb5_keytab structure"
-msgstr "Slabo čarobno število za krb5_keytab structure"
-
-#. kv5m_err.et:kv5m:KV5M_KEYTAB
-#: ../src/dummy-strings.c:258
-msgid "Bad magic number for krb5_rcache structure"
-msgstr "Slabo čarobno število za krb5_rcache structure"
-
-#. kv5m_err.et:kv5m:KV5M_RCACHE
-#: ../src/dummy-strings.c:259
-msgid "Bad magic number for krb5_ccache structure"
-msgstr "Slabo čarobno število za krb5_ccache structure"
-
-#. kv5m_err.et:kv5m:KV5M_CCACHE
-#: ../src/dummy-strings.c:260
-msgid "Bad magic number for krb5_preauth_ops"
-msgstr "Slabo čarobno število za krb5_preauth_ops"
-
-#. kv5m_err.et:kv5m:KV5M_PREAUTH_OPS
-#: ../src/dummy-strings.c:261
-msgid "Bad magic number for krb5_sam_challenge"
-msgstr "Slabo čarobno število za krb5_sam_challenge"
-
-#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE
-#: ../src/dummy-strings.c:262
-msgid "Bad magic number for krb5_sam_challenge_2"
-msgstr "Slabo čarobno število za krb5_sam_challenge_2"
-
-#. kv5m_err.et:kv5m:KV5M_SAM_CHALLENGE_2
-#: ../src/dummy-strings.c:263
-msgid "Bad magic number for krb5_sam_key"
-msgstr "Slabo čarobno število za krb5_sam_key"
-
-#. kv5m_err.et:kv5m:KV5M_SAM_KEY
-#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC
-#: ../src/dummy-strings.c:264
-#: ../src/dummy-strings.c:265
-msgid "Bad magic number for krb5_enc_sam_response_enc"
-msgstr "Slabo čarobno število za krb5_enc_sam_response_enc"
-
-#. kv5m_err.et:kv5m:KV5M_ENC_SAM_RESPONSE_ENC_2
-#: ../src/dummy-strings.c:266
-msgid "Bad magic number for krb5_sam_response"
-msgstr "Slabo čarobno število za krb5_sam_response"
-
-#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE
-#: ../src/dummy-strings.c:267
-msgid "Bad magic number for krb5_sam_response 2"
-msgstr "Slabo čarobno število za krb5_sam_response 2"
-
-#. kv5m_err.et:kv5m:KV5M_SAM_RESPONSE_2
-#: ../src/dummy-strings.c:268
-msgid "Bad magic number for krb5_predicted_sam_response"
-msgstr "Slabo čarobno število za krb5_predicted_sam_response"
-
-#. kv5m_err.et:kv5m:KV5M_PREDICTED_SAM_RESPONSE
-#: ../src/dummy-strings.c:269
-msgid "Bad magic number for passwd_phrase_element"
-msgstr "Slabo čarobno število za passwd_phrase_element"
-
-#. kv5m_err.et:kv5m:KV5M_PASSWD_PHRASE_ELEMENT
-#: ../src/dummy-strings.c:270
-msgid "Bad magic number for GSSAPI OID"
-msgstr "Slabo čarobno število za GSSAPI OID"
-
-#. kv5m_err.et:kv5m:KV5M_GSS_OID
-#: ../src/dummy-strings.c:271
-msgid "Bad magic number for GSSAPI QUEUE"
-msgstr "Slabo čarobno število od GSSAPI VRSTE"
-
-#: ../src/ka-applet.c:566
+#: src/ka-pwdialog.c:175
 #, c-format
-msgid "Your credentials expire in %.2d:%.2dh"
-msgstr "Vaša poverila potečejo v %.2d%.2dh"
+msgid "Couldn't acquire Kerberos ticket: '%s'"
+msgstr "Ni mogoče pridobiti vstopnice Kerberos: »%s«"
 
-#: ../src/ka-applet.c:759
-msgid "List Tickets"
-msgstr "Izpiši vstopnice"
+#: src/ka-pwdialog.c:240
+msgid "Please enter your Kerberos password:"
+msgstr "Vnesite svoje geslo Kerberos:"
 
-#: ../src/ka-applet.c:769
-msgid "Get Ticket"
-msgstr "Dobi vstopnico"
+#: src/ka-pwdialog.c:253
+#, c-format
+msgid "Please enter the password for '%s':"
+msgstr "Vnesite geslo za '%s':"
 
-#: ../src/ka-applet.c:778
-msgid "Don't show me this again"
-msgstr "Tega ne prikaži več"
+#: src/ka-pwdialog.c:271
+msgid "The password you entered is invalid"
+msgstr "Vneseno geslo je neveljavno"
 
-#: ../src/ka-applet.c:785
-msgid "Remove Credentials Cache"
-msgstr "Odstrani predpomnilnik poveril"
-
-#: ../src/ka-applet.c:845
-msgid "You have valid Kerberos credentials."
-msgstr "Naložena so veljavna poverila Kerberos"
-
-#: ../src/ka-applet.c:847
-msgid "You've refreshed your Kerberos credentials."
-msgstr "Osvežili ste svoja poverila Kerberos"
-
-#: ../src/ka-applet.c:850
-msgid "Network credentials valid"
-msgstr "Omrežna poverila so veljavna"
-
-#: ../src/ka-applet.c:869
-msgid "Network credentials expiring"
-msgstr "Omrežna poverila bodo potekla"
-
-#: ../src/ka-applet.c:886
-msgid "Network credentials expired"
-msgstr "Omrežna poverila so potekla"
-
-#: ../src/ka-applet.c:887
-msgid "Your Kerberos credentials have expired."
-msgstr "Poverila Kerberos so potekla."
-
-#: ../src/ka-applet.c:967
-msgid "Remove Credentials _Cache"
-msgstr "Odstrani _predpomnilnik poveril"
-
-#. Ticket dialog
-#: ../src/ka-applet.c:978
-msgid "_List Tickets"
-msgstr "_Naštej vstopnice"
-
-#: ../src/ka-tools.c:45
+#: src/ka-tools.c:33
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -1575,158 +1936,17 @@ msgstr ""
 "Prišlo je do napake med prikazovanjem pomoči:\n"
 "%s"
 
-#. Translators: add the translators of your language here
-#: ../src/ka-tools.c:85
+#: src/ka-tools.c:69
 msgid "translator-credits"
 msgstr ""
 "Andrej Žnidaršič\n"
 "Matej Urbančič"
 
-#: ../src/ka-main-window.c:75
-msgid "Principal"
-msgstr "Ravnatelj"
-
-#: ../src/ka-main-window.c:81
-msgid "Start Time"
-msgstr "Začetni čas"
-
-#: ../src/ka-main-window.c:87
-msgid "End Time"
-msgstr "Končni čas"
-
-#. Translators: this is an abbreviation for forwardable
-#: ../src/ka-main-window.c:94
-msgid "Fwd"
-msgstr "Posreduj"
-
-#. Translators: this is an abbreviation for proxiable
-#: ../src/ka-main-window.c:101
-msgid "Proxy"
-msgstr "Posredovalni strežnik"
-
-#. Translators: this is an abbreviation for renewable
-#: ../src/ka-main-window.c:108
-msgid "Renew"
-msgstr "Obnovi"
-
-#: ../src/ka-main-window.c:137
-msgid "Error displaying service ticket information"
-msgstr "Napaka med prikazovanjem podrobnosti storitvene vstopnice"
-
-#: ../src/ka-preferences.c:297
-msgid "Choose Certificate"
-msgstr "Izbor potrdila"
-
-#: ../src/ka-preferences.c:313
-msgid "X509 Certificates"
-msgstr "X509 potrdila"
-
-#: ../src/ka-preferences.c:317
-msgid "all files"
-msgstr "vse datoteke"
-
-#: ../src/krb5-auth-dialog.desktop.in.h:2
+#: src/org.gnome.KrbAuthDialog.desktop.in:4
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Pogovorno okno Kerberos omrežne overitve"
 
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:1
-msgid "Kerberos principal"
-msgstr "Kerberos ravnatelj"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:2
-msgid "The Kerberos principal to acquire the ticket for"
-msgstr "Ravnatelj Kerberos za izdajo vstopnice za"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:3
-msgid "PKINIT identifier"
-msgstr "Določilnik PKINIT"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:4
-msgid "The principal's public/private/certificate identifier when using PKINIT"
-msgstr "Ravnateljevo javno/zasebno/potrdilno določilo ob uporabi PKINIT"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:5
-msgid "PKINIT trust anchors"
-msgstr "Sidra zaupanja PKINIT"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:6
-msgid "PKINIT CA certificates"
-msgstr "CA potrdila PKINIT"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:7
-msgid "Prompt minutes before expiry"
-msgstr "Opozorilo pred potekom v minutah"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:8
-msgid "Start prompting/displaying notifications that many minutes before expiry"
-msgstr "Začetek prikazovanja obvestil toliko minut pred potekom"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:9
-msgid "Forwardable ticket"
-msgstr "Prenosljiva vstopnica"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:10
-msgid "Requested tickets should be forwardable"
-msgstr "Zahtevane vstopnice bi morale biti prenosljive"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:11
-msgid "Renewable ticket"
-msgstr "Obnovljiva vstopnica"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:12
-msgid "Requested tickets should be renewable"
-msgstr "Zahtevane vstopnice bi morale biti obnovljive"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:13
-msgid "Proxiable ticket"
-msgstr "Posredovalna vstopnica"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:14
-msgid "Requested tickets should be proxiable"
-msgstr "Zahtevano vstopnico bi moralo biti mogoče posredovati"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:15
-msgid "Configuration tickets"
-msgstr "Nastavitvene vstopnice"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:16
-msgid "Show configuration tickets"
-msgstr "Pokaži nastavitvene vstopnice"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:17
-msgid "valid ticket notification"
-msgstr "obvestilo veljavne vstopnice"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:18
-msgid "Notify user when ticket becomes valid"
-msgstr "Obvesti uporabnika, ko vstopnica postane veljavna"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:19
-msgid "ticket expiring notification"
-msgstr "obvestilo o pretekanju vstopnice"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:20
-msgid "Notify user when ticket is about to expire"
-msgstr "Obvesti uporabnika, ko bo vstopnica potekla"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:21
-msgid "ticket expired notification"
-msgstr "obvestilo potekle vstopnice"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:22
-msgid "Notify user when ticket has expired"
-msgstr "Obvesti uporabnika ob poteku vstopnice"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:23
-msgid "Enabled plugins"
-msgstr "Omogočeni vstavki"
-
-#: ../src/org.gnome.KrbAuthDialog.gschema.xml.h:24
-msgid "List of plugins that should be loaded and activated on startup."
-msgstr "Seznam vstavkov, ki bodo naloženi in omogočeni ob zagonu."
-
-#: ../secmem/util.c:106
-#, c-format
-msgid "Warning: running q-agent setuid on this system is dangerous\n"
-msgstr "Opozorilo: poganjanje q-agent setuid na tem sistemu je nevarno\n"
-
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
+#: src/org.gnome.KrbAuthDialog.desktop.in:12
+msgid "kerberos;authentication;"
+msgstr "kerberos;preverjanje;pristnosti;"

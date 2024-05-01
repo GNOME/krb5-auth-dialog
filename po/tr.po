@@ -5,16 +5,16 @@
 # Simge Sezgin <simgeszgn@gmail.com>, 2015.
 # İşbaran Akçayır <isbaran@gmail.com>, 2015.
 # Sabri Ünal <libreajans@gmail.com>, 2023.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2018, 2021, 2023.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018, 2021, 2023, 2024.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-gialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
-"POT-Creation-Date: 2023-10-18 18:58+0000\n"
-"PO-Revision-Date: 2024-02-14 03:58+0300\n"
-"Last-Translator: Sabri Ünal <libreajans@gmail.com>\n"
+"POT-Creation-Date: 2024-02-14 14:05+0000\n"
+"PO-Revision-Date: 2024-05-01 08:00+0300\n"
+"Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <takim@gnome.org.tr>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
@@ -240,7 +240,7 @@ msgstr "Kullanıcı Kimliği"
 
 #: src/resources/ui/ka-preferences.ui:82
 msgid "Principal certificate and private key"
-msgstr ""
+msgstr "Ana sertifika ve özel anahtar"
 
 #: src/resources/ui/ka-preferences.ui:85
 msgid "Use Smartcard"
@@ -601,10 +601,8 @@ msgstr "Sertifika uyuşmazlığı"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
 #: src/dummy-strings.c:68
-#, fuzzy
-#| msgid "Configuration tickets"
 msgid "No ticket granting ticket"
-msgstr "Yapılandırma biletleri"
+msgstr "Bilet sunan bilet yok"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NO_TGT
 #: src/dummy-strings.c:69
@@ -699,7 +697,7 @@ msgstr "Daha çok ön kimlik doğrulama gerekli"
 #. krb5_err.et:krb5:KRB5KDC_ERR_MORE_PREAUTH_DATA_REQUIRED
 #: src/dummy-strings.c:87
 msgid "An unsupported critical FAST option was requested"
-msgstr ""
+msgstr "Desteklenmeyen kritik FAST seçeneği istendi"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_UNKNOWN_CRITICAL_FAST_OPTION
 #: src/dummy-strings.c:88
@@ -879,14 +877,12 @@ msgstr "Genel bilinmeyen RC hatası"
 #. krb5_err.et:krb5:KRB5_RC_UNKNOWN
 #: src/dummy-strings.c:124
 msgid "Message is a replay"
-msgstr "İleti bir yanıt"
+msgstr "İleti bir yeniden oynatma"
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: src/dummy-strings.c:125
-#, fuzzy
-#| msgid "Replay I/O operation failed XXX"
 msgid "Replay cache I/O operation failed"
-msgstr "Tekrar I/O işlemi başarısız oldu XXX"
+msgstr "Yeniden oynatma ön bellek G/Ç işlemi başarısız oldu"
 
 #. krb5_err.et:krb5:KRB5_RC_IO
 #: src/dummy-strings.c:126
@@ -901,12 +897,12 @@ msgstr "Yeniden oynatma ön bellek adı ayrıştırma/biçimleme hatası"
 #. krb5_err.et:krb5:KRB5_RC_PARSE
 #: src/dummy-strings.c:128
 msgid "End-of-file on replay cache I/O"
-msgstr "Yeniden oynatma ön belleği I/O'da dosya sonu"
+msgstr "Yeniden oynatma ön belleği G/Ç'de dosya sonu"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_EOF
 #: src/dummy-strings.c:129
 msgid "No more memory to allocate (in replay cache I/O code)"
-msgstr "Ayrılacak daha çok bellek yok (I/O kod ön bellek tekrarında)"
+msgstr "Ayrılacak daha çok bellek yok (yeniden oynatma ön bellek G/Ç kodunda)"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_MALLOC
 #: src/dummy-strings.c:130
@@ -916,7 +912,7 @@ msgstr "Yeniden oynatma ön belleği kodu içinde izin reddedildi"
 #. krb5_err.et:krb5:KRB5_RC_IO_PERM
 #: src/dummy-strings.c:131
 msgid "I/O error in replay cache i/o code"
-msgstr "Yeniden oynatma ön belleği i/o kodunda I/O hatası"
+msgstr "Yeniden oynatma ön belleği g/ç kodunda G/Ç hatası"
 
 #. krb5_err.et:krb5:KRB5_RC_IO_IO
 #: src/dummy-strings.c:132
@@ -1030,10 +1026,8 @@ msgstr "Anahtar tablo türü zaten kayıtlıdır."
 
 #. krb5_err.et:krb5:KRB5_KT_TYPE_EXISTS
 #: src/dummy-strings.c:154
-#, fuzzy
-#| msgid "Credentials cache I/O operation failed XXX"
 msgid "Credentials cache I/O operation failed"
-msgstr "Kimlik bilgileri ön bellek I/O işlemi başarısız oldu XXX"
+msgstr "Kimlik bilgileri ön bellek G/Ç işlemi başarısız oldu"
 
 #. krb5_err.et:krb5:KRB5_CC_IO
 #: src/dummy-strings.c:155
@@ -1716,7 +1710,7 @@ msgstr "ASN.1'in beklenen EOC'u eksik"
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: src/dummy-strings.c:291
 msgid "ASN.1 object omitted in sequence"
-msgstr ""
+msgstr "Sırada ASN.1 nesnesi dışlandı"
 
 #. asn1_err.et:asn1:ASN1_OMITTED
 #: src/dummy-strings.c:292

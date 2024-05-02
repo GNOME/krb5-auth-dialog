@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
 "POT-Creation-Date: 2022-10-30 11:14+0000\n"
-"PO-Revision-Date: 2024-05-02 13:24+0200\n"
+"PO-Revision-Date: 2024-05-02 14:40+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -436,9 +436,8 @@ msgstr "Zahtevani strežnik in vstopnica se ne skladata"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: src/dummy-strings.c:36
-#, fuzzy
 msgid "Server principal valid for user2user only"
-msgstr "Glavni strežnik, veljaven samo za user2user"
+msgstr "Glavni strežnik, veljaven samo za od uporabnika do uporabnika"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_MUST_USE_USER2USER
 #: src/dummy-strings.c:37
@@ -598,19 +597,16 @@ msgstr "Neskladnost potrdila"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
 #: src/dummy-strings.c:68
-#, fuzzy
 msgid "No ticket granting ticket"
 msgstr "Brez vstopnice, ki omogoča vstopnice"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NO_TGT
 #: src/dummy-strings.c:69
-#, fuzzy
 msgid "Realm not local to KDC"
-msgstr "Kraljestvo ni krajevno za KDC"
+msgstr "Področje ni krajevno za KDC"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_WRONG_REALM
 #: src/dummy-strings.c:70
-#, fuzzy
 msgid "User to user required"
 msgstr "Zahtevano je od uporabnika do uporabnika"
 
@@ -881,7 +877,6 @@ msgstr "Sporočilo je odgovor"
 
 #. krb5_err.et:krb5:KRB5_RC_REPLAY
 #: src/dummy-strings.c:125
-#, fuzzy
 msgid "Replay cache I/O operation failed"
 msgstr "V/I dejanje predpomnilnika ponovnega predvajanja je spodletelo"
 
@@ -1324,20 +1319,17 @@ msgstr "neveljaven niz UTF-8"
 
 #. krb5_err.et:krb5:KRB5_ERR_INVALID_UTF8
 #: src/dummy-strings.c:213
-#, fuzzy
-#| msgid "Required preauthentication key not supplied"
 msgid "FAST protected pre-authentication required but not supported by KDC"
-msgstr "Zahtevana predhodna overitev ni pridobljena"
+msgstr ""
+"Zahtevano je zaščiteno predhodno overjanje FAST, ki pa ga KDC ne podpira"
 
 #. krb5_err.et:krb5:KRB5_ERR_FAST_REQUIRED
 #: src/dummy-strings.c:214
-#, fuzzy
 msgid "Auth context must contain local address"
 msgstr "Kontekst preverjanja pristnosti mora vsebovati krajevni naslov"
 
 #. krb5_err.et:krb5:KRB5_LOCAL_ADDR_REQUIRED
 #: src/dummy-strings.c:215
-#, fuzzy
 msgid "Auth context must contain remote address"
 msgstr "Kontekst preverjanja pristnosti mora vsebovati oddaljeni naslov"
 
@@ -1629,9 +1621,8 @@ msgstr "Slabo čarobno število od GSSAPI VRSTE"
 
 #. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
 #: src/dummy-strings.c:274
-#, fuzzy
 msgid "Bad magic number for fast armored request"
-msgstr "Slabo čarobno število za hitro oklepno zahtevo"
+msgstr "Slabo čarobno število za hitro zavarovano zahtevo"
 
 #. kv5m_err.et:kv5m:KV5M_FAST_ARMORED_REQ
 #: src/dummy-strings.c:275

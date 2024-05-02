@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues\n"
 "POT-Creation-Date: 2022-10-30 11:14+0000\n"
-"PO-Revision-Date: 2024-04-29 00:38+0200\n"
+"PO-Revision-Date: 2024-05-02 13:24+0200\n"
 "Last-Translator: Martin Srebotnjak <miles@filmsi.net>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: sl\n"
@@ -23,26 +23,21 @@ msgstr ""
 "X-Generator: Poedit 2.2.1\n"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:6
-#, fuzzy
-#| msgid "Kerberos Network Authentication Dialog"
 msgid "Kerberos Authentication Dialog"
-msgstr "Pogovorno okno Kerberos omrežne overitve"
+msgstr "Pogovorno okno Overjanje Kerberos"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:7
-#, fuzzy
-#| msgid "Requested Kerberos tickets should be:"
 msgid "Request, renew and view Kerberos tickets"
-msgstr "Zahtevane vstopnice Kerberos bi morale biti:"
+msgstr "Zahtevajte, obnovite in si oglejte vstopnice Kerberos"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:9
-#, fuzzy
 msgid ""
 "Kerberos Authentication allows you to list your current Kerberos tickets, "
 "and to request a new ticket (authenticate to the Kerberos Server). It also "
 "notifies you when your Kerberos credentials are about to expire and renews "
 "your ticket automatically if possible."
 msgstr ""
-"Kerberos Authentication vam omogoča, da navedete svoje trenutne vstopnice za "
+"Overjanje Kerberos vam omogoča, da navedete svoje trenutne vstopnice za "
 "Kerberos in zahtevate novo vstopnico (overite na strežniku Kerberos). Prav "
 "tako vas obvesti, ko bodo vaše poverilnice za Kerberos potekle, in samodejno "
 "podaljša vstopnico, če je to mogoče."
@@ -52,6 +47,8 @@ msgid ""
 "This is useful if you need to authenticate to a Kerberos Server (KDC) after "
 "your login to the desktop (e.g. on a mobile device)."
 msgstr ""
+"To je uporabno, če morate po prijavi na namizje (npr. na mobilni napravi) "
+"preveriti pristnost na strežnik Kerberos (KDC)."
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:23
 msgid "Kerberos authentication dialog"
@@ -252,10 +249,8 @@ msgstr ""
 "Izbrana možnost omogoči zahtevo za uporabo Varnostne SmartCard za overjanje"
 
 #: src/resources/ui/ka-preferences.ui:96
-#, fuzzy
-#| msgid "Certificate and private key used for authentication"
 msgid "Certificate and private key file"
-msgstr "Potrdilo in osebni ključ uporabljena za overitev"
+msgstr "Datoteka s potrdilom in zasebnim ključem"
 
 #: src/resources/ui/ka-preferences.ui:119
 msgid "X509 trust anchors"
@@ -441,8 +436,9 @@ msgstr "Zahtevani strežnik in vstopnica se ne skladata"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: src/dummy-strings.c:36
+#, fuzzy
 msgid "Server principal valid for user2user only"
-msgstr ""
+msgstr "Glavni strežnik, veljaven samo za user2user"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_MUST_USE_USER2USER
 #: src/dummy-strings.c:37
@@ -603,19 +599,20 @@ msgstr "Neskladnost potrdila"
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
 #: src/dummy-strings.c:68
 #, fuzzy
-#| msgid "Configuration tickets"
 msgid "No ticket granting ticket"
-msgstr "Nastavitvene vstopnice"
+msgstr "Brez vstopnice, ki omogoča vstopnice"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NO_TGT
 #: src/dummy-strings.c:69
+#, fuzzy
 msgid "Realm not local to KDC"
-msgstr ""
+msgstr "Kraljestvo ni krajevno za KDC"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_WRONG_REALM
 #: src/dummy-strings.c:70
+#, fuzzy
 msgid "User to user required"
-msgstr ""
+msgstr "Zahtevano je od uporabnika do uporabnika"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_USER_TO_USER_REQUIRED
 #: src/dummy-strings.c:71
@@ -680,12 +677,12 @@ msgstr "Šifriranje javnega ključa ni podprto"
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
 #: src/dummy-strings.c:83
 msgid "The IAKERB proxy could not find a KDC"
-msgstr ""
+msgstr "Posrednik IAKERB ne more najti KDC"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NOT_FOUND
 #: src/dummy-strings.c:84
 msgid "The KDC did not respond to the IAKERB proxy"
-msgstr ""
+msgstr "KDC se ni odzval na posrednika IAKERB"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NO_RESPONSE
 #: src/dummy-strings.c:85
@@ -700,12 +697,12 @@ msgstr "Potrebnih je več podatkov za predhodno preverjanje pristnosti"
 #. krb5_err.et:krb5:KRB5KDC_ERR_MORE_PREAUTH_DATA_REQUIRED
 #: src/dummy-strings.c:87
 msgid "An unsupported critical FAST option was requested"
-msgstr ""
+msgstr "Zahtevana je bila nepodprta kritična možnost FAST"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_UNKNOWN_CRITICAL_FAST_OPTION
 #: src/dummy-strings.c:88
 msgid "No acceptable KDF offered"
-msgstr ""
+msgstr "Ni ponujen sprejemljiv KDF"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NO_ACCEPTABLE_KDF
 #: src/dummy-strings.c:89
@@ -1334,13 +1331,15 @@ msgstr "Zahtevana predhodna overitev ni pridobljena"
 
 #. krb5_err.et:krb5:KRB5_ERR_FAST_REQUIRED
 #: src/dummy-strings.c:214
+#, fuzzy
 msgid "Auth context must contain local address"
-msgstr ""
+msgstr "Kontekst preverjanja pristnosti mora vsebovati krajevni naslov"
 
 #. krb5_err.et:krb5:KRB5_LOCAL_ADDR_REQUIRED
 #: src/dummy-strings.c:215
+#, fuzzy
 msgid "Auth context must contain remote address"
-msgstr ""
+msgstr "Kontekst preverjanja pristnosti mora vsebovati oddaljeni naslov"
 
 #. krb5_err.et:krb5:KRB5_REMOTE_ADDR_REQUIRED
 #: src/dummy-strings.c:216
@@ -1631,9 +1630,8 @@ msgstr "Slabo čarobno število od GSSAPI VRSTE"
 #. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
 #: src/dummy-strings.c:274
 #, fuzzy
-#| msgid "Bad magic number for krb5_cred structure"
 msgid "Bad magic number for fast armored request"
-msgstr "Slabo čarobno število za zgradbo krb5_cred"
+msgstr "Slabo čarobno število za hitro oklepno zahtevo"
 
 #. kv5m_err.et:kv5m:KV5M_FAST_ARMORED_REQ
 #: src/dummy-strings.c:275
@@ -1647,10 +1645,8 @@ msgstr "Slabo čarobno število za odgovor FAST"
 
 #. kv5m_err.et:kv5m:KV5M_FAST_RESPONSE
 #: src/dummy-strings.c:277
-#, fuzzy
-#| msgid "Bad magic number for krb5_authdata structure"
 msgid "Bad magic number for krb5_authdata_context"
-msgstr "Slabo čarobno število za zgradbo krb5_authdata"
+msgstr "Slabo čarobno število za krb5_authdata_context"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA_CONTEXT
 #: src/dummy-strings.c:278
@@ -1709,10 +1705,8 @@ msgstr "ASN.1 slab odziv preko gmtime"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: src/dummy-strings.c:289
-#, fuzzy
-#| msgid "ASN.1 non-constructed indefinite encoding"
 msgid "ASN.1 indefinite encoding"
-msgstr "ASN.1 ne-izgrajeno nedoločeno kodiranje"
+msgstr "Nedoločeno kodiranje ASN.1"
 
 #. asn1_err.et:asn1:ASN1_INDEF
 #: src/dummy-strings.c:290
@@ -1722,7 +1716,7 @@ msgstr "ASN.1 manjka pričakovani EOC"
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: src/dummy-strings.c:291
 msgid "ASN.1 object omitted in sequence"
-msgstr ""
+msgstr "Predmet ASN.1 je izpuščen v zaporedju"
 
 #. asn1_err.et:asn1:ASN1_OMITTED
 #: src/dummy-strings.c:292
@@ -1731,7 +1725,6 @@ msgstr "Vstavek ne podpira različice vmesnika"
 
 #. k5e1_err.et:k5e1:KRB5_PLUGIN_VER_NOTSUPP
 #: src/dummy-strings.c:293
-#, fuzzy
 msgid "Invalid module specifier"
 msgstr "Neveljaven določitelj modula"
 
@@ -1742,46 +1735,43 @@ msgstr "Imena modula vstavka ni mogoče najti"
 
 #. k5e1_err.et:k5e1:KRB5_PLUGIN_NAME_NOTFOUND
 #: src/dummy-strings.c:295
-#, fuzzy
 msgid "The KDC should discard this request"
-msgstr "KDC bi morala to zahtevo zavreči"
+msgstr "KDC bi moral to zahtevo zavreči"
 
 #. k5e1_err.et:k5e1:KRB5KDC_ERR_DISCARD
 #: src/dummy-strings.c:296
 msgid "Can't create new subsidiary cache"
-msgstr ""
+msgstr "Novega podrejenega predpomnilnika ni mogoče ustvariti"
 
 #. k5e1_err.et:k5e1:KRB5_DCC_CANNOT_CREATE
 #: src/dummy-strings.c:297
-#, fuzzy
-#| msgid "Invalid certificate"
 msgid "Invalid keyring anchor name"
-msgstr "Neveljavno potrdilo"
+msgstr "Neveljavno ime sidra za zbirko ključev"
 
 #. k5e1_err.et:k5e1:KRB5_KCC_INVALID_ANCHOR
 #: src/dummy-strings.c:298
 msgid "Unknown keyring collection version"
-msgstr ""
+msgstr "Neznana različica nabora zbirk ključev"
 
 #. k5e1_err.et:k5e1:KRB5_KCC_UNKNOWN_VERSION
 #: src/dummy-strings.c:299
 msgid "Invalid UID in persistent keyring name"
-msgstr ""
+msgstr "Neveljaven UID v trajnem imenu zbirke ključev"
 
 #. k5e1_err.et:k5e1:KRB5_KCC_INVALID_UID
 #: src/dummy-strings.c:300
 msgid "Malformed reply from KCM daemon"
-msgstr ""
+msgstr "Nepravilno oblikovan odgovor prikritega procesa KCM"
 
 #. k5e1_err.et:k5e1:KRB5_KCM_MALFORMED_REPLY
 #: src/dummy-strings.c:301
 msgid "Mach RPC error communicating with KCM daemon"
-msgstr ""
+msgstr "Napaka Mach RPC pri komunikaciji s prikritim procesom KCM"
 
 #. k5e1_err.et:k5e1:KRB5_KCM_RPC_ERROR
 #: src/dummy-strings.c:302
 msgid "KCM daemon reply too big"
-msgstr ""
+msgstr "Odgovor prikritega procesa KCM je prevelik"
 
 #. k5e1_err.et:k5e1:KRB5_KCM_REPLY_TOO_BIG
 #: src/dummy-strings.c:303
@@ -1791,12 +1781,12 @@ msgstr "Ni najdenega strežnika KCM"
 #. k5e1_err.et:k5e1:KRB5_KCM_NO_SERVER
 #: src/dummy-strings.c:304
 msgid "Authorize and set hw-authent ticket flag"
-msgstr ""
+msgstr "Pooblastite in nastavite zastavico vstopnice hw-authent"
 
 #. k5e1_err.et:k5e1:KRB5_CERTAUTH_HWAUTH
 #: src/dummy-strings.c:305
 msgid "Set hw-authent ticket flag but do not authorize"
-msgstr ""
+msgstr "Nastavi zastavico hw-authent vstopnice, vendar je ne overi"
 
 #. Translators: First number is hours, second number is minutes
 #: src/ka-applet.c:604

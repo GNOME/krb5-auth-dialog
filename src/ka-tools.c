@@ -63,7 +63,7 @@ ka_show_about (KaApplet *applet)
                            "copyright", "Copyright (C) 2004,2005,2006 Red Hat, Inc.,"
                                         "2008-2011,2014,2021,2022 Guido Günther",
                            "website", "https://honk.sigxcpu.org/piki/projects/krb5-auth-dialog/",
-                           "issue-url", "https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/issues/new",
+                           "issue-url", "https://gitlab.gnome.org/GNOME/krb5-auth-dialog/-/issues/",
                            "license-type", GTK_LICENSE_GPL_2_0,
                            "developers", developers,
                            "translator-credits", _("translator-credits"),

@@ -1,15 +1,15 @@
 # Swedish translation of krb5-auth-dialog-help
-# Copyright © 2009-2021 krb5-auth-dialog's COPYRIGHT HOLDER
+# Copyright © 2009-2023 krb5-auth-dialog's COPYRIGHT HOLDER
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # Daniel Nylander <po@danielnylander.se>, 2009.
 # Josef Andersson <josef.andersson@fripost.org>, 2016.
-# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2019, 2021.
+# Anders Jonsson <anders.jonsson@norsjovallen.se>, 2019, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
-"POT-Creation-Date: 2021-02-15 12:35+0000\n"
-"PO-Revision-Date: 2021-02-16 00:15+0100\n"
+"POT-Creation-Date: 2023-12-03 16:39+0000\n"
+"PO-Revision-Date: 2025-01-17 21:08+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
 "Language: sv\n"
@@ -17,14 +17,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.4.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
 msgctxt "_"
 msgid "translator-credits"
 msgstr ""
 "Daniel Nylander <po@danielnylander.se>, 2009\n"
-"Josef Andersson <josef.andersson@fripost.org>, 2016"
+"Josef Andersson <josef.andersson@fripost.org>, 2016\n"
+"Anders Jonsson <anders.jonsson@norsjovallen.se>, 2019, 2021, 2023"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:39
@@ -52,118 +53,6 @@ msgstr "<year>2009</year> <holder>Guido Günther</holder>"
 msgid "Guido Günther"
 msgstr "Guido Günther"
 
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:2
-msgid ""
-"Permission is granted to copy, distribute and/or modify this document under "
-"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
-"later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <ulink type=\"help\" url=\"ghelp:fdl\">link</ulink> or "
-"in the file COPYING-DOCS distributed with this manual."
-msgstr ""
-"Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges "
-"under villkoren i GNU Free Documentation License (GFDL), version 1.1 eller "
-"senare, utgivet av Free Software Foundation utan standardavsnitt och "
-"omslagstexter. En kopia av GFDL finns att hämta på denna <ulink type=\"help"
-"\" url=\"ghelp:fdl\">länk</ulink> eller i filen COPYING-DOCS som medföljer "
-"denna handbok."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:12 C/legal.xml:12
-msgid ""
-"This manual is part of a collection of GNOME manuals distributed under the "
-"GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in "
-"section 6 of the license."
-msgstr ""
-"Denna handbok utgör en av flera GNOME-handböcker som distribueras under "
-"villkoren i GFDL. Om du vill distribuera denna handbok separat från övriga "
-"handböcker kan du göra detta genom att lägga till en kopia av licensavtalet "
-"i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:19 C/legal.xml:19
-msgid ""
-"Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any GNOME "
-"documentation, and the members of the GNOME Documentation Project are made "
-"aware of those trademarks, then the names are in capital letters or initial "
-"capital letters."
-msgstr ""
-"Flera namn på produkter och tjänster är registrerade varumärken. I de fall "
-"dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-"
-"dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med "
-"versaler eller med inledande versal."
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:35 C/legal.xml:35
-msgid ""
-"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
-"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
-"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
-"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
-"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
-"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
-"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
-"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
-"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
-"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
-"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
-msgstr ""
-"DOKUMENTET TILLHANDAHÅLLS I \"BEFINTLIGT SKICK\" UTAN NÅGRA SOM HELST "
-"GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE "
-"BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV "
-"DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST "
-"ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, "
-"EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET "
-"LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD "
-"VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT "
-"HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER "
-"NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR "
-"SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR "
-"EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV "
-"ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST "
-"UNDER DENNA ANSVARSFRISKRIVNING;"
-
-#. (itstool) path: listitem/para
-#: C/index.docbook:55 C/legal.xml:55
-msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
-"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
-"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
-"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
-"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
-"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
-"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
-"POSSIBILITY OF SUCH DAMAGES."
-msgstr ""
-"UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT "
-"OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA "
-"FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER "
-"ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET "
-"ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT "
-"NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER "
-"FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR "
-"BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA "
-"ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER "
-"RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV "
-"DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA "
-"SKADOR."
-
-#. (itstool) path: legalnotice/para
-#: C/index.docbook:28 C/legal.xml:28
-msgid ""
-"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
-"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
-"<_:orderedlist-1/>"
-msgstr ""
-"DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER "
-"VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE "
-"FÖRUTSÄTTNINGAR: <_:orderedlist-1/>"
-
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:68
 msgid ""
@@ -176,11 +65,11 @@ msgstr ""
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:73
 msgid ""
-"<firstname>Guido</firstname> <surname>Günther</surname> <email>agx@sigxcpu."
-"org</email>"
+"<firstname>Guido</firstname> <surname>Günther</surname> "
+"<email>agx@sigxcpu.org</email>"
 msgstr ""
-"<firstname>Guido</firstname> <surname>Günther</surname> <email>agx@sigxcpu."
-"org</email>"
+"<firstname>Guido</firstname> <surname>Günther</surname> "
+"<email>agx@sigxcpu.org</email>"
 
 #. (itstool) path: revdescription/para
 #: C/index.docbook:106
@@ -344,9 +233,9 @@ msgstr "Avisering när Kerberos-autentiseringsuppgifter blir giltiga"
 #: C/index.docbook:184
 msgctxt "_"
 msgid ""
-"external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
+"external ref='figures/ka-valid.png' md5='ba4f970881d8dc4701aafc19cb818ea5'"
 msgstr ""
-"external ref='figures/ka-valid.png' md5='143d137c326eeba1ec48cba8f5805cc1'"
+"external ref='figures/ka-valid.png' md5='ba4f970881d8dc4701aafc19cb818ea5'"
 
 #. (itstool) path: section/title
 #: C/index.docbook:192
@@ -356,11 +245,11 @@ msgstr "Kerberos-autentiseringsuppgifter förfaller"
 #. (itstool) path: section/para
 #: C/index.docbook:193
 msgid ""
-"Your Kerberos credentials are about to expire. You can left click on the "
-"tray applet to refresh them."
+"Your Kerberos credentials are about to expire. You can click on \"Get "
+"Ticket\" in the notification to refresh them."
 msgstr ""
-"Dina Kerberos-autentiseringsuppgifter är på väg att förfalla. Du kan "
-"vänsterklicka på miniprogrammet i aktivitetsfältet för att uppdatera dem."
+"Dina Kerberos-autentiseringsuppgifter är på väg att förfalla. Du kan klicka "
+"på ”Hämta biljett” i aviseringen för att uppdatera dem."
 
 #. (itstool) path: figure/title
 #: C/index.docbook:195
@@ -375,9 +264,9 @@ msgstr "Avisering när Kerberos-autentiseringsuppgifter förfaller"
 #: C/index.docbook:199
 msgctxt "_"
 msgid ""
-"external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
+"external ref='figures/ka-expiring.png' md5='ba1c279842de639e8774b2e4509ea596'"
 msgstr ""
-"external ref='figures/ka-expiring.png' md5='37bb5e8f591c8c7fdb6345b8793e76fb'"
+"external ref='figures/ka-expiring.png' md5='ba1c279842de639e8774b2e4509ea596'"
 
 #. (itstool) path: section/title
 #: C/index.docbook:207
@@ -388,13 +277,15 @@ msgstr "Kerberos-autentiseringsuppgifter har förfallit"
 #: C/index.docbook:208
 msgid ""
 "Your Kerberos credentials just expired. They can no longer be used to "
-"authenticate to network services."
+"authenticate to network services. You can click on \"Get Ticket\" to acquire "
+"valid credentials."
 msgstr ""
 "Dina Kerberos-autentiseringsuppgifter förföll nyss. De kan inte längre "
-"användas för att autentisera mot nätverkstjänster."
+"användas för att autentisera mot nätverkstjänster. Du kan klicka på ”Hämta "
+"biljett” för att erhålla giltiga autentiseringsuppgifter."
 
 #. (itstool) path: figure/title
-#: C/index.docbook:210
+#: C/index.docbook:213
 msgid "Notification when Kerberos credentials expired"
 msgstr "Avisering när Kerberos-autentiseringsuppgifter förfallit"
 
@@ -403,40 +294,40 @@ msgstr "Avisering när Kerberos-autentiseringsuppgifter förfallit"
 #. the file changes, the md5 hash will change to let you know you need to
 #. update your localized copy. The msgstr is not used at all. Set it to
 #. whatever you like once you have updated your copy of the file.
-#: C/index.docbook:214
+#: C/index.docbook:217
 msgctxt "_"
 msgid ""
-"external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
+"external ref='figures/ka-expired.png' md5='1dd70ad1b104c33407dba701d916ec85'"
 msgstr ""
-"external ref='figures/ka-expired.png' md5='1e92acc36db8643c6c43473f54f8029f'"
+"external ref='figures/ka-expired.png' md5='1dd70ad1b104c33407dba701d916ec85'"
 
 #. (itstool) path: section/title
-#: C/index.docbook:223
+#: C/index.docbook:226
 msgid "Preferences"
 msgstr "Inställningar"
 
 #. (itstool) path: table/title
-#: C/index.docbook:227
+#: C/index.docbook:230
 msgid "Kerberos Principal Preferences"
 msgstr "Inställningar för Kerberos-principal"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:232
+#: C/index.docbook:235
 msgid "Dialog Element"
 msgstr "Dialogelement"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:235
+#: C/index.docbook:238
 msgid "Description"
 msgstr "Beskrivning"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:242
+#: C/index.docbook:245
 msgid "<guilabel>Kerberos Principal</guilabel>"
 msgstr "<guilabel>Kerberos-principal</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:247
+#: C/index.docbook:250
 msgid ""
 "The Kerberos principal to use. Leave blank to use you current username. If "
 "you change this setting you have to destroy the credential cache before "
@@ -447,12 +338,12 @@ msgstr ""
 "autentiseringsuppgifter innan inställningarna ger effekt."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:253
+#: C/index.docbook:256
 msgid "<guilabel>PKINIT Userid</guilabel>"
 msgstr "<guilabel>PKINIT-användarID</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:258
+#: C/index.docbook:261
 msgid ""
 "The principals public/private/certificate identifier. Leave empty if not "
 "using PKINIT. To enable using a security token add the path to the pkcs11 "
@@ -464,12 +355,12 @@ msgstr ""
 "opensc-pkcs11.so\""
 
 #. (itstool) path: entry/para
-#: C/index.docbook:263
+#: C/index.docbook:266
 msgid "<guilabel>PKINIT anchors</guilabel>"
 msgstr "<guilabel>PKINIT-ankare</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:268
+#: C/index.docbook:271
 msgid ""
 "Path to CA certificates used as trust anchors for pkinit. You only need to "
 "set this if it hasn't been set up globally in <filename>/etc/krb5.conf</"
@@ -480,61 +371,43 @@ msgstr ""
 "krb5.conf</filename>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:273
+#: C/index.docbook:276
 msgid "<guilabel>forwardable</guilabel>"
 msgstr "<guilabel>vidarebefordringsbar</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:278
-msgid ""
-"Whether the requested Kerberos ticket should be forwardable. Changing this "
-"setting requires to you to reauthenticate by left clicking on the tray icon "
-"and entering your password."
-msgstr ""
-"Huruvida den begärda Kerberos-biljetten ska vara vidarebefordringsbar. Att "
-"ändra denna inställning kräver att du återautentiserar genom att klicka på "
-"ikonen i aktivitetsfältet och anger ditt lösenord."
+#: C/index.docbook:281
+msgid "Whether the requested Kerberos ticket should be forwardable."
+msgstr "Huruvida den begärda Kerberos-biljetten ska vara vidarebefordringsbar."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:283
+#: C/index.docbook:286
 msgid "<guilabel>renewable</guilabel>"
 msgstr "<guilabel>förnyelsebar</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:288
-msgid ""
-"Whether the requested Kerberos ticket should be renewable. Changing this "
-"setting requires to you to reauthenticate by left clicking on the tray icon "
-"and entering your password."
-msgstr ""
-"Huruvida den begärda Kerberos-biljetten ska vara förnyelsebar. Att ändra "
-"denna inställning kräver att du återautentiserar genom att klicka på ikonen "
-"i aktivitetsfältet och anger ditt lösenord."
+#: C/index.docbook:291
+msgid "Whether the requested Kerberos ticket should be renewable."
+msgstr "Huruvida den begärda Kerberos-biljetten ska vara förnyelsebar."
 
 #. (itstool) path: entry/para
-#: C/index.docbook:293
+#: C/index.docbook:296
 msgid "<guilabel>proxiable</guilabel>"
 msgstr "<guilabel>proxybar</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:298
-msgid ""
-"Whether the requested Kerberos ticket should be proxiable. Changing this "
-"setting requires to you to reauthenticate by left clicking on the tray icon "
-"and entering your password."
-msgstr ""
-"Huruvida den begärda Kerberos-biljetten ska vara proxybar. Att ändra denna "
-"inställning kräver att du återautentiserar genom att klicka på ikonen i "
-"aktivitetsfältet och anger ditt lösenord."
+#: C/index.docbook:301
+msgid "Whether the requested Kerberos ticket should be proxiable."
+msgstr "Huruvida den begärda Kerberos-biljetten ska vara proxybar."
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=766879
 #. (itstool) path: entry/para
-#: C/index.docbook:303
+#: C/index.docbook:306
 msgid "<guilabel>Warn .. minutes before ticket expiry</guilabel>"
 msgstr "<guilabel>Varna .. minuter innan biljett förfaller</guilabel>"
 
 #. (itstool) path: entry/para
-#: C/index.docbook:308
+#: C/index.docbook:311
 msgid ""
 "Notifications that your credentials are about to expire will be sent that "
 "many minutes before expiry."
@@ -543,7 +416,7 @@ msgstr ""
 "att skickas ut så här många minuter innan de förfaller."
 
 #. (itstool) path: section/para
-#: C/index.docbook:224
+#: C/index.docbook:227
 msgid ""
 "You can set preferences by selecting \"Preferences\" from the window's "
 "hamburger menu. <_:table-1/>"
@@ -571,3 +444,141 @@ msgstr ""
 "senare, utgivet av Free Software Foundation utan standardavsnitt och "
 "omslagstexter. En kopia av GFDL finns att hämta på denna <_:ulink-1/> eller "
 "i filen COPYING-DOCS som medföljer denna handbok."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:12
+msgid ""
+"This manual is part of a collection of GNOME manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
+msgstr ""
+"Denna handbok utgör en av flera GNOME-handböcker som distribueras under "
+"villkoren i GFDL. Om du vill distribuera denna handbok separat från övriga "
+"handböcker kan du göra detta genom att lägga till en kopia av licensavtalet "
+"i handboken enligt instruktionerna i avsnitt 6 i licensavtalet."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any GNOME "
+"documentation, and the members of the GNOME Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Flera namn på produkter och tjänster är registrerade varumärken. I de fall "
+"dessa namn förekommer i GNOME-dokumentation - och medlemmarna i GNOME-"
+"dokumentationsprojektet är medvetna om dessa varumärken - är de skrivna med "
+"versaler eller med inledande versal."
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"DOKUMENTET TILLHANDAHÅLLS I \"BEFINTLIGT SKICK\" UTAN NÅGRA SOM HELST "
+"GARANTIER, VARE SIG UTTRYCKLIGA ELLER UNDERFÖRSTÅDDA, INKLUSIVE, MEN INTE "
+"BEGRÄNSAT TILL, GARANTIER ATT DOKUMENTET ELLER EN MODIFIERAD VERSION AV "
+"DOKUMENTET INTE INNEHÅLLER NÅGRA FELAKTIGHETER, ÄR LÄMPLIGT FÖR ETT VISST "
+"ÄNDAMÅL ELLER INTE STRIDER MOT LAG. HELA RISKEN VAD GÄLLER KVALITET, "
+"EXAKTHET OCH UTFÖRANDE AV DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET "
+"LIGGER HELT OCH HÅLLET PÅ ANVÄNDAREN. OM ETT DOKUMENT ELLER EN MODIFIERAD "
+"VERSION AV ETT DOKUMENT SKULLE VISA SIG INNEHÅLLA FELAKTIGHETER I NÅGOT "
+"HÄNSEENDE ÄR DET DU (INTE DEN URSPRUNGLIGA SKRIBENTEN, FÖRFATTAREN ELLER "
+"NÅGON ANNAN MEDARBETARE) SOM FÅR STÅ FÖR ALLA EVENTUELLA KOSTNADER FÖR "
+"SERVICE, REPARATIONER ELLER KORRIGERINGAR. DENNA GARANTIFRISKRIVNING UTGÖR "
+"EN VÄSENTLIG DEL AV DETTA LICENSAVTAL. DETTA INNEBÄR ATT ALL ANVÄNDNING AV "
+"ETT DOKUMENT ELLER EN MODIFIERAD VERSION AV ETT DOKUMENT BEVILJAS ENDAST "
+"UNDER DENNA ANSVARSFRISKRIVNING;"
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"UNDER INGA OMSTÄNDIGHETER ELLER INOM RAMEN FÖR NÅGON LAGSTIFTNING, OAVSETT "
+"OM DET GÄLLER KRÄNKNING (INKLUSIVE VÅRDSLÖSHET), KONTRAKT ELLER DYLIKT, SKA "
+"FÖRFATTAREN, DEN URSPRUNGLIGA SKRIBENTEN ELLER ANNAN MEDARBETARE ELLER "
+"ÅTERFÖRSÄLJARE AV DOKUMENTET ELLER AV EN MODIFIERAD VERSION AV DOKUMENTET "
+"ELLER NÅGON LEVERANTÖR TILL NÅGON AV NÄMNDA PARTER STÄLLAS ANSVARIG GENTEMOT "
+"NÅGON FÖR NÅGRA DIREKTA, INDIREKTA, SÄRSKILDA ELLER OFÖRUTSEDDA SKADOR ELLER "
+"FÖLJDSKADOR AV NÅGOT SLAG, INKLUSIVE, MEN INTE BEGRÄNSAT TILL, SKADOR "
+"BETRÄFFANDE FÖRLORAD GOODWILL, HINDER I ARBETET, DATORHAVERI ELLER NÅGRA "
+"ANDRA TÄNKBARA SKADOR ELLER FÖRLUSTER SOM KAN UPPKOMMA PÅ GRUND AV ELLER "
+"RELATERAT TILL ANVÄNDNINGEN AV DOKUMENTET ELLER MODIFIERADE VERSIONER AV "
+"DOKUMENTET, ÄVEN OM PART SKA HA BLIVIT INFORMERAD OM MÖJLIGHETEN TILL SÅDANA "
+"SKADOR."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"DOKUMENTET OCH MODIFIERADE VERSIONER AV DOKUMENTET TILLHANDAHÅLLS UNDER "
+"VILLKOREN I GNU FREE DOCUMENTATION LICENSE ENDAST UNDER FÖLJANDE "
+"FÖRUTSÄTTNINGAR: <_:orderedlist-1/>"
+
+#~ msgid ""
+#~ "Permission is granted to copy, distribute and/or modify this document "
+#~ "under the terms of the GNU Free Documentation License (GFDL), Version 1.1 "
+#~ "or any later version published by the Free Software Foundation with no "
+#~ "Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. You "
+#~ "can find a copy of the GFDL at this <ulink type=\"help\" "
+#~ "url=\"ghelp:fdl\">link</ulink> or in the file COPYING-DOCS distributed "
+#~ "with this manual."
+#~ msgstr ""
+#~ "Tillstånd att kopiera, distribuera och/eller modifiera detta dokument ges "
+#~ "under villkoren i GNU Free Documentation License (GFDL), version 1.1 "
+#~ "eller senare, utgivet av Free Software Foundation utan standardavsnitt "
+#~ "och omslagstexter. En kopia av GFDL finns att hämta på denna <ulink "
+#~ "type=\"help\" url=\"ghelp:fdl\">länk</ulink> eller i filen COPYING-DOCS "
+#~ "som medföljer denna handbok."
+
+#~ msgid ""
+#~ "Whether the requested Kerberos ticket should be forwardable. Changing "
+#~ "this setting requires to you to reauthenticate by left clicking on the "
+#~ "tray icon and entering your password."
+#~ msgstr ""
+#~ "Huruvida den begärda Kerberos-biljetten ska vara vidarebefordringsbar. "
+#~ "Att ändra denna inställning kräver att du återautentiserar genom att "
+#~ "klicka på ikonen i aktivitetsfältet och anger ditt lösenord."
+
+#~ msgid ""
+#~ "Whether the requested Kerberos ticket should be renewable. Changing this "
+#~ "setting requires to you to reauthenticate by left clicking on the tray "
+#~ "icon and entering your password."
+#~ msgstr ""
+#~ "Huruvida den begärda Kerberos-biljetten ska vara förnyelsebar. Att ändra "
+#~ "denna inställning kräver att du återautentiserar genom att klicka på "
+#~ "ikonen i aktivitetsfältet och anger ditt lösenord."
+
+#~ msgid ""
+#~ "Whether the requested Kerberos ticket should be proxiable. Changing this "
+#~ "setting requires to you to reauthenticate by left clicking on the tray "
+#~ "icon and entering your password."
+#~ msgstr ""
+#~ "Huruvida den begärda Kerberos-biljetten ska vara proxybar. Att ändra "
+#~ "denna inställning kräver att du återautentiserar genom att klicka på "
+#~ "ikonen i aktivitetsfältet och anger ditt lösenord."

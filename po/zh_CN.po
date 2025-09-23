@@ -4,22 +4,25 @@
 # Wylmer Wang <wantinghard@gmail.com>, 2010, 2013.
 # Aron Xu <aronxu@gnome.org>, 2011.
 # YunQiang Su <wzssyqa@gmail.com>, 2014.
+# liushuyu <liushuyu_011@126.com>, 2015.
+# Boyuan Yang <073plan@gmail.com>, 2024.
+# lumingzh <lumingzh@qq.com>, 2025.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
 "issues/\n"
-"POT-Creation-Date: 2024-07-29 18:34+0000\n"
-"PO-Revision-Date: 2024-08-18 18:56-0400\n"
-"Last-Translator: Boyuan Yang <073plan@gmail.com>\n"
+"POT-Creation-Date: 2025-09-10 20:57+0000\n"
+"PO-Revision-Date: 2025-09-23 10:33+0800\n"
+"Last-Translator: lumingzh <lumingzh@qq.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Gtranslator 49.0\n"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:6
 msgid "Kerberos Authentication Dialog"
@@ -231,7 +234,7 @@ msgstr "用户标识"
 
 #: src/resources/ui/ka-preferences.ui:82
 msgid "Principal certificate and private key"
-msgstr ""
+msgstr "委托方证书和私钥"
 
 #: src/resources/ui/ka-preferences.ui:85
 msgid "Use Smartcard"
@@ -276,7 +279,7 @@ msgid ""
 msgstr "在票据最终过期前若干分钟发送票据过期通知"
 
 #: src/resources/ui/ka-pwdialog.ui:5 src/ka-applet-priv.h:19
-#: src/org.gnome.KrbAuthDialog.desktop.in:3
+#: src/org.gnome.KrbAuthDialog.desktop.in:2
 msgid "Kerberos Authentication"
 msgstr "Kerberos 认证"
 
@@ -429,14 +432,12 @@ msgstr "请求的服务器和票据不匹配"
 #. krb5_err.et:krb5:KRB5KDC_ERR_SERVER_NOMATCH
 #: src/dummy-strings.c:36
 msgid "Server principal valid for user2user only"
-msgstr ""
+msgstr "服务器委托方仅对用户至用户有效"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_MUST_USE_USER2USER
 #: src/dummy-strings.c:37
-#, fuzzy
-#| msgid "Policy rejects transited path"
 msgid "KDC policy rejects transited path"
-msgstr "策略拒绝中转路径"
+msgstr "KDC 策略拒绝中转路径"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PATH_NOT_ACCEPTED
 #: src/dummy-strings.c:38
@@ -506,7 +507,7 @@ msgstr "信息混乱"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_BADORDER
 #: src/dummy-strings.c:51
 msgid "Illegal cross-realm ticket"
-msgstr "非法的跨域票据"
+msgstr "非法的跨领域票据"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_ILL_CR_TKT
 #: src/dummy-strings.c:52
@@ -591,20 +592,18 @@ msgstr "证书不符"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_CERTIFICATE_MISMATCH
 #: src/dummy-strings.c:68
-#, fuzzy
-#| msgid "Configuration tickets"
 msgid "No ticket granting ticket"
-msgstr "配置票据"
+msgstr "无票据授予票据"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_NO_TGT
 #: src/dummy-strings.c:69
 msgid "Realm not local to KDC"
-msgstr ""
+msgstr "领域非本 KDC 管辖"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_WRONG_REALM
 #: src/dummy-strings.c:70
 msgid "User to user required"
-msgstr ""
+msgstr "需要用户至用户"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_USER_TO_USER_REQUIRED
 #: src/dummy-strings.c:71
@@ -669,12 +668,12 @@ msgstr "不支持公钥加密"
 #. krb5_err.et:krb5:KRB5KDC_ERR_PUBLIC_KEY_ENCRYPTION_NOT_SUPPORTED
 #: src/dummy-strings.c:83
 msgid "The IAKERB proxy could not find a KDC"
-msgstr ""
+msgstr "IAKERB 代理无法找到 KDC"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NOT_FOUND
 #: src/dummy-strings.c:84
 msgid "The KDC did not respond to the IAKERB proxy"
-msgstr ""
+msgstr "KDC 未对 IAKERB 代理产生响应"
 
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_IAKERB_KDC_NO_RESPONSE
 #: src/dummy-strings.c:85
@@ -683,25 +682,23 @@ msgstr "预认证已过期"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_PREAUTH_EXPIRED
 #: src/dummy-strings.c:86
-#, fuzzy
-#| msgid "Additional pre-authentication required"
 msgid "More preauthentication data is required"
-msgstr "需要额外的预认证"
+msgstr "需要更多预认证数据"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_MORE_PREAUTH_DATA_REQUIRED
 #: src/dummy-strings.c:87
 msgid "An unsupported critical FAST option was requested"
-msgstr ""
+msgstr "请求了不受支持的关键 FAST 选项"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_UNKNOWN_CRITICAL_FAST_OPTION
 #: src/dummy-strings.c:88
 msgid "No acceptable KDF offered"
-msgstr ""
+msgstr "未提供可接受的 KDF"
 
 #. krb5_err.et:krb5:KRB5KDC_ERR_NO_ACCEPTABLE_KDF
 #: src/dummy-strings.c:89
 msgid "$Id$"
-msgstr ""
+msgstr "$Id$"
 
 #. krb5_err.et:krb5:KRB5_ERR_RCSID
 #: src/dummy-strings.c:90
@@ -806,7 +803,7 @@ msgstr "KDC 回应中的时钟偏移过大"
 #. krb5_err.et:krb5:KRB5_KDCREP_SKEW
 #: src/dummy-strings.c:110
 msgid "Client/server realm mismatch in initial ticket request"
-msgstr "客户端/服务器域在初始票据请求中不匹配"
+msgstr "客户端/服务器领域在初始票据请求中不匹配"
 
 #. krb5_err.et:krb5:KRB5_IN_TKT_REALM_MISMATCH
 #: src/dummy-strings.c:111
@@ -831,7 +828,7 @@ msgstr "程序缺乏校验和支持"
 #. krb5_err.et:krb5:KRB5_PROG_SUMTYPE_NOSUPP
 #: src/dummy-strings.c:115
 msgid "Cannot find KDC for requested realm"
-msgstr "无法找到请示域的 KDC"
+msgstr "无法找到请求领域的 KDC"
 
 #. krb5_err.et:krb5:KRB5_REALM_UNKNOWN
 #: src/dummy-strings.c:116
@@ -841,7 +838,7 @@ msgstr "Kerberos 服务未知"
 #. krb5_err.et:krb5:KRB5_SERVICE_UNKNOWN
 #: src/dummy-strings.c:117
 msgid "Cannot contact any KDC for requested realm"
-msgstr "无法联系到请求域的任何 KDC"
+msgstr "无法联系到请求领域的任何 KDC"
 
 #. krb5_err.et:krb5:KRB5_KDC_UNREACH
 #: src/dummy-strings.c:118
@@ -921,12 +918,12 @@ msgstr "保存重放信息的系统空间不足"
 #. krb5_err.et:krb5:KRB5_RC_IO_SPACE
 #: src/dummy-strings.c:134
 msgid "Can't open/find realm translation file"
-msgstr "无法打开/找到域翻译文件"
+msgstr "无法打开/找到领域翻译文件"
 
 #. krb5_err.et:krb5:KRB5_TRANS_CANTOPEN
 #: src/dummy-strings.c:135
 msgid "Improper format of realm translation file"
-msgstr "域翻译文件的格式不正确"
+msgstr "领域翻译文件的格式不正确"
 
 #. krb5_err.et:krb5:KRB5_TRANS_BADFORMAT
 #: src/dummy-strings.c:136
@@ -981,7 +978,7 @@ msgstr "写入密钥表出错"
 #. krb5_err.et:krb5:KRB5_KT_IOERR
 #: src/dummy-strings.c:146
 msgid "Cannot find ticket for requested realm"
-msgstr "无法找到请求的域"
+msgstr "无法找到请求领域的票据"
 
 #. krb5_err.et:krb5:KRB5_NO_TKT_IN_RLM
 #: src/dummy-strings.c:147
@@ -1141,7 +1138,7 @@ msgstr "主机名无法规范化"
 #. krb5_err.et:krb5:KRB5_ERR_BAD_HOSTNAME
 #: src/dummy-strings.c:178
 msgid "Cannot determine realm for host"
-msgstr "无法确定主机的域"
+msgstr "无法确定主机的领域"
 
 #. krb5_err.et:krb5:KRB5_ERR_HOST_REALM_UNKNOWN
 #: src/dummy-strings.c:179
@@ -1156,7 +1153,7 @@ msgstr "初始票据响应似为版本 4 错误"
 #. krb5_err.et:krb5:KRB5KRB_AP_ERR_V4_REPLY
 #: src/dummy-strings.c:181
 msgid "Cannot resolve network address for KDC in requested realm"
-msgstr "无法解析请求域中 KDC 的网络地址"
+msgstr "无法解析请求领域中 KDC 的网络地址"
 
 #. krb5_err.et:krb5:KRB5_REALM_CANT_RESOLVE
 #: src/dummy-strings.c:182
@@ -1176,7 +1173,7 @@ msgstr "在 krb5_get_in_tkt 中检查到循环"
 #. krb5_err.et:krb5:KRB5_GET_IN_TKT_LOOP
 #: src/dummy-strings.c:185
 msgid "Configuration file does not specify default realm"
-msgstr "配置文件没有指定默认域"
+msgstr "配置文件没有指定默认领域"
 
 #. krb5_err.et:krb5:KRB5_CONFIG_NODEFREALM
 #: src/dummy-strings.c:186
@@ -1271,7 +1268,7 @@ msgstr "服务名未知"
 #. krb5_err.et:krb5:KRB5_EAI_SERVICE
 #: src/dummy-strings.c:204
 msgid "Cannot determine realm for numeric host address"
-msgstr "无法确定数值主机地址的域"
+msgstr "无法确定数值主机地址的领域"
 
 #. krb5_err.et:krb5:KRB5_ERR_NUMERIC_REALM
 #: src/dummy-strings.c:205
@@ -1315,25 +1312,23 @@ msgstr "无效的 UTF-8 字符串"
 
 #. krb5_err.et:krb5:KRB5_ERR_INVALID_UTF8
 #: src/dummy-strings.c:213
-#, fuzzy
-#| msgid "Required preauthentication key not supplied"
 msgid "FAST protected pre-authentication required but not supported by KDC"
-msgstr "要求的预认证密钥没有提供"
+msgstr "需要 FAST 保护的预认证但 KDC 不支持"
 
 #. krb5_err.et:krb5:KRB5_ERR_FAST_REQUIRED
 #: src/dummy-strings.c:214
 msgid "Auth context must contain local address"
-msgstr ""
+msgstr "认证上下文必须包含本地地址"
 
 #. krb5_err.et:krb5:KRB5_LOCAL_ADDR_REQUIRED
 #: src/dummy-strings.c:215
 msgid "Auth context must contain remote address"
-msgstr ""
+msgstr "认证上下文必须包含远程地址"
 
 #. krb5_err.et:krb5:KRB5_REMOTE_ADDR_REQUIRED
 #: src/dummy-strings.c:216
 msgid "Tracing unsupported"
-msgstr ""
+msgstr "不支持追踪"
 
 #. krb5_err.et:krb5:KRB5_TRACE_NOSUPP
 #: src/dummy-strings.c:217
@@ -1618,31 +1613,23 @@ msgstr "GSSAPI  QUEUE 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_GSS_QUEUE
 #: src/dummy-strings.c:274
-#, fuzzy
-#| msgid "Bad magic number for krb5_cred structure"
 msgid "Bad magic number for fast armored request"
-msgstr "krb5_cred 结构的魔数有误"
+msgstr "FAST 装甲请求的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_FAST_ARMORED_REQ
 #: src/dummy-strings.c:275
-#, fuzzy
-#| msgid "Bad magic number for GSSAPI OID"
 msgid "Bad magic number for FAST request"
-msgstr "GSSAPI OID 的魔数有误"
+msgstr "FAST 请求的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_FAST_REQ
 #: src/dummy-strings.c:276
-#, fuzzy
-#| msgid "Bad magic number for krb5_sam_response"
 msgid "Bad magic number for FAST response"
-msgstr "krb5_sam_response 的魔数有误"
+msgstr "FAST 响应的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_FAST_RESPONSE
 #: src/dummy-strings.c:277
-#, fuzzy
-#| msgid "Bad magic number for krb5_authdata structure"
 msgid "Bad magic number for krb5_authdata_context"
-msgstr "krb5_authdata 结构的魔数有误"
+msgstr "krb5_authdata_context 的魔数有误"
 
 #. kv5m_err.et:kv5m:KV5M_AUTHDATA_CONTEXT
 #: src/dummy-strings.c:278
@@ -1701,10 +1688,8 @@ msgstr "ASN.1 从 gmtime 中错误地返回"
 
 #. asn1_err.et:asn1:ASN1_BAD_GMTIME
 #: src/dummy-strings.c:289
-#, fuzzy
-#| msgid "ASN.1 non-constructed indefinite encoding"
 msgid "ASN.1 indefinite encoding"
-msgstr "ASN.1 结构混乱不明的编码"
+msgstr "ASN.1 不确定的编码"
 
 #. asn1_err.et:asn1:ASN1_INDEF
 #: src/dummy-strings.c:290
@@ -1714,7 +1699,7 @@ msgstr "ASN.1 缺少应有的 EOC"
 #. asn1_err.et:asn1:ASN1_MISSING_EOC
 #: src/dummy-strings.c:291
 msgid "ASN.1 object omitted in sequence"
-msgstr ""
+msgstr "序列中省略了 ASN.1 对象"
 
 #. asn1_err.et:asn1:ASN1_OMITTED
 #: src/dummy-strings.c:292
@@ -1723,76 +1708,68 @@ msgstr "插件不支持接口版本"
 
 #. k5e1_err.et:k5e1:KRB5_PLUGIN_VER_NOTSUPP
 #: src/dummy-strings.c:293
-#, fuzzy
-#| msgid "Invalid certificate"
 msgid "Invalid module specifier"
-msgstr "证书无效"
+msgstr "模块指定符无效"
 
 #. k5e1_err.et:k5e1:KRB5_PLUGIN_BAD_MODULE_SPEC
 #: src/dummy-strings.c:294
-#, fuzzy
-#| msgid "host/domain name not found"
 msgid "Plugin module name not found"
-msgstr "找不到主机名/域名"
+msgstr "未找到插件模块名称"
 
 #. k5e1_err.et:k5e1:KRB5_PLUGIN_NAME_NOTFOUND
 #: src/dummy-strings.c:295
-#, fuzzy
-#| msgid "KDC policy rejects request"
 msgid "The KDC should discard this request"
-msgstr "KDC 策略拒绝请求"
+msgstr "KDC 应丢弃此请求"
 
 #. k5e1_err.et:k5e1:KRB5KDC_ERR_DISCARD
 #: src/dummy-strings.c:296
 msgid "Can't create new subsidiary cache"
-msgstr ""
+msgstr "无法创建新的附属机构缓存"
 
 #. k5e1_err.et:k5e1:KRB5_DCC_CANNOT_CREATE
 #: src/dummy-strings.c:297
-#, fuzzy
-#| msgid "Invalid certificate"
 msgid "Invalid keyring anchor name"
-msgstr "证书无效"
+msgstr "无效的密钥环锚点名称"
 
 #. k5e1_err.et:k5e1:KRB5_KCC_INVALID_ANCHOR
 #: src/dummy-strings.c:298
 msgid "Unknown keyring collection version"
-msgstr ""
+msgstr "未知的密钥环集合版本"
 
 #. k5e1_err.et:k5e1:KRB5_KCC_UNKNOWN_VERSION
 #: src/dummy-strings.c:299
 msgid "Invalid UID in persistent keyring name"
-msgstr ""
+msgstr "在持久密钥环名称中有无效 UID"
 
 #. k5e1_err.et:k5e1:KRB5_KCC_INVALID_UID
 #: src/dummy-strings.c:300
 msgid "Malformed reply from KCM daemon"
-msgstr ""
+msgstr "来自 KCM 守护进程的畸形回复"
 
 #. k5e1_err.et:k5e1:KRB5_KCM_MALFORMED_REPLY
 #: src/dummy-strings.c:301
 msgid "Mach RPC error communicating with KCM daemon"
-msgstr ""
+msgstr "与 KCM 守护进程通信产生 Mach RPC 错误"
 
 #. k5e1_err.et:k5e1:KRB5_KCM_RPC_ERROR
 #: src/dummy-strings.c:302
 msgid "KCM daemon reply too big"
-msgstr ""
+msgstr "KCM 守护进程的回复太大了"
 
 #. k5e1_err.et:k5e1:KRB5_KCM_REPLY_TOO_BIG
 #: src/dummy-strings.c:303
 msgid "No KCM server found"
-msgstr ""
+msgstr "未找到 KCM 服务器"
 
 #. k5e1_err.et:k5e1:KRB5_KCM_NO_SERVER
 #: src/dummy-strings.c:304
 msgid "Authorize and set hw-authent ticket flag"
-msgstr ""
+msgstr "授权并设置硬件认证票据标志"
 
 #. k5e1_err.et:k5e1:KRB5_CERTAUTH_HWAUTH
 #: src/dummy-strings.c:305
 msgid "Set hw-authent ticket flag but do not authorize"
-msgstr ""
+msgstr "设置硬件认证票据标志但不授权"
 
 #. Translators: First number is hours, second number is minutes
 #: src/ka-applet.c:604
@@ -1855,14 +1832,12 @@ msgid "Principal"
 msgstr "委托方"
 
 #: src/ka-main-window.c:151
-#, fuzzy
-#| msgid "Start Time"
 msgid "Start"
-msgstr "开始时间"
+msgstr "开始"
 
 #: src/ka-main-window.c:157
 msgid "End"
-msgstr ""
+msgstr "结束"
 
 #. Translators: this is an abbreviation for forwardable
 #: src/ka-main-window.c:164
@@ -1935,14 +1910,18 @@ msgstr ""
 msgid "translator-credits"
 msgstr ""
 "Wylmer Wang <wantinghard@gmail.com>, 2010, 2013\n"
-"Aron Xu <aronxu@gnome.org>, 2011"
+"Aron Xu <aronxu@gnome.org>, 2011\n"
+"YunQiang Su <wzssyqa@gmail.com>, 2014\n"
+"liushuyu <liushuyu_011@126.com>, 2015\n"
+"Boyuan Yang <073plan@gmail.com>, 2024\n"
+"lumingzh <lumingzh@qq.com>, 2025"
 
-#: src/org.gnome.KrbAuthDialog.desktop.in:4
+#: src/org.gnome.KrbAuthDialog.desktop.in:3
 msgid "Kerberos Network Authentication Dialog"
 msgstr "Kerberos 网络认证对话框"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: src/org.gnome.KrbAuthDialog.desktop.in:12
+#: src/org.gnome.KrbAuthDialog.desktop.in:11
 msgid "kerberos;authentication;"
 msgstr "kerberos;authentication;认证;"
 

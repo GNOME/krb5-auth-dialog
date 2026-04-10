@@ -1,31 +1,32 @@
 # Georgian translation for krb5-auth-dialog.
-# Copyright (C) 2022 krb5-auth-dialog's COPYRIGHT HOLDER
+# Copyright (C) 2022 krb5-auth-dialog's authors
 # This file is distributed under the same license as the krb5-auth-dialog package.
 # NorwayFun <temuri.doghonadze@gmail.com>, 2022.
+# Ekaterine Papava <papava.e@gtu.ge>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: krb5-auth-dialog main\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/krb5-auth-dialog/"
-"issues\n"
-"POT-Creation-Date: 2022-10-30 15:56+0000\n"
-"PO-Revision-Date: 2022-11-20 19:32+0100\n"
-"Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
+"issues/\n"
+"POT-Creation-Date: 2024-05-20 15:45+0000\n"
+"PO-Revision-Date: 2026-04-10 09:28+0200\n"
+"Last-Translator: Ekaterine Papava <papava.e@gtu.ge>\n"
 "Language-Team: Georgian <ka@li.org>\n"
 "Language: ka\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:6
 msgid "Kerberos Authentication Dialog"
-msgstr ""
+msgstr "Kerberos-ის ავთენტიკაციის დიალოგი"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:7
 msgid "Request, renew and view Kerberos tickets"
-msgstr ""
+msgstr "Kerberos-ის ბილეთების მოთხოვნა, განახლება და ნახვა"
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:9
 msgid ""
@@ -43,20 +44,20 @@ msgstr ""
 
 #: data/org.gnome.KrbAuthDialog.metainfo.xml.in:23
 msgid "Kerberos authentication dialog"
-msgstr ""
+msgstr "Kerberos-ის ავთენტიკაციის დიალოგი"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:6
 #: src/resources/ui/ka-preferences.ui:22
 msgid "Kerberos principal"
-msgstr ""
+msgstr "Kerberos-ის პრინციპალი"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:7
 msgid "The Kerberos principal to acquire the ticket for"
-msgstr ""
+msgstr "Kerberos-ის პრინციპალი, რომლისთვისაც ბილეთის მიღება მოხდება"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:11
 msgid "PKINIT identifier"
-msgstr ""
+msgstr "PKINIT-ის იდენტიფიკატორი"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:12
 msgid "The principal's public/private/certificate identifier when using PKINIT"
@@ -64,15 +65,15 @@ msgstr ""
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:16
 msgid "PKINIT trust anchors"
-msgstr ""
+msgstr "PKINIT ნდობის ინსტიტუციები"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:17
 msgid "PKINIT CA certificates"
-msgstr ""
+msgstr "PKINIT-ის CA სერტიფიკატები"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:21
 msgid "Prompt minutes before expiry"
-msgstr ""
+msgstr "კითხვა ვადის ამოწურვამდე რამდენიმე წუთით ადრე"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:22
 msgid ""
@@ -81,7 +82,7 @@ msgstr ""
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:26
 msgid "Forwardable ticket"
-msgstr ""
+msgstr "გადამისამართებადი ბილეთი"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:27
 msgid "Requested tickets should be forwardable"
@@ -89,7 +90,7 @@ msgstr ""
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:31
 msgid "Renewable ticket"
-msgstr ""
+msgstr "განახლებადი ბილეთი"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:32
 msgid "Requested tickets should be renewable"
@@ -97,7 +98,7 @@ msgstr ""
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:36
 msgid "Proxiable ticket"
-msgstr ""
+msgstr "პროქსირებადი ბილეთი"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:37
 msgid "Requested tickets should be proxiable"
@@ -105,35 +106,35 @@ msgstr ""
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:41
 msgid "Configuration tickets"
-msgstr ""
+msgstr "კონფიგურაციის ბილეთები"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:42
 msgid "Show configuration tickets"
-msgstr ""
+msgstr "კონფიგურაციის ბილეთების ჩვენება"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:50
 msgid "valid ticket notification"
-msgstr ""
+msgstr "სწორი ბილეთის გაფრთხილება"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:51
 msgid "Notify user when ticket becomes valid"
-msgstr ""
+msgstr "მომხმარებლის გაფრთხილება, როცა ბილეთი სწორი გახდება"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:55
 msgid "ticket expiring notification"
-msgstr ""
+msgstr "ბილეთის ვადის გასვლის გაფრთხილება"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:56
 msgid "Notify user when ticket is about to expire"
-msgstr ""
+msgstr "მომხმარებლის გაფრთხილება, რომ ბილეთის ვადა მალე იწურება"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:60
 msgid "ticket expired notification"
-msgstr ""
+msgstr "გაფრთხილება ბილეთის ვადის ამოწურვის შესახებ"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:61
 msgid "Notify user when ticket has expired"
-msgstr ""
+msgstr "მომხმარებლის გაფრთხილება, როცა ბილეთის ვადა ამოიწურება"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:67
 msgid "Enabled plugins"
@@ -141,7 +142,7 @@ msgstr "ჩართული ფლაგინები"
 
 #: data/org.gnome.KrbAuthDialog.gschema.xml:68
 msgid "List of plugins that should be loaded and activated on startup."
-msgstr ""
+msgstr "დამატებების სია, რომლებიც ჩაიტვირთება და გააქტიურდება გაშვებისას."
 
 #: src/resources/ui/ka-main-window.ui:9
 msgid "Prefere_nces"
@@ -161,11 +162,11 @@ msgstr "_გასვლა"
 
 #: src/resources/ui/ka-main-window.ui:27
 msgid "Service Tickets"
-msgstr ""
+msgstr "სერვისის ბილეთები"
 
 #: src/resources/ui/ka-main-window.ui:56
 msgid "Your ticket cache is currently empty"
-msgstr ""
+msgstr "თქვენი ბილეთების კეში ამჟამად ცარიელია"
 
 #: src/resources/ui/ka-main-window.ui:67 src/ka-applet.c:641
 msgid "Get Ticket"
@@ -183,38 +184,40 @@ msgstr "Kerberos-ის მომხმარებელი"
 msgid ""
 "The name of your Kerberos account. Leave blank to use your current username."
 msgstr ""
+"თქვენი Kerberos-ის ანგარიშის სახელი. დატოვეთ სახელი თქვენი მიმდინარე "
+"მომხმარებლის სახელის გამოსაყენებლად."
 
 #: src/resources/ui/ka-preferences.ui:35
 msgid "Kerberos Ticket Options"
-msgstr ""
+msgstr "Kerberos-ის ბილეთის პარამეტრები"
 
 #: src/resources/ui/ka-preferences.ui:36
 msgid "Requested Kerberos tickets should be:"
-msgstr ""
+msgstr "მოთხოვნილი Kerberos-ის ბილეთები უნდა იყოს:"
 
 #: src/resources/ui/ka-preferences.ui:39
 msgid "forwardable"
-msgstr ""
+msgstr "გადამისამართებადი"
 
 #: src/resources/ui/ka-preferences.ui:42
 msgid "If checked, request forwardable tickets"
-msgstr ""
+msgstr "თუ ჩართულია, მოხდება გადამისამართებადი ბილეთის გამოთხოვა"
 
 #: src/resources/ui/ka-preferences.ui:50
 msgid "renewable"
-msgstr ""
+msgstr "განახლებადი"
 
 #: src/resources/ui/ka-preferences.ui:53
 msgid "If checked, request renewable tickets"
-msgstr ""
+msgstr "თუ ჩართულია, მოხდება განახლებადი ბილეთის გამოთხოვა"
 
 #: src/resources/ui/ka-preferences.ui:61
 msgid "proxiable"
-msgstr ""
+msgstr "პროქსირებადი"
 
 #: src/resources/ui/ka-preferences.ui:64
 msgid "If checked, request proxiable tickets"
-msgstr ""
+msgstr "თუ ჩართულია, მოხდება პროქსირებადი ბილეთის გამოთხოვა"
 
 #: src/resources/ui/ka-preferences.ui:76
 msgid "_PKINIT"
@@ -226,31 +229,33 @@ msgstr "Userid"
 
 #: src/resources/ui/ka-preferences.ui:82
 msgid "Principal certificate and private key"
-msgstr ""
+msgstr "პრინციპალის სერტიფიკატი და პირადი გასაღები"
 
 #: src/resources/ui/ka-preferences.ui:85
 msgid "Use Smartcard"
-msgstr ""
+msgstr "სმარტ ბარათის გამოყენება"
 
 #: src/resources/ui/ka-preferences.ui:88
 msgid "If checked, use a security token (Smartcard) to authenticate."
 msgstr ""
+"თუ ჩართულია, ავთენტიკაციისთვის გამოყენებული იქნება უსაფრთხოების ტოკენი "
+"(სმარტ ბარათი)."
 
 #: src/resources/ui/ka-preferences.ui:96
 msgid "Certificate and private key file"
-msgstr ""
+msgstr "სერტიფიკატის და პირადი გასაღების ფაილი"
 
 #: src/resources/ui/ka-preferences.ui:119
 msgid "X509 trust anchors"
-msgstr ""
+msgstr "X509 ნდობის ინსტიტუციები"
 
 #: src/resources/ui/ka-preferences.ui:122
 msgid "KDC trust anchor"
-msgstr ""
+msgstr "KDC ნდობის ინსტიტუციები"
 
 #: src/resources/ui/ka-preferences.ui:126
 msgid "Certificate used to verify digital signatures."
-msgstr ""
+msgstr "ციფრული ხელმოწერების გადასამოწმებლად გამოყენებული სერტიფიკატი."
 
 #: src/resources/ui/ka-preferences.ui:147
 msgid "_Notifications"
@@ -262,7 +267,7 @@ msgstr "გაფრთხილებები"
 
 #: src/resources/ui/ka-preferences.ui:155
 msgid "Warn before ticket expiry"
-msgstr ""
+msgstr "გაფრთხილება ბილეთის ვადის ამოწურვამდე"
 
 #: src/resources/ui/ka-preferences.ui:160
 msgid ""
@@ -271,9 +276,9 @@ msgid ""
 msgstr ""
 
 #: src/resources/ui/ka-pwdialog.ui:5 src/ka-applet-priv.h:19
-#: src/org.gnome.KrbAuthDialog.desktop.in:3
+#: src/org.gnome.KrbAuthDialog.desktop.in:2
 msgid "Kerberos Authentication"
-msgstr ""
+msgstr "Kerberos-ით ავთენტიკაცია"
 
 #: src/resources/ui/ka-pwdialog.ui:12 src/ka-preferences.c:325
 msgid "_Cancel"
@@ -281,7 +286,7 @@ msgstr "_გაუქმება"
 
 #: src/resources/ui/ka-pwdialog.ui:18
 msgid "_Renew Ticket"
-msgstr ""
+msgstr "_ბილეთის განახლება"
 
 #. Translators: files from dummy-strings.c are *all* possible errors
 #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
@@ -1779,39 +1784,39 @@ msgstr ""
 #, c-format
 msgid "Your credentials expire in %d minute"
 msgid_plural "Your credentials expire in %d minutes"
-msgstr[0] ""
+msgstr[0] "თქვენი ავტორიზაციის დეტალები ამოიწურება %d წუთში"
 
 #: src/ka-applet.c:615 src/ka-pwdialog.c:217
 msgid "Your credentials have expired"
-msgstr ""
+msgstr "თქვენი ავტორიზაციის დეტალების ვადა ამოიწურა"
 
 #: src/ka-applet.c:645
 msgid "Remove Credentials Cache"
-msgstr ""
+msgstr "ავტორიზაციის დეტალების კეშის წაშლა"
 
 #: src/ka-applet.c:693
 msgid "You have valid Kerberos credentials."
-msgstr ""
+msgstr "თქვენი Kerberos-ის ავტორიზაციის დეტალები სწორია."
 
 #: src/ka-applet.c:695
 msgid "You've refreshed your Kerberos credentials."
-msgstr ""
+msgstr "თქვენ განაახლეთ თქვენი Kerberos-ის ავტორიზაციის დეტალები."
 
 #: src/ka-applet.c:698
 msgid "Network credentials valid"
-msgstr ""
+msgstr "ქსელის ავტორიზაციის დეტალები სწორია"
 
 #: src/ka-applet.c:717
 msgid "Network credentials expiring"
-msgstr ""
+msgstr "ქსელის ავტორიზაციის დეტალების ვადა იწურება"
 
 #: src/ka-applet.c:734
 msgid "Network credentials expired"
-msgstr ""
+msgstr "ქსელის ავტორიზაციის დეტალების ვადა ამოიწურა"
 
 #: src/ka-applet.c:735
 msgid "Your Kerberos credentials have expired."
-msgstr ""
+msgstr "თქვენი Kerberos-ის ავტორიზაციის დეტალების ვადა ამოიწურა."
 
 #: src/ka-kerberos.c:148
 msgid "unknown error"
@@ -1823,7 +1828,7 @@ msgstr "ვადაგასული"
 
 #: src/ka-kerberos.c:1045
 msgid " (No network connection)"
-msgstr ""
+msgstr " (ქსელური შეერთების გარეშე)"
 
 #: src/ka-main-window.c:145
 msgid "Principal"
@@ -1840,7 +1845,7 @@ msgstr "დასრულება"
 #. Translators: this is an abbreviation for forwardable
 #: src/ka-main-window.c:164
 msgid "Fwd"
-msgstr ""
+msgstr "გადგზ"
 
 #. Translators: this is an abbreviation for proxiable
 #: src/ka-main-window.c:171
@@ -1854,7 +1859,7 @@ msgstr "განახლება"
 
 #: src/ka-main-window.c:221
 msgid "Error displaying service ticket information"
-msgstr ""
+msgstr "სერვისის ბილეთის ინფორმაციის გამოტანის შეცდომა"
 
 #: src/ka-preferences.c:322
 msgid "Choose Certificate"
@@ -1880,20 +1885,20 @@ msgstr "%s: შეცდომა"
 #: src/ka-pwdialog.c:175
 #, c-format
 msgid "Couldn't acquire Kerberos ticket: '%s'"
-msgstr ""
+msgstr "Kerberos-ის ბილეთის მიღება შეუძლებელია: '%s'"
 
 #: src/ka-pwdialog.c:240
 msgid "Please enter your Kerberos password:"
-msgstr ""
+msgstr "შეიყვანეთ თქვენი Kerberos-ის პაროლი:"
 
 #: src/ka-pwdialog.c:253
 #, c-format
 msgid "Please enter the password for '%s':"
-msgstr ""
+msgstr "შეიყვანეთ პაროლი '%s'-ისთვის:"
 
 #: src/ka-pwdialog.c:271
 msgid "The password you entered is invalid"
-msgstr ""
+msgstr "თქვენი შეყვანილი პაროლი არასწორია"
 
 #: src/ka-tools.c:33
 #, c-format
@@ -1908,11 +1913,11 @@ msgstr ""
 msgid "translator-credits"
 msgstr "თემური დოღონაძე"
 
-#: src/org.gnome.KrbAuthDialog.desktop.in:4
+#: src/org.gnome.KrbAuthDialog.desktop.in:3
 msgid "Kerberos Network Authentication Dialog"
-msgstr ""
+msgstr "Kerberos-ის ქსელური ავთენტიკაციის დიალოგი"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: src/org.gnome.KrbAuthDialog.desktop.in:12
+#: src/org.gnome.KrbAuthDialog.desktop.in:11
 msgid "kerberos;authentication;"
 msgstr "kerberos;authentication;"

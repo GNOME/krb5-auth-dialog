@@ -56,7 +56,7 @@ ka_show_about (KaApplet *applet)
         NULL
     };
 
-    adw_show_about_window (gtk_application_get_active_window (GTK_APPLICATION (g_application_get_default ())),
+    adw_show_about_dialog (GTK_WIDGET (applet),
                            "application-name", _(KA_NAME),
                            "application-icon", "krb-valid-ticket",
                            "version", VERSION,

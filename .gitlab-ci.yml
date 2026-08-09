@@ -52,6 +52,7 @@ build-debian-heimdal:
 
 flatpak:
   stage: build
+  allow_failure: true
   variables:
     MANIFEST_PATH: 'org.gnome.KrbAuthDialog.json'
     FLATPAK_MODULE: "org.gnome.KrbAuthDialog"

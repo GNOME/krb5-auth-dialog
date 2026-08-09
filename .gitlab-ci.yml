@@ -31,7 +31,7 @@ variables:
       yelp-tools
 
 build-debian-mit:
-  image: debian:bookworm
+  image: debian:forky
   stage: build
   before_script:
     - apt-get update
@@ -41,7 +41,7 @@ build-debian-mit:
     - ninja -C _build
 
 build-debian-heimdal:
-  image: debian:bookworm
+  image: debian:forky
   stage: build
   before_script:
     - apt-get update
@@ -61,7 +61,7 @@ flatpak:
   extends: .flatpak
 
 update-etpo:
-  image: debian:bookworm
+  image: debian:forky
   stage: build
   when: manual
   before_script:
